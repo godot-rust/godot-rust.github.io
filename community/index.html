@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Community | godot-rust </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #eec2c2;
+        /* Primary theme text color */
+        --primary-text-color: #543631;
+        /* Primary theme link color */
+        --primary-link-color: #956dba;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcf8f8;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #956dba;
+    }
+</style>
+    <link href="/fonts/alfa_slab_one.css" rel="stylesheet">
+    <link href="/fonts/fira_sans.css" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;juice.css">
+    <link rel="icon" type="image/png" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;favicon.png">
+    
+    
+</head>
+
+<body>
+    
+<header class="box-shadow">
+    <div class="header-content">
+        
+
+<a href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;">
+    <div class="logo">
+        <img src="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;godot-ferris.svg" alt="logo">
+        godot-rust
+    </div>
+</a>
+
+<nav>
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;gdnative">crates.io</a>
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;book">User Guide</a>
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;docs.rs&#x2F;gdnative">API Docs</a>
+        
+    
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;releases&#x2F;">Releases</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;community&#x2F;">Community</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;godot-rust&#x2F;godot-rust">GitHub</a>
+        
+    
+</nav>
+
+    </div>
+</header>
+
+
+    <main>
+        
+        
+        
+        
+        
+        <div class="toc">
+            <div class="toc-sticky">
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://godot-rust.github.io/community/#gdnative-in-general">GDNative in general</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://godot-rust.github.io/community/#godot-rust-specific">godot-rust specific</a>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+
+        <div class="content text">
+            
+<div class="heading-text">Community</div>
+<h1 id="gdnative-in-general">GDNative in general</h1>
+<p>For questions about using <code>godot-rust</code> the <code>#gdnative</code> channel on the <a href="https://godotengine.org/community">Godot Engine community Discord server</a> can be used.</p>
+<p>For IRC users, the <code>#godotengine-gdnative</code> channel on freenode can be used, and is bridged with the aforementioned Discord channel.</p>
+<h1 id="godot-rust-specific"><code>godot-rust</code> specific</h1>
+<p>Primary communication between developers of the project happens on the <a href="https://discord.gg/FNudpBD"><code>godot-rust</code> Discord server</a>. Developers looking to contribute are encouraged to join this server to discuss changes with maintainers and other contributors.</p>
+<p>Users may also consider using this server if the general channels aren't sufficient, or if there is need to contact a maintainer specifically.</p>
+<p>If those platforms are not accessible enough for you, please let us know and we can look into opening new channels, and possibly bridging them if needed.</p>
+
+
+        </div>
+
+    </main>
+
+    
+    <footer>
+        <small class="subtext">
+            © 2020 The godot-rust developers
+        </small>
+    </footer>
+    
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+            if (item.href.endsWith(heading)) {
+                item.classList.add("active");
+            }
+        });
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>

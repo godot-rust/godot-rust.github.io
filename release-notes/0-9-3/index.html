@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Release Notes: 0.9.3 - 2021-02-03 | godot-rust </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #eec2c2;
+        /* Primary theme text color */
+        --primary-text-color: #543631;
+        /* Primary theme link color */
+        --primary-link-color: #956dba;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcf8f8;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #956dba;
+    }
+</style>
+    <link href="/fonts/alfa_slab_one.css" rel="stylesheet">
+    <link href="/fonts/fira_sans.css" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;juice.css">
+    <link rel="icon" type="image/png" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;favicon.png">
+    
+    
+</head>
+
+<body>
+    
+<header class="box-shadow">
+    <div class="header-content">
+        
+
+<a href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;">
+    <div class="logo">
+        <img src="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;godot-ferris.svg" alt="logo">
+        godot-rust
+    </div>
+</a>
+
+<nav>
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;gdnative">crates.io</a>
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;book">User Guide</a>
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;docs.rs&#x2F;gdnative">API Docs</a>
+        
+    
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;releases&#x2F;">Releases</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;community&#x2F;">Community</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;godot-rust&#x2F;godot-rust">GitHub</a>
+        
+    
+</nav>
+
+    </div>
+</header>
+
+
+    <main>
+        
+        
+        
+        
+        
+        <div class="toc">
+            <div class="toc-sticky">
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://godot-rust.github.io/release-notes/0-9-3/#introduction">Introduction</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://godot-rust.github.io/release-notes/0-9-3/#changelog">Changelog</a>
+                </div>
+                
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://godot-rust.github.io/release-notes/0-9-3/#added"><small>- Added</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://godot-rust.github.io/release-notes/0-9-3/#changed"><small>- Changed</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://godot-rust.github.io/release-notes/0-9-3/#fixed"><small>- Fixed</small></a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        
+
+        <div class="content text">
+            
+<div class="heading-text">Release Notes: 0.9.3 - 2021-02-03</div>
+<h1 id="introduction">Introduction</h1>
+<p>0.9.3 is an incremental release with improvements in documentation and API completeness. Since 0.9.1 was released, we have received many great contributions that make this release possible:</p>
+<p><a href="https://github.com/Bromeon">@Bromeon</a> implemented a <a href="https://github.com/godot-rust/godot-rust/pull/642">minimal parser</a> for Godot's custom documentation BBCode, greatly improving the readability of generated API docs. He had also made improvements to the error messages and docs on existing types, making the library much more friendly!</p>
+<p><a href="https://github.com/extrawurst">@extrawurst</a> <a href="https://github.com/godot-rust/godot-rust/pull/674">added</a> the <code>#[property(no_editor)]</code> flag for the property macro, which exports properties that can be accessed from other languages like GDScript, but aren't shown in the editor.</p>
+<p><a href="https://github.com/Aceeri">@Aceeri</a> implemented <a href="https://github.com/godot-rust/godot-rust/pull/596">many standard traits</a> for the <code>GodotString</code> type, making it much more useful. While <code>GodotString</code>s are costly to modify, they are great for engine-related things that don't need to change, like paths, symbols, or keys.</p>
+<p>We also have quite a few new examples: <a href="https://github.com/leiter-jakab">@leiter-jakab</a> created an example for <a href="https://github.com/godot-rust/godot-rust/tree/0.9.3/examples/rpc">Godot networking</a>, <a href="https://github.com/CraigCiccone">@CraigCiccone</a> created an example for <a href="https://github.com/godot-rust/godot-rust/tree/0.9.3/examples/native_plugin">custom Node plugins</a>, and <a href="https://github.com/damszew">@damszew</a> added the example for <a href="https://github.com/godot-rust/godot-rust/tree/0.9.3/examples/resource">exporting custom resources</a>.</p>
+<p>Under the hood, <a href="https://github.com/halzy">@halzy</a> completed the <a href="https://github.com/godot-rust/godot-rust/pull/662">herculean task</a> of updating the library's many proc-macros to emit compile errors, and added build tests for them. Really awesome!</p>
+<p>There are many more, and while only a few of them are called out here, all contributions are very appreciated!</p>
+<p>One of the very often wanted feature from the crate is a utility function to get and cast a node from the scene tree in one call. While this has been available as an extension trait in one of the examples, it was hard to find, and it felt bad to copy-paste into projects. Now, the <code>NodeExt</code> trait is part of <code>gdnative-bindings</code> and the prelude:</p>
+<pre style="background-color:#ffffff;">
+<code class="language-rust" data-lang="rust"><span style="font-weight:bold;color:#a71d5d;">use </span><span style="color:#323232;">gdnative::prelude::</span><span style="font-weight:bold;color:#a71d5d;">*</span><span style="color:#323232;">;
+</span><span style="font-style:italic;color:#969896;">// - snip -
+</span><span style="color:#323232;">#[export]
+</span><span style="font-weight:bold;color:#a71d5d;">fn </span><span style="font-weight:bold;color:#795da3;">foo</span><span style="color:#323232;">(</span><span style="font-weight:bold;color:#a71d5d;">&amp;</span><span style="color:#323232;">self, owner: TRef&lt;Node&gt;) -&gt; </span><span style="font-weight:bold;color:#a71d5d;">i32 </span><span style="color:#323232;">{
+    </span><span style="font-style:italic;color:#969896;">// `unsafe` is still needed, but a safe reference is returned directly, since it was necessary for the cast in the first place.
+    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span style="color:#323232;"> sub_node: TRef&lt;&#39;</span><span style="font-weight:bold;color:#a71d5d;">_</span><span style="color:#323232;">, </span><span style="font-weight:bold;color:#a71d5d;">_</span><span style="color:#323232;">&gt; </span><span style="font-weight:bold;color:#a71d5d;">= unsafe </span><span style="color:#323232;">{
+        owner.get_node_as::&lt;Spatial&gt;(</span><span style="color:#183691;">&quot;path/to/node&quot;</span><span style="color:#323232;">).</span><span style="color:#62a35c;">unwrap</span><span style="color:#323232;">()
+    };
+
+    </span><span style="font-style:italic;color:#969896;">// Same for sub-nodes as instances of NativeScript classes.
+    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span style="color:#323232;"> sub_instance: RefInstance&lt;&#39;</span><span style="font-weight:bold;color:#a71d5d;">_</span><span style="color:#323232;">, </span><span style="font-weight:bold;color:#a71d5d;">_</span><span style="color:#323232;">, Shared&gt; </span><span style="font-weight:bold;color:#a71d5d;">= unsafe </span><span style="color:#323232;">{
+        owner.get_node_as_instance::&lt;MyScriptClass&gt;(</span><span style="color:#183691;">&quot;path/to/other&quot;</span><span style="color:#323232;">).</span><span style="color:#62a35c;">unwrap</span><span style="color:#323232;">()
+    };
+    
+    </span><span style="color:#62a35c;">do_thing_with</span><span style="color:#323232;">(sub_node, sub_instance)
+}
+</span></code></pre>
+<p>There is also a shortcut for auto-load &quot;singletons&quot; under the root node:</p>
+<pre style="background-color:#ffffff;">
+<code class="language-rust" data-lang="rust"><span style="font-weight:bold;color:#a71d5d;">use </span><span style="color:#323232;">gdnative::prelude::</span><span style="font-weight:bold;color:#a71d5d;">*</span><span style="color:#323232;">;
+</span><span style="font-style:italic;color:#969896;">// - snip -
+</span><span style="color:#323232;">#[export]
+</span><span style="font-weight:bold;color:#a71d5d;">fn </span><span style="font-weight:bold;color:#795da3;">bar</span><span style="color:#323232;">(</span><span style="font-weight:bold;color:#a71d5d;">&amp;</span><span style="color:#323232;">self, _owner: TRef&lt;Node&gt;) -&gt; </span><span style="font-weight:bold;color:#a71d5d;">i32 </span><span style="color:#323232;">{
+    </span><span style="font-style:italic;color:#969896;">// Same as the `get_node_as` method.
+    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span style="color:#323232;"> music_player: TRef&lt;&#39;</span><span style="font-weight:bold;color:#a71d5d;">_</span><span style="color:#323232;">, </span><span style="font-weight:bold;color:#a71d5d;">_</span><span style="color:#323232;">&gt; </span><span style="font-weight:bold;color:#a71d5d;">= unsafe </span><span style="color:#323232;">{
+        autoload::&lt;AudioStreamPLayer&gt;(</span><span style="color:#183691;">&quot;music_player&quot;</span><span style="color:#323232;">).</span><span style="color:#62a35c;">unwrap</span><span style="color:#323232;">()
+    };
+
+    </span><span style="color:#62a35c;">do_thing_with</span><span style="color:#323232;">(music_player)
+}
+</span></code></pre>
+<p>Previously, to create scripts that contain values only possible to construct in Rust, one had to declare a separate type, wrap it in <code>Option</code>, and implement their own error handling. Now, this pattern is supported by the library directly with the <code>#[no_constructor]</code> attribute and the <code>Instance::emplace</code> constructor:</p>
+<pre style="background-color:#ffffff;">
+<code class="language-rust" data-lang="rust"><span style="font-weight:bold;color:#a71d5d;">use </span><span style="color:#323232;">gdnative::prelude::</span><span style="font-weight:bold;color:#a71d5d;">*</span><span style="color:#323232;">;
+
+#[derive(NativeClass)]
+#[inherit(Reference)]
+#[no_constructor] </span><span style="font-style:italic;color:#969896;">// This instructs the library to not ask for a default constructor. Instead, it will fail and return an unusable instance when an attempt is made to construct it from another language.
+</span><span style="font-weight:bold;color:#a71d5d;">struct </span><span style="color:#323232;">MyScript {
+    foo: OpaqueRustType,
+}
+
+</span><span style="font-weight:bold;color:#a71d5d;">impl </span><span style="color:#323232;">MyScript {
+    </span><span style="font-style:italic;color:#969896;">/// It is, however, possible to move an existing value of this type from Rust onto a new object of the base class
+    </span><span style="font-weight:bold;color:#a71d5d;">pub fn </span><span style="font-weight:bold;color:#795da3;">create_instance</span><span style="color:#323232;">(foo: OpaqueRustType) -&gt; Instance&lt;</span><span style="font-weight:bold;color:#a71d5d;">Self</span><span style="color:#323232;">, Shared&gt; {
+        Instance::emplace(</span><span style="font-weight:bold;color:#a71d5d;">Self </span><span style="color:#323232;">{ foo }).</span><span style="color:#62a35c;">into_shared</span><span style="color:#323232;">()
+    }
+}
+
+</span><span style="font-style:italic;color:#969896;">// One may then export operations to Godot without having to worry about potentially invalid instances themselves.
+</span><span style="color:#323232;">#[methods]
+</span><span style="font-weight:bold;color:#a71d5d;">impl </span><span style="color:#323232;">MyScript {
+    #[export]
+    </span><span style="font-weight:bold;color:#a71d5d;">fn </span><span style="font-weight:bold;color:#795da3;">exotic_operation</span><span style="color:#323232;">(</span><span style="font-weight:bold;color:#a71d5d;">&amp;</span><span style="color:#323232;">self, _owner: TRef&lt;Reference&gt;) -&gt; </span><span style="font-weight:bold;color:#a71d5d;">i32 </span><span style="color:#323232;">{
+        self.foo.</span><span style="color:#62a35c;">exotic_operation</span><span style="color:#323232;">()
+    }
+}
+</span></code></pre>
+<p>A full changelog is included down below.</p>
+<p>This release is made from tag <a href="https://github.com/godot-rust/godot-rust/tree/0.9.3"><code>0.9.3</code></a>, commit <a href="https://github.com/godot-rust/godot-rust/commit/574e0f7bca7fd21738331316746f7bdd2844d44f"><code>574e0f7</code></a>.</p>
+<h1 id="changelog">Changelog</h1>
+<h3 id="added">Added</h3>
+<ul>
+<li>
+<p>Added <code>Instance::emplace</code>, a constructor that moves an existing script struct onto a new object.</p>
+</li>
+<li>
+<p>Added <code>Ref::by_class_name</code>, a method to construct Godot objects from class names.</p>
+</li>
+<li>
+<p>Added methods to recover <code>Ref</code>s or <code>TRef</code>s from instance IDs.</p>
+</li>
+<li>
+<p>Added a <code>Default</code> implementation for <code>NodePath</code>.</p>
+</li>
+<li>
+<p>Added <code>Add</code>, <code>AddAssign</code>, <code>Ord</code>, <code>PartialOrd</code>, <code>Index</code> implementations for <code>GodotString</code>.</p>
+</li>
+<li>
+<p>Added convenience methods for getting typed nodes in <code>gdnative-bindings</code>.</p>
+</li>
+<li>
+<p>Added examples for custom node plugins and Godot networking.</p>
+</li>
+<li>
+<p>Added the <code>#[property(no_editor)]</code> flag, which exports properties that can be accessed from other languages like GDScript, but aren't shown in the editor.</p>
+</li>
+</ul>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>
+<p><strong>The minimum compatible engine version is now 3.2-stable.</strong></p>
+</li>
+<li>
+<p>Improved readability of generated documentation for the API methods.</p>
+</li>
+<li>
+<p>Improved error messages for failed method calls.</p>
+</li>
+<li>
+<p>Proc-macros now emit compile errors rather than panic, improving the development experience.</p>
+</li>
+<li>
+<p>Documented the trade-offs of using <code>GodotString</code> vs. the <code>std</code> <code>String</code> type.</p>
+</li>
+</ul>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>
+<p><code>Object::callv</code> is now correctly marked as <code>unsafe</code>.</p>
+</li>
+<li>
+<p>Derive macro for <code>FromVariant</code> now correctly uses the actual variant name when reporting errors for enums.</p>
+</li>
+<li>
+<p>Derive macro for <code>OwnerToVariant</code> now correctly takes ownership of <code>self</code>.</p>
+</li>
+</ul>
+
+
+        </div>
+
+    </main>
+
+    
+    <footer>
+        <small class="subtext">
+            © 2020 The godot-rust developers
+        </small>
+    </footer>
+    
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+            if (item.href.endsWith(heading)) {
+                item.classList.add("active");
+            }
+        });
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>

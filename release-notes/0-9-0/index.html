@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Release Notes: 0.9.0 - 2020-09-20 | godot-rust </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #eec2c2;
+        /* Primary theme text color */
+        --primary-text-color: #543631;
+        /* Primary theme link color */
+        --primary-link-color: #956dba;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcf8f8;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #956dba;
+    }
+</style>
+    <link href="/fonts/alfa_slab_one.css" rel="stylesheet">
+    <link href="/fonts/fira_sans.css" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;juice.css">
+    <link rel="icon" type="image/png" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;favicon.png">
+    
+    
+</head>
+
+<body>
+    
+<header class="box-shadow">
+    <div class="header-content">
+        
+
+<a href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;">
+    <div class="logo">
+        <img src="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;godot-ferris.svg" alt="logo">
+        godot-rust
+    </div>
+</a>
+
+<nav>
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;gdnative">crates.io</a>
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;book">User Guide</a>
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;docs.rs&#x2F;gdnative">API Docs</a>
+        
+    
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;releases&#x2F;">Releases</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;community&#x2F;">Community</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;godot-rust&#x2F;godot-rust">GitHub</a>
+        
+    
+</nav>
+
+    </div>
+</header>
+
+
+    <main>
+        
+        
+        
+        
+        
+        <div class="toc">
+            <div class="toc-sticky">
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://godot-rust.github.io/release-notes/0-9-0/#introduction">Introduction</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://godot-rust.github.io/release-notes/0-9-0/#known-issues">Known issues</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://godot-rust.github.io/release-notes/0-9-0/#changelog">Changelog</a>
+                </div>
+                
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://godot-rust.github.io/release-notes/0-9-0/#added"><small>- Added</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://godot-rust.github.io/release-notes/0-9-0/#changed"><small>- Changed</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://godot-rust.github.io/release-notes/0-9-0/#removed"><small>- Removed</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://godot-rust.github.io/release-notes/0-9-0/#fixed"><small>- Fixed</small></a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        
+
+        <div class="content text">
+            
+<div class="heading-text">Release Notes: 0.9.0 - 2020-09-20</div>
+<h1 id="introduction">Introduction</h1>
+<p>The 0.9.0 release consists of a massive redesign of the godot-rust API in order to solve long-standing soundness problems in the old API, that cannot be easily fixed without changing the internals significantly and breaking compatibility. The result is an interface that abstracts Godot behavior much closer, improving users' abilities to build abstractions that push unsafe actions towards the interface, and guarantee safety in internal code.</p>
+<p>Beside soundness, there has also been quality-of-life improvements. For example, the trait system is now used to drastically reduce conversion boilerplate when using generated API methods. Procedural macros are also constantly improved, becoming more flexible over time, and able to report errors more accurately.</p>
+<p>Due to the redesign, 0.9.0 contains numerous breaking changes from previous versions. To help users update their code, we have created a <a href="https://godot-rust.github.io/book/migrating-0-8.html">migration guide from godot-rust 0.8.x in the user guide</a>.</p>
+<p>This release is made from tag <a href="https://github.com/godot-rust/godot-rust/tree/0.9.0"><code>0.9.0</code></a>, commit <a href="https://github.com/godot-rust/godot-rust/commit/a370645363b85e10d3f1a49cd127174a4fb6bad9"><code>a370645</code></a>.</p>
+<h1 id="known-issues">Known issues</h1>
+<p>There are a few known issues in this version, which we're looking to fix as soon as possible.</p>
+<ul>
+<li>Users on case-insensitive systems may get wrong/missing generated documentation, or git warnings when checking out the source. (<a href="https://github.com/godot-rust/godot-rust/issues/597">#597</a>). Usage is not affected.</li>
+<li>Users may get type mismatch errors when building the bindings for Android, likely due to platform ABI differences. (<a href="https://github.com/godot-rust/godot-rust/issues/571">#571</a>).</li>
+</ul>
+<h1 id="changelog">Changelog</h1>
+<h2 id="added">Added</h2>
+<ul>
+<li>
+<p>All public functions now have the <code>#[inline]</code> attribute, improving cross-crate inlining in builds without LTO.</p>
+</li>
+<li>
+<p>A curated <code>prelude</code> module is added in <code>gdnative</code> crate, containing common types and traits.</p>
+</li>
+<li>
+<p>Added the <code>SubClass</code> trait, which allows for static up-casts and static validation of downcasts.</p>
+</li>
+<li>
+<p>Added the <code>OwnedToVariant</code> trait and derive macro which enabled <code>Variant</code> conversion for more types.</p>
+</li>
+<li>
+<p>The <code>NativeScript</code> and <code>#[methods]</code> proc-macros now report errors more accurately.</p>
+</li>
+<li>
+<p>Added the <code>godot_init</code> convenience macro that declares all three endpoints for common use cases.</p>
+</li>
+<li>
+<p>Added more extension methods for <code>Vector2</code>, <code>Vector3</code> and <code>Color</code>.</p>
+</li>
+<li>
+<p>Added wrappers for <code>GodotString::get_basename</code> and <code>get_extensions</code>.</p>
+</li>
+<li>
+<p>Added a high-level interface to the Godot script profiler in the <code>gdnative::nativescript::profiling</code> module, and in the <code>#[gdnative::profiled]</code> attribute.</p>
+</li>
+<li>
+<p>Added before/after hooks for the <code>#[property]</code> attribute.</p>
+</li>
+<li>
+<p>API methods now have generated documentation according to Godot documentation XMLs. The Godot docs contain custom markup which isn't currently parsed. We expect to improve the generated docs in the following releases.</p>
+</li>
+<li>
+<p>Added custom resource example.</p>
+</li>
+</ul>
+<h2 id="changed">Changed</h2>
+<ul>
+<li>
+<p><strong>The default API version is now Godot 3.2.3-stable.</strong></p>
+</li>
+<li>
+<p>The object reference system is revamped using the typestate pattern, with semantics that model Godot behavior more accurately, allowing for clearer boundaries between safe and unsafe code.</p>
+</li>
+<li>
+<p>API methods are now generic over types that can be converted to <code>Variant</code>, <code>GodotString</code>, or generated API types, removing the need for boilerplate code like <code>&amp;thing.into()</code>.</p>
+</li>
+<li>
+<p>Enums in the API are now represented more accurately as newtypes around <code>i64</code>. They are available in the same modules where their associated objects are defined.</p>
+</li>
+<li>
+<p><code>Dictionary</code> and <code>VariantArray</code> now use the typestate pattern as well.</p>
+</li>
+<li>
+<p>The typed arrays are unified into a generic <code>TypedArray</code> type. The old names remain as type aliases.</p>
+</li>
+<li>
+<p>Moved generated bindings into the <code>gdnative::api</code> module, making the top-level namespace easier to navigate.</p>
+</li>
+<li>
+<p>It's now possible to crate custom binding crates without forking the repository using the generator, since <code>gdnative_bindings_generator::Api::new</code> now takes JSON input as an argument.</p>
+</li>
+<li>
+<p>Separated core wrappers and NativeScript support into the <code>core_types</code> and <code>nativescript</code> modules.</p>
+</li>
+<li>
+<p>Cleaned up the public interface with regards to intended usage. The public API no longer uses <code>gdnative-sys</code> types.</p>
+</li>
+<li>
+<p>The <code>new_ref</code> method is now in a <code>NewRef</code> trait.</p>
+</li>
+<li>
+<p>High-level wrappers are added for <code>godot_gdnative_init</code> and <code>godot_gdnative_terminate</code> callback arguments.</p>
+</li>
+<li>
+<p>Improved source links on docs.rs.</p>
+</li>
+<li>
+<p><code>bindgen</code> is updated to 0.55.1.</p>
+</li>
+<li>
+<p><code>euclid</code> is updated to 0.22.1.</p>
+</li>
+<li>
+<p>Improved build time performance.</p>
+</li>
+</ul>
+<h2 id="removed">Removed</h2>
+<ul>
+<li>
+<p>Removed deprecated items from the public interface in 0.8.1.</p>
+</li>
+<li>
+<p>Removed <code>gdnative-sys</code> types from the public interface. <code>gdnative-sys</code> is considered an internal dependency starting from 0.9.</p>
+</li>
+<li>
+<p>Removed the <code>Object</code> and <code>Reference</code> wrappers from <code>gdnative-core</code>. The same types are available in <code>gdnative-bindings</code>.</p>
+</li>
+<li>
+<p>Removed generated bindings for virtual methods, since they cannot actually be called.</p>
+</li>
+<li>
+<p>Removed <code>From</code> implementations for <code>Variant</code> since <code>ToVariant</code> is much more comprehensive.</p>
+</li>
+</ul>
+<h2 id="fixed">Fixed</h2>
+<ul>
+<li>
+<p>Fixed typos in variant names of <code>VariantOperator</code> and <code>GodotError</code>.</p>
+</li>
+<li>
+<p><code>StringName::from_str</code> now returns <code>Self</code> correctly.</p>
+</li>
+<li>
+<p>Fixed a case of undefined behavior that may manifest as crashes when some specific methods that return <code>VariantArray</code> are called.</p>
+</li>
+<li>
+<p>Fixed an issue with platform headers when building on Windows with the <code>gnu</code> toolchain that prevented compilation.</p>
+</li>
+<li>
+<p>Macros can now be used with qualified imports, removing the need for <code>#[macro_use]</code>.</p>
+</li>
+<li>
+<p>Fixed an issue where <code>Rid</code> arguments passed to API methods are incorrect due to use-after-free.</p>
+</li>
+</ul>
+
+
+        </div>
+
+    </main>
+
+    
+    <footer>
+        <small class="subtext">
+            © 2020 The godot-rust developers
+        </small>
+    </footer>
+    
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+            if (item.href.endsWith(heading)) {
+                item.classList.add("active");
+            }
+        });
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>

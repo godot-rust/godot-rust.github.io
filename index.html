@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>godot-rust</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #eec2c2;
+        /* Primary theme text color */
+        --primary-text-color: #543631;
+        /* Primary theme link color */
+        --primary-link-color: #956dba;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcf8f8;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #956dba;
+    }
+</style>
+    <link href="/fonts/alfa_slab_one.css" rel="stylesheet">
+    <link href="/fonts/fira_sans.css" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;juice.css">
+    <link rel="icon" type="image/png" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;favicon.png">
+    
+    
+</head>
+
+<body>
+    
+    <header class="box-shadow">
+        <div class="header-content">
+            
+
+<a href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;">
+    <div class="logo">
+        <img src="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;godot-ferris.svg" alt="logo">
+        godot-rust
+    </div>
+</a>
+
+<nav>
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;gdnative">crates.io</a>
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;book">User Guide</a>
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;docs.rs&#x2F;gdnative">API Docs</a>
+        
+    
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;releases&#x2F;">Releases</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;community&#x2F;">Community</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;godot-rust&#x2F;godot-rust">GitHub</a>
+        
+    
+</nav>
+
+        </div>
+    </header>
+    
+
+    <main>
+        
+        
+        
+        
+        
+        <div class="toc">
+            <div class="toc-sticky">
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://godot-rust.github.io/#design">Design</a>
+                </div>
+                
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://godot-rust.github.io/#accurate-memory-thread-safety-model"><small>- Accurate memory&#x2F;thread safety model</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://godot-rust.github.io/#convenient-procedural-macros"><small>- Convenient procedural macros</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://godot-rust.github.io/#comprehensive-trait-system"><small>- Comprehensive trait system</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://godot-rust.github.io/#full-platform-support"><small>- Full platform support</small></a>
+                </div>
+                
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://godot-rust.github.io/#installation">Installation</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://godot-rust.github.io/#example">Example</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://godot-rust.github.io/#license">License</a>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+
+        <div class="content text">
+            
+            <div id="features" class="heading-text">Overview</div>
+            <p>The <strong>godot-rust</strong> project provides high-level Rust bindings to the <a href="http://godotengine.org/">Godot game engine</a>.</p>
+<p>The latest version on crates.io is <a href="https://crates.io/crates/gdnative">gdnative 0.9.3</a>. Read the release notes <a href="https://godot-rust.github.io/release-notes/0-9-3/">here</a>.</p>
+<p>See the list of all releases <a href="https://godot-rust.github.io/releases/">here</a>.</p>
+<h1 id="design">Design</h1>
+<p>Beside exposing the full range of Godot APIs, the bindings are also designed to make life easier for Rust developers, while allowing detailed control over what is done at runtime.</p>
+<h2 id="accurate-memory-thread-safety-model">Accurate memory/thread safety model</h2>
+<p>Built on Rust generics, godot-rust feature a memory/thread safety model that closely matches the actual behavior of the engine, enabling users to build abstractions that push unsafe actions towards the interface, and guarantee safety in internal code. Everything is entirely static and have no run-time cost in release mode.</p>
+<h2 id="convenient-procedural-macros">Convenient procedural macros</h2>
+<p>The bindings include procedural macros that automate away most of the GDNative boilerplate, from member registration to making sense of <code>Variant</code> structures, to timing functions in Godot's frame profiler. They're also being constantly improved!</p>
+<h2 id="comprehensive-trait-system">Comprehensive trait system</h2>
+<p>godot-rust makes full use of Rust's trait system to build nice abstractions, and allow customization of low-level behavior without incurring extra run-time cost. Traits are also used to express the class hierarchy within the Godot API, enabling static generic upcasts, and static prevention of impossible downcasts, even though there is no language-level inheritance in Rust.</p>
+<h2 id="full-platform-support">Full platform support</h2>
+<p>godot-rust supports all platforms where the Rust <code>std</code> and GDNative is available, including Windows, Mac, Linux, Android, and iOS.</p>
+<h1 id="installation">Installation</h1>
+<p>To create a GDNative library using godot-rust with Godot 3.2.3-stable, <a href="https://rust-lang.github.io/rust-bindgen/requirements.html">install <code>bindgen</code> dependencies</a> and include the dependency in a <code>cdylib</code> crate. To use another version, see the <a href="https://godot-rust.github.io/book/advanced-guides/custom-bindings.html">relevant chapter in the user guide</a>.</p>
+<pre style="background-color:#ffffff;">
+<code class="language-toml" data-lang="toml"><span style="color:#323232;">[dependencies]
+</span><span style="color:#63a35c;">gdnative </span><span style="color:#323232;">= </span><span style="color:#183691;">&quot;0.9.3&quot;
+
+</span><span style="color:#323232;">[lib]
+</span><span style="color:#63a35c;">crate-type </span><span style="color:#323232;">= [</span><span style="color:#183691;">&quot;cdylib&quot;</span><span style="color:#323232;">]
+</span></code></pre><h1 id="example">Example</h1>
+<p>The most general use-case of the bindings will be to interact with Godot using the generated wrapper classes, as well as providing custom functionality by exposing Rust types as <em>NativeScript</em>s.</p>
+<p>NativeScript is an extension for GDNative that allows a dynamic library to register &quot;script classes&quot; to Godot.</p>
+<p>As is tradition, a simple &quot;Hello World&quot; should serve as an introduction. For a full tutorial, check out <a href="https://godot-rust.github.io/book/getting-started.html">&quot;Getting Started&quot; from the user guide</a>!</p>
+<pre style="background-color:#ffffff;">
+<code class="language-rust" data-lang="rust"><span style="font-weight:bold;color:#a71d5d;">use </span><span style="color:#323232;">gdnative::prelude::</span><span style="font-weight:bold;color:#a71d5d;">*</span><span style="color:#323232;">;
+
+#[derive(NativeClass)]
+#[inherit(Node)]
+</span><span style="font-weight:bold;color:#a71d5d;">pub struct </span><span style="color:#323232;">HelloWorld;
+
+#[methods]
+</span><span style="font-weight:bold;color:#a71d5d;">impl </span><span style="color:#323232;">HelloWorld {
+    </span><span style="font-weight:bold;color:#a71d5d;">fn </span><span style="font-weight:bold;color:#795da3;">new</span><span style="color:#323232;">(_owner: </span><span style="font-weight:bold;color:#a71d5d;">&amp;</span><span style="color:#323232;">Node) -&gt; </span><span style="font-weight:bold;color:#a71d5d;">Self </span><span style="color:#323232;">{
+        HelloWorld
+    }
+
+    #[export]
+    </span><span style="font-weight:bold;color:#a71d5d;">fn </span><span style="font-weight:bold;color:#795da3;">_ready</span><span style="color:#323232;">(</span><span style="font-weight:bold;color:#a71d5d;">&amp;</span><span style="color:#323232;">self, _owner: </span><span style="font-weight:bold;color:#a71d5d;">&amp;</span><span style="color:#323232;">Node) {
+        godot_print!(</span><span style="color:#183691;">&quot;hello, world.&quot;</span><span style="color:#323232;">);
+    }
+}
+
+</span><span style="font-weight:bold;color:#a71d5d;">fn </span><span style="font-weight:bold;color:#795da3;">init</span><span style="color:#323232;">(handle: InitHandle) {
+    handle.add_class::&lt;HelloWorld&gt;();
+}
+
+godot_init!(init);
+</span></code></pre>
+<p>The <a href="https://github.com/godot-rust/godot-rust/tree/master/examples">/examples</a> directory in the GitHub repo contains several ready to use examples, complete with Godot projects and setup for easy compilation from Cargo.</p>
+<h1 id="license">License</h1>
+<p>godot-rust is licensed under the <a href="https://github.com/godot-rust/godot-rust/tree/master/LICENSE.md">MIT License</a>.</p>
+
+            
+        </div>
+
+    </main>
+
+    
+    <footer>
+        <small class="subtext">
+            © 2020 The godot-rust developers
+        </small>
+    </footer>
+    
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+            if (item.href.endsWith(heading)) {
+                item.classList.add("active");
+            }
+        });
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>

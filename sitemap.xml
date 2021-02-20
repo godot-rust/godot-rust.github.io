@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://godot-rust.github.io/</loc>
+    </url>
+    <url>
+        <loc>https://godot-rust.github.io/community/</loc>
+    </url>
+    <url>
+        <loc>https://godot-rust.github.io/release-notes/0-9-0/</loc>
+    </url>
+    <url>
+        <loc>https://godot-rust.github.io/release-notes/0-9-1/</loc>
+    </url>
+    <url>
+        <loc>https://godot-rust.github.io/release-notes/0-9-3/</loc>
+    </url>
+    <url>
+        <loc>https://godot-rust.github.io/releases/</loc>
+    </url>
+</urlset>

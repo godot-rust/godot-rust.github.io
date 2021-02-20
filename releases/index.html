@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Releases | godot-rust </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #eec2c2;
+        /* Primary theme text color */
+        --primary-text-color: #543631;
+        /* Primary theme link color */
+        --primary-link-color: #956dba;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcf8f8;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #956dba;
+    }
+</style>
+    <link href="/fonts/alfa_slab_one.css" rel="stylesheet">
+    <link href="/fonts/fira_sans.css" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;juice.css">
+    <link rel="icon" type="image/png" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;favicon.png">
+    
+    
+</head>
+
+<body>
+    
+<header class="box-shadow">
+    <div class="header-content">
+        
+
+<a href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;">
+    <div class="logo">
+        <img src="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;godot-ferris.svg" alt="logo">
+        godot-rust
+    </div>
+</a>
+
+<nav>
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;gdnative">crates.io</a>
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;book">User Guide</a>
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;docs.rs&#x2F;gdnative">API Docs</a>
+        
+    
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;releases&#x2F;">Releases</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;godot-rust.github.io&#x2F;community&#x2F;">Community</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;godot-rust&#x2F;godot-rust">GitHub</a>
+        
+    
+</nav>
+
+    </div>
+</header>
+
+
+    <main>
+        
+        
+        
+        
+        
+        <div class="toc">
+            <div class="toc-sticky">
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://godot-rust.github.io/releases/#0-9-3-2021-02-03">0.9.3 - 2021-02-03</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://godot-rust.github.io/releases/#0-9-1-2020-10-19">0.9.1 - 2020-10-19</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://godot-rust.github.io/releases/#0-9-0-2020-09-20">0.9.0 - 2020-09-20</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://godot-rust.github.io/releases/#earlier-releases">Earlier releases</a>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+
+        <div class="content text">
+            
+<div class="heading-text">Releases</div>
+<h1 id="0-9-3-2021-02-03"><a href="https://godot-rust.github.io/release-notes/0-9-3/">0.9.3 - 2021-02-03</a></h1>
+<p>0.9.3 is an incremental release with improvements in documentation and API completeness. <code>GodotString</code> supports more operations, and support is added for a few common patterns.</p>
+<p>The 0.9.2 version is skipped and yanked from crates.io due to an bug that was undetected due to a rustc regression.</p>
+<p>This release is made from tag <a href="https://github.com/godot-rust/godot-rust/tree/0.9.3"><code>0.9.3</code></a>, commit <a href="https://github.com/godot-rust/godot-rust/commit/574e0f7bca7fd21738331316746f7bdd2844d44f"><code>574e0f7</code></a>.</p>
+<p>Read the full release notes and changelog for this version <a href="https://godot-rust.github.io/release-notes/0-9-3/">here</a>.</p>
+<h1 id="0-9-1-2020-10-19"><a href="https://godot-rust.github.io/release-notes/0-9-1/">0.9.1 - 2020-10-19</a></h1>
+<p>0.9.1 is an incremental release with mostly bug fixes since the 0.9.0 release. Missing mathematic methods are added, as well as support for Godot RPC modes, thanks to contributions.</p>
+<p>This release is made from tag <a href="https://github.com/godot-rust/godot-rust/tree/0.9.1"><code>0.9.1</code></a>, commit <a href="https://github.com/godot-rust/godot-rust/commit/97a0b4110449862716fb25cc3fea9d01c4da5553"><code>97a0b41</code></a>.</p>
+<p>Read the full release notes and changelog for this version <a href="https://godot-rust.github.io/release-notes/0-9-1/">here</a>.</p>
+<h1 id="0-9-0-2020-09-20"><a href="https://godot-rust.github.io/release-notes/0-9-0/">0.9.0 - 2020-09-20</a></h1>
+<p>The 0.9.0 release consists of a massive redesign of the godot-rust API in order to solve long-standing soundness problems in the old API. 0.9.0 contains numerous breaking changes from previous versions. To help users update their code, we have created a <a href="https://godot-rust.github.io/book/migrating-0-8.html">migration guide from godot-rust 0.8.x in the user guide</a>.</p>
+<p>This release is made from tag <a href="https://github.com/godot-rust/godot-rust/tree/0.9.0"><code>0.9.0</code></a>, commit <a href="https://github.com/godot-rust/godot-rust/commit/a370645363b85e10d3f1a49cd127174a4fb6bad9"><code>a370645</code></a>.</p>
+<p>Read the full release notes and changelog for this version <a href="https://godot-rust.github.io/release-notes/0-9-0/">here</a>.</p>
+<h1 id="earlier-releases">Earlier releases</h1>
+<p>Release notes are not available for releases before 0.9.0. For the changelog since 0.7.0, see <a href="https://github.com/godot-rust/godot-rust/blob/master/CHANGELOG.md">CHANGELOG.md</a> in the main repo.</p>
+
+
+        </div>
+
+    </main>
+
+    
+    <footer>
+        <small class="subtext">
+            © 2020 The godot-rust developers
+        </small>
+    </footer>
+    
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+            if (item.href.endsWith(heading)) {
+                item.classList.add("active");
+            }
+        });
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>
