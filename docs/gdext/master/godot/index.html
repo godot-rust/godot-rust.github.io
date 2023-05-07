@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Rust bindings for GDExtension, the extension API of Godot 4."><title>godot - Rust</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/SourceSerif4-Bold-a2c9cd1067f8b328.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../static.files/rustdoc-c4dbdcde0fbd8430.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../static.files/light-db279b6232be9c13.css"><link rel="stylesheet" disabled href="../static.files/dark-cf923f49f397b216.css"><link rel="stylesheet" disabled href="../static.files/ayu-be46fdc453a55015.css"><script src="../static.files/storage-3891ce972e3a2bf8.js"></script><script defer src="../crates.js"></script><script defer src="../static.files/main-98a684e84ae5b08b.js"></script><noscript><link rel="stylesheet" href="../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc mod crate"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="logo-container" href="../godot/index.html"><img class="rust-logo" src="../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><h2></h2></nav><nav class="sidebar"><a class="logo-container" href="../godot/index.html"><img class="rust-logo" src="../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><h2 class="location"><a href="#">Crate godot</a></h2><div class="sidebar-elems"><ul class="block"><li class="version">Latest master</li><li><a id="all-types" href="all.html">All Items</a></li></ul><section><ul class="block"><li><a href="#modules">Modules</a></li></ul></section></div></nav><main><div class="width-limiter"><nav class="sub"><form class="search-form"><span></span><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../static.files/wheel-7b819b6101059cd0.svg"></a></div></form></nav><section id="main-content" class="content"><div class="main-heading"><h1>Crate <a class="mod" href="#">godot</a><button id="copy-path" title="Copy item path to clipboard"><img src="../static.files/clipboard-7571035ce49a181d.svg" width="19" height="18" alt="Copy item path"></button></h1><span class="out-of-band"><a class="srclink" href="../src/godot/lib.rs.html#7-144">source</a> · <button id="toggle-all-docs" title="collapse all docs">[<span>&#x2212;</span>]</button></span></div><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Rust bindings for GDExtension, the extension API of <a href="https://godotengine.org/">Godot</a> 4.</p>
+<p>This documentation is a work in progress.</p>
+<h2 id="kinds-of-types"><a href="#kinds-of-types">Kinds of types</a></h2>
+<p>Godot is written in C++, which doesn’t have the same strict guarantees about safety and
+mutability that Rust does. As a result, not everything in this crate will look and feel
+entirely “Rusty”. We distinguish four different kinds of types:</p>
+<ol>
+<li>
+<p><strong>Value types</strong>: <code>i64</code>, <code>f64</code>, and mathematical types like
+<a href="builtin/struct.Vector2.html" title="struct godot::builtin::Vector2"><code>Vector2</code></a> and <a href="builtin/struct.Color.html" title="struct godot::builtin::Color"><code>Color</code></a>.</p>
+<p>These are the simplest to understand and to work with. They implement <code>Clone</code> and often
+<code>Copy</code> as well. They are implemented with the same memory layout as their counterparts in
+Godot itself, and typically have public fields. <br><br></p>
+</li>
+<li>
+<p><strong>Copy-on-write types</strong>: <a href="builtin/struct.GodotString.html" title="struct godot::builtin::GodotString"><code>GodotString</code></a>,
+<a href="builtin/struct.StringName.html" title="struct godot::builtin::StringName"><code>StringName</code></a>, and <code>Packed*Array</code> types.</p>
+<p>These mostly act like value types, similar to Rust’s own <code>Vec</code>. You can <code>Clone</code> them to get
+a full copy of the entire object, as you would expect.</p>
+<p>Under the hood in Godot, these types are implemented with copy-on-write, so that data can be
+shared until one of the copies needs to be modified. However, this performance optimization
+is entirely hidden from the API and you don’t normally need to worry about it. <br><br></p>
+</li>
+<li>
+<p><strong>Reference-counted types</strong>: <a href="builtin/struct.Array.html" title="struct godot::builtin::Array"><code>Array</code></a>,
+<a href="builtin/struct.Dictionary.html" title="struct godot::builtin::Dictionary"><code>Dictionary</code></a>, and <a href="obj/struct.Gd.html" title="struct godot::obj::Gd"><code>Gd&lt;T&gt;</code></a> where <code>T</code> inherits
+from <a href="engine/struct.RefCounted.html" title="struct godot::engine::RefCounted"><code>RefCounted</code></a>.</p>
+<p>These types may share their underlying data between multiple instances: changes to one
+instance are visible in another. Think of them as <code>Rc&lt;RefCell&lt;...&gt;&gt;</code> but without any runtime
+borrow checking.</p>
+<p>Since there is no way to prevent or even detect this sharing from Rust, you need to be more
+careful when using such types. For example, when iterating over an <code>Array</code>, make sure that
+it isn’t being modified at the same time through another reference.</p>
+<p>To avoid confusion these types don’t implement <code>Clone</code>. You can use
+<a href="obj/trait.Share.html" title="trait godot::obj::Share"><code>Share</code></a> to create a new reference to the same instance, and
+type-specific methods such as
+<a href="builtin/struct.Array.html#method.duplicate_deep" title="method godot::builtin::Array::duplicate_deep"><code>Array::duplicate_deep()</code></a> to make actual
+copies. <br><br></p>
+</li>
+<li>
+<p><strong>Manually managed types</strong>: <a href="obj/struct.Gd.html" title="struct godot::obj::Gd"><code>Gd&lt;T&gt;</code></a> where <code>T</code> inherits from
+<a href="engine/struct.Object.html" title="struct godot::engine::Object"><code>Object</code></a> but not from <a href="engine/struct.RefCounted.html" title="struct godot::engine::RefCounted"><code>RefCounted</code></a>;
+most notably, this includes all <code>Node</code> classes.</p>
+<p>These also share data, but do not use reference counting to manage their memory. Instead,
+you must either hand over ownership to Godot (e.g. by adding a node to the scene tree) or
+free them manually using <a href="obj/struct.Gd.html#method.free" title="method godot::obj::Gd::free"><code>Gd::free()</code></a>. <br><br></p>
+</li>
+</ol>
+<h2 id="ergonomics-and-panics"><a href="#ergonomics-and-panics">Ergonomics and panics</a></h2>
+<p>The GDExtension Rust bindings are designed with usage ergonomics in mind, making them viable
+for fast prototyping. Part of this design means that users should not constantly be forced
+to write code such as <code>obj.cast::&lt;T&gt;().unwrap()</code>. Instead, they can just write <code>obj.cast::&lt;T&gt;()</code>,
+which may panic at runtime.</p>
+<p>This approach has several advantages:</p>
+<ul>
+<li>The code is more concise and less cluttered.</li>
+<li>Methods like <code>cast()</code> provide very sophisticated panic messages when they fail (e.g. involved
+classes), immediately giving you the necessary context for debugging. This is certainly
+preferable over a generic <code>unwrap()</code>, and in most cases also over a <code>expect(&quot;literal&quot;)</code>.</li>
+<li>Usually, such methods panicking indicate bugs in the application. For example, you have a static
+scene tree, and you <em>know</em> that a node of certain type and name exists. <code>get_node_as::&lt;T&gt;(&quot;name&quot;)</code>
+thus <em>must</em> succeed, or your mental concept is wrong. In other words, there is not much you can
+do at runtime to recover from such errors anyway; the code needs to be fixed.</li>
+</ul>
+<p>Now, there are of course cases where you <em>do</em> want to check certain assumptions dynamically.
+Imagine a scene tree that is constructed at runtime, e.g. in a game editor.
+This is why the library provides “overloads” for most of these methods that return <code>Option</code> or <code>Result</code>.
+Such methods have more verbose names and highlight the attempt, e.g. <code>try_cast()</code>.</p>
+<p>To help you identify panicking methods, we use the symbol “⚠️” at the beginning of the documentation;
+this should also appear immediately in the auto-completion of your IDE. Note that this warning sign is
+not used as a general panic indicator, but particularly for methods which have a <code>Option</code>/<code>Result</code>-based
+overload. If you want to know whether and how a method can panic, check if its documentation has a
+<em>Panics</em> section.</p>
+<h2 id="thread-safety"><a href="#thread-safety">Thread safety</a></h2>
+<p><a href="https://docs.godotengine.org/en/latest/tutorials/performance/thread_safe_apis.html">Godot’s own thread safety
+rules</a>
+apply. Types in this crate implement (or don’t implement) <code>Send</code> and <code>Sync</code> wherever
+appropriate, but the Rust compiler cannot check what happens to an object through C++ or
+GDScript.</p>
+<p>As a rule of thumb, if you must use threading, prefer to use Rust threads instead of Godot
+threads.</p>
+</div></details><h2 id="modules" class="small-section-header"><a href="#modules">Modules</a></h2><ul class="item-table"><li><div class="item-name"><a class="mod" href="bind/index.html" title="mod godot::bind">bind</a></div><div class="desc docblock-short">Export user-defined classes and methods to be called by the engine.</div></li><li><div class="item-name"><a class="mod" href="builtin/index.html" title="mod godot::builtin">builtin</a></div><div class="desc docblock-short">Built-in types like <code>Vector2</code>, <code>GodotString</code> and <code>Variant</code>.</div></li><li><div class="item-name"><a class="mod" href="engine/index.html" title="mod godot::engine">engine</a></div><div class="desc docblock-short">Maps the Godot class API to Rust.</div></li><li><div class="item-name"><a class="mod" href="init/index.html" title="mod godot::init">init</a></div><div class="desc docblock-short">Facilities for initializing and terminating the GDExtension library.</div></li><li><div class="item-name"><a class="mod" href="log/index.html" title="mod godot::log">log</a></div></li><li><div class="item-name"><a class="mod" href="obj/index.html" title="mod godot::obj">obj</a></div><div class="desc docblock-short">Types and traits related to objects.</div></li><li><div class="item-name"><a class="mod" href="prelude/index.html" title="mod godot::prelude">prelude</a></div><div class="desc docblock-short">Often-imported symbols.</div></li><li><div class="item-name"><a class="mod" href="sys/index.html" title="mod godot::sys">sys</a></div><div class="desc docblock-short">Low level bindings to the provided C core API</div></li></ul></section></div></main><div id="rustdoc-vars" data-root-path="../" data-static-root-path="../static.files/" data-current-crate="godot" data-themes="" data-resource-suffix="" data-rustdoc-version="1.69.0 (84c898d65 2023-04-16)" data-search-js="search-8a59a8356673ec1f.js" data-settings-js="settings-f0c5c39777a9a2f6.js" data-settings-css="settings-0bcba95ff279c1db.css" ></div></body></html>

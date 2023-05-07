@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["AreaBodyStatus","AreaParameter","AreaSpaceOverrideMode","BodyDampMode","BodyMode","BodyParameter","BodyState","CCDMode","DampedSpringParam","JointParam","JointType","PinJointParam","ProcessInfo","ShapeType","SpaceParameter"]};
