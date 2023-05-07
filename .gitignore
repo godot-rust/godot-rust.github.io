@@ -1,0 +1,14 @@
+# IDEs
+/.idea
+
+# Website deployment
+/website/themes/blow/static/css
+/website/public
+
+# Docs generation
+/documentation/cloned
+/documentation/docs
+/documentation/target
+
+# Other
+/ignore

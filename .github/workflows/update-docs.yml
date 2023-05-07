@@ -1,0 +1,156 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+name: Update docs
+
+on:
+  repository_dispatch:
+    types: ['Generate docs']
+
+defaults:
+  run:
+    shell: bash
+
+# Do not use `concurrency`, because that will cancel intermediate workflow runs (as soon as there are more than 2).
+# Unfortunately, GitHub does not provide a way to queue all workflow runs sequentially, see https://github.com/orgs/community/discussions/12835.
+# Instead, we use the action https://github.com/ben-z/gh-action-mutex which uses a separate branch as a git-based mutex.
+
+# Security: inputs are generally untrusted and are stored in environment variables to avoid script injection.
+# See https://docs.github.com/en/enterprise-cloud@latest/actions/security-guides/security-hardening-for-github-actions#understanding-the-risk-of-script-injections.
+
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+    steps:
+#      - name: "Info about workflow (${{ github.event.client_payload.op }} ${{ github.event.client_payload.repo }}/${{ github.event.client_payload.num }})"
+      - name: "Info about workflow (${{ env.OP }} ${{ env.REPO }}/${{ env.NUM }})"
+        env:
+          JSON: '${{ toJson(github.event.client_payload) }}'
+          OP: '${{ github.event.client_payload.op }}'
+          REPO: '${{ github.event.client_payload.repo }}'
+          NUM: '${{ github.event.client_payload.num }}'
+          DATE: '${{ github.event.client_payload.date }}'
+        run: |
+          echo "$JSON"
+          timestamp=$(date -d "$DATE" +%s)
+          
+          echo "### Doc sync: $OP $REPO/$NUM" >> $GITHUB_STEP_SUMMARY
+          echo "Input:" >> $GITHUB_STEP_SUMMARY          
+          echo "\`\`\`js" >> $GITHUB_STEP_SUMMARY          
+          echo "$JSON" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY          
+          echo "Timestamp: \`$timestamp\`  " >> $GITHUB_STEP_SUMMARY          
+
+      - name: "Checkout"
+        uses: actions/checkout@v3
+
+      - name: "Detect Rust version"
+        env:
+          OP: '${{ github.event.client_payload.op }}'
+        if: ${{ env.OP == 'put' }}
+        run: echo RUST_VER=$(rustc --version | sed -E "s/rustc ([0-9.]+) \\(.+/\\1/" ) >> $GITHUB_ENV
+
+      - name: "Cache Rust"
+        env:
+          OP: '${{ github.event.client_payload.op }}'
+        if: ${{ env.OP == 'put' }}
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-rust-${{ env.RUST_VER }}
+#          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+
+      - name: "Generate/sync docs"
+        env:
+          OP: '${{ github.event.client_payload.op }}'
+          REPO: '${{ github.event.client_payload.repo }}'
+          NUM: '${{ github.event.client_payload.num }}'
+          DATE: '${{ github.event.client_payload.date }}'
+        run: |
+          # Do not replace directly (script injection)
+          if [[ "$OP" == "put" ]]; then
+            script="documentation/put.sh"
+          elif [[ "$OP" == "delete" ]]; then
+            script="documentation/delete.sh"
+          else
+            echo "Unknown operation: $OP"
+            exit 1
+          fi          
+          
+          git fetch
+          git switch doc-output || git switch --orphan doc-output
+          
+          git restore --source master $script documentation/update-last-changed.sh
+          bash $script "$REPO" "$NUM" "$DATE"
+
+      - name: "Wait for concurrent workflows to finish..."
+        uses: ben-z/gh-action-mutex@v1.0-alpha-7
+        with:
+          branch: ci-mutex-docs
+
+      # Use single quotes to not interpret backticks etc
+      - name: "Commit to deployment branch"
+        env:
+          OP: '${{ github.event.client_payload.op }}'
+          REPO: '${{ github.event.client_payload.repo }}'
+          NUM: '${{ github.event.client_payload.num }}'
+          LONG_SHA: '${{ github.event.client_payload.commit-sha }}'
+          DATE: '${{ github.event.client_payload.date }}'
+          PR_AUTHOR: '${{ github.event.client_payload.pr-author }}'
+          PR_TITLE: '${{ github.event.client_payload.pr-title }}'
+        run: |
+          git restore --source master documentation/commit.sh documentation/write-markdown-page.sh
+          if [[ "$OP" == "put" ]]; then
+            bash documentation/write-markdown-page.sh "$OP" "$REPO" "$NUM" "$LONG_SHA" "$DATE" "$PR_AUTHOR" "$PR_TITLE"
+            echo "Put status: \`$PUT_STATUS\`  " >> $GITHUB_STEP_SUMMARY
+          fi
+          bash documentation/commit.sh "$OP" "$REPO" "$NUM" "$LONG_SHA" "$DATE" "$PR_AUTHOR" "$PR_TITLE"
+
+      # If outdated, output step summary
+      - name: "Output step summary"
+        if: env.SKIP_WEBSITE_DEPLOY == 'true'
+        run: |
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo ":warning: Outdated run; skipped deployment." >> $GITHUB_STEP_SUMMARY
+
+      # If there have been newer commits for the same branch/PR, skip remaining tasks.
+      # Env var SKIP_WEBSITE_DEPLOY is set by the commit.sh script.
+      - name: "Construct JSON"
+        if: env.SKIP_WEBSITE_DEPLOY != 'true'
+        env:
+          OP: '${{ github.event.client_payload.op }}'
+          REPO: '${{ github.event.client_payload.repo }}'
+          NUM: '${{ github.event.client_payload.num }}'
+        run: |
+          payload=$(cat <<HEREDOC
+          {
+              "op": "$OP",
+              "repo": "$REPO",
+              "num": "$NUM",
+              "put_status": "${{ env.PUT_STATUS }}",
+              "docs_full_url": "${{ env.DOCS_FULL_URL }}"
+          }
+          HEREDOC)
+          echo "VAR=$payload"
+          echo "PAYLOAD_JSON<<HEREDOC" >> $GITHUB_ENV
+          echo "${payload}" >> $GITHUB_ENV
+          echo "HEREDOC" >> $GITHUB_ENV
+
+      - name: "Print payload"
+        if: env.SKIP_WEBSITE_DEPLOY != 'true'
+        run: |
+          echo "$PAYLOAD_JSON"
+
+      - name: "Trigger website build"
+        if: env.SKIP_WEBSITE_DEPLOY != 'true'
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          event-type: 'Deploy docs'
+          client-payload: ${{ env.PAYLOAD_JSON }}
+

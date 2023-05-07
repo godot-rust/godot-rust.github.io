@@ -1,0 +1,132 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+name: Build website
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  repository_dispatch:
+    types: ['Deploy docs']
+
+
+jobs:
+  check-website:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v3
+
+      - name: "Build website"
+        uses: shalzz/zola-deploy-action@master
+        env:
+          BUILD_DIR: website
+          TOKEN: fake-token
+          BUILD_ONLY: true
+
+
+  deploy-website:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
+    steps:
+      - name: "Workflow triggered by push to master"
+        if: github.event_name == 'push'
+        run: echo "Triggered by commit SHA ${{ github.sha }}"
+
+      - name: "Workflow triggered by docs (${{ github.event.client_payload.op }} ${{ github.event.client_payload.repo }}/${{ github.event.client_payload.num }})"
+        if: github.event_name == 'repository_dispatch'
+        env:
+          JSON: ${{ toJson(github.event.client_payload) }}
+        run: echo "$JSON"
+
+      - name: "Wait for concurrent workflows to finish..."
+        uses: ben-z/gh-action-mutex@v1.0-alpha-7
+        with:
+          branch: ci-mutex-website
+
+      - name: "Checkout"
+        uses: actions/checkout@v3
+
+      # Note: if this is run the first time, this job fails because there is no doc-output branch.
+      # Easy enough to fix by deploying docs for both masters.
+      - name: "Fetch references to doc pages"
+        run: |
+          git fetch
+          git restore --source origin/doc-output website-docs-md
+          mv website-docs-md/* website/content/docs/
+          rm -r website-docs-md
+
+      - name: "Build and deploy Zola"
+        uses: shalzz/zola-deploy-action@master
+        env:
+          PAGES_BRANCH: gh-pages-prepared
+          BUILD_DIR: website
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Integrate docs (triggered by push), push to gh-pages"
+        if: github.event_name == 'push'
+        run: |
+          bash documentation/fetch-website-docs.sh "gdext" "master" || {
+            echo "::warning::No docs available for gdext/master"
+          }
+          bash documentation/fetch-website-docs.sh "gdnative" "master" || {
+            echo "::warning::No docs available for gdnative/master"
+          }
+
+      - name: "Integrate docs (triggered by repo-dispatch), push to gh-pages"
+        if: github.event_name == 'repository_dispatch'
+        env:
+          REPO: '${{ github.event.client_payload.repo }}'
+          NUM: '${{ github.event.client_payload.num }}'
+        run: |
+          bash documentation/fetch-website-docs.sh "$REPO" "$NUM"
+
+      - name: "Comment on GitHub PR"
+        if: github.event_name == 'repository_dispatch' && github.event.client_payload.put_status == 'Create' && github.event.client_payload.num != 'master'
+        run: |
+          url="${{ github.event.client_payload.docs_full_url }}"
+          repo="${{ github.event.client_payload.repo }}"
+          num="${{ github.event.client_payload.num }}"
+          body="API docs are being generated and will be shortly available at: $url"
+          
+          echo "cURL to https://api.github.com/repos/godot-rust/$repo/issues/$num/comments"
+          echo "Body: $body"
+          
+          curl -L \
+          --fail-with-body \
+          -X POST \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer ${{ secrets.DOCS_COMMENTER_PAT }}" \
+          -H "X-GitHub-Api-Version: 2022-11-28" \
+          -d "{\"body\":\"$body\"}" \
+          https://api.github.com/repos/godot-rust/$repo/issues/$num/comments
+
+
+  license-guard:
+    # not on repo dispatch
+    if: github.event_name != 'repository_dispatch'
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: "Check license headers"
+        uses: apache/skywalking-eyes/header@v0.4.0
+        with:
+          # log: debug # optional: set the log level. The default value is `info`.
+          config: .github/external-config/licenserc.yml
+          # token: # optional: the token that license eye uses when it needs to comment on the pull request.
+          # Set to empty ("") to disable commenting on pull request. The default value is ${{ github.token }}
+          # mode: # optional: Which mode License-Eye should be run in. Choices are `check` or `fix`. The default value is `check`.
+          mode: check
+
+      - name: "Commit changes"
+        uses: EndBug/add-and-commit@v9
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          author_name: 'Godot-Rust Automation'
+          author_email: 'actions@github.com'
+          message: 'Auto-apply license headers'

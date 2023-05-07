@@ -1,0 +1,401 @@
+/*
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:root {
+    /* Buttons and clickable icons */
+    --button-border-w: 2pt;
+
+    --teal: rgb(73, 129, 140);
+    --blue: rgb(50, 128, 155);
+    --blue-hover: rgb(46, 108, 148);
+    --button-border: rgb(126, 120, 114);
+    --white: #eae5e2;
+    --white-title: #f5f1f0;
+
+    --teal-dark: rgb(7, 62, 75);
+    --blue-dark: rgb(13, 63, 94);
+    --blue-hover-dark: rgb(10, 77, 119);
+    --button-border-dark: rgb(148, 144, 138);
+    --white-dark: #a9aaab;
+    --white-title-dark: #b5b8bb;
+
+    /* Navigation bar + selected parts */
+    --brown-nav: rgb(173, 155, 149);
+    --brown-body: rgb(217, 198, 190);
+    --brown-hover: rgb(148, 122, 112);
+    --brown-nav-current: rgb(140, 142, 143);
+    --brown-caption: rgb(117, 96, 78);
+
+    --brown-nav-dark: rgb(61, 58, 55);
+    --brown-body-dark: rgb(82, 79, 76);
+    --brown-hover-dark: rgb(117, 103, 91);
+    --brown-nav-current-dark: rgb(76, 84, 89);
+    --brown-caption-dark: rgb(161, 147, 137);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h1 {
+        @apply text-2xl;
+        @apply mb-5;
+        @apply markdown-h;
+        font-size: 2rem;
+        font-family: "Alfa Slab One", serif;
+        font-weight: normal;
+    }
+
+    h2 {
+        @apply text-xl;
+        font-weight: bold;
+        font-size: 2rem;
+        @apply markdown-h;
+    }
+
+    h3 {
+        @apply text-2xl;
+    }
+
+    /*a {*/
+    /*    @apply all-links;*/
+    /*    @apply dark:all-links;*/
+    /*}*/
+}
+
+/* Global default styles */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Default Pages content styles */
+/*#page-content a {*/
+/*    @apply underline;*/
+/*}*/
+
+.markdown-content {
+    font-size: 1.2em;
+    text-align: justify;
+    text-align-last: center;
+    width: 72%;
+}
+
+.markdown-content a {
+    color: var(--blue-hover);
+}
+
+.markdown-content a:hover {
+    color: var(--blue-hover-dark);
+}
+
+:is(.dark .markdown-content a) {
+    color: rgb(96, 166, 215);
+}
+
+:is(.dark .markdown-content a:hover) {
+    color: rgb(67, 145, 199);
+}
+
+/*.markdown-content h1 {}*/
+
+.markdown-content h2 {
+    @apply mt-12;
+    @apply mb-0;
+}
+
+.markdown-h {
+    color: var(--brown-caption);
+}
+
+:is(.dark .markdown-h) {
+    color: var(--brown-caption-dark);
+}
+
+/*:is(.dark .markdown-content h2) {*/
+/*    color: var(--brown-caption-dark);*/
+/*}*/
+
+.markdown-content li {
+    @apply list-disc;
+    @apply list-inside;
+}
+
+.markdown-content p {
+    /*@apply text-base;*/
+    /*@apply leading-7;*/
+    @apply mb-2;
+}
+
+/*.all-links {*/
+/*    color: #59a2cc;*/
+/*}*/
+
+/*:is(.dark, .all-links) {*/
+/*    color: #c459cc;*/
+/*}*/
+
+#page-content p, h2 {
+    @apply py-4;
+}
+
+#page-content :is(h1, h2, h3, h4, h5, h6) {
+    @apply underline;
+}
+
+#page-content pre {
+    @apply p-4 my-4 overflow-x-auto;
+}
+
+/* --------------------------------------------------------------- */
+/* bright theme */
+
+.logo {
+    font-family: "Alfa Slab One", serif;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    color: rgb(131, 111, 110);
+}
+
+.logo-title {
+    font-family: "Alfa Slab One", serif;
+    font-size: 3rem;
+    color: rgb(211, 103, 49);
+}
+
+:is(.dark .logo-title) {
+    font-family: "Alfa Slab One", serif;
+    font-size: 3rem;
+    color: rgb(210, 111, 57);
+}
+
+.social-icon {
+    width: 8rem;
+    height: 4rem;
+    fill: var(--blue);
+    stroke: rgb(91, 76, 63);
+    /*stroke: var(--button-border);*/
+    stroke-width: 0.04em;
+}
+
+.social-icon:hover {
+    fill: var(--blue-hover);
+    stroke: rgb(65, 53, 43);
+}
+
+.caption {
+    color: var(--brown-caption);
+}
+
+.navbar-background {
+    /* tailwind: bg-gray-200 */
+    background-color: var(--brown-nav);
+}
+
+/* Currently selected navbar page */
+.navbar-current {
+    /* same color as logo text */
+    background-color: var(--brown-nav-current);
+}
+
+.navbar-hover:hover {
+    background-color: var(--brown-hover);
+    color: white;
+}
+
+/* PR icons: use same colors as navbar for bg/hover */
+.pr-icon {
+    fill: var(--brown-nav);
+    display: flex;
+    align-items: center;
+}
+
+.pr-icon-svg:hover {
+    fill: var(--brown-hover);
+}
+
+.body-background {
+    /* tailwind: bg-stone-300 */
+    background-color: var(--brown-body);
+}
+
+.button-background {
+    background-color: var(--teal);
+}
+
+.button-background-2 {
+    background-color: var(--blue);
+}
+
+/* All text and icons inside buttons */
+.button-border .flex {
+    color: var(--white);
+}
+
+/* Title inside buttons */
+.button-border h3 {
+    color: var(--white-title);
+}
+
+.button-border {
+    /* tailwind: border-stone-300 */
+    border-color: var(--button-border);
+    border-width: var(--button-border-w);
+}
+
+.text-footer {
+    --tw-text-opacity: .5;
+    color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+/* --------------------------------------------------------------- */
+/* dark theme */
+
+:is(.dark .logo) {
+    color: #985944;
+}
+
+:is(.dark .social-icon) {
+    fill: var(--blue-dark);
+    stroke: rgb(134, 122, 112);
+}
+
+:is(.dark .social-icon:hover) {
+    fill: var(--blue-hover-dark);
+    stroke: rgb(161, 147, 137);
+}
+
+:is(.dark .caption) {
+    color: var(--brown-caption-dark);
+}
+
+:is(.dark .navbar-background) {
+    /* tailwind: bg-gray-800 */
+    background-color: var(--brown-nav-dark);
+}
+
+:is(.dark .navbar-current) {
+    background-color: var(--brown-nav-current-dark);
+    color: var(--white-dark);
+}
+
+:is(.dark .navbar-hover:hover) {
+    background-color: var(--brown-hover-dark);
+}
+
+:is(.dark .pr-icon) {
+    fill: var(--brown-nav-dark);
+}
+
+:is(.dark .pr-icon-svg:hover) {
+    fill: rgb(134, 119, 105);
+}
+
+:is(.dark .body-background) {
+    /* tailwind: similar to bg-stone-800, bg-gray-700 */
+    background-color: var(--brown-body-dark);
+}
+
+:is(.dark .button-background) {
+    /* tailwind: was bg-sky-900 */
+    background-color: var(--teal-dark);
+}
+
+:is(.dark .button-background-2) {
+    /* tailwind: was bg-sky-950 */
+    background-color: var(--blue-dark);
+}
+
+/* All text and icons inside buttons */
+:is(.dark .button-border .flex) {
+    color: var(--white-dark);
+}
+
+/* Title inside buttons */
+:is(.dark .button-border h3) {
+    color: var(--white-title-dark);
+}
+
+
+:is(.dark .button-border) {
+    /* tailwind: border-stone-800 */
+    border-color: var(--button-border-dark);
+}
+
+:is(.dark .button-border) {
+    /* tailwind: border-stone-800 */
+    border-color: rgb(51, 56, 63);
+}
+
+:is(.dark .text-footer) {
+    --tw-text-opacity: .5;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+/* --------------------------------------------------------------- */
+
+/* https://stackoverflow.com/a/13924997 */
+/*.pr-content {
+    overflow: hidden;
+    display: -webkit-box;
+    height: 2em;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}*/
+
+.pr-content {
+    height: 2.7em; /* set a fixed height of 2 lines */
+    line-height: 1.3em; /* set line-height to match font-size */
+    overflow: hidden; /* hide any overflow */
+    text-overflow: ellipsis; /* add ellipsis for truncated text */
+    display: -webkit-box; /* use old flexbox syntax for maximum compatibility */
+    -webkit-box-orient: vertical; /* set flexbox orientation to vertical */
+    -webkit-line-clamp: 2; /* limit the number of lines to 2 */
+}
+
+.pr-num {
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 1.75rem;
+}
+
+.pr-author {
+    float: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    max-width: 10em;
+    height: 1.5em;
+    line-height: 1.5em;
+}
+
+/* spans the entire parent element, and is on top (z-index) */
+.pr-link-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/** Bootstrap logos (Mastodon, Discord) have thicker strokes, compensate */
+.social-icon-thin {
+    stroke-width: 0.03em;
+}
+
+/* Allows right-alignment within flex container */
+.flex-grow {
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.flex-right {
+    margin-left: auto;
+}
