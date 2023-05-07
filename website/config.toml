@@ -1,6 +1,8 @@
 # The URL the site will be built for
 base_url = "https://godot-rust.github.io"
 
+title = "godot-rust: Rust bindings for the Godot game engine"
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = false
 
