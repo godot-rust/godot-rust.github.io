@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["Aligned","MaybeUnaligned","Owned"],"trait":["Guard","WritePtr"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["error","print","warn"],"macro":["godot_dbg","godot_error","godot_print","godot_site","godot_warn"],"struct":["Site"]};

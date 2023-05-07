@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["Margin"],"struct":["Aabb","Basis","MarginError","Plane","Quat","Rect2","Transform","Transform2D"]};
