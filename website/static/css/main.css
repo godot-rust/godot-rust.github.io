@@ -24,7 +24,7 @@
   --brown-body: rgb(217, 198, 190);
   --brown-hover: rgb(148, 122, 112);
   --brown-nav-current: rgb(140, 142, 143);
-  --brown-caption: rgb(117, 96, 78);
+  --brown-caption: rgb(107, 79, 51);
   --brown-nav-dark: rgb(61, 58, 55);
   --brown-body-dark: rgb(82, 79, 76);
   --brown-hover-dark: rgb(117, 103, 91);
@@ -1495,11 +1495,11 @@ html {
 }
 
 .markdown-content a {
-  color: var(--blue-hover);
+  color: var(--blue-hover-dark);
 }
 
 .markdown-content a:hover {
-  color: var(--blue-hover-dark);
+  color: var(--blue-hover);
 }
 
 :is(.dark .markdown-content a) {
@@ -1673,8 +1673,9 @@ html {
 }
 
 .text-footer {
-  --tw-text-opacity: .5;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
+  /*--tw-text-opacity: .5;*/
+  /*color: rgb(0 0 0 / var(--tw-text-opacity));*/
+  color: var(--brown-caption);
 }
 
 /* --------------------------------------------------------------- */
