@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["AutowrapMode","ContourPointTag","Direction","Feature","FontAntialiasing","FontLCDSubpixelLayout","FontStyle","GraphemeFlag","Hinting","JustificationFlag","LineBreakFlag","Orientation","OverrunBehavior","SpacingType","StructuredTextParser","SubpixelPositioning","TextOverrunFlag","VisibleCharactersBehavior"]};
