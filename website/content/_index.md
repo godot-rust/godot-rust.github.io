@@ -8,7 +8,7 @@ description = "Rust bindings for Godot"
 template = "home.html"
 +++
 
-The **godot-rust** project provides bindings for the [Godot game engine][godot] to the [Rust programming language][rust]. 
+The **godot-rust** project provides bindings for the [Godot game engine][godot] to the [Rust language][rust]. 
 
 Rust is an alternative to GDScript, with different trade-offs for users.
 While GDScript enables fast prototyping and short feedback cycles, games of larger scale may 
@@ -19,8 +19,8 @@ Many APIs are designed to catch errors at compile time, while others offer runti
 
 We provide bindings for the two major Godot versions:
 
-* **gdnative** - Godot 3 bindings using the GDNative API.
-* **gdext** - Godot 4 bindings using the GDExtension API.
+* **gdnative** - Godot 3 bindings, integrating via GDNative C interface.
+* **gdext** - Godot 4 bindings, integrating via GDExtension C interface.
 
 
 ## Getting started

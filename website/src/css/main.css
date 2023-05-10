@@ -6,34 +6,36 @@
 
 :root {
     /* Buttons and clickable icons */
-    --button-border-w: 2pt;
+    --button-border-w: 0.16em;
 
-    --teal: rgb(73, 129, 140);
-    --blue: rgb(50, 128, 155);
-    --blue-hover: rgb(46, 108, 148);
-    --button-border: rgb(126, 120, 114);
-    --white: #eae5e2;
-    --white-title: #f5f1f0;
+    --teal-hover: rgb(38, 107, 128);
+    --teal: rgb(45, 127, 154);
+    --blue-hover: rgb(42, 101, 140);
+    --blue: rgb(23, 115, 166);
+    --button-border: rgb(25, 71, 100);
+    --button-border-hover: rgb(21, 58, 82);
+    --white: rgb(238, 234, 234);
+    --white-title: rgb(243, 237, 237);
 
-    --teal-dark: rgb(7, 62, 75);
+    --teal-dark: rgb(10, 54, 73);
+    --teal-hover-dark: rgb(12, 77, 100);
     --blue-dark: rgb(13, 63, 94);
-    --blue-hover-dark: rgb(10, 77, 119);
-    --button-border-dark: rgb(148, 144, 138);
+    --blue-hover-dark: rgb(17, 77, 114);
+    --button-border-dark: rgb(134, 124, 114);
+    --button-border-hover-dark: rgb(189, 174, 162);
     --white-dark: #a9aaab;
     --white-title-dark: #b5b8bb;
 
     /* Navigation bar + selected parts */
-    --brown-nav: rgb(173, 155, 149);
-    --brown-body: rgb(217, 198, 190);
+    --brown-nav: rgb(185, 161, 153);
+    --brown-body: rgb(218, 198, 189);
     --brown-hover: rgb(148, 122, 112);
-    --brown-nav-current: rgb(140, 142, 143);
-    --brown-caption: rgb(117, 96, 78);
+    --brown-caption: rgb(106, 78, 50);
 
-    --brown-nav-dark: rgb(61, 58, 55);
-    --brown-body-dark: rgb(82, 79, 76);
+    --brown-nav-dark: rgb(68, 63, 58);
+    --brown-body-dark: rgb(89, 82, 75);
     --brown-hover-dark: rgb(117, 103, 91);
-    --brown-nav-current-dark: rgb(76, 84, 89);
-    --brown-caption-dark: rgb(161, 147, 137);
+    --brown-caption-dark: rgb(213, 195, 183);
 }
 
 @tailwind base;
@@ -43,9 +45,10 @@
 @layer base {
     h1 {
         @apply text-2xl;
-        @apply mb-5;
+        @apply mb-6;
         @apply markdown-h;
-        font-size: 2rem;
+        text-align: center;
+        font-size: 2.2rem;
         font-family: "Alfa Slab One", serif;
         font-weight: normal;
     }
@@ -79,25 +82,27 @@ html {
 
 .markdown-content {
     font-size: 1.2em;
-    text-align: justify;
-    text-align-last: center;
-    width: 72%;
+    /*text-align: left;*/
+    /*text-align-last: left;*/
+    width: 62%;
 }
 
 .markdown-content a {
-    color: var(--blue-hover);
+    color: rgb(3, 89, 138);
 }
 
 .markdown-content a:hover {
-    color: var(--blue-hover-dark);
+    color: rgb(1, 62, 94);
+    /*color: var(--brown-caption);*/
 }
 
 :is(.dark .markdown-content a) {
-    color: rgb(96, 166, 215);
+    color: rgb(125, 210, 255);
 }
 
 :is(.dark .markdown-content a:hover) {
-    color: rgb(67, 145, 199);
+    color: rgb(176, 225, 250);
+    /*color: var(--brown-caption-dark);*/
 }
 
 /*.markdown-content h1 {}*/
@@ -174,17 +179,24 @@ html {
 }
 
 .social-icon {
-    width: 8rem;
-    height: 4rem;
+    width: 9rem;
+    height: 5rem;
     fill: var(--blue);
-    stroke: rgb(91, 76, 63);
-    /*stroke: var(--button-border);*/
-    stroke-width: 0.04em;
+    stroke: var(--button-border);
+    stroke-width: 0.03em;
+    filter: drop-shadow(4px 6px 7px rgb(0 0 0 / 0.12));
+
+    @apply transform transition duration-100 hover:scale-110;
 }
 
 .social-icon:hover {
     fill: var(--blue-hover);
-    stroke: rgb(65, 53, 43);
+    stroke: var(--button-border-hover);
+}
+
+/** Bootstrap logos (Mastodon, Discord, API Docs) have thicker strokes, compensate */
+.social-icon-thin {
+    stroke-width: 0.02em;
 }
 
 .caption {
@@ -199,7 +211,7 @@ html {
 /* Currently selected navbar page */
 .navbar-current {
     /* same color as logo text */
-    background-color: var(--brown-nav-current);
+    background-color: var(--brown-body); /* was: --nav-current */
 }
 
 .navbar-hover:hover {
@@ -227,8 +239,16 @@ html {
     background-color: var(--teal);
 }
 
+.button-background:hover {
+    background-color: var(--teal-hover);
+}
+
 .button-background-2 {
     background-color: var(--blue);
+}
+
+.button-background-2:hover {
+    background-color: var(--blue-hover);
 }
 
 /* All text and icons inside buttons */
@@ -248,8 +268,9 @@ html {
 }
 
 .text-footer {
-    --tw-text-opacity: .5;
-    color: rgb(0 0 0 / var(--tw-text-opacity));
+    /*--tw-text-opacity: .5;*/
+    /*color: rgb(0 0 0 / var(--tw-text-opacity));*/
+    color: var(--brown-caption);
 }
 
 /* --------------------------------------------------------------- */
@@ -261,12 +282,13 @@ html {
 
 :is(.dark .social-icon) {
     fill: var(--blue-dark);
-    stroke: rgb(134, 122, 112);
+    /*stroke: rgb(134, 122, 112);*/
+    stroke: var(--button-border-dark);
 }
 
 :is(.dark .social-icon:hover) {
     fill: var(--blue-hover-dark);
-    stroke: rgb(161, 147, 137);
+    stroke: var(--button-border-hover-dark);
 }
 
 :is(.dark .caption) {
@@ -279,7 +301,7 @@ html {
 }
 
 :is(.dark .navbar-current) {
-    background-color: var(--brown-nav-current-dark);
+    background-color: var(--brown-body-dark);  /* was: --nav-current */
     color: var(--white-dark);
 }
 
@@ -305,9 +327,19 @@ html {
     background-color: var(--teal-dark);
 }
 
+:is(.dark .button-background:hover) {
+    background-color: var(--teal-hover-dark);
+    border-color: var(--button-border-hover-dark);
+}
+
 :is(.dark .button-background-2) {
     /* tailwind: was bg-sky-950 */
     background-color: var(--blue-dark);
+}
+
+:is(.dark .button-background-2:hover) {
+    background-color: var(--blue-hover-dark);
+    border-color: var(--button-border-hover-dark);
 }
 
 /* All text and icons inside buttons */
@@ -324,11 +356,6 @@ html {
 :is(.dark .button-border) {
     /* tailwind: border-stone-800 */
     border-color: var(--button-border-dark);
-}
-
-:is(.dark .button-border) {
-    /* tailwind: border-stone-800 */
-    border-color: rgb(51, 56, 63);
 }
 
 :is(.dark .text-footer) {
@@ -383,11 +410,6 @@ html {
     top: 0;
     left: 0;
     z-index: 1;
-}
-
-/** Bootstrap logos (Mastodon, Discord) have thicker strokes, compensate */
-.social-icon-thin {
-    stroke-width: 0.03em;
 }
 
 /* Allows right-alignment within flex container */
