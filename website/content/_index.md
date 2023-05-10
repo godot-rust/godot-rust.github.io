@@ -5,6 +5,7 @@
 
 title = "godot-rust"
 description = "Rust bindings for Godot"
+template = "home.html"
 +++
 
 The **godot-rust** project provides bindings for the [Godot game engine][godot] to the [Rust programming language][rust]. 
