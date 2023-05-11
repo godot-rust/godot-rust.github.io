@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"attr":["godot_api"],"derive":["GodotClass"]};
