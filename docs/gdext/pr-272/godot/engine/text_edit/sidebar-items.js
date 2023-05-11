@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["CaretType","EditAction","GutterType","LineWrappingMode","MenuItems","SearchFlags","SelectionMode"]};
