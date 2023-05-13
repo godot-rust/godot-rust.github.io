@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":["bind","builtin","engine","init","log","native","obj","prelude","sys"]};
+window.SIDEBAR_ITEMS = {"mod":["bind","builtin","engine","init","log","native_structure","obj","prelude","sys"]};

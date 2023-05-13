@@ -180,7 +180,7 @@
         margin: <a class="primitive" href="https://doc.rust-lang.org/1.69.0/std/primitive.f64.html">f64</a>,
         max_collisions: <a class="primitive" href="https://doc.rust-lang.org/1.69.0/std/primitive.i64.html">i64</a>,
         collide_separation_ray: <a class="primitive" href="https://doc.rust-lang.org/1.69.0/std/primitive.bool.html">bool</a>,
-        result: <a class="primitive" href="https://doc.rust-lang.org/1.69.0/std/primitive.pointer.html">*mut </a><a class="struct" href="../native/struct.PhysicsServer3DExtensionMotionResult.html" title="struct godot::native::PhysicsServer3DExtensionMotionResult">PhysicsServer3DExtensionMotionResult</a>
+        result: <a class="primitive" href="https://doc.rust-lang.org/1.69.0/std/primitive.pointer.html">*mut </a><a class="struct" href="../native_structure/struct.PhysicsServer3DExtensionMotionResult.html" title="struct godot::native_structure::PhysicsServer3DExtensionMotionResult">PhysicsServer3DExtensionMotionResult</a>
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.69.0/std/primitive.bool.html">bool</a> { ... }
 <span class="item-spacer"></span>    fn <a href="#method.body_get_direct_state" class="fn">body_get_direct_state</a>(
         &amp;mut self,
@@ -444,7 +444,7 @@ to represent integers out of known constants (mistakes or future additions).</p>
     body: <a class="enum" href="../builtin/enum.Rid.html" title="enum godot::builtin::Rid">Rid</a>,
     callable: <a class="struct" href="../builtin/struct.Callable.html" title="struct godot::builtin::Callable">Callable</a>,
     userdata: <a class="struct" href="../builtin/struct.Variant.html" title="struct godot::builtin::Variant">Variant</a>
-)</h4></section><section id="method.body_set_ray_pickable" class="method"><h4 class="code-header">fn <a href="#method.body_set_ray_pickable" class="fn">body_set_ray_pickable</a>(&amp;mut self, body: <a class="enum" href="../builtin/enum.Rid.html" title="enum godot::builtin::Rid">Rid</a>, enable: <a class="primitive" href="https://doc.rust-lang.org/1.69.0/std/primitive.bool.html">bool</a>)</h4></section><section id="method.body_test_motion" class="method"><h4 class="code-header">unsafe fn <a href="#method.body_test_motion" class="fn">body_test_motion</a>(
+)</h4></section><section id="method.body_set_ray_pickable" class="method"><h4 class="code-header">fn <a href="#method.body_set_ray_pickable" class="fn">body_set_ray_pickable</a>(&amp;mut self, body: <a class="enum" href="../builtin/enum.Rid.html" title="enum godot::builtin::Rid">Rid</a>, enable: <a class="primitive" href="https://doc.rust-lang.org/1.69.0/std/primitive.bool.html">bool</a>)</h4></section><details class="toggle method-toggle" open><summary><section id="method.body_test_motion" class="method"><h4 class="code-header">unsafe fn <a href="#method.body_test_motion" class="fn">body_test_motion</a>(
     &amp;self,
     body: <a class="enum" href="../builtin/enum.Rid.html" title="enum godot::builtin::Rid">Rid</a>,
     from: <a class="struct" href="../builtin/struct.Transform3D.html" title="struct godot::builtin::Transform3D">Transform3D</a>,
@@ -452,8 +452,10 @@ to represent integers out of known constants (mistakes or future additions).</p>
     margin: <a class="primitive" href="https://doc.rust-lang.org/1.69.0/std/primitive.f64.html">f64</a>,
     max_collisions: <a class="primitive" href="https://doc.rust-lang.org/1.69.0/std/primitive.i64.html">i64</a>,
     collide_separation_ray: <a class="primitive" href="https://doc.rust-lang.org/1.69.0/std/primitive.bool.html">bool</a>,
-    result: <a class="primitive" href="https://doc.rust-lang.org/1.69.0/std/primitive.pointer.html">*mut </a><a class="struct" href="../native/struct.PhysicsServer3DExtensionMotionResult.html" title="struct godot::native::PhysicsServer3DExtensionMotionResult">PhysicsServer3DExtensionMotionResult</a>
-) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.69.0/std/primitive.bool.html">bool</a></h4></section><section id="method.body_get_direct_state" class="method"><h4 class="code-header">fn <a href="#method.body_get_direct_state" class="fn">body_get_direct_state</a>(
+    result: <a class="primitive" href="https://doc.rust-lang.org/1.69.0/std/primitive.pointer.html">*mut </a><a class="struct" href="../native_structure/struct.PhysicsServer3DExtensionMotionResult.html" title="struct godot::native_structure::PhysicsServer3DExtensionMotionResult">PhysicsServer3DExtensionMotionResult</a>
+) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.69.0/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><h5 id="safety"><a href="#safety">Safety</a></h5>
+<p>Godot currently does not document safety requirements on this method. Make sure you understand the underlying semantics.</p>
+</div></details><section id="method.body_get_direct_state" class="method"><h4 class="code-header">fn <a href="#method.body_get_direct_state" class="fn">body_get_direct_state</a>(
     &amp;mut self,
     body: <a class="enum" href="../builtin/enum.Rid.html" title="enum godot::builtin::Rid">Rid</a>
 ) -&gt; <a class="enum" href="https://doc.rust-lang.org/1.69.0/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.PhysicsDirectBodyState3D.html" title="struct godot::engine::PhysicsDirectBodyState3D">PhysicsDirectBodyState3D</a>&gt;&gt;</h4></section><section id="method.soft_body_create" class="method"><h4 class="code-header">fn <a href="#method.soft_body_create" class="fn">soft_body_create</a>(&amp;mut self) -&gt; <a class="enum" href="../builtin/enum.Rid.html" title="enum godot::builtin::Rid">Rid</a></h4></section><section id="method.soft_body_update_rendering_server" class="method"><h4 class="code-header">fn <a href="#method.soft_body_update_rendering_server" class="fn">soft_body_update_rendering_server</a>(
