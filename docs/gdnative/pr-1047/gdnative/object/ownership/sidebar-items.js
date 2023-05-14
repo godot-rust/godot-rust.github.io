@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["Shared","ThreadLocal","Unique"],"trait":["LocalThreadOwnership","NonUniqueOwnership","Ownership"]};
