@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["CellNeighbor","TerrainMode","TileLayout","TileOffsetAxis","TileShape"]};
