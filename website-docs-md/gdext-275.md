@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-275/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/275"
 pr_author = "lilizoey"
 sort_key = 2023-05-14
-date_time = 2023-05-14T20:52:23Z
-commit_sha = "61b4bfee9e1f033e146bc1a5ade09e2adcaf34c0"
+date_time = 2023-05-14T21:43:02Z
+commit_sha = "eafb9a12bc6a4d96658633f38895d2e2ee4ab54a"
 +++
 
-Fix UB in virtual calls with non-refcounted object arguments
+Fix more UB and leaks in pointer calls
