@@ -183,10 +183,6 @@
 <a href="#183" id="183">183</a>
 <a href="#184" id="184">184</a>
 <a href="#185" id="185">185</a>
-<a href="#186" id="186">186</a>
-<a href="#187" id="187">187</a>
-<a href="#188" id="188">188</a>
-<a href="#189" id="189">189</a>
 </pre><pre class="rust"><code><span class="comment">/*
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -358,16 +354,12 @@
     <span class="kw">pub use </span><span class="kw">super</span>::builtin::<span class="kw-2">*</span>;
     <span class="kw">pub use </span><span class="kw">super</span>::builtin::{array, dict, varray}; <span class="comment">// Re-export macros.
     </span><span class="kw">pub use </span><span class="kw">super</span>::engine::class_methods::<span class="kw-2">*</span>;
-    <span class="kw">pub use </span><span class="kw">super</span>::engine::class_virtuals::{
-        AudioStreamPlayerVirtual, Camera2DVirtual, Camera3DVirtual, Node2DVirtual, Node3DVirtual,
-        NodeVirtual, ObjectVirtual, PackedSceneVirtual, RefCountedVirtual, ResourceVirtual,
-        SceneTreeVirtual,
+    <span class="kw">pub use </span><span class="kw">super</span>::engine::{
+        load, try_load, utilities, AudioStreamPlayer, AudioStreamPlayerVirtual, Camera2D,
+        Camera2DVirtual, Camera3D, Camera3DVirtual, Input, Node, Node2D, Node2DVirtual, Node3D,
+        Node3DVirtual, NodeVirtual, Object, ObjectVirtual, PackedScene, PackedSceneVirtual,
+        RefCounted, RefCountedVirtual, Resource, ResourceVirtual, SceneTree, SceneTreeVirtual,
     };
-    <span class="kw">pub use </span><span class="kw">super</span>::engine::classes::{
-        AudioStreamPlayer, Camera2D, Camera3D, Input, Node, Node2D, Node3D, Object, PackedScene,
-        RefCounted, Resource, SceneTree,
-    };
-    <span class="kw">pub use </span><span class="kw">super</span>::engine::{load, try_load, utilities};
     <span class="kw">pub use </span><span class="kw">super</span>::init::{gdextension, ExtensionLayer, ExtensionLibrary, InitHandle, InitLevel};
     <span class="kw">pub use </span><span class="kw">super</span>::log::<span class="kw-2">*</span>;
     <span class="kw">pub use </span><span class="kw">super</span>::obj::{Base, Gd, GdMut, GdRef, GodotClass, Inherits, InstanceId, Share};
