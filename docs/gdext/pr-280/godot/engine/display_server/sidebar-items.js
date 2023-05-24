@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["CursorShape","Feature","HandleType","MouseMode","ScreenOrientation","TTSUtteranceEvent","VSyncMode","VirtualKeyboardType","WindowEvent","WindowFlags","WindowMode"]};
