@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["FindMode","InterpolationType","LoopMode","LoopedFlag","TrackType","UpdateMode"]};
