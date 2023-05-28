@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"attr":["callbacks"],"macro":["godot_gdnative_init","godot_gdnative_terminate","godot_init","godot_nativescript_init"],"mod":["diagnostics"],"struct":["InitHandle","InitializeInfo","TerminateHandle","TerminateInfo"],"trait":["GDNativeCallbacks"]};
