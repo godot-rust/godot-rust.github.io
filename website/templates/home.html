@@ -23,7 +23,7 @@ Icons: https://icons.getbootstrap.com/icons/journal-bookmark-fill
     {{ section.content | safe }}
   </div>
 
-  <div class="flex flex-wrap space-x-4 mt-6">
+  <div class="grid md:grid-cols-4 grid-cols-2 gap-y-6 mt-6">
     <div class="flex flex-col items-center">
       <a href="book" target="_blank" title="godot-rust book">
         <svg xmlns="http://www.w3.org/2000/svg" class="text-black dark:text-white social-icon social-icon-thin" viewBox="-2 -2 20 20">
@@ -86,7 +86,7 @@ Icons: https://icons.getbootstrap.com/icons/journal-bookmark-fill
     <p>Get to know other users and stay up-to-date with development:</p>
   </div>
 
-  <div class="flex flex-wrap space-x-4 mt-6">
+  <div class="grid md:grid-cols-3 grid-cols-2 gap-y-6 mt-6">
 
     {% if config.extra.social.discord %}
     <div class="flex flex-col items-center">
