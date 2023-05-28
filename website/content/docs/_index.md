@@ -15,7 +15,7 @@ paginate_by = 1000
 
 # Latest API Docs
 
-This page lists all currently published API documentation for GitHub `master` branch and open  
+This page lists all currently published API documentation for GitHub `master` branch and open
 pull requests. Each element is accompanied by the description, last-updated time and author.
 
 To check out released crates, check out [docs.rs/gdnative][gdnative].

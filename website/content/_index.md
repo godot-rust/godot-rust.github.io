@@ -8,10 +8,10 @@ description = "Rust bindings for Godot"
 template = "home.html"
 +++
 
-The **godot-rust** project provides bindings for the [Godot game engine][godot] to the [Rust language][rust]. 
+The **godot-rust** project provides bindings for the [Godot game engine][godot] to the [Rust language][rust].
 
 Rust is an alternative to GDScript, with different trade-offs for users.
-While GDScript enables fast prototyping and short feedback cycles, games of larger scale may 
+While GDScript enables fast prototyping and short feedback cycles, games of larger scale may
 benefit from a stronger type system, a rich library ecosystem and native performance.
 
 The Rust bindings focus on safety, despite interacting with the engine over FFI.

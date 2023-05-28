@@ -852,10 +852,6 @@ h3 {
   height: 66.666667%;
 }
 
-.h-28 {
-  height: 7rem;
-}
-
 .h-36 {
   height: 9rem;
 }
@@ -1021,11 +1017,6 @@ h3 {
 .gap-x-2 {
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
-}
-
-.gap-x-6 {
-  -moz-column-gap: 1.5rem;
-       column-gap: 1.5rem;
 }
 
 .gap-y-6 {
@@ -1501,7 +1492,25 @@ html {
   font-size: 1.2em;
   /*text-align: left;*/
   /*text-align-last: left;*/
-  width: 62%;
+  /* Different ratios for widths >0px, >640px, >768px.
+    With tailwind this would be (see https://tailwindcss.com/docs/responsive-design):
+    @apply w-11/12;
+    @apply sm:w-3/4;
+    @apply md:w-2/3;
+    */
+  width: 92%;
+}
+
+@media (min-width: 640px) {
+  .markdown-content {
+    width: 85%;
+  }
+}
+
+@media (min-width: 768px) {
+  .markdown-content {
+    width: 62%;
+  }
 }
 
 .markdown-content a {
@@ -1592,6 +1601,11 @@ html {
   display: flex;
   align-items: center;
   color: rgb(131, 111, 110);
+}
+
+.logo-center {
+  max-height: 7rem;
+  width: auto;
 }
 
 .logo-title {
@@ -1690,22 +1704,55 @@ html {
   background-color: var(--blue-hover);
 }
 
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+  width: 90%;
+}
+
+/* This is very hackish, maybe do it properly at some point...
+   To reverse the order (so that gdext comes before gdnative in 2Nx1 layout on narrow width), see https://stackoverflow.com/q/45383042 */
+
+@media (min-width: 920px) {
+  .doc-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /*@apply w-2/3;*/
+  }
+}
+
+@media (min-width: 1000px) {
+  .doc-grid {
+    /*@apply w-5/6;*/
+    width: 85%;
+  }
+}
+
+@media (min-width: 1160px) {
+  .doc-grid {
+    /*@apply w-2/3;*/
+    width: 67%;
+  }
+}
+
 /* All text and icons inside buttons */
 
-.button-border .flex {
+.doc-button .flex {
   color: var(--white);
 }
 
 /* Title inside buttons */
 
-.button-border h3 {
+.doc-button h3 {
   color: var(--white-title);
 }
 
-.button-border {
+.doc-button {
   /* tailwind: border-stone-300 */
   border-color: var(--button-border);
   border-width: var(--button-border-w);
+  /*min-width: 335px;*/
 }
 
 .text-footer {
@@ -1787,17 +1834,17 @@ html {
 
 /* All text and icons inside buttons */
 
-:is(.dark .button-border .flex) {
+:is(.dark .doc-button .flex) {
   color: var(--white-dark);
 }
 
 /* Title inside buttons */
 
-:is(.dark .button-border h3) {
+:is(.dark .doc-button h3) {
   color: var(--white-title-dark);
 }
 
-:is(.dark .button-border) {
+:is(.dark .doc-button) {
   /* tailwind: border-stone-800 */
   border-color: var(--button-border-dark);
 }

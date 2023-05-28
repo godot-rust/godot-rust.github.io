@@ -13,7 +13,8 @@
     {{ section.content | safe }}
   </div>
 
-  <div class="flex gap-x-6 w-full sm:w-2/3">
+  <!-- grid md:grid-cols-4 grid-cols-2 -->
+  <div class="doc-grid">
 <!--    <div class="flex gap-y-6 w-full px-4 sm:w-2/3">-->
 <!--    <div class="flex flex-col gap-y-6 w-full px-4 sm:w-2/3">-->
 
@@ -64,7 +65,7 @@
         </a>
       </div>
 
-      <div class="flex-grow border border-2 button-border rounded-xl p-5 shadow-2xl transform transition duration-300 hover:scale-105
+      <div class="flex-grow border border-2 doc-button rounded-xl p-5 shadow-2xl transform transition duration-300 hover:scale-105
           {% if page.title == 'master' %}
             button-background
           {% else %}
