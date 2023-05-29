@@ -14,8 +14,8 @@ echo "$PRE start FETCH_WEBSITE_DOCS operation"
 echo "$PRE before:"
 tree -L 3
 
-git fetch
-git switch gh-pages-prepared
+#git fetch
+#git switch gh-pages-prepared
 
 echo "$PRE after switch:"
 tree -L 3
@@ -43,9 +43,8 @@ git add docs 1>/dev/null
 git config user.name "Godot-Rust Automation"
 git config user.email "GodotRust@users.noreply.github.com"
 
-#git commit -m "Move docs into subtree" --quiet
-git commit -m "Move docs into subtree"
-git push --force origin gh-pages-prepared:gh-pages
-git push origin --delete gh-pages-prepared
+#git commit -m "Move docs into subtree"
+#git push --force origin gh-pages-prepared:gh-pages
+#git push origin --delete gh-pages-prepared
 
 echo "$PRE FETCH_WEBSITE_DOCS operation completed."

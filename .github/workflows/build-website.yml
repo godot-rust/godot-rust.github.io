@@ -12,6 +12,16 @@ on:
     types: ['Deploy docs']
 
 
+env:
+  ZOLA_VERSION: 0.17.2
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write # for mutex branch
+  pages: write
+  id-token: write
+
+
 jobs:
   check-website:
     runs-on: ubuntu-latest
@@ -59,15 +69,25 @@ jobs:
           mv website-docs-md/* website/content/docs/
           rm -r website-docs-md
 
-      - name: "Build and deploy Zola"
-        uses: shalzz/zola-deploy-action@master
-        env:
-          PAGES_BRANCH: gh-pages-prepared
-          BUILD_DIR: website
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      - name: "Build and deploy Zola"
+#        uses: shalzz/zola-deploy-action@master
+#        env:
+#          PAGES_BRANCH: gh-pages-prepared
+#          BUILD_DIR: website
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Install Zola ${{ env.ZOLA_VERSION }}"
+        run: |
+          wget -q -O - "https://github.com/getzola/zola/releases/download/v$ZOLA_VERSION/zola-v${ZOLA_VERSION}-x86_64-unknown-linux-gnu.tar.gz" \
+          | tar xzf - -C /usr/local/bin
+
+      - name: "Build Zola website"
+        working-directory: website
+        run: zola build
 
       - name: "Integrate docs (triggered by push), push to gh-pages"
         if: github.event_name == 'push'
+        working-directory: website/public
         run: |
           bash documentation/fetch-website-docs.sh "gdext" "master" || {
             echo "::warning::No docs available for gdext/master"
@@ -76,13 +96,22 @@ jobs:
             echo "::warning::No docs available for gdnative/master"
           }
 
-      - name: "Integrate docs (triggered by repo-dispatch), push to gh-pages"
+      - name: "Integrate docs (triggered by repo-dispatch)"
         if: github.event_name == 'repository_dispatch'
+        working-directory: website/public
         env:
           REPO: '${{ github.event.client_payload.repo }}'
           NUM: '${{ github.event.client_payload.num }}'
         run: |
           bash documentation/fetch-website-docs.sh "$REPO" "$NUM"
+
+      - name: "Upload Pages artifact"
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: website/public
+
+      - name: "Deploy to GitHub Pages"
+        uses: actions/deploy-pages@v2
 
       - name: "Comment on GitHub PR"
         if: github.event_name == 'repository_dispatch' && github.event.client_payload.put_status == 'Create' && github.event.client_payload.num != 'master'
