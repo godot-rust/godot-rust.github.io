@@ -87,18 +87,13 @@ jobs:
 
       - name: "Integrate docs (triggered by push), push to gh-pages"
         if: github.event_name == 'push'
-        working-directory: website/public
         run: |
-          bash documentation/fetch-website-docs.sh "gdext" "master" || {
-            echo "::warning::No docs available for gdext/master"
-          }
-          bash documentation/fetch-website-docs.sh "gdnative" "master" || {
-            echo "::warning::No docs available for gdnative/master"
+          bash documentation/fetch-website-docs.sh || {
+            echo "::warning::Could not fetch documentation"
           }
 
       - name: "Integrate docs (triggered by repo-dispatch)"
         if: github.event_name == 'repository_dispatch'
-        working-directory: website/public
         env:
           REPO: '${{ github.event.client_payload.repo }}'
           NUM: '${{ github.event.client_payload.num }}'

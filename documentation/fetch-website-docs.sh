@@ -3,18 +3,15 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-repo="$1"
-num="$2"
-
 set -e
 
-PRE="Docs | $repo/$num |"
+PRE="Docs | "
 echo "$PRE start FETCH_WEBSITE_DOCS operation"
 
 echo "$PRE before:"
 tree -L 3
 
-#git fetch
+git fetch
 #git switch gh-pages-prepared
 
 echo "$PRE after switch:"
@@ -34,6 +31,8 @@ git restore --source origin/doc-output docs/gdext || {
 git restore --source origin/doc-output docs/gdnative || {
     echo "::warning::$PRE No upstream docs/gdnative to restore"
 }
+
+mv docs/* website/public/docs/
 
 echo "$PRE after restore:"
 tree -L 3
