@@ -322,7 +322,7 @@
 //!   at any time.
 
 </span><span class="attr">#[doc(inline)]
-</span><span class="kw">pub use </span>godot_core::{builtin, engine, export, log, obj, sys};
+</span><span class="kw">pub use </span>godot_core::{builtin, engine, export, log, native_structure, obj, sys};
 
 <span class="doccomment">/// Facilities for initializing and terminating the GDExtension library.
 </span><span class="kw">pub mod </span>init {
@@ -335,7 +335,7 @@
 <span class="doccomment">/// Export user-defined classes and methods to be called by the engine.
 </span><span class="kw">pub mod </span>bind {
     <span class="kw">pub use </span><span class="kw">super</span>::export::{Export, TypeStringHint};
-    <span class="kw">pub use </span>godot_macros::{godot_api, GodotClass};
+    <span class="kw">pub use </span>godot_macros::{godot_api, FromVariant, GodotClass, ToVariant};
 }
 
 <span class="doccomment">/// Testing facilities (unstable).
@@ -349,7 +349,7 @@
 
 <span class="doccomment">/// Often-imported symbols.
 </span><span class="kw">pub mod </span>prelude {
-    <span class="kw">pub use </span><span class="kw">super</span>::bind::{godot_api, Export, GodotClass, TypeStringHint};
+    <span class="kw">pub use </span><span class="kw">super</span>::bind::{godot_api, Export, FromVariant, GodotClass, ToVariant, TypeStringHint};
     <span class="kw">pub use </span><span class="kw">super</span>::builtin::<span class="kw-2">*</span>;
     <span class="kw">pub use </span><span class="kw">super</span>::builtin::{array, dict, varray}; <span class="comment">// Re-export macros.
     </span><span class="kw">pub use </span><span class="kw">super</span>::engine::{
