@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["AreaBodyStatus","AreaParameter","AreaSpaceOverrideMode","BodyAxis","BodyDampMode","BodyMode","BodyParameter","BodyState","ConeTwistJointParam","G6DOFJointAxisFlag","G6DOFJointAxisParam","HingeJointFlag","HingeJointParam","JointType","PinJointParam","ProcessInfo","ShapeType","SliderJointParam","SpaceParameter"]};
