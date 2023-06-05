@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Derive macro for `GodotClass` on structs. You should normally use this macro, rather than implement `GodotClass` manually for your type."><title>GodotClass in godot::prelude - Rust</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-a2c9cd1067f8b328.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-c4dbdcde0fbd8430.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-db279b6232be9c13.css"><link rel="stylesheet" disabled href="../../static.files/dark-cf923f49f397b216.css"><link rel="stylesheet" disabled href="../../static.files/ayu-be46fdc453a55015.css"><script src="../../static.files/storage-3891ce972e3a2bf8.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-98a684e84ae5b08b.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc derive"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="logo-container" href="../../godot/index.html"><img class="rust-logo" src="../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><h2></h2></nav><nav class="sidebar"><a class="logo-container" href="../../godot/index.html"><img class="rust-logo" src="../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><div class="sidebar-elems"><h2><a href="index.html">In godot::prelude</a></h2></div></nav><main><div class="width-limiter"><nav class="sub"><form class="search-form"><span></span><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-7b819b6101059cd0.svg"></a></div></form></nav><section id="main-content" class="content"><div class="main-heading"><h1>Derive Macro <a href="../index.html">godot</a>::<wbr><a href="index.html">prelude</a>::<wbr><a class="derive" href="#">GodotClass</a><button id="copy-path" title="Copy item path to clipboard"><img src="../../static.files/clipboard-7571035ce49a181d.svg" width="19" height="18" alt="Copy item path"></button></h1><span class="out-of-band"><button id="toggle-all-docs" title="collapse all docs">[<span>&#x2212;</span>]</button></span></div><pre class="rust item-decl"><code>#[derive(GodotClass)]
+{
+    // Attributes available to this derive:
+    #[class]
+    #[base]
+    #[export]
+    #[init]
+    #[signal]
+}
+</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Derive macro for <a href="godot_core::obj::GodotClass"><code>GodotClass</code></a> on structs. You should normally use
+this macro, rather than implement <code>GodotClass</code> manually for your type.</p>
+<h2 id="construction"><a href="#construction">Construction</a></h2>
+<p>To generate a constructor that will let you call <code>MyStruct.new()</code> from GDScript, annotate your
+struct with <code>#[class(init)]</code>:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
+#[class(init)]
+</span><span class="kw">struct </span>MyStruct {
+    <span class="comment">// ...
+</span>}</code></pre></div>
+<p>The generated <code>init</code> function will initialize each struct field (except the field annotated
+with <code>#[base]</code>, if any) using <code>Default::default()</code>. To assign some other value, annotate the
+field with <code>#[init(default = ...)]</code>:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
+#[class(init)]
+</span><span class="kw">struct </span>MyStruct {
+    <span class="attr">#[init(default = <span class="number">42</span>)]
+    </span>my_field: i64
+}</code></pre></div>
+<p>The given value can be any Rust expression that can be evaluated in the scope where you write
+the attribute. However, due to limitations in the parser, some complex expressions must be
+surrounded by parentheses. This is the case if the expression includes a <code>,</code> that is <em>not</em>
+inside any pair of <code>(...)</code>, <code>[...]</code> or <code>{...}</code> (even if it is, for example, inside <code>&lt;...&gt;</code> or
+<code>|...|</code>). A contrived example:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code>    <span class="attr">#[init(default = (HashMap::&lt;i64, i64&gt;::new()))]
+    </span><span class="comment">//                             ^ parentheses needed due to this comma</span></code></pre></div>
+<h2 id="inheritance"><a href="#inheritance">Inheritance</a></h2>
+<p>Unlike C++, Rust doesn’t really have inheritance, but the GDExtension API lets us “inherit”
+from a built-in engine class.</p>
+<p>By default, classes created with this library inherit from <code>RefCounted</code>.</p>
+<p>To specify a different class to inherit from, add <code>#[class(base = Base)]</code> as an annotation on
+your <code>struct</code>:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
+
+<span class="attr">#[derive(GodotClass)]
+#[class(base = Node2D)]
+</span><span class="kw">struct </span>MyStruct {
+    <span class="comment">// ...
+</span>}</code></pre></div>
+<p>If you need a reference to the base class, you can add a field of type <code>Gd&lt;Base&gt;</code> and annotate
+it with <code>#[base]</code>:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
+
+<span class="attr">#[derive(GodotClass)]
+#[class(base = Node2D)]
+</span><span class="kw">struct </span>MyStruct {
+    <span class="attr">#[base]
+    </span>base: Gd&lt;Node2D&gt;,
+}</code></pre></div>
+<h2 id="exported-properties"><a href="#exported-properties">Exported properties</a></h2>
+<p>In GDScript, there is a distinction between
+<a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html#properties-setters-and-getters">properties</a>
+(fields with a <code>get</code> or <code>set</code> declaration) and
+<a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_exports.html">exports</a>
+(fields annotated with <code>@export</code>). In the GDExtension API, these two concepts are merged into
+one.</p>
+<p>You can export fields of your struct using the <code>#[export]</code> annotation:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
+
+<span class="attr">#[derive(GodotClass)]
+</span><span class="kw">struct </span>MyStruct {
+    <span class="attr">#[export]
+    </span>my_field: i64,
+}</code></pre></div>
+<p>This makes the field accessible in GDScript using <code>my_struct.my_field</code> syntax. Additionally, it
+generates a trivial getter and setter named <code>get_my_field</code> and <code>set_my_field</code>, respectively.
+These are <code>pub</code> in Rust, since they’re exposed from GDScript anyway.</p>
+<p>If you want to implement your own getter and/or setter, write those as a function on your Rust
+type, expose it using <code>#[func]</code>, and annotate the field with
+<code>#[export(get = ..., set = ...)]</code>:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
+
+<span class="attr">#[derive(GodotClass)]
+</span><span class="kw">struct </span>MyStruct {
+    <span class="attr">#[export(get = get_my_field, set = set_my_field)]
+    </span>my_field: i64,
+}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>MyStruct {
+    <span class="attr">#[func]
+    </span><span class="kw">pub fn </span>get_my_field(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i64 {
+        <span class="self">self</span>.my_field
+    }
+
+    <span class="attr">#[func]
+    </span><span class="kw">pub fn </span>set_my_field(<span class="kw-2">&amp;mut </span><span class="self">self</span>, value: i64) {
+        <span class="self">self</span>.my_field = value;
+    }
+}</code></pre></div>
+<p>If you specify only <code>get</code>, no setter is generated, making the field read-only. If you specify
+only <code>set</code>, no getter is generated, making the field write-only (rarely useful). To add a
+generated getter or setter in these cases anyway, use <code>get</code> or <code>set</code> without a value:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
+
+<span class="attr">#[derive(GodotClass)]
+</span><span class="kw">struct </span>MyStruct {
+    <span class="comment">// Default getter, custom setter.
+    </span><span class="attr">#[export(get, set = set_my_field)]
+    </span>my_field: i64,
+}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>MyStruct {
+    <span class="attr">#[func]
+    </span><span class="kw">pub fn </span>set_my_field(<span class="kw-2">&amp;mut </span><span class="self">self</span>, value: i64) {
+        <span class="self">self</span>.my_field = value;
+    }
+}</code></pre></div>
+<h2 id="signals"><a href="#signals">Signals</a></h2>
+<p>The <code>#[signal]</code> attribute is accepted, but not yet implemented. See <a href="https://github.com/godot-rust/gdext/issues/8">issue
+#8</a>.</p>
+</div></details></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="godot" data-themes="" data-resource-suffix="" data-rustdoc-version="1.69.0 (84c898d65 2023-04-16)" data-search-js="search-8a59a8356673ec1f.js" data-settings-js="settings-f0c5c39777a9a2f6.js" data-settings-css="settings-0bcba95ff279c1db.css" ></div></body></html>
