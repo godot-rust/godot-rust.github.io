@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-288/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/288"
 pr_author = "Bromeon"
 sort_key = 2023-06-05
-date_time = 2023-06-05T18:45:10Z
-commit_sha = "c803bfdfc8ca42907b013de66e8e08a8d46e4689"
+date_time = 2023-06-05T19:56:07Z
+commit_sha = "27a3a7f3ea85cd0475ced5d8c6b8e3ab9fc4a407"
 +++
 
 Run CI against stable Godot runtime
