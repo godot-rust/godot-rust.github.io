@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"macro":["gdext_register_method","gdext_virtual_method_callback"]};
