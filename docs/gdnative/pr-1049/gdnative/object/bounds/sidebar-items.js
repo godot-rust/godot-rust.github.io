@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["Forget","RefImplBound","UnRef"],"trait":["LifetimeConstraint","MemorySpec","PtrWrapper","SafeAsRaw","SafeDeref"]};
