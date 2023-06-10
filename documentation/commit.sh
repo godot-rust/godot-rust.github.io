@@ -66,38 +66,44 @@ echo "$PRE commit..."
 if [[ "$op" == "delete" ]]; then
     # allow-empty: if branch is already deleted, don't abort
     what="$repo PR #$num"
-    git commit -m "Remove $what
+    body="
 
         Pull request: https://www.github.com/godot-rust/$repo/pull/$num
         Triggered at: $date
-        " || {
-             git commit --allow-empty -m "Remove $what (unchanged)
+        "
 
-                Pull request: https://www.github.com/godot-rust/$repo/pull/$num
-                Triggered at: $date
-                "
+    git commit -m "Remove ${what}${body}" || {
+        git commit --allow-empty -m "Remove $what (unchanged)${body}"
 
 #            echo "::warning::Nothing to commit, branch is already deleted; abort."
 #            echo "SKIP_WEBSITE_DEPLOY=true" >> "$GITHUB_ENV"
 #            exit 0
-        }
+      }
 else
     shortSha=$(git rev-parse --short "$longSha")
     if [[ "$num" == "master" ]]; then
         what="$repo master"
-        git commit -m "$PUT_STATUS $what (\`$shortSha\`)
+        body="
 
-        Commit:       https://www.github.com/godot-rust/$repo/commit/$longSha
-        Triggered at: $date
-        "
+            Commit:       https://www.github.com/godot-rust/$repo/commit/$longSha
+            Triggered at: $date
+            "
+
+        git commit -m "$PUT_STATUS $what (\`$shortSha\`)${body}" || {
+            git commit --allow-empty -m "$PUT_STATUS $what (\`$shortSha\`, unchanged){$body}"
+        }
     else
         what="$repo PR #$num"
-        git commit -m "$PUT_STATUS $what (\`$shortSha\`)
+        body="
 
-        Pull request: https://www.github.com/godot-rust/$repo/pull/$num
-        Commit:       https://www.github.com/godot-rust/$repo/pull/$num/commits/$longSha
-        Triggered at: $date
-        "
+            Pull request: https://www.github.com/godot-rust/$repo/pull/$num
+            Commit:       https://www.github.com/godot-rust/$repo/pull/$num/commits/$longSha
+            Triggered at: $date
+            "
+
+        git commit -m "$PUT_STATUS $what (\`$shortSha\`)${body}" || {
+            git commit --allow-empty -m "$PUT_STATUS $what (\`$shortSha\`, unchanged){$body}"
+        }
     fi
 fi
 
@@ -203,7 +209,7 @@ if git ls-remote --exit-code --heads origin doc-output >/dev/null 2>&1; then
 #    }
 
     echo "$PRE commit merge..."
-    git commit -m "Integrate $what"
+    git commit -m "Integrate $what" || true # don't fail if our branch is ahead (nothing to merge)
     echo "----------------------------------------"
     echo "$PRE log after merge:"
     git log -n4
