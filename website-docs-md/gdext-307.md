@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-307/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/307"
 pr_author = "Bromeon"
 sort_key = 2023-06-12
-date_time = 2023-06-12T19:47:07Z
-commit_sha = "b5aee8e0a420dd359e8c0aed1ce26054b6c275ad"
+date_time = 2023-06-12T20:03:06Z
+commit_sha = "2008e6584381db1c665d028aa940d4509a076e03"
 +++
 
 Implement `PackedArray::as_slice()`, `as_slice_mut()`
