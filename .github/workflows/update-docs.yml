@@ -8,6 +8,10 @@ on:
   repository_dispatch:
     types: ['Generate docs']
 
+env:
+  # First version that has fast crates.io update
+  RUST_VER: 1.70.0
+
 defaults:
   run:
     shell: bash
@@ -45,11 +49,14 @@ jobs:
       - name: "Checkout"
         uses: actions/checkout@v3
 
-      - name: "Detect Rust version"
-        env:
-          OP: '${{ github.event.client_payload.op }}'
-        if: ${{ env.OP == 'put' }}
-        run: echo RUST_VER=$(rustc --version | sed -E "s/rustc ([0-9.]+) \\(.+/\\1/" ) >> $GITHUB_ENV
+#      - name: "Detect Rust version"
+#        env:
+#          OP: '${{ github.event.client_payload.op }}'
+#        if: ${{ env.OP == 'put' }}
+#        run: echo RUST_VER=$(rustc --version | sed -E "s/rustc ([0-9.]+) \\(.+/\\1/" ) >> $GITHUB_ENV
+
+      - name: "Install Rust ${{ env.RUST_VER }}"
+        run: rustup install $RUST_VER
 
       - name: "Cache Rust"
         env:
