@@ -149,9 +149,9 @@ translated from an annotation by following these four rules:</p>
 <li><code>@export</code> becomes <code>#[export]</code></li>
 <li><code>@export_{name}</code> becomes <code>#[export(name)]</code></li>
 <li><code>@export_{name}(elem1, ...)</code> becomes <code>#[export(name = (elem1, ...))]</code></li>
-<li><code>@export_{flags/enum/enum_suggestion}(&quot;elem1&quot;, &quot;elem2:key2&quot;, ...)</code>
+<li><code>@export_{flags/enum}(&quot;elem1&quot;, &quot;elem2:key2&quot;, ...)</code>
 becomes
-<code>#[export(flags/enum/enum_suggestion = (elem1, elem2 = key2, ...))]</code></li>
+<code>#[export(flags/enum = (elem1, elem2 = key2, ...))]</code></li>
 </ul>
 <p>As an example of some different export attributes:</p>
 
