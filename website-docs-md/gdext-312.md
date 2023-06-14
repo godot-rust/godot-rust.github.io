@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-312/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/312"
 pr_author = "lilizoey"
 sort_key = 2023-06-14
-date_time = 2023-06-14T18:51:25Z
-commit_sha = "94bc7978a2f2b93652e2390187fc24883ff3e2fe"
+date_time = 2023-06-14T19:58:19Z
+commit_sha = "de6ea117a5d9e2ea82a5fc6fb32c392363e4b894"
 +++
 
 Fix use-after-free in registering functions and signals
