@@ -1,15 +1,15 @@
 +++
 title = "#242"
-date = 2023-06-02
+date = 2023-06-17
 
 [extra]
 repo = "gdext"
 docs_rel_url = "gdext/pr-242/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/242"
 pr_author = "juliohq"
-sort_key = 2023-06-02
-date_time = 2023-06-02T12:18:54Z
-commit_sha = "247f045e61cbf1a5f2501a0ca6e17b54c28d5c7c"
+sort_key = 2023-06-17
+date_time = 2023-06-17T15:04:33Z
+commit_sha = "0a5344863daa5320d42e9d09bef0fb01fc27e7fb"
 +++
 
 Reimplement Rect2 functions
