@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-242/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/242"
 pr_author = "juliohq"
 sort_key = 2023-06-17
-date_time = 2023-06-17T15:04:33Z
-commit_sha = "0a5344863daa5320d42e9d09bef0fb01fc27e7fb"
+date_time = 2023-06-17T15:09:07Z
+commit_sha = "df42396972b8f5e72d37b25019d87b49c5495a62"
 +++
 
 Reimplement Rect2 functions
