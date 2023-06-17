@@ -11,7 +11,7 @@
         collide_with_bodies: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a>,
         collide_with_areas: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a>,
         hit_from_inside: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a>,
-        result: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.pointer.html">*mut </a><a class="struct" href="../native_structure/struct.PhysicsServer2DExtensionRayResult.html" title="struct godot::native_structure::PhysicsServer2DExtensionRayResult">PhysicsServer2DExtensionRayResult</a>
+        result: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionRayResult.html" title="struct godot::engine::native::PhysicsServer2DExtensionRayResult">PhysicsServer2DExtensionRayResult</a>
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a> { ... }
 <span class="item-spacer"></span>    unsafe fn <a href="#method.intersect_point" class="fn">intersect_point</a>(
         &amp;mut self,
@@ -20,7 +20,7 @@
         collision_mask: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a>,
         collide_with_bodies: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a>,
         collide_with_areas: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a>,
-        results: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.pointer.html">*mut </a><a class="struct" href="../native_structure/struct.PhysicsServer2DExtensionShapeResult.html" title="struct godot::native_structure::PhysicsServer2DExtensionShapeResult">PhysicsServer2DExtensionShapeResult</a>,
+        results: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionShapeResult.html" title="struct godot::engine::native::PhysicsServer2DExtensionShapeResult">PhysicsServer2DExtensionShapeResult</a>,
         max_results: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a>
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a> { ... }
 <span class="item-spacer"></span>    unsafe fn <a href="#method.intersect_shape" class="fn">intersect_shape</a>(
@@ -32,7 +32,7 @@
         collision_mask: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a>,
         collide_with_bodies: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a>,
         collide_with_areas: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a>,
-        result: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.pointer.html">*mut </a><a class="struct" href="../native_structure/struct.PhysicsServer2DExtensionShapeResult.html" title="struct godot::native_structure::PhysicsServer2DExtensionShapeResult">PhysicsServer2DExtensionShapeResult</a>,
+        result: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionShapeResult.html" title="struct godot::engine::native::PhysicsServer2DExtensionShapeResult">PhysicsServer2DExtensionShapeResult</a>,
         max_results: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a>
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a> { ... }
 <span class="item-spacer"></span>    unsafe fn <a href="#method.cast_motion" class="fn">cast_motion</a>(
@@ -69,7 +69,7 @@
         collision_mask: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a>,
         collide_with_bodies: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a>,
         collide_with_areas: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a>,
-        rest_info: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.pointer.html">*mut </a><a class="struct" href="../native_structure/struct.PhysicsServer2DExtensionShapeRestInfo.html" title="struct godot::native_structure::PhysicsServer2DExtensionShapeRestInfo">PhysicsServer2DExtensionShapeRestInfo</a>
+        rest_info: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionShapeRestInfo.html" title="struct godot::engine::native::PhysicsServer2DExtensionShapeRestInfo">PhysicsServer2DExtensionShapeRestInfo</a>
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a> { ... }
 }</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Virtual methods for class <a href="struct.PhysicsDirectSpaceState2DExtension.html" title="struct godot::engine::PhysicsDirectSpaceState2DExtension"><code>PhysicsDirectSpaceState2DExtension</code></a>.</p>
 <p>These methods represent constructors (<code>init</code>) or callbacks invoked by the engine.</p>
@@ -100,7 +100,7 @@ to represent integers out of known constants (mistakes or future additions).</p>
     collide_with_bodies: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a>,
     collide_with_areas: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a>,
     hit_from_inside: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a>,
-    result: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.pointer.html">*mut </a><a class="struct" href="../native_structure/struct.PhysicsServer2DExtensionRayResult.html" title="struct godot::native_structure::PhysicsServer2DExtensionRayResult">PhysicsServer2DExtensionRayResult</a>
+    result: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionRayResult.html" title="struct godot::engine::native::PhysicsServer2DExtensionRayResult">PhysicsServer2DExtensionRayResult</a>
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><h5 id="safety"><a href="#safety">Safety</a></h5>
 <p>Godot currently does not document safety requirements on this method. Make sure you understand the underlying semantics.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.intersect_point" class="method"><h4 class="code-header">unsafe fn <a href="#method.intersect_point" class="fn">intersect_point</a>(
@@ -110,7 +110,7 @@ to represent integers out of known constants (mistakes or future additions).</p>
     collision_mask: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a>,
     collide_with_bodies: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a>,
     collide_with_areas: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a>,
-    results: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.pointer.html">*mut </a><a class="struct" href="../native_structure/struct.PhysicsServer2DExtensionShapeResult.html" title="struct godot::native_structure::PhysicsServer2DExtensionShapeResult">PhysicsServer2DExtensionShapeResult</a>,
+    results: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionShapeResult.html" title="struct godot::engine::native::PhysicsServer2DExtensionShapeResult">PhysicsServer2DExtensionShapeResult</a>,
     max_results: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a>
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a></h4></section></summary><div class="docblock"><h5 id="safety-1"><a href="#safety-1">Safety</a></h5>
 <p>Godot currently does not document safety requirements on this method. Make sure you understand the underlying semantics.</p>
@@ -123,7 +123,7 @@ to represent integers out of known constants (mistakes or future additions).</p>
     collision_mask: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a>,
     collide_with_bodies: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a>,
     collide_with_areas: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a>,
-    result: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.pointer.html">*mut </a><a class="struct" href="../native_structure/struct.PhysicsServer2DExtensionShapeResult.html" title="struct godot::native_structure::PhysicsServer2DExtensionShapeResult">PhysicsServer2DExtensionShapeResult</a>,
+    result: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionShapeResult.html" title="struct godot::engine::native::PhysicsServer2DExtensionShapeResult">PhysicsServer2DExtensionShapeResult</a>,
     max_results: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a>
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a></h4></section></summary><div class="docblock"><h5 id="safety-2"><a href="#safety-2">Safety</a></h5>
 <p>Godot currently does not document safety requirements on this method. Make sure you understand the underlying semantics.</p>
@@ -163,7 +163,7 @@ to represent integers out of known constants (mistakes or future additions).</p>
     collision_mask: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a>,
     collide_with_bodies: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a>,
     collide_with_areas: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a>,
-    rest_info: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.pointer.html">*mut </a><a class="struct" href="../native_structure/struct.PhysicsServer2DExtensionShapeRestInfo.html" title="struct godot::native_structure::PhysicsServer2DExtensionShapeRestInfo">PhysicsServer2DExtensionShapeRestInfo</a>
+    rest_info: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionShapeRestInfo.html" title="struct godot::engine::native::PhysicsServer2DExtensionShapeRestInfo">PhysicsServer2DExtensionShapeRestInfo</a>
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><h5 id="safety-5"><a href="#safety-5">Safety</a></h5>
 <p>Godot currently does not document safety requirements on this method. Make sure you understand the underlying semantics.</p>
 </div></details></div><h2 id="implementors" class="small-section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"></div><script src="../../implementors/godot_core/gen/classes/physics_direct_space_state_2d_extension/re_export/trait.PhysicsDirectSpaceState2DExtensionVirtual.js" async></script></section></div></main></body></html>
