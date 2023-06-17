@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"attr":["godot_api"],"derive":["FromVariant","GodotClass","ToVariant"],"mod":["export_info_functions"],"struct":["ExportInfo"],"trait":["Export","Property","TypeStringHint"]};
+window.SIDEBAR_ITEMS = {"attr":["godot_api"],"derive":["FromVariant","GodotClass","ToVariant"],"mod":["property"]};
