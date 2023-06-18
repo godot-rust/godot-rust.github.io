@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["HandleType","Month","PowerState","ScreenOrientation","SystemDir","VideoDriver","Weekday"]};
