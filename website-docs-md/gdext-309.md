@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-309/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/309"
 pr_author = "lilizoey"
 sort_key = 2023-06-20
-date_time = 2023-06-20T14:08:31Z
-commit_sha = "81df9ff63741279bb37cdb74fc406925f5b7206a"
+date_time = 2023-06-20T15:27:06Z
+commit_sha = "b82d4d6238e5497a0726feab7df914c0c1b6cd1e"
 +++
 
 Distinguish between exported and non-exported properties
