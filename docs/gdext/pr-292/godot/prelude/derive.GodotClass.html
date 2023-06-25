@@ -76,10 +76,15 @@ one.</p>
 </span><span class="kw">struct </span>MyStruct {
     <span class="attr">#[export]
     </span>my_field: i64,
-}</code></pre></div>
+}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>MyStruct {}</code></pre></div>
 <p>This makes the field accessible in GDScript using <code>my_struct.my_field</code> syntax. Additionally, it
 generates a trivial getter and setter named <code>get_my_field</code> and <code>set_my_field</code>, respectively.
 These are <code>pub</code> in Rust, since they’re exposed from GDScript anyway.</p>
+<p>For technical reasons, an impl-block with the <code>#[godot_api]</code> attribute is required for exports to work.
+Failing to include one will cause a compile error if you try to export any properties.</p>
 <p>If you want to implement your own getter and/or setter, write those as a function on your Rust
 type, expose it using <code>#[func]</code>, and annotate the field with
 <code>#[export(get = ..., set = ...)]</code>:</p>

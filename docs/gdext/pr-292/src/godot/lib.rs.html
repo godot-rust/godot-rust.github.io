@@ -183,9 +183,6 @@
 <a href="#183" id="183">183</a>
 <a href="#184" id="184">184</a>
 <a href="#185" id="185">185</a>
-<a href="#186" id="186">186</a>
-<a href="#187" id="187">187</a>
-<a href="#188" id="188">188</a>
 </pre></div><pre class="rust"><code><span class="comment">/*
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -326,10 +323,9 @@
 //!   at any time.
 
 </span><span class="attr">#[doc(inline)]
-</span><span class="kw">pub use </span>godot_core::{builtin, engine, export, log, native_structure, obj, sys};
+</span><span class="kw">pub use </span>godot_core::{builtin, engine, log, obj, sys};
 
-<span class="doccomment">/// Facilities for initializing and terminating the GDExtension library.
-</span><span class="kw">pub mod </span>init {
+<span class="kw">pub mod </span>init {
     <span class="kw">pub use </span>godot_core::init::<span class="kw-2">*</span>;
 
     <span class="comment">// Re-exports
@@ -338,11 +334,8 @@
 
 <span class="doccomment">/// Export user-defined classes and methods to be called by the engine.
 </span><span class="kw">pub mod </span>bind {
-    <span class="kw">pub use </span><span class="kw">super</span>::export::{Export, TypeStringHint};
+    <span class="kw">pub use </span>godot_core::property;
     <span class="kw">pub use </span>godot_macros::{godot_api, FromVariant, GodotClass, ToVariant};
-    <span class="kw">pub mod </span>private {
-        <span class="kw">pub use </span>godot_macros::{gdext_register_method, gdext_virtual_method_callback};
-    }
 }
 
 <span class="doccomment">/// Testing facilities (unstable).
@@ -356,7 +349,8 @@
 
 <span class="doccomment">/// Often-imported symbols.
 </span><span class="kw">pub mod </span>prelude {
-    <span class="kw">pub use </span><span class="kw">super</span>::bind::{godot_api, Export, FromVariant, GodotClass, ToVariant, TypeStringHint};
+    <span class="kw">pub use </span><span class="kw">super</span>::bind::property::{Export, TypeStringHint};
+    <span class="kw">pub use </span><span class="kw">super</span>::bind::{godot_api, FromVariant, GodotClass, ToVariant};
     <span class="kw">pub use </span><span class="kw">super</span>::builtin::<span class="kw-2">*</span>;
     <span class="kw">pub use </span><span class="kw">super</span>::builtin::{array, dict, varray}; <span class="comment">// Re-export macros.
     </span><span class="kw">pub use </span><span class="kw">super</span>::engine::{
