@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExportInfo"],"trait":["Cannot_export_without_godot_api_impl","Export","TypeStringHint"]};
+window.SIDEBAR_ITEMS = {"mod":["export_info_functions"],"struct":["ExportInfo"],"trait":["Cannot_export_without_godot_api_impl","Export","Property","TypeStringHint"]};
