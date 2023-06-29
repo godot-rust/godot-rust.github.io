@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["ExAddIconItem","ExAddItem","ExGetItemAtPosition","ExSelect","IconMode","SelectMode"]};
