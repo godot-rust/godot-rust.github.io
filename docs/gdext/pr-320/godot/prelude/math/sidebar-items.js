@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"constant":["CMP_EPSILON"],"fn":["bezier_derivative","bezier_interpolate","cubic_interpolate","cubic_interpolate_in_time","fposmod","is_angle_equal_approx","is_equal_approx","is_zero_approx","lerp","lerp_angle","sign","snapped"],"macro":["assert_eq_approx","assert_ne_approx"],"trait":["ApproxEq"]};
