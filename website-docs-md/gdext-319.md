@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-319/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/319"
 pr_author = "lilizoey"
 sort_key = 2023-06-29
-date_time = 2023-06-29T14:03:05Z
-commit_sha = "716b41065274595109172290d565187c23d300b2"
+date_time = 2023-06-29T14:07:01Z
+commit_sha = "868e1e4ae28f7f7d99d1c4c04d615d40e156ce44"
 +++
 
 Add an abstraction for `GDExtensionClassMethodInfo`
