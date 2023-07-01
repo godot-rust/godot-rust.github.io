@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["DisableMode"]};
+window.SIDEBAR_ITEMS = {"struct":["DisableMode","ExSetPointPinned"]};

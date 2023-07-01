@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ConnectionState","GatheringState","SignalingState"]};
+window.SIDEBAR_ITEMS = {"struct":["ConnectionState","ExCreateDataChannel","ExInitialize","GatheringState","SignalingState"]};

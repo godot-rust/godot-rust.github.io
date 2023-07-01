@@ -1,15 +1,15 @@
 +++
 title = "#326"
-date = 2023-06-30
+date = 2023-07-01
 
 [extra]
 repo = "gdext"
 docs_rel_url = "gdext/pr-326/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/326"
 pr_author = "lilizoey"
-sort_key = 2023-06-30
-date_time = 2023-06-30T19:10:42Z
-commit_sha = "4ac3abd21d0a4a32059f2f48927d51b7f3275bc0"
+sort_key = 2023-07-01
+date_time = 2023-07-01T17:55:57Z
+commit_sha = "59f98e8c7a9aa5be8ff4879395b2b734b23fd233"
 +++
 
-Fix UB related to engine enum layou
+Fix UB related to engine enum layout

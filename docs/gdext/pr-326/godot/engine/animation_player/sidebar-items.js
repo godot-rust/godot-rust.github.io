@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["AnimationMethodCallMode","AnimationProcessCallback"]};
+window.SIDEBAR_ITEMS = {"struct":["AnimationMethodCallMode","AnimationProcessCallback","ExPlay","ExPlayBackwards","ExSeek","ExStop"]};

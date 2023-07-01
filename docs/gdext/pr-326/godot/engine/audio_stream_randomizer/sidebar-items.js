@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["PlaybackMode"]};
+window.SIDEBAR_ITEMS = {"struct":["ExAddStream","PlaybackMode"]};

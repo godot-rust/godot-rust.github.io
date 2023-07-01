@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["MagnitudeMode"]};
+window.SIDEBAR_ITEMS = {"struct":["ExGetMagnitudeForFrequencyRange","MagnitudeMode"]};

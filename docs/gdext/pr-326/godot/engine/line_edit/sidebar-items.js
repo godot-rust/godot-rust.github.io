@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["MenuItems","VirtualKeyboardType"]};
+window.SIDEBAR_ITEMS = {"struct":["ExSelect","MenuItems","VirtualKeyboardType"]};
