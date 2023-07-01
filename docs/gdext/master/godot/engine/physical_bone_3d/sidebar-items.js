@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["DampMode","JointType"]};
+window.SIDEBAR_ITEMS = {"struct":["DampMode","ExApplyImpulse","JointType"]};

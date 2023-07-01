@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["Method","ResponseCode","Status"]};
+window.SIDEBAR_ITEMS = {"struct":["ExConnectToHost","ExRequest","Method","ResponseCode","Status"]};

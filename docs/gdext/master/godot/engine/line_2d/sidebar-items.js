@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["LineCapMode","LineJointMode","LineTextureMode"]};
+window.SIDEBAR_ITEMS = {"struct":["ExAddPoint","LineCapMode","LineJointMode","LineTextureMode"]};

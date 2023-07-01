@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["PortType"]};
+window.SIDEBAR_ITEMS = {"struct":["ExSetInputPortDefaultValue","PortType"]};

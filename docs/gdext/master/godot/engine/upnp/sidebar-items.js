@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["UPNPResult"]};
+window.SIDEBAR_ITEMS = {"struct":["ExAddPortMapping","ExDeletePortMapping","ExDiscover","UPNPResult"]};

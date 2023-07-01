@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["Status"]};
+window.SIDEBAR_ITEMS = {"struct":["ExConnectToStream","Status"]};
