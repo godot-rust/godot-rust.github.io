@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["DiagonalMode","Heuristic"]};
+window.SIDEBAR_ITEMS = {"struct":["DiagonalMode","ExSetPointSolid","Heuristic"]};

@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["IGDStatus"]};
+window.SIDEBAR_ITEMS = {"struct":["ExAddPortMapping","ExDeletePortMapping","IGDStatus"]};

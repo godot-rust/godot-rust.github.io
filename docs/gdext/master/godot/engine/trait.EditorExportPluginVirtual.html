@@ -14,7 +14,7 @@
         features: <a class="struct" href="../builtin/struct.PackedStringArray.html" title="struct godot::builtin::PackedStringArray">PackedStringArray</a>,
         is_debug: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a>,
         path: <a class="struct" href="../builtin/struct.GodotString.html" title="struct godot::builtin::GodotString">GodotString</a>,
-        flags: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a>
+        flags: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.u32.html">u32</a>
     ) { ... }
 <span class="item-spacer"></span>    fn <a href="#method.export_end" class="fn">export_end</a>(&amp;mut self) { ... }
 <span class="item-spacer"></span>    fn <a href="#method.begin_customize_resources" class="fn">begin_customize_resources</a>(
@@ -37,7 +37,7 @@
         scene: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Node.html" title="struct godot::engine::Node">Node</a>&gt;,
         path: <a class="struct" href="../builtin/struct.GodotString.html" title="struct godot::builtin::GodotString">GodotString</a>
     ) -&gt; <a class="enum" href="https://doc.rust-lang.org/1.70.0/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Node.html" title="struct godot::engine::Node">Node</a>&gt;&gt; { ... }
-<span class="item-spacer"></span>    fn <a href="#method.get_customization_configuration_hash" class="fn">get_customization_configuration_hash</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a> { ... }
+<span class="item-spacer"></span>    fn <a href="#method.get_customization_configuration_hash" class="fn">get_customization_configuration_hash</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.u64.html">u64</a> { ... }
 <span class="item-spacer"></span>    fn <a href="#method.end_customize_scenes" class="fn">end_customize_scenes</a>(&amp;mut self) { ... }
 <span class="item-spacer"></span>    fn <a href="#method.end_customize_resources" class="fn">end_customize_resources</a>(&amp;mut self) { ... }
 <span class="item-spacer"></span>    fn <a href="#method.get_export_features" class="fn">get_export_features</a>(
@@ -77,7 +77,7 @@ to represent integers out of known constants (mistakes or future additions).</p>
     features: <a class="struct" href="../builtin/struct.PackedStringArray.html" title="struct godot::builtin::PackedStringArray">PackedStringArray</a>,
     is_debug: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a>,
     path: <a class="struct" href="../builtin/struct.GodotString.html" title="struct godot::builtin::GodotString">GodotString</a>,
-    flags: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a>
+    flags: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.u32.html">u32</a>
 )</h4></section><section id="method.export_end" class="method"><h4 class="code-header">fn <a href="#method.export_end" class="fn">export_end</a>(&amp;mut self)</h4></section><section id="method.begin_customize_resources" class="method"><h4 class="code-header">fn <a href="#method.begin_customize_resources" class="fn">begin_customize_resources</a>(
     &amp;self,
     platform: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.EditorExportPlatform.html" title="struct godot::engine::EditorExportPlatform">EditorExportPlatform</a>&gt;,
@@ -94,7 +94,7 @@ to represent integers out of known constants (mistakes or future additions).</p>
     &amp;mut self,
     scene: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Node.html" title="struct godot::engine::Node">Node</a>&gt;,
     path: <a class="struct" href="../builtin/struct.GodotString.html" title="struct godot::builtin::GodotString">GodotString</a>
-) -&gt; <a class="enum" href="https://doc.rust-lang.org/1.70.0/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Node.html" title="struct godot::engine::Node">Node</a>&gt;&gt;</h4></section><section id="method.get_customization_configuration_hash" class="method"><h4 class="code-header">fn <a href="#method.get_customization_configuration_hash" class="fn">get_customization_configuration_hash</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a></h4></section><section id="method.end_customize_scenes" class="method"><h4 class="code-header">fn <a href="#method.end_customize_scenes" class="fn">end_customize_scenes</a>(&amp;mut self)</h4></section><section id="method.end_customize_resources" class="method"><h4 class="code-header">fn <a href="#method.end_customize_resources" class="fn">end_customize_resources</a>(&amp;mut self)</h4></section><section id="method.get_export_features" class="method"><h4 class="code-header">fn <a href="#method.get_export_features" class="fn">get_export_features</a>(
+) -&gt; <a class="enum" href="https://doc.rust-lang.org/1.70.0/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Node.html" title="struct godot::engine::Node">Node</a>&gt;&gt;</h4></section><section id="method.get_customization_configuration_hash" class="method"><h4 class="code-header">fn <a href="#method.get_customization_configuration_hash" class="fn">get_customization_configuration_hash</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.u64.html">u64</a></h4></section><section id="method.end_customize_scenes" class="method"><h4 class="code-header">fn <a href="#method.end_customize_scenes" class="fn">end_customize_scenes</a>(&amp;mut self)</h4></section><section id="method.end_customize_resources" class="method"><h4 class="code-header">fn <a href="#method.end_customize_resources" class="fn">end_customize_resources</a>(&amp;mut self)</h4></section><section id="method.get_export_features" class="method"><h4 class="code-header">fn <a href="#method.get_export_features" class="fn">get_export_features</a>(
     &amp;self,
     platform: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.EditorExportPlatform.html" title="struct godot::engine::EditorExportPlatform">EditorExportPlatform</a>&gt;,
     debug: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a>

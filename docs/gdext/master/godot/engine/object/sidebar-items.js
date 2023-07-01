@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ConnectFlags"]};
+window.SIDEBAR_ITEMS = {"struct":["ConnectFlags","ExAddUserSignal","ExConnect","ExGetMeta","ExTr","ExTrN"]};

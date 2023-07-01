@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["InternalImportCategory"]};
+window.SIDEBAR_ITEMS = {"struct":["ExAddImportOptionAdvanced","InternalImportCategory"]};

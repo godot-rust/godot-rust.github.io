@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ContentScaleAspect","ContentScaleMode","Flags","LayoutDirection","Mode","WindowInitialPosition"]};
+window.SIDEBAR_ITEMS = {"struct":["ContentScaleAspect","ContentScaleMode","ExGetThemeColor","ExGetThemeConstant","ExGetThemeFont","ExGetThemeFontSize","ExGetThemeIcon","ExGetThemeStylebox","ExHasThemeColor","ExHasThemeConstant","ExHasThemeFont","ExHasThemeFontSize","ExHasThemeIcon","ExHasThemeStylebox","ExPopup","ExPopupCentered","ExPopupCenteredClamped","ExPopupCenteredRatio","Flags","LayoutDirection","Mode","WindowInitialPosition"]};

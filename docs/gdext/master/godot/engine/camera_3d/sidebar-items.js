@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["DopplerTracking","KeepAspect","ProjectionType"]};
+window.SIDEBAR_ITEMS = {"struct":["DopplerTracking","ExClearCurrent","KeepAspect","ProjectionType"]};

@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["TangentMode"]};
+window.SIDEBAR_ITEMS = {"struct":["ExAddPoint","TangentMode"]};

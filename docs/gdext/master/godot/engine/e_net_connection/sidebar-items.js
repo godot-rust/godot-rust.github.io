@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["CompressionMode","EventType","HostStatistic"]};
+window.SIDEBAR_ITEMS = {"struct":["CompressionMode","EventType","ExBandwidthLimit","ExConnectToHost","ExCreateHost","ExCreateHostBound","ExDtlsClientSetup","ExService","HostStatistic"]};

@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["CacheMode","ThreadLoadStatus"]};
+window.SIDEBAR_ITEMS = {"struct":["CacheMode","ExAddResourceFormatLoader","ExExists","ExLoad","ThreadLoadStatus"]};

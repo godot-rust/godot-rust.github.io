@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["State","WriteMode"]};
+window.SIDEBAR_ITEMS = {"struct":["ExClose","ExConnectToUrl","ExSend","State","WriteMode"]};

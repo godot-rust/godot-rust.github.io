@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ASTCFormat","AlphaMode","CompressMode","CompressSource","Format","Interpolation","UsedChannels"]};
+window.SIDEBAR_ITEMS = {"struct":["ASTCFormat","AlphaMode","CompressMode","CompressSource","ExBumpMapToNormalMap","ExCompress","ExCompressFromChannels","ExDetectUsedChannels","ExGenerateMipmaps","ExResize","ExResizeToPo2","ExSaveExr","ExSaveExrToBuffer","ExSaveJpg","ExSaveJpgToBuffer","ExSaveWebp","ExSaveWebpToBuffer","Format","Interpolation","UsedChannels"]};
