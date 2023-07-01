@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["MergeMode"]};
+window.SIDEBAR_ITEMS = {"struct":["ExClearHistory","ExCommitAction","ExCreateAction","MergeMode"]};

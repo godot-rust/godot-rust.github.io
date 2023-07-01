@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ErrorCode"]};
+window.SIDEBAR_ITEMS = {"struct":["ErrorCode","ExMakeResponseError","ExProcessAction"]};

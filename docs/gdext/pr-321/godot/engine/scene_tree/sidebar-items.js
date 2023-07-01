@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["GroupCallFlags"]};
+window.SIDEBAR_ITEMS = {"struct":["ExCreateTimer","ExGetMultiplayer","ExQuit","ExSetMultiplayer","GroupCallFlags"]};

@@ -6,13 +6,13 @@
 <span class="item-spacer"></span>    fn <a href="#method.is_in_input_hotzone" class="fn">is_in_input_hotzone</a>(
         &amp;mut self,
         in_node: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Object.html" title="struct godot::engine::Object">Object</a>&gt;,
-        in_port: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a>,
+        in_port: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i32.html">i32</a>,
         mouse_position: <a class="struct" href="../builtin/struct.Vector2.html" title="struct godot::builtin::Vector2">Vector2</a>
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a> { ... }
 <span class="item-spacer"></span>    fn <a href="#method.is_in_output_hotzone" class="fn">is_in_output_hotzone</a>(
         &amp;mut self,
         in_node: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Object.html" title="struct godot::engine::Object">Object</a>&gt;,
-        in_port: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a>,
+        in_port: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i32.html">i32</a>,
         mouse_position: <a class="struct" href="../builtin/struct.Vector2.html" title="struct godot::builtin::Vector2">Vector2</a>
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a> { ... }
 <span class="item-spacer"></span>    fn <a href="#method.get_connection_line" class="fn">get_connection_line</a>(
@@ -23,9 +23,9 @@
 <span class="item-spacer"></span>    fn <a href="#method.is_node_hover_valid" class="fn">is_node_hover_valid</a>(
         &amp;mut self,
         from_node: <a class="struct" href="../builtin/struct.StringName.html" title="struct godot::builtin::StringName">StringName</a>,
-        from_port: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a>,
+        from_port: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i32.html">i32</a>,
         to_node: <a class="struct" href="../builtin/struct.StringName.html" title="struct godot::builtin::StringName">StringName</a>,
-        to_port: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a>
+        to_port: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i32.html">i32</a>
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a> { ... }
 <span class="item-spacer"></span>    fn <a href="#method.has_point" class="fn">has_point</a>(&amp;self, point: <a class="struct" href="../builtin/struct.Vector2.html" title="struct godot::builtin::Vector2">Vector2</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a> { ... }
 <span class="item-spacer"></span>    fn <a href="#method.structured_text_parser" class="fn">structured_text_parser</a>(
@@ -74,12 +74,12 @@ to represent integers out of known constants (mistakes or future additions).</p>
 </div></details><section id="method.is_in_input_hotzone" class="method"><h4 class="code-header">fn <a href="#method.is_in_input_hotzone" class="fn">is_in_input_hotzone</a>(
     &amp;mut self,
     in_node: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Object.html" title="struct godot::engine::Object">Object</a>&gt;,
-    in_port: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a>,
+    in_port: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i32.html">i32</a>,
     mouse_position: <a class="struct" href="../builtin/struct.Vector2.html" title="struct godot::builtin::Vector2">Vector2</a>
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a></h4></section><section id="method.is_in_output_hotzone" class="method"><h4 class="code-header">fn <a href="#method.is_in_output_hotzone" class="fn">is_in_output_hotzone</a>(
     &amp;mut self,
     in_node: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Object.html" title="struct godot::engine::Object">Object</a>&gt;,
-    in_port: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a>,
+    in_port: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i32.html">i32</a>,
     mouse_position: <a class="struct" href="../builtin/struct.Vector2.html" title="struct godot::builtin::Vector2">Vector2</a>
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a></h4></section><section id="method.get_connection_line" class="method"><h4 class="code-header">fn <a href="#method.get_connection_line" class="fn">get_connection_line</a>(
     &amp;self,
@@ -88,9 +88,9 @@ to represent integers out of known constants (mistakes or future additions).</p>
 ) -&gt; <a class="struct" href="../builtin/struct.PackedVector2Array.html" title="struct godot::builtin::PackedVector2Array">PackedVector2Array</a></h4></section><section id="method.is_node_hover_valid" class="method"><h4 class="code-header">fn <a href="#method.is_node_hover_valid" class="fn">is_node_hover_valid</a>(
     &amp;mut self,
     from_node: <a class="struct" href="../builtin/struct.StringName.html" title="struct godot::builtin::StringName">StringName</a>,
-    from_port: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a>,
+    from_port: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i32.html">i32</a>,
     to_node: <a class="struct" href="../builtin/struct.StringName.html" title="struct godot::builtin::StringName">StringName</a>,
-    to_port: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i64.html">i64</a>
+    to_port: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.i32.html">i32</a>
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a></h4></section><section id="method.has_point" class="method"><h4 class="code-header">fn <a href="#method.has_point" class="fn">has_point</a>(&amp;self, point: <a class="struct" href="../builtin/struct.Vector2.html" title="struct godot::builtin::Vector2">Vector2</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.bool.html">bool</a></h4></section><section id="method.structured_text_parser" class="method"><h4 class="code-header">fn <a href="#method.structured_text_parser" class="fn">structured_text_parser</a>(
     &amp;self,
     args: <a class="struct" href="../builtin/struct.Array.html" title="struct godot::builtin::Array">Array</a>&lt;<a class="struct" href="../builtin/struct.Variant.html" title="struct godot::builtin::Variant">Variant</a>&gt;,

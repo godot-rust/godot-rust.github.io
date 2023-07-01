@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["CustomFormat","SkinWeightCount"]};
+window.SIDEBAR_ITEMS = {"struct":["CustomFormat","ExAddTriangleFan","ExCommit","ExGenerateLod","ExGenerateNormals","SkinWeightCount"]};
