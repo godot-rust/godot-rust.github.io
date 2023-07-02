@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["RotationEditMode"]};
+window.SIDEBAR_ITEMS = {"struct":["ExLookAt","ExLookAtFromPosition","RotationEditMode"]};

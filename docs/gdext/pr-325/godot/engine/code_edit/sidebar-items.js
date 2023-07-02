@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["CodeCompletionKind"]};
+window.SIDEBAR_ITEMS = {"struct":["CodeCompletionKind","ExAddCodeCompletionOption","ExAddCommentDelimiter","ExAddStringDelimiter","ExConfirmCodeCompletion","ExIsInComment","ExIsInString","ExRequestCodeCompletion"]};

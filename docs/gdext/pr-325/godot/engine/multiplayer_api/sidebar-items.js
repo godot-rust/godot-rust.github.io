@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["RPCMode"]};
+window.SIDEBAR_ITEMS = {"struct":["ExRpc","RPCMode"]};

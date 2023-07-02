@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["VisibilityUpdateMode"]};
+window.SIDEBAR_ITEMS = {"struct":["ExUpdateVisibility","VisibilityUpdateMode"]};

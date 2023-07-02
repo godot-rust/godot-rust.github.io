@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["MotionMode","PlatformOnLeave"]};
+window.SIDEBAR_ITEMS = {"struct":["ExGetFloorAngle","MotionMode","PlatformOnLeave"]};

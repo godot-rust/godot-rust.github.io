@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["Mode"]};
+window.SIDEBAR_ITEMS = {"struct":["ExStart","Mode"]};

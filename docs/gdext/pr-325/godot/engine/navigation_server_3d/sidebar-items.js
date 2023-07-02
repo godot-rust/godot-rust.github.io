@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ProcessInfo"]};
+window.SIDEBAR_ITEMS = {"struct":["ExMapGetClosestPointToSegment","ExMapGetPath","ProcessInfo"]};

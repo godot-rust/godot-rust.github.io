@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ZipAppend"]};
+window.SIDEBAR_ITEMS = {"struct":["ExOpen","ZipAppend"]};
