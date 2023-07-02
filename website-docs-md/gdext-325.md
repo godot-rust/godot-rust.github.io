@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-325/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/325"
 pr_author = "Bromeon"
 sort_key = 2023-07-02
-date_time = 2023-07-02T11:21:01Z
-commit_sha = "f29b9e085ff8a7aa1de038dbda76c508b40ae88b"
+date_time = 2023-07-02T16:00:11Z
+commit_sha = "a3012f4794ecab892c67126930ca0b393937429a"
 +++
 
 Address sanitizers for Rust
