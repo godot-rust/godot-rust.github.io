@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-251/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/251"
 pr_author = "astrale-sharp"
 sort_key = 2023-07-08
-date_time = 2023-07-08T17:04:50Z
-commit_sha = "075c44701f3cf6018899b2d73455535543a16853"
+date_time = 2023-07-08T17:13:06Z
+commit_sha = "17f33afcb6ea51bc1b002debad0879a391404374"
 +++
 
 Derive skip
