@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["Subdiv"]};
+window.SIDEBAR_ITEMS = {"struct":["ExBake","Subdiv"]};

@@ -3,6 +3,7 @@
     // Attributes available to this derive:
     #[class]
     #[base]
+    #[var]
     #[export]
     #[init]
     #[signal]
@@ -66,15 +67,15 @@ it with <code>#[base]</code>:</p>
 <a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html#properties-setters-and-getters">properties</a>
 (fields with a <code>get</code> or <code>set</code> declaration) and
 <a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_exports.html">exports</a>
-(fields annotated with <code>@export</code>). In the GDExtension API, these two concepts are merged into
-one.</p>
-<p>You can export fields of your struct using the <code>#[export]</code> annotation:</p>
+(fields annotated with <code>@export</code>). In the GDExtension API, these two concepts are represented with
+<code>#[var]</code> and <code>#[export]</code> attributes respectively.</p>
+<p>To create a property, you can use the <code>#[var]</code> annotation:</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
 
 <span class="attr">#[derive(GodotClass)]
 </span><span class="kw">struct </span>MyStruct {
-    <span class="attr">#[export]
+    <span class="attr">#[var]
     </span>my_field: i64,
 }
 
@@ -83,8 +84,8 @@ one.</p>
 <p>This makes the field accessible in GDScript using <code>my_struct.my_field</code> syntax. Additionally, it
 generates a trivial getter and setter named <code>get_my_field</code> and <code>set_my_field</code>, respectively.
 These are <code>pub</code> in Rust, since they’re exposed from GDScript anyway.</p>
-<p>For technical reasons, an impl-block with the <code>#[godot_api]</code> attribute is required for exports to work.
-Failing to include one will cause a compile error if you try to export any properties.</p>
+<p>For technical reasons, an impl-block with the <code>#[godot_api]</code> attribute is required for properties to
+work. Failing to include one will cause a compile error if you try to create any properties.</p>
 <p>If you want to implement your own getter and/or setter, write those as a function on your Rust
 type, expose it using <code>#[func]</code>, and annotate the field with
 <code>#[export(get = ..., set = ...)]</code>:</p>
@@ -93,7 +94,7 @@ type, expose it using <code>#[func]</code>, and annotate the field with
 
 <span class="attr">#[derive(GodotClass)]
 </span><span class="kw">struct </span>MyStruct {
-    <span class="attr">#[export(get = get_my_field, set = set_my_field)]
+    <span class="attr">#[var(get = get_my_field, set = set_my_field)]
     </span>my_field: i64,
 }
 
@@ -118,7 +119,7 @@ generated getter or setter in these cases anyway, use <code>get</code> or <code>
 <span class="attr">#[derive(GodotClass)]
 </span><span class="kw">struct </span>MyStruct {
     <span class="comment">// Default getter, custom setter.
-    </span><span class="attr">#[export(get, set = set_my_field)]
+    </span><span class="attr">#[var(get, set = set_my_field)]
     </span>my_field: i64,
 }
 
@@ -129,6 +130,109 @@ generated getter or setter in these cases anyway, use <code>get</code> or <code>
         <span class="self">self</span>.my_field = value;
     }
 }</code></pre></div>
+<p>For exporting properties to the editor, you can use the <code>#[export]</code> attribute:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
+
+<span class="attr">#[derive(GodotClass)]
+</span><span class="kw">struct </span>MyStruct {
+    <span class="attr">#[export]
+    </span>my_field: i64,
+}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>MyStruct {}</code></pre></div>
+<p>If you dont also include a <code>#[var]</code> attribute, then a default one will be generated.
+<code>#[export]</code> also supports all of GDScript’s annotations, in a slightly different format. The format is
+translated from an annotation by following these four rules:</p>
+<ul>
+<li><code>@export</code> becomes <code>#[export]</code></li>
+<li><code>@export_{name}</code> becomes <code>#[export(name)]</code></li>
+<li><code>@export_{name}(elem1, ...)</code> becomes <code>#[export(name = (elem1, ...))]</code></li>
+<li><code>@export_{flags/enum}(&quot;elem1&quot;, &quot;elem2:key2&quot;, ...)</code>
+becomes
+<code>#[export(flags/enum = (elem1, elem2 = key2, ...))]</code></li>
+</ul>
+<p>As an example of some different export attributes:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
+
+<span class="attr">#[derive(GodotClass)]
+</span><span class="kw">struct </span>MyStruct {
+    <span class="comment">// @export
+    </span><span class="attr">#[export]
+    </span>float: f64,
+     
+    <span class="comment">// @export_range(0.0, 10.0, or_greater)
+    </span><span class="attr">#[export(range = (<span class="number">0.0</span>, <span class="number">10.0</span>, or_greater))]
+    </span>range_f64: f64,
+
+    <span class="comment">// @export_file
+    </span><span class="attr">#[export(file)]
+    </span>file: GodotString,
+
+    <span class="comment">// @export_file(&quot;*.gd&quot;)
+    </span><span class="attr">#[export(file = <span class="string">&quot;*.gd&quot;</span>)]
+    </span>gdscript_file: GodotString,
+
+    <span class="comment">// @export_flags_3d_physics
+    </span><span class="attr">#[export(flags_3d_physics)]
+    </span>physics: u32,
+
+    <span class="comment">// @export_exp_easing
+    </span><span class="attr">#[export(exp_easing)]
+    </span>ease: f64,
+
+    <span class="comment">// @export_enum(&quot;One&quot;, &quot;Two&quot;, &quot;Ten:10&quot;, &quot;Twelve:12&quot;, &quot;Thirteen&quot;)
+    </span><span class="attr">#[export(<span class="kw">enum </span>= (One, Two, Ten = <span class="number">10</span>, Twelve = <span class="number">12</span>, Thirteen))]
+    </span>exported_enum: i64,
+
+    <span class="comment">// @export_flags(&quot;A:1&quot;, &quot;B:2&quot;, &quot;AB:3&quot;)
+    </span><span class="attr">#[export(flags = (A = <span class="number">1</span>, B = <span class="number">2</span>, AB = <span class="number">3</span>))]
+    </span>flags: u32,
+}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>MyStruct {}</code></pre></div>
+<p>Most values in expressions like <code>key = value</code>, can be an arbitrary expression that evaluates to the
+right value. Meaning you can use constants or variables, as well as any other rust syntax you’d like in
+the export attributes.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
+
+<span class="kw">const </span>MAX_HEALTH: f64 = <span class="number">100.0</span>;
+
+<span class="attr">#[derive(GodotClass)]
+</span><span class="kw">struct </span>MyStruct {
+    <span class="attr">#[export(range = (<span class="number">0.0</span>, MAX_HEALTH))]
+    </span>health: f64,
+
+    <span class="attr">#[export(flags = (A = <span class="number">0b0001</span>, B = <span class="number">0b0010</span>, C = <span class="number">0b0100</span>, D = <span class="number">0b1000</span>))]
+    </span>flags: u32,
+}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>MyStruct {}</code></pre></div>
+<p>You can specify custom property hints, hint strings, and usage flags in a <code>#[var]</code> attribute using the
+<code>hint</code>, <code>hint_string</code>, and <code>usage_flags</code> keys in the attribute:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
+
+<span class="attr">#[derive(GodotClass)]
+</span><span class="kw">struct </span>MyStruct {
+    <span class="comment">// Treated as an enum with two values: &quot;One&quot; and &quot;Two&quot;
+    // Displayed in the editor
+    // Treated as read-only by the editor
+    </span><span class="attr">#[var(
+        hint = PROPERTY_HINT_ENUM,
+        hint_string = <span class="string">&quot;One,Two&quot;</span>,
+        usage_flags = [PROPERTY_USAGE_EDITOR, PROPERTY_USAGE_READ_ONLY]
+    </span>)]
+    my_field: i64,
+}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>MyStruct {}</code></pre></div>
 <h2 id="signals"><a href="#signals">Signals</a></h2>
 <p>The <code>#[signal]</code> attribute is accepted, but not yet implemented. See <a href="https://github.com/godot-rust/gdext/issues/8">issue
 #8</a>.</p>

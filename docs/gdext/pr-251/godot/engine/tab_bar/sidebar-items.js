@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["AlignmentMode","CloseButtonDisplayPolicy"]};
+window.SIDEBAR_ITEMS = {"struct":["AlignmentMode","CloseButtonDisplayPolicy","ExAddTab"]};

@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["EaseType","TransitionType","TweenPauseMode","TweenProcessMode"]};
+window.SIDEBAR_ITEMS = {"struct":["EaseType","ExSetLoops","ExSetParallel","TransitionType","TweenPauseMode","TweenProcessMode"]};

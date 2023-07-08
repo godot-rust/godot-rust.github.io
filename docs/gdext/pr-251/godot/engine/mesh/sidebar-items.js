@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ArrayCustomFormat","ArrayFormat","ArrayType","BlendShapeMode","PrimitiveType"]};
+window.SIDEBAR_ITEMS = {"struct":["ArrayCustomFormat","ArrayFormat","ArrayType","BlendShapeMode","ExCreateConvexShape","PrimitiveType"]};

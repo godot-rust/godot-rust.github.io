@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["Access","DisplayMode","FileMode"]};
+window.SIDEBAR_ITEMS = {"struct":["Access","DisplayMode","ExAddFilter","FileMode"]};
