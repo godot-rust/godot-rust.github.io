@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["TreeCellMode"]};
+window.SIDEBAR_ITEMS = {"struct":["ExAddButton","ExCreateChild","ExGetNextInTree","ExGetNextVisible","ExGetPrevInTree","ExGetPrevVisible","ExIsAnyCollapsed","ExPropagateCheck","ExSetCustomBgColor","ExSetRangeConfig","TreeCellMode"]};

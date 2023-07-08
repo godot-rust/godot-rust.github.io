@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["AttenuationModel","DopplerTracking"]};
+window.SIDEBAR_ITEMS = {"struct":["AttenuationModel","DopplerTracking","ExPlay"]};

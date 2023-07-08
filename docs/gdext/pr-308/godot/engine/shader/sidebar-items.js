@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["Mode"]};
+window.SIDEBAR_ITEMS = {"struct":["ExGetDefaultTextureParameter","ExGetShaderUniformList","ExSetDefaultTextureParameter","Mode"]};

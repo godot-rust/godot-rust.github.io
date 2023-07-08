@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["GenEditState"]};
+window.SIDEBAR_ITEMS = {"struct":["ExInstantiate","GenEditState"]};
