@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["ClassName","MethodInfo","MethodParamOrReturnInfo","PropertyInfo"],"trait":["VariantMetadata"]};
