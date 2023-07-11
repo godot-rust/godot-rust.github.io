@@ -54,9 +54,11 @@ and points toward the target position. By default, the -Z axis (camera forward) 
 <p><em>Godot equivalent: <code>Basis.inverse()</code></em></p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.transposed" class="method"><h4 class="code-header">pub fn <a href="#method.transposed" class="fn">transposed</a>(self) -&gt; <a class="struct" href="struct.Basis.html" title="struct godot::builtin::Basis">Basis</a></h4></section></summary><div class="docblock"><p>Returns the transposed version of the matrix.</p>
 <p><em>Godot equivalent: <code>Basis.transposed()</code></em></p>
-</div></details><details class="toggle method-toggle" open><summary><section id="method.orthonormalized" class="method"><h4 class="code-header">pub fn <a href="#method.orthonormalized" class="fn">orthonormalized</a>(self) -&gt; <a class="struct" href="struct.Basis.html" title="struct godot::builtin::Basis">Basis</a></h4></section></summary><div class="docblock"><p>Returns the orthonormalized version of the matrix (useful to call from
+</div></details><details class="toggle method-toggle" open><summary><section id="method.orthonormalized" class="method"><h4 class="code-header">pub fn <a href="#method.orthonormalized" class="fn">orthonormalized</a>(self) -&gt; <a class="struct" href="struct.Basis.html" title="struct godot::builtin::Basis">Basis</a></h4></section></summary><div class="docblock"><p>⚠️ Returns the orthonormalized version of the matrix (useful to call from
 time to time to avoid rounding error for orthogonal matrices). This
 performs a Gram-Schmidt orthonormalization on the basis of the matrix.</p>
+<h5 id="panics"><a href="#panics">Panics</a></h5>
+<p>If the determinant of the matrix is 0.</p>
 <p><em>Godot equivalent: <code>Basis.orthonormalized()</code></em></p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.rotated" class="method"><h4 class="code-header">pub fn <a href="#method.rotated" class="fn">rotated</a>(self, axis: <a class="struct" href="struct.Vector3.html" title="struct godot::builtin::Vector3">Vector3</a>, angle: <a class="primitive" href="https://doc.rust-lang.org/1.70.0/std/primitive.f32.html">f32</a>) -&gt; <a class="struct" href="struct.Basis.html" title="struct godot::builtin::Basis">Basis</a></h4></section></summary><div class="docblock"><p>Introduce an additional rotation around the given <code>axis</code> by <code>angle</code>
 (in radians). The axis must be a normalized vector.</p>
