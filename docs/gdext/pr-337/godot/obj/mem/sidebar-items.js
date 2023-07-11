@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["DynamicRefCount","ManualMemory","StaticRefCount"],"trait":["Memory","PossiblyManual"]};
