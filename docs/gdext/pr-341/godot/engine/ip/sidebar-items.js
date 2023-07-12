@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["ExClearCache","ExResolveHostname","ExResolveHostnameAddresses","ExResolveHostnameQueueItem","ResolverStatus","Type"]};
