@@ -203,6 +203,7 @@
 <a href="#203" id="203">203</a>
 <a href="#204" id="204">204</a>
 <a href="#205" id="205">205</a>
+<a href="#206" id="206">206</a>
 </pre></div><pre class="rust"><code><span class="comment">/*
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -344,7 +345,8 @@
 //!
 //! # Public API
 //!
-//! There are technical reasons why we cannot always use Rust&#39;s visibility for symbols, which are not intended for gdext users.
+//! Some symbols in the API are not intended for users, however Rust&#39;s visibility feature is not strong enough to express that in all cases
+//! (for example, proc-macros and separated crates may need access to internals).
 //!
 //! The following API symbols are considered private:
 //!
