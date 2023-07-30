@@ -4,21 +4,22 @@
 <span class="item-spacer"></span>    fn <a href="#method.editor_run_behavior" class="fn">editor_run_behavior</a>() -&gt; <a class="enum" href="enum.EditorRunBehavior.html" title="enum godot::init::EditorRunBehavior">EditorRunBehavior</a> { ... }
 }</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Defines the entry point for a GDExtension Rust library.</p>
 <p>Every library should have exactly one implementation of this trait. It is always used in combination with the
-<a href="crate::init::gdextension"><code>#[gdextension]</code></a> proc-macro attribute.</p>
+<a href="attr.gdextension.html"><code>#[gdextension]</code></a> proc-macro attribute.</p>
 <p>The simplest usage is as follows. This will automatically perform the necessary init and cleanup routines, and register
 all classes marked with <code>#[derive(GodotClass)]</code>, without needing to mention them in a central list. The order in which
 classes are registered is not specified.</p>
 
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code>
-<span class="comment">// This is just a type tag without any functionality
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="comment">// This is just a type tag without any functionality.
+// Its name is irrelevant.
 </span><span class="kw">struct </span>MyExtension;
 
 <span class="attr">#[gdextension]
 </span><span class="kw">unsafe impl </span>ExtensionLibrary <span class="kw">for </span>MyExtension {}</code></pre></div>
 <h2 id="safety"><a href="#safety">Safety</a></h2>
-<p>By using godot-rust, you accept the safety considerations <a href="https://godot-rust.github.io/book/gdextension/safety.html">as outlined in the book</a>.
+<p>By using godot-rust, you accept the safety considerations <a href="https://godot-rust.github.io/book/gdext/advanced/safety.html">as outlined in the book</a>.
 Please make sure you fully understand the implications.</p>
 <p>The library cannot enforce any safety guarantees outside Rust code, which means that <strong>you as a user</strong> are
 responsible to uphold them: namely in GDScript code or other GDExtension bindings loaded by the engine.
 Violating this may cause undefined behavior, even when invoking <em>safe</em> functions.</p>
-</div></details><h2 id="provided-methods" class="small-section-header">Provided Methods<a href="#provided-methods" class="anchor">§</a></h2><div class="methods"><section id="method.load_library" class="method"><h4 class="code-header">fn <a href="#method.load_library" class="fn">load_library</a>(handle: &amp;mut <a class="struct" href="../prelude/struct.InitHandle.html" title="struct godot::prelude::InitHandle">InitHandle</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.71.0/std/primitive.bool.html">bool</a></h4></section><section id="method.editor_run_behavior" class="method"><h4 class="code-header">fn <a href="#method.editor_run_behavior" class="fn">editor_run_behavior</a>() -&gt; <a class="enum" href="enum.EditorRunBehavior.html" title="enum godot::init::EditorRunBehavior">EditorRunBehavior</a></h4></section></div><h2 id="implementors" class="small-section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"></div><script src="../../implementors/godot_core/init/trait.ExtensionLibrary.js" async></script></section></div></main></body></html>
+</div></details><h2 id="provided-methods" class="small-section-header">Provided Methods<a href="#provided-methods" class="anchor">§</a></h2><div class="methods"><section id="method.load_library" class="method"><h4 class="code-header">fn <a href="#method.load_library" class="fn">load_library</a>(handle: &amp;mut <a class="struct" href="../prelude/struct.InitHandle.html" title="struct godot::prelude::InitHandle">InitHandle</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.71.0/std/primitive.bool.html">bool</a></h4></section><details class="toggle method-toggle" open><summary><section id="method.editor_run_behavior" class="method"><h4 class="code-header">fn <a href="#method.editor_run_behavior" class="fn">editor_run_behavior</a>() -&gt; <a class="enum" href="enum.EditorRunBehavior.html" title="enum godot::init::EditorRunBehavior">EditorRunBehavior</a></h4></section></summary><div class="docblock"><p>Determines if and how an extension’s code is run in the editor.</p>
+</div></details></div><h2 id="implementors" class="small-section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"></div><script src="../../implementors/godot_core/init/trait.ExtensionLibrary.js" async></script></section></div></main></body></html>
