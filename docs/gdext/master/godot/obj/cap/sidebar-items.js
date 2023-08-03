@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"trait":["GodotInit","ImplementsGodotApi","ImplementsGodotExports","ImplementsGodotVirtual"]};
+window.SIDEBAR_ITEMS = {"trait":["GodotInit","ImplementsGodotApi","ImplementsGodotExports","ImplementsGodotVirtual","WithBaseField"]};
