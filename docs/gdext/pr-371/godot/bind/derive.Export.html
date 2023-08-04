@@ -3,11 +3,7 @@
 <ul>
 <li>Only works for enums, structs aren’t supported by this derive macro at the moment.</li>
 <li>The enum variants must not have any fields - currently only unit variants are supported.</li>
-<li>The enum variants must have explicit discriminants, that is, e.g. <code>A = 2</code>, not just <code>A</code>
-<ul>
-<li>This will likely stay this way in order to keep proc-macro dependencies lighter.</li>
-</ul>
-</li>
+<li>The enum variants must have explicit discriminants, that is, e.g. <code>A = 2</code>, not just <code>A</code></li>
 </ul>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code></code></pre></div>

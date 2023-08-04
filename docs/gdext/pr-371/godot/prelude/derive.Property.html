@@ -8,15 +8,10 @@
 </ul>
 </li>
 <li>The enum variants must not have any fields - currently only unit variants are supported.</li>
-<li>The enum variants must have explicit discriminants, that is, e.g. <code>A = 2</code>, not just <code>A</code>
-<ul>
-<li>This will likely stay this way in order to keep proc-macro dependencies lighter.</li>
+<li>The enum variants must have explicit discriminants, that is, e.g. <code>A = 2</code>, not just <code>A</code></li>
 </ul>
-</li>
-</ul>
-<p>Example :</p>
-
-<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[repr(i32)]
+<h2 id="example"><a href="#example">Example</a></h2>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[repr(i32)]
 #[derive(Debug, Property)]
 </span><span class="kw">enum </span>TestEnum {
     A = <span class="number">0</span>,
@@ -29,9 +24,8 @@
     </span>foo: TestEnum
 }
 
-<span class="comment">// This would not panic.
-</span><span class="kw">let </span><span class="kw-2">mut </span>class = TestClass {foo: TestEnum::B}.get_foo();
-<span class="macro">assert!</span>(class.get_foo() == TestEnum::B <span class="kw">as </span>i32);
+<span class="kw">let </span><span class="kw-2">mut </span>class = TestClass {foo: TestEnum::B}.get_foo();
+<span class="macro">assert_eq!</span>(class.get_foo(), TestEnum::B <span class="kw">as </span>i32);
 class.set_foo(TestEnum::A);
-<span class="macro">assert!</span>(class.foo == TestEnum::A <span class="kw">as </span>i32);</code></pre></div>
+<span class="macro">assert_eq!</span>(class.foo, TestEnum::A <span class="kw">as </span>i32);</code></pre></div>
 </div></details></section></div></main></body></html>
