@@ -62,7 +62,7 @@ it with <code>#[base]</code>:</p>
     <span class="attr">#[base]
     </span>base: Gd&lt;Node2D&gt;,
 }</code></pre></div>
-<h2 id="exported-properties"><a href="#exported-properties">Exported properties</a></h2>
+<h2 id="properties-and-exports"><a href="#properties-and-exports">Properties and exports</a></h2>
 <p>In GDScript, there is a distinction between
 <a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html#properties-setters-and-getters">properties</a>
 (fields with a <code>get</code> or <code>set</code> declaration) and
@@ -236,4 +236,10 @@ the export attributes.</p>
 <h2 id="signals"><a href="#signals">Signals</a></h2>
 <p>The <code>#[signal]</code> attribute is accepted, but not yet implemented. See <a href="https://github.com/godot-rust/gdext/issues/8">issue
 #8</a>.</p>
+<h2 id="running-code-in-the-editor"><a href="#running-code-in-the-editor">Running code in the editor</a></h2>
+<p>If you annotate a class with <code>#[class(tool)]</code>, its lifecycle methods (<code>ready()</code>, <code>process()</code> etc.) will be invoked in the editor. This
+is useful for writing custom editor plugins, as opposed to classes running simply in-game.</p>
+<p>See <a href="../init/trait.ExtensionLibrary.html#method.editor_run_behavior"><code>ExtensionLibrary::editor_run_behavior()</code></a>
+for more information and further customization.</p>
+<p>This is very similar to <a href="https://docs.godotengine.org/en/stable/tutorials/plugins/running_code_in_the_editor.html">GDScript’s <code>@tool</code> feature</a>.</p>
 </div></details></section></div></main></body></html>

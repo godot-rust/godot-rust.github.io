@@ -4,28 +4,26 @@
     #[variant]
 }
 </code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Derive macro for <a href="godot::builtin::FromVariant">FromVariant</a> on structs or enums.</p>
-<p>Example :</p>
-
-<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(FromVariant, ToVariant, PartialEq, Debug)]
+<h2 id="example"><a href="#example">Example</a></h2>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(FromVariant, ToVariant, PartialEq, Debug)]
 </span><span class="kw">struct </span>StructNamed {
     field1: String,
     field2: i32,
 }
 
+<span class="kw">let </span>obj = StructNamed {
+    field1: <span class="string">&quot;1&quot;</span>.to_string(),
+    field2: <span class="number">2</span>,
+};
+<span class="kw">let </span>dict_variant = <span class="macro">dict! </span>{
+   <span class="string">&quot;StructNamed&quot;</span>: <span class="macro">dict! </span>{
+       <span class="string">&quot;field1&quot;</span>: <span class="string">&quot;four&quot;</span>,
+       <span class="string">&quot;field2&quot;</span>: <span class="number">5</span>,
+   }
+}.to_variant();
+
 <span class="comment">// This would not panic.
-</span><span class="macro">assert!</span>(
-    StructNamed::from_variant(
-        <span class="kw-2">&amp;</span><span class="macro">dict! </span>{
-          <span class="string">&quot;StructNamed&quot;</span>:<span class="macro">dict!</span>{
-            <span class="string">&quot;field1&quot;</span>:<span class="string">&quot;four&quot;</span>,<span class="string">&quot;field2&quot;</span>:<span class="number">5
-          </span>}
-        }
-        .to_variant()
-    ) == StructNamed {
-        field1: <span class="string">&quot;1&quot;</span>.to_string(),
-        field2: <span class="number">2</span>,
-    }
-);</code></pre></div>
+</span><span class="macro">assert_eq!</span>(StructNamed::from_variant(<span class="kw-2">&amp;</span>dict_variant), obj);</code></pre></div>
 <p>You can use the skip attribute to ignore a field from the provided variant and use <code>Default::default()</code>
 to get it instead.</p>
 </div></details></section></div></main></body></html>
