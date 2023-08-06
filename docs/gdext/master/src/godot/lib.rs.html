@@ -375,7 +375,7 @@
 <span class="doccomment">/// Export user-defined classes and methods to be called by the engine.
 </span><span class="kw">pub mod </span>bind {
     <span class="kw">pub use </span>godot_core::property;
-    <span class="kw">pub use </span>godot_macros::{godot_api, FromVariant, GodotClass, ToVariant};
+    <span class="kw">pub use </span>godot_macros::{godot_api, Export, FromVariant, GodotClass, Property, ToVariant};
 }
 
 <span class="doccomment">/// Testing facilities (unstable).
@@ -390,7 +390,7 @@
 <span class="doccomment">/// Often-imported symbols.
 </span><span class="kw">pub mod </span>prelude {
     <span class="kw">pub use </span><span class="kw">super</span>::bind::property::{Export, Property, TypeStringHint};
-    <span class="kw">pub use </span><span class="kw">super</span>::bind::{godot_api, FromVariant, GodotClass, ToVariant};
+    <span class="kw">pub use </span><span class="kw">super</span>::bind::{godot_api, Export, FromVariant, GodotClass, Property, ToVariant};
 
     <span class="kw">pub use </span><span class="kw">super</span>::builtin::math::FloatExt <span class="kw">as _</span>;
     <span class="kw">pub use </span><span class="kw">super</span>::builtin::<span class="kw-2">*</span>;
