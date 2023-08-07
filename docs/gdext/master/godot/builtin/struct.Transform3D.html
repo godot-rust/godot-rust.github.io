@@ -22,26 +22,23 @@ transformation.</p>
 </div></details><details class="toggle" open><summary><section id="associatedconstant.FLIP_Z" class="associatedconstant"><h4 class="code-header">pub const <a href="#associatedconstant.FLIP_Z" class="constant">FLIP_Z</a>: <a class="struct" href="struct.Transform3D.html" title="struct godot::builtin::Transform3D">Transform3D</a> = Self::new(Basis::FLIP_Z, Vector3::ZERO)</h4></section></summary><div class="docblock"><p><code>Transform3D</code> with mirroring applied perpendicular to the XY plane.</p>
 <p><em>Godot equivalent: <code>Transform3D.FLIP_Z</code></em></p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.new" class="method"><h4 class="code-header">pub const fn <a href="#method.new" class="fn">new</a>(basis: <a class="struct" href="struct.Basis.html" title="struct godot::builtin::Basis">Basis</a>, origin: <a class="struct" href="struct.Vector3.html" title="struct godot::builtin::Vector3">Vector3</a>) -&gt; <a class="struct" href="struct.Transform3D.html" title="struct godot::builtin::Transform3D">Transform3D</a></h4></section></summary><div class="docblock"><p>Create a new transform from a <a href="struct.Basis.html" title="struct godot::builtin::Basis"><code>Basis</code></a> and a <a href="struct.Vector3.html" title="struct godot::builtin::Vector3"><code>Vector3</code></a>.</p>
-<p><em>Godot equivalent: Transform3D(Basis basis, Vector3 origin)</em></p>
+<p><em>Godot equivalent: <code>Transform3D(Basis basis, Vector3 origin)</code></em></p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.from_cols" class="method"><h4 class="code-header">pub const fn <a href="#method.from_cols" class="fn">from_cols</a>(
     a: <a class="struct" href="struct.Vector3.html" title="struct godot::builtin::Vector3">Vector3</a>,
     b: <a class="struct" href="struct.Vector3.html" title="struct godot::builtin::Vector3">Vector3</a>,
     c: <a class="struct" href="struct.Vector3.html" title="struct godot::builtin::Vector3">Vector3</a>,
     origin: <a class="struct" href="struct.Vector3.html" title="struct godot::builtin::Vector3">Vector3</a>
 ) -&gt; <a class="struct" href="struct.Transform3D.html" title="struct godot::builtin::Transform3D">Transform3D</a></h4></section></summary><div class="docblock"><p>Create a new transform from 4 matrix-columns.</p>
-<p><em>Godot equivalent: Transform3D(Vector3 x_axis, Vector3 y_axis, Vector3 z_axis, Vector3 origin)</em></p>
+<p><em>Godot equivalent: <code>Transform3D(Vector3 x_axis, Vector3 y_axis, Vector3 z_axis, Vector3 origin)</code></em></p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.from_projection" class="method"><h4 class="code-header">pub fn <a href="#method.from_projection" class="fn">from_projection</a>(proj: <a class="struct" href="struct.Projection.html" title="struct godot::builtin::Projection">Projection</a>) -&gt; <a class="struct" href="struct.Transform3D.html" title="struct godot::builtin::Transform3D">Transform3D</a></h4></section></summary><div class="docblock"><p>Constructs a Transform3d from a Projection by trimming the last row of
 the projection matrix.</p>
-<p><em>Godot equivalent: Transform3D(Projection from)</em></p>
+<p><em>Godot equivalent: <code>Transform3D(Projection from)</code></em></p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.affine_inverse" class="method"><h4 class="code-header">pub fn <a href="#method.affine_inverse" class="fn">affine_inverse</a>(self) -&gt; <a class="struct" href="struct.Transform3D.html" title="struct godot::builtin::Transform3D">Transform3D</a></h4></section></summary><div class="docblock"><p>Returns the inverse of the transform, under the assumption that the
 transformation is composed of rotation, scaling and translation.</p>
-<p><em>Godot equivalent: Transform3D.affine_inverse()</em></p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.interpolate_with" class="method"><h4 class="code-header">pub fn <a href="#method.interpolate_with" class="fn">interpolate_with</a>(self, other: <a class="struct" href="struct.Transform3D.html" title="struct godot::builtin::Transform3D">Transform3D</a>, weight: <a class="primitive" href="https://doc.rust-lang.org/1.71.0/std/primitive.f32.html">f32</a>) -&gt; <a class="struct" href="struct.Transform3D.html" title="struct godot::builtin::Transform3D">Transform3D</a></h4></section></summary><div class="docblock"><p>Returns a transform interpolated between this transform and another by
 a given weight (on the range of 0.0 to 1.0).</p>
-<p><em>Godot equivalent: Transform3D.interpolate_with()</em></p>
-</div></details><details class="toggle method-toggle" open><summary><section id="method.is_finite" class="method"><h4 class="code-header">pub fn <a href="#method.is_finite" class="fn">is_finite</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.71.0/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><p>Returns <code>true if this transform is finite by calling </code>is_finite` on the
+</div></details><details class="toggle method-toggle" open><summary><section id="method.is_finite" class="method"><h4 class="code-header">pub fn <a href="#method.is_finite" class="fn">is_finite</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.71.0/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><p>Returns true if this transform is finite by calling <code>is_finite</code> on the
 basis and origin.</p>
-<p><em>Godot equivalent: Transform3D.is_finite()</em></p>
 </div></details><section id="method.looking_at" class="method"><h4 class="code-header">pub fn <a href="#method.looking_at" class="fn">looking_at</a>(
     self,
     target: <a class="struct" href="struct.Vector3.html" title="struct godot::builtin::Vector3">Vector3</a>,
