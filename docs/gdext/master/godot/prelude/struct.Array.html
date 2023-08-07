@@ -12,7 +12,8 @@ runtime checks that no values of the wrong type are put into the array. We repre
 <p>Like in GDScript, <code>Array</code> acts as a reference type: multiple <code>Array</code> instances may
 refer to the same underlying array, and changes to one are visible in the other.</p>
 <p>To create a copy that shares data with the original array, use <a href="../obj/trait.Share.html#tymethod.share" title="method godot::obj::Share::share"><code>Share::share()</code></a>. If you want
-to create a copy of the data, use [<code>duplicate_shallow()</code>] or [<code>duplicate_deep()</code>].</p>
+to create a copy of the data, use <a href="../builtin/struct.Array.html#method.duplicate_shallow" title="method godot::builtin::Array::duplicate_shallow"><code>duplicate_shallow()</code></a> or
+<a href="../builtin/struct.Array.html#method.duplicate_deep" title="method godot::builtin::Array::duplicate_deep"><code>duplicate_deep()</code></a>.</p>
 <h2 id="thread-safety"><a href="#thread-safety">Thread safety</a></h2>
 <p>Usage is safe if the <code>Array</code> is used on a single thread only. Concurrent reads on
 different threads are also safe, but any writes must be externally synchronized. The Rust
@@ -45,13 +46,13 @@ ensure that a new seed will be used each time if you want non-reproducible shuff
     T: <a class="trait" href="../builtin/meta/trait.VariantMetadata.html" title="trait godot::builtin::meta::VariantMetadata">VariantMetadata</a>,</span></h3></section></summary><div class="impl-items"><details class="toggle method-toggle" open><summary><section id="method.new" class="method"><h4 class="code-header">pub fn <a href="#method.new" class="fn">new</a>() -&gt; <a class="struct" href="../builtin/struct.Array.html" title="struct godot::builtin::Array">Array</a>&lt;T&gt;</h4></section></summary><div class="docblock"><p>Constructs an empty <code>Array</code>.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.duplicate_shallow" class="method"><h4 class="code-header">pub fn <a href="#method.duplicate_shallow" class="fn">duplicate_shallow</a>(&amp;self) -&gt; <a class="struct" href="../builtin/struct.Array.html" title="struct godot::builtin::Array">Array</a>&lt;T&gt;</h4></section></summary><div class="docblock"><p>Returns a shallow copy of the array. All array elements are copied, but any reference types
 (such as <code>Array</code>, <code>Dictionary</code> and <code>Object</code>) will still refer to the same value.</p>
-<p>To create a deep copy, use [<code>duplicate_deep()</code>] instead. To create a new reference to the
-same array data, use [<code>share()</code>].</p>
+<p>To create a deep copy, use <a href="../builtin/struct.Array.html#method.duplicate_deep" title="method godot::builtin::Array::duplicate_deep"><code>duplicate_deep()</code></a> instead.
+To create a new reference to the same array data, use <a href="../obj/trait.Share.html#tymethod.share" title="method godot::obj::Share::share"><code>share()</code></a>.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.duplicate_deep" class="method"><h4 class="code-header">pub fn <a href="#method.duplicate_deep" class="fn">duplicate_deep</a>(&amp;self) -&gt; <a class="struct" href="../builtin/struct.Array.html" title="struct godot::builtin::Array">Array</a>&lt;T&gt;</h4></section></summary><div class="docblock"><p>Returns a deep copy of the array. All nested arrays and dictionaries are duplicated and
 will not be shared with the original array. Note that any <code>Object</code>-derived elements will
 still be shallow copied.</p>
-<p>To create a shallow copy, use [<code>duplicate_shallow()</code>] instead. To create a new reference to
-the same array data, use [<code>share()</code>].</p>
+<p>To create a shallow copy, use <a href="../builtin/struct.Array.html#method.duplicate_shallow" title="method godot::builtin::Array::duplicate_shallow"><code>duplicate_shallow()</code></a> instead.
+To create a new reference to the same array data, use <a href="../obj/trait.Share.html#tymethod.share" title="method godot::obj::Share::share"><code>share()</code></a>.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.subarray_shallow" class="method"><h4 class="code-header">pub fn <a href="#method.subarray_shallow" class="fn">subarray_shallow</a>(
     &amp;self,
     begin: <a class="primitive" href="https://doc.rust-lang.org/1.71.0/std/primitive.usize.html">usize</a>,
@@ -64,7 +65,7 @@ in which case <code>begin</code> must be higher than <code>end</code>. For examp
 <code>TypedArray::from(&amp;[0, 1, 2, 3, 4, 5]).slice(5, 1, -2)</code> returns <code>[5, 3]</code>.</p>
 <p>Array elements are copied to the slice, but any reference types (such as <code>Array</code>,
 <code>Dictionary</code> and <code>Object</code>) will still refer to the same value. To create a deep copy, use
-[<code>subarray_deep()</code>] instead.</p>
+<a href="../builtin/struct.Array.html#method.subarray_deep" title="method godot::builtin::Array::subarray_deep"><code>subarray_deep()</code></a> instead.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.subarray_deep" class="method"><h4 class="code-header">pub fn <a href="#method.subarray_deep" class="fn">subarray_deep</a>(
     &amp;self,
     begin: <a class="primitive" href="https://doc.rust-lang.org/1.71.0/std/primitive.usize.html">usize</a>,
@@ -77,7 +78,7 @@ in which case <code>begin</code> must be higher than <code>end</code>. For examp
 <code>TypedArray::from(&amp;[0, 1, 2, 3, 4, 5]).slice(5, 1, -2)</code> returns <code>[5, 3]</code>.</p>
 <p>All nested arrays and dictionaries are duplicated and will not be shared with the original
 array. Note that any <code>Object</code>-derived elements will still be shallow copied. To create a
-shallow copy, use [<code>subarray_shallow()</code>] instead.</p>
+shallow copy, use <a href="../builtin/struct.Array.html#method.subarray_shallow" title="method godot::builtin::Array::subarray_shallow"><code>subarray_shallow()</code></a> instead.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.extend_array" class="method"><h4 class="code-header">pub fn <a href="#method.extend_array" class="fn">extend_array</a>(&amp;mut self, other: <a class="struct" href="../builtin/struct.Array.html" title="struct godot::builtin::Array">Array</a>&lt;T&gt;)</h4></section></summary><div class="docblock"><p>Appends another array at the end of this array. Equivalent of <code>append_array</code> in GDScript.</p>
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-Array%3CT%3E-2" class="impl"><a href="#impl-Array%3CT%3E-2" class="anchor">§</a><h3 class="code-header">impl&lt;T&gt; <a class="struct" href="../builtin/struct.Array.html" title="struct godot::builtin::Array">Array</a>&lt;T&gt;<span class="where fmt-newline">where
     T: <a class="trait" href="../builtin/meta/trait.VariantMetadata.html" title="trait godot::builtin::meta::VariantMetadata">VariantMetadata</a> + <a class="trait" href="../builtin/trait.FromVariant.html" title="trait godot::builtin::FromVariant">FromVariant</a>,</span></h3></section></summary><div class="impl-items"><details class="toggle method-toggle" open><summary><section id="method.iter_shared" class="method"><h4 class="code-header">pub fn <a href="#method.iter_shared" class="fn">iter_shared</a>(&amp;self) -&gt; <a class="struct" href="../builtin/array/struct.Iter.html" title="struct godot::builtin::array::Iter">Iter</a>&lt;'_, T&gt; <a href="#" class="tooltip" data-notable-ty="Iter&lt;&#39;_, T&gt;">ⓘ</a></h4></section></summary><div class="docblock"><p>Returns an iterator over the elements of the <code>Array</code>. Note that this takes the array
