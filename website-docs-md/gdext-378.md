@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-378/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/378"
 pr_author = "you-win"
 sort_key = 2023-08-10
-date_time = 2023-08-10T07:51:26Z
-commit_sha = "0a068d7c84b40fc7cc781111b20713b84af570eb"
+date_time = 2023-08-10T16:35:46Z
+commit_sha = "d6589fc3b9b9932285969aeeff7c9613c58d406b"
 +++
 
 Feature/func renaming
