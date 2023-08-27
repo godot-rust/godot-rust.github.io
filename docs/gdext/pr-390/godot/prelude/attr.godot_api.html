@@ -7,7 +7,7 @@
 
 <span class="comment">// 1) inherent impl block: user-defined, custom API
 </span><span class="attr">#[godot_api]
-</span><span class="kw">impl </span>MyStruct { <span class="comment">/* ... */ </span>}
+</span><span class="kw">impl </span>MyClass { <span class="comment">/* ... */ </span>}
 
 <span class="comment">// 2) trait impl block: implement Godot-specific APIs
 </span><span class="attr">#[godot_api]
@@ -22,7 +22,7 @@
 </ul>
 <p>Neither <code>#[godot_api]</code> attribute is required. For small data bundles inheriting <code>RefCounted</code>, you may be fine with
 accessing properties directly from GDScript.</p>
-<h2 id="examples"><a href="#examples">Examples</a></h2><h3 id="data-bundle-refcounted-as-a-base"><a href="#data-bundle-refcounted-as-a-base">Data bundle: <code>RefCounted</code> as a base</a></h3>
+<h2 id="examples"><a href="#examples">Examples</a></h2><h3 id="refcounted-as-a-base-overridden-init"><a href="#refcounted-as-a-base-overridden-init"><code>RefCounted</code> as a base, overridden <code>init</code></a></h3>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code>
 <span class="attr">#[derive(GodotClass)]
 </span><span class="kw">struct </span>MyStruct;
@@ -37,13 +37,13 @@ accessing properties directly from GDScript.</p>
 
 <span class="attr">#[godot_api]
 </span><span class="kw">impl </span>RefCountedVirtual <span class="kw">for </span>MyStruct {
-    <span class="kw">fn </span>init(<span class="kw">_</span>: Base&lt;RefCounted&gt;) -&gt; <span class="self">Self </span>{
+    <span class="kw">fn </span>init(_base: Base&lt;RefCounted&gt;) -&gt; <span class="self">Self </span>{
         MyStruct
     }
 }</code></pre></div>
 <p>Note that <code>init</code> can be either provided by overriding it, or generated with a <code>#[class(init)]</code> attribute on the struct.
 Classes without <code>init</code> cannot be instantiated from GDScript.</p>
-<h3 id="node-as-a-base"><a href="#node-as-a-base"><code>Node</code> as a base</a></h3>
+<h3 id="node-as-a-base-generated-init"><a href="#node-as-a-base-generated-init"><code>Node</code> as a base, generated <code>init</code></a></h3>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code>
 <span class="attr">#[derive(GodotClass)]
 #[class(init, base=Node)]
