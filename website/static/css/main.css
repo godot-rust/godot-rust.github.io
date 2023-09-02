@@ -35,7 +35,7 @@
 }
 
 /*
- ! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
+ ! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
  */
 
 /*
@@ -227,6 +227,10 @@ select,
 textarea {
   font-family: inherit;
   /* 1 */
+  font-feature-settings: inherit;
+  /* 1 */
+  font-variation-settings: inherit;
+  /* 1 */
   font-size: 100%;
   /* 1 */
   font-weight: inherit;
@@ -374,6 +378,14 @@ ul,
 menu {
   list-style: none;
   margin: 0;
+  padding: 0;
+}
+
+/*
+Reset default styling for dialogs.
+*/
+
+dialog {
   padding: 0;
 }
 
@@ -1734,6 +1746,39 @@ html {
     /*@apply w-2/3;*/
     width: 67%;
   }
+}
+
+.devlog-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+  width: 90%;
+}
+
+@media (min-width: 920px) {
+  .devlog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /*@apply w-2/3;*/
+  }
+}
+
+@media (min-width: 1000px) {
+  .devlog-grid {
+    /*@apply w-5/6;*/
+    width: 85%;
+  }
+}
+
+@media (min-width: 1160px) {
+  .devlog-grid {
+    /*@apply w-2/3;*/
+    width: 67%;
+  }
+}
+
+.devlog-grid {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 /* All text and icons inside buttons */

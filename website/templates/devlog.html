@@ -1,0 +1,136 @@
+{#
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at https://mozilla.org/MPL/2.0/.
+#}
+
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="flex items-center flex-col mt-10">
+  <!-- Content -->
+  <div class="markdown-content mt-2 mb-6 items-center">
+    {{ section.content | safe }}
+  </div>
+
+  <!-- grid md:grid-cols-4 grid-cols-2 -->
+  <div class="devlog-grid">
+<!--    <div class="flex gap-y-6 w-full px-4 sm:w-2/3">-->
+<!--    <div class="flex flex-col gap-y-6 w-full px-4 sm:w-2/3">-->
+
+    {% if paginator %}
+    {% set pages = paginator.pages %}
+    {% else %}
+    {% set pages = term.pages %}
+    {% endif %}
+
+    <div class="flex flex-col flex-1 gap-y-6">
+
+      {% for page in pages %}
+
+      {# reverse: PR icon on the right in right column #}
+      <div class="flex gap-x-2 flex-row-reverse">
+
+      {# linked icon (like PR) could come here #}
+
+      <div class="flex-grow border border-2 doc-button rounded-xl p-5 shadow-2xl transform transition duration-300 hover:scale-105
+          {% if page.title == 'master' %}
+            button-background
+          {% else %}
+            button-background-2
+          {% endif %}
+        ">
+        <a href="{{ page.permalink }}" class="pr-link-box" title="API docs for {{ page.title }}"></a>
+        <div class="flex flex-col justify-center"><!-- py-2 -->
+          <h3 class="pr-num">{{ page.title }}</h3>
+          <p>{{ page.description }}</p>
+        </div>
+
+        <!-- PR title -->
+        <div class="flex flex-wrap py-2">
+          <div class="flex items-center">
+            <div class="pr-content flex space-x-3 text-gray-900 dark:text-gray-400">
+              {{ page.extra.summary | safe }}
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap {# py-2 #}">
+
+          <!-- 2nd row -->
+          <div class="flex flex-1 flex-grow space-x-3">
+
+            <!-- Updated date -->
+            <div class="flex items-center">
+              <svg class="w-6 h-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>Last updated</title>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <div class="ml-1"><time datetime="{{ page.date }}">{{ page.date }}</time></div>
+            </div>
+
+
+            {# Author info would come here. #}
+          </div>
+        </div>
+      </div>
+
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+{% endblock content %}
+
+{% block pagination %}
+{% if paginator.previous or paginator.next %}
+  <div class="max-w-7xl px-2 sm:px-6 lg:px-8 mx-auto w-full">
+    <div class="flex items-center justify-between">
+      {% if not paginator.previous %}
+      <!-- Disabled -->
+        <span class="flex items-center border border-gray-400 dark:border-black rounded-lg px-3 py-4 bg-gray-400 text-gray-200">
+          <svg class="w-7 h-7 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path>
+          </svg>
+        Previous
+      </span>
+      {% else %}
+      <!-- Active -->
+        <a class="flex items-center border border-gray-400 dark:border-black rounded-lg text-gray-800 dark:text-gray-300 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 dark:hover:text-white px-3 py-4 rounded-md text-sm font-medium transform transition duration-500 hover:scale-105 bg-gray-200 dark:bg-gray-800"  href="{{ paginator.previous }}" {% if not paginator.previous %}disabled{% endif %}>
+          <svg class="w-7 h-7 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path>
+          </svg>
+          Previous
+        </a>
+      {% endif %}
+      <ul class="flex gap-x-2">
+        {% for pager in range(start=1, end=paginator.number_pagers+1) %}
+        <li class="">
+          <a class="p-4 border border-gray-400 dark:border-black rounded-lg text-gray-800 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 hover:text-white rounded-md text-sm font-medium transform transition duration-500 hover:scale-105 {% if paginator.current_index == pager %}bg-blue-500{% else %}bg-gray-200 dark:bg-gray-800{% endif %}" href="{{ paginator.base_url }}{{pager}}" aria-label="Page {{pager}}">
+            {{pager}}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% if not paginator.next %}
+        <!-- Disabled -->
+        <span class="flex items-center border border-gray-400 dark:border-black rounded-lg  px-3 py-4 bg-gray-400 text-gray-200">
+          Next Page
+          <svg class="w-7 h-7 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </span>
+      {% else %}
+      <!-- Active -->
+        <a class="flex items-center border border-gray-400 dark:border-black rounded-lg text-gray-800 dark:text-gray-300 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 hover:text-white px-3 py-4 rounded-md text-sm font-medium transform transition duration-500 hover:scale-105 bg-gray-200 dark:bg-gray-800" href="{{ paginator.next }}">
+          Next page
+          <svg class="w-7 h-7 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
+{% endblock %}

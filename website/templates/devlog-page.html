@@ -1,0 +1,28 @@
+{#
+ This Source Code Form is subject to the terms of the Mozilla Public
+ License, v. 2.0. If a copy of the MPL was not distributed with this
+ file, You can obtain one at https://mozilla.org/MPL/2.0/.
+#}
+
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="flex items-center flex-col mt-10">
+  <div class="markdown-content">
+      <h1>{{ page.title }}</h1>
+  </div>
+
+  <div class="author-date">
+      {% for author in page.authors %}
+         {{ author }},
+      {% endfor %}
+      {{ page.date }}
+  </div>
+
+  <!-- Content -->
+  <div class="markdown-content">
+    {{ page.content | safe }}
+  </div>
+
+</div>
+{% endblock content %}

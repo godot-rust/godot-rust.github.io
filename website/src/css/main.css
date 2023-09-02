@@ -307,6 +307,10 @@ html {
     }
 }
 
+.devlog-grid {
+    @apply doc-grid;
+    @apply grid-cols-1;
+}
 
 /* All text and icons inside buttons */
 .doc-button .flex {

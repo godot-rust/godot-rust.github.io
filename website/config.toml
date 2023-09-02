@@ -34,6 +34,7 @@ items = [
         { url = "https://github.com/godot-rust", name = "GitHub" },
         { url = "/book", name = "Book" },
         { url = "/docs", name = "API Docs" },
+        { url = "/dev", name = "Devlog" },
     ] }
 ]
 
