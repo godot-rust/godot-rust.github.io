@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-396/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/396"
 pr_author = "mhoff12358"
 sort_key = 2023-09-04
-date_time = 2023-09-04T03:49:48Z
-commit_sha = "4418908a53cb61b6142e509a0124e8e850b39dbe"
+date_time = 2023-09-04T03:51:49Z
+commit_sha = "4b9c57ad576da54f14c50f7d364c6ac961b6352c"
 +++
 
 Draft: Allow godot-visible functions to receive a Gd instead of self.
