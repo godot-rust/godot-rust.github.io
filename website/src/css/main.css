@@ -82,6 +82,10 @@ html {
 
 .markdown-content {
     font-size: 1.2em;
+
+    /* less line spacing */
+    line-height: 1.4;
+
     /*text-align: left;*/
     /*text-align-last: left;*/
 
@@ -144,16 +148,48 @@ html {
 /*    color: var(--brown-caption-dark);*/
 /*}*/
 
-.markdown-content li {
+.markdown-content ol {
+    /* Outside to keep multiple lines aligned. */
+    @apply list-decimal;
+    @apply list-outside;
+    @apply pl-6;
+}
+
+/* Numbers should be thicker than text. */
+.markdown-content ol > li::marker {
+    @apply ml-12;
+    @apply font-semibold;
+}
+
+/* Indent the entire list (but not each sub-list) a bit. */
+.markdown-content ol li {
+    @apply ml-2;
+}
+
+.markdown-content ul {
     @apply list-disc;
-    @apply list-inside;
+    @apply list-outside;
+    @apply pl-6;
+}
+
+/** Margin at end of entire list, same value as <p>. */
+.markdown-content ol, .markdown-content ul {
+    @apply mb-4;
+}
+
+/** Nested lists have smaller margin. */
+.markdown-content ol ol,
+.markdown-content ol ul,
+.markdown-content ul ol,
+.markdown-content ul ul {
+    @apply mb-2;
 }
 
 .markdown-content p {
-    /*@apply text-base;*/
+    @apply mb-4;
     /*@apply leading-7;*/
-    @apply mb-2;
 }
+
 
 /*.all-links {*/
 /*    color: #59a2cc;*/

@@ -1502,6 +1502,8 @@ html {
 
 .markdown-content {
   font-size: 1.2em;
+  /* less line spacing */
+  line-height: 1.4;
   /*text-align: left;*/
   /*text-align-last: left;*/
   /* Different ratios for widths >0px, >640px, >768px.
@@ -1564,15 +1566,50 @@ html {
 
 /*}*/
 
-.markdown-content li {
+.markdown-content ol {
+  /* Outside to keep multiple lines aligned. */
+  list-style-type: decimal;
+  list-style-position: outside;
+  padding-left: 1.5rem;
+}
+
+/* Numbers should be thicker than text. */
+
+.markdown-content ol > li::marker {
+  margin-left: 3rem;
+  font-weight: 600;
+}
+
+/* Indent the entire list (but not each sub-list) a bit. */
+
+.markdown-content ol li {
+  margin-left: 0.5rem;
+}
+
+.markdown-content ul {
   list-style-type: disc;
-  list-style-position: inside;
+  list-style-position: outside;
+  padding-left: 1.5rem;
+}
+
+/** Margin at end of entire list, same value as <p>. */
+
+.markdown-content ol, .markdown-content ul {
+  margin-bottom: 1rem;
+}
+
+/** Nested lists have smaller margin. */
+
+.markdown-content ol ol,
+.markdown-content ol ul,
+.markdown-content ul ol,
+.markdown-content ul ul {
+  margin-bottom: 0.5rem;
 }
 
 .markdown-content p {
-  /*@apply text-base;*/
+  margin-bottom: 1rem;
   /*@apply leading-7;*/
-  margin-bottom: 0.5rem;
 }
 
 /*.all-links {*/
