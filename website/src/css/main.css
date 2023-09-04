@@ -29,11 +29,13 @@
     /* Navigation bar + selected parts */
     --brown-nav: rgb(185, 161, 153);
     --brown-body: rgb(218, 198, 189);
+    --brown-body-bg: rgb(201, 176, 167);
     --brown-hover: rgb(148, 122, 112);
     --brown-caption: rgb(106, 78, 50);
 
     --brown-nav-dark: rgb(68, 63, 58);
     --brown-body-dark: rgb(89, 82, 75);
+    --brown-body-bg-dark: rgb(77, 70, 63);
     --brown-hover-dark: rgb(117, 103, 91);
     --brown-caption-dark: rgb(213, 195, 183);
 }
@@ -113,6 +115,7 @@ html {
 
 .markdown-content a {
     color: rgb(3, 89, 138);
+    @apply font-semibold;
 }
 
 .markdown-content a:hover {
@@ -121,12 +124,32 @@ html {
 }
 
 :is(.dark .markdown-content a) {
-    color: rgb(125, 210, 255);
+    color: rgb(47, 173, 239);
 }
 
 :is(.dark .markdown-content a:hover) {
-    color: rgb(176, 225, 250);
+    color: rgb(118, 197, 238);
     /*color: var(--brown-caption-dark);*/
+}
+
+.markdown-content code {
+    background-color: var(--brown-body-bg);
+    @apply rounded-md;
+    @apply px-1;
+    @apply py-0.5;
+    @apply text-base;
+    /*@apply font-mono;*/
+}
+
+.markdown-content blockquote {
+    @apply border-l-4;
+    @apply border-gray-400;
+    @apply pl-4;
+    @apply my-4;
+}
+
+:is(.dark .markdown-content code) {
+    background-color: var(--brown-body-bg-dark);
 }
 
 /*.markdown-content h1 {}*/
