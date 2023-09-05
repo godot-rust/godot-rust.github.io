@@ -82,6 +82,18 @@ html {
 /*    @apply underline;*/
 /*}*/
 
+.author-date {
+    margin-top: -1.8em;
+    margin-bottom: 1.8em;
+    text-align: center;
+
+    color: var(--brown-caption);
+}
+
+:is(.dark .author-date) {
+    color: var(--brown-caption-dark);
+}
+
 .markdown-content {
     font-size: 1.2em;
 
@@ -152,7 +164,43 @@ html {
     background-color: var(--brown-body-bg-dark);
 }
 
-/*.markdown-content h1 {}*/
+.markdown-content table {
+    @apply text-base;
+    @apply mb-4;
+
+    /*table-layout: fixed;*/
+    border: 2px solid var(--brown-nav);
+    border-collapse: collapse;
+}
+
+.markdown-content table td, .markdown-content table th {
+    @apply px-2;
+    @apply py-1;
+
+    border: 1px solid var(--brown-nav);
+}
+
+.markdown-content th {
+    background-color: var(--brown-body-bg);
+    @apply font-semibold;
+}
+
+:is(.dark .markdown-content table) {
+    border: 2px solid var(--brown-nav-dark);
+}
+
+:is(.dark .markdown-content td, .dark .markdown-content th) {
+    border: 1px solid var(--brown-nav-dark);
+}
+
+:is(.dark .markdown-content th) {
+    background-color: var(--brown-body-bg-dark);
+}
+
+.markdown-content h1 {
+    @apply mt-10;
+    @apply mb-8;
+}
 
 .markdown-content h2 {
     @apply mt-12;
@@ -340,15 +388,28 @@ html {
     @apply grid-cols-1;
     @apply gap-x-6;
 
-    width: 90%;
+    width: 85%;
 }
 
-/* This is very hackish, maybe do it properly at some point...
-   To reverse the order (so that gdext comes before gdnative in 2Nx1 layout on narrow width), see https://stackoverflow.com/q/45383042 */
-@media (min-width: 920px) {
+.devlog-grid {
+    width: 85%;
+}
+
+@media (min-width: 600px) {
+    .devlog-grid {
+        width: 75%;
+    }
+}
+
+@media (min-width: 840px) {
+    /* This is very hackish, maybe do it properly at some point...
+       To reverse the order (so that gdext comes before gdnative in 2Nx1 layout on narrow width), see https://stackoverflow.com/q/45383042 */
     .doc-grid {
         @apply grid-cols-2;
         /*@apply w-2/3;*/
+    }
+    .devlog-grid {
+        width: 65%;
     }
 }
 
@@ -357,6 +418,9 @@ html {
         /*@apply w-5/6;*/
         width: 85%;
     }
+    .devlog-grid {
+        width: 60%;
+    }
 }
 
 @media (min-width: 1160px) {
@@ -364,12 +428,11 @@ html {
         /*@apply w-2/3;*/
         width: 67%;
     }
+    .devlog-grid {
+        width: 50%;
+    }
 }
 
-.devlog-grid {
-    @apply doc-grid;
-    @apply grid-cols-1;
-}
 
 /* All text and icons inside buttons */
 .doc-button .flex {

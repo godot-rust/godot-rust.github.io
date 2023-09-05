@@ -1502,6 +1502,17 @@ html {
 
 /*}*/
 
+.author-date {
+  margin-top: -1.8em;
+  margin-bottom: 1.8em;
+  text-align: center;
+  color: var(--brown-caption);
+}
+
+:is(.dark .author-date) {
+  color: var(--brown-caption-dark);
+}
+
 .markdown-content {
   font-size: 1.2em;
   /* less line spacing */
@@ -1573,7 +1584,44 @@ html {
   background-color: var(--brown-body-bg-dark);
 }
 
-/*.markdown-content h1 {}*/
+.markdown-content table {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+  /*table-layout: fixed;*/
+  border: 2px solid var(--brown-nav);
+  border-collapse: collapse;
+}
+
+.markdown-content table td, .markdown-content table th {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  border: 1px solid var(--brown-nav);
+}
+
+.markdown-content th {
+  background-color: var(--brown-body-bg);
+  font-weight: 600;
+}
+
+:is(.dark .markdown-content table) {
+  border: 2px solid var(--brown-nav-dark);
+}
+
+:is(.dark .markdown-content td, .dark .markdown-content th) {
+  border: 1px solid var(--brown-nav-dark);
+}
+
+:is(.dark .markdown-content th) {
+  background-color: var(--brown-body-bg-dark);
+}
+
+.markdown-content h1 {
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+}
 
 .markdown-content h2 {
   margin-top: 3rem;
@@ -1786,16 +1834,30 @@ html {
   grid-template-columns: repeat(1, minmax(0, 1fr));
   -moz-column-gap: 1.5rem;
        column-gap: 1.5rem;
-  width: 90%;
+  width: 85%;
 }
 
-/* This is very hackish, maybe do it properly at some point...
-   To reverse the order (so that gdext comes before gdnative in 2Nx1 layout on narrow width), see https://stackoverflow.com/q/45383042 */
+.devlog-grid {
+  width: 85%;
+}
 
-@media (min-width: 920px) {
+@media (min-width: 600px) {
+  .devlog-grid {
+    width: 75%;
+  }
+}
+
+@media (min-width: 840px) {
+  /* This is very hackish, maybe do it properly at some point...
+       To reverse the order (so that gdext comes before gdnative in 2Nx1 layout on narrow width), see https://stackoverflow.com/q/45383042 */
+
   .doc-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     /*@apply w-2/3;*/
+  }
+
+  .devlog-grid {
+    width: 65%;
   }
 }
 
@@ -1804,6 +1866,10 @@ html {
     /*@apply w-5/6;*/
     width: 85%;
   }
+
+  .devlog-grid {
+    width: 60%;
+  }
 }
 
 @media (min-width: 1160px) {
@@ -1811,39 +1877,10 @@ html {
     /*@apply w-2/3;*/
     width: 67%;
   }
-}
 
-.devlog-grid {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  -moz-column-gap: 1.5rem;
-       column-gap: 1.5rem;
-  width: 90%;
-}
-
-@media (min-width: 920px) {
   .devlog-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    /*@apply w-2/3;*/
+    width: 50%;
   }
-}
-
-@media (min-width: 1000px) {
-  .devlog-grid {
-    /*@apply w-5/6;*/
-    width: 85%;
-  }
-}
-
-@media (min-width: 1160px) {
-  .devlog-grid {
-    /*@apply w-2/3;*/
-    width: 67%;
-  }
-}
-
-.devlog-grid {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 /* All text and icons inside buttons */
