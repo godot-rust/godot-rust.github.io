@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-398/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/398"
 pr_author = "Bromeon"
 sort_key = 2023-09-05
-date_time = 2023-09-05T18:24:35Z
-commit_sha = "2c4952e176c2cc7c6ecee68a6ca43f8c8a97a90d"
+date_time = 2023-09-05T18:26:50Z
+commit_sha = "4bc45812b602f0b824e37e07692a2192d5bb2f65"
 +++
 
 Benchmark infrastructure
