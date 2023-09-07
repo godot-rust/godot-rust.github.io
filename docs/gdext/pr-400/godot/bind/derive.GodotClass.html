@@ -131,30 +131,6 @@ generated getter or setter in these cases anyway, use <code>get</code> or <code>
         <span class="self">self</span>.my_field = value;
     }
 }</code></pre></div>
-<p>Alternatively, a property can be manually registered with Godot. This can be useful
-when accessing nested structs or when a custom property name is needed.</p>
-
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
-
-<span class="attr">#[derive(GodotClass)]
-</span><span class="comment">// Registers `my_field` as `my_int` with a getter and setter
-</span><span class="attr">#[property(name = my_int, <span class="kw">type </span>= i64, get = get_my_field, set = set_my_field)]
-</span><span class="kw">struct </span>MyStruct {
-    my_field: i64,
-}
-
-<span class="attr">#[godot_api]
-</span><span class="kw">impl </span>MyStruct {
-    <span class="attr">#[func]
-    </span><span class="kw">pub fn </span>get_my_field(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i64 {
-        <span class="self">self</span>.my_field
-    }
-
-    <span class="attr">#[func]
-    </span><span class="kw">pub fn </span>set_my_field(<span class="kw-2">&amp;mut </span><span class="self">self</span>, value: i64) {
-        <span class="self">self</span>.my_field = value;
-    }
-}</code></pre></div>
 <p>For exporting properties to the editor, you can use the <code>#[export]</code> attribute:</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
@@ -258,6 +234,32 @@ the export attributes.</p>
 
 <span class="attr">#[godot_api]
 </span><span class="kw">impl </span>MyStruct {}</code></pre></div>
+<p>Alternatively, a property can be manually registered with Godot. This can be useful
+when accessing nested structs or when a custom property name is needed. Automatically
+generated getters/setters are not supported in this attribute. Custom property hints,
+hint strings, and usage flags are supported.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
+
+<span class="attr">#[derive(GodotClass)]
+</span><span class="comment">// Registers `my_field` as `my_int` with a getter and setter
+</span><span class="attr">#[property(name = my_int, <span class="kw">type </span>= i64, get = get_my_field, set = set_my_field)]
+</span><span class="kw">struct </span>MyStruct {
+    my_field: i64,
+}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>MyStruct {
+    <span class="attr">#[func]
+    </span><span class="kw">pub fn </span>get_my_field(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i64 {
+        <span class="self">self</span>.my_field
+    }
+
+    <span class="attr">#[func]
+    </span><span class="kw">pub fn </span>set_my_field(<span class="kw-2">&amp;mut </span><span class="self">self</span>, value: i64) {
+        <span class="self">self</span>.my_field = value;
+    }
+}</code></pre></div>
 <h2 id="signals"><a href="#signals">Signals</a></h2>
 <p>The <code>#[signal]</code> attribute is accepted, but not yet implemented. See <a href="https://github.com/godot-rust/gdext/issues/8">issue
 #8</a>.</p>
