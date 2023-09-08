@@ -242,4 +242,14 @@ is useful for writing custom editor plugins, as opposed to classes running simpl
 <p>See <a href="../init/trait.ExtensionLibrary.html#method.editor_run_behavior"><code>ExtensionLibrary::editor_run_behavior()</code></a>
 for more information and further customization.</p>
 <p>This is very similar to <a href="https://docs.godotengine.org/en/stable/tutorials/plugins/running_code_in_the_editor.html">GDScript’s <code>@tool</code> feature</a>.</p>
+<h2 id="editor-plugins"><a href="#editor-plugins">Editor Plugins</a></h2>
+<p>If you annotate a class with <code>#[class(editor_plugin)]</code>, it will be turned into an editor plugin. The
+class must then inherit from <code>EditorPlugin</code>, and an instance of that class will be automatically added
+to the editor when launched.</p>
+<p>See <a href="https://docs.godotengine.org/en/stable/tutorials/plugins/editor/index.html">Godot’s documentation of editor plugins</a>
+for more information about editor plugins. But note that you do not need to create and enable the plugin
+through Godot’s <code>Create New Plugin</code> menu for it to work, simply annotating the class with <code>editor_plugin</code>
+automatically enables it when the library is loaded.</p>
+<p>This should usually be combined with <code>#[class(tool)]</code> so that the code you write will actually run in the
+editor.</p>
 </div></details></section></div></main></body></html>
