@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["ExAddCheckItem","ExAddCheckShortcut","ExAddIconCheckItem","ExAddIconCheckShortcut","ExAddIconItem","ExAddIconRadioCheckItem","ExAddIconRadioCheckShortcut","ExAddIconShortcut","ExAddItem","ExAddMultistateItem","ExAddRadioCheckItem","ExAddRadioCheckShortcut","ExAddSeparator","ExAddShortcut","ExAddSubmenuItem","ExSetItemShortcut"]};
