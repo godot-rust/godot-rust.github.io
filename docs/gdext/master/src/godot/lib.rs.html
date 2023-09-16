@@ -204,6 +204,10 @@
 <a href="#204" id="204">204</a>
 <a href="#205" id="205">205</a>
 <a href="#206" id="206">206</a>
+<a href="#207" id="207">207</a>
+<a href="#208" id="208">208</a>
+<a href="#209" id="209">209</a>
+<a href="#210" id="210">210</a>
 </pre></div><pre class="rust"><code><span class="comment">/*
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -218,7 +222,13 @@
 //!
 //! Godot is written in C++, which doesn&#39;t have the same strict guarantees about safety and
 //! mutability that Rust does. As a result, not everything in this crate will look and feel
-//! entirely &quot;rusty&quot;. We distinguish four different kinds of types:
+//! entirely &quot;rusty&quot;.
+//!
+//! Traits such as `Clone`, `PartialEq` or `PartialOrd` are designed to mirror Godot semantics,
+//! except in cases where Rust is stricter (e.g. float ordering). Cloning a type results in the
+//! same observable behavior as assignment or parameter-passing of a GDScript variable.
+//!
+//! We distinguish four different kinds of types:
 //!
 //! 1. **Value types**: `i64`, `f64`, and mathematical types like
 //!    [`Vector2`][crate::builtin::Vector2] and [`Color`][crate::builtin::Color].
@@ -249,11 +259,9 @@
 //!    careful when using such types. For example, when iterating over an `Array`, make sure that
 //!    it isn&#39;t being modified at the same time through another reference.
 //!
-//!    To avoid confusion these types don&#39;t implement `Clone`. You can use
-//!    [`Share`][crate::obj::Share] to create a new reference to the same instance, and
-//!    type-specific methods such as
-//!    [`Array::duplicate_deep()`][crate::builtin::Array::duplicate_deep] to make actual
-//!    copies. &lt;br&gt;&lt;br&gt;
+//!    `Clone::clone()` on these types creates a new reference to the same instance, while
+//!    type-specific methods such as [`Array::duplicate_deep()`][crate::builtin::Array::duplicate_deep]
+//!    can be used to make actual copies. &lt;br&gt;&lt;br&gt;
 //!
 //! 4. **Manually managed types**: [`Gd&lt;T&gt;`][crate::obj::Gd] where `T` inherits from
 //!    [`Object`][crate::engine::Object] but not from [`RefCounted`][crate::engine::RefCounted];
