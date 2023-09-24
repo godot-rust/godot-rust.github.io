@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"enum":["CallError","FromVariantError","VariantDispatch","VariantEnumRepr","VariantOperator","VariantStructRepr","VariantType"],"struct":["InvalidOp","MaybeNot","Variant"],"trait":["CoerceFromVariant","FromVariant","OwnedToVariant","ToVariant","ToVariantEq"]};
