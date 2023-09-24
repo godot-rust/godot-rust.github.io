@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"fn":["add_data","profile"],"macro":["profile_sig"],"struct":["Signature"]};
