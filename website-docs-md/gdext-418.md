@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-418/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/418"
 pr_author = "Bromeon"
 sort_key = 2023-09-24
-date_time = 2023-09-24T08:37:44Z
-commit_sha = "d172c6b704c4902ba908977de4d09b982c428ee0"
+date_time = 2023-09-24T08:38:59Z
+commit_sha = "695dae1ac9586b2bf19914f175f25f4dca9ef796"
 +++
 
 Callables for custom Rust functions
