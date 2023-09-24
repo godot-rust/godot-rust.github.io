@@ -208,6 +208,11 @@
 <a href="#208" id="208">208</a>
 <a href="#209" id="209">209</a>
 <a href="#210" id="210">210</a>
+<a href="#211" id="211">211</a>
+<a href="#212" id="212">212</a>
+<a href="#213" id="213">213</a>
+<a href="#214" id="214">214</a>
+<a href="#215" id="215">215</a>
 </pre></div><pre class="rust"><code><span class="comment">/*
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -309,7 +314,7 @@
 //! As a rule of thumb, if you must use threading, prefer to use [Rust threads](https://doc.rust-lang.org/std/thread)
 //! over Godot threads.
 //!
-//! The Cargo feature `threads` provides experimental support for multithreading. The underlying safety
+//! The Cargo feature `experimental-threads` provides experimental support for multithreading. The underlying safety
 //! rules are still being worked out, as such you may encounter unsoundness and an unstable API.
 //!
 //! # Cargo features
@@ -345,11 +350,16 @@
 //!   The serialized representation underlies **no stability guarantees** and may change at any time, even without a SemVer-breaking change.
 //!   &lt;br&gt;&lt;br&gt;
 //!
-//! * **`threads`**
+//! * **`experimental-threads`**
 //!
 //!   Experimental threading support. This enables `Send`/`Sync` traits for `Gd&lt;T&gt;` and makes the guard types `Gd`/`GdMut` aware of
-//!   multi-threaded references. The safety aspects of this are not ironed out yet; use at your own risk. The API may also change
-//!   at any time.
+//!   multi-threaded references. There safety aspects are not ironed out yet; there is a high risk of unsoundness at the moment.
+//!   As this evolves, it is very likely that the API becomes more strict.
+//!
+//! * **`experimental-godot-api`**
+//!
+//!   Access to `godot::engine` APIs that Godot marks &quot;experimental&quot;. These are under heavy development and may change at any time.
+//!   If you opt in to this feature, expect breaking changes at compile and runtime.
 //!
 //! # Public API
 //!
