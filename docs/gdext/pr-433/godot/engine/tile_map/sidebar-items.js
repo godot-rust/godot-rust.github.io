@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["ExForceUpdate","ExGetCellAlternativeTile","ExGetCellAtlasCoords","ExGetCellSourceId","ExGetCellTileData","ExGetUsedCellsById","ExSetCell","ExSetCellsTerrainConnect","ExSetCellsTerrainPath","VisibilityMode"]};
