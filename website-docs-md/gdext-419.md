@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-419/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/419"
 pr_author = "fpdotmonkey"
 sort_key = 2023-09-30
-date_time = 2023-09-30T08:33:33Z
-commit_sha = "a52c0e0684cd72b133a43c8431a9a985a5a67756"
+date_time = 2023-09-30T08:39:30Z
+commit_sha = "83ca3e108b627f463dcd535a0179c774dab5118b"
 +++
 
 Allow different class names in rust and Godot
