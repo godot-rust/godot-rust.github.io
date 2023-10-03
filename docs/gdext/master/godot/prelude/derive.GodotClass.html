@@ -252,4 +252,21 @@ through Godot’s <code>Create New Plugin</code> menu for it to work, simply ann
 automatically enables it when the library is loaded.</p>
 <p>This should usually be combined with <code>#[class(tool)]</code> so that the code you write will actually run in the
 editor.</p>
+<h2 id="class-renaming"><a href="#class-renaming">Class Renaming</a></h2>
+<p>You may want to have structs with the same name. With Rust, this is allowed using <code>mod</code>. However in GDScript,
+there are no modules, namespaces, or any such disambiguation.  Therefore, you need to change the names before they
+can get to Godot. You can use the <code>rename</code> key while defining your <code>GodotClass</code> for this.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">mod </span>animal {
+    <span class="attr">#[derive(GodotClass)]
+    #[class(init, rename=AnimalToad)]
+    </span><span class="kw">pub struct </span>Toad {}
+}
+
+<span class="kw">mod </span>npc {
+    <span class="attr">#[derive(GodotClass)]
+    #[class(init, rename=NpcToad)]
+    </span><span class="kw">pub struct </span>Toad {}
+}</code></pre></div>
+<p>These classes will appear in the Godot editor and GDScript as “AnimalToad” or “NpcToad”.</p>
 </div></details></section></div></main></body></html>
