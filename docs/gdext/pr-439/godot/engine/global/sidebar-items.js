@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["ClockDirection","Corner","Error","EulerOrder","HorizontalAlignment","InlineAlignment","JoyAxis","JoyButton","Key","KeyModifierMask","MIDIMessage","MethodFlags","MouseButton","MouseButtonMask","Orientation","PropertyHint","PropertyUsageFlags","Side","VerticalAlignment"]};
