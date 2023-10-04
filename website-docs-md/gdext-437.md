@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-437/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/437"
 pr_author = "kkolyan"
 sort_key = 2023-10-04
-date_time = 2023-10-04T21:11:19Z
-commit_sha = "d5a60f4af3f9b0a237554c08ff0dee1050d2d072"
+date_time = 2023-10-04T21:19:02Z
+commit_sha = "876f350c25f137e89d53f5a8b2e4437bec017914"
 +++
 
 Hot reload support
