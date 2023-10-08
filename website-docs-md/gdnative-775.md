@@ -8,8 +8,8 @@ docs_rel_url = "gdnative/pr-775/gdnative"
 pr_url = "https://github.com/godot-rust/gdnative/pull/775"
 pr_author = "Bogay"
 sort_key = 2023-10-08
-date_time = 2023-10-08T08:01:25Z
-commit_sha = "217d2530773c450219f4134a408bdf0088766043"
+date_time = 2023-10-08T11:44:10Z
+commit_sha = "5936bed72e8e9dc39eb43c94edf54a2e8b3b499a"
 +++
 
 Enum property with custom int discriminants

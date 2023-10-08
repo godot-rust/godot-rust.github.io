@@ -6,7 +6,7 @@ side.</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>gdnative::prelude::<span class="kw-2">*</span>;
 
-<span class="attr">#[derive(Debug, PartialEq, Clone, Copy, Export)]
+<span class="attr">#[derive(Debug, PartialEq, Clone, Copy, Export, ToVariant, FromVariant)]
 </span><span class="kw">enum </span>Dir {
     Up = <span class="number">1</span>,
     Down = -<span class="number">1</span>,
