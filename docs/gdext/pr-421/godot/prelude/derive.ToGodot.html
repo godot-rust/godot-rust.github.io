@@ -5,7 +5,7 @@
 }
 </code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Derive macro for <a href="../builtin/meta/trait.ToGodot.html">ToGodot</a> on structs or enums.</p>
 <h2 id="example"><a href="#example">Example</a></h2>
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(FromGodot, ToGodot, GodotCompatible, PartialEq, Debug)]
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(FromGodot, ToGodot, GodotConvert, PartialEq, Debug)]
 </span><span class="kw">struct </span>StructNamed {
     field1: String,
     field2: i32,
@@ -24,5 +24,5 @@
 
 <span class="comment">// This would not panic.
 </span><span class="macro">assert_eq!</span>(obj.to_variant(), dict.to_variant());</code></pre></div>
-<p>You can use the <code>#[skip]</code> attribute to ignore a field from being converted to <code>ToVariant</code>.</p>
+<p>You can use the <code>#[skip]</code> attribute to ignore a field from being converted to <code>ToGodot</code>.</p>
 </div></details></section></div></main></body></html>
