@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExGetImage","ExGetSeamlessImage"]};
+window.SIDEBAR_ITEMS = {"struct":["ExGetImage","ExGetImage3d","ExGetSeamlessImage","ExGetSeamlessImage3d"]};

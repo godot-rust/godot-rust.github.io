@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExEditScript","ExInspectObject","ExRestartEditor","ExSaveSceneAs"]};
+window.SIDEBAR_ITEMS = {"struct":["ExEditScript","ExInspectObject","ExPopupDialog","ExPopupDialogCentered","ExPopupDialogCenteredClamped","ExPopupDialogCenteredRatio","ExRestartEditor","ExSaveSceneAs"]};
