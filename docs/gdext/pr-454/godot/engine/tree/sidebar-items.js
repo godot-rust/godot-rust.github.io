@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["DropModeFlags","ExCreateItem","ExEditSelected","ExGetItemAreaRect","ExScrollToItem","SelectMode"]};
+window.SIDEBAR_ITEMS = {"struct":["DropModeFlags","ExCreateItem","ExGetItemAreaRect","ExScrollToItem","SelectMode"]};

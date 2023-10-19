@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ColorSpace","InterpolationMode"]};
+window.SIDEBAR_ITEMS = {"struct":["InterpolationMode"]};

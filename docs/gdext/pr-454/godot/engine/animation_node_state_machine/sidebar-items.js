@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExAddNode","StateMachineType"]};
+window.SIDEBAR_ITEMS = {"struct":["ExAddNode"]};
