@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-457/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/457"
 pr_author = "Bromeon"
 sort_key = 2023-10-20
-date_time = 2023-10-20T07:45:52Z
-commit_sha = "a98ee8a03754be0c4c200d5fc6bb71295bff70d5"
+date_time = 2023-10-20T07:51:44Z
+commit_sha = "5dc75e6268049e32aea748044b5156c83c9074ce"
 +++
 
 `To/FromGodot` has now specific impls for native structs; trait docs
