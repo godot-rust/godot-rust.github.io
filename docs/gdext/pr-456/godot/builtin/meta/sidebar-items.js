@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"enum":["PtrcallReturnUnit"],"mod":["registration"],"struct":["ClassName","PropertyInfo","PtrcallReturnOptionGdT","PtrcallReturnT"],"trait":["FromGodot","GodotConvert","GodotFfiVariant","GodotType","ToGodot"]};
+window.SIDEBAR_ITEMS = {"mod":["registration"],"struct":["ClassName","PropertyInfo"],"trait":["FromGodot","GodotConvert","GodotType","ToGodot"]};
