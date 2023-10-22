@@ -218,6 +218,16 @@
 <a href="#218" id="218">218</a>
 <a href="#219" id="219">219</a>
 <a href="#220" id="220">220</a>
+<a href="#221" id="221">221</a>
+<a href="#222" id="222">222</a>
+<a href="#223" id="223">223</a>
+<a href="#224" id="224">224</a>
+<a href="#225" id="225">225</a>
+<a href="#226" id="226">226</a>
+<a href="#227" id="227">227</a>
+<a href="#228" id="228">228</a>
+<a href="#229" id="229">229</a>
+<a href="#230" id="230">230</a>
 </pre></div><pre class="rust"><code><span class="comment">/*
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -366,6 +376,13 @@
 //!   Access to `godot::engine` APIs that Godot marks &quot;experimental&quot;. These are under heavy development and may change at any time.
 //!   If you opt in to this feature, expect breaking changes at compile and runtime.
 //!
+//! * **`lazy-function-tables`**
+//!
+//!   Instead of loading all engine function pointers at startup, load them lazily on first use. This reduces startup time and RAM usage, but
+//!   incurs additional overhead in each FFI call. Also, you lose the guarantee that once the library has booted, all function pointers are
+//!   truly available. Function calls may thus panic only at runtime, possibly in deeply nested code paths.
+//!   This feature is not yet thread-safe and can thus not be combined with `experimental-threads`.
+//!
 //! # Public API
 //!
 //! Some symbols in the API are not intended for users, however Rust&#39;s visibility feature is not strong enough to express that in all cases
@@ -387,6 +404,9 @@
 
 <span class="attr">#[doc(hidden)]
 </span><span class="kw">pub use </span>godot_core::sys;
+
+<span class="attr">#[cfg(all(feature = <span class="string">&quot;lazy-function-tables&quot;</span>, feature = <span class="string">&quot;experimental-threads&quot;</span>))]
+</span><span class="macro">compile_error!</span>(<span class="string">&quot;Thread safety for lazy function pointers is not yet implemented.&quot;</span>);
 
 <span class="kw">pub mod </span>init {
     <span class="kw">pub use </span>godot_core::init::<span class="kw-2">*</span>;
