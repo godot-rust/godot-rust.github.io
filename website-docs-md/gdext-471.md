@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-471/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/471"
 pr_author = "Bromeon"
 sort_key = 2023-11-07
-date_time = 2023-11-07T22:01:43Z
-commit_sha = "0fb339909ff47cbfc19457ea6e3e813ffc4b901d"
+date_time = 2023-11-07T22:13:31Z
+commit_sha = "fef7067e9386bb28bb576d31663dc3378a422e0e"
 +++
 
 Split function table constructor into separate methods per class
