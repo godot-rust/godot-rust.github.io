@@ -227,7 +227,6 @@
 <a href="#227" id="227">227</a>
 <a href="#228" id="228">228</a>
 <a href="#229" id="229">229</a>
-<a href="#230" id="230">230</a>
 </pre></div><pre class="rust"><code><span class="comment">/*
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -257,7 +256,7 @@
 //!    `Copy` as well. They are implemented with the same memory layout as their counterparts in
 //!    Godot itself, and typically have public fields. &lt;br&gt;&lt;br&gt;
 //!
-//! 2. **Copy-on-write types**: [`GodotString`][crate::builtin::GodotString],
+//! 2. **Copy-on-write types**: [`GString`][crate::builtin::GString],
 //!    [`StringName`][crate::builtin::StringName], and `Packed*Array` types.
 //!
 //!    These mostly act like value types, similar to Rust&#39;s own `Vec`. You can `Clone` them to get
@@ -444,11 +443,10 @@
     <span class="kw">pub use </span><span class="kw">super</span>::builtin::<span class="kw-2">*</span>;
     <span class="kw">pub use </span><span class="kw">super</span>::builtin::{array, dict, varray}; <span class="comment">// Re-export macros.
     </span><span class="kw">pub use </span><span class="kw">super</span>::engine::{
-        load, try_load, utilities, AudioStreamPlayer, AudioStreamPlayerVirtual, Camera2D,
-        Camera2DVirtual, Camera3D, Camera3DVirtual, Input, Node, Node2D, Node2DVirtual, Node3D,
-        Node3DVirtual, NodeVirtual, Object, ObjectVirtual, PackedScene, PackedSceneExt,
-        PackedSceneVirtual, RefCounted, RefCountedVirtual, Resource, ResourceVirtual, SceneTree,
-        SceneTreeVirtual,
+        load, try_load, utilities, AudioStreamPlayer, Camera2D, Camera3D, IAudioStreamPlayer,
+        ICamera2D, ICamera3D, INode, INode2D, INode3D, IObject, IPackedScene, IRefCounted,
+        IResource, ISceneTree, Input, Node, Node2D, Node3D, Object, PackedScene, PackedSceneExt,
+        RefCounted, Resource, SceneTree,
     };
     <span class="kw">pub use </span><span class="kw">super</span>::init::{gdextension, ExtensionLibrary, InitLevel};
     <span class="kw">pub use </span><span class="kw">super</span>::log::<span class="kw-2">*</span>;
