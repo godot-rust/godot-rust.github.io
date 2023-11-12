@@ -11,9 +11,9 @@
 
 <span class="comment">// 2) trait impl block: implement Godot-specific APIs
 </span><span class="attr">#[godot_api]
-</span><span class="kw">impl </span>NodeVirtual <span class="kw">for </span>MyClass { <span class="comment">/* ... */ </span>}</code></pre></div>
-<p>The second case works by implementing the corresponding trait <code>&lt;Base&gt;Virtual</code> for the base class of your class
-(for example <code>RefCountedVirtual</code> or <code>Node3DVirtual</code>). Then, you can add functionality such as:</p>
+</span><span class="kw">impl </span>INode <span class="kw">for </span>MyClass { <span class="comment">/* ... */ </span>}</code></pre></div>
+<p>The second case works by implementing the corresponding trait <code>I&lt;Base&gt;</code> for the base class of your class
+(for example <code>IRefCounted</code> or <code>INode3D</code>). Then, you can add functionality such as:</p>
 <ul>
 <li><code>init</code> constructors</li>
 <li>lifecycle methods like <code>ready</code> or <code>process</code></li>
@@ -36,7 +36,7 @@ accessing properties directly from GDScript.</p>
 }
 
 <span class="attr">#[godot_api]
-</span><span class="kw">impl </span>RefCountedVirtual <span class="kw">for </span>MyStruct {
+</span><span class="kw">impl </span>IRefCounted <span class="kw">for </span>MyStruct {
     <span class="kw">fn </span>init(_base: Base&lt;RefCounted&gt;) -&gt; <span class="self">Self </span>{
         MyStruct
     }
@@ -53,7 +53,7 @@ Classes without <code>init</code> cannot be instantiated from GDScript.</p>
 }
 
 <span class="attr">#[godot_api]
-</span><span class="kw">impl </span>NodeVirtual <span class="kw">for </span>MyNode {
+</span><span class="kw">impl </span>INode <span class="kw">for </span>MyNode {
     <span class="kw">fn </span>ready(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
         <span class="macro">godot_print!</span>(<span class="string">&quot;Hello World!&quot;</span>);
     }
