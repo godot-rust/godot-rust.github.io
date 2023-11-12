@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"mod":["cap","dom","mem"],"struct":["Base","Gd","GdMut","GdRef","InstanceId","RawGd","Singleton"],"trait":["EngineClass","EngineEnum","ExportableObject","GodotClass","GodotObjectPtr","GodotSingleton","Inherits","Share"]};
