@@ -14,7 +14,7 @@ It has <code>GodotClass</code> as a supertrait, allowing your code to have bound
     </span>T: Inherits&lt;Node&gt;,
 {
     <span class="kw">let </span>up = node.upcast(); <span class="comment">// type Gd&lt;Node&gt; inferred
-    </span><span class="macro">println!</span>(<span class="string">&quot;Node #{} with name {}&quot;</span>, up.instance_id(), up.name());
+    </span><span class="macro">println!</span>(<span class="string">&quot;Node #{} with name {}&quot;</span>, up.instance_id(), up.get_name());
     up.free();
 }
 
