@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-484/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/484"
 pr_author = "StatisMike"
 sort_key = 2023-11-19
-date_time = 2023-11-19T17:11:38Z
-commit_sha = "9085aa163b13a640fbf5ef03484312284e764d2c"
+date_time = 2023-11-19T17:14:00Z
+commit_sha = "235b99f3f7f680f7f04f7edd1cb5b46b10808ea7"
 +++
 
 Addition of step in export_range
