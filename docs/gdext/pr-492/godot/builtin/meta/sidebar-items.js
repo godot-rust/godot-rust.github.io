@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["registration"],"struct":["ClassName","MethodInfo","PropertyInfo"],"trait":["FromGodot","GodotConvert","GodotType","ToGodot"]};
