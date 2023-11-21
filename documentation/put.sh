@@ -74,9 +74,18 @@ if [[ "$repo" == "gdext" ]]; then
   tar -zxvf archive.tar.gz -C tools --strip-components=1
 
   echo "$PRE preprocess docs..."
+
+  # Patch Cargo.toml to pull from nightly prebuilt artifacts.
+  # This allows to use JSON and C headers from the in-development Godot 4.x engine, enabling latest #[cfg(since_api = "4.x")] features for docs.
+  cat >> "Cargo.toml" <<- HEREDOC
+[patch."https://github.com/godot-rust/godot4-prebuilt"]
+godot4-prebuilt = { git = "https://github.com//godot-rust/godot4-prebuilt", branch = "nightly" }
+HEREDOC
+
   # Enable feature in each lib.rs file.
   # Note: first command uses sed because it's easier, and only handful of files.
   find . -type f -name "lib.rs" -exec sed -i '1s/^/#![feature(doc_cfg)]\n/' {} +
+
   # Then do the actual replacements.
   find . \(            \
     -path "./godot" -o    \
@@ -86,7 +95,7 @@ if [[ "$repo" == "gdext" ]]; then
       # Replace #[cfg(...)] with #[doc(cfg(...))]. Do not insert a newline, in case the #[cfg] is commented-out.
       # shellcheck disable=SC2016
       ./tools/sd '(\#\[(cfg\(.+?\))\])\s*([A-Za-z]|#\[)' '$1 #[doc($2)]\n$3' "$file"
-      #                       ^^^^^^^^^^^^^^^^^ require that #[cfg] is followed by an identifier or a #[ attribute start.
+      #                               ^^^^^^^^^^^^^^^^^ require that #[cfg] is followed by an identifier or a #[ attribute start.
       # This avoids some usages of function-local #[cfg]s, although by far not all. Others generate warnings, which is fine.
 
   done
