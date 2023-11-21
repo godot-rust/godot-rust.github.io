@@ -9,8 +9,9 @@ on:
     types: ['Generate docs']
 
 env:
-  # First version that has fast crates.io update
-  RUST_VER: 1.70.0
+  # 1.70.0 is the first version that has fast crates.io update. Now use nightly because of #[doc(cfg(...))].
+#  RUST_VER: 1.70.0
+  RUST_VER: nightly
 
 defaults:
   run:

@@ -9,6 +9,8 @@ repo="$1"
 num="$2"
 #date=$3
 
+SD_VERSION="1.0.0"
+
 # Find main crate name
 case $repo in
 	"gdnative")
@@ -56,11 +58,45 @@ echo "----------------------------------------"
 git log -n 1
 echo "========================================"
 
+
+# For gdext, add feature/cfg annotations in docs. This needs nightly rustdoc + custom preprocessing.
+# Replace #[cfg(...)] with #[doc(cfg(...))], a nightly feature: https://doc.rust-lang.org/unstable-book/language-features/doc-cfg.html
+# Potential alternative: https://docs.rs/doc-cfg/latest/doc_cfg
+#
+# TODO currently, this uses gdext master without custom-godot, so latest 4.x features (of the in-dev version) are not available.
+# We cannot just pretend we are on 4.x, because code will not compile with the default C/JSON headers. We would need custom-godot
+# and a running engine, which is a bit overkill.
+if [[ "$repo" == "gdext" ]]; then
+  # Install sd (modern sed). No point in waiting for eternal `cargo install` if we can fetch a prebuilt binary in 1s.
+  echo "$PRE install sd (modern sed)..."
+  curl -L https://github.com/chmln/sd/releases/download/v${SD_VERSION}/sd-v${SD_VERSION}-x86_64-unknown-linux-musl.tar.gz -o archive.tar.gz
+  mkdir -p tools
+  tar -zxvf archive.tar.gz -C tools --strip-components=1
+
+  echo "$PRE preprocess docs..."
+  # Enable feature in each lib.rs file.
+  # Note: first command uses sed because it's easier, and only handful of files.
+  find . -type f -name "lib.rs" -exec sed -i '1s/^/#![feature(doc_cfg)]\n/' {} +
+  # Then do the actual replacements.
+  find . \(            \
+    -path "./godot" -o    \
+    -path "./godot-*" \)  \
+  -type f -name '*.rs' | while read -r file; do
+
+      # Replace #[cfg(...)] with #[doc(cfg(...))]. Do not insert a newline, in case the #[cfg] is commented-out.
+      # shellcheck disable=SC2016
+      ./tools/sd '(\#\[(cfg\(.+?\))\])\s*([A-Za-z]|#\[)' '$1 #[doc($2)]\n$3' "$file"
+      #                       ^^^^^^^^^^^^^^^^^ require that #[cfg] is followed by an identifier or a #[ attribute start.
+      # This avoids some usages of function-local #[cfg]s, although by far not all. Others generate warnings, which is fine.
+
+  done
+fi
+
 # Build docs
 echo "$PRE build Rust docs of crate '$mainCrate' ($features)..."
 up=".."
 # shellcheck disable=SC2086
-cargo doc -p $mainCrate $features --no-deps --target-dir $up/target
+cargo +nightly doc -p $mainCrate $features --no-deps --target-dir $up/target
 #mkdir -p "$up/target/doc"
 cd $up
 
