@@ -229,6 +229,9 @@
 <a href="#229" id="229">229</a>
 <a href="#230" id="230">230</a>
 <a href="#231" id="231">231</a>
+<a href="#232" id="232">232</a>
+<a href="#233" id="233">233</a>
+<a href="#234" id="234">234</a>
 </pre></div><pre class="rust"><code><span class="attr">#![feature(doc_cfg)]
 </span><span class="comment">/*
  * This Source Code Form is subject to the terms of the Mozilla Public
@@ -409,6 +412,9 @@
 
 <span class="attr">#[cfg(all(feature = <span class="string">&quot;lazy-function-tables&quot;</span>, feature = <span class="string">&quot;experimental-threads&quot;</span>))]
 </span><span class="macro">compile_error!</span>(<span class="string">&quot;Thread safety for lazy function pointers is not yet implemented.&quot;</span>);
+
+<span class="attr">#[cfg(all(target_family = <span class="string">&quot;wasm&quot;</span>, not(feature = <span class="string">&quot;experimental-wasm&quot;</span>)))]
+</span><span class="macro">compile_error!</span>(<span class="string">&quot;Must opt-in using `experimental-wasm` Cargo feature; keep in mind that this is work in progress&quot;</span>);
 
 <span class="kw">pub mod </span>init {
     <span class="kw">pub use </span>godot_core::init::<span class="kw-2">*</span>;
