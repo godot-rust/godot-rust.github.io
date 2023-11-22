@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExAddImage","ExPushDropcap","ExPushList","ExPushParagraph","ExPushTable","ListType","MenuItems"]};
+window.SIDEBAR_ITEMS = {"struct":["ExAddImage","ExPushDropcap","ExPushFont","ExPushList","ExPushParagraph","ExPushTable","ExSetTableColumnExpand","ExUpdateImage","ImageUpdateMask","ListType","MenuItems"]};

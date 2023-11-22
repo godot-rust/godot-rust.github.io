@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExAddProperty"]};
+window.SIDEBAR_ITEMS = {"struct":["ExAddProperty","ReplicationMode"]};
