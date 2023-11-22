@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExReadFile"]};
+window.SIDEBAR_ITEMS = {"struct":["ExFileExists","ExReadFile"]};
