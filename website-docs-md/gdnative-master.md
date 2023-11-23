@@ -8,8 +8,8 @@ docs_rel_url = "gdnative/master/gdnative"
 pr_url = "https://github.com/godot-rust/gdnative"
 pr_author = ""
 sort_key = 9999-01-01
-date_time = 2023-11-23T04:11:50Z
-commit_sha = "b5d8960b8c6f0bf16ebe4f6e0caa51e6ebe7d399"
+date_time = 2023-11-23T04:19:02Z
+commit_sha = "3944a4cd167784ee4ec766582260f05c4ad908d8"
 +++
 
 
