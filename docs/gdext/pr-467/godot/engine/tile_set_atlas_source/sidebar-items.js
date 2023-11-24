@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExCreateAlternativeTile","ExCreateTile","ExGetTileTextureRegion","ExHasRoomForTile","ExMoveTileInAtlas"]};
+window.SIDEBAR_ITEMS = {"struct":["ExCreateAlternativeTile","ExCreateTile","ExGetTileTextureRegion","ExHasRoomForTile","ExMoveTileInAtlas","TileAnimationMode"]};
