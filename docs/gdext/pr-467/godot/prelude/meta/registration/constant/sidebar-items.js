@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"enum":["ConstantKind"],"struct":["ExportConstant","IntegerConstant"]};
