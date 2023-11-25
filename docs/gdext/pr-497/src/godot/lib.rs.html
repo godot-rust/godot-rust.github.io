@@ -238,6 +238,7 @@
 <a href="#238" id="238">238</a>
 <a href="#239" id="239">239</a>
 <a href="#240" id="240">240</a>
+<a href="#241" id="241">241</a>
 </pre></div><pre class="rust"><code><span class="attr">#![feature(doc_cfg)]
 </span><span class="comment">/*
  * This Source Code Form is subject to the terms of the Mozilla Public
@@ -476,6 +477,7 @@
     <span class="comment">// Make trait methods available
     </span><span class="kw">pub use </span><span class="kw">super</span>::engine::NodeExt <span class="kw">as _</span>;
     <span class="kw">pub use </span><span class="kw">super</span>::obj::EngineEnum <span class="kw">as _</span>;
-    <span class="kw">pub use </span><span class="kw">super</span>::obj::UserClass <span class="kw">as _</span>; <span class="comment">// new_gd(), self_gd()
+    <span class="kw">pub use </span><span class="kw">super</span>::obj::UserClass <span class="kw">as _</span>; <span class="comment">// new_gd(), alloc_gd()
+    </span><span class="kw">pub use </span><span class="kw">super</span>::obj::WithBaseField <span class="kw">as _</span>; <span class="comment">// self_gd()
 </span>}
 </code></pre></div></section></main></body></html>
