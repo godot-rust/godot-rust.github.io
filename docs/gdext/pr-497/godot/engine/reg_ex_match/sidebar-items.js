@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["ExGetEnd","ExGetStart","ExGetString"]};
