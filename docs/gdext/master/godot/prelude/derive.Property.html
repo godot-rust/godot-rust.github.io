@@ -24,7 +24,6 @@
     </span>foo: TestEnum
 }
 
-
 <span class="kw">let </span><span class="kw-2">mut </span>class = TestClass {foo: TestEnum::B};
 <span class="macro">assert_eq!</span>(class.get_foo(), TestEnum::B <span class="kw">as </span>i32);
 class.set_foo(TestEnum::A <span class="kw">as </span>i32);
