@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["AlphaAntiAliasing","BillboardMode","BlendMode","CullMode","DepthDrawMode","DetailUV","DiffuseMode","DistanceFadeMode","EmissionOperator","Feature","Flags","ShadingMode","SpecularMode","TextureChannel","TextureFilter","TextureParam","Transparency"]};
