@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["MethodInfo","MethodParamOrReturnInfo"]};
+window.SIDEBAR_ITEMS = {"struct":["ClassMethodInfo","MethodParamOrReturnInfo"]};
