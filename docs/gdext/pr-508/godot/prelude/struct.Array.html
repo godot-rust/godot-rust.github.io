@@ -62,7 +62,7 @@ To create a new reference to the same array data, use <a href="https://doc.rust-
 <p>The values of <code>begin</code> (inclusive) and <code>end</code> (exclusive) will be clamped to the array size.</p>
 <p>If specified, <code>step</code> is the relative index between source elements. It can be negative,
 in which case <code>begin</code> must be higher than <code>end</code>. For example,
-<code>Array::from(&amp;[0, 1, 2, 3, 4, 5]).slice(5, 1, -2)</code> returns <code>[5, 3]</code>.</p>
+<code>TypedArray::from(&amp;[0, 1, 2, 3, 4, 5]).slice(5, 1, -2)</code> returns <code>[5, 3]</code>.</p>
 <p>Array elements are copied to the slice, but any reference types (such as <code>Array</code>,
 <code>Dictionary</code> and <code>Object</code>) will still refer to the same value. To create a deep copy, use
 <a href="../builtin/struct.Array.html#method.subarray_deep" title="method godot::builtin::Array::subarray_deep"><code>subarray_deep()</code></a> instead.</p>
@@ -75,7 +75,7 @@ in which case <code>begin</code> must be higher than <code>end</code>. For examp
 <p>The values of <code>begin</code> (inclusive) and <code>end</code> (exclusive) will be clamped to the array size.</p>
 <p>If specified, <code>step</code> is the relative index between source elements. It can be negative,
 in which case <code>begin</code> must be higher than <code>end</code>. For example,
-<code>Array::from(&amp;[0, 1, 2, 3, 4, 5]).slice(5, 1, -2)</code> returns <code>[5, 3]</code>.</p>
+<code>TypedArray::from(&amp;[0, 1, 2, 3, 4, 5]).slice(5, 1, -2)</code> returns <code>[5, 3]</code>.</p>
 <p>All nested arrays and dictionaries are duplicated and will not be shared with the original
 array. Note that any <code>Object</code>-derived elements will still be shallow copied. To create a
 shallow copy, use <a href="../builtin/struct.Array.html#method.subarray_shallow" title="method godot::builtin::Array::subarray_shallow"><code>subarray_shallow()</code></a> instead.</p>
