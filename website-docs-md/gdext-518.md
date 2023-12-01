@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-518/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/518"
 pr_author = "Bromeon"
 sort_key = 2023-12-01
-date_time = 2023-12-01T14:31:14Z
-commit_sha = "6c920f875c70e6f7d41de66009dc771663fd272c"
+date_time = 2023-12-01T15:13:52Z
+commit_sha = "e06fca88bcc5b1afe1887dc8d7256d0425eb9018"
 +++
 
 Update to Godot 4.2 by default
