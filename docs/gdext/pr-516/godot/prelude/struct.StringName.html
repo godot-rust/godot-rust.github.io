@@ -6,7 +6,8 @@ one instance of a given name exists.</p>
 <h5 id="example"><a href="#example">Example</a></h5>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::builtin::StringName;
 
-<span class="kw">let </span>sname = StringName::from_latin1_with_nul(<span class="string">b&quot;± Latin-1 string\0&quot;</span>);</code></pre></div>
+<span class="comment">// &#39;±&#39; is a Latin-1 character with codepoint 0xB1. Note that this is not UTF-8, where it would need two bytes.
+</span><span class="kw">let </span>sname = StringName::from_latin1_with_nul(<span class="string">b&quot;\xb1 Latin-1 string\0&quot;</span>);</code></pre></div>
 <h5 id="panics"><a href="#panics">Panics</a></h5>
 <p>When the string is not nul-terminated or contains interior nul bytes.</p>
 <p>Note that every byte is valid in Latin-1, so there is no encoding validation being performed.</p>
