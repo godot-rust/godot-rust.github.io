@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-516/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/516"
 pr_author = "zecozephyr"
 sort_key = 2023-12-01
-date_time = 2023-12-01T06:59:27Z
-commit_sha = "a52e8f5ec3007b237995be215b53cf329ae8481c"
+date_time = 2023-12-01T07:13:03Z
+commit_sha = "f1661cfd299fbdd6006aecd3618894e6a2ca0922"
 +++
 
 Fix wasm exports in Godot 4.2
