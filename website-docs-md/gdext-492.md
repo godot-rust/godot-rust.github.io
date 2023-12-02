@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-492/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/492"
 pr_author = "TitanNano"
 sort_key = 2023-12-02
-date_time = 2023-12-02T00:25:31Z
-commit_sha = "66d8a09c857a88a2bc3cb201ddb272e57bd530a6"
+date_time = 2023-12-02T00:29:48Z
+commit_sha = "ebdab39edc6a40851e371cbc8e34dbb86965f012"
 +++
 
 Implementation of godots `GDExtensionScriptInstance`
