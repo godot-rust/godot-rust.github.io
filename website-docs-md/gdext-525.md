@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-525/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/525"
 pr_author = "Bromeon"
 sort_key = 2023-12-04
-date_time = 2023-12-04T21:47:06Z
-commit_sha = "7474530cb389bee8d078c7f31240b18a8becb2eb"
+date_time = 2023-12-04T21:48:50Z
+commit_sha = "4a9bd09432f8072307de3f5472e9ff644c5521ab"
 +++
 
 Make ConvertError: Send + Sync
