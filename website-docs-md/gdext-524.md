@@ -1,15 +1,15 @@
 +++
 title = "#524"
-date = 2023-12-04
+date = 2023-12-05
 
 [extra]
 repo = "gdext"
 docs_rel_url = "gdext/pr-524/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/524"
 pr_author = "Lemiczek"
-sort_key = 2023-12-04
-date_time = 2023-12-04T17:35:34Z
-commit_sha = "b134043d66859d15b71d6eff408e83c6a974b25f"
+sort_key = 2023-12-05
+date_time = 2023-12-05T16:30:40Z
+commit_sha = "4afc1eaf1b3e9f92de2db6a541d3b79cff2e3219"
 +++
 
 Implementation of `EngineBitfield` trait
