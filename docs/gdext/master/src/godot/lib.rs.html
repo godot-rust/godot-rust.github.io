@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `godot/src/lib.rs`."><title>lib.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-c67e44d78ab2db17.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="godot" data-themes="" data-resource-suffix="" data-rustdoc-version="1.76.0-nightly (0e2dac837 2023-12-04)" data-channel="nightly" data-search-js="search-5a66c239c06b3a66.js" data-settings-js="settings-fe03fdc259827cd2.js" ><script src="../../static.files/storage-fec3eaa3851e447d.js"></script><script defer src="../../static.files/src-script-3280b574d94e47b4.js"></script><script defer src="../../src-files.js"></script><script defer src="../../static.files/main-77dede896d6ac08e.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-5d8b3c7633ad77ba.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"></nav><main><nav class="sub"><form class="search-form"><span></span><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-7b819b6101059cd0.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers"><a href="#1" id="1">1</a>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `godot/src/lib.rs`."><title>lib.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-c67e44d78ab2db17.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="godot" data-themes="" data-resource-suffix="" data-rustdoc-version="1.76.0-nightly (e9013ac0e 2023-12-05)" data-channel="nightly" data-search-js="search-5a66c239c06b3a66.js" data-settings-js="settings-fe03fdc259827cd2.js" ><script src="../../static.files/storage-fec3eaa3851e447d.js"></script><script defer src="../../static.files/src-script-3280b574d94e47b4.js"></script><script defer src="../../src-files.js"></script><script defer src="../../static.files/main-77dede896d6ac08e.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-5d8b3c7633ad77ba.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"></nav><main><nav class="sub"><form class="search-form"><span></span><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-7b819b6101059cd0.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers"><a href="#1" id="1">1</a>
 <a href="#2" id="2">2</a>
 <a href="#3" id="3">3</a>
 <a href="#4" id="4">4</a>
@@ -255,9 +255,9 @@
 //!
 //! # Type categories
 //!
-//! Godot is written in C++, which doesn&#39;t have the same strict guarantees about safety and
+//! Godot is written in C++, which doesn't have the same strict guarantees about safety and
 //! mutability that Rust does. As a result, not everything in this crate will look and feel
-//! entirely &quot;rusty&quot;.
+//! entirely "rusty".
 //!
 //! Traits such as `Clone`, `PartialEq` or `PartialOrd` are designed to mirror Godot semantics,
 //! except in cases where Rust is stricter (e.g. float ordering). Cloning a type results in the
@@ -275,12 +275,12 @@
 //! 2. **Copy-on-write types**: [`GString`][crate::builtin::GString],
 //!    [`StringName`][crate::builtin::StringName], and `Packed*Array` types.
 //!
-//!    These mostly act like value types, similar to Rust&#39;s own `Vec`. You can `Clone` them to get
+//!    These mostly act like value types, similar to Rust's own `Vec`. You can `Clone` them to get
 //!    a full copy of the entire object, as you would expect.
 //!
 //!    Under the hood in Godot, these types are implemented with copy-on-write, so that data can be
 //!    shared until one of the copies needs to be modified. However, this performance optimization
-//!    is entirely hidden from the API and you don&#39;t normally need to worry about it. &lt;br&gt;&lt;br&gt;
+//!    is entirely hidden from the API and you don't normally need to worry about it. &lt;br&gt;&lt;br&gt;
 //!
 //! 3. **Reference-counted types**: [`Array`][crate::builtin::Array],
 //!    [`Dictionary`][crate::builtin::Dictionary], and [`Gd&lt;T&gt;`][crate::obj::Gd] where `T` inherits
@@ -292,7 +292,7 @@
 //!
 //!    Since there is no way to prevent or even detect this sharing from Rust, you need to be more
 //!    careful when using such types. For example, when iterating over an `Array`, make sure that
-//!    it isn&#39;t being modified at the same time through another reference.
+//!    it isn't being modified at the same time through another reference.
 //!
 //!    `Clone::clone()` on these types creates a new reference to the same instance, while
 //!    type-specific methods such as [`Array::duplicate_deep()`][crate::builtin::Array::duplicate_deep]
@@ -316,18 +316,18 @@
 //! * The code is more concise and less cluttered.
 //! * Methods like `cast()` provide very sophisticated panic messages when they fail (e.g. involved
 //!   classes), immediately giving you the necessary context for debugging. This is certainly
-//!   preferable over a generic `unwrap()`, and in most cases also over a `expect(&quot;literal&quot;)`.
+//!   preferable over a generic `unwrap()`, and in most cases also over a `expect("literal")`.
 //! * Usually, such methods panicking indicate bugs in the application. For example, you have a static
-//!   scene tree, and you _know_ that a node of certain type and name exists. `get_node_as::&lt;T&gt;(&quot;name&quot;)`
+//!   scene tree, and you _know_ that a node of certain type and name exists. `get_node_as::&lt;T&gt;("name")`
 //!   thus _must_ succeed, or your mental concept is wrong. In other words, there is not much you can
 //!   do at runtime to recover from such errors anyway; the code needs to be fixed.
 //!
 //! Now, there are of course cases where you _do_ want to check certain assumptions dynamically.
 //! Imagine a scene tree that is constructed at runtime, e.g. in a game editor.
-//! This is why the library provides &quot;overloads&quot; for most of these methods that return `Option` or `Result`.
+//! This is why the library provides "overloads" for most of these methods that return `Option` or `Result`.
 //! Such methods have more verbose names and highlight the attempt, e.g. `try_cast()`.
 //!
-//! To help you identify panicking methods, we use the symbol &quot;⚠️&quot; at the beginning of the documentation;
+//! To help you identify panicking methods, we use the symbol "⚠️" at the beginning of the documentation;
 //! this should also appear immediately in the auto-completion of your IDE. Note that this warning sign is
 //! not used as a general panic indicator, but particularly for methods which have a `Option`/`Result`-based
 //! overload. If you want to know whether and how a method can panic, check if its documentation has a
@@ -335,9 +335,9 @@
 //!
 //! # Thread safety
 //!
-//! [Godot&#39;s own thread safety
+//! [Godot's own thread safety
 //! rules](https://docs.godotengine.org/en/latest/tutorials/performance/thread_safe_apis.html)
-//! apply. Types in this crate implement (or don&#39;t implement) `Send` and `Sync` wherever
+//! apply. Types in this crate implement (or don't implement) `Send` and `Sync` wherever
 //! appropriate, but the Rust compiler cannot check what happens to an object through C++ or
 //! GDScript.
 //!
@@ -364,8 +364,8 @@
 //!   If you simply want to use a different official release, use this pattern instead (here e.g. for version `4.0`):
 //!   ```toml
 //!   # Trick Cargo into seeing a different URL; https://github.com/rust-lang/cargo/issues/5478
-//!   [patch.&quot;https://github.com/godot-rust/godot4-prebuilt&quot;]
-//!   godot4-prebuilt = { git = &quot;https://github.com//godot-rust/godot4-prebuilt&quot;, branch = &quot;4.0&quot;}
+//!   [patch."https://github.com/godot-rust/godot4-prebuilt"]
+//!   godot4-prebuilt = { git = "https://github.com//godot-rust/godot4-prebuilt", branch = "4.0"}
 //!   ```
 //!   &lt;br&gt;
 //!
@@ -395,7 +395,7 @@
 //!
 //! * **`experimental-godot-api`**
 //!
-//!   Access to `godot::engine` APIs that Godot marks &quot;experimental&quot;. These are under heavy development and may change at any time.
+//!   Access to `godot::engine` APIs that Godot marks "experimental". These are under heavy development and may change at any time.
 //!   If you opt in to this feature, expect breaking changes at compile and runtime.&lt;br&gt;&lt;br&gt;
 //!
 //! * **`experimental-wasm`**
@@ -406,7 +406,7 @@
 //!
 //! # Public API
 //!
-//! Some symbols in the API are not intended for users, however Rust&#39;s visibility feature is not strong enough to express that in all cases
+//! Some symbols in the API are not intended for users, however Rust's visibility feature is not strong enough to express that in all cases
 //! (for example, proc-macros and separated crates may need access to internals).
 //!
 //! The following API symbols are considered private:
@@ -426,11 +426,11 @@
 <span class="attr">#[doc(hidden)]
 </span><span class="kw">pub use </span>godot_core::sys;
 
-<span class="attr">#[cfg(all(feature = <span class="string">&quot;lazy-function-tables&quot;</span>, feature = <span class="string">&quot;experimental-threads&quot;</span>))]
-</span><span class="macro">compile_error!</span>(<span class="string">&quot;Thread safety for lazy function pointers is not yet implemented.&quot;</span>);
+<span class="attr">#[cfg(all(feature = <span class="string">"lazy-function-tables"</span>, feature = <span class="string">"experimental-threads"</span>))]
+</span><span class="macro">compile_error!</span>(<span class="string">"Thread safety for lazy function pointers is not yet implemented."</span>);
 
-<span class="attr">#[cfg(all(target_family = <span class="string">&quot;wasm&quot;</span>, not(feature = <span class="string">&quot;experimental-wasm&quot;</span>)))]
-</span><span class="macro">compile_error!</span>(<span class="string">&quot;Must opt-in using `experimental-wasm` Cargo feature; keep in mind that this is work in progress&quot;</span>);
+<span class="attr">#[cfg(all(target_family = <span class="string">"wasm"</span>, not(feature = <span class="string">"experimental-wasm"</span>)))]
+</span><span class="macro">compile_error!</span>(<span class="string">"Must opt-in using `experimental-wasm` Cargo feature; keep in mind that this is work in progress"</span>);
 
 <span class="kw">pub mod </span>init {
     <span class="kw">pub use </span>godot_core::init::<span class="kw-2">*</span>;
