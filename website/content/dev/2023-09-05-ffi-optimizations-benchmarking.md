@@ -1,4 +1,9 @@
 +++
+# Copyright (c) godot-rust; Bromeon and contributors.
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
 title = "FFI optimizations and benchmarking"
 authors = ["Bromeon"]
 
@@ -6,7 +11,6 @@ authors = ["Bromeon"]
 summary = "How caching enabled up to 40x speedup for some Godot API calls."
 tags = ["performance", "benchmark"]
 +++
-
 
 The first entry in the godot-rust devlog touches a topic that is often in the spotlight of game development: performance.
 

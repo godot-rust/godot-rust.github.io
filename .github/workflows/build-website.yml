@@ -1,3 +1,4 @@
+# Copyright (c) godot-rust; Bromeon and contributors.
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
@@ -28,7 +29,7 @@ jobs:
     if: github.event_name == 'pull_request'
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: "Build website"
         uses: shalzz/zola-deploy-action@master
@@ -58,7 +59,7 @@ jobs:
           branch: ci-mutex-website
 
       - name: "Checkout"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Note: if this is run the first time, this job fails because there is no doc-output branch.
       # Easy enough to fix by deploying docs for both masters.
@@ -134,10 +135,10 @@ jobs:
     if: github.event_name != 'repository_dispatch'
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: "Check license headers"
-        uses: apache/skywalking-eyes/header@v0.4.0
+        uses: apache/skywalking-eyes/header@v0.5.0
         with:
           # log: debug # optional: set the log level. The default value is `info`.
           config: .github/external-config/licenserc.yml
