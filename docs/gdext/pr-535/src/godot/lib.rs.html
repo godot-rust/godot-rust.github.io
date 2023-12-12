@@ -241,6 +241,8 @@
 <a href="#241" id="241">241</a>
 <a href="#242" id="242">242</a>
 <a href="#243" id="243">243</a>
+<a href="#244" id="244">244</a>
+<a href="#245" id="245">245</a>
 </pre></div><pre class="rust"><code><span class="attr">#![feature(doc_cfg)]
 </span><span class="comment">/*
  * Copyright (c) godot-rust; Bromeon and contributors.
@@ -475,7 +477,9 @@
     };
     <span class="kw">pub use </span><span class="kw">super</span>::init::{gdextension, ExtensionLibrary, InitLevel};
     <span class="kw">pub use </span><span class="kw">super</span>::log::<span class="kw-2">*</span>;
-    <span class="kw">pub use </span><span class="kw">super</span>::obj::{Base, Gd, GdMut, GdRef, GodotClass, Inherits, InstanceId, Share};
+    <span class="kw">pub use </span><span class="kw">super</span>::obj::{
+        Base, Gd, GdMut, GdRef, GodotClass, Inherits, InstanceId, OnReady, Share,
+    };
 
     <span class="comment">// Make trait methods available
     </span><span class="kw">pub use </span><span class="kw">super</span>::engine::NodeExt <span class="kw">as _</span>;
