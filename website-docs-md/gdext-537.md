@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-537/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/537"
 pr_author = "Bromeon"
 sort_key = 2023-12-17
-date_time = 2023-12-17T15:11:49Z
-commit_sha = "e82cc1fc773fb1261fd1ce28ddd7a78e6b31ff29"
+date_time = 2023-12-17T15:23:48Z
+commit_sha = "a1a44187d22835c61321f98e7fb77c7be3f0e426"
 +++
 
-Bugfix/missing release methods
+Fix `ResourceImporter*` methods not found in Release mode; add Release CI
