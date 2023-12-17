@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-537/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/537"
 pr_author = "Bromeon"
 sort_key = 2023-12-17
-date_time = 2023-12-17T15:10:39Z
-commit_sha = "5fd22af6249f71519ed7f63d79a248c4c840b4bb"
+date_time = 2023-12-17T15:11:49Z
+commit_sha = "e82cc1fc773fb1261fd1ce28ddd7a78e6b31ff29"
 +++
 
 Bugfix/missing release methods
