@@ -65,6 +65,9 @@
 
     h3 {
         @apply text-2xl;
+        font-weight: bold;
+        @apply markdown-h;
+        @apply pb-2;
     }
 
     /*a {*/
@@ -208,6 +211,11 @@ html {
     @apply mb-0;
 }
 
+.markdown-content h3 {
+    @apply mt-6;
+    @apply mb-0;
+}
+
 .markdown-h {
     color: var(--brown-caption);
 }
@@ -269,6 +277,41 @@ html {
     /*@apply leading-7;*/
 }
 
+/* note: no preceding `.markdown-content`. */
+.footnote-definition {
+    @apply text-sm;
+
+    display: flex;
+    flex-direction: column; /* stack child elements vertically */
+    /*align-items: baseline;*/
+}
+
+.footnote-definition-label {
+    /* Adjust spacing between the label and the paragraph. */
+    /*margin-right: 5px;*/
+    @apply mr-1.5;
+
+    /* align label to start of the line. */
+    align-self: flex-start;
+    /* place the label before other elements. */
+    /*order: -1;*/
+
+    /* offset label vertically, since it's too high otherwise */
+    position: relative;
+    top: 9px;
+}
+
+.footnote-definition code {
+    @apply text-sm;
+}
+
+/** Indent paragraph (incl. lists) compared to label. */
+.footnote-definition p,
+.footnote-definition ul,
+.footnote-definition ol {
+    @apply ml-4;
+    @apply mb-1;
+}
 
 /*.all-links {*/
 /*    color: #59a2cc;*/
