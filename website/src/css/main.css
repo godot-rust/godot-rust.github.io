@@ -238,6 +238,12 @@ html {
     @apply ml-2;
 }
 
+/* Before each list element, add a bit of vertical padding. */
+.markdown-content > ol > li,
+.markdown-content > ul > li {
+    @apply pt-1.5;
+}
+
 .markdown-content ul {
     @apply list-disc;
     @apply list-outside;
@@ -245,16 +251,17 @@ html {
 }
 
 /** Margin at end of entire list, same value as <p>. */
-.markdown-content ol, .markdown-content ul {
+.markdown-content ol,
+.markdown-content ul {
     @apply mb-4;
 }
 
-/** Nested lists have smaller margin. */
+/** Nested lists have smaller margin at the bottom. */
 .markdown-content ol ol,
 .markdown-content ol ul,
 .markdown-content ul ol,
 .markdown-content ul ul {
-    @apply mb-2;
+    @apply mb-0;
 }
 
 .markdown-content p {
