@@ -10,7 +10,7 @@
 {% block content %}
 <div class="flex items-center flex-col mt-10">
   <div class="markdown-content">
-      <h1>{{ page.title }}</h1>
+      <h1>{{ page.title | replace(from="~", to="<br>") | safe }}</h1>
   </div>
 
   <div class="author-date">
