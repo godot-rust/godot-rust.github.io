@@ -157,15 +157,23 @@ html {
     /*@apply font-mono;*/
 }
 
+:is(.dark .markdown-content code) {
+    background-color: var(--brown-body-bg-dark);
+}
+
 .markdown-content blockquote {
     @apply border-l-4;
     @apply border-gray-400;
     @apply pl-4;
     @apply my-4;
+
+    color: var(--brown-caption);
+    border-color: var(--brown-hover);
 }
 
-:is(.dark .markdown-content code) {
-    background-color: var(--brown-body-bg-dark);
+:is(.dark .markdown-content blockquote) {
+    color: var(--brown-caption-dark);
+    border-color: var(--brown-hover-dark);
 }
 
 .markdown-content table {
@@ -508,6 +516,7 @@ html {
     /*color: rgb(0 0 0 / var(--tw-text-opacity));*/
     color: var(--brown-caption);
 }
+
 
 /* --------------------------------------------------------------- */
 /* dark theme */

@@ -1592,6 +1592,10 @@ html {
   /*@apply font-mono;*/
 }
 
+:is(.dark .markdown-content code) {
+  background-color: var(--brown-body-bg-dark);
+}
+
 .markdown-content blockquote {
   border-left-width: 4px;
   --tw-border-opacity: 1;
@@ -1599,10 +1603,13 @@ html {
   padding-left: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  color: var(--brown-caption);
+  border-color: var(--brown-hover);
 }
 
-:is(.dark .markdown-content code) {
-  background-color: var(--brown-body-bg-dark);
+:is(.dark .markdown-content blockquote) {
+  color: var(--brown-caption-dark);
+  border-color: var(--brown-hover-dark);
 }
 
 .markdown-content table {
