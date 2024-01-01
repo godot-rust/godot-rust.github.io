@@ -6,7 +6,7 @@
 # The URL the site will be built for
 base_url = "https://godot-rust.github.io"
 
-title = "godot-rust: Rust bindings for the Godot game engine"
+title = "godot-rust: Rust bindings for Godot game engine"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = false
@@ -70,10 +70,6 @@ title = "Main title"
 image = "https://via.placeholder.com/200"
 image_alt = "Placeholder text describing the index's image."
 
-[extra.default_author]
-name = "John Doe"
-avatar = "https://via.placeholder.com/200"
-avatar_alt = "Placeholder text describing the default author's avatar."
 
 [extra.links]
 github_gdnative = "https://github.com/godot-rust/gdnative"
