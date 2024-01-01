@@ -56,6 +56,13 @@
       {%- set c_page_summary = 'godot-rust' -%}
       {%- set c_page_image = get_url(path='godot-ferris-og-dark.png') -%}
 
+      {#- For articles (that have a summary), use 'article' type, otherwise 'website' -#}
+      {% if page.extra.summary %}
+        {%- set c_page_type = 'article' -%}
+      {% else %}
+          {%- set c_page_type = 'website' -%}
+      {% endif %}
+
       {# Page title #}
       <title>
         {%- block title -%}
@@ -71,13 +78,13 @@
 
       <!-- Discord, Facebook, etc. -->
       <meta property="og:url" content="{{ get_url(path='.') | safe }}">
-      <meta property="og:type" content="website">
+      <meta property="og:type" content="{{ c_page_type }}">
       <meta property="og:title" content="{{ c_page_title }}">
       <meta property="og:description" content="{{ c_page_summary }}">
       <meta property="og:image" content="{{ c_page_image | safe }}">
 
       <!-- Twitter Meta Tags -->
-      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:card" content="summary">  {# or 'summary_large_image' #}
       <meta property="twitter:domain" content="godot-rust.github.io">
       <meta property="twitter:url" content="{{ get_url(path='.') | safe }}">
       <meta name="twitter:title" content="{{ c_page_title }}">
