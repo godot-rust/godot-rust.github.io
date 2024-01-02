@@ -1,4 +1,4 @@
-var srcIndex = JSON.parse('{\
-"godot":["",[],["lib.rs"]]\
-}');
+var srcIndex = new Map(JSON.parse('[\
+["godot",["",[],["lib.rs"]]]\
+]'));
 createSrcSidebar();
