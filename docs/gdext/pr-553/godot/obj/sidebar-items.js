@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":["cap","dom","mem"],"struct":["Base","Gd","GdMut","GdRef","InstanceId","OnReady"],"trait":["EngineBitfield","EngineClass","EngineEnum","ExportableObject","GodotClass","IndexEnum","Inherits","Share","UserClass","WithBaseField"]};
+window.SIDEBAR_ITEMS = {"mod":["cap","dom","mem"],"struct":["Base","BaseMut","BaseRef","Gd","GdMut","GdRef","InstanceId","OnReady"],"trait":["EngineBitfield","EngineClass","EngineEnum","ExportableObject","GodotClass","IndexEnum","Inherits","Share","UserClass","WithBaseField"]};
