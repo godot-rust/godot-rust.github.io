@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-553/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/553"
 pr_author = "0awful"
 sort_key = 2024-01-05
-date_time = 2024-01-05T00:14:44Z
-commit_sha = "a645ca3ffb5556a35a00a2e08d439f3f891edda9"
+date_time = 2024-01-05T04:28:39Z
+commit_sha = "1808118d2f6b773f36209ac0036fbc5885702886"
 +++
 
-debug-display-for-buildins
+Implement Display and Debug for Builtins
