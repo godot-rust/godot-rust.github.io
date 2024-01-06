@@ -487,15 +487,15 @@
     };
     <span class="kw">pub use </span><span class="kw">super</span>::init::{gdextension, ExtensionLibrary, InitLevel};
     <span class="kw">pub use </span><span class="kw">super</span>::log::<span class="kw-2">*</span>;
-    <span class="kw">pub use </span><span class="kw">super</span>::obj::{
-        Base, Gd, GdMut, GdRef, GodotClass, Inherits, InstanceId, OnReady, Share,
-    };
+    <span class="kw">pub use </span><span class="kw">super</span>::obj::{Base, Gd, GdMut, GdRef, GodotClass, Inherits, InstanceId, OnReady};
 
     <span class="comment">// Make trait methods available
     </span><span class="kw">pub use </span><span class="kw">super</span>::engine::NodeExt <span class="kw">as _</span>;
     <span class="kw">pub use </span><span class="kw">super</span>::obj::EngineBitfield <span class="kw">as _</span>;
     <span class="kw">pub use </span><span class="kw">super</span>::obj::EngineEnum <span class="kw">as _</span>;
-    <span class="kw">pub use </span><span class="kw">super</span>::obj::UserClass <span class="kw">as _</span>; <span class="comment">// new_gd(), alloc_gd()
+    <span class="kw">pub use </span><span class="kw">super</span>::obj::NewAlloc <span class="kw">as _</span>;
+    <span class="kw">pub use </span><span class="kw">super</span>::obj::NewGd <span class="kw">as _</span>;
+    <span class="kw">pub use </span><span class="kw">super</span>::obj::UserClass <span class="kw">as _</span>; <span class="comment">// new_gd(), alloc_gd() -- TODO: remove (exposed functions are deprecated)
     </span><span class="kw">pub use </span><span class="kw">super</span>::obj::WithBaseField <span class="kw">as _</span>; <span class="comment">// to_gd()
 </span>}
 </code></pre></div></section></main></body></html>
