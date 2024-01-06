@@ -3,8 +3,9 @@
     ($(<span class="macro-nonterminal">$elements</span>:expr),* $(,)<span class="question-mark">?</span>) =&gt; { ... };
 }</pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Constructs <a href="../builtin/struct.Array.html" title="struct godot::builtin::Array"><code>Array</code></a> literals, similar to Rust’s standard <code>vec!</code> macro.</p>
 <p>The type of the array is inferred from the arguments.</p>
-<p>Example:</p>
-
+<h2 id="example"><a href="#example">Example</a></h2>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">let </span>arr = <span class="macro">array!</span>[<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>];  <span class="comment">// Array&lt;i32&gt;</span></code></pre></div>
+<h2 id="see-also"><a href="#see-also">See also</a></h2>
 <p>To create an <code>Array</code> of variants, see the <a href="../builtin/macro.varray.html" title="macro godot::builtin::varray"><code>varray!</code></a> macro.</p>
+<p>For dictionaries, a similar macro <a href="../builtin/macro.dict.html" title="macro godot::builtin::dict"><code>dict!</code></a> exists.</p>
 </div></details></section></div></main></body></html>

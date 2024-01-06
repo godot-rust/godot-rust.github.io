@@ -4,8 +4,7 @@
 }</pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Constructs <a href="struct.Dictionary.html" title="struct godot::builtin::Dictionary"><code>Dictionary</code></a> literals, close to Godot’s own syntax.</p>
 <p>Any value can be used as a key, but to use an expression you need to surround it
 in <code>()</code> or <code>{}</code>.</p>
-<p>Example:</p>
-
+<h2 id="example"><a href="#example">Example</a></h2>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::builtin::{dict, Variant};
 
 <span class="kw">let </span>key = <span class="string">"my_key"</span>;
@@ -15,4 +14,6 @@ in <code>()</code> or <code>{}</code>.</p>
     key: <span class="bool-val">true</span>,
     (<span class="number">1 </span>+ <span class="number">2</span>): <span class="string">"final"</span>,
 };</code></pre></div>
+<h2 id="see-also"><a href="#see-also">See also</a></h2>
+<p>For arrays, similar macros <a href="macro.array.html" title="macro godot::builtin::array"><code>array!</code></a> and <a href="macro.varray.html" title="macro godot::builtin::varray"><code>varray!</code></a> exist.</p>
 </div></details></section></div></main></body></html>
