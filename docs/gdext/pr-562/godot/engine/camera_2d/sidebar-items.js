@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["AnchorMode","Camera2DProcessCallback"]};
