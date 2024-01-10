@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-562/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/562"
 pr_author = "Bromeon"
 sort_key = 2024-01-10
-date_time = 2024-01-10T23:18:59Z
-commit_sha = "a7009c25d25e869427a3324785894c1af39f721c"
+date_time = 2024-01-10T23:27:04Z
+commit_sha = "232b5d7a76e26ea30ef51b84421e72a863e9c8df"
 +++
 
 Nicer enum and enumerator names
