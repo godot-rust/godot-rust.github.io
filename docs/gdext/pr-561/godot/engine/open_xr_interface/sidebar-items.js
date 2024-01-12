@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["Hand","HandJointFlags","HandJoints","HandMotionRange"]};
+window.SIDEBAR_ITEMS = {"struct":["Hand","HandJointFlags","HandJoints","HandMotionRange","HandTrackedSource"]};
