@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["AfterGUIInput","CustomControlContainer","DockSlot","ExAddImportPlugin","ExAddSceneFormatImporterPlugin","ExAddScenePostImportPlugin"]};
+window.SIDEBAR_ITEMS = {"struct":["AfterGuiInput","CustomControlContainer","DockSlot","ExAddImportPlugin","ExAddSceneFormatImporterPlugin","ExAddScenePostImportPlugin"],"type":["AfterGUIInput"]};

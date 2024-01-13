@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["FFTSize"]};
+window.SIDEBAR_ITEMS = {"struct":["FftSize"],"type":["FFTSize"]};
