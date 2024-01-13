@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["DuplicateFlags","ExAddChild","ExAddSibling","ExAddToGroup","ExDuplicate","ExFindChild","ExFindChildren","ExGetChild","ExGetChildCount","ExGetChildren","ExGetIndex","ExGetPathTo","ExPropagateCall","ExReparent","ExReplaceBy","ExSetMultiplayerAuthority","InternalMode","ProcessMode","ProcessThreadGroup","ProcessThreadMessages"]};
