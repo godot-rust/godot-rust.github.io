@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["GIMode","LightmapScale","ShadowCastingSetting","VisibilityRangeFadeMode"]};
+window.SIDEBAR_ITEMS = {"struct":["GiMode","LightmapScale","ShadowCastingSetting","VisibilityRangeFadeMode"],"type":["GIMode"]};
