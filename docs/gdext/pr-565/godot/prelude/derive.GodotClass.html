@@ -264,4 +264,12 @@ can get to Godot. You can use the <code>rename</code> key while defining your <c
     </span><span class="kw">pub struct </span>Toad {}
 }</code></pre></div>
 <p>These classes will appear in the Godot editor and GDScript as “AnimalToad” or “NpcToad”.</p>
+<h2 id="hiding-classes"><a href="#hiding-classes">Hiding Classes</a></h2>
+<p>If you want to register a class with Godot, but not have it show up in the editor then you can use <code>#[class(hide)]</code>.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
+#[class(base = Node, init, hide)]
+</span><span class="kw">pub struct </span>Foo {}</code></pre></div>
+<p>Even though this class is a <code>Node</code> and it has an init function, it still won’t show up in the editor as a node you can add to a scene
+because we have added a <code>hide</code> key to the class. This will also prevent it from showing up in documentation.</p>
 </div></details></section></div></main></body></html>
