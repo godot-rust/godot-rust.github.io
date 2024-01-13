@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["AmbientSource","BGMode","GlowBlendMode","ReflectionSource","SDFGIYScale","ToneMapper"]};
+window.SIDEBAR_ITEMS = {"struct":["AmbientSource","BgMode","GlowBlendMode","ReflectionSource","SdfgiYScale","ToneMapper"],"type":["BGMode","SDFGIYScale"]};
