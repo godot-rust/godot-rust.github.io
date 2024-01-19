@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-570/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/570"
 pr_author = "TitanNano"
 sort_key = 2024-01-19
-date_time = 2024-01-19T21:18:27Z
-commit_sha = "69fe4306856b10f2431719423b97c90b36fc23bb"
+date_time = 2024-01-19T21:23:54Z
+commit_sha = "85b255e2c464fbfe78e3fbc70f0c7d78b9af2413"
 +++
 
 Implement builtin type `Signal`
