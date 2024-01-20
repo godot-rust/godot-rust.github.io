@@ -1,6 +1,6 @@
 +++
 title = "master"
-date = 2023-12-22
+date = 2024-01-20
 
 [extra]
 repo = "gdnative"
@@ -8,8 +8,8 @@ docs_rel_url = "gdnative/master/gdnative"
 pr_url = "https://github.com/godot-rust/gdnative"
 pr_author = ""
 sort_key = 9999-01-01
-date_time = 2023-12-22T15:23:41Z
-commit_sha = "c6f6eef67b5c9d9878afe243dd09b58a5c047ed7"
+date_time = 2024-01-20T08:18:48Z
+commit_sha = "7e55836e53bfd1ccd618939ec30ab6bf2400b614"
 +++
 
 
