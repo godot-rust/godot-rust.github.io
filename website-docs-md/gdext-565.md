@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-565/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/565"
 pr_author = "0awful"
 sort_key = 2024-01-20
-date_time = 2024-01-20T19:12:12Z
-commit_sha = "bbde3cd1bf4db46d9483990680f9fd361177726d"
+date_time = 2024-01-20T19:13:55Z
+commit_sha = "3a1e06169989b6dba95f0be2aaa2d36a8a12d7b9"
 +++
 
 #310 Quaternion Function Completeness
