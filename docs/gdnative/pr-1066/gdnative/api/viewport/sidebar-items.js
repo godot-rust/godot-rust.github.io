@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["ClearMode","DebugDraw","Msaa","RenderInfo","ShadowAtlasQuadrantSubdiv","UpdateMode","Usage"]};
