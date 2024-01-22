@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-575/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/575"
 pr_author = "Bromeon"
 sort_key = 2024-01-22
-date_time = 2024-01-22T11:08:26Z
-commit_sha = "7a3d4fbdbf9254036448ba35047738114a8c1648"
+date_time = 2024-01-22T11:11:51Z
+commit_sha = "c1e8934755755e3201b0772076f670a2b7ef77c5"
 +++
 
 More robust duplicate detection during class registration
