@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-592/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/592"
 pr_author = "vortexofdoom"
 sort_key = 2024-02-02
-date_time = 2024-02-02T18:18:59Z
-commit_sha = "f56cd467bc4c5769be98917c836c66055b9439e9"
+date_time = 2024-02-02T18:43:37Z
+commit_sha = "48d66f101e299cc0970a214826708e57bc1b8de0"
 +++
 
-CI failed when running locally on this.
+Fix question mark lint.
