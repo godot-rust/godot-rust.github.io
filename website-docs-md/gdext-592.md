@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-592/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/592"
 pr_author = "vortexofdoom"
 sort_key = 2024-02-02
-date_time = 2024-02-02T22:41:27Z
-commit_sha = "3af3ecf7d8ea0a280ec888951a09c228add834a5"
+date_time = 2024-02-02T23:01:52Z
+commit_sha = "80318bf85ddd523ea495826225d683b7cadb9066"
 +++
 
 Fix question mark lint.
