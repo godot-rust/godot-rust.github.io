@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-581/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/581"
 pr_author = "lilizoey"
 sort_key = 2024-02-03
-date_time = 2024-02-03T15:20:08Z
-commit_sha = "cff159e8ba897291541a0afb15549ae4394270ba"
+date_time = 2024-02-03T15:29:33Z
+commit_sha = "ec2330a47a57bf3bedca022bdaf3cd35584c167b"
 +++
 
 Remove usage of `static mut`
