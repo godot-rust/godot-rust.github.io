@@ -11,9 +11,38 @@
     #[signal]
 }
 </code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Derive macro for <a href="../obj/trait.GodotClass.html"><code>GodotClass</code></a> on structs.</p>
-<p>You must use this macro; manual implementations of the <code>GodotClass</code> trait are not supported.</p>
+<p>You should use this macro; manual implementations of the <code>GodotClass</code> trait are not encouraged.</p>
+<p>This is typically used in combination with <a href="attr.godot_api.html"><code>#[godot_api]</code></a>, which can implement custom functions and constants,
+as well as override virtual methods.</p>
+<p>See also <a href="https://godot-rust.github.io/book/register/classes.html">book chapter <em>Registering classes</em></a>.</p>
+<p><strong>Table of contents:</strong></p>
+<ul>
+<li><a href="#construction">Construction</a></li>
+<li><a href="#inheritance">Inheritance</a></li>
+<li><a href="#properties-and-exports">Properties and exports</a>
+<ul>
+<li><a href="#property-registration">Property registration</a></li>
+<li><a href="#property-exports">Property exports</a></li>
+</ul>
+</li>
+<li><a href="#signals">Signals</a></li>
+<li><a href="#further-class-customization">Further class customization</a>
+<ul>
+<li><a href="#running-code-in-the-editor">Running code in the editor</a></li>
+<li><a href="#editor-plugins">Editor plugins</a></li>
+<li><a href="#class-renaming">Class renaming</a></li>
+<li><a href="#class-hiding">Class hiding</a></li>
+</ul>
+</li>
+<li><a href="#further-field-customization">Further field customization</a>
+<ul>
+<li><a href="#fine-grained-inference-hints">Fine-grained inference hints</a></li>
+</ul>
+</li>
+</ul>
 <h2 id="construction"><a class="doc-anchor" href="#construction">§</a>Construction</h2>
-<p>To generate a constructor that will let you call <code>MyStruct.new()</code> from GDScript, annotate your
+<p>If you don’t override <code>init()</code> manually (within a <code>#[godot_api]</code> block), gdext can generate a default constructor for you.
+This constructor is made available to Godot and lets you call <code>MyStruct.new()</code> from GDScript. To enable it, annotate your
 struct with <code>#[class(init)]</code>:</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
@@ -36,8 +65,17 @@ surrounded by parentheses. This is the case if the expression includes a <code>,
 inside any pair of <code>(...)</code>, <code>[...]</code> or <code>{...}</code> (even if it is, for example, inside <code>&lt;...&gt;</code> or
 <code>|...|</code>). A contrived example:</p>
 
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code>    <span class="attr">#[init(default = (HashMap::&lt;i64, i64&gt;::new()))]
-    </span><span class="comment">//                             ^ parentheses needed due to this comma</span></code></pre></div>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[init(default = (HashMap::&lt;i64, i64&gt;::new()))]
+</span><span class="comment">//                             ^ parentheses needed due to this comma
+</span>my_field: HashMap&lt;i64, i64&gt;,</code></pre></div>
+<p>You can also <em>disable</em> construction from GDScript. This needs to be explicit via <code>#[class(no_init)]</code>.
+Simply omitting the <code>init</code>/<code>no_init</code> keys and not overriding your own constructor will cause a compile error.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
+#[class(no_init)]
+</span><span class="kw">struct </span>MyStruct {
+   <span class="comment">// ...
+</span>}</code></pre></div>
 <h2 id="inheritance"><a class="doc-anchor" href="#inheritance">§</a>Inheritance</h2>
 <p>Unlike C++, Rust doesn’t really have inheritance, but the GDExtension API lets us “inherit”
 from a built-in engine class.</p>
@@ -46,7 +84,7 @@ from a built-in engine class.</p>
 your <code>struct</code>:</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
-#[class(base = Node2D)]
+#[class(init, base=Node2D)]
 </span><span class="kw">struct </span>MyStruct {
     <span class="comment">// ...
 </span>}</code></pre></div>
@@ -54,17 +92,18 @@ your <code>struct</code>:</p>
 your object accordingly. You can access it through <code>self.base()</code> and <code>self.base_mut()</code> methods.</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
-#[class(base = Node2D)]
+#[class(init, base=Node2D)]
 </span><span class="kw">struct </span>MyStruct {
     base: Base&lt;Node2D&gt;,
 }</code></pre></div>
 <h2 id="properties-and-exports"><a class="doc-anchor" href="#properties-and-exports">§</a>Properties and exports</h2>
+<p>See also <a href="https://godot-rust.github.io/book/register/properties.html#registering-properties">book chapter <em>Registering properties</em></a>.</p>
 <p>In GDScript, there is a distinction between
 <a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html#properties-setters-and-getters">properties</a>
 (fields with a <code>get</code> or <code>set</code> declaration) and
 <a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_exports.html">exports</a>
-(fields annotated with <code>@export</code>). In the GDExtension API, these two concepts are represented with
-<code>#[var]</code> and <code>#[export]</code> attributes respectively.</p>
+(fields annotated with <code>@export</code>). In the gdext API, these two concepts are represented with <code>#[var]</code> and <code>#[export]</code> attributes respectively.</p>
+<h3 id="property-registration"><a class="doc-anchor" href="#property-registration">§</a>Property registration</h3>
 <p>To create a property, you can use the <code>#[var]</code> annotation:</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
@@ -115,6 +154,7 @@ generated getter or setter in these cases anyway, use <code>get</code> or <code>
         <span class="self">self</span>.my_field = value;
     }
 }</code></pre></div>
+<h3 id="property-exports"><a class="doc-anchor" href="#property-exports">§</a>Property exports</h3>
 <p>For exporting properties to the editor, you can use the <code>#[export]</code> attribute:</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
@@ -168,7 +208,8 @@ becomes
     <span class="comment">// @export_flags("A:1", "B:2", "AB:3")
     </span><span class="attr">#[export(flags = (A = <span class="number">1</span>, B = <span class="number">2</span>, AB = <span class="number">3</span>))]
     </span>flags: u32,
-}</code></pre></div>
+}
+</code></pre></div>
 <p>Most values in expressions like <code>key = value</code>, can be an arbitrary expression that evaluates to the
 right value. Meaning you can use constants or variables, as well as any other rust syntax you’d like in
 the export attributes.</p>
@@ -184,7 +225,8 @@ the export attributes.</p>
     </span>flags: u32,
 }</code></pre></div>
 <p>You can specify custom property hints, hint strings, and usage flags in a <code>#[var]</code> attribute using the
-<code>hint</code>, <code>hint_string</code>, and <code>usage_flags</code> keys in the attribute:</p>
+<code>hint</code>, <code>hint_string</code>, and <code>usage_flags</code> keys in the attribute. These are constants in the <code>PropertyHint</code>
+and <code>PropertyUsageFlags</code> enums, respectively.</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
 </span><span class="kw">struct </span>MyStruct {
@@ -192,9 +234,9 @@ the export attributes.</p>
     // Displayed in the editor
     // Treated as read-only by the editor
     </span><span class="attr">#[var(
-        hint = PROPERTY_HINT_ENUM,
+        hint = ENUM,
         hint_string = <span class="string">"One,Two"</span>,
-        usage_flags = [PROPERTY_USAGE_EDITOR, PROPERTY_USAGE_READ_ONLY]
+        usage_flags = [EDITOR, READ_ONLY]
     </span>)]
     my_field: i64,
 }</code></pre></div>
@@ -210,13 +252,13 @@ It will be fundamentally reworked.</p>
     <span class="attr">#[signal]
     </span><span class="kw">fn </span>some_signal();
 }</code></pre></div>
-<h2 id="running-code-in-the-editor"><a class="doc-anchor" href="#running-code-in-the-editor">§</a>Running code in the editor</h2>
+<h2 id="further-class-customization"><a class="doc-anchor" href="#further-class-customization">§</a>Further class customization</h2><h3 id="running-code-in-the-editor"><a class="doc-anchor" href="#running-code-in-the-editor">§</a>Running code in the editor</h3>
 <p>If you annotate a class with <code>#[class(tool)]</code>, its lifecycle methods (<code>ready()</code>, <code>process()</code> etc.) will be invoked in the editor. This
 is useful for writing custom editor plugins, as opposed to classes running simply in-game.</p>
 <p>See <a href="../init/trait.ExtensionLibrary.html#method.editor_run_behavior"><code>ExtensionLibrary::editor_run_behavior()</code></a>
 for more information and further customization.</p>
 <p>This is very similar to <a href="https://docs.godotengine.org/en/stable/tutorials/plugins/running_code_in_the_editor.html">GDScript’s <code>@tool</code> feature</a>.</p>
-<h2 id="editor-plugins"><a class="doc-anchor" href="#editor-plugins">§</a>Editor plugins</h2>
+<h3 id="editor-plugins"><a class="doc-anchor" href="#editor-plugins">§</a>Editor plugins</h3>
 <p>If you annotate a class with <code>#[class(editor_plugin)]</code>, it will be turned into an editor plugin. The
 class must then inherit from <code>EditorPlugin</code>, and an instance of that class will be automatically added
 to the editor when launched.</p>
@@ -226,7 +268,7 @@ through Godot’s <code>Create New Plugin</code> menu for it to work, simply ann
 automatically enables it when the library is loaded.</p>
 <p>This should usually be combined with <code>#[class(tool)]</code> so that the code you write will actually run in the
 editor.</p>
-<h2 id="class-renaming"><a class="doc-anchor" href="#class-renaming">§</a>Class renaming</h2>
+<h3 id="class-renaming"><a class="doc-anchor" href="#class-renaming">§</a>Class renaming</h3>
 <p>You may want to have structs with the same name. With Rust, this is allowed using <code>mod</code>. However in GDScript,
 there are no modules, namespaces, or any such disambiguation.  Therefore, you need to change the names before they
 can get to Godot. You can use the <code>rename</code> key while defining your <code>GodotClass</code> for this.</p>
@@ -243,15 +285,15 @@ can get to Godot. You can use the <code>rename</code> key while defining your <c
     </span><span class="kw">pub struct </span>Toad {}
 }</code></pre></div>
 <p>These classes will appear in the Godot editor and GDScript as “AnimalToad” or “NpcToad”.</p>
-<h2 id="hiding-classes"><a class="doc-anchor" href="#hiding-classes">§</a>Hiding classes</h2>
+<h3 id="class-hiding"><a class="doc-anchor" href="#class-hiding">§</a>Class hiding</h3>
 <p>If you want to register a class with Godot, but not have it show up in the editor then you can use <code>#[class(hide)]</code>.</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
-#[class(base = Node, init, hide)]
+#[class(base=Node, init, hide)]
 </span><span class="kw">pub struct </span>Foo {}</code></pre></div>
 <p>Even though this class is a <code>Node</code> and it has an init function, it still won’t show up in the editor as a node you can add to a scene
 because we have added a <code>hide</code> key to the class. This will also prevent it from showing up in documentation.</p>
-<h2 id="fine-grained-inference-hints"><a class="doc-anchor" href="#fine-grained-inference-hints">§</a>Fine-grained inference hints</h2>
+<h2 id="further-field-customization"><a class="doc-anchor" href="#further-field-customization">§</a>Further field customization</h2><h3 id="fine-grained-inference-hints"><a class="doc-anchor" href="#fine-grained-inference-hints">§</a>Fine-grained inference hints</h3>
 <p>The derive macro is relatively smart about recognizing <code>Base&lt;T&gt;</code> and <code>OnReady&lt;T&gt;</code> types, and works also if those are qualified.</p>
 <p>However, there may be situations where you need to help it out – for example, if you have a type alias for <code>Base&lt;T&gt;</code>, or use an unrelated
 <code>my_module::Base&lt;T&gt;</code> with a different meaning.</p>
@@ -268,7 +310,7 @@ because we have added a <code>hide</code> key to the class. This will also preve
 <span class="kw">type </span>Base&lt;T&gt; = godot::obj::Gd&lt;T&gt;;
 
 <span class="attr">#[derive(godot::register::GodotClass)]
-#[class(base = Node)]
+#[class(base=Node)]
 </span><span class="kw">struct </span>MyStruct {
    <span class="attr">#[hint(base)]
    </span>base: Super&lt;Node&gt;,
