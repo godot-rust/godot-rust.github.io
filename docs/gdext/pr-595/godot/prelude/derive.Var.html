@@ -13,7 +13,7 @@
 <li>The enum variants must have explicit discriminants, that is, e.g. <code>A = 2</code>, not just <code>A</code></li>
 </ul>
 <h2 id="example"><a class="doc-anchor" href="#example">§</a>Example</h2>
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotConvert, Var)]
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(Var, GodotConvert)]
 #[repr(i32)]
 </span><span class="kw">enum </span>MyEnum {
     A = <span class="number">0</span>,
