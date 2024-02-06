@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"attr":["godot_api"],"derive":["Export","FromGodot","GodotClass","GodotConvert","ToGodot","Var"],"mod":["property"]};
