@@ -15,11 +15,11 @@ arguments in the format strings:</p>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="comment">// Good
 </span><span class="macro">tr!</span>(context; <span class="string">"{a} is a {b}"</span>); <span class="comment">// inlined, with context
 </span><span class="macro">tr!</span>(<span class="string">"{0} is a {1}"</span>, a, b); <span class="comment">// positional, without context
-</span><span class="macro">tr!</span>({c} is a {d}<span class="string">", c = a.x, d = b.y); // named (inlining not possible here)
+</span><span class="macro">tr!</span>(<span class="string">"{c} is a {d}"</span>, c = a.x, d = b.y); <span class="comment">// named (inlining not possible here)
 
 // Not so good, much more fragile
 // and does not easily ordering arguments differently in other languages.
-tr!("</span>{} is a {}<span class="string">", a, b);
-#}</span></code></pre></div>
+</span><span class="macro">tr!</span>(<span class="string">"{} is a {}"</span>, a, b);
+#}</code></pre></div>
 <p>see also: <a href="https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html#translation-contexts">https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html#translation-contexts</a></p>
 </div></details></section></div></main></body></html>
