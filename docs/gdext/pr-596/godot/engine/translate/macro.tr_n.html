@@ -9,7 +9,7 @@ Optionally, <code>context</code> for potentially ambiguous words can be added wi
 <p>For maximum flexibility and minimum ambiguity, prefer inlined, positional, or named arguments in the format strings:</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::engine::translate::tr_n;
- 
+
 <span class="comment">// Good
 </span><span class="macro">tr_n!</span>(n, context; <span class="string">"{a} is a {b}"</span>, <span class="string">"{a}s are {b}s"</span>); <span class="comment">// inlined, with context
 </span><span class="macro">tr_n!</span>(n; <span class="string">"{0} is a {1}"</span>, <span class="string">"{0}s are {1}s"</span>, a, b); <span class="comment">// positional, without context

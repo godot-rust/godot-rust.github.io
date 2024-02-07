@@ -9,7 +9,7 @@ added before the format arguments, separated with a <code>;</code>.</p>
 <p>For maximum flexibility and minimum ambiguity, prefer inlined, positional, or named arguments in the format strings:</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::engine::translate::tr;
- 
+
 <span class="comment">// Good
 </span><span class="macro">tr!</span>(context; <span class="string">"{a} is a {b}"</span>); <span class="comment">// inlined, with context
 </span><span class="macro">tr!</span>(<span class="string">"{0} is a {1}"</span>, a, b); <span class="comment">// positional, without context
