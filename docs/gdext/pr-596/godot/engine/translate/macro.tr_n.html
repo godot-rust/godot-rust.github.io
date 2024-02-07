@@ -11,7 +11,7 @@ ambiguous words can be added with <code>,</code> after <code>n</code> and before
 <p>For maximum flexibility and minimum ambiguity, prefer inlined, positional, or named
 arguments in the format strings:</p>
 
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="comment">// Good
+<div class="example-wrap compile_fail"><a href="#" class="tooltip" title="This example deliberately fails to compile">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="comment">// Good
 </span><span class="macro">tr_n!</span>(n, context; <span class="string">"{a} is a {b}"</span>, <span class="string">"{a}s are {b}s"</span>); <span class="comment">// inlined, with context
 </span><span class="macro">tr_n!</span>(n; <span class="string">"{0} is a {1}"</span>, <span class="string">"{0}s are {1}s"</span>, a, b); <span class="comment">// positional, without context
 </span><span class="macro">tr_n!</span>(n; <span class="string">"{c} is a {d}"</span>, <span class="string">"{c}s are {d}s"</span>, c = a.x, d = b.y); <span class="comment">// named (inlining not possible here)
