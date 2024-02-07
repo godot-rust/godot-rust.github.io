@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-596/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/596"
 pr_author = "vortexofdoom"
 sort_key = 2024-02-07
-date_time = 2024-02-07T19:03:49Z
-commit_sha = "431afef1f1cc41399347373ecce4faa4136ffeae"
+date_time = 2024-02-07T19:10:30Z
+commit_sha = "f084d24f0405d887726fb45a727d17e0ffc3bb98"
 +++
 
 tr! and tr_n! macros
