@@ -135,10 +135,10 @@ If they return <code>Gd&lt;Self&gt;</code>, they are effectively constructors th
         <span class="string">"Rust"</span>.into()
     }
 }</code></pre></div>
-<p>In GDScript:</p>
+<p>In GDScript, your method is available with a <code>_</code> prefix, following Godot convention for virtual methods:</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>extends MyStruct
 
-func language():
+func _language():
    return &quot;GDScript&quot;
 </code></pre></div>
 <p>Now, <code>obj.language()</code> from Rust will dynamically dispatch the call.</p>
