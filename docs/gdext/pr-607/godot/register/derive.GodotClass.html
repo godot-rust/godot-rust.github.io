@@ -252,7 +252,8 @@ It will be fundamentally reworked.</p>
     <span class="attr">#[signal]
     </span><span class="kw">fn </span>some_signal();
 
-    <span class="kw">fn </span>some_signal_with_parameters(my_parameter: Gd&lt;Node&gt;);
+    <span class="attr">#[signal]
+    </span><span class="kw">fn </span>some_signal_with_parameters(my_parameter: Gd&lt;Node&gt;);
 }</code></pre></div>
 <h2 id="further-class-customization"><a class="doc-anchor" href="#further-class-customization">§</a>Further class customization</h2><h3 id="running-code-in-the-editor"><a class="doc-anchor" href="#running-code-in-the-editor">§</a>Running code in the editor</h3>
 <p>If you annotate a class with <code>#[class(tool)]</code>, its lifecycle methods (<code>ready()</code>, <code>process()</code> etc.) will be invoked in the editor. This
