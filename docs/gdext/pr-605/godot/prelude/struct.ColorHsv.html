@@ -9,8 +9,8 @@
 representation by introducing conversion methods between itself and <code>Color</code>.</p>
 <p><code>ColorHsv</code> <em>is not</em> a <a href="../builtin/meta/trait.GodotType.html" title="trait godot::builtin::meta::GodotType"><code>GodotType</code></a>. To use it in properties expecting <code>Color</code>, you need to convert
 it back to this type.</p>
-<p><code>Color</code> created by <code>Color::from(color_hsv)</code> is equal to one created by <code>Color::from_hsv(h, s, v)</code>, but the conversion time is
-approximately 4 times faster - partly because it avoids calls between Godot and Rust during conversion.</p>
+<p>A <code>Color</code> created by <a href="../builtin/struct.ColorHsv.html#method.to_rgb" title="method godot::builtin::ColorHsv::to_rgb"><code>ColorHsv::to_rgb()</code></a> is equal to one created by <a href="../builtin/struct.Color.html#method.from_hsv" title="associated function godot::builtin::Color::from_hsv"><code>Color::from_hsv(h, s, v)</code></a>, but the conversion
+time is approximately 4 times faster - partly because it avoids calls between Godot and Rust during conversion.</p>
 <h3 id="conversions"><a class="doc-anchor" href="#conversions">§</a>Conversions</h3>
 <p>Both conversions (<code>Color</code> to <code>ColorHsv</code> and <code>ColorHsv</code> to <code>Color</code>) will panic if RGBA or HSVA values are not within range <code>0.0..=1.0</code>.
 To ensure the values are in valid range, methods <a href="../builtin/struct.Color.html#method.normalized" title="method godot::builtin::Color::normalized"><code>Color::normalized</code></a> and <a href="../builtin/struct.ColorHsv.html#method.normalized_clamped_h" title="method godot::builtin::ColorHsv::normalized_clamped_h"><code>ColorHsv::normalized_clamped_h</code></a>
@@ -18,8 +18,8 @@ or <a href="../builtin/struct.ColorHsv.html#method.normalized_wrapped_h" title="
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::builtin::{Color, ColorHsv};
 
-<span class="kw">let </span>rgb = Color::from_rgb(<span class="number">1.15</span>, <span class="number">0.</span>, <span class="number">0.</span>);
-<span class="kw">let </span>hsv = ColorHsv::from_hsv(<span class="number">1.15</span>, <span class="number">0.</span>, <span class="number">0.</span>);</code></pre></div>
+<span class="kw">let </span>rgb = Color::from_rgb(<span class="number">1.15</span>, <span class="number">0.0</span>, <span class="number">0.0</span>);
+<span class="kw">let </span>hsv = ColorHsv::from_hsv(<span class="number">1.15</span>, <span class="number">0.0</span>, <span class="number">0.0</span>);</code></pre></div>
 <p>Such colors can’t be converted - below calls will panic, because at least one of the color values are not within <code>0.0..=1.0</code> range.</p>
 
 <div class="example-wrap should_panic"><a href="#" class="tooltip" title="This example panics">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="kw">let </span>hsv_from_rgb = rgb.to_hsv();</code></pre></div>
@@ -82,8 +82,8 @@ every mutation, though changes should be minimal if color values are mutated eit
 <span class="kw">let </span>hsv_c = ColorHsv::from_hsv(<span class="number">1.35</span>, -<span class="number">0.60</span>, <span class="number">1.15</span>);
 <span class="kw">let </span>normalized = hsv_c.normalized_wrapped_h();
 <span class="macro">assert_eq_approx!</span>(normalized, ColorHsv::from_hsv(<span class="number">0.35</span>, <span class="number">0.0</span>, <span class="number">1.0</span>));</code></pre></div>
-</div></details><details class="toggle method-toggle" open><summary><section id="method.to_rgb" class="method"><h4 class="code-header">pub fn <a href="#method.to_rgb" class="fn">to_rgb</a>(self) -&gt; <a class="struct" href="../builtin/struct.Color.html" title="struct godot::builtin::Color">Color</a></h4></section></summary><div class="docblock"><p>Convert <code>ColorHsv</code> into <a href="../builtin/struct.Color.html" title="struct godot::builtin::Color"><code>Color</code></a>.</p>
-<h6 id="panics"><a class="doc-anchor" href="#panics">§</a>Panics</h6>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.to_rgb" class="method"><h4 class="code-header">pub fn <a href="#method.to_rgb" class="fn">to_rgb</a>(self) -&gt; <a class="struct" href="../builtin/struct.Color.html" title="struct godot::builtin::Color">Color</a></h4></section></summary><div class="docblock"><p>⚠️ Convert <code>ColorHsv</code> into <a href="../builtin/struct.Color.html" title="struct godot::builtin::Color"><code>Color</code></a>.</p>
+<h5 id="panics"><a class="doc-anchor" href="#panics">§</a>Panics</h5>
 <p>Method will panic if the HSVA values are outside of the valid range <code>0.0..=1.0</code>. You can use <a href="../builtin/struct.ColorHsv.html#method.normalized_clamped_h" title="method godot::builtin::ColorHsv::normalized_clamped_h"><code>ColorHsv::normalized_clamped_h</code></a> or
 <a href="../builtin/struct.ColorHsv.html#method.normalized_wrapped_h" title="method godot::builtin::ColorHsv::normalized_wrapped_h"><code>ColorHsv::normalized_wrapped_h</code></a> to ensure they are in range, or use <a href="../builtin/struct.ColorHsv.html#method.try_to_rgb" title="method godot::builtin::ColorHsv::try_to_rgb"><code>ColorHsv::try_to_rgb</code></a> implementation.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.try_to_rgb" class="method"><h4 class="code-header">pub fn <a href="#method.try_to_rgb" class="fn">try_to_rgb</a>(self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../builtin/struct.Color.html" title="struct godot::builtin::Color">Color</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</h4></section></summary><div class="docblock"><p>Fallible <code>ColorHsv</code> conversion into <a href="../builtin/struct.Color.html" title="struct godot::builtin::Color"><code>Color</code></a>. See also: <a href="../builtin/struct.ColorHsv.html#method.to_rgb" title="method godot::builtin::ColorHsv::to_rgb"><code>ColorHsv::to_rgb</code></a>.</p>
