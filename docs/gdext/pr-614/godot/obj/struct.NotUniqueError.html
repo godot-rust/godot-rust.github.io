@@ -22,13 +22,13 @@ uniqueness, call the <code>check()</code> associated method.</p>
 <p>Checks the <a href="struct.Gd.html" title="struct godot::obj::Gd"><code>Gd</code></a> of the <a href="trait.GodotClass.html" title="trait godot::obj::GodotClass"><code>GodotClass</code></a> that inherits from <a href="../engine/struct.RefCounted.html" title="struct godot::engine::RefCounted"><code>RefCounted</code></a>
 if it is an unique reference to the object.</p>
 <h6 id="example-1"><a class="doc-anchor" href="#example-1">§</a>Example</h6>
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::engine::RefCounted;
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
 <span class="kw">use </span>godot::obj::NotUniqueError;
 
-<span class="kw">let </span>unique = RefCounted::new();
+<span class="kw">let </span>unique = RefCounted::new_gd();
 <span class="macro">assert!</span>(NotUniqueError::check(unique).is_ok());
 
-<span class="kw">let </span>shared = RefCounted::new();
+<span class="kw">let </span>shared = RefCounted::new_gd();
 <span class="kw">let </span>cloned = shared.clone();
 <span class="macro">assert!</span>(NotUniqueError::check(shared).is_err());
 <span class="macro">assert!</span>(NotUniqueError::check(cloned).is_err());</code></pre></div>
