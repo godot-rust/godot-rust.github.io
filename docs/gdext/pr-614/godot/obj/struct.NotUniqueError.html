@@ -5,10 +5,10 @@ that the passed <a href="struct.Gd.html" title="struct godot::obj::Gd"><code>Gd<
 <p>Only applicable to <a href="trait.GodotClass.html" title="trait godot::obj::GodotClass"><code>GodotClass</code></a> objects that inherit from <a href="../engine/struct.RefCounted.html" title="struct godot::engine::RefCounted"><code>RefCounted</code></a>. To check the
 uniqueness, call the <code>check()</code> associated method.</p>
 <h3 id="example"><a class="doc-anchor" href="#example">§</a>Example</h3>
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::engine::RefCounted;
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
 <span class="kw">use </span>godot::obj::NotUniqueError;
 
-<span class="kw">let </span>shared = RefCounted::new();
+<span class="kw">let </span>shared = RefCounted::new_gd();
 <span class="kw">let </span>cloned = shared.clone();
 <span class="kw">let </span>result = NotUniqueError::check(shared);
 
