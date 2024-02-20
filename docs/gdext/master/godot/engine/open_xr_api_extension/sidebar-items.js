@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["OpenXrAlphaBlendModeSupport"],"type":["OpenXRAlphaBlendModeSupport"]};
+window.SIDEBAR_ITEMS = {"struct":["OpenXrAlphaBlendModeSupport"]};
