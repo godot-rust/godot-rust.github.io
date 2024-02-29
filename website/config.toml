@@ -22,7 +22,37 @@ build_search_index = false
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
-highlight_code = false
+highlight_code = true
+
+# A list of directories used to search for additional `.sublime-syntax` and `.tmTheme` files.
+# More on https://www.getzola.org/documentation/getting-started/configuration/#syntax-highlighting.
+extra_syntaxes_and_themes = []
+
+# The theme to use for code highlighting.
+# See below for list of allowed values.
+
+# Similar ones in style.
+#highlight_theme = "charcoal"
+#highlight_theme = "one-dark"
+highlight_theme = "two-dark"
+#highlight_theme = "agola-dark"
+#highlight_theme = "nyx-bold"
+
+# Other options that might potentially fit.
+# highlight_theme = "1337"
+# highlight_theme = "ayu-mirage"
+# highlight_theme = "base16-atelierdune-light"
+# highlight_theme = "base16-ocean-dark"
+# highlight_theme = "cheerfully-light"
+# highlight_theme = "demain"
+# highlight_theme = "dimmed-fluid"
+# highlight_theme = "gruvbox-dark"
+# highlight_theme = "inspired-github"
+# highlight_theme = "ir-white"
+# highlight_theme = "kronuz"
+# highlight_theme = "nord"
+# highlight_theme = "Tomorrow"
+
 
 [extra]
 enable_search = false
