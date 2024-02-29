@@ -148,16 +148,27 @@ html {
     /*color: var(--brown-caption-dark);*/
 }
 
-.markdown-content code {
+.markdown-content pre {
+    @apply rounded-xl;
+    @apply px-3;
+    @apply py-2;
+    @apply mb-4;
+}
+
+.markdown-content :not(pre) > code {
     background-color: var(--brown-body-bg);
     @apply rounded-md;
     @apply px-1;
     @apply py-0.5;
-    @apply text-base;
     /*@apply font-mono;*/
 }
 
-:is(.dark .markdown-content code) {
+.markdown-content :not(h2):not(h3) > code {
+    @apply text-base;
+}
+
+
+:is(.dark .markdown-content :not(pre) > code) {
     background-color: var(--brown-body-bg-dark);
 }
 
