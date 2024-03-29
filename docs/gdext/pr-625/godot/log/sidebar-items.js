@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"macro":["godot_error","godot_print","godot_print_rich","godot_script_error","godot_warn"]};
