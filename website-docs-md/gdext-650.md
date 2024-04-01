@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-650/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/650"
 pr_author = "TitanNano"
 sort_key = 2024-04-01
-date_time = 2024-04-01T15:26:17Z
-commit_sha = "a56ee7fcdb0307e30b057d6c56496629e8b93461"
+date_time = 2024-04-01T15:30:22Z
+commit_sha = "20639301d85f74633006a2d78b81e75e15b349f8"
 +++
 
 $PR_TITLE
