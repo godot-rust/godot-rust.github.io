@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Trait that’s implemented for user-defined classes that provide a `Base&lt;T&gt;` field."><title>WithBaseField in godot::obj - Rust</title><script> if (window.location.protocol !== "file:") document.write(`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2">`)</script><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-e935ef01ae1c1829.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="godot" data-themes="" data-resource-suffix="" data-rustdoc-version="1.79.0-nightly (805813650 2024-03-31)" data-channel="nightly" data-search-js="search-42d8da7a6b9792c2.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../static.files/storage-4c98445ec4002617.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-12cf3b4f4f9dc36d.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-04d5337699b92874.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc trait"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../godot/index.html">godot</a><span class="version">0.1.0</span></h2></div><h2 class="location"><a href="#">WithBaseField</a></h2><div class="sidebar-elems"><section><h3><a href="#required-methods">Required Methods</a></h3><ul class="block"><li><a href="#tymethod.base_field">base_field</a></li><li><a href="#tymethod.to_gd">to_gd</a></li></ul><h3><a href="#provided-methods">Provided Methods</a></h3><ul class="block"><li><a href="#method.base">base</a></li><li><a href="#method.base_mut">base_mut</a></li></ul><h3><a href="#object-safety">Object Safety</a></h3><h3><a href="#implementors">Implementors</a></h3></section><h2><a href="index.html">In godot::obj</a></h2></div></nav><div class="sidebar-resizer"></div>
+    <main><div class="width-limiter"><nav class="sub"><form class="search-form"><span></span><div id="sidebar-button" tabindex="-1"><a href="../../godot/all.html" title="show sidebar"></a></div><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" tabindex="-1"><a href="../../help.html" title="help">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-7b819b6101059cd0.svg"></a></div></form></nav><section id="main-content" class="content"><div class="main-heading"><h1>Trait <a href="../index.html">godot</a>::<wbr><a href="index.html">obj</a>::<wbr><a class="trait" href="#">WithBaseField</a><button id="copy-path" title="Copy item path to clipboard"><img src="../../static.files/clipboard-7571035ce49a181d.svg" width="19" height="18" alt="Copy item path"></button></h1><span class="out-of-band"><button id="toggle-all-docs" title="collapse all docs">[<span>&#x2212;</span>]</button></span></div><pre class="rust item-decl"><code>pub trait WithBaseField: <a class="trait" href="trait.GodotClass.html" title="trait godot::obj::GodotClass">GodotClass</a>&lt;Declarer = <a class="enum" href="bounds/enum.DeclUser.html" title="enum godot::obj::bounds::DeclUser">DeclUser</a>&gt; + <a class="trait" href="trait.Bounds.html" title="trait godot::obj::Bounds">Bounds</a> {
+    // Required methods
+    fn <a href="#tymethod.to_gd" class="fn">to_gd</a>(&amp;self) -&gt; <a class="struct" href="struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;Self&gt;;
+<span class="item-spacer"></span>    fn <a href="#tymethod.base_field" class="fn">base_field</a>(&amp;self) -&gt; &amp;<a class="struct" href="struct.Base.html" title="struct godot::obj::Base">Base</a>&lt;Self::<a class="associatedtype" href="trait.GodotClass.html#associatedtype.Base" title="type godot::obj::GodotClass::Base">Base</a>&gt;;
+
+    // Provided methods
+    fn <a href="#method.base" class="fn">base</a>(&amp;self) -&gt; <a class="struct" href="struct.BaseRef.html" title="struct godot::obj::BaseRef">BaseRef</a>&lt;'_, Self&gt; { ... }
+<span class="item-spacer"></span>    fn <a href="#method.base_mut" class="fn">base_mut</a>(&amp;mut self) -&gt; <a class="struct" href="struct.BaseMut.html" title="struct godot::obj::BaseMut">BaseMut</a>&lt;'_, Self&gt; { ... }
+}</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Trait that’s implemented for user-defined classes that provide a <code>Base&lt;T&gt;</code> field.</p>
+<p>Gives direct access to the containing <code>Gd&lt;Self&gt;</code> from <code>Self</code>.</p>
+</div></details><h2 id="required-methods" class="section-header">Required Methods<a href="#required-methods" class="anchor">§</a></h2><div class="methods"><details class="toggle method-toggle" open><summary><section id="tymethod.to_gd" class="method"><h4 class="code-header">fn <a href="#tymethod.to_gd" class="fn">to_gd</a>(&amp;self) -&gt; <a class="struct" href="struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;Self&gt;</h4></section></summary><div class="docblock"><p>Returns the <code>Gd</code> pointer containing this object.</p>
+<p>This is intended to be stored or passed to engine methods. You cannot call <code>bind()</code> or <code>bind_mut()</code> on it, while the method
+calling <code>to_gd()</code> is still running; that would lead to a double borrow panic.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="tymethod.base_field" class="method"><h4 class="code-header">fn <a href="#tymethod.base_field" class="fn">base_field</a>(&amp;self) -&gt; &amp;<a class="struct" href="struct.Base.html" title="struct godot::obj::Base">Base</a>&lt;Self::<a class="associatedtype" href="trait.GodotClass.html#associatedtype.Base" title="type godot::obj::GodotClass::Base">Base</a>&gt;</h4></section></summary><div class="docblock"><p>Returns a reference to the <code>Base</code> stored by this object.</p>
+</div></details></div><h2 id="provided-methods" class="section-header">Provided Methods<a href="#provided-methods" class="anchor">§</a></h2><div class="methods"><details class="toggle method-toggle" open><summary><section id="method.base" class="method"><h4 class="code-header">fn <a href="#method.base" class="fn">base</a>(&amp;self) -&gt; <a class="struct" href="struct.BaseRef.html" title="struct godot::obj::BaseRef">BaseRef</a>&lt;'_, Self&gt;</h4></section></summary><div class="docblock"><p>Returns a shared reference suitable for calling engine methods on this object.</p>
+<h5 id="examples"><a class="doc-anchor" href="#examples">§</a>Examples</h5>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
+
+<span class="attr">#[derive(GodotClass)]
+#[class(init, base = Node)]
+</span><span class="kw">struct </span>MyClass {
+    base: Base&lt;Node&gt;,
+}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>INode <span class="kw">for </span>MyClass {
+    <span class="kw">fn </span>process(<span class="kw-2">&amp;mut </span><span class="self">self</span>, _delta: f64) {
+        <span class="kw">let </span>name = <span class="self">self</span>.base().get_name();
+        <span class="macro">godot_print!</span>(<span class="string">"name is {name}"</span>);
+    }
+}
+
+</code></pre></div>
+<p>However we cannot call methods that require <code>&amp;mut Base</code>, such as
+<a href="../engine/struct.Node.html#method.add_child" title="method godot::engine::Node::add_child"><code>Node::add_child()</code></a>.</p>
+
+<div class="example-wrap compile_fail"><a href="#" class="tooltip" title="This example deliberately fails to compile">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
+
+<span class="attr">#[derive(GodotClass)]
+#[class(init, base = Node)]
+</span><span class="kw">struct </span>MyClass {
+    <span class="doccomment">///     base: Base&lt;Node&gt;,
+</span>}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>INode <span class="kw">for </span>MyClass {
+    <span class="kw">fn </span>process(<span class="kw-2">&amp;mut </span><span class="self">self</span>, _delta: f64) {
+        <span class="kw">let </span>node = Node::new_alloc();
+        <span class="comment">// fails because `add_child` requires a mutable reference.
+        </span><span class="self">self</span>.base().add_child(node);
+    }
+}
+
+</code></pre></div>
+<p>For this, use <a href="trait.WithBaseField.html#method.base_mut" title="method godot::obj::WithBaseField::base_mut"><code>base_mut()</code></a> instead.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.base_mut" class="method"><h4 class="code-header">fn <a href="#method.base_mut" class="fn">base_mut</a>(&amp;mut self) -&gt; <a class="struct" href="struct.BaseMut.html" title="struct godot::obj::BaseMut">BaseMut</a>&lt;'_, Self&gt;</h4></section></summary><div class="docblock"><p>Returns a mutable reference suitable for calling engine methods on this object.</p>
+<p>This method will allow you to call back into the same object from Godot, unlike what would happen
+if you used <a href="trait.WithBaseField.html#tymethod.to_gd" title="method godot::obj::WithBaseField::to_gd"><code>to_gd()</code></a>.</p>
+<h5 id="examples-1"><a class="doc-anchor" href="#examples-1">§</a>Examples</h5>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
+
+<span class="attr">#[derive(GodotClass)]
+#[class(init, base = Node)]
+</span><span class="kw">struct </span>MyClass {
+    base: Base&lt;Node&gt;,
+}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>INode <span class="kw">for </span>MyClass {
+    <span class="kw">fn </span>process(<span class="kw-2">&amp;mut </span><span class="self">self</span>, _delta: f64) {
+        <span class="kw">let </span>node = Node::new_alloc();
+        <span class="self">self</span>.base_mut().add_child(node);
+    }
+}
+
+</code></pre></div>
+<p>We can call back into <code>self</code> through Godot:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
+
+<span class="attr">#[derive(GodotClass)]
+#[class(init, base = Node)]
+</span><span class="kw">struct </span>MyClass {
+    base: Base&lt;Node&gt;,
+}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>INode <span class="kw">for </span>MyClass {
+    <span class="kw">fn </span>process(<span class="kw-2">&amp;mut </span><span class="self">self</span>, _delta: f64) {
+        <span class="self">self</span>.base_mut().call(<span class="string">"other_method"</span>.into(), <span class="kw-2">&amp;</span>[]);
+    }
+}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>MyClass {
+    <span class="attr">#[func]
+    </span><span class="kw">fn </span>other_method(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {}
+}
+
+</code></pre></div>
+</div></details></div><h2 id="object-safety" class="section-header">Object Safety<a href="#object-safety" class="anchor">§</a></h2><div class="object-safety-info">This trait is <b>not</b> <a href="https://doc.rust-lang.org/nightly/reference/items/traits.html#object-safety">object safe</a>.</div><h2 id="implementors" class="section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"></div><script src="../../trait.impl/godot_core/obj/traits/trait.WithBaseField.js" async></script></section></div></main></body></html>
