@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["CellShape","DiagonalMode","ExFillSolidRegion","ExSetPointSolid","Heuristic"]};
+window.SIDEBAR_ITEMS = {"struct":["CellShape","DiagonalMode","ExFillSolidRegion","ExGetIdPath","ExGetPointPath","ExSetPointSolid","Heuristic"]};
