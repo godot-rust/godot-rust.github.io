@@ -1,0 +1,100 @@
+# Copyright (c) godot-rust; Bromeon and contributors.
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+name: 'Garbage collect'
+
+on:
+  # Periodic once a day at 4am UTC
+  schedule:
+    - cron: '0 4 * * *'
+
+
+defaults:
+  run:
+    shell: bash
+
+
+jobs:
+  remove-closed-prs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v4
+        with:
+          ref: doc-output
+
+      - name: "Import delete.sh from master"
+        run: |
+          git fetch origin master:master
+          git restore --source master documentation/delete.sh
+
+      - name: "Identify which PRs are closed"
+        run: |
+          # Look in docs/gdext and docs/gdnative repo for all directories starting with "pr-", e.g. "pr-1234".
+          # Then, issue a GitHub API request to the repo (name of parent directory, "gdext" or "gdnative") to check if the PR is closed.
+          # If closed, remove the directory.
+          deletedPrList=( )
+          for repo in gdext gdnative; do
+            echo ""
+            echo "Search in repo $repo..."
+            for dir in $(find "docs/$repo" -mindepth 1 -maxdepth 1 -type d -name "pr-*"); do
+              prNum=$(basename $dir | sed -E "s/pr-//")
+              restResult=$(curl --fail -s "https://api.github.com/repos/godot-rust/$repo/pulls/$prNum")
+              #echo "   REST response: $restResult" 
+              prState=$(echo "$restResult" | jq -r .state)
+              echo "* PR #$prNum is $prState"
+              if [[ "$prState" == "closed" ]]; then
+                deletedPrList+=( "$repo/$prNum" )
+                date=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+                echo "  > Delete PR $dir!  Date: $date"
+                bash documentation/delete.sh "$repo" "$prNum" "$date"
+              fi
+            done
+          done
+          
+          # Store deleted list in environment variable DELETED_PR_LIST, with ", " as separator.
+          deletedPrString="${deletedPrList[*]}"
+          echo "DELETED_PR_LIST=$deletedPrString" >> "$GITHUB_ENV"
+
+      # Some duplication with commit.sh, but integrating gc into commit.sh would mean big refactor...
+      # Or we run sequential delete commits per PR.
+      - name: "Commit and push changes"
+        if: env.DELETED_PR_LIST != ''
+        run: |      
+          echo "$PRE push to 'doc-output' branch..."
+          git config user.name "Godot-Rust Automation"
+          git config user.email "GodotRust@users.noreply.github.com"
+          git commit -am "GC closed PRs: $DELETED_PR_LIST"
+          git push origin HEAD:doc-output
+
+      # If there have been newer commits for the same branch/PR, skip remaining tasks.
+      # Env var SKIP_WEBSITE_DEPLOY is set by the commit.sh script.
+      - name: "Construct JSON"
+        if: env.DELETED_PR_LIST != ''
+        run: |
+          payload=$(cat <<HEREDOC
+          {
+              "op": "gc",
+              "repo": "*",
+              "num": "*"
+          }
+          HEREDOC)
+          echo "VAR=$payload"
+          echo "PAYLOAD_JSON<<HEREDOC" >> $GITHUB_ENV
+          echo "${payload}" >> $GITHUB_ENV
+          echo "HEREDOC" >> $GITHUB_ENV
+
+      - name: "Print payload"
+        if: env.DELETED_PR_LIST != ''
+        run: |
+          echo "$PAYLOAD_JSON"
+
+      - name: "Trigger website build"
+        if: env.DELETED_PR_LIST != ''
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          event-type: 'Deploy docs'
+          client-payload: ${{ env.PAYLOAD_JSON }}
+
