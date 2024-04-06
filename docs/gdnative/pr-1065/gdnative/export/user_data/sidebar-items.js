@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"enum":["DeadlockPolicy","Infallible","LocalCellError","LockFailed"],"struct":["Aether","ArcData","DefaultLockPolicy","LocalCellData","MutexData","Once","RwLockData","ValueTaken"],"trait":["LockOptions","Map","MapMut","MapOwned","UserData"],"type":["DefaultUserData"]};

@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["AlphaMode","CompressMode","CompressSource","Format","Interpolation"]};

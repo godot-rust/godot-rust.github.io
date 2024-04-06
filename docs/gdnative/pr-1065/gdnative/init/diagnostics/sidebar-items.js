@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"fn":["godot_version_mismatch","missing_manual_registration","missing_suggested_diagnostics"]};
