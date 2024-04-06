@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Makes it possible to use a type as a NativeScript. Automatically registers the type if the `inventory` feature is enabled on supported platforms."><title>NativeClass in gdnative::derive - Rust</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-4e54bb2b497cc83f.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gdnative" data-themes="" data-resource-suffix="" data-rustdoc-version="1.77.0-nightly (f688dd684 2024-01-04)" data-channel="nightly" data-search-js="search-c17e98913a53b3b7.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../static.files/storage-f2adc0d6ca4d09fb.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-0b2e2def73e61cbe.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-04d5337699b92874.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc derive"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button><a class="logo-container" href="../../gdnative/index.html"><img src="https://github.com/godot-rust/gdnative/raw/master/assets/godot-ferris.svg" alt=""></a></nav><nav class="sidebar"><div class="sidebar-crate"><a class="logo-container" href="../../gdnative/index.html"><img src="https://github.com/godot-rust/gdnative/raw/master/assets/godot-ferris.svg" alt="logo"></a><h2><a href="../../gdnative/index.html">gdnative</a><span class="version">0.11.3</span></h2></div><div class="sidebar-elems"><h2><a href="index.html">In gdnative::derive</a></h2></div></nav><div class="sidebar-resizer"></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Makes it possible to use a type as a NativeScript. Automatically registers the type if the `inventory` feature is enabled on supported platforms."><title>NativeClass in gdnative::derive - Rust</title><script> if (window.location.protocol !== "file:") document.write(`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2">`)</script><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-9e1300b5663a8a03.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gdnative" data-themes="" data-resource-suffix="" data-rustdoc-version="1.79.0-nightly (9d79cd5f7 2024-04-05)" data-channel="nightly" data-search-js="search-ffac13a0df2b1870.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../static.files/storage-e32f0c247825364d.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-c97aec732c613ca4.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-09095024cf37855e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc derive"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button><a class="logo-container" href="../../gdnative/index.html"><img src="https://github.com/godot-rust/gdnative/raw/master/assets/godot-ferris.svg" alt=""></a></nav><nav class="sidebar"><div class="sidebar-crate"><a class="logo-container" href="../../gdnative/index.html"><img src="https://github.com/godot-rust/gdnative/raw/master/assets/godot-ferris.svg" alt="logo"></a><h2><a href="../../gdnative/index.html">gdnative</a><span class="version">0.11.3</span></h2></div><div class="sidebar-elems"><h2><a href="index.html">In gdnative::derive</a></h2></div></nav><div class="sidebar-resizer"></div>
     <main><div class="width-limiter"><nav class="sub"><form class="search-form"><span></span><div id="sidebar-button" tabindex="-1"><a href="../../gdnative/all.html" title="show sidebar"></a></div><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" tabindex="-1"><a href="../../help.html" title="help">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-7b819b6101059cd0.svg"></a></div></form></nav><section id="main-content" class="content"><div class="main-heading"><h1>Derive Macro <a href="../index.html">gdnative</a>::<wbr><a href="index.html">derive</a>::<wbr><a class="derive" href="#">NativeClass</a><button id="copy-path" title="Copy item path to clipboard"><img src="../../static.files/clipboard-7571035ce49a181d.svg" width="19" height="18" alt="Copy item path"></button></h1><span class="out-of-band"><button id="toggle-all-docs" title="collapse all docs">[<span>&#x2212;</span>]</button></span></div><pre class="rust item-decl"><code>#[derive(NativeClass)]
 {
     <span class="comment">// Attributes available to this derive:</span>
@@ -10,10 +10,10 @@
 }
 </code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Makes it possible to use a type as a NativeScript. Automatically registers the type
 if the <code>inventory</code> feature is enabled on supported platforms.</p>
-<h3 id="type-attributes"><a href="#type-attributes">Type attributes</a></h3>
+<h3 id="type-attributes"><a class="doc-anchor" href="#type-attributes">§</a>Type attributes</h3>
 <p>The behavior of the derive macro can be customized using attributes on the type
 deriving <code>NativeClass</code>. All type attributes are optional.</p>
-<h4 id="inheritgdnativeapibaseclass"><a href="#inheritgdnativeapibaseclass"><code>#[inherit(gdnative::api::BaseClass)]</code></a></h4>
+<h4 id="inheritgdnativeapibaseclass"><a class="doc-anchor" href="#inheritgdnativeapibaseclass">§</a><code>#[inherit(gdnative::api::BaseClass)]</code></h4>
 <p>Sets <code>gdnative::api::BaseClass</code> as the base class for the script. This <em>must</em> be
 a type from the generated Godot API (that implements <code>GodotObject</code>). All <code>owner</code>
 arguments of exported methods must be references (<code>TRef</code>, <code>Ref</code>, or <code>&amp;</code>) to this
@@ -23,10 +23,10 @@ not supported.</p>
 <p>If no <code>#[inherit(...)]</code> is provided, <a href="../gdnative/api/struct.Reference.html"><code>gdnative::api::Reference</code></a>
 is used as a base class. This behavior is consistent with GDScript: omitting the
 <code>extends</code> keyword will inherit <code>Reference</code>.</p>
-<h4 id="user_datagdnativeuser_datasomewrapperself"><a href="#user_datagdnativeuser_datasomewrapperself"><code>#[user_data(gdnative::user_data::SomeWrapper&lt;Self&gt;)]</code></a></h4>
+<h4 id="user_datagdnativeuser_datasomewrapperself"><a class="doc-anchor" href="#user_datagdnativeuser_datasomewrapperself">§</a><code>#[user_data(gdnative::user_data::SomeWrapper&lt;Self&gt;)]</code></h4>
 <p>Use the given type as the user-data wrapper. See the module-level docs on
 <code>gdnative::user_data</code> for more information.</p>
-<h4 id="register_withpathtofunction"><a href="#register_withpathtofunction"><code>#[register_with(path::to::function)]</code></a></h4>
+<h4 id="register_withpathtofunction"><a class="doc-anchor" href="#register_withpathtofunction">§</a><code>#[register_with(path::to::function)]</code></h4>
 <p>Use a custom function to register signals, properties or methods, in addition
 to the one generated by <code>#[methods]</code>:</p>
 
@@ -51,14 +51,14 @@ to the one generated by <code>#[methods]</code>:</p>
             .done();
     }
 }</code></pre></div>
-<h4 id="no_constructor"><a href="#no_constructor"><code>#[no_constructor]</code></a></h4>
+<h4 id="no_constructor"><a class="doc-anchor" href="#no_constructor">§</a><code>#[no_constructor]</code></h4>
 <p>Indicates that this type has no zero-argument constructor. Instances of such
 scripts can only be created from Rust using <code>Instance::emplace</code>. <code>Instance::new</code>
 or <code>ScriptName.new</code> from GDScript will result in panics at runtime.</p>
 <p>See documentation on <code>Instance::emplace</code> for an example on how this can be used.</p>
-<h3 id="field-attributes"><a href="#field-attributes">Field attributes</a></h3>
+<h3 id="field-attributes"><a class="doc-anchor" href="#field-attributes">§</a>Field attributes</h3>
 <p>All field attributes are optional.</p>
-<h4 id="property"><a href="#property"><code>#[property]</code></a></h4>
+<h4 id="property"><a class="doc-anchor" href="#property">§</a><code>#[property]</code></h4>
 <p>Convenience attribute to register a field as a property. Possible arguments for
 the attribute are:</p>
 <ul>
@@ -95,12 +95,12 @@ a deeper elaboration of property exporting.</p>
 See the <code>#[method]</code> documentation below for possible values and their semantics.</p>
 </li>
 </ul>
-<h4 id="methods"><a href="#methods"><code>#[methods]</code></a></h4>
+<h4 id="methods"><a class="doc-anchor" href="#methods">§</a><code>#[methods]</code></h4>
 <p>Adds the necessary information to a an <code>impl</code> block to register the properties and methods with Godot.</p>
 <p>One and only one universal <code>impl</code> block must be available for each <code>NativeClass</code>
 monomorphization, along with any number of additional mix-ins. See <a href="attr.methods.html"><code>methods</code></a>
 for more information.</p>
-<h4 id="method"><a href="#method"><code>#[method]</code></a></h4>
+<h4 id="method"><a class="doc-anchor" href="#method">§</a><code>#[method]</code></h4>
 <p>Registers the attributed function signature to be used by Godot.</p>
 <p>This attribute was formerly called <code>#[export]</code>, but is not directly related to the concept of
 <a href="https://docs.godotengine.org/en/stable/tutorials/export/exporting_basics.html">exporting</a> in GDScript.</p>
@@ -222,7 +222,7 @@ as required by the async runtime:</p>
 </code></pre></div>
 </li>
 </ul>
-<h5 id="node-virtual-functions"><a href="#node-virtual-functions"><code>Node</code> virtual functions</a></h5>
+<h5 id="node-virtual-functions"><a class="doc-anchor" href="#node-virtual-functions">§</a><code>Node</code> virtual functions</h5>
 <p>This is a list of common Godot virtual functions that are automatically called via <a href="https://docs.godotengine.org/en/stable/classes/class_object.html#class-object-method-notification">notifications</a>.</p>
 <p>It is assumed that every method is exported via <code>#[method]</code> attribute. The parameter <code>#[base] base: &amp;Node</code> can be omitted if you don’t need it.</p>
 
@@ -270,7 +270,7 @@ as required by the async runtime:</p>
 <p>Called when an <code>InputEventKey</code> hasn’t been consumed by <code>_input()</code> or any GUI.<br />
 <em>See <a href="https://docs.godotengine.org/en/stable/classes/class_node.html#class-node-method-unhandled-key-input">Godot docs</a> for more information.</em>
 <br><br></p>
-<h5 id="control-virtual-functions"><a href="#control-virtual-functions"><code>Control</code> virtual functions</a></h5>
+<h5 id="control-virtual-functions"><a class="doc-anchor" href="#control-virtual-functions">§</a><code>Control</code> virtual functions</h5>
 <p>This is a list of common Godot virtual functions that are automatically called via <a href="https://docs.godotengine.org/en/stable/classes/class_object.html#class-object-method-notification">notifications</a>.</p>
 
 <div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="kw">fn </span>_clips_input(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="attr">#[base] </span>base: <span class="kw-2">&amp;</span>Control) -&gt; bool;</code></pre></div>
