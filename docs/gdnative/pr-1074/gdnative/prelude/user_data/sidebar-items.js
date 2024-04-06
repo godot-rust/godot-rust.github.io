@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["Aether","ArcData","LocalCellData","MutexData","RwLockData"]};

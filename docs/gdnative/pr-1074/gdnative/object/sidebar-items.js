@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"mod":["bounds","memory","ownership"],"struct":["Instance","Null","RawObject","Ref","TInstance","TRef"],"trait":["AsArg","AsVariant","GodotObject","Instanciable","NewRef","QueueFree","Receiver","SubClass"]};
