@@ -77,8 +77,8 @@ Simply omitting the <code>init</code>/<code>no_init</code> keys and not overridi
 </span>}</code></pre></div>
 <h2 id="inheritance"><a class="doc-anchor" href="#inheritance">§</a>Inheritance</h2>
 <p>Unlike C++, Rust doesn’t really have inheritance, but the GDExtension API lets us “inherit”
-from a built-in engine class.</p>
-<p>By default, classes created with this library inherit from <code>RefCounted</code>.</p>
+from a Godot-provided engine class.</p>
+<p>By default, classes created with this library inherit from <code>RefCounted</code>, like GDScript.</p>
 <p>To specify a different class to inherit from, add <code>#[class(base = Base)]</code> as an annotation on
 your <code>struct</code>:</p>
 
@@ -115,7 +115,7 @@ generates a trivial getter and setter named <code>get_my_field</code> and <code>
 These are <code>pub</code> in Rust, since they’re exposed from GDScript anyway.</p>
 <p>If you want to implement your own getter and/or setter, write those as a function on your Rust
 type, expose it using <code>#[func]</code>, and annotate the field with
-<code>#[export(get = ..., set = ...)]</code>:</p>
+<code>#[var(get = ..., set = ...)]</code>:</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
 </span><span class="kw">struct </span>MyStruct {
@@ -161,7 +161,7 @@ generated getter or setter in these cases anyway, use <code>get</code> or <code>
     <span class="attr">#[export]
     </span>my_field: i64,
 }</code></pre></div>
-<p>If you dont also include a <code>#[var]</code> attribute, then a default one will be generated.
+<p>If you don’t also include a <code>#[var]</code> attribute, then a default one will be generated.
 <code>#[export]</code> also supports all of GDScript’s annotations, in a slightly different format. The format is
 translated from an annotation by following these four rules:</p>
 <ul>
@@ -294,7 +294,7 @@ can get to Godot. You can use the <code>rename</code> key while defining your <c
 #[class(base=Node, init, hidden)]
 </span><span class="kw">pub struct </span>Foo {}</code></pre></div>
 <p>Even though this class is a <code>Node</code> and it has an init function, it still won’t show up in the editor as a node you can add to a scene
-because we have added a <code>hide</code> key to the class. This will also prevent it from showing up in documentation.</p>
+because we have added a <code>hidden</code> key to the class. This will also prevent it from showing up in documentation.</p>
 <h2 id="further-field-customization"><a class="doc-anchor" href="#further-field-customization">§</a>Further field customization</h2><h3 id="fine-grained-inference-hints"><a class="doc-anchor" href="#fine-grained-inference-hints">§</a>Fine-grained inference hints</h3>
 <p>The derive macro is relatively smart about recognizing <code>Base&lt;T&gt;</code> and <code>OnReady&lt;T&gt;</code> types, and works also if those are qualified.</p>
 <p>However, there may be situations where you need to help it out – for example, if you have a type alias for <code>Base&lt;T&gt;</code>, or use an unrelated
