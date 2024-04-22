@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["ExAddPoint","ExSampleBaked","ExSampleBakedWithRotation","ExTessellate","ExTessellateEvenLength"]};
