@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExCreateConvexCollision","ExCreateMultipleConvexCollisions"]};
+window.SIDEBAR_ITEMS = {"struct":["ExBakeMeshFromCurrentBlendShapeMix","ExCreateConvexCollision","ExCreateMultipleConvexCollisions"]};
