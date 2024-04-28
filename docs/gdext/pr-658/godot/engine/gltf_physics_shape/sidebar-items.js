@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExToNode"]};
+window.SIDEBAR_ITEMS = {"struct":["ExToNode","ExToResource"]};
