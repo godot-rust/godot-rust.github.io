@@ -1,15 +1,15 @@
 +++
 title = "#676"
-date = 2024-04-25
+date = 2024-05-03
 
 [extra]
 repo = "gdext"
 docs_rel_url = "gdext/pr-676/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/676"
 pr_author = "lilizoey"
-sort_key = 2024-04-25
-date_time = 2024-04-25T17:37:10Z
-commit_sha = "8167353ddb66b7fe470f0b564d1ccccc9daa9d17"
+sort_key = 2024-05-03
+date_time = 2024-05-03T16:57:04Z
+commit_sha = "abd726f90bf84b82d7029473836f9a04c0463b73"
 +++
 
-$PR_TITLE
+Refactor `Enum` in codegen
