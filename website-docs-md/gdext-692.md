@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-692/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/692"
 pr_author = "Bromeon"
 sort_key = 2024-05-04
-date_time = 2024-05-04T17:06:23Z
-commit_sha = "327d900329a25deff53ceca7712f38a9e1cd884a"
+date_time = 2024-05-04T17:29:25Z
+commit_sha = "b2d8e601161f6e0eefdc190408c80028f22792bd"
 +++
 
  Improve trait errors with `#[diagnostic::on_unimplemented]`
