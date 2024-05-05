@@ -248,6 +248,14 @@
 <a href="#248" id="248">248</a>
 <a href="#249" id="249">249</a>
 <a href="#250" id="250">250</a>
+<a href="#251" id="251">251</a>
+<a href="#252" id="252">252</a>
+<a href="#253" id="253">253</a>
+<a href="#254" id="254">254</a>
+<a href="#255" id="255">255</a>
+<a href="#256" id="256">256</a>
+<a href="#257" id="257">257</a>
+<a href="#258" id="258">258</a>
 </pre></div><pre class="rust"><code><span class="attr">#![feature(doc_cfg)]
 </span><span class="comment">/*
  * Copyright (c) godot-rust; Bromeon and contributors.
@@ -364,18 +372,26 @@
 //!   Use `f64` instead of `f32` for the floating-point type [`real`][type@builtin::real]. Requires Godot to be compiled with the
 //!   scons flag `precision=double`.&lt;br&gt;&lt;br&gt;
 //!
+//! * **`api-4-{minor}`**
+//!
+//!   Sets the [API level](https://godot-rust.github.io/book/toolchain/compatibility.html) to the specified Godot version, e.g. `api-4-1`.
+//!   You can use at most one `api-*` feature. By default, a recent stable Godot release is used.
+//!
+//!   The API level determines the lowest possible Godot version under which the extension can run. We support latest patch releases of each
+//!   Godot minor version, down to `4.0`. From `4.1` onwards, the API is forward-compatible (you can use `api-4-1` under a Godot 4.3 binary).
+//!   Level `4.0` is not compatible with newer versions.
+//!
+//!   If you want to share your extension with others, we recommend setting the level as low as possible. This can however mean you cannot
+//!   use newer Godot features. In certain cases, we provide polyfills for newer features on older versions.
+//!
+//!   The gdext-built extension will check compatibility on startup and refuse to load if it detects a mismatch.&lt;br&gt;&lt;br&gt;
+//!
 //! * **`api-custom`**
 //!
 //!   Use a custom Godot build instead of the latest official release. This is useful when you like to use a
 //!   version compiled yourself, with custom flags.
 //!
-//!   If you simply want to use a different official release, use this pattern instead (here e.g. for version `4.0`):
-//!   ```toml
-//!   # Trick Cargo into seeing a different URL; https://github.com/rust-lang/cargo/issues/5478
-//!   [patch."https://github.com/godot-rust/godot4-prebuilt"]
-//!   godot4-prebuilt = { git = "https://github.com//godot-rust/godot4-prebuilt", branch = "4.0"}
-//!   ```
-//!   &lt;br&gt;
+//!   This feature is mutually exclusive with `api-4-*` features.&lt;br&gt;&lt;br&gt;
 //!
 //! * **`serde`**
 //!
