@@ -41,7 +41,7 @@ For details see <a href="struct.SiMut.html#method.base_mut" title="method godot:
         <span class="comment">// the scrip_method function can be called on this script
         </span><span class="kw">if </span>method == StringName::from(<span class="string">"script_method"</span>) {
             <span class="macro">godot_print!</span>(<span class="string">"script_method called!"</span>);
-            <span class="kw">return </span><span class="prelude-val">Ok</span>(Variant::bool(<span class="bool-val">true</span>));
+            <span class="kw">return </span><span class="prelude-val">Ok</span>(<span class="bool-val">true</span>.to_variant());
         }
 
         <span class="kw">let </span>node = Node::new_alloc();
