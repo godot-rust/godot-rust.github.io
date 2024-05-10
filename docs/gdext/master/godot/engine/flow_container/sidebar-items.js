@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["AlignmentMode"]};
+window.SIDEBAR_ITEMS = {"struct":["AlignmentMode","LastWrapAlignmentMode"]};
