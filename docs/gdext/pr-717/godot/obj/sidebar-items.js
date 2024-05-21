@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"enum":["NoBase"],"mod":["bounds","cap"],"struct":["Base","BaseMut","BaseRef","Gd","GdMut","GdRef","InstanceId","NotUniqueError","OnReady","ScriptBaseMut","ScriptBaseRef"],"trait":["Bounds","EngineBitfield","EngineEnum","GodotClass","IndexEnum","Inherits","NewAlloc","NewGd","UserClass","WithBaseField"]};
