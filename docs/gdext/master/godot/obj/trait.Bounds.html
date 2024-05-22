@@ -4,12 +4,12 @@
     type <a href="#associatedtype.Declarer" class="associatedtype">Declarer</a>: <a class="trait" href="bounds/trait.Declarer.html" title="trait godot::obj::bounds::Declarer">Declarer</a>;
 }</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Library-implemented trait to check bounds on <code>GodotClass</code> types.</p>
 <p>See <a href="bounds/index.html" title="mod godot::obj::bounds"><code>bounds</code></a> module for how to use this for bounds checking.</p>
-<div class="warning">
+<h2 id="no-manual-impl"><a class="doc-anchor" href="#no-manual-impl">§</a>No manual <code>impl</code></h2><div class="warning">
 <strong>Never</strong> implement this trait manually.
 </div>
 <p>Most of the time, this trait is covered by <a href="../register/derive.GodotClass.html"><code>#[derive(GodotClass)]</code></a>.
 If you implement <code>GodotClass</code> manually, use the <a href="bounds/macro.implement_godot_bounds.html" title="macro godot::obj::bounds::implement_godot_bounds"><code>implement_godot_bounds!</code></a> macro.</p>
-<p>There are two reasons to avoid a hand-written <code>impl Bounds</code>:</p>
+<p>There are two reasons to avoid a handwritten <code>impl Bounds</code>:</p>
 <ul>
 <li>The trait is <code>unsafe</code> and it is very easy to get internal bounds wrong. This will lead to immediate UB.</li>
 <li>Apart from the documented members, the trait may have undocumented items that may be broken at any time and stand under no SemVer
