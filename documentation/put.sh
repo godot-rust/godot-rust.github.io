@@ -20,7 +20,8 @@ case $repo in
 		;;
 	"gdext")
 		mainCrate="godot"
-		features=""
+		# Could add experimental-threads in the future, but for now it's unstable and possibly more confusing.
+		features="--features experimental-godot-api"
 		;;
 	*)
 		echo "Invalid repo '$repo'; abort."
@@ -88,7 +89,7 @@ HEREDOC
   find . -type f -name "lib.rs" -exec sed -i '1s/^/#![feature(doc_cfg)]\n/' {} +
 
   # Then do the actual replacements.
-  find . \(            \
+  find . \(               \
     -path "./godot" -o    \
     -path "./godot-*" \)  \
   -type f -name '*.rs' | while read -r file; do
