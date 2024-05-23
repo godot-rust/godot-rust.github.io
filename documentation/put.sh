@@ -107,6 +107,7 @@ fi
 echo "$PRE build Rust docs of crate '$mainCrate' ($features)..."
 up=".."
 # shellcheck disable=SC2086
+export RUSTFLAGS="-A unused_imports -A dead_code -A unexpected_cfgs"
 cargo +nightly doc -p $mainCrate $features --no-deps --target-dir $up/target
 #mkdir -p "$up/target/doc"
 cd $up
