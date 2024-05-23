@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExGetOccluder"]};
+window.SIDEBAR_ITEMS = {"struct":["ExGetNavigationPolygon","ExGetOccluder"]};
