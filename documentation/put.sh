@@ -20,6 +20,7 @@ case $repo in
 		;;
 	"gdext")
 		mainCrate="godot"
+		# `experimental-godot-api` is needed to allow "only available in ..." labels with #[doc(cfg)].
 		# Could add experimental-threads in the future, but for now it's unstable and possibly more confusing.
 		features="--features experimental-godot-api"
 		;;
@@ -89,25 +90,26 @@ HEREDOC
   find . -type f -name "lib.rs" -exec sed -i '1s/^/#![feature(doc_cfg)]\n/' {} +
 
   # Then do the actual replacements.
-  find . \(               \
-    -path "./godot" -o    \
-    -path "./godot-*" \)  \
-  -type f -name '*.rs' | while read -r file; do
-
+  # Could use \( -path "..." -o -path "..." \) to limit to certain paths.
+  # Do NOT include './target/debug/build/*' because generated files cannot be modified -- rustdoc will rerun the generation.
+  # This is done by directly emitting #[cfg_attr(published_docs, doc(cfg(...)))] in the godot-codegen crate, and that cfg is passed below.
+  find . -type f -name '*.rs' \
+    \( -path './godot' -o -path './godot-*' \) \
+  | while read -r file; do
       # Replace #[cfg(...)] with #[doc(cfg(...))]. Do not insert a newline, in case the #[cfg] is commented-out.
       # shellcheck disable=SC2016
       ./tools/sd '(\#\[(cfg\(.+?\))\])\s*([A-Za-z]|#\[)' '$1 #[doc($2)]\n$3' "$file"
       #                               ^^^^^^^^^^^^^^^^^ require that #[cfg] is followed by an identifier or a #[ attribute start.
       # This avoids some usages of function-local #[cfg]s, although by far not all. Others generate warnings, which is fine.
-
   done
 fi
 
 # Build docs
 echo "$PRE build Rust docs of crate '$mainCrate' ($features)..."
 up=".."
+
+export RUSTFLAGS="--cfg published_docs -A unused_imports -A dead_code -A unexpected_cfgs"
 # shellcheck disable=SC2086
-export RUSTFLAGS="-A unused_imports -A dead_code -A unexpected_cfgs"
 cargo +nightly doc -p $mainCrate $features --no-deps --target-dir $up/target
 #mkdir -p "$up/target/doc"
 cd $up
