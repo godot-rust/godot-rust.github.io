@@ -1,0 +1,15 @@
++++
+title = "#726"
+date = 2024-05-25
+
+[extra]
+repo = "gdext"
+docs_rel_url = "gdext/pr-726/godot"
+pr_url = "https://github.com/godot-rust/gdext/pull/726"
+pr_author = "Bromeon"
+sort_key = 2024-05-25
+date_time = 2024-05-25T15:15:06Z
+commit_sha = "f6d84ffbe82800264f6621835bc0878910669b3b"
++++
+
+Treat `VariantType` and `VariantOperator` like regular engine enums
