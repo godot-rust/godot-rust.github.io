@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":["builtin","engine","global","init","log","obj","prelude","register"]};
+window.SIDEBAR_ITEMS = {"mod":["builtin","engine","extras","global","init","log","obj","prelude","register"]};

@@ -51,7 +51,7 @@
 <p>These methods represent constructors (<code>init</code>) or callbacks invoked by the engine.</p>
 <p>See also <a href="https://docs.godotengine.org/en/stable/classes/class_scriptextension.html#methods">Godot docs for <code>ScriptExtension</code> methods</a>.</p>
 <h2 id="specific-notes-for-this-interface"><a class="doc-anchor" href="#specific-notes-for-this-interface">§</a>Specific notes for this interface</h2>
-<p>Use this in combination with <a href="trait.ScriptInstance.html" title="trait godot::engine::ScriptInstance"><code>ScriptInstance</code></a>.</p>
+<p>Use this in combination with <a href="../extras/trait.ScriptInstance.html" title="trait godot::extras::ScriptInstance"><code>ScriptInstance</code></a>.</p>
 </div></details><h2 id="provided-methods" class="section-header">Provided Methods<a href="#provided-methods" class="anchor">§</a></h2><div class="methods"><details class="toggle method-toggle" open><summary><section id="method.init" class="method"><h4 class="code-header">fn <a href="#method.init" class="fn">init</a>(base: <a class="struct" href="../obj/struct.Base.html" title="struct godot::obj::Base">Base</a>&lt;Self::<a class="associatedtype" href="../obj/trait.GodotClass.html#associatedtype.Base" title="type godot::obj::GodotClass::Base">Base</a>&gt;) -&gt; Self</h4></section></summary><div class="docblock"><p>Godot constructor, accepting an injected <code>base</code> object.</p>
 <p><code>base</code> refers to the base instance of the class, which can either be stored in a <code>Base&lt;T&gt;</code> field or discarded.
 This method returns a fully-constructed instance, which will then be moved into a <a href="../obj/struct.Gd.html" title="struct godot::obj::Gd"><code>Gd&lt;T&gt;</code></a> pointer.</p>

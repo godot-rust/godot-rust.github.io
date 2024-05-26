@@ -7,7 +7,7 @@
 Optionally, <code>context</code> for potentially ambiguous words can be added with <code>,</code> after <code>n</code> and before <code>;</code>.</p>
 <p>Using named or positional parameters instead of <code>{}</code> may make it easier to use dynamic formatting once gdext supports it:</p>
 
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::engine::translate::tr_n;
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::extras::tr_n;
 
 <span class="comment">// Good.
 </span><span class="macro">tr_n!</span>(n, context; <span class="string">"{a} is a {b}"</span>, <span class="string">"{a}s are {b}s"</span>); <span class="comment">// inlined, with context
