@@ -7,7 +7,7 @@ methods.</p>
 added before the format arguments, separated with a <code>;</code>.</p>
 <p>Using named or positional parameters instead of <code>{}</code> may make it easier to use dynamic formatting once gdext supports it:</p>
 
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::engine::translate::tr;
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::extras::tr;
 
 <span class="comment">// Good.
 </span><span class="macro">tr!</span>(context; <span class="string">"{a} is a {b}"</span>); <span class="comment">// inlined, with context
