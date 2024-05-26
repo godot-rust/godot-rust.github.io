@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-732/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/732"
 pr_author = "Bromeon"
 sort_key = 2024-05-26
-date_time = 2024-05-26T21:48:26Z
-commit_sha = "74f60926a5be0f871e187fde10519395f4d5ab9d"
+date_time = 2024-05-26T21:50:38Z
+commit_sha = "685e0a223ef49e63a89620d272fc2479b189ce34"
 +++
 
 Streamline modules - part II: `godot::extra`, notifications
