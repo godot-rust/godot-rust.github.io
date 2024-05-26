@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"enum":["ClockDirection","Corner","EulerOrder","Orientation","Side"],"struct":["Error","HorizontalAlignment","InlineAlignment","JoyAxis","JoyButton","Key","KeyLocation","KeyModifierMask","MethodFlags","MidiMessage","MouseButton","MouseButtonMask","PropertyHint","PropertyUsageFlags","VariantOperator","VerticalAlignment"]};
