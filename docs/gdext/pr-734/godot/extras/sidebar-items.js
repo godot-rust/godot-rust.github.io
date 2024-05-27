@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"fn":["create_script_instance"],"macro":["tr","tr_n"],"struct":["GFile","IoError","SiMut"],"trait":["ScriptInstance"]};
