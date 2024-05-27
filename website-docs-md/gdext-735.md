@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-735/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/735"
 pr_author = "Bromeon"
 sort_key = 2024-05-27
-date_time = 2024-05-27T23:05:52Z
-commit_sha = "5fcbac8fa29a425aea96b91e40bfd80681a5eef9"
+date_time = 2024-05-27T23:09:13Z
+commit_sha = "6e52a9979ac57230b71511993b7c658971cb7508"
 +++
 
 Streamline modules - part IV: `godot::meta`, `godot::builtin::iter`
