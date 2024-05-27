@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-733/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/733"
 pr_author = "Bromeon"
 sort_key = 2024-05-27
-date_time = 2024-05-27T19:31:44Z
-commit_sha = "db28c1e0b9fed0486a69f8c87493c8699b78c5b7"
+date_time = 2024-05-27T19:37:33Z
+commit_sha = "9345010759a53ac4b61a0c651ba81ec451475b10"
 +++
 
 Streamline modules - part III: `godot::classes`, `godot::tools`, `godot::obj::script`
