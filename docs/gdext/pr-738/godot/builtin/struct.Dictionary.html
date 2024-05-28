@@ -20,7 +20,7 @@ dict.set(coord, <span class="string">"Tile77"</span>);
 
 <span class="comment">// Access elements.
 </span><span class="kw">let </span>value: Variant = dict.at(<span class="string">"str"</span>);
-<span class="kw">let </span>value: GString = dict.at(<span class="string">"str"</span>).to(); <span class="comment">// Variant::to() extracts i64.
+<span class="kw">let </span>value: GString = dict.at(<span class="string">"str"</span>).to(); <span class="comment">// Variant::to() extracts GString.
 </span><span class="kw">let </span>maybe: <span class="prelude-ty">Option</span>&lt;Variant&gt; = dict.get(<span class="string">"absent_key"</span>);
 
 <span class="comment">// Iterate over key-value pairs as (Variant, Variant).
@@ -28,7 +28,7 @@ dict.set(coord, <span class="string">"Tile77"</span>);
     <span class="macro">println!</span>(<span class="string">"{key} =&gt; {value}"</span>);
 }
 
-<span class="comment">// Use typed() to get typed iterators.
+<span class="comment">// Use typed::&lt;K, V&gt;() to get typed iterators.
 </span><span class="kw">for </span>(key, value) <span class="kw">in </span>dict.iter_shared().typed::&lt;GString, Variant&gt;() {
     <span class="macro">println!</span>(<span class="string">"{key} =&gt; {value}"</span>);
 }
