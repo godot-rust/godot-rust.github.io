@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `godot/src/lib.rs`."><title>lib.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-dd39b87e5fcfba68.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="godot" data-themes="" data-resource-suffix="" data-rustdoc-version="1.80.0-nightly (1ba35e9bb 2024-05-25)" data-channel="nightly" data-search-js="search-d52510db62a78183.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../static.files/storage-118b08c4c78b968e.js"></script><script defer src="../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../src-files.js"></script><script defer src="../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-df360f571f6edeae.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer"></div><main><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers"><a href="#1" id="1">1</a>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `godot/src/lib.rs`."><title>lib.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-dd39b87e5fcfba68.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="godot" data-themes="" data-resource-suffix="" data-rustdoc-version="1.80.0-nightly (da159eb33 2024-05-28)" data-channel="nightly" data-search-js="search-d52510db62a78183.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../static.files/storage-118b08c4c78b968e.js"></script><script defer src="../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../src-files.js"></script><script defer src="../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-df360f571f6edeae.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer"></div><main><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers"><a href="#1" id="1">1</a>
 <a href="#2" id="2">2</a>
 <a href="#3" id="3">3</a>
 <a href="#4" id="4">4</a>
@@ -256,6 +256,15 @@
 <a href="#256" id="256">256</a>
 <a href="#257" id="257">257</a>
 <a href="#258" id="258">258</a>
+<a href="#259" id="259">259</a>
+<a href="#260" id="260">260</a>
+<a href="#261" id="261">261</a>
+<a href="#262" id="262">262</a>
+<a href="#263" id="263">263</a>
+<a href="#264" id="264">264</a>
+<a href="#265" id="265">265</a>
+<a href="#266" id="266">266</a>
+<a href="#267" id="267">267</a>
 </pre></div><pre class="rust"><code><span class="attr">#![feature(doc_cfg)]
 </span><span class="comment">/*
  * Copyright (c) godot-rust; Bromeon and contributors.
@@ -299,7 +308,7 @@
 //!
 //! 3. **Reference-counted types**: [`Array`][crate::builtin::Array],
 //!    [`Dictionary`][crate::builtin::Dictionary], and [`Gd&lt;T&gt;`][crate::obj::Gd] where `T` inherits
-//!    from [`RefCounted`][crate::engine::RefCounted].
+//!    from [`RefCounted`][crate::classes::RefCounted].
 //!
 //!    These types may share their underlying data between multiple instances: changes to one
 //!    instance are visible in another. They are conceptually similar to `Rc&lt;RefCell&lt;...&gt;&gt;`.
@@ -313,7 +322,7 @@
 //!    can be used to make actual copies. &lt;br&gt;&lt;br&gt;
 //!
 //! 4. **Manually managed types**: [`Gd&lt;T&gt;`][crate::obj::Gd] where `T` inherits from
-//!    [`Object`][crate::engine::Object] but not from [`RefCounted`][crate::engine::RefCounted];
+//!    [`Object`][crate::classes::Object] but not from [`RefCounted`][crate::classes::RefCounted];
 //!    most notably, this includes all `Node` classes.
 //!
 //!    These also share data, but do not use reference counting to manage their memory. Instead,
@@ -419,7 +428,7 @@
 //!
 //! * **`experimental-godot-api`**
 //!
-//!   Access to `godot::engine` APIs that Godot marks "experimental". These are under heavy development and may change at any time.
+//!   Access to `godot::classes` APIs that Godot marks "experimental". These are under heavy development and may change at any time.
 //!   If you opt in to this feature, expect breaking changes at compile and runtime.&lt;br&gt;&lt;br&gt;
 //!
 //! * **`experimental-wasm`**
@@ -482,7 +491,10 @@
 // Modules
 
 </span><span class="attr">#[doc(inline)]
-</span><span class="kw">pub use </span>godot_core::{builtin, engine, log, obj};
+</span><span class="kw">pub use </span>godot_core::{builtin, classes, global, meta, obj, tools};
+
+<span class="attr">#[allow(deprecated)]
+</span><span class="kw">pub use </span>godot_core::{engine, log};
 
 <span class="attr">#[doc(hidden)]
 </span><span class="kw">pub use </span>godot_core::sys;
@@ -497,8 +509,14 @@
 
 <span class="doccomment">/// Register/export Rust symbols to Godot: classes, methods, enums...
 </span><span class="kw">pub mod </span>register {
-    <span class="kw">pub use </span>godot_core::property;
+    <span class="kw">pub use </span>godot_core::registry::property;
     <span class="kw">pub use </span>godot_macros::{godot_api, Export, GodotClass, GodotConvert, Var};
+
+    <span class="doccomment">/// Re-exports used by proc-macro API.
+    </span><span class="attr">#[doc(hidden)]
+    </span><span class="kw">pub mod </span>private {
+        <span class="kw">pub use </span>godot_core::registry::{constant, method};
+    }
 }
 
 <span class="doccomment">/// Testing facilities (unstable).
