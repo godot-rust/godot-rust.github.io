@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["CallError","ConvertError"]};
+window.SIDEBAR_ITEMS = {"struct":["CallError","ConvertError","IoError"]};
