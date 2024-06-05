@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-736/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/736"
 pr_author = "TitanNano"
 sort_key = 2024-06-05
-date_time = 2024-06-05T21:26:47Z
-commit_sha = "8859d01992af860c8aee8ca6ddc3c52940caef4c"
+date_time = 2024-06-05T21:39:25Z
+commit_sha = "efa52b748150433a3f82bb821018fc3f84a0589b"
 +++
 
 Block `GdCell::borrow` and `GdCell::borrow_mut` on other threads
