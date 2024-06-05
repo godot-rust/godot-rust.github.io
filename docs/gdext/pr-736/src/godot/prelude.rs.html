@@ -33,6 +33,7 @@
 <a href="#33" id="33">33</a>
 <a href="#34" id="34">34</a>
 <a href="#35" id="35">35</a>
+<a href="#36" id="36">36</a>
 </pre></div><pre class="rust"><code><span class="comment">/*
  * Copyright (c) godot-rust; Bromeon and contributors.
  * This Source Code Form is subject to the terms of the Mozilla Public
@@ -47,7 +48,8 @@
 
 <span class="kw">pub use </span><span class="kw">super</span>::builtin::__prelude_reexport::<span class="kw-2">*</span>;
 <span class="kw">pub use </span><span class="kw">super</span>::builtin::math::FloatExt <span class="kw">as _</span>;
-<span class="kw">pub use </span><span class="kw">super</span>::builtin::meta::{FromGodot, ToGodot};
+<span class="kw">pub use </span><span class="kw">super</span>::meta::error::{ConvertError, IoError};
+<span class="kw">pub use </span><span class="kw">super</span>::meta::{FromGodot, GodotConvert, ToGodot};
 
 <span class="kw">pub use </span><span class="kw">super</span>::classes::{
     AudioStreamPlayer, Camera2D, Camera3D, IAudioStreamPlayer, ICamera2D, ICamera3D, INode,
@@ -57,7 +59,7 @@
 <span class="kw">pub use </span><span class="kw">super</span>::global::{
     godot_error, godot_print, godot_print_rich, godot_script_error, godot_warn,
 };
-<span class="kw">pub use </span><span class="kw">super</span>::tools::{load, save, try_load, try_save, GFile, IoError};
+<span class="kw">pub use </span><span class="kw">super</span>::tools::{load, save, try_load, try_save, GFile};
 
 <span class="kw">pub use </span><span class="kw">super</span>::init::{gdextension, ExtensionLibrary, InitLevel};
 <span class="kw">pub use </span><span class="kw">super</span>::obj::{Base, Gd, GdMut, GdRef, GodotClass, Inherits, InstanceId, OnReady};

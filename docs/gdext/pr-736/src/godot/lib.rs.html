@@ -259,6 +259,12 @@
 <a href="#259" id="259">259</a>
 <a href="#260" id="260">260</a>
 <a href="#261" id="261">261</a>
+<a href="#262" id="262">262</a>
+<a href="#263" id="263">263</a>
+<a href="#264" id="264">264</a>
+<a href="#265" id="265">265</a>
+<a href="#266" id="266">266</a>
+<a href="#267" id="267">267</a>
 </pre></div><pre class="rust"><code><span class="attr">#![feature(doc_cfg)]
 </span><span class="comment">/*
  * Copyright (c) godot-rust; Bromeon and contributors.
@@ -485,7 +491,7 @@
 // Modules
 
 </span><span class="attr">#[doc(inline)]
-</span><span class="kw">pub use </span>godot_core::{builtin, classes, global, obj, tools};
+</span><span class="kw">pub use </span>godot_core::{builtin, classes, global, meta, obj, tools};
 
 <span class="attr">#[allow(deprecated)]
 </span><span class="kw">pub use </span>godot_core::{engine, log};
@@ -503,8 +509,14 @@
 
 <span class="doccomment">/// Register/export Rust symbols to Godot: classes, methods, enums...
 </span><span class="kw">pub mod </span>register {
-    <span class="kw">pub use </span>godot_core::property;
+    <span class="kw">pub use </span>godot_core::registry::property;
     <span class="kw">pub use </span>godot_macros::{godot_api, Export, GodotClass, GodotConvert, Var};
+
+    <span class="doccomment">/// Re-exports used by proc-macro API.
+    </span><span class="attr">#[doc(hidden)]
+    </span><span class="kw">pub mod </span>private {
+        <span class="kw">pub use </span>godot_core::registry::{constant, method};
+    }
 }
 
 <span class="doccomment">/// Testing facilities (unstable).

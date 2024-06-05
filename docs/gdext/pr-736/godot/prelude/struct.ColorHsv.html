@@ -6,7 +6,7 @@
 }</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>HSVA floating-number Color representation.</p>
 <p>Godot’s <a href="../builtin/struct.Color.html" title="struct godot::builtin::Color"><code>Color</code></a> built-in type supports mainly RGBA floating point-based notation. <code>ColorHsv</code> supports manipulating its HSVA
 representation by introducing conversion methods between itself and <code>Color</code>.</p>
-<p><code>ColorHsv</code> <em>is not</em> a <a href="../builtin/meta/trait.GodotType.html" title="trait godot::builtin::meta::GodotType"><code>GodotType</code></a>. To use it in properties expecting <code>Color</code>, you need to convert
+<p><code>ColorHsv</code> <em>is not</em> a <a href="../meta/trait.GodotType.html" title="trait godot::meta::GodotType"><code>GodotType</code></a>. To use it in properties expecting <code>Color</code>, you need to convert
 it back to this type.</p>
 <p>A <code>Color</code> created by <a href="../builtin/struct.ColorHsv.html#method.to_rgb" title="method godot::builtin::ColorHsv::to_rgb"><code>ColorHsv::to_rgb()</code></a> is equal to one created by <a href="../builtin/struct.Color.html#method.from_hsv" title="associated function godot::builtin::Color::from_hsv"><code>Color::from_hsv(h, s, v)</code></a>, but the conversion
 time is approximately 4 times faster - partly because it avoids calls between Godot and Rust during conversion.</p>
