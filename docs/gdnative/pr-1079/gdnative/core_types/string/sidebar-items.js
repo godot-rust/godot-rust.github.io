@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["GodotCharError"],"struct":["GodotChar","GodotString","StringName"]};
