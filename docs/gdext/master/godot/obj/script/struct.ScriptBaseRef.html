@@ -27,7 +27,7 @@ destroyed. However, this method exists because GDScript offers it and there may 
 and will panic in a defined manner. Encountering such panics is almost always a bug you should fix, and not a
 runtime condition to check against.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.upcast_ref" class="method"><h4 class="code-header">pub fn <a href="#method.upcast_ref" class="fn">upcast_ref</a>&lt;Base&gt;(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;Base</a><div class="where">where
-    Base: <a class="trait" href="../trait.GodotClass.html" title="trait godot::obj::GodotClass">GodotClass</a>,
+    Base: <a class="trait" href="../trait.GodotClass.html" title="trait godot::obj::GodotClass">GodotClass</a>&lt;Declarer = <a class="enum" href="../bounds/enum.DeclEngine.html" title="enum godot::obj::bounds::DeclEngine">DeclEngine</a>&gt; + <a class="trait" href="../trait.Bounds.html" title="trait godot::obj::Bounds">Bounds</a>,
     T: <a class="trait" href="../trait.Inherits.html" title="trait godot::obj::Inherits">Inherits</a>&lt;Base&gt;,</div></h4></section></summary><div class="docblock"><p><strong>Upcast shared-ref:</strong> access this object as a shared reference to a base class.</p>
 <p>This is semantically equivalent to multiple applications of <a href="../struct.Gd.html#method.deref" title="method godot::obj::Gd::deref"><code>Self::deref()</code></a>. Not really useful on its own, but combined with
 generic programming:</p>
@@ -37,6 +37,20 @@ generic programming:</p>
     </span>T: Inherits&lt;Node&gt;,
 {
     <span class="macro">println!</span>(<span class="string">"Node name: {}"</span>, node.upcast_ref().get_name());
+}</code></pre></div>
+<p>Note that this cannot be used to get a reference to Rust classes, for that you should use <a href="../struct.Gd.html#method.bind" title="method godot::obj::Gd::bind"><code>Gd::bind()</code></a>. For instance this
+will fail:</p>
+
+<div class="example-wrap compile_fail"><a href="#" class="tooltip" title="This example deliberately fails to compile">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
+#[class(init, base = Node)]
+</span><span class="kw">struct </span>SomeClass {}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>INode <span class="kw">for </span>SomeClass {
+    <span class="kw">fn </span>ready(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
+        <span class="kw">let </span>other = SomeClass::new_alloc();
+        <span class="kw">let _ </span>= other.upcast_ref::&lt;SomeClass&gt;();
+    }
 }</code></pre></div>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.callable" class="method"><h4 class="code-header">pub fn <a href="#method.callable" class="fn">callable</a>&lt;S&gt;(&amp;self, method_name: S) -&gt; <a class="struct" href="../../builtin/struct.Callable.html" title="struct godot::builtin::Callable">Callable</a><div class="where">where
     S: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="struct" href="../../builtin/struct.StringName.html" title="struct godot::builtin::StringName">StringName</a>&gt;,</div></h4></section></summary><div class="docblock"><p>Returns a callable referencing a method from this object named <code>method_name</code>.</p>

@@ -133,7 +133,7 @@ use this idiom:</p>
 <span class="kw">let </span>obj: Gd&lt;MyClass&gt; = MyClass::new_alloc();
 <span class="kw">let </span>base = obj.clone().upcast::&lt;Node&gt;();</code></pre></div>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.upcast_ref" class="method"><h4 class="code-header">pub fn <a href="#method.upcast_ref" class="fn">upcast_ref</a>&lt;Base&gt;(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;Base</a><div class="where">where
-    Base: <a class="trait" href="../obj/trait.GodotClass.html" title="trait godot::obj::GodotClass">GodotClass</a>,
+    Base: <a class="trait" href="../obj/trait.GodotClass.html" title="trait godot::obj::GodotClass">GodotClass</a>&lt;Declarer = <a class="enum" href="../obj/bounds/enum.DeclEngine.html" title="enum godot::obj::bounds::DeclEngine">DeclEngine</a>&gt; + <a class="trait" href="../obj/trait.Bounds.html" title="trait godot::obj::Bounds">Bounds</a>,
     T: <a class="trait" href="../obj/trait.Inherits.html" title="trait godot::obj::Inherits">Inherits</a>&lt;Base&gt;,</div></h4></section></summary><div class="docblock"><p><strong>Upcast shared-ref:</strong> access this object as a shared reference to a base class.</p>
 <p>This is semantically equivalent to multiple applications of <a href="../obj/struct.Gd.html#method.deref" title="method godot::obj::Gd::deref"><code>Self::deref()</code></a>. Not really useful on its own, but combined with
 generic programming:</p>
@@ -144,8 +144,22 @@ generic programming:</p>
 {
     <span class="macro">println!</span>(<span class="string">"Node name: {}"</span>, node.upcast_ref().get_name());
 }</code></pre></div>
+<p>Note that this cannot be used to get a reference to Rust classes, for that you should use <a href="../obj/struct.Gd.html#method.bind" title="method godot::obj::Gd::bind"><code>Gd::bind()</code></a>. For instance this
+will fail:</p>
+
+<div class="example-wrap compile_fail"><a href="#" class="tooltip" title="This example deliberately fails to compile">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
+#[class(init, base = Node)]
+</span><span class="kw">struct </span>SomeClass {}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>INode <span class="kw">for </span>SomeClass {
+    <span class="kw">fn </span>ready(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
+        <span class="kw">let </span>other = SomeClass::new_alloc();
+        <span class="kw">let _ </span>= other.upcast_ref::&lt;SomeClass&gt;();
+    }
+}</code></pre></div>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.upcast_mut" class="method"><h4 class="code-header">pub fn <a href="#method.upcast_mut" class="fn">upcast_mut</a>&lt;Base&gt;(&amp;mut self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut Base</a><div class="where">where
-    Base: <a class="trait" href="../obj/trait.GodotClass.html" title="trait godot::obj::GodotClass">GodotClass</a>,
+    Base: <a class="trait" href="../obj/trait.GodotClass.html" title="trait godot::obj::GodotClass">GodotClass</a>&lt;Declarer = <a class="enum" href="../obj/bounds/enum.DeclEngine.html" title="enum godot::obj::bounds::DeclEngine">DeclEngine</a>&gt; + <a class="trait" href="../obj/trait.Bounds.html" title="trait godot::obj::Bounds">Bounds</a>,
     T: <a class="trait" href="../obj/trait.Inherits.html" title="trait godot::obj::Inherits">Inherits</a>&lt;Base&gt;,</div></h4></section></summary><div class="docblock"><p><strong>Upcast exclusive-ref:</strong> access this object as an exclusive reference to a base class.</p>
 <p>This is semantically equivalent to multiple applications of <a href="../obj/struct.Gd.html#method.deref_mut" title="method godot::obj::Gd::deref_mut"><code>Self::deref_mut()</code></a>. Not really useful on its own, but combined with
 generic programming:</p>
@@ -155,6 +169,20 @@ generic programming:</p>
     </span>T: Inherits&lt;Node&gt;,
 {
     node.upcast_mut().set_name(name.into());
+}</code></pre></div>
+<p>Note that this cannot be used to get a mutable reference to Rust classes, for that you should use <a href="../obj/struct.Gd.html#method.bind_mut" title="method godot::obj::Gd::bind_mut"><code>Gd::bind_mut()</code></a>. For instance this
+will fail:</p>
+
+<div class="example-wrap compile_fail"><a href="#" class="tooltip" title="This example deliberately fails to compile">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
+#[class(init, base = Node)]
+</span><span class="kw">struct </span>SomeClass {}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>INode <span class="kw">for </span>SomeClass {
+    <span class="kw">fn </span>ready(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
+        <span class="kw">let </span><span class="kw-2">mut </span>other = SomeClass::new_alloc();
+        <span class="kw">let _ </span>= other.upcast_mut::&lt;SomeClass&gt;();
+    }
 }</code></pre></div>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.try_cast" class="method"><h4 class="code-header">pub fn <a href="#method.try_cast" class="fn">try_cast</a>&lt;Derived&gt;(self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;Derived&gt;, <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;T&gt;&gt;<div class="where">where
     Derived: <a class="trait" href="../obj/trait.GodotClass.html" title="trait godot::obj::GodotClass">GodotClass</a> + <a class="trait" href="../obj/trait.Inherits.html" title="trait godot::obj::Inherits">Inherits</a>&lt;T&gt;,</div></h4></section></summary><div class="docblock"><p><strong>Downcast:</strong> try to convert into a smart pointer to a derived class.</p>
