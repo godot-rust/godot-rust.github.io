@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["ExGetAngle","ExGetCollider","ExGetColliderId","ExGetColliderRid","ExGetColliderShape","ExGetColliderShapeIndex","ExGetColliderVelocity","ExGetLocalShape","ExGetNormal","ExGetPosition"]};
