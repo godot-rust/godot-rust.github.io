@@ -82,7 +82,7 @@ if [[ "$repo" == "gdext" ]]; then
   # This allows to use JSON and C headers from the in-development Godot 4.x engine, enabling latest #[cfg(since_api = "4.x")] features for docs.
   cat >> "Cargo.toml" <<- HEREDOC
 [patch."https://github.com/godot-rust/godot4-prebuilt"]
-godot4-prebuilt = { git = "https://github.com//godot-rust/godot4-prebuilt", branch = "nightly" }
+gdextension-api = { git = "https://github.com//godot-rust/godot4-prebuilt", branch = "nightly" }
 HEREDOC
 
   # Enable feature in each lib.rs file.
