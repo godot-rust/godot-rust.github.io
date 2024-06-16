@@ -40,11 +40,10 @@ by <code>origin</code>.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.affine_inverse" class="method"><h4 class="code-header">pub fn <a href="#method.affine_inverse" class="fn">affine_inverse</a>(&amp;self) -&gt; <a class="struct" href="struct.Transform2D.html" title="struct godot::builtin::Transform2D">Transform2D</a></h4></section></summary><div class="docblock"><p>Returns the inverse of the transform, under the assumption that the
 transformation is composed of rotation, scaling and translation.</p>
 <p><em>Godot equivalent: <code>Transform2D.affine_inverse()</code></em></p>
-</div></details><details class="toggle method-toggle" open><summary><section id="method.determinant" class="method"><h4 class="code-header">pub fn <a href="#method.determinant" class="fn">determinant</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a></h4></section></summary><div class="docblock"><p>Returns the determinant of the basis matrix. If the basis is uniformly
-scaled, then its determinant equals the square of the scale factor.</p>
-<p>A negative determinant means the basis was flipped, so one part of the
-scale is negative. A zero determinant means the basis isn’t invertible,
-and is usually considered invalid.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.determinant" class="method"><h4 class="code-header">pub fn <a href="#method.determinant" class="fn">determinant</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a></h4></section></summary><div class="docblock"><p>Returns the determinant of the basis matrix.</p>
+<p>If the basis is uniformly scaled, then its determinant equals the square of the scale factor.</p>
+<p>A negative determinant means the basis was flipped, so one part of the scale is negative.
+A zero determinant means the basis isn’t invertible, and is usually considered invalid.</p>
 <p><em>Godot equivalent: <code>Transform2D.determinant()</code></em></p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.rotation" class="method"><h4 class="code-header">pub fn <a href="#method.rotation" class="fn">rotation</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a></h4></section></summary><div class="docblock"><p>Returns the transform’s rotation (in radians).</p>
 <p><em>Godot equivalent: <code>Transform2D.get_rotation()</code></em></p>
