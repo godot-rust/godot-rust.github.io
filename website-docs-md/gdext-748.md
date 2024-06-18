@@ -1,15 +1,15 @@
 +++
 title = "#748"
-date = 2024-06-17
+date = 2024-06-18
 
 [extra]
 repo = "gdext"
 docs_rel_url = "gdext/pr-748/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/748"
 pr_author = "bend-n"
-sort_key = 2024-06-17
-date_time = 2024-06-17T12:19:33Z
-commit_sha = "1c1e9e2e49f2a333fc09735e7ddc3eabb59a46dd"
+sort_key = 2024-06-18
+date_time = 2024-06-18T03:33:57Z
+commit_sha = "1bb8deeb96397241f79d45a4aa965cdae4713977"
 +++
 
  Generate documentation from doc comments
