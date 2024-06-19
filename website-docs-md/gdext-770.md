@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-770/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/770"
 pr_author = "Ughuuu"
 sort_key = 2024-06-16
-date_time = 2024-06-16T19:49:54Z
-commit_sha = "61f29394a7c06d58e22055f5cc600d95ff6a29f9"
+date_time = 2024-06-16T21:11:18Z
+commit_sha = "532e9a7966966e744068709e76417c3b5b179714"
 +++
 
 Add determinant to Transform2D
