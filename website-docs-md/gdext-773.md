@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-773/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/773"
 pr_author = "fpdotmonkey"
 sort_key = 2024-06-22
-date_time = 2024-06-22T14:37:40Z
-commit_sha = "8c52f6b2a6b3fbab7efe8eac4269f112ac10d3fe"
+date_time = 2024-06-22T19:52:57Z
+commit_sha = "5bb8ff536c019aa87a58679c2fb0d0654d5eefe4"
 +++
 
 Reorder compile errors for `#[derive(GodotClass)]`
