@@ -1,15 +1,15 @@
 +++
 title = "#761"
-date = 2024-06-14
+date = 2024-06-22
 
 [extra]
 repo = "gdext"
 docs_rel_url = "gdext/pr-761/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/761"
 pr_author = "joriskleiber"
-sort_key = 2024-06-14
-date_time = 2024-06-14T15:02:24Z
-commit_sha = "fede6c63908fa004d685fa52c3207ab81879bb4a"
+sort_key = 2024-06-22
+date_time = 2024-06-22T13:39:00Z
+commit_sha = "859cb7abe62b686a812f8c940b2a7bb223701347"
 +++
 
 Add more `normalized` functions
