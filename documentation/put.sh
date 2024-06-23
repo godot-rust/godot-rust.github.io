@@ -62,22 +62,11 @@ git log -n 1
 echo "========================================"
 
 
-# For gdext, add feature/cfg annotations in docs. This needs nightly rustdoc + custom preprocessing.
-# Replace #[cfg(...)] with #[doc(cfg(...))], a nightly feature: https://doc.rust-lang.org/unstable-book/language-features/doc-cfg.html
-# Potential alternative: https://docs.rs/doc-cfg/latest/doc_cfg
-#
+
 # TODO currently, this uses gdext master without custom-godot, so latest 4.x features (of the in-dev version) are not available.
 # We cannot just pretend we are on 4.x, because code will not compile with the default C/JSON headers. We would need custom-godot
 # and a running engine, which is a bit overkill.
 if [[ "$repo" == "gdext" ]]; then
-  # Install sd (modern sed). No point in waiting for eternal `cargo install` if we can fetch a prebuilt binary in 1s.
-  echo "$PRE install sd (modern sed)..."
-  curl -L https://github.com/chmln/sd/releases/download/v${SD_VERSION}/sd-v${SD_VERSION}-x86_64-unknown-linux-musl.tar.gz -o archive.tar.gz
-  mkdir -p tools
-  tar -zxvf archive.tar.gz -C tools --strip-components=1
-
-  echo "$PRE preprocess docs..."
-
   # Patch Cargo.toml to pull from nightly prebuilt artifacts.
   # This allows to use JSON and C headers from the in-development Godot 4.x engine, enabling latest #[cfg(since_api = "4.x")] features for docs.
   cat >> "Cargo.toml" <<- HEREDOC
@@ -85,23 +74,8 @@ if [[ "$repo" == "gdext" ]]; then
 gdextension-api = { git = "https://github.com//godot-rust/godot4-prebuilt", branch = "nightly" }
 HEREDOC
 
-  # Enable feature in each lib.rs file.
-  # Note: first command uses sed because it's easier, and only handful of files.
-  find . -type f -name "lib.rs" -exec sed -i '1s/^/#![feature(doc_cfg)]\n/' {} +
-
-  # Then do the actual replacements.
-  # Could use \( -path "..." -o -path "..." \) to limit to certain paths.
-  # Do NOT include './target/debug/build/*' because generated files cannot be modified -- rustdoc will rerun the generation.
-  # This is done by directly emitting #[cfg_attr(published_docs, doc(cfg(...)))] in the godot-codegen crate, and that cfg is passed below.
-  find . -type f -name '*.rs' \
-    \( -path './godot' -o -path './godot-*' \) \
-  | while read -r file; do
-      # Replace #[cfg(...)] with #[doc(cfg(...))]. Do not insert a newline, in case the #[cfg] is commented-out.
-      # shellcheck disable=SC2016
-      ./tools/sd '(\#\[(cfg\(.+?\))\])\s*([A-Za-z]|#\[)' '$1 #[doc($2)]\n$3' "$file"
-      #                               ^^^^^^^^^^^^^^^^^ require that #[cfg] is followed by an identifier or a #[ attribute start.
-      # This avoids some usages of function-local #[cfg]s, although by far not all. Others generate warnings, which is fine.
-  done
+  # Apply #[doc(cfg(...))] to all docs. No rustfmt needed.
+  documentation/apply-doc-cfg.sh --install-sd
 fi
 
 # Build docs
