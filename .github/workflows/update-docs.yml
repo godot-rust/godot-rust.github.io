@@ -96,6 +96,7 @@ jobs:
           git switch doc-output || git switch --orphan doc-output
           
           git restore --source master $script documentation/update-last-changed.sh documentation/apply-doc-cfg.sh
+          mv documentation/apply-doc-cfg.sh /tmp/apply-doc-cfg.sh
           bash $script "$REPO" "$NUM" "$DATE"
 
       - name: "Wait for concurrent workflows to finish..."

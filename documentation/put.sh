@@ -75,7 +75,7 @@ gdextension-api = { git = "https://github.com//godot-rust/godot4-prebuilt", bran
 HEREDOC
 
   # Apply #[doc(cfg(...))] to all docs. No rustfmt needed.
-  documentation/apply-doc-cfg.sh --install-sd
+  /tmp/apply-doc-cfg.sh --install-sd
 fi
 
 # Build docs
