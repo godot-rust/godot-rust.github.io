@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["ExAddObject","ExAddString","ExDraw","ExDrawDropcap","ExDrawDropcapOutline","ExDrawLine","ExDrawLineOutline","ExDrawOutline","ExResizeObject","ExSetDropcap"]};
