@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"fn":["create_script_instance"],"struct":["ScriptBaseMut","ScriptBaseRef","SiMut"],"trait":["ScriptInstance"]};
