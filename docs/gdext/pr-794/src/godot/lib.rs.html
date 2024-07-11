@@ -198,6 +198,12 @@
 <a href="#198" id="198">198</a>
 <a href="#199" id="199">199</a>
 <a href="#200" id="200">200</a>
+<a href="#201" id="201">201</a>
+<a href="#202" id="202">202</a>
+<a href="#203" id="203">203</a>
+<a href="#204" id="204">204</a>
+<a href="#205" id="205">205</a>
+<a href="#206" id="206">206</a>
 </pre></div><pre class="rust"><code><span class="attr">#![cfg_attr(published_docs, feature(doc_cfg))]
 </span><span class="comment">/*
  * Copyright (c) godot-rust; Bromeon and contributors.
@@ -269,7 +275,7 @@
 //! * **`api-custom`**
 //!
 //!   Sets the [**API level**](https://godot-rust.github.io/book/toolchain/godot-version.html) to the specified Godot version,
-//!   or a custom-built local binary.  
+//!   or a custom-built local binary.
 //!   You can use at most one `api-*` feature. If absent, the current Godot minor version is used, with patch level 0.&lt;br&gt;&lt;br&gt;
 //!
 //! * **`double-precision`**
@@ -324,6 +330,12 @@
 
 </span><span class="attr">#[cfg(all(feature = <span class="string">"lazy-function-tables"</span>, feature = <span class="string">"experimental-threads"</span>))]
 </span><span class="macro">compile_error!</span>(<span class="string">"Thread safety for lazy function pointers is not yet implemented."</span>);
+
+<span class="attr">#[cfg(all(
+    feature = <span class="string">"experimental-wasm-nothreads"</span>,
+    feature = <span class="string">"experimental-threads"
+</span>))]
+</span><span class="macro">compile_error!</span>(<span class="string">"Cannot use 'experimental-threads' with a nothreads Wasm build yet."</span>);
 
 <span class="attr">#[cfg(all(target_family = <span class="string">"wasm"</span>, not(feature = <span class="string">"experimental-wasm"</span>)))]
 </span><span class="macro">compile_error!</span>(<span class="string">"Must opt-in using `experimental-wasm` Cargo feature; keep in mind that this is work in progress"</span>);
