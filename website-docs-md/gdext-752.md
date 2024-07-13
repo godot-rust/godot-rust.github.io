@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-752/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/752"
 pr_author = "bend-n"
 sort_key = 2024-07-12
-date_time = 2024-07-12T02:08:38Z
-commit_sha = "761d9f2713cedf1a5b2ce64ae6270342d3deeefc"
+date_time = 2024-07-12T15:13:34Z
+commit_sha = "5b76701a2d4f3bfffd175bb8f69e0c20849eed1d"
 +++
 
 change Global to use Once
