@@ -1,15 +1,15 @@
 +++
 title = "#752"
-date = 2024-07-12
+date = 2024-07-13
 
 [extra]
 repo = "gdext"
 docs_rel_url = "gdext/pr-752/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/752"
 pr_author = "bend-n"
-sort_key = 2024-07-12
-date_time = 2024-07-12T15:13:34Z
-commit_sha = "5b76701a2d4f3bfffd175bb8f69e0c20849eed1d"
+sort_key = 2024-07-13
+date_time = 2024-07-13T11:38:21Z
+commit_sha = "d949495d2e77786ef7bfa96d0de2900b5388315b"
 +++
 
 change Global to use Once
