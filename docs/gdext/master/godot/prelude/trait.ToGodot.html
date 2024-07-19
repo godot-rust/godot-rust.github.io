@@ -6,7 +6,7 @@
     fn <a href="#method.into_godot" class="fn">into_godot</a>(self) -&gt; Self::<a class="associatedtype" href="../meta/trait.GodotConvert.html#associatedtype.Via" title="type godot::meta::GodotConvert::Via">Via</a> { ... }
 <span class="item-spacer"></span>    fn <a href="#method.to_variant" class="fn">to_variant</a>(&amp;self) -&gt; <a class="struct" href="../builtin/struct.Variant.html" title="struct godot::builtin::Variant">Variant</a> { ... }
 }</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Defines the canonical conversion to Godot for a type.</p>
-<p>It is assumed that all the methods return equal values given equal inputs. Additionally it is assumed
+<p>It is assumed that all the methods return equal values given equal inputs. Additionally, it is assumed
 that if <a href="../meta/trait.FromGodot.html" title="trait godot::meta::FromGodot"><code>FromGodot</code></a> is implemented, converting to Godot and back again will return a value equal to the
 starting value.</p>
 <p>Violating these assumptions is safe but will give unexpected results.</p>

@@ -7,7 +7,7 @@
 <p>The conditions for a Godot enum to be “index-like” are:</p>
 <ul>
 <li>Contains an enumerator ending in <code>_MAX</code>, which has the highest ordinal (denotes the size).</li>
-<li>All other enumerators are consecutive integers inside 0..max (no negative ordinals, no gaps).</li>
+<li>All other enumerators are consecutive integers inside <code>0..max</code> (no negative ordinals, no gaps).</li>
 </ul>
 <p>Duplicates are explicitly allowed, to allow for renamings/deprecations. The order in which Godot exposes
 the enumerators in the JSON is irrelevant.</p>

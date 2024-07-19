@@ -75,7 +75,7 @@ appended to the existing list of properties.</p>
 <p>This is a combination of Godot’s <a href="https://docs.godotengine.org/en/latest/classes/class_object.html#class-object-private-method-property-get-revert"><code>Object::_property_get_revert</code></a> and <a href="https://docs.godotengine.org/en/latest/classes/class_object.html#class-object-private-method-property-can-revert"><code>Object::_property_can_revert</code></a>. This means that this
 function will usually be called twice by Godot to find the revert.</p>
 <p>Note that this should be a <em>pure</em> function. That is, it should always return the same value for a property as long as <code>self</code>
-remains unchanged. Otherwise this may lead to unexpected (safe) behavior.</p>
+remains unchanged. Otherwise, this may lead to unexpected (safe) behavior.</p>
 </div></details><section id="method.use_tile_data_runtime_update" class="method"><h4 class="code-header">fn <a href="#method.use_tile_data_runtime_update" class="fn">use_tile_data_runtime_update</a>(&amp;mut self, layer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, coords: <a class="struct" href="../builtin/struct.Vector2i.html" title="struct godot::builtin::Vector2i">Vector2i</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section><section id="method.tile_data_runtime_update" class="method"><h4 class="code-header">fn <a href="#method.tile_data_runtime_update" class="fn">tile_data_runtime_update</a>(
     &amp;mut self,
     layer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
