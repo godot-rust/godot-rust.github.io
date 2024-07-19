@@ -60,7 +60,7 @@ appended to the existing list of properties.</p>
 <p>This is a combination of Godot’s <a href="https://docs.godotengine.org/en/latest/classes/class_object.html#class-object-private-method-property-get-revert"><code>Object::_property_get_revert</code></a> and <a href="https://docs.godotengine.org/en/latest/classes/class_object.html#class-object-private-method-property-can-revert"><code>Object::_property_can_revert</code></a>. This means that this
 function will usually be called twice by Godot to find the revert.</p>
 <p>Note that this should be a <em>pure</em> function. That is, it should always return the same value for a property as long as <code>self</code>
-remains unchanged. Otherwise this may lead to unexpected (safe) behavior.</p>
+remains unchanged. Otherwise, this may lead to unexpected (safe) behavior.</p>
 </div></details><section id="method.handles" class="method"><h4 class="code-header">fn <a href="#method.handles" class="fn">handles</a>(&amp;self, type_: <a class="struct" href="../builtin/struct.GString.html" title="struct godot::builtin::GString">GString</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section><section id="method.make_tooltip_for_path" class="method"><h4 class="code-header">fn <a href="#method.make_tooltip_for_path" class="fn">make_tooltip_for_path</a>(
     &amp;self,
     path: <a class="struct" href="../builtin/struct.GString.html" title="struct godot::builtin::GString">GString</a>,

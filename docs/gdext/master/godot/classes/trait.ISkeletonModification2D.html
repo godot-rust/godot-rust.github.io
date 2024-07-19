@@ -60,7 +60,7 @@ appended to the existing list of properties.</p>
 <p>This is a combination of Godot’s <a href="https://docs.godotengine.org/en/latest/classes/class_object.html#class-object-private-method-property-get-revert"><code>Object::_property_get_revert</code></a> and <a href="https://docs.godotengine.org/en/latest/classes/class_object.html#class-object-private-method-property-can-revert"><code>Object::_property_can_revert</code></a>. This means that this
 function will usually be called twice by Godot to find the revert.</p>
 <p>Note that this should be a <em>pure</em> function. That is, it should always return the same value for a property as long as <code>self</code>
-remains unchanged. Otherwise this may lead to unexpected (safe) behavior.</p>
+remains unchanged. Otherwise, this may lead to unexpected (safe) behavior.</p>
 </div></details><section id="method.execute" class="method"><h4 class="code-header">fn <a href="#method.execute" class="fn">execute</a>(&amp;mut self, delta: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>)</h4></section><section id="method.setup_modification" class="method"><h4 class="code-header">fn <a href="#method.setup_modification" class="fn">setup_modification</a>(
     &amp;mut self,
     modification_stack: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.SkeletonModificationStack2D.html" title="struct godot::classes::SkeletonModificationStack2D">SkeletonModificationStack2D</a>&gt;,

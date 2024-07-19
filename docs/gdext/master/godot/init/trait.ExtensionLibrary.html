@@ -34,7 +34,7 @@ Violating this may cause undefined behavior, even when invoking <em>safe</em> fu
 </div></details><details class="toggle method-toggle" open><summary><section id="method.override_hot_reload" class="method"><h4 class="code-header">fn <a href="#method.override_hot_reload" class="fn">override_hot_reload</a>() -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>&gt;</h4></section></summary><div class="docblock"><p>Whether to enable hot reloading of this library. Return <code>None</code> to use the default behavior.</p>
 <p>Enabling this will ensure that the library can be hot reloaded. If this is disabled then hot reloading may still work, but there is no
 guarantee. Enabling this may also lead to memory leaks, so it should not be enabled for builds that are intended to be final builds.</p>
-<p>By default this is enabled for debug builds and disabled for release builds.</p>
+<p>By default, this is enabled for debug builds and disabled for release builds.</p>
 <p>Note that this is only checked <em>once</em> upon initializing the library. Changing this from <code>true</code> to <code>false</code> will be picked up as the
 library is then fully reloaded upon hot-reloading, however changing it from <code>false</code> to <code>true</code> is almost certainly not going to work
 unless hot-reloading is already working regardless of this setting.</p>

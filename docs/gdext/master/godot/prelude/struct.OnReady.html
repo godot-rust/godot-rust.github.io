@@ -16,7 +16,7 @@ The absence of methods to check initialization state is deliberate: you don’t 
 This container is not designed as a general late-initialization solution, but tailored to the <code>ready()</code> semantics of Godot.</p>
 <p><code>OnReady&lt;T&gt;</code> cannot be used with <code>#[export]</code> fields, because <code>ready()</code> is typically not called in the editor (unless <code>#[class(tool)]</code>
 is specified). You can however use it with <code>#[var]</code> – just make sure to access the fields in GDScript after <code>ready()</code>.</p>
-<p>This type is not thread-safe. <code>ready()</code> runs on the main thread and you are expected to access its value on the main thread, as well.</p>
+<p>This type is not thread-safe. <code>ready()</code> runs on the main thread, and you are expected to access its value on the main thread, as well.</p>
 <h2 id="example"><a class="doc-anchor" href="#example">§</a>Example</h2>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
 

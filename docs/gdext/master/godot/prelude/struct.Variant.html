@@ -22,7 +22,7 @@ value.</p>
 consistency. This may deviate from Godot behavior – for example, calling <code>Node::get_node_or_null()</code> with an invalid
 path returns a variant that has type <code>Object</code> but acts like <code>Nil</code> for all practical purposes.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.call" class="method"><h4 class="code-header">pub fn <a href="#method.call" class="fn">call</a>(&amp;self, method: impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="struct" href="../builtin/struct.StringName.html" title="struct godot::builtin::StringName">StringName</a>&gt;, args: &amp;[<a class="struct" href="../builtin/struct.Variant.html" title="struct godot::builtin::Variant">Variant</a>]) -&gt; <a class="struct" href="../builtin/struct.Variant.html" title="struct godot::builtin::Variant">Variant</a></h4></section></summary><div class="docblock"><p>⚠️ Calls the specified <code>method</code> with the given <code>args</code>.</p>
-<p>Supports <code>Object</code> as well as built-ins with methods (e.g. <code>Array</code>, <code>Vector3</code>, <code>GString</code>, etc).</p>
+<p>Supports <code>Object</code> as well as built-ins with methods (e.g. <code>Array</code>, <code>Vector3</code>, <code>GString</code>, etc.).</p>
 <h5 id="panics-1"><a class="doc-anchor" href="#panics-1">§</a>Panics</h5>
 <ul>
 <li>If <code>self</code> is not a variant type which supports method calls.</li>
