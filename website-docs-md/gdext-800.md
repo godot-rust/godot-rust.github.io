@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-800/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/800"
 pr_author = "Bromeon"
 sort_key = 2024-07-20
-date_time = 2024-07-20T20:51:46Z
-commit_sha = "84505ba2cced8ce12ceb58bf25094f1510bac1bc"
+date_time = 2024-07-20T21:30:11Z
+commit_sha = "f1d2817b6dcfaa1371d05209698d3c78140bad55"
 +++
 
 `AsObjectArg` trait enabling implicit conversions for object parameters
