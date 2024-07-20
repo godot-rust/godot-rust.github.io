@@ -3,8 +3,8 @@
 <p>See also <a href="https://godot-rust.github.io/book/godot-api/objects.html">chapter about objects</a> in the book.</p>
 <p>This smart pointer can only hold <em>objects</em> in the Godot sense: instances of Godot classes (<code>Node</code>, <code>RefCounted</code>, etc.)
 or user-declared structs (declared with <code>#[derive(GodotClass)]</code>). It does <strong>not</strong> hold built-in types (<code>Vector3</code>, <code>Color</code>, <code>i32</code>).</p>
-<p><code>Gd&lt;T&gt;</code> never holds null objects. If you need nullability, use <code>Option&lt;Gd&lt;T&gt;&gt;</code>. To pass null objects to engine APIs, use
-<a href="struct.Gd.html#method.null_arg" title="associated function godot::obj::Gd::null_arg"><code>Gd::null_arg()</code></a>.</p>
+<p><code>Gd&lt;T&gt;</code> never holds null objects. If you need nullability, use <code>Option&lt;Gd&lt;T&gt;&gt;</code>. To pass null objects to engine APIs, you can
+additionally use <a href="struct.Gd.html#method.null_arg" title="associated function godot::obj::Gd::null_arg"><code>Gd::null_arg()</code></a> as a shorthand.</p>
 <h2 id="memory-management"><a class="doc-anchor" href="#memory-management">§</a>Memory management</h2>
 <p>This smart pointer behaves differently depending on <code>T</code>’s associated types, see <a href="trait.GodotClass.html" title="trait godot::obj::GodotClass"><code>GodotClass</code></a> for their documentation.
 In particular, the memory management strategy is fully dependent on <code>T</code>:</p>
