@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-795/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/795"
 pr_author = "Houtamelo"
 sort_key = 2024-07-21
-date_time = 2024-07-21T07:28:50Z
-commit_sha = "d98e6037339042886048948b043284b338d23cee"
+date_time = 2024-07-21T08:27:38Z
+commit_sha = "bfb8f93732659bfe55aaedb52cb2bdcd4614c7b1"
 +++
 
 Implement GodotConvert for Vec<T>, [T] and &[T], where T: ArrayElement.
