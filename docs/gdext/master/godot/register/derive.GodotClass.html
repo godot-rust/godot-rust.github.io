@@ -118,6 +118,7 @@ type, expose it using <code>#[func]</code>, and annotate the field with
 <code>#[var(get = ..., set = ...)]</code>:</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
+#[class(init)]
 </span><span class="kw">struct </span>MyStruct {
     <span class="attr">#[var(get = get_my_field, set = set_my_field)]
     </span>my_field: i64,
@@ -319,5 +320,27 @@ because we have added a <code>hidden</code> key to the class. This will also pre
 
    <span class="attr">#[hint(no_base)]
    </span>unbase: Base&lt;Node&gt;,
+}</code></pre></div>
+<div class="stab portability">Available on <strong>crate feature <code>register-docs</code></strong> only.</div>
+<div class="stab portability">Available on <strong>Godot version <code>4.3+</code></strong> only.</div>
+<h2 id="documentation"><a class="doc-anchor" href="#documentation">§</a>Documentation</h2>
+<p>You can document your functions, classes, members, and signals with the <code>///</code> doc comment syntax.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
+</span><span class="doccomment">/// This is an example struct for documentation, inside documentation.
+</span><span class="kw">struct </span>DocumentedStruct {
+    <span class="doccomment">/// This is a class member.
+    /// You can use markdown formatting such as _italics_.
+    </span><span class="attr">#[var]
+    </span>item: f32,
+}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>DocumentedStruct {
+    <span class="doccomment">/// This provides the item, after adding `0.2`.
+    </span><span class="attr">#[func]
+    </span><span class="kw">pub fn </span>produce_item(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
+        <span class="self">self</span>.item + <span class="number">0.2
+    </span>}
 }</code></pre></div>
 </div></details></section></div></main></body></html>
