@@ -27,7 +27,7 @@
 ) -&gt; <a class="struct" href="animation_node/struct.ExBlendAnimation.html" title="struct godot::classes::animation_node::ExBlendAnimation">ExBlendAnimation</a>&lt;'_&gt;</h4></section><section id="method.blend_node" class="method"><h4 class="code-header">pub fn <a href="#method.blend_node" class="fn">blend_node</a>(
     &amp;mut self,
     name: <a class="struct" href="../builtin/struct.StringName.html" title="struct godot::builtin::StringName">StringName</a>,
-    node: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.AnimationNode.html" title="struct godot::classes::AnimationNode">AnimationNode</a>&gt;,
+    node: impl <a class="trait" href="../obj/trait.AsObjectArg.html" title="trait godot::obj::AsObjectArg">AsObjectArg</a>&lt;<a class="struct" href="struct.AnimationNode.html" title="struct godot::classes::AnimationNode">AnimationNode</a>&gt;,
     time: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
     seek: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
     is_external_seeking: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
@@ -35,7 +35,7 @@
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></h4></section><section id="method.blend_node_ex" class="method"><h4 class="code-header">pub fn <a href="#method.blend_node_ex" class="fn">blend_node_ex</a>(
     &amp;mut self,
     name: <a class="struct" href="../builtin/struct.StringName.html" title="struct godot::builtin::StringName">StringName</a>,
-    node: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.AnimationNode.html" title="struct godot::classes::AnimationNode">AnimationNode</a>&gt;,
+    node: impl <a class="trait" href="../obj/trait.AsObjectArg.html" title="trait godot::obj::AsObjectArg">AsObjectArg</a>&lt;<a class="struct" href="struct.AnimationNode.html" title="struct godot::classes::AnimationNode">AnimationNode</a>&gt;,
     time: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
     seek: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
     is_external_seeking: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
