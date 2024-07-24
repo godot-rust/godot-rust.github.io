@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `godot/src/lib.rs`."><title>lib.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-c5d6553a23f1e5a6.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="godot" data-themes="" data-resource-suffix="" data-rustdoc-version="1.82.0-nightly (92c6c0380 2024-07-21)" data-channel="nightly" data-search-js="search-d234aafac6c221dd.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../static.files/storage-118b08c4c78b968e.js"></script><script defer src="../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../src-files.js"></script><script defer src="../../static.files/main-d2fab2bf619172d3.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-df360f571f6edeae.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer"></div><main><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers"><a href="#1" id="1">1</a>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `godot/src/lib.rs`."><title>lib.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-5ca6ca2a1f83705a.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="godot" data-themes="" data-resource-suffix="" data-rustdoc-version="1.82.0-nightly (8bfcae730 2024-07-23)" data-channel="nightly" data-search-js="search-d234aafac6c221dd.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../static.files/storage-118b08c4c78b968e.js"></script><script defer src="../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../src-files.js"></script><script defer src="../../static.files/main-d2fab2bf619172d3.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-df360f571f6edeae.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer"></div><main><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers"><a href="#1" id="1">1</a>
 <a href="#2" id="2">2</a>
 <a href="#3" id="3">3</a>
 <a href="#4" id="4">4</a>
@@ -198,6 +198,23 @@
 <a href="#198" id="198">198</a>
 <a href="#199" id="199">199</a>
 <a href="#200" id="200">200</a>
+<a href="#201" id="201">201</a>
+<a href="#202" id="202">202</a>
+<a href="#203" id="203">203</a>
+<a href="#204" id="204">204</a>
+<a href="#205" id="205">205</a>
+<a href="#206" id="206">206</a>
+<a href="#207" id="207">207</a>
+<a href="#208" id="208">208</a>
+<a href="#209" id="209">209</a>
+<a href="#210" id="210">210</a>
+<a href="#211" id="211">211</a>
+<a href="#212" id="212">212</a>
+<a href="#213" id="213">213</a>
+<a href="#214" id="214">214</a>
+<a href="#215" id="215">215</a>
+<a href="#216" id="216">216</a>
+<a href="#217" id="217">217</a>
 </pre></div><pre class="rust"><code><span class="attr">#![cfg_attr(published_docs, feature(doc_cfg))]
 </span><span class="comment">/*
  * Copyright (c) godot-rust; Bromeon and contributors.
@@ -269,7 +286,7 @@
 //! * **`api-custom`**
 //!
 //!   Sets the [**API level**](https://godot-rust.github.io/book/toolchain/godot-version.html) to the specified Godot version,
-//!   or a custom-built local binary.  
+//!   or a custom-built local binary.
 //!   You can use at most one `api-*` feature. If absent, the current Godot minor version is used, with patch level 0.&lt;br&gt;&lt;br&gt;
 //!
 //! * **`double-precision`**
@@ -308,6 +325,13 @@
 //!   Use rustfmt to format generated binding code. Because rustfmt is so slow, this is detrimental to initial compile time.
 //!   Without it, we use a lightweight and fast custom formatter to enable basic human readability.
 //!
+//! * **`register-docs`**
+//!
+//!   Generates documentation for your structs from your Rust documentation.
+//!   Documentation is visible in Godot via `F1` -&gt; searching for that class.
+//!   This feature requires at least Godot 4.3.
+//!   See also: [`#[derive(GodotClass)]`](register/derive.GodotClass.html#documentation)
+//!
 //! _Integrations:_
 //!
 //! * **`serde`**
@@ -316,7 +340,11 @@
 //!   The serialized representation underlies **no stability guarantees** and may change at any time, even without a SemVer-breaking change.
 //!
 
-</span><span class="attr">#[cfg(doc)]
+</span><span class="attr">#![doc(
+    html_logo_url = <span class="string">"https://raw.githubusercontent.com/godot-rust/assets/master/gdext/ferris.svg"
+</span>)]
+
+#[cfg(doc)]
 </span><span class="kw">pub mod </span>__docs;
 
 <span class="comment">// ----------------------------------------------------------------------------------------------------------------------------------------------
@@ -325,6 +353,12 @@
 </span><span class="attr">#[cfg(all(feature = <span class="string">"lazy-function-tables"</span>, feature = <span class="string">"experimental-threads"</span>))]
 </span><span class="macro">compile_error!</span>(<span class="string">"Thread safety for lazy function pointers is not yet implemented."</span>);
 
+<span class="attr">#[cfg(all(
+    feature = <span class="string">"experimental-wasm-nothreads"</span>,
+    feature = <span class="string">"experimental-threads"
+</span>))]
+</span><span class="macro">compile_error!</span>(<span class="string">"Cannot use 'experimental-threads' with a nothreads Wasm build yet."</span>);
+
 <span class="attr">#[cfg(all(target_family = <span class="string">"wasm"</span>, not(feature = <span class="string">"experimental-wasm"</span>)))]
 </span><span class="macro">compile_error!</span>(<span class="string">"Must opt-in using `experimental-wasm` Cargo feature; keep in mind that this is work in progress"</span>);
 
@@ -332,8 +366,8 @@
 </span><span class="attr">#[cfg(all(feature = <span class="string">"double-precision"</span>, not(feature = <span class="string">"api-custom"</span>)))]
 </span><span class="macro">compile_error!</span>(<span class="string">"The feature `double-precision` currently requires `api-custom` due to incompatibilities in the GDExtension API JSON."</span>);
 
-<span class="attr">#[cfg(feature = <span class="string">"custom-godot"</span>)]
-</span><span class="macro">__deprecated::emit_deprecated_warning!</span>(feature_custom_godot);
+<span class="attr">#[cfg(all(feature = <span class="string">"register-docs"</span>, before_api = <span class="string">"4.3"</span>))]
+</span><span class="macro">compile_error!</span>(<span class="string">"Generating editor docs for Rust symbols requires at least Godot 4.3."</span>);
 
 <span class="kw">const fn </span>_validate_features() {
     <span class="kw">let </span><span class="kw-2">mut </span>count = <span class="number">0</span>;
@@ -359,8 +393,8 @@
 </span><span class="attr">#[doc(inline)]
 </span><span class="kw">pub use </span>godot_core::{builtin, classes, global, meta, obj, tools};
 
-<span class="attr">#[allow(deprecated)]
-</span><span class="kw">pub use </span>godot_core::{engine, log};
+<span class="attr">#[doc(hidden)]
+</span><span class="kw">pub use </span>godot_core::possibly_docs <span class="kw">as </span>docs;
 
 <span class="attr">#[doc(hidden)]
 </span><span class="kw">pub use </span>godot_core::sys;
