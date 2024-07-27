@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"mod":["error"],"struct":["ClassName","MethodInfo","PropertyInfo"],"trait":["ArrayElement","FromGodot","GodotConvert","GodotType","ToGodot"]};
