@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-819/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/819"
 pr_author = "Bromeon"
 sort_key = 2024-07-27
-date_time = 2024-07-27T13:56:29Z
-commit_sha = "0eee46ab77131200ee68d4fbb0a118390cb11419"
+date_time = 2024-07-27T14:13:37Z
+commit_sha = "a1ed88cf4ffe7c0fee51bbb10daff281d75fb8ce"
 +++
 
 Include `register-docs` feature in CI
