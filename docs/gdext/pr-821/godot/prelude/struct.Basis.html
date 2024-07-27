@@ -11,7 +11,7 @@ because columns are the basis vectors of the transform, while rows represent the
 the <em>transformed</em> unit vectors of X/Y/Z axes, they have no direct relation to those axes in the <em>transformed</em> coordinate system. Thus, an
 independent notion of a, b, c does not suggest such a relation.  Furthermore, there are sometimes expressions such as <code>x.x</code>, <code>x.y</code>, <code>y.x</code>
 etc. They are typically hard to read and error-prone to write. Having <code>a.x</code>, <code>a.y</code>, <code>b.x</code> makes things more understandable.</p>
-<h4 id="all-matrix-types"><a class="doc-anchor" href="#all-matrix-types">§</a>All matrix types</h4><div><table><thead><tr><th>Dimension</th><th>Orthogonal basis</th><th>Affine transform</th><th>Projective transform</th></tr></thead><tbody>
+<h2 id="all-matrix-types"><a class="doc-anchor" href="#all-matrix-types">§</a>All matrix types</h2><div><table><thead><tr><th>Dimension</th><th>Orthogonal basis</th><th>Affine transform</th><th>Projective transform</th></tr></thead><tbody>
 <tr><td>2D</td><td></td><td><a href="../builtin/struct.Transform2D.html" title="struct godot::builtin::Transform2D"><code>Transform2D</code></a> (2x3)</td><td></td></tr>
 <tr><td>3D</td><td><strong><code>Basis</code></strong> (3x3)</td><td><a href="../builtin/struct.Transform3D.html" title="struct godot::builtin::Transform3D"><code>Transform3D</code></a> (3x4)</td><td><a href="../builtin/struct.Projection.html" title="struct godot::builtin::Projection"><code>Projection</code></a> (4x4)</td></tr>
 </tbody></table>
