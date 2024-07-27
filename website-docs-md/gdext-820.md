@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-820/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/820"
 pr_author = "Bromeon"
 sort_key = 2024-07-27
-date_time = 2024-07-27T19:19:12Z
-commit_sha = "ff6264ad0fdec4e313d63fdff9890dba80c829e5"
+date_time = 2024-07-27T19:33:45Z
+commit_sha = "0359a5d971be8f76da16a9b46323e6c5acd58176"
 +++
 
 Drop support for Godot 4.0
