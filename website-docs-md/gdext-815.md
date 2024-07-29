@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-815/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/815"
 pr_author = "Yarwin"
 sort_key = 2024-07-29
-date_time = 2024-07-29T11:15:15Z
-commit_sha = "d3719bc279c925f093faad9c9a4ee44a7565f336"
+date_time = 2024-07-29T11:22:23Z
+commit_sha = "d3338d0158ca63a7f526112ec8b4ad3c8a440f3b"
 +++
 
 Fix doc comments not showing up if only some class members are documented
