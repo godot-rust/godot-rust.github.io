@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-838/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/838"
 pr_author = "Bromeon"
 sort_key = 2024-08-04
-date_time = 2024-08-04T09:27:22Z
-commit_sha = "0bedeaa9a5364b1c20d986e6dedfe10722f46d4a"
+date_time = 2024-08-04T09:28:22Z
+commit_sha = "d158b44ca3d2e503e1ae23678989dbfa5a8a49d3"
 +++
 
 Simplify property hint APIs
