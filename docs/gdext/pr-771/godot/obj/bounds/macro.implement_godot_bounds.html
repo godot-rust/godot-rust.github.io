@@ -14,7 +14,7 @@
     <span class="kw">type </span>Base = Node;
 
     <span class="kw">fn </span>class_name() -&gt; ClassName {
-        ClassName::new_cached::&lt;MyClass&gt;(|| <span class="string">"MyClass"</span>.to_string())
+        ClassName::from_ascii_cstr(<span class="string">b"MyClass\0"</span>)
     }
 }
 
