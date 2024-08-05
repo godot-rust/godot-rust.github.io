@@ -9,7 +9,7 @@
     degrees: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
     hide_slider: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
     suffix: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;,
-) -&gt; <a class="struct" href="../struct.PropertyHintInfo.html" title="struct godot::register::property::PropertyHintInfo">PropertyHintInfo</a></code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Mark an exported numerical value to use the editor’s range UI.</p>
+) -&gt; <a class="struct" href="../../../meta/struct.PropertyHintInfo.html" title="struct godot::meta::PropertyHintInfo">PropertyHintInfo</a></code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Mark an exported numerical value to use the editor’s range UI.</p>
 <p>You’ll never call this function itself, but will instead use the macro <code>#[export(range=(...))]</code>, as below.  The syntax is
 very similar to Godot’s <a href="https://docs.godotengine.org/en/stable/classes/class_%40gdscript.html#class-gdscript-annotation-export-range"><code>@export_range</code></a>.
 <code>min</code>, <code>max</code>, and <code>step</code> are <code>f32</code> positional arguments, with <code>step</code> being optional and defaulting to <code>1.0</code>.  The rest of
