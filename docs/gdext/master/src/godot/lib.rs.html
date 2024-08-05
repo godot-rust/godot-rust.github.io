@@ -196,6 +196,7 @@
 <a href="#196" id="196">196</a>
 <a href="#197" id="197">197</a>
 <a href="#198" id="198">198</a>
+<a href="#199" id="199">199</a>
 </pre></div><pre class="rust"><code><span class="attr">#![cfg_attr(published_docs, feature(doc_cfg))]
 </span><span class="comment">/*
  * Copyright (c) godot-rust; Bromeon and contributors.
@@ -377,6 +378,7 @@
     <span class="doccomment">/// Re-exports used by proc-macro API.
     </span><span class="attr">#[doc(hidden)]
     </span><span class="kw">pub mod </span>private {
+        <span class="kw">pub use </span>godot_core::registry::godot_register_wrappers::<span class="kw-2">*</span>;
         <span class="kw">pub use </span>godot_core::registry::{constant, method};
     }
 }
