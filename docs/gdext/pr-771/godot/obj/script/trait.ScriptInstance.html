@@ -37,8 +37,8 @@
 This pointer should then be returned from <a href="../../classes/trait.IScriptExtension.html#tymethod.instance_create" title="method godot::classes::IScriptExtension::instance_create"><code>IScriptExtension::instance_create()</code></a>.</p>
 <h2 id="example"><a class="doc-anchor" href="#example">§</a>Example</h2>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span>godot::classes::{IScriptExtension, Script, ScriptExtension};
-<span class="kw">use </span>godot::extras::ScriptInstance;
+<span class="kw">use </span>godot::classes::{Script, ScriptExtension};
+<span class="kw">use </span>godot::extras::{IScriptExtension, ScriptInstance};
 
 <span class="comment">// 1) Define the script.
 </span><span class="attr">#[derive(GodotClass)]
@@ -63,16 +63,8 @@ This pointer should then be returned from <a href="../../classes/trait.IScriptEx
 <span class="comment">// 3) Implement the script's virtual interface to wire up 1) and 2).
 </span><span class="attr">#[godot_api]
 </span><span class="kw">impl </span>IScriptExtension <span class="kw">for </span>MyScript {
-    <span class="kw">unsafe fn </span>instance_create(<span class="kw-2">&amp;</span><span class="self">self</span>, _for_object: Gd&lt;Object&gt;) -&gt; <span class="kw-2">*mut </span>std::ffi::c_void {
-        <span class="comment">// Upcast Gd&lt;ScriptExtension&gt; to Gd&lt;Script&gt;.
-        </span><span class="kw">let </span>script = <span class="self">self</span>.to_gd().upcast();
-        <span class="kw">let </span>script_instance = MyInstance::from_gd(script);
-
-        <span class="comment">// Note on safety: the returned pointer must be obtained
-        // through create_script_instance().
-        </span>create_script_instance(script_instance)
-    }
-}</code></pre></div>
+    <span class="comment">// Implement all the methods...
+</span>}</code></pre></div>
 </div></details><h2 id="required-associated-types" class="section-header">Required Associated Types<a href="#required-associated-types" class="anchor">§</a></h2><div class="methods"><section id="associatedtype.Base" class="method"><h4 class="code-header">type <a href="#associatedtype.Base" class="associatedtype">Base</a>: <a class="trait" href="../trait.GodotClass.html" title="trait godot::obj::GodotClass">GodotClass</a></h4></section></div><h2 id="required-methods" class="section-header">Required Methods<a href="#required-methods" class="anchor">§</a></h2><div class="methods"><details class="toggle method-toggle" open><summary><section id="tymethod.class_name" class="method"><h4 class="code-header">fn <a href="#tymethod.class_name" class="fn">class_name</a>(&amp;self) -&gt; <a class="struct" href="../../builtin/struct.GString.html" title="struct godot::builtin::GString">GString</a></h4></section></summary><div class="docblock"><p>Name of the new class the script implements.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="tymethod.set_property" class="method"><h4 class="code-header">fn <a href="#tymethod.set_property" class="fn">set_property</a>(
     this: <a class="struct" href="struct.SiMut.html" title="struct godot::obj::script::SiMut">SiMut</a>&lt;'_, Self&gt;,
