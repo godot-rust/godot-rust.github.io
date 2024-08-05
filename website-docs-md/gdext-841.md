@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-841/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/841"
 pr_author = "Bromeon"
 sort_key = 2024-08-05
-date_time = 2024-08-05T16:27:09Z
-commit_sha = "71e9d871a9a91101f5c81f6c8401c354307089ca"
+date_time = 2024-08-05T16:52:25Z
+commit_sha = "38b7ed0fca0a0fec8b2cbf0749b674a91a6dc24b"
 +++
 
  Validate that Nodes can only be exported from Node-derived classes 
