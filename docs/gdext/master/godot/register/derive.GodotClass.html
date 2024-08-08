@@ -50,12 +50,12 @@ struct with <code>#[class(init)]</code>:</p>
     <span class="comment">// ...
 </span>}</code></pre></div>
 <p>The generated <code>init</code> function will initialize each struct field (except the field of type <code>Base&lt;T&gt;</code>, if any)
-using <code>Default::default()</code>. To assign some other value, annotate the field with <code>#[init(default = ...)]</code>:</p>
+using <code>Default::default()</code>. To assign some other value, annotate the field with <code>#[init(val = ...)]</code>:</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
 #[class(init)]
 </span><span class="kw">struct </span>MyStruct {
-    <span class="attr">#[init(default = <span class="number">42</span>)]
+    <span class="attr">#[init(val = <span class="number">42</span>)]
     </span>my_field: i64
 }</code></pre></div>
 <p>The given value can be any Rust expression that can be evaluated in the scope where you write
@@ -64,7 +64,7 @@ surrounded by parentheses. This is the case if the expression includes a <code>,
 inside any pair of <code>(...)</code>, <code>[...]</code> or <code>{...}</code> (even if it is, for example, inside <code>&lt;...&gt;</code> or
 <code>|...|</code>). A contrived example:</p>
 
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[init(default = (HashMap::&lt;i64, i64&gt;::new()))]
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[init(val = (HashMap::&lt;i64, i64&gt;::new()))]
 </span><span class="comment">//                             ^ parentheses needed due to this comma
 </span>my_field: HashMap&lt;i64, i64&gt;,</code></pre></div>
 <p>You can also <em>disable</em> construction from GDScript. This needs to be explicit via <code>#[class(no_init)]</code>.
