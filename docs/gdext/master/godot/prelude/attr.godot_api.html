@@ -56,14 +56,14 @@ on the struct. Classes without <code>init</code> cannot be instantiated from GDS
     }
 }</code></pre></div>
 <h3 id="generated-init"><a class="doc-anchor" href="#generated-init">§</a>Generated <code>init</code></h3>
-<p>This initializes the <code>Base&lt;T&gt;</code> field, and every other field with either <code>Default::default()</code> or the value specified in <code>#[init(default = ...)]</code>.</p>
+<p>This initializes the <code>Base&lt;T&gt;</code> field, and every other field with either <code>Default::default()</code> or the value specified in <code>#[init(val = ...)]</code>.</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
 #[class(init, base=Node)]
 </span><span class="kw">pub struct </span>MyNode {
     base: Base&lt;Node&gt;,
 
-    <span class="attr">#[init(default = <span class="number">42</span>)]
+    <span class="attr">#[init(val = <span class="number">42</span>)]
     </span>some_integer: i64,
 }</code></pre></div>
 <h2 id="lifecycle-functions"><a class="doc-anchor" href="#lifecycle-functions">§</a>Lifecycle functions</h2>
