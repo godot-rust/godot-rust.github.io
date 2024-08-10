@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["__docs","builtin","classes","global","init","meta","obj","prelude","register","tools"]};
