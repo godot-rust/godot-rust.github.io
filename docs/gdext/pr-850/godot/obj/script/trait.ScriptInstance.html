@@ -41,8 +41,9 @@ This pointer should then be returned from <a href="../../classes/trait.IScriptEx
 <span class="kw">use </span>godot::extras::{IScriptExtension, ScriptInstance};
 
 <span class="comment">// 1) Define the script.
+// This needs #[class(tool)] since the script extension runs in the editor.
 </span><span class="attr">#[derive(GodotClass)]
-#[class(init, base=ScriptExtension)]
+#[class(init, base=ScriptExtension, tool)]
 </span><span class="kw">struct </span>MyScript {
    base: Base&lt;ScriptExtension&gt;,
    <span class="comment">// ... other fields
