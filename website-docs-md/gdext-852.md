@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-852/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/852"
 pr_author = "TitanNano"
 sort_key = 2024-08-11
-date_time = 2024-08-11T19:58:46Z
-commit_sha = "7f5f6de9b0a5d2c9c5eaa8d6ad44aaa2996f1cdd"
+date_time = 2024-08-11T20:08:39Z
+commit_sha = "24b88eaa2ec2d52ffcb343007d2ed84c31e917c6"
 +++
 
- Validate that editor plugin classes require #[class(tool)]
+ Validate that editor plugin classes require `#[class(tool)]`
