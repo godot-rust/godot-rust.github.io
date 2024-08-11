@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":["export_info_functions"],"struct":["PropertyHintInfo"],"trait":["Export","TypeStringHint","Var"]};
+window.SIDEBAR_ITEMS = {"mod":["export_info_functions"],"trait":["Export","Var"]};
