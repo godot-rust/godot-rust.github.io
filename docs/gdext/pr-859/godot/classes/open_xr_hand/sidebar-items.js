@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["Hands","MotionRange"]};
+window.SIDEBAR_ITEMS = {"struct":["BoneUpdate","Hands","MotionRange","SkeletonRig"]};

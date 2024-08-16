@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExProfilerEnable"]};
+window.SIDEBAR_ITEMS = {"struct":["ExDebug","ExProfilerEnable","ExScriptDebug"]};
