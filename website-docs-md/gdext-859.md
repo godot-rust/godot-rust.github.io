@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-859/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/859"
 pr_author = "grundee"
 sort_key = 2024-08-16
-date_time = 2024-08-16T13:01:24Z
-commit_sha = "ab5ac05290d14c6c29d92f3de0571975fb179e46"
+date_time = 2024-08-16T14:03:24Z
+commit_sha = "4e327be45fdde49f94d8be9e339bf40325b267c3"
 +++
 
-Bump gdextension-api version
+Godot 4.3 support in CI and `api-4-3` feature
