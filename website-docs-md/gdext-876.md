@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-876/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/876"
 pr_author = "fpdotmonkey"
 sort_key = 2024-08-31
-date_time = 2024-08-31T22:56:18Z
-commit_sha = "e37c1341fe6f0724761b81ff3ec5c6a0042eef3e"
+date_time = 2024-08-31T23:34:27Z
+commit_sha = "1c489b907ab519c5c5beb0a8489c441041e77ccb"
 +++
 
 Add a doc to point users to kwarg builders
