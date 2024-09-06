@@ -16,7 +16,7 @@
         &amp;mut self,
         id: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
         secondary: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-        camera: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Camera3D.html" title="struct godot::classes::Camera3D">Camera3D</a>&gt;,
+        camera: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Camera3D.html" title="struct godot::classes::Camera3D">Camera3D</a>&gt;&gt;,
         point: <a class="struct" href="../builtin/struct.Vector2.html" title="struct godot::builtin::Vector2">Vector2</a>,
     ) { ... }
 <span class="item-spacer"></span>    fn <a href="#method.commit_handle" class="fn">commit_handle</a>(
@@ -28,12 +28,12 @@
     ) { ... }
 <span class="item-spacer"></span>    fn <a href="#method.subgizmos_intersect_ray" class="fn">subgizmos_intersect_ray</a>(
         &amp;self,
-        camera: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Camera3D.html" title="struct godot::classes::Camera3D">Camera3D</a>&gt;,
+        camera: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Camera3D.html" title="struct godot::classes::Camera3D">Camera3D</a>&gt;&gt;,
         point: <a class="struct" href="../builtin/struct.Vector2.html" title="struct godot::builtin::Vector2">Vector2</a>,
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a> { ... }
 <span class="item-spacer"></span>    fn <a href="#method.subgizmos_intersect_frustum" class="fn">subgizmos_intersect_frustum</a>(
         &amp;self,
-        camera: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Camera3D.html" title="struct godot::classes::Camera3D">Camera3D</a>&gt;,
+        camera: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Camera3D.html" title="struct godot::classes::Camera3D">Camera3D</a>&gt;&gt;,
         frustum: <a class="struct" href="../builtin/struct.Array.html" title="struct godot::builtin::Array">Array</a>&lt;<a class="struct" href="../builtin/struct.Plane.html" title="struct godot::builtin::Plane">Plane</a>&gt;,
     ) -&gt; <a class="struct" href="../builtin/struct.PackedInt32Array.html" title="struct godot::builtin::PackedInt32Array">PackedInt32Array</a> { ... }
 <span class="item-spacer"></span>    fn <a href="#method.set_subgizmo_transform" class="fn">set_subgizmo_transform</a>(&amp;mut self, id: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, transform: <a class="struct" href="../builtin/struct.Transform3D.html" title="struct godot::builtin::Transform3D">Transform3D</a>) { ... }
@@ -95,7 +95,7 @@ remains unchanged. Otherwise, this may lead to unexpected (safe) behavior.</p>
     &amp;mut self,
     id: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
     secondary: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-    camera: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Camera3D.html" title="struct godot::classes::Camera3D">Camera3D</a>&gt;,
+    camera: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Camera3D.html" title="struct godot::classes::Camera3D">Camera3D</a>&gt;&gt;,
     point: <a class="struct" href="../builtin/struct.Vector2.html" title="struct godot::builtin::Vector2">Vector2</a>,
 )</h4></section><section id="method.commit_handle" class="method"><h4 class="code-header">fn <a href="#method.commit_handle" class="fn">commit_handle</a>(
     &amp;mut self,
@@ -103,9 +103,13 @@ remains unchanged. Otherwise, this may lead to unexpected (safe) behavior.</p>
     secondary: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
     restore: <a class="struct" href="../builtin/struct.Variant.html" title="struct godot::builtin::Variant">Variant</a>,
     cancel: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-)</h4></section><section id="method.subgizmos_intersect_ray" class="method"><h4 class="code-header">fn <a href="#method.subgizmos_intersect_ray" class="fn">subgizmos_intersect_ray</a>(&amp;self, camera: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Camera3D.html" title="struct godot::classes::Camera3D">Camera3D</a>&gt;, point: <a class="struct" href="../builtin/struct.Vector2.html" title="struct godot::builtin::Vector2">Vector2</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></h4></section><section id="method.subgizmos_intersect_frustum" class="method"><h4 class="code-header">fn <a href="#method.subgizmos_intersect_frustum" class="fn">subgizmos_intersect_frustum</a>(
+)</h4></section><section id="method.subgizmos_intersect_ray" class="method"><h4 class="code-header">fn <a href="#method.subgizmos_intersect_ray" class="fn">subgizmos_intersect_ray</a>(
     &amp;self,
-    camera: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Camera3D.html" title="struct godot::classes::Camera3D">Camera3D</a>&gt;,
+    camera: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Camera3D.html" title="struct godot::classes::Camera3D">Camera3D</a>&gt;&gt;,
+    point: <a class="struct" href="../builtin/struct.Vector2.html" title="struct godot::builtin::Vector2">Vector2</a>,
+) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></h4></section><section id="method.subgizmos_intersect_frustum" class="method"><h4 class="code-header">fn <a href="#method.subgizmos_intersect_frustum" class="fn">subgizmos_intersect_frustum</a>(
+    &amp;self,
+    camera: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Camera3D.html" title="struct godot::classes::Camera3D">Camera3D</a>&gt;&gt;,
     frustum: <a class="struct" href="../builtin/struct.Array.html" title="struct godot::builtin::Array">Array</a>&lt;<a class="struct" href="../builtin/struct.Plane.html" title="struct godot::builtin::Plane">Plane</a>&gt;,
 ) -&gt; <a class="struct" href="../builtin/struct.PackedInt32Array.html" title="struct godot::builtin::PackedInt32Array">PackedInt32Array</a></h4></section><section id="method.set_subgizmo_transform" class="method"><h4 class="code-header">fn <a href="#method.set_subgizmo_transform" class="fn">set_subgizmo_transform</a>(&amp;mut self, id: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, transform: <a class="struct" href="../builtin/struct.Transform3D.html" title="struct godot::builtin::Transform3D">Transform3D</a>)</h4></section><section id="method.get_subgizmo_transform" class="method"><h4 class="code-header">fn <a href="#method.get_subgizmo_transform" class="fn">get_subgizmo_transform</a>(&amp;self, id: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>) -&gt; <a class="struct" href="../builtin/struct.Transform3D.html" title="struct godot::builtin::Transform3D">Transform3D</a></h4></section><section id="method.commit_subgizmos" class="method"><h4 class="code-header">fn <a href="#method.commit_subgizmos" class="fn">commit_subgizmos</a>(
     &amp;mut self,

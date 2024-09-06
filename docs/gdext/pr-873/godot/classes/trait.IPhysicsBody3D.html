@@ -9,8 +9,8 @@
 <span class="item-spacer"></span>    fn <a href="#method.property_get_revert" class="fn">property_get_revert</a>(&amp;self, property: <a class="struct" href="../builtin/struct.StringName.html" title="struct godot::builtin::StringName">StringName</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../builtin/struct.Variant.html" title="struct godot::builtin::Variant">Variant</a>&gt; { ... }
 <span class="item-spacer"></span>    fn <a href="#method.input_event" class="fn">input_event</a>(
         &amp;mut self,
-        camera: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Camera3D.html" title="struct godot::classes::Camera3D">Camera3D</a>&gt;,
-        event: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.InputEvent.html" title="struct godot::classes::InputEvent">InputEvent</a>&gt;,
+        camera: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Camera3D.html" title="struct godot::classes::Camera3D">Camera3D</a>&gt;&gt;,
+        event: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.InputEvent.html" title="struct godot::classes::InputEvent">InputEvent</a>&gt;&gt;,
         event_position: <a class="struct" href="../builtin/struct.Vector3.html" title="struct godot::builtin::Vector3">Vector3</a>,
         normal: <a class="struct" href="../builtin/struct.Vector3.html" title="struct godot::builtin::Vector3">Vector3</a>,
         shape_idx: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
@@ -76,8 +76,8 @@ function will usually be called twice by Godot to find the revert.</p>
 remains unchanged. Otherwise, this may lead to unexpected (safe) behavior.</p>
 </div></details><section id="method.input_event" class="method"><h4 class="code-header">fn <a href="#method.input_event" class="fn">input_event</a>(
     &amp;mut self,
-    camera: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Camera3D.html" title="struct godot::classes::Camera3D">Camera3D</a>&gt;,
-    event: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.InputEvent.html" title="struct godot::classes::InputEvent">InputEvent</a>&gt;,
+    camera: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Camera3D.html" title="struct godot::classes::Camera3D">Camera3D</a>&gt;&gt;,
+    event: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.InputEvent.html" title="struct godot::classes::InputEvent">InputEvent</a>&gt;&gt;,
     event_position: <a class="struct" href="../builtin/struct.Vector3.html" title="struct godot::builtin::Vector3">Vector3</a>,
     normal: <a class="struct" href="../builtin/struct.Vector3.html" title="struct godot::builtin::Vector3">Vector3</a>,
     shape_idx: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,

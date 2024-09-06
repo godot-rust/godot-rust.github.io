@@ -11,7 +11,7 @@
     ) -&gt; <a class="struct" href="../global/struct.Error.html" title="struct godot::global::Error">Error</a>;
 <span class="item-spacer"></span>    unsafe fn <a href="#tymethod.write_frame" class="fn">write_frame</a>(
         &amp;mut self,
-        frame_image: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Image.html" title="struct godot::classes::Image">Image</a>&gt;,
+        frame_image: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Image.html" title="struct godot::classes::Image">Image</a>&gt;&gt;,
         audio_frame_block: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
     ) -&gt; <a class="struct" href="../global/struct.Error.html" title="struct godot::global::Error">Error</a>;
 <span class="item-spacer"></span>    fn <a href="#tymethod.write_end" class="fn">write_end</a>(&amp;mut self);
@@ -34,7 +34,7 @@
     base_path: <a class="struct" href="../builtin/struct.GString.html" title="struct godot::builtin::GString">GString</a>,
 ) -&gt; <a class="struct" href="../global/struct.Error.html" title="struct godot::global::Error">Error</a></h4></section><details class="toggle method-toggle" open><summary><section id="tymethod.write_frame" class="method"><h4 class="code-header">unsafe fn <a href="#tymethod.write_frame" class="fn">write_frame</a>(
     &amp;mut self,
-    frame_image: <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Image.html" title="struct godot::classes::Image">Image</a>&gt;,
+    frame_image: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;<a class="struct" href="struct.Image.html" title="struct godot::classes::Image">Image</a>&gt;&gt;,
     audio_frame_block: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
 ) -&gt; <a class="struct" href="../global/struct.Error.html" title="struct godot::global::Error">Error</a></h4></section></summary><div class="docblock"><h5 id="safety"><a class="doc-anchor" href="#safety">§</a>Safety</h5>
 <p>This method has automatically been marked <code>unsafe</code> because it accepts raw pointers as parameters.
