@@ -111,6 +111,7 @@ reference to the user instance. This can happen through re-entrancy (Rust -&gt; 
 <p>If no such instance ID is registered, or if the dynamic type of the object behind that instance ID
 is not compatible with <code>T</code>, then <code>None</code> is returned.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.from_instance_id" class="method"><h4 class="code-header">pub fn <a href="#method.from_instance_id" class="fn">from_instance_id</a>(instance_id: <a class="struct" href="../obj/struct.InstanceId.html" title="struct godot::obj::InstanceId">InstanceId</a>) -&gt; <a class="struct" href="../obj/struct.Gd.html" title="struct godot::obj::Gd">Gd</a>&lt;T&gt;</h4></section></summary><div class="docblock"><p>⚠️ Looks up the given instance ID and returns the associated object.</p>
+<p>Corresponds to Godot’s global function <code>instance_from_id()</code>.</p>
 <h5 id="panics-2"><a class="doc-anchor" href="#panics-2">§</a>Panics</h5>
 <p>If no such instance ID is registered, or if the dynamic type of the object behind that instance ID
 is not compatible with <code>T</code>.</p>
