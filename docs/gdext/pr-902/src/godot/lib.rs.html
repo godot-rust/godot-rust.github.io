@@ -198,7 +198,8 @@
 <a href="#197" id="197">197</a>
 <a href="#198" id="198">198</a>
 <a href="#199" id="199">199</a>
-<a href="#200" id="200">200</a></pre></div><pre class="rust"><code><span class="attr">#![cfg_attr(published_docs, feature(doc_cfg))]
+<a href="#200" id="200">200</a>
+<a href="#201" id="201">201</a></pre></div><pre class="rust"><code><span class="attr">#![cfg_attr(published_docs, feature(doc_cfg))]
 </span><span class="comment">/*
  * Copyright (c) godot-rust; Bromeon and contributors.
  * This Source Code Form is subject to the terms of the Mozilla Public
@@ -379,7 +380,8 @@
     <span class="doccomment">/// Re-exports used by proc-macro API.
     </span><span class="attr">#[doc(hidden)]
     </span><span class="kw">pub mod </span>private {
-        <span class="kw">pub use </span>godot_core::registry::class::auto_register_rpcs;
+        <span class="attr">#[cfg(feature = <span class="string">"__codegen-full"</span>)]
+        </span><span class="kw">pub use </span>godot_core::registry::class::auto_register_rpcs;
         <span class="kw">pub use </span>godot_core::registry::godot_register_wrappers::<span class="kw-2">*</span>;
         <span class="kw">pub use </span>godot_core::registry::{constant, method};
     }
