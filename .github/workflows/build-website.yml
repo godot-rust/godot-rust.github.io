@@ -14,7 +14,7 @@ on:
 
 
 env:
-  ZOLA_VERSION: 0.18.0
+  ZOLA_VERSION: 0.19.2
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -32,7 +32,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: "Build website"
-        uses: shalzz/zola-deploy-action@master
+        uses: shalzz/zola-deploy-action@v0.19.2
         env:
           BUILD_DIR: website
           TOKEN: fake-token

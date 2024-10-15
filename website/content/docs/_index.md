@@ -6,7 +6,6 @@
 
 title = "API Docs"
 description = "Latest documentation of the public API"
-date = 2000-01-01
 template = "docs.html"
 page_template = "page.html"
 sort_by = "date"
