@@ -91,6 +91,9 @@
       <meta name="twitter:description" content="{{ c_page_summary }}">
       <meta name="twitter:image" content="{{ c_page_image | safe }}">
 
+      {% block page_head %}
+      {% endblock%}
+
     </head>
   <body class="body-background dark:body-background flex flex-col h-screen justify-between">
   <!---------------------------------------------------------->

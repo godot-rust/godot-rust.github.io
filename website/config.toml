@@ -14,6 +14,14 @@ compile_sass = false
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
+# When set to "true", a feed is automatically generated.
+generate_feeds = true
+
+# The filename to use for the feed. Used as the template filename, too.
+# Defaults to "atom.xml", which has a built-in template that renders an Atom 1.0 feed.
+# There is also a built-in template "rss.xml" that renders an RSS 2.0 feed.
+feed_filenames = ["atom.xml"]
+
 #taxonomies = [
 #    {name = "tags", paginate_by = 5, feed = true},
 #    {name = "categories", paginate_by = 5, feed = true},
