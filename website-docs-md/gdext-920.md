@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-920/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/920"
 pr_author = "lilizoey"
 sort_key = 2024-10-18
-date_time = 2024-10-18T22:37:54Z
-commit_sha = "0700f9de462864308622d1120992f5937291062f"
+date_time = 2024-10-18T22:40:25Z
+commit_sha = "f9710502fbc7fd0efa96a98f67b1d1d9193b9d90"
 +++
 
 $PR_TITLE
