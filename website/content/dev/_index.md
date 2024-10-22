@@ -9,6 +9,7 @@ description = "Recurring posts on godot-rust development"
 template = "devlog.html"
 page_template = "devlog-page.html"
 sort_by = "date"
+generate_feeds = true
 # Pagination should probably be implemented at some point, for now "disable" it
 paginate_by = 1000
 +++

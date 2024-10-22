@@ -91,9 +91,9 @@
       <meta name="twitter:description" content="{{ c_page_summary }}">
       <meta name="twitter:image" content="{{ c_page_image | safe }}">
 
-      {% block page_head %}
-      {% endblock%}
-
+      {% if section and section.generate_feeds %}
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ current_path | safe }}atom.xml">
+      {% endif %}
     </head>
   <body class="body-background dark:body-background flex flex-col h-screen justify-between">
   <!---------------------------------------------------------->
