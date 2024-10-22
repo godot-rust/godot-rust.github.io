@@ -14,8 +14,8 @@ compile_sass = false
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
-# When set to "true", a feed is automatically generated.
-generate_feeds = true
+# We don't want to generate a site wide feed, but only one for the devlog.
+generate_feeds = false
 
 # The filename to use for the feed. Used as the template filename, too.
 # Defaults to "atom.xml", which has a built-in template that renders an Atom 1.0 feed.
