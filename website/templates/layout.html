@@ -91,8 +91,22 @@
       <meta name="twitter:description" content="{{ c_page_summary }}">
       <meta name="twitter:image" content="{{ c_page_image | safe }}">
 
-      {% if section and section.generate_feeds %}
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ current_path | safe }}atom.xml">
+      {%- set c_is_section_with_feed = (section and section.generate_feeds) -%}
+
+      {% if page %}
+        {%- set c_parent_section = get_section(path=page.ancestors | last, metadata_only=true) -%}
+        {%- set c_is_page_in_feed = c_parent_section | get(key="generate_feeds") -%}
+      {% else %}
+        {%- set c_is_page_in_feed = false -%}
+      {% endif %}
+
+      {% if c_is_section_with_feed or c_is_page_in_feed %}
+        {% if c_is_section_with_feed %}
+          {%- set c_feed_path = section.path -%}
+        {% else %}
+          {%- set c_feed_path = c_parent_section.path -%}
+        {% endif %}
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ c_feed_path | safe }}atom.xml">
       {% endif %}
     </head>
   <body class="body-background dark:body-background flex flex-col h-screen justify-between">
