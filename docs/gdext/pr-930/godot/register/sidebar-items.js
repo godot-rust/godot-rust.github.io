@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"attr":["dyn_trait","godot_api"],"derive":["Export","GodotClass","GodotConvert","Var"],"mod":["property"]};
