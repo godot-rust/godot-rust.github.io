@@ -1,15 +1,15 @@
 +++
 title = "#928"
-date = 2024-10-25
+date = 2024-10-26
 
 [extra]
 repo = "gdext"
 docs_rel_url = "gdext/pr-928/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/928"
 pr_author = "mivort"
-sort_key = 2024-10-25
-date_time = 2024-10-25T18:54:58Z
-commit_sha = "84581d2e6153ede7167dd70832bc8c828fedff14"
+sort_key = 2024-10-26
+date_time = 2024-10-26T04:19:21Z
+commit_sha = "9f79a5ca4e5fb1ce1c63759e80c0d4659bfde10b"
 +++
 
 $PR_TITLE
