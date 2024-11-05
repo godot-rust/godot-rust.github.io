@@ -11,7 +11,7 @@ this trait is implemented more conservatively.</p>
 <h2 id="pass-by-value"><a class="doc-anchor" href="#pass-by-value">§</a>Pass by value</h2>
 <p>Implicitly converting from <code>T</code> for by-ref builtins is explicitly not supported. This emphasizes that there is no need to consume the object,
 thus discourages unnecessary cloning.</p>
-<p>If you need to pass owned values in generic code, you can use <a href="trait.ApiParam.html#tymethod.value_to_arg" title="method godot::meta::ApiParam::value_to_arg"><code>ApiParam::value_to_arg()</code></a>.</p>
+<p>If you need to pass owned values in generic code, you can use <a href="trait.ApiParam.html#tymethod.owned_to_arg" title="method godot::meta::ApiParam::owned_to_arg"><code>ApiParam::owned_to_arg()</code></a>.</p>
 <h2 id="performance-for-strings"><a class="doc-anchor" href="#performance-for-strings">§</a>Performance for strings</h2>
 <p>Godot has three string types: <a href="../builtin/struct.GString.html" title="struct godot::builtin::GString"><code>GString</code></a>, <a href="../builtin/struct.StringName.html" title="struct godot::builtin::StringName"><code>StringName</code></a> and <a href="../builtin/struct.NodePath.html" title="struct godot::builtin::NodePath"><code>NodePath</code></a>. Conversions between those three, as well as between <code>String</code> and
 them, is generally expensive because of allocations, re-encoding, validations, hashing, etc. While this doesn’t matter for a few strings
