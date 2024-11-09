@@ -12,4 +12,4 @@ date_time = 2024-10-25T18:56:39Z
 commit_sha = "a2c4d4b9441cb4a9f0f341ecdb91b49c817be503"
 +++
 
-$PR_TITLE
+More accurately provide spans to errors in the `GodotClass` macro
