@@ -12,4 +12,4 @@ date_time = 2024-11-08T09:39:14Z
 commit_sha = "06f88fa26a40d32bdc0bbbd6bcf62035a62e34ee"
 +++
 
-$PR_TITLE
+Implement dynTrait for Gd<T: TraitA>
