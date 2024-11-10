@@ -199,7 +199,9 @@
 <a href="#198" id="198">198</a>
 <a href="#199" id="199">199</a>
 <a href="#200" id="200">200</a>
-<a href="#201" id="201">201</a></pre></div><pre class="rust"><code><span class="attr">#![cfg_attr(published_docs, feature(doc_cfg))]
+<a href="#201" id="201">201</a>
+<a href="#202" id="202">202</a>
+<a href="#203" id="203">203</a></pre></div><pre class="rust"><code><span class="attr">#![cfg_attr(published_docs, feature(doc_cfg))]
 </span><span class="comment">/*
  * Copyright (c) godot-rust; Bromeon and contributors.
  * This Source Code Form is subject to the terms of the Mozilla Public
@@ -235,6 +237,8 @@
 //! * [`register`], used to register **your own** Rust symbols (classes, methods, constants etc.) with Godot.
 //! * [`obj`], everything related to handling Godot objects, such as the `Gd&lt;T&gt;` type.
 //! * [`tools`], higher-level utilities that extend the generated code, e.g. `load&lt;T&gt;()`.
+//! * [`meta`], fundamental information about types, properties and conversions.
+//! * [`init`], entry point and global library configuration.
 //!
 //! The [`prelude`] contains often-imported symbols; feel free to `use godot::prelude::*` in your code.
 //! &lt;br&gt;&lt;br&gt;

@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":["error"],"struct":["ClassName","MethodInfo","PropertyHintInfo","PropertyInfo","RefArg","RpcConfig"],"trait":["ApiParam","ArrayElement","AsArg","FromGodot","GodotConvert","GodotType","PackedArrayElement","ToGodot"]};
+window.SIDEBAR_ITEMS = {"mod":["error"],"struct":["ClassName","MethodInfo","PropertyHintInfo","PropertyInfo","RefArg","RpcConfig"],"trait":["ArrayElement","AsArg","AsObjectArg","FromGodot","GodotConvert","GodotType","PackedArrayElement","ParamType","ToGodot"]};
