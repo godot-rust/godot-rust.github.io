@@ -20,6 +20,14 @@ case $repo in
 		;;
 	"gdext")
 		mainCrate="godot"
+
+        # TODO consider using `api-custom` + running engine; or alternatively a new `api-custom-json` reading extension_api.json directly.
+		# This would allow #[cfg(since_api = "4.x")] to work also for in-dev symbols, while those are currently hidden.
+		#
+		# Probably not directly helpful, but in case: following code can be used to figure out which `api-4-x` feature is the highest available.
+		# availableFeatures=$(cargo read-manifest -p godot/Cargo.toml | jq -r '.features | keys[]')
+		# highestApiFeature=$(echo "$availableFeatures" | grep -oP '^api-4-\d+$' | sort -V | tail -n 1)
+
 		# `experimental-godot-api` is needed to allow "only available in ..." labels with #[doc(cfg)].
 		# Could add experimental-threads in the future, but for now it's unstable and possibly more confusing.
 		features="--features experimental-godot-api"
