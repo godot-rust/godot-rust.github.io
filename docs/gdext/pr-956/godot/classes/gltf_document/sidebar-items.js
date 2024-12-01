@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["ExAppendFromBuffer","ExAppendFromFile","ExAppendFromScene","ExGenerateScene","ExRegisterGltfDocumentExtension","RootNodeMode"]};
