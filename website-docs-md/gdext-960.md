@@ -1,15 +1,15 @@
 +++
 title = "#960"
-date = 2024-12-03
+date = 2024-12-04
 
 [extra]
 repo = "gdext"
 docs_rel_url = "gdext/pr-960/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/960"
 pr_author = "Bromeon"
-sort_key = 2024-12-03
-date_time = 2024-12-03T23:23:32Z
-commit_sha = "bc5271188e05b728f60f5fb16c6bfd122a51101c"
+sort_key = 2024-12-04
+date_time = 2024-12-04T17:22:52Z
+commit_sha = "96916fad743454240fd8a713a1d1355b528a0c34"
 +++
 
 Helpful doc aliases: `func`, `var`, `init`, ...
