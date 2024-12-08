@@ -29,8 +29,8 @@ case $repo in
 		# highestApiFeature=$(echo "$availableFeatures" | grep -oP '^api-4-\d+$' | sort -V | tail -n 1)
 
 		# `experimental-godot-api` is needed to allow "only available in ..." labels with #[doc(cfg)].
-		# Could add experimental-threads in the future, but for now it's unstable and possibly more confusing.
-		features="--features experimental-godot-api"
+		# `experimental-threads` has very few APIs (e.g. Callable::from_sync_fn).
+		features="--features experimental-godot-api,experimental-threads"
 		;;
 	*)
 		echo "Invalid repo '$repo'; abort."
