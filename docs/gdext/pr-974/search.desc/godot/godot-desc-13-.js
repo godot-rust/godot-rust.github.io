@@ -1,0 +1,1 @@
+searchState.loadedDescShard("godot", 13, "Writes <code>u32</code> as the next 4 bytes in the file.\nWrites <code>u64</code> as the next 8 bytes in the file.\nWrites <code>u8</code> as the next byte in the file.\nWrite <code>Variant</code> to the file.")

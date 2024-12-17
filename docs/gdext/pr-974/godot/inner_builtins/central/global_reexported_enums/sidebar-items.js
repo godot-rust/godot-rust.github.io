@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["Corner","EulerOrder","Side"],"struct":["VariantOperator"]};
