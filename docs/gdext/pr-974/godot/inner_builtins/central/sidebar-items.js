@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"enum":["VariantDispatch"],"mod":["global_enums","global_reexported_enums"]};

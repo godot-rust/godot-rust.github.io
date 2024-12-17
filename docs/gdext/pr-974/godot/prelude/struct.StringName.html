@@ -27,7 +27,7 @@ can be used directly by Godot, without allocation or conversion. The encoding is
     T: for&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;&amp;'a <a class="struct" href="../builtin/struct.StringName.html" title="struct godot::builtin::StringName">StringName</a>&gt; + for&lt;'a&gt; <a class="trait" href="../meta/trait.ParamType.html" title="trait godot::meta::ParamType">ParamType</a>&lt;Arg&lt;'a&gt; = CowArg&lt;'a, T&gt;&gt; + 'a,</div></h4></section></summary><div class="docblock"><p>Use as argument for an <a href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg"><code>impl AsArg&lt;GString|NodePath&gt;</code></a> parameter.</p>
 <p>This is a convenient way to convert arguments of similar string types.</p>
 <h5 id="example"><a class="doc-anchor" href="#example">§</a>Example</h5>
-<p><a href="../inner_builtins/classes/struct.Node.html#method.set_name" title="method godot::inner_builtins::classes::Node::set_name"><code>Node::set_name()</code></a> takes <code>GString</code>, let’s pass a <code>StringName</code>:</p>
+<p><a href="../classes/struct.Node.html#method.set_name" title="method godot::classes::Node::set_name"><code>Node::set_name()</code></a> takes <code>GString</code>, let’s pass a <code>StringName</code>:</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">let </span>name = StringName::from(<span class="string">"my cool node"</span>);
 

@@ -11,13 +11,13 @@ In particular, the memory management strategy is fully dependent on <code>T</cod
 <ul>
 <li>
 <p><strong>Reference-counted</strong><br>
-Objects of type <a href="../inner_builtins/classes/struct.RefCounted.html" title="struct godot::inner_builtins::classes::RefCounted"><code>RefCounted</code></a> or inherited from it are <strong>reference-counted</strong>. This means that every time a smart pointer is
+Objects of type <a href="../classes/struct.RefCounted.html" title="struct godot::classes::RefCounted"><code>RefCounted</code></a> or inherited from it are <strong>reference-counted</strong>. This means that every time a smart pointer is
 shared using <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone" title="method core::clone::Clone::clone"><code>Clone::clone()</code></a>, the reference counter is incremented, and every time one is dropped, it is decremented.
 This ensures that the last reference (either in Rust or Godot) will deallocate the object and call <code>T</code>’s destructor.<br><br></p>
 </li>
 <li>
 <p><strong>Manual</strong><br>
-Objects inheriting from <a href="../inner_builtins/classes/struct.Object.html" title="struct godot::inner_builtins::classes::Object"><code>Object</code></a> which are not <code>RefCounted</code> (or inherited) are <strong>manually-managed</strong>.
+Objects inheriting from <a href="../classes/struct.Object.html" title="struct godot::classes::Object"><code>Object</code></a> which are not <code>RefCounted</code> (or inherited) are <strong>manually-managed</strong>.
 Their destructor is not automatically called (unless they are part of the scene tree). Creating a <code>Gd&lt;T&gt;</code> means that
 you are responsible for explicitly deallocating such objects using <a href="../obj/struct.Gd.html#method.free" title="method godot::obj::Gd::free"><code>free()</code></a>.<br><br></p>
 </li>

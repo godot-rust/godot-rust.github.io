@@ -29,7 +29,7 @@ is entirely hidden from the API and you don’t normally need to worry about it.
 <li>
 <p><strong>Reference-counted types</strong>: <a href="../builtin/struct.Array.html" title="struct godot::builtin::Array"><code>Array</code></a>,
 <a href="../builtin/struct.Dictionary.html" title="struct godot::builtin::Dictionary"><code>Dictionary</code></a>, and <a href="../obj/struct.Gd.html" title="struct godot::obj::Gd"><code>Gd&lt;T&gt;</code></a> where <code>T</code> inherits
-from <a href="../inner_builtins/classes/struct.RefCounted.html" title="struct godot::inner_builtins::classes::RefCounted"><code>RefCounted</code></a>.</p>
+from <a href="../classes/struct.RefCounted.html" title="struct godot::classes::RefCounted"><code>RefCounted</code></a>.</p>
 <p>These types may share their underlying data between multiple instances: changes to one
 instance are visible in another. They are conceptually similar to <code>Rc&lt;RefCell&lt;...&gt;&gt;</code>.</p>
 <p>Since there is no way to prevent or even detect this sharing from Rust, you need to be more
@@ -41,7 +41,7 @@ can be used to make actual copies. <br><br></p>
 </li>
 <li>
 <p><strong>Manually managed types</strong>: <a href="../obj/struct.Gd.html" title="struct godot::obj::Gd"><code>Gd&lt;T&gt;</code></a> where <code>T</code> inherits from
-<a href="../inner_builtins/classes/struct.Object.html" title="struct godot::inner_builtins::classes::Object"><code>Object</code></a> but not from <a href="../inner_builtins/classes/struct.RefCounted.html" title="struct godot::inner_builtins::classes::RefCounted"><code>RefCounted</code></a>;
+<a href="../classes/struct.Object.html" title="struct godot::classes::Object"><code>Object</code></a> but not from <a href="../classes/struct.RefCounted.html" title="struct godot::classes::RefCounted"><code>RefCounted</code></a>;
 most notably, this includes all <code>Node</code> classes.</p>
 <p>These also share data, but do not use reference counting to manage their memory. Instead,
 you must either hand over ownership to Godot (e.g. by adding a node to the scene tree) or

@@ -21,7 +21,7 @@ passed to engine APIs, it can become a problematic when passing long strings in 
 <p>In the case of strings, we allow implicit conversion from Rust types <code>&amp;str</code>, <code>&amp;String</code> and <code>&amp;'static CStr</code> (<code>StringName</code> only).
 While these conversions are not free, those are either explicit because a string literal is used, or they are unsurprising, because Godot
 cannot deal with raw Rust types. On the other hand, <code>GString</code> and <code>StringName</code> are sometimes used almost interchangeably (example:
-<a href="../inner_builtins/classes/struct.Node.html#method.set_name" title="method godot::inner_builtins::classes::Node::set_name"><code>Node::set_name</code></a> takes <code>GString</code> but <a href="../inner_builtins/classes/struct.Node.html#method.get_name" title="method godot::inner_builtins::classes::Node::get_name"><code>Node::get_name</code></a> returns <code>StringName</code>).</p>
+<a href="../classes/struct.Node.html#method.set_name" title="method godot::classes::Node::set_name"><code>Node::set_name</code></a> takes <code>GString</code> but <a href="../classes/struct.Node.html#method.get_name" title="method godot::classes::Node::get_name"><code>Node::get_name</code></a> returns <code>StringName</code>).</p>
 <p>If you want to convert between Godot’s string types for the sake of argument passing, each type provides an <code>arg()</code> method, such as
 <a href="../builtin/struct.GString.html#method.arg" title="method godot::builtin::GString::arg"><code>GString::arg()</code></a>. You cannot use this method in other contexts.</p>
 <h2 id="using-the-trait"><a class="doc-anchor" href="#using-the-trait">§</a>Using the trait</h2>
