@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-980/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/980"
 pr_author = "Bromeon"
 sort_key = 2024-12-17
-date_time = 2024-12-17T22:25:40Z
-commit_sha = "5d7a7fe18623e27e3cfeec1871833568a345d3f7"
+date_time = 2024-12-17T22:26:36Z
+commit_sha = "6c89d57eef38452a7a932090cef1f75cbafdf3e9"
 +++
 
 Add many `GString`/`StringName` methods
