@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-979/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/979"
 pr_author = "lilizoey"
 sort_key = 2024-12-22
-date_time = 2024-12-22T22:40:32Z
-commit_sha = "40a70fec1fc35f1e6e0c1afd96fd13c80848f7b2"
+date_time = 2024-12-22T22:43:08Z
+commit_sha = "275756e1ea599e16cf58a05818af180a1a6e47a5"
 +++
 
 Flesh out `Callable` functions
