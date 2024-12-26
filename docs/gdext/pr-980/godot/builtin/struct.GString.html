@@ -94,25 +94,26 @@ any other character. Useful when sorting folders or file names.</p>
     &amp;'s self,
     what: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="struct.GString.html" title="struct godot::builtin::GString">GString</a>&gt; + 'w,
 ) -&gt; FindBuilder&lt;'s, 'w&gt;</h4></section></summary><div class="docblock"><p>Returns a builder for finding substrings, with various configuration options.</p>
-<p>The builder offers methods to configure 3 dimensions, which map to different Godot functions in the back.</p>
-<ol>
-<li><code>r()</code> - forward <code>find*</code> and backward <code>rfind*</code>.</li>
-<li><code>n()</code> - case-sensitive <code>*find</code> and case-insensitive <code>*findn</code>.</li>
-<li><code>from(index)</code> - the optional 2nd parameter, the starting index.</li>
-</ol>
+<p>The [<code>FindBuilder</code>] struct offers methods to configure 3 dimensions, which map to different Godot functions in the back:</p>
+<div><table><thead><tr><th>Method</th><th>Default behavior</th><th>Behavior after method call</th></tr></thead><tbody>
+<tr><td><code>r()</code></td><td>forward search (<code>find*</code>)</td><td>backward search (<code>rfind*</code>)</td></tr>
+<tr><td><code>n()</code></td><td>case-sensitive search (<code>*find</code>)</td><td>case-insensitive search (<code>*findn</code>)</td></tr>
+<tr><td><code>from(index)</code></td><td>search from beginning (or end if reverse)</td><td>search from specified index</td></tr>
+</tbody></table>
+</div>
 <p>Returns <code>Some(index)</code> of the first occurrence, or <code>None</code> if not found.</p>
 <h5 id="example"><a class="doc-anchor" href="#example">§</a>Example</h5>
-<p>To find the substring <code>O</code> in <code>"Hello World</code>, not considering case and starting from position 5, you can write:</p>
+<p>To find the substring <code>"O"</code> in <code>"Hello World"</code>, not considering case and starting from position 5, you can write:</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">let </span>s = GString::from(<span class="string">"Hello World"</span>);
 <span class="kw">if let </span><span class="prelude-val">Some</span>(found) = s.find(<span class="string">"O"</span>).n().from(<span class="number">5</span>).done() {
-   do_something(found)
+   do_sth_with_index(found)
 }</code></pre></div>
 <p>This is equivalent to the following GDScript code:</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>var s: GString = &quot;Hello World&quot;
 var found = s.findn(&quot;O&quot;, 5)
 if found != -1:
-    do_something(found)</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.arg" class="method"><h4 class="code-header">pub fn <a href="#method.arg" class="fn">arg</a>&lt;T&gt;(&amp;self) -&gt; impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;T&gt;<div class="where">where
+    do_sth_with_index(found)</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.arg" class="method"><h4 class="code-header">pub fn <a href="#method.arg" class="fn">arg</a>&lt;T&gt;(&amp;self) -&gt; impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;T&gt;<div class="where">where
     T: for&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;&amp;'a <a class="struct" href="struct.GString.html" title="struct godot::builtin::GString">GString</a>&gt; + for&lt;'a&gt; <a class="trait" href="../meta/trait.ParamType.html" title="trait godot::meta::ParamType">ParamType</a>&lt;Arg&lt;'a&gt; = CowArg&lt;'a, T&gt;&gt; + 'a,</div></h4></section></summary><div class="docblock"><p>Use as argument for an [<code>impl AsArg&lt;StringName|NodePath&gt;</code>][crate::AsArg] parameter.</p>
 <p>This is a convenient way to convert arguments of similar string types.</p>
 <h5 id="example-1"><a class="doc-anchor" href="#example-1">§</a>Example</h5>
