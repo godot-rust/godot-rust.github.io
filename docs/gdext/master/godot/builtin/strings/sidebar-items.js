@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["TransientStringNameOrd"]};
+window.SIDEBAR_ITEMS = {"struct":["ExGStringFind","ExGStringSplit","ExStringNameFind","ExStringNameSplit","TransientStringNameOrd"]};
