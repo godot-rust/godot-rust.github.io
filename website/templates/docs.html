@@ -25,12 +25,23 @@
     {% set pages = term.pages %}
     {% endif %}
 
+    {# The below code is violating all frontend best practices and doesn't work well on mobile, but not too many users
+    check out the docs page anyway. If someone has a better idea which is still maintainable, please open a PR! #}
+
+    {# Remove any 'gdnative' entries #}
+    {% set pages = pages | filter(attribute='extra.repo', value="gdext") %}
+
     {# Sort so that "master" always comes first #}
     {% set pages = pages | sort(attribute='extra.sort_key') | reverse() %}
-    {% for col_repo in ["gdnative","gdext",] %}
+    {# debug print { pages | json_encode(pretty=true) }#}
+
+
+    {% set col_repo = "gdext" %}
+    {% for col in ["col_left","col_right"] %}
     <div class="flex flex-col flex-1 gap-y-6">
 
       {# margin = SVG width + gap width #}
+      {# Title is now disabled, since we no longer have gdnative/gdext differentiation.
       <h2 class="text-center mb-0 pb-0
         {% if col_repo == 'gdext' %}
           mr-8
@@ -38,13 +49,28 @@
           ml-8
         {% endif %}
       ">{{ col_repo }}</h2>
+      #}
 
       {% for page in pages %}
+      {# debug print { loop.index0 }#}
+
+      {% if col == 'col_left' %}
+        {% if loop.index0 is odd %}
+          {% continue %}
+        {% endif %}
+      {% elif col == 'col_right' %}
+        {% if loop.index0 is even %}
+          {% continue %}
+        {% endif %}
+      {% endif %}
+
+
+
       {% if page.extra.repo == col_repo %}
 
       {# reverse: PR icon on the right in right column #}
       <div class="flex gap-x-2
-        {% if col_repo == 'gdext' %}
+        {% if col == 'col_right' %}
           flex-row-reverse
         {% endif %}
       ">
