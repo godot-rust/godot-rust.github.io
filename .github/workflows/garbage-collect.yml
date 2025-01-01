@@ -35,6 +35,9 @@ jobs:
           # Look in docs/gdext and docs/gdnative repo for all directories starting with "pr-", e.g. "pr-1234".
           # Then, issue a GitHub API request to the repo (name of parent directory, "gdext" or "gdnative") to check if the PR is closed.
           # If closed, remove the directory.
+          
+          # Update 2025-01-01: for gdnative, unconditionally close all PR docs.
+          
           deletedPrList=( )
           for repo in gdext gdnative; do
             echo ""
@@ -45,7 +48,9 @@ jobs:
               #echo "   REST response: $restResult" 
               prState=$(echo "$restResult" | jq -r .state)
               echo "* PR #$prNum is $prState"
-              if [[ "$prState" == "closed" ]]; then
+          
+              # gdnative is no longer deployed as of 2025-01-01.
+              if [[ "$prState" == "closed" || "$repo" == "gdnative" ]]; then
                 deletedPrList+=( "$repo/$prNum" )
                 date=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
                 echo "  > Delete PR $dir!  Date: $date"
