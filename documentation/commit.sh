@@ -20,8 +20,15 @@ date="$5"
 # Reopen later succeeds _despite being older_ -> inconsistent state (PR closed, but docs online).
 # This can be mitigated by always committing (no abort on stale).
 
+
 PRE="Docs | $repo/$num |"
 echo "$PRE start COMMIT operation."
+
+if [[ "$repo" == "gdnative" ]]; then
+    echo "$PRE INFO: 'gdnative' no longer deployed. Aborting."
+    echo "SKIP_WEBSITE_DEPLOY=true" >> "$GITHUB_ENV"
+    exit 0
+fi
 
 git config user.name "Godot-Rust Automation"
 git config user.email "GodotRust@users.noreply.github.com"

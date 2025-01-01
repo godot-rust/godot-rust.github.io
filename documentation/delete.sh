@@ -16,7 +16,8 @@ echo "$PRE start DELETE operation."
 #grep -v "$repo $num" deployed.txt > deployed-tmp.txt
 #mv deployed-tmp.txt deployed.txt
 
-if [[ "$num" == "master" ]]; then
+# Allow deletion of 'gdnative' master, since it's phased out.
+if [[ "$num" == "master" && "$repo" != "gdnative" ]]; then
 	echo "::error::Cannot delete docs for master branch."
 	exit 1
 fi
