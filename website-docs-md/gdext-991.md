@@ -1,15 +1,15 @@
 +++
 title = "#991"
-date = 2024-12-27
+date = 2025-01-01
 
 [extra]
 repo = "gdext"
 docs_rel_url = "gdext/pr-991/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/991"
 pr_author = "Bromeon"
-sort_key = 2024-12-27
-date_time = 2024-12-27T11:28:15Z
-commit_sha = "fd5b151d9a8f524397f932ebd7f20adbc9cd5a79"
+sort_key = 2025-01-01
+date_time = 2025-01-01T14:07:39Z
+commit_sha = "ee2e436a324937ee98a26aef344a0c72b19589b3"
 +++
 
 Godot FFI: postinit create, compat virtual methods
