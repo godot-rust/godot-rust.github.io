@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"attr":["callbacks","methods","monomorphize","profiled"],"derive":["Export","FromVarargs","FromVariant","NativeClass","OwnedToVariant","ToVariant"],"macro":["godot_wrap_method"]};
