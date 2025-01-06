@@ -2,7 +2,8 @@
 <p>Please read the <a href="https://godot-rust.github.io/book/godot-api/builtins.html">book chapter</a> about builtin types.</p>
 <h2 id="api-design"><a class="doc-anchor" href="#api-design">§</a>API design</h2>
 <p>Our goal is to strive for a middle ground between idiomatic Rust and existing Godot APIs, achieving a decent balance between ergonomics,
-correctness and performance. In particular, we leverage Rust’s type system (such as <code>Option&lt;T&gt;</code> or <code>enum</code>) where this helps expressivity.</p>
+correctness and performance. We leverage Rust’s type system (such as <code>Option&lt;T&gt;</code> or <code>enum</code>) where it helps expressivity.</p>
+<p>We have been using a few guiding principles. Those apply to builtins in particular, but some are relevant in other modules, too.</p>
 <h3 id="1-copy-for-value-types"><a class="doc-anchor" href="#1-copy-for-value-types">§</a>1. <code>Copy</code> for value types</h3>
 <p><em>Value types</em> are types with public fields and no hidden state. This includes all geometric types, colors and RIDs.</p>
 <p>All value types implement the <code>Copy</code> trait and thus have no custom <code>Drop</code> impl.</p>
@@ -25,15 +26,12 @@ This makes it explicit that you’re constructing a value that first has to be m
 (e.g. in <code>#[derive(Default)]</code>) and leak memory. A <code>Gd::new_alloc()</code> is very explicit.</li>
 </ul>
 <h3 id="4-prefer-explicit-conversions-over-from-trait"><a class="doc-anchor" href="#4-prefer-explicit-conversions-over-from-trait">§</a>4. Prefer explicit conversions over <code>From</code> trait</h3>
-<p>More <code>From</code> conversions have been requested a few times, often with vague reasons such as “would be useful” or “it’s a common pattern in
-Rust”. People then often expect a detailed rationale why the trait is <em>not</em> added, even though the burden of proof for every feature
-generally lies with the person suggesting it, and <code>From</code> is no exception here.</p>
-<p>This section serves as a detailed explanation for the status quo, as to why <code>From</code> is relatively rare in godot-rust. This goes beyond the
-builtin APIs, but can hopefully help you understand the underlying design decisions. This is not universal truth, other libraries are
-well within their rights to choose differently here!</p>
+<p><code>From</code> is quite popular in Rust, but unlike traits such as <code>Debug</code>, the convenience of <code>From</code> can come at a cost. Like every feature, adding
+an <code>impl From</code> needs to be justified – not the other way around: there doesn’t need to be a particular reason why it’s <em>not</em> added. But
+there are in fact some trade-offs to consider:</p>
 <ol>
-<li><code>From</code> next to named conversion methods/constructors adds another way to do things. While it’s good to have some choice, multiple ways to
-achieve the same has downsides: Users wonder if there is a subtle difference between multiple options, or if they are in fact identical.
+<li><code>From</code> next to named conversion methods/constructors adds another way to do things. While it’s sometimes good to have choice, multiple
+ways to achieve the same has downsides: users wonder if a subtle difference exists, or if all options are in fact identical.
 It’s unclear which one is the “preferred” option. Recognizing other people’s code becomes harder, because there tend to be dialects.</li>
 <li>It’s often a purely stylistic choice, without functional benefits. Someone may want to write <code>(1, 2).into()</code> instead of
 <code>Vector2::new(1, 2)</code>. This is not strong enough of a reason – if brevity is of concern, a function <code>vec2(1, 2)</code> does the job better.</li>
@@ -49,7 +47,7 @@ possible either.</li>
 infallible, lossless, value-preserving and obvious. This rules out a lot of scenarios such as <code>Basis::to_quaternion()</code> (which only maintains
 the rotation part, not scale) or <code>Color::try_to_hsv()</code> (which is fallible and lossy).</li>
 </ol>
-<p>One main reason to support <code>From</code> is to allow generic programming, in particular the <code>impl Into&lt;T&gt;</code> parameters. This is also the reason
+<p>One main reason to support <code>From</code> is to allow generic programming, in particular <code>impl Into&lt;T&gt;</code> parameters. This is also the reason
 why the string types have historically implemented the trait. But this became less relevant with the advent of
 <a href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg"><code>AsArg&lt;T&gt;</code></a> taking that role, and thus may change in the future.</p>
 <h3 id="5-option-for-fallible-operations"><a class="doc-anchor" href="#5-option-for-fallible-operations">§</a>5. <code>Option</code> for fallible operations</h3>
