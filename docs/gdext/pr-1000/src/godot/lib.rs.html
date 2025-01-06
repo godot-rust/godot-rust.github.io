@@ -216,7 +216,10 @@
 <a href="#215" id="215">215</a>
 <a href="#216" id="216">216</a>
 <a href="#217" id="217">217</a>
-<a href="#218" id="218">218</a></pre></div><pre class="rust"><code><span class="attr">#![cfg_attr(published_docs, feature(doc_cfg))]
+<a href="#218" id="218">218</a>
+<a href="#219" id="219">219</a>
+<a href="#220" id="220">220</a>
+<a href="#221" id="221">221</a></pre></div><pre class="rust"><code><span class="attr">#![cfg_attr(published_docs, feature(doc_cfg))]
 </span><span class="comment">/*
  * Copyright (c) godot-rust; Bromeon and contributors.
  * This Source Code Form is subject to the terms of the Mozilla Public
@@ -402,13 +405,16 @@
 
 <span class="doccomment">/// Register/export Rust symbols to Godot: classes, methods, enums...
 </span><span class="kw">pub mod </span>register {
-    <span class="kw">pub use </span>godot_core::registry::as_func::<span class="kw-2">*</span>;
     <span class="kw">pub use </span>godot_core::registry::property;
-    <span class="kw">pub use </span>godot_core::registry::typed_signal::<span class="kw-2">*</span>;
     <span class="kw">pub use </span>godot_macros::{godot_api, godot_dyn, Export, GodotClass, GodotConvert, Var};
 
     <span class="attr">#[cfg(feature = <span class="string">"__codegen-full"</span>)]
     </span><span class="kw">pub use </span>godot_core::registry::RpcConfig;
+
+    <span class="attr">#[cfg(since_api = <span class="string">"4.2"</span>)]
+    </span><span class="kw">pub use </span>godot_core::registry::as_func::<span class="kw-2">*</span>;
+    <span class="attr">#[cfg(since_api = <span class="string">"4.2"</span>)]
+    </span><span class="kw">pub use </span>godot_core::registry::typed_signal::<span class="kw-2">*</span>;
 
     <span class="doccomment">/// Re-exports used by proc-macro API.
     </span><span class="attr">#[doc(hidden)]
