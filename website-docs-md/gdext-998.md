@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-998/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/998"
 pr_author = "Yarwin"
 sort_key = 2025-01-08
-date_time = 2025-01-08T22:44:38Z
-commit_sha = "5bf81c9556c5f108c1e8e88a7722c716af342f95"
+date_time = 2025-01-08T22:55:58Z
+commit_sha = "602a3a07153d69f8c4832e631df72b0bcb184a67"
 +++
 
 Implement `Var` and `Export` for `DynGd<T, D>`
