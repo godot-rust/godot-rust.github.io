@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1023/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1023"
 pr_author = "ttencate"
 sort_key = 2025-01-20
-date_time = 2025-01-20T20:20:11Z
-commit_sha = "30677e3199cacfe84c69883c001dd837203db742"
+date_time = 2025-01-20T20:34:32Z
+commit_sha = "f2e267d13ca8cb9b2ad5a8d90c48b2079e151355"
 +++
 
 Speed up creating and extending packed arrays from iterators up to 63×
