@@ -1,15 +1,15 @@
 +++
 title = "#1022"
-date = 2025-01-20
+date = 2025-01-21
 
 [extra]
 repo = "gdext"
 docs_rel_url = "gdext/pr-1022/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1022"
 pr_author = "Yarwin"
-sort_key = 2025-01-20
-date_time = 2025-01-20T17:27:30Z
-commit_sha = "80062ff6eeb3c6eb99597631409345b11d2b592c"
+sort_key = 2025-01-21
+date_time = 2025-01-21T09:23:14Z
+commit_sha = "18e181d3bf70c722f35bb515530fd87d8c2f83da"
 +++
 
-Add assoc type support to dyn gd
+Support associated types in `#[godot_dyn]`
