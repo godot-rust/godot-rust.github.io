@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1017/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1017"
 pr_author = "adalinesimonian"
 sort_key = 2025-01-22
-date_time = 2025-01-22T07:39:57Z
-commit_sha = "7e07fa1320432d99b0c28f924a3b86a7140c2f54"
+date_time = 2025-01-22T08:46:08Z
+commit_sha = "3996b71cdf4409085cd6cc5c19d0182946916763"
 +++
 
 feat: support additional doc comment markdown
