@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Proc-macro attribute to be used with `impl` blocks of `#[derive(GodotClass)]` structs."><title>godot_api in godot::register - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-5d1d17d0.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="godot" data-themes="" data-resource-suffix="" data-rustdoc-version="1.86.0-nightly (ed43cbcb8 2025-01-21)" data-channel="nightly" data-search-js="search-ccb196c1.js" data-settings-js="settings-0f613d39.js" ><script src="../../static.files/storage-59e33391.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-5f194d8c.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-893ab5e7.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc attr"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button><a class="logo-container" href="../../godot/index.html"><img src="https://raw.githubusercontent.com/godot-rust/assets/master/gdext/ferris.svg" alt=""></a></nav><nav class="sidebar"><div class="sidebar-crate"><a class="logo-container" href="../../godot/index.html"><img src="https://raw.githubusercontent.com/godot-rust/assets/master/gdext/ferris.svg" alt="logo"></a><h2><a href="../../godot/index.html">godot</a><span class="version">0.2.2</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">godot_<wbr>api</a></h2><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#constructors" title="Constructors">Constructors</a><ul><li><a href="#user-defined-init" title="User-defined `init`">User-defined <code>init</code></a></li><li><a href="#generated-init" title="Generated `init`">Generated <code>init</code></a></li></ul></li><li><a href="#lifecycle-functions" title="Lifecycle functions">Lifecycle functions</a></li><li><a href="#user-defined-functions" title="User-defined functions">User-defined functions</a><ul><li><a href="#associated-functions-and-methods" title="Associated functions and methods">Associated functions and methods</a></li><li><a href="#virtual-methods" title="Virtual methods">Virtual methods</a></li><li><a href="#rpc-attributes" title="RPC attributes">RPC attributes</a></li></ul></li><li><a href="#constants-and-signals" title="Constants and signals">Constants and signals</a></li><li><a href="#multiple-inherent-impl-blocks" title="Multiple inherent `impl` blocks">Multiple inherent <code>impl</code> blocks</a></li></ul></section><div id="rustdoc-modnav"><h2><a href="index.html">In godot::<wbr>register</a></h2></div></div></nav><div class="sidebar-resizer"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><span class="rustdoc-breadcrumbs"><a href="../index.html">godot</a>::<wbr><a href="index.html">register</a></span><h1>Attribute Macro <span class="attr">godot_api</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"></span></div><pre class="rust item-decl"><code>#[godot_api]</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Proc-macro attribute to be used with <code>impl</code> blocks of <a href="derive.GodotClass.html" title="derive godot::register::GodotClass"><code>#[derive(GodotClass)]</code></a> structs.</p>
+<p>Can be used in two ways:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
+#[class(init, base=Node)]
+</span><span class="kw">struct </span>MyClass {}
+
+<span class="comment">// 1) inherent impl block: user-defined, custom API.
+</span><span class="attr">#[godot_api]
+</span><span class="kw">impl </span>MyClass { <span class="comment">/* ... */ </span>}
+
+<span class="comment">// 2) trait impl block: implement Godot-specific APIs.
+</span><span class="attr">#[godot_api]
+</span><span class="kw">impl </span>INode <span class="kw">for </span>MyClass { <span class="comment">/* ... */ </span>}</code></pre></div>
+<p>The second case works by implementing the corresponding trait <code>I*</code> for the base class of your class
+(for example <code>IRefCounted</code> or <code>INode3D</code>). Then, you can add functionality such as:</p>
+<ul>
+<li><code>init</code> constructors</li>
+<li>lifecycle methods like <code>ready</code> or <code>process</code></li>
+<li><code>on_notification</code> method</li>
+<li><code>to_string</code> method</li>
+</ul>
+<p>Neither of the two <code>#[godot_api]</code> blocks is required. For small data bundles inheriting <code>RefCounted</code>, you may be fine with
+accessing properties directly from GDScript.</p>
+<p>See also <a href="https://godot-rust.github.io/book/register/functions.html">book chapter <em>Registering functions</em></a> and following.</p>
+<p><strong>Table of contents</strong></p>
+<ul>
+<li><a href="#constructors">Constructors</a>
+<ul>
+<li><a href="#user-defined-init">User-defined <code>init</code></a></li>
+<li><a href="#generated-init">Generated <code>init</code></a></li>
+</ul>
+</li>
+<li><a href="#lifecycle-functions">Lifecycle functions</a></li>
+<li><a href="#user-defined-functions">User-defined functions</a>
+<ul>
+<li><a href="#associated-functions-and-methods">Associated functions and methods</a></li>
+<li><a href="#virtual-methods">Virtual methods</a></li>
+<li><a href="#rpc-attributes">RPC attributes</a></li>
+</ul>
+</li>
+<li><a href="#signals">Constants and signals</a></li>
+<li><a href="#multiple-inherent-impl-blocks">Multiple inherent <code>impl</code> blocks</a></li>
+</ul>
+<h2 id="constructors"><a class="doc-anchor" href="#constructors">§</a>Constructors</h2>
+<p>Note that <code>init</code> (the Godot default constructor) can be either provided by overriding it, or generated with a <code>#[class(init)]</code> attribute
+on the struct. Classes without <code>init</code> cannot be instantiated from GDScript.</p>
+<h3 id="user-defined-init"><a class="doc-anchor" href="#user-defined-init">§</a>User-defined <code>init</code></h3>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
+</span><span class="comment">// no #[class(init)] here, since init() is overridden below.
+// #[class(base=RefCounted)] is implied if no base is specified.
+</span><span class="kw">struct </span>MyStruct;
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>IRefCounted <span class="kw">for </span>MyStruct {
+    <span class="kw">fn </span>init(_base: Base&lt;RefCounted&gt;) -&gt; <span class="self">Self </span>{
+        MyStruct
+    }
+}</code></pre></div>
+<h3 id="generated-init"><a class="doc-anchor" href="#generated-init">§</a>Generated <code>init</code></h3>
+<p>This initializes the <code>Base&lt;T&gt;</code> field, and every other field with either <code>Default::default()</code> or the value specified in <code>#[init(val = ...)]</code>.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
+#[class(init, base=Node)]
+</span><span class="kw">pub struct </span>MyNode {
+    base: Base&lt;Node&gt;,
+
+    <span class="attr">#[init(val = <span class="number">42</span>)]
+    </span>some_integer: i64,
+}</code></pre></div>
+<h2 id="lifecycle-functions"><a class="doc-anchor" href="#lifecycle-functions">§</a>Lifecycle functions</h2>
+<p>You can override the lifecycle functions <code>ready</code>, <code>process</code>, <code>physics_process</code> and so on, by implementing the trait corresponding to the
+base class.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
+#[class(init, base=Node)]
+</span><span class="kw">pub struct </span>MyNode;
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>INode <span class="kw">for </span>MyNode {
+    <span class="kw">fn </span>ready(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
+        <span class="macro">godot_print!</span>(<span class="string">"Hello World!"</span>);
+    }
+}</code></pre></div>
+<p>Using <em>any</em> trait other than the one corresponding with the base class will result in compilation failure.</p>
+
+<div class="example-wrap compile_fail"><a href="#" class="tooltip" title="This example deliberately fails to compile">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
+#[class(init, base=Node3D)]
+</span><span class="kw">pub struct </span>My3DNode;
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>INode <span class="kw">for </span>My3DNode {
+    <span class="kw">fn </span>ready(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
+        <span class="macro">godot_print!</span>(<span class="string">"Hello World!"</span>);
+    }
+}</code></pre></div>
+<h2 id="user-defined-functions"><a class="doc-anchor" href="#user-defined-functions">§</a>User-defined functions</h2>
+<p>You can use the <code>#[func]</code> attribute to declare your own functions. These are exposed to Godot and callable from GDScript.</p>
+<h3 id="associated-functions-and-methods"><a class="doc-anchor" href="#associated-functions-and-methods">§</a>Associated functions and methods</h3>
+<p>If <code>#[func]</code> functions are called from the engine, they implicitly bind the surrounding <code>Gd&lt;T&gt;</code> pointer: <code>Gd::bind()</code> in case of <code>&amp;self</code>,
+<code>Gd::bind_mut()</code> in case of <code>&amp;mut self</code>. To avoid that, use <code>#[func(gd_self)]</code>, which requires an explicit first argument of type <code>Gd&lt;T&gt;</code>.</p>
+<p>Functions without a receiver become static functions in Godot. They can be called from GDScript using <code>MyStruct.static_function()</code>.
+If they return <code>Gd&lt;Self&gt;</code>, they are effectively constructors that allow taking arguments.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
+#[class(init)]
+</span><span class="kw">struct </span>MyStruct {
+    field: i64,
+    base: Base&lt;RefCounted&gt;,
+}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>MyStruct {
+    <span class="attr">#[func]
+    </span><span class="kw">pub fn </span>hello_world(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
+        <span class="macro">godot_print!</span>(<span class="string">"Hello World!"</span>)
+    }
+
+    <span class="attr">#[func]
+    </span><span class="kw">pub fn </span>static_function(constructor_arg: i64) -&gt; Gd&lt;<span class="self">Self</span>&gt; {
+        Gd::from_init_fn(|base| {
+           MyStruct { field: constructor_arg, base }
+        })
+    }
+
+    <span class="attr">#[func(gd_self)]
+    </span><span class="kw">pub fn </span>explicit_receiver(<span class="kw-2">mut </span>this: Gd&lt;<span class="self">Self</span>&gt;, other_arg: bool) {
+        <span class="comment">// Only bind Gd pointer if needed.
+        </span><span class="kw">if </span>other_arg {
+            this.bind_mut().field = <span class="number">55</span>;
+        }
+    }
+}</code></pre></div>
+<h3 id="virtual-methods"><a class="doc-anchor" href="#virtual-methods">§</a>Virtual methods</h3>
+<p>Functions with the <code>#[func(virtual)]</code> attribute are virtual functions, meaning attached scripts can override them.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
+#[class(init)]
+</span><span class="kw">struct </span>MyStruct {
+    <span class="comment">// Virtual functions require base object.
+    </span>base: Base&lt;RefCounted&gt;,
+}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>MyStruct {
+    <span class="attr">#[func(<span class="kw">virtual</span>)]
+    </span><span class="kw">fn </span>language(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; GString {
+        GString::from(<span class="string">"Rust"</span>)
+    }
+}</code></pre></div>
+<p>In GDScript, your method is available with a <code>_</code> prefix, following Godot convention for virtual methods:</p>
+<div class="example-wrap"><pre class="language-gdscript"><code>extends MyStruct
+
+func _language():
+   return &quot;GDScript&quot;</code></pre></div>
+<p>Now, <code>obj.language()</code> from Rust will dynamically dispatch the call.</p>
+<p>Make sure you understand the limitations in the <a href="https://godot-rust.github.io/book/register/virtual-functions.html">tutorial</a>.</p>
+<h3 id="rpc-attributes"><a class="doc-anchor" href="#rpc-attributes">§</a>RPC attributes</h3>
+<p>You can use the <code>#[rpc]</code> attribute to let your functions act as remote procedure calls (RPCs) in Godot. This is the Rust equivalent of
+GDScript’s <a href="https://docs.godotengine.org/en/stable/tutorials/networking/high_level_multiplayer.html#remote-procedure-calls"><code>@rpc</code> annotation</a>.
+<code>#[rpc]</code> is only supported for classes inheriting <code>Node</code>, and they need to declare a <code>Base&lt;T&gt;</code> field.</p>
+<p>The syntax follows GDScript’a <code>@rpc</code>. You can optionally specify up to four keys; omitted ones use their default value.
+Here’s an overview:</p>
+<div><table><thead><tr><th>Setting</th><th>Type</th><th>Possible values (first is default)</th></tr></thead><tbody>
+<tr><td>RPC mode</td><td><a href="../classes/multiplayer_api/struct.RpcMode.html"><code>RpcMode</code></a></td><td><strong><code>authority</code></strong>, <code>any_peer</code></td></tr>
+<tr><td>Sync</td><td><code>bool</code></td><td><strong><code>call_remote</code></strong>, <code>call_local</code></td></tr>
+<tr><td>Transfer mode</td><td><a href="../classes/multiplayer_peer/struct.TransferMode.html"><code>TransferMode</code></a></td><td><strong><code>unreliable</code></strong>, <code>unreliable_ordered</code>, <code>reliable</code></td></tr>
+<tr><td>Channel</td><td><code>u32</code></td><td>any</td></tr>
+</tbody></table>
+</div>
+<p>You can also use <code>#[rpc(config = value)]</code>, with <code>value</code> being an expression of type <a href="../register/struct.RpcConfig.html"><code>RpcConfig</code></a> in scope, for example a <code>const</code> or the
+call to a function. This can be useful to reuse configurations across multiple RPCs.</p>
+<p><code>#[rpc]</code> implies <code>#[func]</code>. You can use both attributes together, if you need to configure other <code>#[func]</code>-specific keys.</p>
+<p>For example, the following method declarations are all equivalent:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::classes::multiplayer_api::RpcMode;
+<span class="kw">use </span>godot::classes::multiplayer_peer::TransferMode;
+<span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
+<span class="kw">use </span>godot::register::RpcConfig;
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>MyStruct {
+    <span class="attr">#[rpc(unreliable_ordered, channel = <span class="number">2</span>)]
+    </span><span class="kw">fn </span>with_defaults(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {}
+
+    <span class="attr">#[rpc(authority, unreliable_ordered, call_remote, channel = <span class="number">2</span>)]
+    </span><span class="kw">fn </span>explicit(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {}
+
+    <span class="attr">#[rpc(config = MY_RPC_CONFIG)]
+    </span><span class="kw">fn </span>external_config_const(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {}
+
+    <span class="attr">#[rpc(config = my_rpc_provider())]
+    </span><span class="kw">fn </span>external_config_fn(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {}
+}
+
+<span class="kw">const </span>MY_RPC_CONFIG: RpcConfig = RpcConfig {
+    rpc_mode: RpcMode::AUTHORITY,
+    transfer_mode: TransferMode::UNRELIABLE_ORDERED,
+    call_local: <span class="bool-val">false</span>,
+    channel: <span class="number">2</span>,
+};
+
+<span class="kw">fn </span>my_rpc_provider() -&gt; RpcConfig {
+    RpcConfig {
+        transfer_mode: TransferMode::UNRELIABLE_ORDERED,
+        channel: <span class="number">2</span>,
+        ..Default::default() <span class="comment">// only possible in fn, not in const.
+    </span>}
+}</code></pre></div>
+<h2 id="constants-and-signals"><a class="doc-anchor" href="#constants-and-signals">§</a>Constants and signals</h2>
+<p>Please refer to <a href="https://godot-rust.github.io/book/register/constants.html">the book</a>.</p>
+<h2 id="multiple-inherent-impl-blocks"><a class="doc-anchor" href="#multiple-inherent-impl-blocks">§</a>Multiple inherent <code>impl</code> blocks</h2>
+<p>Just like with regular structs, you can have multiple inherent <code>impl</code> blocks. This can be useful for code organization or when you want to generate code from a proc-macro.
+For implementation reasons, all but one <code>impl</code> blocks must have the key <code>secondary</code>. There is no difference between implementing all functions in one block or splitting them up between multiple blocks.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[godot_api]
+</span><span class="kw">impl </span>MyStruct {
+    <span class="attr">#[func]
+    </span><span class="kw">pub fn </span>one(<span class="kw-2">&amp;</span><span class="self">self</span>) { }
+}
+
+<span class="attr">#[godot_api(secondary)]
+</span><span class="kw">impl </span>MyStruct {
+    <span class="attr">#[func]
+    </span><span class="kw">pub fn </span>two(<span class="kw-2">&amp;</span><span class="self">self</span>) { }
+}</code></pre></div>
+</div></details></section></div></main></body></html>
