@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1022/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1022"
 pr_author = "Yarwin"
 sort_key = 2025-01-23
-date_time = 2025-01-23T11:22:51Z
-commit_sha = "8bc60570a55dc3d3a25dd2f85baf23515eb14163"
+date_time = 2025-01-23T12:04:31Z
+commit_sha = "3b3b3c63e802df94623e65ec68271682d35b3844"
 +++
 
 Support associated types in `#[godot_dyn]`
