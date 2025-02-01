@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1016/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1016"
 pr_author = "adalinesimonian"
 sort_key = 2025-02-01
-date_time = 2025-02-01T20:36:09Z
-commit_sha = "11b49b418c6babb78a16119cc298479b14b074b6"
+date_time = 2025-02-01T20:44:53Z
+commit_sha = "8489b6d1d0f397e7bf741cf6ab23355c029f5810"
 +++
 
 test: support switching API versions in check.sh
