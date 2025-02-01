@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1020/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1020"
 pr_author = "adalinesimonian"
 sort_key = 2025-02-01
-date_time = 2025-02-01T13:27:52Z
-commit_sha = "8f62f5dbb345c6bc96f9f80d18452ca2f44380c6"
+date_time = 2025-02-01T15:20:45Z
+commit_sha = "b4486a5a4624a82a776a28e89329d8474806b304"
 +++
 
-fix: ambiguous virtual method calls
+Disambiguate virtual method calls
