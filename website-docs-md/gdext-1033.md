@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1033/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1033"
 pr_author = "Bromeon"
 sort_key = 2025-02-02
-date_time = 2025-02-02T16:05:06Z
-commit_sha = "0160c8af8e9719a6584d9918cfe09464422bf8ec"
+date_time = 2025-02-02T16:16:46Z
+commit_sha = "f1ec8468fcfb2253b6da5e4004d98ea400aca8c7"
 +++
 
 Fix `Variant` -> `Gd` conversions not taking into account dead objects
