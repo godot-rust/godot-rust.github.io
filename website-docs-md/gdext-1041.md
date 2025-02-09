@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1041/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1041"
 pr_author = "0x53A"
 sort_key = 2025-02-09
-date_time = 2025-02-09T18:24:56Z
-commit_sha = "5d4c5022a0037daee8fc21f555d6b29c5780bef6"
+date_time = 2025-02-09T19:13:38Z
+commit_sha = "a708148bf9e687c19b2dd47a7c2d905ee5a972b3"
 +++
 
 fix clippy warnings: this looks like a formatting argument but it is not part of a formatting macro
