@@ -34,7 +34,7 @@ there are in fact some trade-offs to consider:</p>
 ways to achieve the same has downsides: users wonder if a subtle difference exists, or if all options are in fact identical.
 It’s unclear which one is the “preferred” option. Recognizing other people’s code becomes harder, because there tend to be dialects.</li>
 <li>It’s often a purely stylistic choice, without functional benefits. Someone may want to write <code>(1, 2).into()</code> instead of
-<code>Vector2::new(1, 2)</code>. This is not strong enough of a reason – if brevity is of concern, a function <code>vec2(1, 2)</code> does the job better.</li>
+<code>Vector2i::new(1, 2)</code>. This is not strong enough of a reason – if brevity is of concern, a function <code>vec2i(1, 2)</code> does the job better.</li>
 <li><code>From</code> is less explicit than a named conversion function. If you see <code>string.to_variant()</code> or <code>color.to_hsv()</code>, you immediately
 know the target type. <code>string.into()</code> and <code>color.into()</code> lose that aspect. Even with <code>(1, 2).into()</code>, you’d first have to check whether
 <code>From</code> is only converting the tuple, or if it <em>also</em> provides an <code>i32</code>-to-<code>f32</code> cast, thus resulting in <code>Vector2</code> instead of <code>Vector2i</code>.
@@ -44,8 +44,8 @@ based on the right-hand expression alone. With <code>.into()</code>, you need fo
 Temporarily commenting out such non-local code breaks the declaration line, too. To make matters worse, turbofish <code>.into::&lt;Type&gt;()</code> isn’t
 possible either.</li>
 <li>Rust itself <a href="https://doc.rust-lang.org/std/convert/trait.From.html#when-to-implement-from">requires</a> that <code>From</code> conversions are
-infallible, lossless, value-preserving and obvious. This rules out a lot of scenarios such as <code>Basis::to_quaternion()</code> (which only maintains
-the rotation part, not scale) or <code>Color::try_to_hsv()</code> (which is fallible and lossy).</li>
+infallible, lossless, value-preserving and obvious. This rules out a lot of scenarios such as <code>DynGd::to_gd()</code> (which only maintains
+the class part, not trait) or <code>Color::try_to_hsv()</code> (which is fallible and lossy).</li>
 </ol>
 <p>One main reason to support <code>From</code> is to allow generic programming, in particular <code>impl Into&lt;T&gt;</code> parameters. This is also the reason
 why the string types have historically implemented the trait. But this became less relevant with the advent of
