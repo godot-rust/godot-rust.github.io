@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["load","save","try_load","try_save"],"macro":["tr","tr_n"],"struct":["GFile"]};
