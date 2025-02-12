@@ -16,22 +16,29 @@
   --button-border-hover: rgb(21, 58, 82);
   --white: rgb(238, 234, 234);
   --white-title: rgb(243, 237, 237);
+
   --teal-dark: rgb(10, 54, 73);
   --teal-hover-dark: rgb(12, 77, 100);
   --blue-dark: rgb(13, 63, 94);
   --blue-hover-dark: rgb(17, 77, 114);
-  --button-border-dark: rgb(134, 124, 114);
+  --button-border-dark: rgb(95, 120, 126);
   --button-border-hover-dark: rgb(189, 174, 162);
   --white-dark: #a9aaab;
   --white-title-dark: #b5b8bb;
+
+  --text: black;
+  --text-dark: #aeb8c1;
+
   /* Navigation bar + selected parts */
   --brown-nav: rgb(185, 161, 153);
   --brown-body: rgb(218, 198, 189);
   --brown-body-bg: rgb(201, 176, 167);
   --brown-hover: rgb(148, 122, 112);
   --brown-caption: rgb(106, 78, 50);
-  --brown-nav-dark: rgb(51, 47, 42);
-  --brown-body-dark: rgb(73, 66, 57);
+  /*--brown-nav-dark: rgb(51, 47, 42);*/
+  --brown-nav-dark: rgb(50, 42, 38);
+  /*--brown-body-dark: rgb(33, 28, 25);*/
+  --brown-body-dark: rgb(32, 28, 25);
   --brown-body-bg-dark: rgb(58, 53, 48);
   --brown-hover-dark: rgb(117, 103, 91);
   --brown-caption-dark: rgb(192, 162, 141);
@@ -1147,7 +1154,8 @@ h3 {
 
 .border-gray-300 {
   --tw-border-opacity: 1;
-  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+  /*border-color: rgb(209 213 219 / var(--tw-border-opacity));*/
+  border-color: var(--brown-body-bg-dark);
 }
 
 .border-gray-400 {
@@ -1377,7 +1385,8 @@ h3 {
 
 .text-black {
   --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
+  /*color: rgb(0 0 0 / var(--tw-text-opacity));*/
+  color: var(--text);
 }
 
 .text-blue-700 {
@@ -1675,12 +1684,14 @@ html {
 
 .markdown-content h2 {
   margin-top: 3rem;
-  margin-bottom: 0px;
+  /*margin-bottom: 0px;*/
+  margin-bottom: 0.8rem;
 }
 
 .markdown-content h3 {
-  margin-top: 1.5rem;
-  margin-bottom: 0px;
+  margin-top: 2.3rem;
+  margin-bottom: 0.5rem;
+  /*margin-bottom: 0px;*/
 }
 
 .markdown-h {
@@ -1737,13 +1748,14 @@ html {
   margin-bottom: 1rem;
 }
 
-/** Nested lists have smaller margin at the bottom. */
+/** Nested lists have smaller margin at the top. */
 
 .markdown-content ol ol,
-.markdown-content ol ul,
 .markdown-content ul ol,
+.markdown-content ol ul,
 .markdown-content ul ul {
-  margin-bottom: 0px;
+  /*margin-bottom: 0px;*/
+  /*margin-top: -0.5rem;*/
 }
 
 .markdown-content p {
@@ -2297,7 +2309,8 @@ html {
 
 .dark\:text-gray-200:is(.dark *) {
   --tw-text-opacity: 1;
-  color: rgb(229 231 235 / var(--tw-text-opacity));
+  /*color: rgb(229 231 235 / var(--tw-text-opacity));*/
+  color: var(--text-dark);
 }
 
 .dark\:text-gray-300:is(.dark *) {
