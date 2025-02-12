@@ -21,7 +21,7 @@
   --teal-hover-dark: rgb(12, 77, 100);
   --blue-dark: rgb(13, 63, 94);
   --blue-hover-dark: rgb(17, 77, 114);
-  --button-border-dark: rgb(95, 120, 126);
+  --button-border-dark: rgba(105, 126, 129, 0.87);
   --button-border-hover-dark: rgb(189, 174, 162);
   --white-dark: #a9aaab;
   --white-title-dark: #b5b8bb;
@@ -35,10 +35,17 @@
   --brown-body-bg: rgb(201, 176, 167);
   --brown-hover: rgb(148, 122, 112);
   --brown-caption: rgb(106, 78, 50);
+
   /*--brown-nav-dark: rgb(51, 47, 42);*/
-  --brown-nav-dark: rgb(50, 42, 38);
+  /*--brown-nav-dark: rgb(50, 42, 38);*/
+  /*--brown-nav-dark: rgb(76, 58, 52);*/
+  --brown-nav-dark: #2a201d;
+
   /*--brown-body-dark: rgb(33, 28, 25);*/
-  --brown-body-dark: rgb(32, 28, 25);
+  /*--brown-body-dark: rgb(31, 28, 25);*/
+  /*--brown-body-dark: rgb(61, 50, 46);*/
+  --brown-body-dark: #332b28;
+
   --brown-body-bg-dark: rgb(58, 53, 48);
   --brown-hover-dark: rgb(117, 103, 91);
   --brown-caption-dark: rgb(192, 162, 141);
