@@ -110,8 +110,7 @@ image_alt = "Placeholder text describing the index's image."
 
 
 [extra.links]
-github_gdnative = "https://github.com/godot-rust/gdnative"
-github_gdext = "https://github.com/godot-rust/gdext"
+github = "https://github.com/godot-rust/gdext"
 
 [extra.social]
 discord = "https://discord.gg/aKUCJ8rJsc"
