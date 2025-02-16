@@ -85,7 +85,7 @@ Icons: https://icons.getbootstrap.com/icons/journal-bookmark-fill
     <p>Get to know other users and stay up-to-date with development:</p>
   </div>
 
-  <div class="grid md:grid-cols-3 grid-cols-2 gap-y-6 mt-6">
+  <div class="grid md:grid-cols-4 grid-cols-2 gap-y-6 mt-6">
 
     {% if config.extra.social.discord %}
     <div class="flex flex-col items-center">
@@ -110,15 +110,27 @@ Icons: https://icons.getbootstrap.com/icons/journal-bookmark-fill
     </div>
     {% endif %}
 
+    {% if config.extra.social.bluesky %}
+    <div class="flex flex-col items-center">
+      <a href="{{config.extra.social.bluesky}}" target="_blank" title="BlueSky">
+        <svg xmlns="http://www.w3.org/2000/svg" class="text-black dark:text-white social-icon social-icon-thin" viewBox="0 0 20 20" version="1.1">
+          <title>BlueSky</title>
+          <path d="m 4.9589692,3.2194787 c 2.0404904,1.5318718 4.2352702,4.6378699 5.0410828,6.3047291 0.805874,-1.6667366 3.00053,-4.7728882 5.041082,-6.3047291 1.47231,-1.1053376 3.857835,-1.9605848 3.857835,0.760857 0,0.5435089 -0.311615,4.5657578 -0.49438,5.2187543 -0.635291,2.270267 -2.950268,2.84931 -5.009478,2.498847 3.599458,0.612614 4.515126,2.641813 2.537634,4.671011 -3.755649,3.853845 -5.39796,-0.966944 -5.81897,-2.202207 -0.07714,-0.226452 -0.113243,-0.33239 -0.1137754,-0.242307 -5.35e-4,-0.09009 -0.036634,0.0158 -0.1137746,0.242307 C 9.4653993,15.402004 7.823119,20.222915 4.0672545,16.368948 2.0897315,14.33975 3.0053685,12.310427 6.6048884,11.697937 4.5456175,12.0484 2.2306103,11.469354 1.5954117,9.19909 1.4126406,8.5460328 1.1010311,4.5237839 1.1010311,3.9803357 c 0,-2.7214418 2.385585,-1.8661946 3.8578339,-0.760857 z"/>
+        </svg>
+      </a>
+      <div class="caption">BlueSky</div>
+    </div>
+    {% endif %}
+
     {% if config.extra.social.twitter %}
     <div class="flex flex-col items-center">
-      <a href="{{config.extra.social.twitter}}" target="_blank" title="Twitter">
+      <a href="{{config.extra.social.twitter}}" target="_blank" title="Twitter/X">
         <svg xmlns="http://www.w3.org/2000/svg" class="text-black dark:text-white social-icon" viewBox="0 0 30 30">
           <title>Twitter</title>
           <path d="M28,6.937c-0.957,0.425-1.985,0.711-3.064,0.84c1.102-0.66,1.947-1.705,2.345-2.951c-1.03,0.611-2.172,1.055-3.388,1.295 c-0.973-1.037-2.359-1.685-3.893-1.685c-2.946,0-5.334,2.389-5.334,5.334c0,0.418,0.048,0.826,0.138,1.215 c-4.433-0.222-8.363-2.346-10.995-5.574C3.351,6.199,3.088,7.115,3.088,8.094c0,1.85,0.941,3.483,2.372,4.439 c-0.874-0.028-1.697-0.268-2.416-0.667c0,0.023,0,0.044,0,0.067c0,2.585,1.838,4.741,4.279,5.23 c-0.447,0.122-0.919,0.187-1.406,0.187c-0.343,0-0.678-0.034-1.003-0.095c0.679,2.119,2.649,3.662,4.983,3.705 c-1.825,1.431-4.125,2.284-6.625,2.284c-0.43,0-0.855-0.025-1.273-0.075c2.361,1.513,5.164,2.396,8.177,2.396 c9.812,0,15.176-8.128,15.176-15.177c0-0.231-0.005-0.461-0.015-0.69C26.38,8.945,27.285,8.006,28,6.937z"></path>
         </svg>
       </a>
-      <div class="caption">Twitter</div>
+      <div class="caption">Twitter/X</div>
     </div>
     {% endif %}
 

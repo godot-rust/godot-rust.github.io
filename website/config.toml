@@ -114,9 +114,11 @@ github_gdnative = "https://github.com/godot-rust/gdnative"
 github_gdext = "https://github.com/godot-rust/gdext"
 
 [extra.social]
-twitter = "https://twitter.com/GodotRust"
-mastodon = "https://mastodon.gamedev.place/@GodotRust"
 discord = "https://discord.gg/aKUCJ8rJsc"
+mastodon = "https://mastodon.gamedev.place/@GodotRust"
+bluesky = "https://bsky.app/profile/godot-rust.bsky.social"
+twitter = "https://twitter.com/GodotRust"
+
 
 # Possibly interesting: https://stackoverflow.com/a/68051929
 [extra.favicon]
