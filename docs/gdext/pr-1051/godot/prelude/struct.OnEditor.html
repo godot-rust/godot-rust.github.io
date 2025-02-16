@@ -4,7 +4,7 @@ Should always be used as a property, preferably in tandem with an <code>#[export
 <p>The underlying type is de facto a wrapper for an <code>Option&lt;Gd&lt;T&gt;</code> which dereferences to underlying value.
 It should be used as it would be a value itself and lack thereof treated as a logical error.</p>
 <p><code>#[init]</code> can be used to provide default values – for example default Resources supposed to be filled by user.
-One can create new instance and set its required properties after the init, albeit <a href="option"><code>Option&lt;Gd&lt;T&gt;&gt;</code></a> and <a href="struct.OnReady.html" title="struct godot::prelude::OnReady"><code>OnReady&lt;Gd&lt;T&gt;&gt;</code></a> should be preferred instead for late initialization.</p>
+One can create new instance and set its required properties after the init, albeit <a href="https://doc.rust-lang.org/nightly/core/option/index.html" title="mod core::option"><code>Option&lt;Gd&lt;T&gt;&gt;</code></a> and <a href="struct.OnReady.html" title="struct godot::prelude::OnReady"><code>OnReady&lt;Gd&lt;T&gt;&gt;</code></a> should be preferred instead for late initialization.</p>
 <h2 id="example---auto-generated-init"><a class="doc-anchor" href="#example---auto-generated-init">§</a>Example - auto-generated init</h2>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code> <span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
 
