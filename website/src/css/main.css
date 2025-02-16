@@ -32,13 +32,19 @@
     --brown-body: rgb(218, 198, 189);
     --brown-body-bg: rgb(201, 176, 167);
     --brown-hover: rgb(148, 122, 112);
-    --brown-caption: rgb(106, 78, 50);
+    --brown-caption: rgb(106, 78, 50); /* also headers */
 
     --brown-nav-dark: rgb(51, 47, 42);
     --brown-body-dark: rgb(73, 66, 57);
     --brown-body-bg-dark: rgb(58, 53, 48);
     --brown-hover-dark: rgb(117, 103, 91);
-    --brown-caption-dark: rgb(192, 162, 141);
+    --brown-caption-dark: rgb(192, 162, 141); /* also headers */
+
+    --brown-body-dark: rgb(40, 34, 30);
+    --brown-nav-dark: rgb(52, 44, 41);
+
+    /*--brown-body-dark: rgb(50, 43, 40);*/
+    /*--brown-nav-dark: rgb(40, 35, 31);*/
 }
 
 @tailwind base;
