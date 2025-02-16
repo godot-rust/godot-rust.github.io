@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["ExAddMessage","ExAddPluralMessage","ExEraseMessage","ExGetMessage","ExGetPluralMessage"]};
