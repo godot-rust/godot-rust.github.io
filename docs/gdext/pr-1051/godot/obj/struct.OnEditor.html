@@ -33,6 +33,7 @@ Default values – used in case if no value will be set via the editor – can b
         <span class="comment">// Field `required_with_default` can be either default value, specified in `#[init]`
         // or value set via the Godot Editor.
        </span><span class="macro">assert_eq!</span>(<span class="self">self</span>.required_with_default.get_class(), GString::from(<span class="string">"Node"</span>));
+
         <span class="comment">// Will always be valid and must be set via editor
         // an additional check is being run before ready
         // to make sure that given value can't be null.
@@ -48,6 +49,7 @@ Default values – used in case if no value will be set via the editor – can b
 </span><span class="kw">struct </span>MyClass {
     <span class="attr">#[export]
     </span>required_node: OnEditor&lt;Gd&lt;Node&gt;&gt;,
+
     base: Base&lt;Node&gt;
 }
 
@@ -72,11 +74,14 @@ Default values – used in case if no value will be set via the editor – can b
 
 <span class="kw">fn </span>foo(<span class="kw-2">mut </span>this: Gd&lt;Node&gt;) {
     <span class="kw">let </span><span class="kw-2">mut </span>my_node_to_add = SomeClassThatCanBeInstantiatedInCode::new_alloc();
+
     <span class="comment">// Would cause the panic:
     // this.add_child(&amp;my_node_to_add);
+
     // Note: Remember that nodes are manually managed.
     // They will leak memory if not added to tree and/or pruned.
     </span>my_node_to_add.bind_mut().required_node = OnEditor::init(Node::new_alloc());
+
     <span class="comment">// Will not cause the panic.
     </span>this.add_child(<span class="kw-2">&amp;</span>my_node_to_add);
 }</code></pre></div>
