@@ -2,15 +2,12 @@
 <p>Allows to use <code>Gd&lt;T&gt;</code>, which by itself never holds null objects, as an <code>#[export]</code> that should not be null during runtime.
 As such, it can be used as a more ergonomic way of <code>Option&lt;Gd&lt;T&gt;&gt;</code> which <em>assumes</em> initialization.</p>
 <p>Panics during access if uninitialized.
-When used inside a node class, <code>OnEditor</code> checks if a value has been set before <code>ready()</code> is run, and panics otherwise.</p>
-<p><code>OnEditor&lt;T&gt;</code> should always be used as a property, preferably in tandem with an <code>#[export]</code> or <code>#[var]</code>.
+When used inside a node class, <code>OnEditor</code> checks if a value has been set before <code>ready()</code> is run, and panics otherwise.
 Once initialized, it can be used almost as if it was a <code>T</code> value itself, due to <code>Deref</code>/<code>DerefMut</code> impls.</p>
-<p><code>OnEditor&lt;T&gt;</code> directly supports two workflows – setting given property via the Editor or doing so via code before the first use.
-The latter should be limited to use cases involving builder or factory patterns.</p>
+<p><code>OnEditor&lt;T&gt;</code> should always be used as a property, preferably in tandem with an <code>#[export]</code> or <code>#[var]</code>.
+Initializing <code>OnEditor</code> values via code before the first use is supported but should be limited to use cases involving builder or factory patterns.</p>
 <p><a href="https://doc.rust-lang.org/nightly/core/option/index.html" title="mod core::option"><code>Option&lt;Gd&lt;T&gt;&gt;</code></a> and <a href="struct.OnReady.html" title="struct godot::prelude::OnReady"><code>OnReady&lt;Gd&lt;T&gt;&gt;</code></a> should be used for any other late initialization logic.</p>
-<h2 id="using-oneditort-with-gdt-and-dyngdt-d"><a class="doc-anchor" href="#using-oneditort-with-gdt-and-dyngdt-d">§</a>Using <code>OnEditor&lt;T&gt;</code> with <code>Gd&lt;T&gt;</code> and <code>DynGd&lt;T, D&gt;</code></h2>
-<p>Exposing properties to the Godot editor is primary use of the <code>OnEditor&lt;Gd&lt;T&gt;&gt;</code>.</p>
-<h3 id="example---auto-generated-init"><a class="doc-anchor" href="#example---auto-generated-init">§</a>Example - auto-generated init</h3>
+<h2 id="using-oneditort-with-gdt-and-dyngdt-d"><a class="doc-anchor" href="#using-oneditort-with-gdt-and-dyngdt-d">§</a>Using <code>OnEditor&lt;T&gt;</code> with <code>Gd&lt;T&gt;</code> and <code>DynGd&lt;T, D&gt;</code></h2><h3 id="example---auto-generated-init"><a class="doc-anchor" href="#example---auto-generated-init">§</a>Example - auto-generated init</h3>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code> <span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
 
 <span class="attr">#[derive(GodotClass)]
@@ -94,8 +91,8 @@ Accessing uninitialized value will cause the panic.</p>
 <span class="attr">#[derive(GodotClass)]
 #[class(init, base = Node)]
 </span><span class="kw">struct </span>SomeClassThatCanBeInstantiatedInCode {
-    <span class="comment">// Given initial value will be represented by `42` in the editor.
-    // Will cause panic if not set via the editor or code.
+    <span class="comment">// Uninitialized value will be represented by `42` in the editor.
+    // Will cause panic if not set via the editor or code before use.
     </span><span class="attr">#[export]
     #[init(uninit = <span class="number">42</span>)]
     </span>some_primitive: OnEditor&lt;i64&gt;,
@@ -111,6 +108,7 @@ Accessing uninitialized value will cause the panic.</p>
 
     <span class="comment">// Will not cause the panic.
     </span>this.add_child(<span class="kw-2">&amp;</span>my_node);
+
     my_node
 }</code></pre></div>
 </div></details><h2 id="implementations" class="section-header">Implementations<a href="#implementations" class="anchor">§</a></h2><div id="implementations-list"><details class="toggle implementors-toggle" open><summary><section id="impl-OnEditor%3CT%3E" class="impl"><a href="#impl-OnEditor%3CT%3E" class="anchor">§</a><h3 class="code-header">impl&lt;T&gt; <a class="struct" href="struct.OnEditor.html" title="struct godot::prelude::OnEditor">OnEditor</a>&lt;T&gt;<div class="where">where
