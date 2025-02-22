@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1055/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1055"
 pr_author = "Yarwin"
 sort_key = 2025-02-22
-date_time = 2025-02-22T12:05:04Z
-commit_sha = "2133316d365c7abd6a0848b8bf3f61462a6d9e26"
+date_time = 2025-02-22T12:07:45Z
+commit_sha = "3c54e660f64c918e46c4700977f4e6dda939eb57"
 +++
 
 Fix clippy: operator precedence can trip the unwary.
