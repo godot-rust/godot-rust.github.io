@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":["export_info_functions"],"trait":["BuiltinGodotType","Export","Var"]};
+window.SIDEBAR_ITEMS = {"mod":["export_info_functions"],"trait":["DirectExport","Export","Var"]};
