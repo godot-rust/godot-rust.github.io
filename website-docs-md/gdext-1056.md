@@ -1,15 +1,15 @@
 +++
 title = "#1056"
-date = 2025-02-22
+date = 2025-02-23
 
 [extra]
 repo = "gdext"
 docs_rel_url = "gdext/pr-1056/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1056"
 pr_author = "Yarwin"
-sort_key = 2025-02-22
-date_time = 2025-02-22T16:15:13Z
-commit_sha = "fa3b7353b5ad8a1cff84ee45fcc2c6b89cabc160"
+sort_key = 2025-02-23
+date_time = 2025-02-23T11:52:45Z
+commit_sha = "16149b7e4f86635a59d9eab477298ebfbcb237d8"
 +++
 
-Fix: Allow to export `Array<DynGd<T,D>>`
+Fix `Array<DynGd<T,D>>` export
