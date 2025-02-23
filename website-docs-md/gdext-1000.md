@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1000/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1000"
 pr_author = "Bromeon"
 sort_key = 2025-02-23
-date_time = 2025-02-23T16:28:55Z
-commit_sha = "bcad5d8a84fa990731b6964901f0d896c00616c4"
+date_time = 2025-02-23T21:58:30Z
+commit_sha = "fdf7962225eaae2661df16aaa3c10750e5fffc24"
 +++
 
 Type-safe signals
