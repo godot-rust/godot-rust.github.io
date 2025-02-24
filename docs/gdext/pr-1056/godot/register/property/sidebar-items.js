@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"mod":["export_info_functions"],"trait":["Export","Var"]};
