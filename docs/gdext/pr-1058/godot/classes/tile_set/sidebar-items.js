@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["CellNeighbor","ExAddCustomDataLayer","ExAddNavigationLayer","ExAddOcclusionLayer","ExAddPattern","ExAddPhysicsLayer","ExAddSource","ExAddTerrain","ExAddTerrainSet","ExGetPattern","TerrainMode","TileLayout","TileOffsetAxis","TileShape"]};
