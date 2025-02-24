@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1051/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1051"
 pr_author = "Yarwin"
 sort_key = 2025-02-24
-date_time = 2025-02-24T08:47:52Z
-commit_sha = "6b9710cf8b5a783595cf4a80a0c9488bd24ffa3e"
+date_time = 2025-02-24T17:11:03Z
+commit_sha = "6af6d65da76f939ed9ff9e3cc14a5e1add221bef"
 +++
 
 Add `OnEditor<T>`, remove `impl<T> Export for Gd<T>` and `DynGd<T, D>`
