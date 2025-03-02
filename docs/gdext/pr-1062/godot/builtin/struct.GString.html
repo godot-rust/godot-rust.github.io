@@ -38,8 +38,8 @@ will be treated as the same string if converted to a <code>GString</code>.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.try_from_bytes" class="method"><h4 class="code-header">pub fn <a href="#method.try_from_bytes" class="fn">try_from_bytes</a>(
     bytes: &amp;[<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>],
     encoding: <a class="enum" href="../prelude/enum.Encoding.html" title="enum godot::prelude::Encoding">Encoding</a>,
-) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>, <a class="struct" href="../meta/error/struct.StringError.html" title="struct godot::meta::error::StringError">StringError</a>&gt;</h4></section></summary><div class="docblock"><p>Convert string from bytes with given encoding, returning <code>None</code> on validation errors.</p>
-<p>Intermediate <code>NUL</code> characters are not accepted in Godot and always return <code>None</code>.</p>
+) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>, <a class="struct" href="../meta/error/struct.StringError.html" title="struct godot::meta::error::StringError">StringError</a>&gt;</h4></section></summary><div class="docblock"><p>Convert string from bytes with given encoding, returning <code>Err</code> on validation errors.</p>
+<p>Intermediate <code>NUL</code> characters are not accepted in Godot and always return <code>Err</code>.</p>
 <p>Some notes on the encodings:</p>
 <ul>
 <li><strong>Latin-1:</strong> Since every byte is a valid Latin-1 character, no validation besides the <code>NUL</code> byte is performed.
