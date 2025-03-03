@@ -90,7 +90,10 @@ fi
 echo "$PRE build Rust docs of crate '$mainCrate' ($features)..."
 up=".."
 
-export RUSTFLAGS="--cfg published_docs -A unused_imports -A dead_code -A unexpected_cfgs"
+# unused_doc_comments,unused_attribute: caused by false positives from doc(cfg(...)) attributes.
+export RUSTFLAGS="--cfg published_docs -A unused_imports -A dead_code -A unexpected_cfgs -A unused_doc_comments -A unused_attributes"
+# export RUSTDOCFLAGS=...
+
 # shellcheck disable=SC2086
 cargo +nightly doc -p $mainCrate $features --no-deps --target-dir $up/target
 #mkdir -p "$up/target/doc"
