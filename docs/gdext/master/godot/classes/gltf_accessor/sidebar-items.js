@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["GltfAccessorType"]};
+window.SIDEBAR_ITEMS = {"struct":["GltfAccessorType","GltfComponentType"]};

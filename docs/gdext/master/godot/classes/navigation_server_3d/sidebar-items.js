@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExBakeFromSourceGeometryData","ExBakeFromSourceGeometryDataAsync","ExMapGetClosestPointToSegment","ExMapGetPath","ExParseSourceGeometryData","ProcessInfo"]};
+window.SIDEBAR_ITEMS = {"struct":["ExBakeFromSourceGeometryData","ExBakeFromSourceGeometryDataAsync","ExMapGetClosestPointToSegment","ExMapGetPath","ExParseSourceGeometryData","ExQueryPath","ExRegionGetClosestPointToSegment","ProcessInfo"]};

@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExCopy","ExCopyAbsolute","ExGetCurrentDir"]};
+window.SIDEBAR_ITEMS = {"struct":["ExCopy","ExCopyAbsolute","ExCreateTemp","ExGetCurrentDir"]};
