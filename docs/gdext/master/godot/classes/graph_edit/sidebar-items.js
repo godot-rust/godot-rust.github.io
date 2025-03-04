@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExGetClosestConnectionAtPoint","GridPattern","PanningScheme"]};
+window.SIDEBAR_ITEMS = {"struct":["ExConnectNode","ExGetClosestConnectionAtPoint","GridPattern","PanningScheme"]};
