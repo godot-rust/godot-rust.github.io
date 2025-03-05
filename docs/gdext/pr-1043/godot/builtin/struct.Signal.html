@@ -46,7 +46,7 @@ See [<code>TrySignalFuture</code>] for details.</p>
 the call to this function.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.to_future" class="method"><h4 class="code-header">pub fn <a href="#method.to_future" class="fn">to_future</a>&lt;R&gt;(&amp;self) -&gt; <a class="struct" href="../task/struct.SignalFuture.html" title="struct godot::task::SignalFuture">SignalFuture</a>&lt;R&gt; <a href="#" class="tooltip" data-notable-ty="SignalFuture&lt;R&gt;">ⓘ</a><div class="where">where
     R: <a class="trait" href="../meta/trait.ParamTuple.html" title="trait godot::meta::ParamTuple">ParamTuple</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a>,</div></h4></section></summary><div class="docblock"><p>Creates a future for this signal.</p>
-<p>The future will resolve the next time the <code>Signal</code> is emitted, but might panic if the signal object is freed.
+<p>The future will resolve the next time the signal is emitted, but might panic if the signal object is freed.
 See <a href="../task/struct.SignalFuture.html" title="struct godot::task::SignalFuture"><code>SignalFuture</code></a> for details.</p>
 <p>Since the <code>Signal</code> type does not contain information on the signal argument types, the future output type has to be inferred from
 the call to this function.</p>
