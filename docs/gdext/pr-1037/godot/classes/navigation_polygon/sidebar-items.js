@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ParsedGeometryType","SourceGeometryMode"]};
+window.SIDEBAR_ITEMS = {"struct":["ParsedGeometryType","SamplePartitionType","SourceGeometryMode"]};

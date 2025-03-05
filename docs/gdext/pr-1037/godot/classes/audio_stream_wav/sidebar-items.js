@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["Format","LoopMode"]};
+window.SIDEBAR_ITEMS = {"struct":["ExLoadFromBuffer","ExLoadFromFile","Format","LoopMode"]};
