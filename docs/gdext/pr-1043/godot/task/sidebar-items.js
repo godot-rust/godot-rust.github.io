@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"fn":["spawn"],"struct":["FallibleSignalFuture","SignalFuture","TaskHandle","TrySignalFutureError"]};
+window.SIDEBAR_ITEMS = {"fn":["spawn"],"struct":["FallibleSignalFuture","FallibleSignalFutureError","SignalFuture","TaskHandle"]};
