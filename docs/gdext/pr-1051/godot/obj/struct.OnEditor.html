@@ -3,6 +3,7 @@
 As such, it can be used as a more ergonomic version of <code>Option&lt;Gd&lt;T&gt;&gt;</code> which <em>assumes</em> initialization.</p>
 <p>Panics during access if uninitialized.
 When used inside a node class, <code>OnEditor</code> checks if a value has been set before <code>ready()</code> is run, and panics otherwise.
+This validation is performed for all <code>OnEditor</code> fields declared in a given <code>GodotClass</code>, regardless of whether they are <code>#[var]</code>, <code>#[export]</code>, or neither.
 Once initialized, it can be used almost as if it was a <code>T</code> value itself, due to <code>Deref</code>/<code>DerefMut</code> impls.</p>
 <p><code>OnEditor&lt;T&gt;</code> should always be used as a property, preferably in tandem with an <code>#[export]</code> or <code>#[var]</code>.
 Initializing <code>OnEditor</code> values via code before the first use is supported but should be limited to use cases involving builder or factory patterns.</p>
