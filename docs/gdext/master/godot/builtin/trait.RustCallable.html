@@ -14,7 +14,9 @@
 <p>This trait has a single method, <code>invoke</code>, which is called upon invocation.</p>
 <p>Since callables can be invoked from anywhere, they must be self-contained (<code>'static</code>) and thread-safe (<code>Send + Sync</code>).
 They also should implement <code>Display</code> for the Godot string representation.
-Furthermore, <code>PartialEq</code> and <code>Hash</code> are required for equality checks and usage as a key in a <code>Dictionary</code>.</p>
+Furthermore, <code>Hash</code> is required for usage as a key in a <code>Dictionary</code> and for checking signal connections –
+Godot considers a custom callable to be connected to a signal if a callable with the same hash is already connected to that signal.
+Finally, <code>PartialEq</code> is necessary for equality checks.</p>
 </div></details><h2 id="required-methods" class="section-header">Required Methods<a href="#required-methods" class="anchor">§</a></h2><div class="methods"><details class="toggle method-toggle" open><summary><section id="tymethod.invoke" class="method"><h4 class="code-header">fn <a href="#tymethod.invoke" class="fn">invoke</a>(&amp;mut self, args: &amp;[&amp;<a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a>]) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</h4></section></summary><div class="docblock"><p>Invokes the callable with the given arguments as <code>Variant</code> references.</p>
 <p>Return <code>Ok(...)</code> if the call succeeded, and <code>Err(())</code> otherwise.
 Error handling is mostly needed in case argument number or types mismatch.</p>
