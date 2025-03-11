@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `godot/src/__docs.rs`."><title>__docs.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-916cea96.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="godot" data-themes="" data-resource-suffix="" data-rustdoc-version="1.87.0-nightly (3ea711f17 2025-03-09)" data-channel="nightly" data-search-js="search-e7298875.js" data-settings-js="settings-d72f25bb.js" ><script src="../../static.files/storage-d8ac8691.js"></script><script defer src="../../static.files/src-script-b8d3f215.js"></script><script defer src="../../src-files.js"></script><script defer src="../../static.files/main-a7bf3405.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-893ab5e7.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer"></div><main><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><h1><div class="sub-heading">godot/</div>__docs.rs</h1><rustdoc-toolbar></rustdoc-toolbar></div><div class="example-wrap digits-3"><pre class="rust"><code><a href=#1 id=1 data-nosnippet>1</a><span class="comment">/*
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `godot/src/__docs.rs`."><title>__docs.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-916cea96.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="godot" data-themes="" data-resource-suffix="" data-rustdoc-version="1.87.0-nightly (9fb94b32d 2025-03-10)" data-channel="nightly" data-search-js="search-e7298875.js" data-settings-js="settings-d72f25bb.js" ><script src="../../static.files/storage-d8ac8691.js"></script><script defer src="../../static.files/src-script-b8d3f215.js"></script><script defer src="../../src-files.js"></script><script defer src="../../static.files/main-a7bf3405.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-893ab5e7.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer"></div><main><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><h1><div class="sub-heading">godot/</div>__docs.rs</h1><rustdoc-toolbar></rustdoc-toolbar></div><div class="example-wrap digits-3"><pre class="rust"><code><a href=#1 id=1 data-nosnippet>1</a><span class="comment">/*
 <a href=#2 id=2 data-nosnippet>2</a> * Copyright (c) godot-rust; Bromeon and contributors.
 <a href=#3 id=3 data-nosnippet>3</a> * This Source Code Form is subject to the terms of the Mozilla Public
 <a href=#4 id=4 data-nosnippet>4</a> * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -91,17 +91,152 @@
 <a href=#91 id=91 data-nosnippet>91</a>//! _Panics_ section.
 <a href=#92 id=92 data-nosnippet>92</a>//! &lt;br&gt;&lt;br&gt;
 <a href=#93 id=93 data-nosnippet>93</a>//!
-<a href=#94 id=94 data-nosnippet>94</a>//! ## Thread safety
-<a href=#95 id=95 data-nosnippet>95</a>//!
-<a href=#96 id=96 data-nosnippet>96</a>//! [Godot's own thread safety
-<a href=#97 id=97 data-nosnippet>97</a>//! rules](https://docs.godotengine.org/en/latest/tutorials/performance/thread_safe_apis.html)
-<a href=#98 id=98 data-nosnippet>98</a>//! apply. Types in this crate implement (or don't implement) `Send` and `Sync` wherever
-<a href=#99 id=99 data-nosnippet>99</a>//! appropriate, but the Rust compiler cannot check what happens to an object through C++ or
-<a href=#100 id=100 data-nosnippet>100</a>//! GDScript.
-<a href=#101 id=101 data-nosnippet>101</a>//!
-<a href=#102 id=102 data-nosnippet>102</a>//! As a rule of thumb, if you must use threading, prefer to use [Rust threads](https://doc.rust-lang.org/std/thread)
-<a href=#103 id=103 data-nosnippet>103</a>//! over Godot threads.
-<a href=#104 id=104 data-nosnippet>104</a>//!
-<a href=#105 id=105 data-nosnippet>105</a>//! The Cargo feature `experimental-threads` provides experimental support for multithreading. The underlying safety
-<a href=#106 id=106 data-nosnippet>106</a>//! rules are still being worked out, as such you may encounter unsoundness and an unstable API.
-<a href=#107 id=107 data-nosnippet>107</a>//!</span></code></pre></div></section></main></body></html>
+<a href=#94 id=94 data-nosnippet>94</a>//!
+<a href=#95 id=95 data-nosnippet>95</a>//! ## Thread safety
+<a href=#96 id=96 data-nosnippet>96</a>//!
+<a href=#97 id=97 data-nosnippet>97</a>//! [Godot's own thread safety
+<a href=#98 id=98 data-nosnippet>98</a>//! rules](https://docs.godotengine.org/en/latest/tutorials/performance/thread_safe_apis.html)
+<a href=#99 id=99 data-nosnippet>99</a>//! apply. Types in this crate implement (or don't implement) `Send` and `Sync` wherever
+<a href=#100 id=100 data-nosnippet>100</a>//! appropriate, but the Rust compiler cannot check what happens to an object through C++ or
+<a href=#101 id=101 data-nosnippet>101</a>//! GDScript.
+<a href=#102 id=102 data-nosnippet>102</a>//!
+<a href=#103 id=103 data-nosnippet>103</a>//! As a rule of thumb, if you must use threading, prefer to use [Rust threads](https://doc.rust-lang.org/std/thread)
+<a href=#104 id=104 data-nosnippet>104</a>//! over Godot threads.
+<a href=#105 id=105 data-nosnippet>105</a>//!
+<a href=#106 id=106 data-nosnippet>106</a>//! The Cargo feature `experimental-threads` provides experimental support for multithreading. The underlying safety
+<a href=#107 id=107 data-nosnippet>107</a>//! rules are still being worked out, as such you may encounter unsoundness and an unstable API.
+<a href=#108 id=108 data-nosnippet>108</a>//!
+<a href=#109 id=109 data-nosnippet>109</a>//!
+<a href=#110 id=110 data-nosnippet>110</a>//! ## Builtin API Design
+<a href=#111 id=111 data-nosnippet>111</a>//!
+<a href=#112 id=112 data-nosnippet>112</a>//! See also [`godot::builtin`](crate::builtin) module documentation.
+<a href=#113 id=113 data-nosnippet>113</a>//!
+<a href=#114 id=114 data-nosnippet>114</a>//! Our goal is to strive for a middle ground between idiomatic Rust and existing Godot APIs, achieving a decent balance between ergonomics,
+<a href=#115 id=115 data-nosnippet>115</a>//! correctness and performance. We leverage Rust's type system (such as `Option&lt;T&gt;` or `enum`) where it helps expressivity.
+<a href=#116 id=116 data-nosnippet>116</a>//!
+<a href=#117 id=117 data-nosnippet>117</a>//! We have been using a few guiding principles. Those apply to builtins in particular, but some are relevant in other modules, too.
+<a href=#118 id=118 data-nosnippet>118</a>//!
+<a href=#119 id=119 data-nosnippet>119</a>//! ### 1. `Copy` for value types
+<a href=#120 id=120 data-nosnippet>120</a>//!
+<a href=#121 id=121 data-nosnippet>121</a>//! _Value types_ are types with public fields and no hidden state. This includes all geometric types, colors and RIDs.
+<a href=#122 id=122 data-nosnippet>122</a>//!
+<a href=#123 id=123 data-nosnippet>123</a>//! All value types implement the `Copy` trait and thus have no custom `Drop` impl.
+<a href=#124 id=124 data-nosnippet>124</a>//!
+<a href=#125 id=125 data-nosnippet>125</a>//! ### 2. By-value (`self`) vs. by-reference (`&amp;self`) receivers
+<a href=#126 id=126 data-nosnippet>126</a>//!
+<a href=#127 id=127 data-nosnippet>127</a>//! Most `Copy` builtins use by-value receivers. The exception are matrix-like types (e.g., `Basis`, `Transform2D`, `Transform3D`, `Projection`),
+<a href=#128 id=128 data-nosnippet>128</a>//! whose methods operate on `&amp;self` instead. This is close to how the underlying `glam` library handles it.
+<a href=#129 id=129 data-nosnippet>129</a>//!
+<a href=#130 id=130 data-nosnippet>130</a>//! ### 3. `Default` trait only when the default value is common and useful
+<a href=#131 id=131 data-nosnippet>131</a>//!
+<a href=#132 id=132 data-nosnippet>132</a>//! `Default` is deliberately not implemented for every type. Rationale:
+<a href=#133 id=133 data-nosnippet>133</a>//! - For some types, the default representation (as per Godot) does not constitute a useful value. This goes against Rust's [`Default`] docs,
+<a href=#134 id=134 data-nosnippet>134</a>//!   which explicitly mention "A trait for giving a type a _useful_ default value". For example, `Plane()` in GDScript creates a degenerate
+<a href=#135 id=135 data-nosnippet>135</a>//!   plane which cannot participate in geometric operations.
+<a href=#136 id=136 data-nosnippet>136</a>//! - Not providing `Default` makes users double-check if the value they want is indeed what they intended. While it seems convenient, not
+<a href=#137 id=137 data-nosnippet>137</a>//!   having implicit default or "null" values is a design choice of Rust, avoiding the Billion Dollar Mistake. In many situations, `Option` or
+<a href=#138 id=138 data-nosnippet>138</a>//!   [`OnReady`][crate::obj::OnReady] is a better alternative.
+<a href=#139 id=139 data-nosnippet>139</a>//! - For cases where the Godot default is truly desired, we provide an `invalid()` constructor, e.g. `Callable::invalid()` or `Plane::invalid()`.
+<a href=#140 id=140 data-nosnippet>140</a>//!   This makes it explicit that you're constructing a value that first has to be modified before becoming useful. When used in class fields,
+<a href=#141 id=141 data-nosnippet>141</a>//!   `#[init(val = ...)]` can help you initialize such values.
+<a href=#142 id=142 data-nosnippet>142</a>//! - Outside builtins, we do not implement `Gd::default()` for manually managed types, as this makes it very easy to overlook initialization
+<a href=#143 id=143 data-nosnippet>143</a>//!   (e.g. in `#[derive(Default)]`) and leak memory. A `Gd::new_alloc()` is very explicit.
+<a href=#144 id=144 data-nosnippet>144</a>//!
+<a href=#145 id=145 data-nosnippet>145</a>//! ### 4. Prefer explicit conversions over `From` trait
+<a href=#146 id=146 data-nosnippet>146</a>//!
+<a href=#147 id=147 data-nosnippet>147</a>//! `From` is quite popular in Rust, but unlike traits such as `Debug`, the convenience of `From` can come at a cost. Like every feature, adding
+<a href=#148 id=148 data-nosnippet>148</a>//! an `impl From` needs to be justified -- not the other way around: there doesn't need to be a particular reason why it's _not_ added. But
+<a href=#149 id=149 data-nosnippet>149</a>//! there are in fact some trade-offs to consider:
+<a href=#150 id=150 data-nosnippet>150</a>//!
+<a href=#151 id=151 data-nosnippet>151</a>//! 1. `From` next to named conversion methods/constructors adds another way to do things. While it's sometimes good to have choice, multiple
+<a href=#152 id=152 data-nosnippet>152</a>//!    ways to achieve the same has downsides: users wonder if a subtle difference exists, or if all options are in fact identical.
+<a href=#153 id=153 data-nosnippet>153</a>//!    It's unclear which one is the "preferred" option. Recognizing other people's code becomes harder, because there tend to be dialects.
+<a href=#154 id=154 data-nosnippet>154</a>//! 2. It's often a purely stylistic choice, without functional benefits. Someone may want to write `(1, 2).into()` instead of
+<a href=#155 id=155 data-nosnippet>155</a>//!    `Vector2i::new(1, 2)`. This is not strong enough of a reason -- if brevity is of concern, a function `vec2i(1, 2)` does the job better.
+<a href=#156 id=156 data-nosnippet>156</a>//! 3. `From` is less explicit than a named conversion function. If you see `string.to_variant()` or `color.to_hsv()`, you immediately
+<a href=#157 id=157 data-nosnippet>157</a>//!    know the target type. `string.into()` and `color.into()` lose that aspect. Even with `(1, 2).into()`, you'd first have to check whether
+<a href=#158 id=158 data-nosnippet>158</a>//!    `From` is only converting the tuple, or if it _also_ provides an `i32`-to-`f32` cast, thus resulting in `Vector2` instead of `Vector2i`.
+<a href=#159 id=159 data-nosnippet>159</a>//!    This problem doesn't exist with named constructor functions.
+<a href=#160 id=160 data-nosnippet>160</a>//! 4. The `From` trait doesn't play nicely with type inference. If you write `let v = string.to_variant()`, rustc can infer the type of `v`
+<a href=#161 id=161 data-nosnippet>161</a>//!    based on the right-hand expression alone. With `.into()`, you need follow-up code to determine the type, which may or may not work.
+<a href=#162 id=162 data-nosnippet>162</a>//!    Temporarily commenting out such non-local code breaks the declaration line, too. To make matters worse, turbofish `.into::&lt;Type&gt;()` isn't
+<a href=#163 id=163 data-nosnippet>163</a>//!    possible either.
+<a href=#164 id=164 data-nosnippet>164</a>//! 5. Rust itself [requires](https://doc.rust-lang.org/std/convert/trait.From.html#when-to-implement-from) that `From` conversions are
+<a href=#165 id=165 data-nosnippet>165</a>//!    infallible, lossless, value-preserving and obvious. This rules out a lot of scenarios such as `DynGd::to_gd()` (which only maintains
+<a href=#166 id=166 data-nosnippet>166</a>//!    the class part, not trait) or `Color::try_to_hsv()` (which is fallible and lossy).
+<a href=#167 id=167 data-nosnippet>167</a>//!
+<a href=#168 id=168 data-nosnippet>168</a>//! One main reason to support `From` is to allow generic programming, in particular `impl Into&lt;T&gt;` parameters. This is also the reason
+<a href=#169 id=169 data-nosnippet>169</a>//! why the string types have historically implemented the trait. But this became less relevant with the advent of
+<a href=#170 id=170 data-nosnippet>170</a>//! [`AsArg&lt;T&gt;`][crate::meta::AsArg] taking that role, and thus may change in the future.
+<a href=#171 id=171 data-nosnippet>171</a>//!
+<a href=#172 id=172 data-nosnippet>172</a>//! ### 5. `Option` for fallible operations
+<a href=#173 id=173 data-nosnippet>173</a>//!
+<a href=#174 id=174 data-nosnippet>174</a>//! GDScript often uses degenerate types and custom null states to express that an operation isn't successful. This isn't always consistent:
+<a href=#175 id=175 data-nosnippet>175</a>//! - [`Rect2::intersection()`] returns an empty rectangle (i.e. you need to check its size).
+<a href=#176 id=176 data-nosnippet>176</a>//! - [`Plane::intersects_ray()`] returns a `Variant` which is NIL in case of no intersection. While this is a better way to deal with it,
+<a href=#177 id=177 data-nosnippet>177</a>//!   it's not immediately obvious that the result is a point (`Vector2`), and comes with extra marshaling overhead.
+<a href=#178 id=178 data-nosnippet>178</a>//!
+<a href=#179 id=179 data-nosnippet>179</a>//! Rust uses `Option` in such cases, making the error state explicit and preventing that the result is accidentally interpreted as valid.
+<a href=#180 id=180 data-nosnippet>180</a>//!
+<a href=#181 id=181 data-nosnippet>181</a>//! [`Rect2::intersection()`]: https://docs.godotengine.org/en/stable/classes/class_rect2.html#class-rect2-method-intersection
+<a href=#182 id=182 data-nosnippet>182</a>//! [`Plane::intersects_ray()`]: https://docs.godotengine.org/en/stable/classes/class_plane.html#class-plane-method-intersects-ray
+<a href=#183 id=183 data-nosnippet>183</a>//!
+<a href=#184 id=184 data-nosnippet>184</a>//! ### 6. Public fields and soft invariants
+<a href=#185 id=185 data-nosnippet>185</a>//!
+<a href=#186 id=186 data-nosnippet>186</a>//! Some geometric types are subject to "soft invariants". These invariants are not enforced at all times but are essential for certain
+<a href=#187 id=187 data-nosnippet>187</a>//! operations. For example, bounding boxes must have non-negative volume for operations like intersection or containment checks. Planes
+<a href=#188 id=188 data-nosnippet>188</a>//! must have a non-zero normal vector.
+<a href=#189 id=189 data-nosnippet>189</a>//!
+<a href=#190 id=190 data-nosnippet>190</a>//! We cannot make them hard invariants (no invalid value may ever exist), because that would disallow the convenient public fields, and
+<a href=#191 id=191 data-nosnippet>191</a>//! it would also mean every value coming over the FFI boundary (e.g. an `#[export]` field set in UI) would constantly need to be validated
+<a href=#192 id=192 data-nosnippet>192</a>//! and reset to a different "sane" value.
+<a href=#193 id=193 data-nosnippet>193</a>//!
+<a href=#194 id=194 data-nosnippet>194</a>//! For **geometric operations**, Godot often doesn't specify the behavior if values are degenerate, which can propagate bugs that then lead
+<a href=#195 id=195 data-nosnippet>195</a>//! to follow-up problems. godot-rust instead provides best-effort validations _during an operation_, which cause panics if such invalid states
+<a href=#196 id=196 data-nosnippet>196</a>//! are detected (at least in Debug mode). Consult the docs of a concrete type to see its guarantees.
+<a href=#197 id=197 data-nosnippet>197</a>//!
+<a href=#198 id=198 data-nosnippet>198</a>//! ### 7. RIIR for some, but not all builtins
+<a href=#199 id=199 data-nosnippet>199</a>//!
+<a href=#200 id=200 data-nosnippet>200</a>//! Builtins use varying degrees of Rust vs. engine code for their implementations. This may change over time and is generally an implementation
+<a href=#201 id=201 data-nosnippet>201</a>//! detail.
+<a href=#202 id=202 data-nosnippet>202</a>//!
+<a href=#203 id=203 data-nosnippet>203</a>//! - 100% Rust, often supported by the `glam` library:
+<a href=#204 id=204 data-nosnippet>204</a>//!   - all vector types (`Vector2`, `Vector2i`, `Vector3`, `Vector3i`, `Vector4`, `Vector4i`)
+<a href=#205 id=205 data-nosnippet>205</a>//!   - all bounding boxes (`Rect2`, `Rect2i`, `Aabb`)
+<a href=#206 id=206 data-nosnippet>206</a>//!   - 2D/3D matrices (`Basis`, `Transform2D`, `Transform3D`)
+<a href=#207 id=207 data-nosnippet>207</a>//!   - `Plane`
+<a href=#208 id=208 data-nosnippet>208</a>//!   - `Rid` (just an integer)
+<a href=#209 id=209 data-nosnippet>209</a>//! - Partial Rust: `Color`, `Quaternion`, `Projection`
+<a href=#210 id=210 data-nosnippet>210</a>//! - Only Godot FFI: all others (containers, strings, callables, variant, ...)
+<a href=#211 id=211 data-nosnippet>211</a>//!
+<a href=#212 id=212 data-nosnippet>212</a>//! The rationale here is that operations which are absolutely ubiquitous in game development, such as vector/matrix operations, benefit
+<a href=#213 id=213 data-nosnippet>213</a>//! a lot from being directly implemented in Rust. This avoids FFI calls, which aren't necessarily slow, but remove a lot of optimization
+<a href=#214 id=214 data-nosnippet>214</a>//! potential for rustc/LLVM.
+<a href=#215 id=215 data-nosnippet>215</a>//!
+<a href=#216 id=216 data-nosnippet>216</a>//! Other types, that are used less in bulk and less often in performance-critical paths (e.g. `Projection`), partially fall back to Godot APIs.
+<a href=#217 id=217 data-nosnippet>217</a>//! Some operations are reasonably complex to implement in Rust, and we're not a math library, nor do we want to depend on one besides `glam`.
+<a href=#218 id=218 data-nosnippet>218</a>//! An ever-increasing maintenance burden for geometry re-implementations is also detrimental.
+<a href=#219 id=219 data-nosnippet>219</a>//!
+<a href=#220 id=220 data-nosnippet>220</a>//! TLDR: it's a trade-off between performance, maintenance effort and correctness -- the current combination of `glam` and Godot seems to be a
+<a href=#221 id=221 data-nosnippet>221</a>//! relatively well-working sweet spot.
+<a href=#222 id=222 data-nosnippet>222</a>//!
+<a href=#223 id=223 data-nosnippet>223</a>//! ### 8. `glam` types are not exposed in public API
+<a href=#224 id=224 data-nosnippet>224</a>//!
+<a href=#225 id=225 data-nosnippet>225</a>//! While Godot and `glam` share common operations, there are also lots of differences and Godot specific APIs.
+<a href=#226 id=226 data-nosnippet>226</a>//! As a result, godot-rust defines its own vector and matrix types, making `glam` an implementation details.
+<a href=#227 id=227 data-nosnippet>227</a>//!
+<a href=#228 id=228 data-nosnippet>228</a>//! Alternatives considered:
+<a href=#229 id=229 data-nosnippet>229</a>//!
+<a href=#230 id=230 data-nosnippet>230</a>//! 1. Re-export types of an existing vector algebra crate (like `glam`).
+<a href=#231 id=231 data-nosnippet>231</a>//!    The `gdnative` crate started out this way, using types from `euclid`, but [became impractical](https://github.com/godot-rust/gdnative/issues/594#issue-705061720).
+<a href=#232 id=232 data-nosnippet>232</a>//!    Even with extension traits, there would be lots of compromises, where existing and Godot APIs differ slightly.
+<a href=#233 id=233 data-nosnippet>233</a>//!
+<a href=#234 id=234 data-nosnippet>234</a>//!    Furthermore, it would create a strong dependency on a volatile API outside our control. `glam` had 9 SemVer-breaking versions over the
+<a href=#235 id=235 data-nosnippet>235</a>//!    timespan of two years (2022-2024). While it's often easy to migrate and the changes notably improve the library, this would mean that any
+<a href=#236 id=236 data-nosnippet>236</a>//!    breaking change would also become breaking for godot-rust, requiring a SemVer bump. By abstracting this, we can have our own timeline.
+<a href=#237 id=237 data-nosnippet>237</a>//!
+<a href=#238 id=238 data-nosnippet>238</a>//! 2. We could opaquely wrap types, i.e. `Vector2` would contain a private `glam::Vec2`. This would prevent direct field access, which is
+<a href=#239 id=239 data-nosnippet>239</a>//!    _extremely_ inconvenient for vectors. And it would still require us to redefine the front-end of the entire API.
+<a href=#240 id=240 data-nosnippet>240</a>//!
+<a href=#241 id=241 data-nosnippet>241</a>//! Eventually, we might add support for [`mint`](https://crates.io/crates/mint) to allow conversions to other linear algebra libraries in the
+<a href=#242 id=242 data-nosnippet>242</a>//! ecosystem. (Note that `mint` intentionally offers no math operations, see e.g. [mint#75](https://github.com/kvark/mint/issues/75)).</span></code></pre></div></section></main></body></html>

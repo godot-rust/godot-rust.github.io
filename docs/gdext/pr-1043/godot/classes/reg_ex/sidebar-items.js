@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExSearch","ExSearchAll","ExSub"]};
+window.SIDEBAR_ITEMS = {"struct":["ExCompile","ExCreateFromString","ExSearch","ExSearchAll","ExSub"]};

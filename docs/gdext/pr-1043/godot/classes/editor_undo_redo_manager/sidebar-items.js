@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExCommitAction","ExCreateAction","SpecialHistory"]};
+window.SIDEBAR_ITEMS = {"struct":["ExClearHistory","ExCommitAction","ExCreateAction","SpecialHistory"]};
