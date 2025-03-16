@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExAddResourceFormatSaver","ExSave","SaverFlags"]};
+window.SIDEBAR_ITEMS = {"struct":["ExAddResourceFormatSaver","ExGetResourceIdForPath","ExSave","SaverFlags"]};

@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExParse","ExStringify"]};
+window.SIDEBAR_ITEMS = {"struct":["ExFromNative","ExParse","ExStringify","ExToNative"]};

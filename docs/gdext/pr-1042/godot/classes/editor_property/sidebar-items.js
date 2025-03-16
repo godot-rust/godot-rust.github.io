@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExEmitChanged"]};
+window.SIDEBAR_ITEMS = {"struct":["ExEmitChanged","ExSelect"]};

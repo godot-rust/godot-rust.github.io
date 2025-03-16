@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExBakeFromSourceGeometryData","ExBakeFromSourceGeometryDataAsync","ExMapGetPath","ExParseSourceGeometryData"]};
+window.SIDEBAR_ITEMS = {"struct":["ExBakeFromSourceGeometryData","ExBakeFromSourceGeometryDataAsync","ExMapGetPath","ExParseSourceGeometryData","ExQueryPath"]};

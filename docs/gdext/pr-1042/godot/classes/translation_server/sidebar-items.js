@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExTranslate","ExTranslatePlural"]};
+window.SIDEBAR_ITEMS = {"struct":["ExStandardizeLocale","ExTranslate","ExTranslatePlural"]};

@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["DrawOrder","EmissionShape","Parameter","ParticleFlags"]};
+window.SIDEBAR_ITEMS = {"struct":["DrawOrder","EmissionShape","ExRestart","Parameter","ParticleFlags"]};
