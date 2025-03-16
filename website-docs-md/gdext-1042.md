@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1042/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1042"
 pr_author = "lilizoey"
 sort_key = 2025-03-16
-date_time = 2025-03-16T18:26:36Z
-commit_sha = "f2411b083958b2ac8e7f2bd9e5a7be3f66442edd"
+date_time = 2025-03-16T19:24:00Z
+commit_sha = "aab13eee0f645715449f6c54777e31eb3931e290"
 +++
 
 Experiment with splitting up signature differently
