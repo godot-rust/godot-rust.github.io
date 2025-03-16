@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1083/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1083"
 pr_author = "Bromeon"
 sort_key = 2025-03-16
-date_time = 2025-03-16T20:40:24Z
-commit_sha = "60c69faa221a7e70f8439f0a5e832007f8fc93d3"
+date_time = 2025-03-16T21:34:01Z
+commit_sha = "f5fca0be8d68639ce82742953e667baf08dd2244"
 +++
 
 Add `OnReady::from_loaded()` + `#[init(load = "PATH")]`
