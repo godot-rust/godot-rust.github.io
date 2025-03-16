@@ -1,41 +1,51 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Exported property that must be initialized in the editor (or associated code) before use."><title>OnEditor in godot::obj - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-916cea96.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="godot" data-themes="" data-resource-suffix="" data-rustdoc-version="1.87.0-nightly (4d30011f6 2025-03-15)" data-channel="nightly" data-search-js="search-e7298875.js" data-settings-js="settings-d72f25bb.js" ><script src="../../static.files/storage-d8ac8691.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-fb8c74a8.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-893ab5e7.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc struct"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button><a class="logo-container" href="../../godot/index.html"><img src="https://raw.githubusercontent.com/godot-rust/assets/master/gdext/ferris.svg" alt=""></a></nav><nav class="sidebar"><div class="sidebar-crate"><a class="logo-container" href="../../godot/index.html"><img src="https://raw.githubusercontent.com/godot-rust/assets/master/gdext/ferris.svg" alt="logo"></a><h2><a href="../../godot/index.html">godot</a><span class="version">0.2.4</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">OnEditor</a></h2><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#using-oneditort-with-gdt-and-dyngdt-d" title="Using `OnEditor&#60;T&#62;` with `Gd&#60;T&#62;` and `DynGd&#60;T, D&#62;`">Using <code>OnEditor&lt;T&gt;</code> with <code>Gd&lt;T&gt;</code> and <code>DynGd&lt;T, D&gt;</code></a><ul><li><a href="#example---auto-generated-init" title="Example - auto-generated init">Example - auto-generated init</a></li><li><a href="#example---user-generated-init" title="Example - user-generated init">Example - user-generated init</a></li><li><a href="#example---factory-pattern" title="Example - factory pattern">Example - factory pattern</a></li></ul></li><li><a href="#using-oneditort-with-other-godottypes" title="Using `OnEditor&#60;T&#62;` with other GodotTypes">Using <code>OnEditor&lt;T&gt;</code> with other GodotTypes</a><ul><li><a href="#example---using-oneditor-with-primitives" title="Example - using `OnEditor` with primitives">Example - using <code>OnEditor</code> with primitives</a></li></ul></li><li><a href="#using-oneditort-with-classtool" title="Using `OnEditor&#60;T&#62;` with `#[class(tool)]`">Using <code>OnEditor&lt;T&gt;</code> with <code>#[class(tool)]</code></a></li></ul><h3><a href="#implementations">Methods</a></h3><ul class="block method"><li><a href="#method.from_sentinel" title="from_sentinel">from_sentinel</a></li><li><a href="#method.init" title="init">init</a></li></ul><h3><a href="#trait-implementations">Trait Implementations</a></h3><ul class="block trait-implementation"><li><a href="#impl-BuiltinExport-for-OnEditor%3CT%3E" title="BuiltinExport">BuiltinExport</a></li><li><a href="#impl-Default-for-OnEditor%3CDynGd%3CT,+D%3E%3E" title="Default">Default</a></li><li><a href="#impl-Default-for-OnEditor%3CGd%3CT%3E%3E" title="Default">Default</a></li><li><a href="#impl-Deref-for-OnEditor%3CT%3E" title="Deref">Deref</a></li><li><a href="#impl-DerefMut-for-OnEditor%3CT%3E" title="DerefMut">DerefMut</a></li><li><a href="#impl-Export-for-OnEditor%3CDynGd%3CT,+D%3E%3E" title="Export">Export</a></li><li><a href="#impl-Export-for-OnEditor%3CGd%3CT%3E%3E" title="Export">Export</a></li><li><a href="#impl-Export-for-OnEditor%3CT%3E" title="Export">Export</a></li><li><a href="#impl-GodotConvert-for-OnEditor%3CDynGd%3CT,+D%3E%3E" title="GodotConvert">GodotConvert</a></li><li><a href="#impl-GodotConvert-for-OnEditor%3CGd%3CT%3E%3E" title="GodotConvert">GodotConvert</a></li><li><a href="#impl-GodotConvert-for-OnEditor%3CT%3E" title="GodotConvert">GodotConvert</a></li><li><a href="#impl-Var-for-OnEditor%3CDynGd%3CT,+D%3E%3E" title="Var">Var</a></li><li><a href="#impl-Var-for-OnEditor%3CGd%3CT%3E%3E" title="Var">Var</a></li><li><a href="#impl-Var-for-OnEditor%3CT%3E" title="Var">Var</a></li></ul><h3><a href="#synthetic-implementations">Auto Trait Implementations</a></h3><ul class="block synthetic-implementation"><li><a href="#impl-Freeze-for-OnEditor%3CT%3E" title="Freeze">Freeze</a></li><li><a href="#impl-RefUnwindSafe-for-OnEditor%3CT%3E" title="RefUnwindSafe">RefUnwindSafe</a></li><li><a href="#impl-Send-for-OnEditor%3CT%3E" title="Send">Send</a></li><li><a href="#impl-Sync-for-OnEditor%3CT%3E" title="Sync">Sync</a></li><li><a href="#impl-Unpin-for-OnEditor%3CT%3E" title="Unpin">Unpin</a></li><li><a href="#impl-UnwindSafe-for-OnEditor%3CT%3E" title="UnwindSafe">UnwindSafe</a></li></ul><h3><a href="#blanket-implementations">Blanket Implementations</a></h3><ul class="block blanket-implementation"><li><a href="#impl-Any-for-T" title="Any">Any</a></li><li><a href="#impl-Borrow%3CT%3E-for-T" title="Borrow&#60;T&#62;">Borrow&#60;T&#62;</a></li><li><a href="#impl-BorrowMut%3CT%3E-for-T" title="BorrowMut&#60;T&#62;">BorrowMut&#60;T&#62;</a></li><li><a href="#impl-From%3CT%3E-for-T" title="From&#60;T&#62;">From&#60;T&#62;</a></li><li><a href="#impl-Into%3CU%3E-for-T" title="Into&#60;U&#62;">Into&#60;U&#62;</a></li><li><a href="#impl-Receiver-for-P" title="Receiver">Receiver</a></li><li><a href="#impl-TryFrom%3CU%3E-for-T" title="TryFrom&#60;U&#62;">TryFrom&#60;U&#62;</a></li><li><a href="#impl-TryInto%3CU%3E-for-T" title="TryInto&#60;U&#62;">TryInto&#60;U&#62;</a></li></ul></section><div id="rustdoc-modnav"><h2><a href="index.html">In godot::<wbr>obj</a></h2></div></div></nav><div class="sidebar-resizer"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../index.html">godot</a>::<wbr><a href="index.html">obj</a></div><h1>Struct <span class="struct">OnEditor</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"></span></div><pre class="rust item-decl"><code>pub struct OnEditor&lt;T&gt; { <span class="comment">/* private fields */</span> }</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Exported property that must be initialized in the editor (or associated code) before use.</p>
-<p>Allows to use <code>Gd&lt;T&gt;</code>, which by itself never holds null objects, as an <code>#[export]</code> that should not be null during runtime.
-As such, it can be used as a more ergonomic version of <code>Option&lt;Gd&lt;T&gt;&gt;</code> which <em>assumes</em> initialization.</p>
-<p>Panics during access if uninitialized.
-When used inside a node class, <code>OnEditor</code> checks if a value has been set before <code>ready()</code> is run, and panics otherwise.
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Exported property that must be initialized in the editor (or associated code) before use."><title>OnEditor in godot::obj - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-916cea96.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="godot" data-themes="" data-resource-suffix="" data-rustdoc-version="1.87.0-nightly (4d30011f6 2025-03-15)" data-channel="nightly" data-search-js="search-e7298875.js" data-settings-js="settings-d72f25bb.js" ><script src="../../static.files/storage-d8ac8691.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-fb8c74a8.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-893ab5e7.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc struct"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button><a class="logo-container" href="../../godot/index.html"><img src="https://raw.githubusercontent.com/godot-rust/assets/master/gdext/ferris.svg" alt=""></a></nav><nav class="sidebar"><div class="sidebar-crate"><a class="logo-container" href="../../godot/index.html"><img src="https://raw.githubusercontent.com/godot-rust/assets/master/gdext/ferris.svg" alt="logo"></a><h2><a href="../../godot/index.html">godot</a><span class="version">0.2.4</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">OnEditor</a></h2><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#what-consitutes-initialized" title="What consitutes “initialized”?">What consitutes “initialized”?</a></li><li><a href="#initialization-semantics" title="Initialization semantics">Initialization semantics</a></li><li><a href="#using-oneditor-with-classes" title="Using `OnEditor` with classes">Using <code>OnEditor</code> with classes</a><ul><li><a href="#example-automatic-init" title="Example: automatic init">Example: automatic init</a></li><li><a href="#example-user-defined-init" title="Example: user-defined init">Example: user-defined init</a></li><li><a href="#example-factory-pattern" title="Example: factory pattern">Example: factory pattern</a></li></ul></li><li><a href="#using-oneditor-with-built-in-types" title="Using `OnEditor` with built-in types">Using <code>OnEditor</code> with built-in types</a><ul><li><a href="#example" title="Example">Example</a></li></ul></li><li><a href="#using-oneditor-with-classtool" title="Using `OnEditor` with `#[class(tool)]`">Using <code>OnEditor</code> with <code>#[class(tool)]</code></a></li></ul><h3><a href="#implementations">Methods</a></h3><ul class="block method"><li><a href="#method.from_sentinel" title="from_sentinel">from_sentinel</a></li><li><a href="#method.init" title="init">init</a></li></ul><h3><a href="#trait-implementations">Trait Implementations</a></h3><ul class="block trait-implementation"><li><a href="#impl-BuiltinExport-for-OnEditor%3CT%3E" title="BuiltinExport">BuiltinExport</a></li><li><a href="#impl-Default-for-OnEditor%3CDynGd%3CT,+D%3E%3E" title="Default">Default</a></li><li><a href="#impl-Default-for-OnEditor%3CGd%3CT%3E%3E" title="Default">Default</a></li><li><a href="#impl-Deref-for-OnEditor%3CT%3E" title="Deref">Deref</a></li><li><a href="#impl-DerefMut-for-OnEditor%3CT%3E" title="DerefMut">DerefMut</a></li><li><a href="#impl-Export-for-OnEditor%3CDynGd%3CT,+D%3E%3E" title="Export">Export</a></li><li><a href="#impl-Export-for-OnEditor%3CGd%3CT%3E%3E" title="Export">Export</a></li><li><a href="#impl-Export-for-OnEditor%3CT%3E" title="Export">Export</a></li><li><a href="#impl-GodotConvert-for-OnEditor%3CDynGd%3CT,+D%3E%3E" title="GodotConvert">GodotConvert</a></li><li><a href="#impl-GodotConvert-for-OnEditor%3CGd%3CT%3E%3E" title="GodotConvert">GodotConvert</a></li><li><a href="#impl-GodotConvert-for-OnEditor%3CT%3E" title="GodotConvert">GodotConvert</a></li><li><a href="#impl-Var-for-OnEditor%3CDynGd%3CT,+D%3E%3E" title="Var">Var</a></li><li><a href="#impl-Var-for-OnEditor%3CGd%3CT%3E%3E" title="Var">Var</a></li><li><a href="#impl-Var-for-OnEditor%3CT%3E" title="Var">Var</a></li></ul><h3><a href="#synthetic-implementations">Auto Trait Implementations</a></h3><ul class="block synthetic-implementation"><li><a href="#impl-Freeze-for-OnEditor%3CT%3E" title="Freeze">Freeze</a></li><li><a href="#impl-RefUnwindSafe-for-OnEditor%3CT%3E" title="RefUnwindSafe">RefUnwindSafe</a></li><li><a href="#impl-Send-for-OnEditor%3CT%3E" title="Send">Send</a></li><li><a href="#impl-Sync-for-OnEditor%3CT%3E" title="Sync">Sync</a></li><li><a href="#impl-Unpin-for-OnEditor%3CT%3E" title="Unpin">Unpin</a></li><li><a href="#impl-UnwindSafe-for-OnEditor%3CT%3E" title="UnwindSafe">UnwindSafe</a></li></ul><h3><a href="#blanket-implementations">Blanket Implementations</a></h3><ul class="block blanket-implementation"><li><a href="#impl-Any-for-T" title="Any">Any</a></li><li><a href="#impl-Borrow%3CT%3E-for-T" title="Borrow&#60;T&#62;">Borrow&#60;T&#62;</a></li><li><a href="#impl-BorrowMut%3CT%3E-for-T" title="BorrowMut&#60;T&#62;">BorrowMut&#60;T&#62;</a></li><li><a href="#impl-From%3CT%3E-for-T" title="From&#60;T&#62;">From&#60;T&#62;</a></li><li><a href="#impl-Into%3CU%3E-for-T" title="Into&#60;U&#62;">Into&#60;U&#62;</a></li><li><a href="#impl-Receiver-for-P" title="Receiver">Receiver</a></li><li><a href="#impl-TryFrom%3CU%3E-for-T" title="TryFrom&#60;U&#62;">TryFrom&#60;U&#62;</a></li><li><a href="#impl-TryInto%3CU%3E-for-T" title="TryInto&#60;U&#62;">TryInto&#60;U&#62;</a></li></ul></section><div id="rustdoc-modnav"><h2><a href="index.html">In godot::<wbr>obj</a></h2></div></div></nav><div class="sidebar-resizer"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../index.html">godot</a>::<wbr><a href="index.html">obj</a></div><h1>Struct <span class="struct">OnEditor</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"></span></div><pre class="rust item-decl"><code>pub struct OnEditor&lt;T&gt; { <span class="comment">/* private fields */</span> }</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Exported property that must be initialized in the editor (or associated code) before use.</p>
+<p>Use this type whenever your Rust code cannot provide a value for a field, but expects one to be specified in the Godot editor.</p>
+<p>If you need automatic initialization during <code>ready()</code>, e.g. for loading nodes or resources, use <a href="../prelude/struct.OnReady.html" title="struct godot::prelude::OnReady"><code>OnReady&lt;Gd&lt;T&gt;&gt;</code></a>
+instead. As a general “maybe initialized” type, <code>Option&lt;Gd&lt;T&gt;&gt;</code> is always available, even if more verbose.</p>
+<h2 id="what-consitutes-initialized"><a class="doc-anchor" href="#what-consitutes-initialized">§</a>What consitutes “initialized”?</h2>
+<p>Whether a value is considered initialized or not depends on <code>T</code>.</p>
+<ul>
+<li>For objects, a value is initialized if it is not null. Exported object propreties in Godot are nullable, but <code>Gd&lt;T&gt;</code> and <code>DynGd&lt;T, D&gt;</code> do
+not support nullability and can thus not directly be exported with <code>#[export]</code>. <code>OnEditor</code> can bridge this gap, by expecting users
+to set a non-null value, and panicking if they don’t.</li>
+<li>For built-in types, a value is initialized if it is different from a user-selected sentinel value (e.g. <code>-1</code>).</li>
+</ul>
+<p>More on this below (see also table-of-contents sidebar).</p>
+<h2 id="initialization-semantics"><a class="doc-anchor" href="#initialization-semantics">§</a>Initialization semantics</h2>
+<p>Panics during access (<code>Deref/DerefMut</code> impls) if uninitialized.</p>
+<p>When used inside a node class, <code>OnEditor</code> checks if a value has been set before <code>ready()</code> is run, and panics otherwise.
 This validation is performed for all <code>OnEditor</code> fields declared in a given <code>GodotClass</code>, regardless of whether they are <code>#[var]</code>, <code>#[export]</code>, or neither.
-Once initialized, it can be used almost as if it was a <code>T</code> value itself, due to <code>Deref</code>/<code>DerefMut</code> impls.</p>
-<p><code>OnEditor&lt;T&gt;</code> should always be used as a property, preferably in tandem with an <code>#[export]</code> or <code>#[var]</code>.
-Initializing <code>OnEditor</code> values via code before the first use is supported but should be limited to use cases involving builder or factory patterns.</p>
-<p><a href="https://doc.rust-lang.org/nightly/core/option/index.html" title="mod core::option"><code>Option&lt;Gd&lt;T&gt;&gt;</code></a> and <a href="../prelude/struct.OnReady.html" title="struct godot::prelude::OnReady"><code>OnReady&lt;Gd&lt;T&gt;&gt;</code></a> should be used for any other late initialization logic.</p>
-<h2 id="using-oneditort-with-gdt-and-dyngdt-d"><a class="doc-anchor" href="#using-oneditort-with-gdt-and-dyngdt-d">§</a>Using <code>OnEditor&lt;T&gt;</code> with <code>Gd&lt;T&gt;</code> and <code>DynGd&lt;T, D&gt;</code></h2><h3 id="example---auto-generated-init"><a class="doc-anchor" href="#example---auto-generated-init">§</a>Example - auto-generated init</h3>
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code> <span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
+Once initialized, <code>OnEditor</code> can be used almost as if it were a <code>T</code> value itself, due to <code>Deref</code>/<code>DerefMut</code> impls.</p>
+<p><code>OnEditor&lt;T&gt;</code> should always be used as a struct field, preferably in tandem with an <code>#[export]</code> or <code>#[var]</code>.
+Initializing <code>OnEditor</code> values via code before the first use is supported, but should be limited to use cases involving builder or factory patterns.</p>
+<h2 id="using-oneditor-with-classes"><a class="doc-anchor" href="#using-oneditor-with-classes">§</a>Using <code>OnEditor</code> with classes</h2>
+<p>You can wrap class smart pointers <code>Gd&lt;T&gt;</code> and <code>DynGd&lt;T, D&gt;</code> inside <code>OnEditor</code>, to make them exportable.
+<code>Gd&lt;T&gt;</code> itself does not implement the <code>Export</code> trait.</p>
+<h3 id="example-automatic-init"><a class="doc-anchor" href="#example-automatic-init">§</a>Example: automatic init</h3>
+<p>This example uses the <code>Default</code> impl, which expects a non-null value to be provided.</p>
 
-<span class="attr">#[derive(GodotClass)]
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
 #[class(init, base = Node)]
-</span><span class="kw">struct </span>MyClass {
+</span><span class="kw">struct </span>ResourceHolder {
     <span class="attr">#[export]
     </span>editor_property: OnEditor&lt;Gd&lt;Resource&gt;&gt;,
 }
 
 <span class="attr">#[godot_api]
-</span><span class="kw">impl </span>INode <span class="kw">for </span>MyClass {
+</span><span class="kw">impl </span>INode <span class="kw">for </span>ResourceHolder {
     <span class="kw">fn </span>ready(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
         <span class="comment">// Will always be valid and **must** be set via editor.
-        // Additional check is being run before ready()
+        // Additional check is being run before ready(),
         // to ensure that given value can't be null.
         </span><span class="kw">let </span>some_variant = <span class="self">self</span>.editor_property.get_meta(<span class="string">"SomeName"</span>);
     }
-}
-</code></pre></div>
-<h3 id="example---user-generated-init"><a class="doc-anchor" href="#example---user-generated-init">§</a>Example - user-generated init</h3>
-<p>Uninitialized <code>OnEditor&lt;Gd&lt;T&gt;&gt;</code> and <code>OnEditor&lt;DynGd&lt;T, D&gt;&gt;</code> can be created with <code>OnEditor&lt;...&gt;::default()</code>.</p>
+}</code></pre></div>
+<h3 id="example-user-defined-init"><a class="doc-anchor" href="#example-user-defined-init">§</a>Example: user-defined init</h3>
+<p>Uninitialized <code>OnEditor&lt;Gd&lt;T&gt;&gt;</code> and <code>OnEditor&lt;DynGd&lt;T, D&gt;&gt;</code> can be created with <code>OnEditor::default()</code>.</p>
 
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code> <span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
-
-<span class="attr">#[derive(GodotClass)]
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
 #[class(base = Node)]
-</span><span class="kw">struct </span>MyClass {
+</span><span class="kw">struct </span>NodeHolder {
     <span class="attr">#[export]
     </span>required_node: OnEditor&lt;Gd&lt;Node&gt;&gt;,
 
@@ -43,7 +53,7 @@ Initializing <code>OnEditor</code> values via code before the first use is suppo
 }
 
 <span class="attr">#[godot_api]
-</span><span class="kw">impl </span>INode <span class="kw">for </span>MyClass {
+</span><span class="kw">impl </span>INode <span class="kw">for </span>NodeHolder {
     <span class="kw">fn </span>init(base: Base&lt;Node&gt;) -&gt; <span class="self">Self </span>{
        <span class="self">Self </span>{
            base,
@@ -51,12 +61,10 @@ Initializing <code>OnEditor</code> values via code before the first use is suppo
        }
     }
 }</code></pre></div>
-<h3 id="example---factory-pattern"><a class="doc-anchor" href="#example---factory-pattern">§</a>Example - factory pattern</h3>
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
-
-<span class="attr">#[derive(GodotClass)]
+<h3 id="example-factory-pattern"><a class="doc-anchor" href="#example-factory-pattern">§</a>Example: factory pattern</h3>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
 #[class(init, base = Node)]
-</span><span class="kw">struct </span>SomeClass {
+</span><span class="kw">struct </span>NodeHolder {
     <span class="attr">#[export]
     </span>required_node: OnEditor&lt;Gd&lt;Node&gt;&gt;,
 }
@@ -65,33 +73,34 @@ Initializing <code>OnEditor</code> values via code before the first use is suppo
     <span class="kw-2">mut </span>this: Gd&lt;Node&gt;,
     some_class_scene: Gd&lt;PackedScene&gt;,
     some_node: Gd&lt;Node&gt;,
-) -&gt; Gd&lt;SomeClass&gt; {
-    <span class="kw">let </span><span class="kw-2">mut </span>my_node = some_class_scene.instantiate_as::&lt;SomeClass&gt;();
+) -&gt; Gd&lt;NodeHolder&gt; {
+    <span class="kw">let </span><span class="kw-2">mut </span>my_node = some_class_scene.instantiate_as::&lt;NodeHolder&gt;();
 
-    <span class="comment">// Would cause the panic:
+    <span class="comment">// Would cause a panic:
     // this.add_child(&amp;my_node);
 
-    // Note: Remember that nodes are manually managed.
-    // They will leak memory if not added to tree and/or pruned.
+    // It's possible to initialize the value programmatically, although typically
+    // it is set in the editor and stored in a .tscn file.
+    // Note: nodes are manually managed and leak memory unless tree-attached or freed.
     </span>my_node.bind_mut().required_node.init(some_node);
 
-    <span class="comment">// Will not cause the panic.
+    <span class="comment">// Will not panic, since the node is initialized now.
     </span>this.add_child(<span class="kw-2">&amp;</span>my_node);
 
     my_node
 }</code></pre></div>
-<h2 id="using-oneditort-with-other-godottypes"><a class="doc-anchor" href="#using-oneditort-with-other-godottypes">§</a>Using <code>OnEditor&lt;T&gt;</code> with other GodotTypes</h2>
-<p><code>OnEditor&lt;T&gt;</code> can be used with other built-ins to provide extra validation logic and making sure that given properties has been set.
-Example usage might be checking if entities has been granted properly generated id.</p>
-<p>In such cases the value which will be deemed invalid <strong>must</strong> be specified with <code>#[init(sentinel = val)]</code>.
-Given <code>val</code> will be used to represent uninitialized <code>OnEditor&lt;T&gt;</code> in the Godot editor.
-Accessing uninitialized value will cause the panic.</p>
-<h3 id="example---using-oneditor-with-primitives"><a class="doc-anchor" href="#example---using-oneditor-with-primitives">§</a>Example - using <code>OnEditor</code> with primitives</h3>
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code> <span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
+<h2 id="using-oneditor-with-built-in-types"><a class="doc-anchor" href="#using-oneditor-with-built-in-types">§</a>Using <code>OnEditor</code> with built-in types</h2>
+<p><code>OnEditor&lt;T&gt;</code> can be used with any <code>#[export]</code>-enabled builtins, to provide domain-specific validation logic.
+An example might be to check whether a game entity has been granted a non-zero ID.</p>
+<p>To detect whether a value has been set in the editor, <code>OnEditor&lt;T&gt;</code> uses a <em>sentinel value</em>. This is a special marker value for
+“uninitialized” and is selected by the user. For example, a sentinel value of <code>-1</code> or <code>0</code> might be used to represent an uninitialized <code>i32</code>.</p>
+<p>There is deliberately no <code>Default</code> implementation for <code>OnEditor</code> with builtins, as the sentinel is highly domain-specific.</p>
+<h3 id="example"><a class="doc-anchor" href="#example">§</a>Example</h3>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
 
 <span class="attr">#[derive(GodotClass)]
 #[class(init, base = Node)]
-</span><span class="kw">struct </span>SomeClassThatCanBeInstantiatedInCode {
+</span><span class="kw">struct </span>IntHolder {
     <span class="comment">// Uninitialized value will be represented by `42` in the editor.
     // Will cause panic if not set via the editor or code before use.
     </span><span class="attr">#[export]
@@ -99,23 +108,24 @@ Accessing uninitialized value will cause the panic.</p>
     </span>some_primitive: OnEditor&lt;i64&gt;,
 }
 
-<span class="kw">fn </span>create_and_add(<span class="kw-2">mut </span>this: Gd&lt;Node&gt;, val: i64) -&gt; Gd&lt;SomeClassThatCanBeInstantiatedInCode&gt; {
-    <span class="kw">let </span><span class="kw-2">mut </span>my_node = SomeClassThatCanBeInstantiatedInCode::new_alloc();
+<span class="kw">fn </span>create_and_add(<span class="kw-2">mut </span>this: Gd&lt;Node&gt;, val: i64) -&gt; Gd&lt;IntHolder&gt; {
+    <span class="kw">let </span><span class="kw-2">mut </span>my_node = IntHolder::new_alloc();
 
-    <span class="comment">// Would cause the panic:
+    <span class="comment">// Would cause a panic:
     // this.add_child(&amp;my_node);
 
+    // It's possible to initialize the value programmatically, although typically
+    // it is set in the editor and stored in a .tscn file.
     </span>my_node.bind_mut().some_primitive.init(val);
 
-    <span class="comment">// Will not cause the panic.
+    <span class="comment">// Will not panic, since the node is initialized now.
     </span>this.add_child(<span class="kw-2">&amp;</span>my_node);
 
     my_node
 }</code></pre></div>
-<h2 id="using-oneditort-with-classtool"><a class="doc-anchor" href="#using-oneditort-with-classtool">§</a>Using <code>OnEditor&lt;T&gt;</code> with <code>#[class(tool)]</code></h2>
+<h2 id="using-oneditor-with-classtool"><a class="doc-anchor" href="#using-oneditor-with-classtool">§</a>Using <code>OnEditor</code> with <code>#[class(tool)]</code></h2>
 <p>When used with <code>#[class(tool)]</code>, the before-ready checks are omitted.
-Otherwise, <code>OnEditor&lt;T&gt;</code> behaves the same — accessing an uninitialized value
-will cause a panic.</p>
+Otherwise, <code>OnEditor&lt;T&gt;</code> behaves the same — accessing an uninitialized value will cause a panic.</p>
 </div></details><h2 id="implementations" class="section-header">Implementations<a href="#implementations" class="anchor">§</a></h2><div id="implementations-list"><details class="toggle implementors-toggle" open><summary><section id="impl-OnEditor%3CT%3E" class="impl"><a href="#impl-OnEditor%3CT%3E" class="anchor">§</a><h3 class="code-header">impl&lt;T&gt; <a class="struct" href="../prelude/struct.OnEditor.html" title="struct godot::prelude::OnEditor">OnEditor</a>&lt;T&gt;<div class="where">where
     T: <a class="trait" href="../prelude/trait.Var.html" title="trait godot::prelude::Var">Var</a> + <a class="trait" href="../prelude/trait.FromGodot.html" title="trait godot::prelude::FromGodot">FromGodot</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a>,</div></h3><div class="docblock"><p><code>OnEditor&lt;T&gt;</code> is usable only for properties – which is enforced via <code>Var</code> and <code>FromGodot</code> bounds.</p>
 </div></section></summary><div class="docblock"><p>Furthermore, <code>PartialEq</code> is needed to compare against uninitialized sentinel values.</p>
