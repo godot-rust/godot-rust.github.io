@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1089/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1089"
 pr_author = "Yarwin"
 sort_key = 2025-03-20
-date_time = 2025-03-20T08:33:33Z
-commit_sha = "9e28b87baf8041c3bf0d8c80f403ae94a9a66d1a"
+date_time = 2025-03-20T08:37:03Z
+commit_sha = "f0947d1a04851a7f6c0c53f32dd23fc3bf70392f"
 +++
 
 Bugfix: Fix docs not generating when only class members are documented.
