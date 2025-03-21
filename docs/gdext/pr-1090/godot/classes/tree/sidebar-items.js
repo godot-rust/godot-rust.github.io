@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["DropModeFlags","ExCreateItem","ExEditSelected","ExGetItemAreaRect","ExScrollToItem","SelectMode"]};
