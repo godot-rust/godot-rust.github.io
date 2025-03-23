@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1093/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1093"
 pr_author = "PgBiel"
 sort_key = 2025-03-23
-date_time = 2025-03-23T17:18:49Z
-commit_sha = "09dc8b83ba1c8e5e032231d717a311321604f41f"
+date_time = 2025-03-23T23:14:53Z
+commit_sha = "fedbc249fe124fac3300df20c7b622c3db72f216"
 +++
 
 Wasm threading fixes
