@@ -39,15 +39,18 @@ hook for custom startup logic.</p>
 each GDExtension. By default, Rust exports the binary as <code>cratename.wasm</code>, so that is the name checked by godot-rust by default.</p>
 <p>However, if you need to rename that binary, you can make the library aware of the new binary name with
 <code>#[gdextension(wasm_binary = "newname.wasm")]</code> (don’t forget to include the <code>.wasm</code> extension).</p>
-<p>For example, to have two simultaneous versions, one supporting multi-threading and the other not, you could add a <code>.threads.wasm</code>
-suffix to the multi-threaded version in your build process. For this, you can have a <code>"nothreads"</code> feature which, when absent,
-should produce a suffixed binary, which can be informed to gdext as follows:</p>
+<p>For example, to have two simultaneous versions, one supporting multi-threading and the other not, you could add a suffix to the
+filename of the Wasm binary of the multi-threaded version in your build process. If you choose the suffix <code>.threads.wasm</code>, you’re
+in luck as godot-rust already accepts this suffix by default. But let’s say you want to use a different suffix, such as
+<code>-with-threads.wasm</code>. For this, you can have a <code>"nothreads"</code> feature which, when absent, should produce a suffixed binary, which
+can be informed to gdext as follows:</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">struct </span>MyExtension;
 
-<span class="comment">// Tell gdext we add a suffix to the binary with thread support
+<span class="comment">// Tell gdext we add a custom suffix to the binary with thread support
+// Please note that this is not needed if "mycrate.threads.wasm" is used
 </span><span class="attr">#[cfg(not(feature = <span class="string">"nothreads"</span>))]
-#[gdextension(wasm_binary = <span class="string">"mycrate.threads.wasm"</span>)]
+#[gdextension(wasm_binary = <span class="string">"mycrate-with-threads.wasm"</span>)]
 </span><span class="kw">unsafe impl </span>ExtensionLibrary <span class="kw">for </span>MyExtension {}
 
 <span class="comment">// Binary name unchanged (mycrate.wasm) without thread support
@@ -55,8 +58,8 @@ should produce a suffixed binary, which can be informed to gdext as follows:</p>
 #[gdextension]
 </span><span class="kw">unsafe impl </span>ExtensionLibrary <span class="kw">for </span>MyExtension {}</code></pre></div>
 <p>Note that simply specifying that option won’t change the name of the Wasm binary produced by Rust automatically: you’ll still have
-to rename it by yourself in your build process. This is just to ensure gdext is aware of the new name given to the binary, avoiding
-runtime errors.</p>
+to rename it by yourself in your build process, as well as specify the updated binary name in your <code>.gdextension</code> file. This is
+just to ensure gdext is aware of the new name given to the binary, avoiding runtime errors.</p>
 <h2 id="safety"><a class="doc-anchor" href="#safety">§</a>Safety</h2>
 <p>The library cannot enforce any safety guarantees outside Rust code, which means that <strong>you as a user</strong> are
 responsible to uphold them: namely in GDScript code or other GDExtension bindings loaded by the engine.
