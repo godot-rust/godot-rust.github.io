@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"fn":["spawn"],"struct":["FallibleSignalFuture","FallibleSignalFutureError","SignalFuture","TaskHandle"],"trait":["DynamicSend","IntoMaybeSend"]};
+window.SIDEBAR_ITEMS = {"fn":["spawn"],"struct":["FallibleSignalFuture","FallibleSignalFutureError","SignalFuture","TaskHandle"],"trait":["DynamicSend","IntoDynamicSend"]};
