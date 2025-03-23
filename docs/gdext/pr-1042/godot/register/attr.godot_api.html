@@ -226,8 +226,6 @@ The procedural macro generates a type-safe API that allows you to connect and em
 <p>The above implements the <a href="../obj/trait.WithSignals.html"><code>WithSignals</code></a> trait for <code>MyClass</code>, which provides the <code>signals()</code> method. Through that
 method, you can access all declared signals in <code>self.signals().some_signal()</code> or <code>gd.signals().some_signal()</code>. The returned object is
 of type <a href="../register/struct.TypedSignal.html"><code>TypedSignal</code></a>, which provides further APIs for emitting and connecting, among others.</p>
-<p>Visibility of signals <strong>must not exceed class visibility</strong>. If your class is private (as above) and you declare your signal as <code>pub fn</code>,
-you will get a compile error “can’t leak private type”.</p>
 <p>A detailed explanation with examples is available in the <a href="https://godot-rust.github.io/book/register/signals.html">book chapter <em>Registering signals</em></a>.</p>
 <h2 id="constants"><a class="doc-anchor" href="#constants">§</a>Constants</h2>
 <p>Please refer to <a href="https://godot-rust.github.io/book/register/constants.html">the book</a>.</p>
