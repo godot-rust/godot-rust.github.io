@@ -68,7 +68,9 @@ guard as soon as you no longer need it.</p>
 <p>For this, use <a href="trait.WithBaseField.html#method.base_mut" title="method godot::obj::WithBaseField::base_mut"><code>base_mut()</code></a> instead.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.base_mut" class="method"><h4 class="code-header">fn <a href="#method.base_mut" class="fn">base_mut</a>(&amp;mut self) -&gt; <a class="struct" href="struct.BaseMut.html" title="struct godot::obj::BaseMut">BaseMut</a>&lt;'_, Self&gt;</h4></section></summary><div class="docblock"><p>Returns a mutable reference suitable for calling engine methods on this object.</p>
 <p>This method will allow you to call back into the same object from Godot, unlike what would happen
-if you used <a href="trait.WithBaseField.html#tymethod.to_gd" title="method godot::obj::WithBaseField::to_gd"><code>to_gd()</code></a>.</p>
+if you used <a href="trait.WithBaseField.html#tymethod.to_gd" title="method godot::obj::WithBaseField::to_gd"><code>to_gd()</code></a>. You have to keep the <code>BaseRef</code> guard bound for the entire duration the engine might
+re-enter a function of your class. The guard temporarily absorbs the <code>&amp;mut self</code> reference, which allows for an additional mutable
+reference to be acquired.</p>
 <p>Holding a mutable guard prevents other code paths from obtaining <em>any</em> reference to <code>self</code>, as such it is recommended to drop the
 guard as soon as you no longer need it.</p>
 <h5 id="examples-1"><a class="doc-anchor" href="#examples-1">§</a>Examples</h5>
