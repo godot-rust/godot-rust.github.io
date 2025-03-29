@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1105/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1105"
 pr_author = "PgBiel"
 sort_key = 2025-03-29
-date_time = 2025-03-29T18:08:59Z
-commit_sha = "2cff565d345738ad17a66fb98ecb0d7954b1fc2b"
+date_time = 2025-03-29T20:21:19Z
+commit_sha = "98cf39de122fd23b925c98ec4eb0f8bb143c0f96"
 +++
 
 Create nothreads-compatible thread local
