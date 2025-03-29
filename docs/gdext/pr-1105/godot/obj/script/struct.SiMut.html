@@ -25,7 +25,10 @@ guard as soon as you no longer need it.</p>
     }
 }</code></pre></div>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.base_mut" class="method"><h4 class="code-header">pub fn <a href="#method.base_mut" class="fn">base_mut</a>(&amp;mut self) -&gt; <a class="struct" href="struct.ScriptBaseMut.html" title="struct godot::obj::script::ScriptBaseMut">ScriptBaseMut</a>&lt;'_, T&gt;</h4></section></summary><div class="docblock"><p>Returns a mutable reference suitable for calling engine methods on this object.</p>
-<p>This method will allow you to call back into the same object from Godot (re-entrancy).</p>
+<p>This method will allow you to call back into the same object from Godot (re-entrancy).
+You have to keep the <code>ScriptBaseRef</code> guard bound for the entire duration the engine might re-enter a function of your
+<code>ScriptInstance</code>. The guard temporarily absorbs the <code>&amp;mut self</code> reference, which allows for an additional mutable reference to be
+acquired.</p>
 <p>Holding a mutable guard prevents other code paths from obtaining <em>any</em> reference to <code>self</code>, as such it is recommended to drop the
 guard as soon as you no longer need it.</p>
 
