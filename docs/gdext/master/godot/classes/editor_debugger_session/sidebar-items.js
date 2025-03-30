@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExSendMessage","ExToggleProfiler"]};
+window.SIDEBAR_ITEMS = {"struct":["ExSendMessage","ExToggleProfiler","SigBreaked","SigContinued","SigStarted","SigStopped","SignalsInEditorDebuggerSession"]};

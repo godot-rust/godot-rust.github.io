@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["BlendMode","ExAddBlendPoint","ExAddTriangle"]};
+window.SIDEBAR_ITEMS = {"struct":["BlendMode","ExAddBlendPoint","ExAddTriangle","SigTrianglesUpdated","SignalsInAnimationNodeBlendSpace2D"]};

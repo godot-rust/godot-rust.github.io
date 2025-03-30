@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["AnimationProcessCallback"]};
+window.SIDEBAR_ITEMS = {"struct":["AnimationProcessCallback","SigAnimationPlayerChanged","SignalsInAnimationTree"]};

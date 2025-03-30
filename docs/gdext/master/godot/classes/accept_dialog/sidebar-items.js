@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExAddButton"]};
+window.SIDEBAR_ITEMS = {"struct":["ExAddButton","SigCanceled","SigConfirmed","SigCustomAction","SignalsInAcceptDialog"]};
