@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["TrackerHand"]};
+window.SIDEBAR_ITEMS = {"struct":["SigButtonPressed","SigButtonReleased","SigInputFloatChanged","SigInputVector2Changed","SigPoseChanged","SigPoseLostTracking","SigProfileChanged","SignalsInXrPositionalTracker","TrackerHand"]};

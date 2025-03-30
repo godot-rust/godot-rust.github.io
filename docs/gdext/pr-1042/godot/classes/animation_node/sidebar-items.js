@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExBlendAnimation","ExBlendInput","ExBlendNode","FilterAction"]};
+window.SIDEBAR_ITEMS = {"struct":["ExBlendAnimation","ExBlendInput","ExBlendNode","FilterAction","SigAnimationNodeRemoved","SigAnimationNodeRenamed","SigTreeChanged","SignalsInAnimationNode"]};

@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["Capabilities","EnvironmentBlendMode","PlayAreaMode","TrackingStatus"]};
+window.SIDEBAR_ITEMS = {"struct":["Capabilities","EnvironmentBlendMode","PlayAreaMode","SigPlayAreaChanged","SignalsInXrInterface","TrackingStatus"]};

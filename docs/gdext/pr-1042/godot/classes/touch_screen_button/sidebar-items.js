@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["VisibilityMode"]};
+window.SIDEBAR_ITEMS = {"struct":["SigPressed","SigReleased","SignalsInTouchScreenButton","VisibilityMode"]};

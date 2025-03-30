@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ConnectionStatus","ExDisconnectPeer","TransferMode"]};
+window.SIDEBAR_ITEMS = {"struct":["ConnectionStatus","ExDisconnectPeer","SigPeerConnected","SigPeerDisconnected","SignalsInMultiplayerPeer","TransferMode"]};

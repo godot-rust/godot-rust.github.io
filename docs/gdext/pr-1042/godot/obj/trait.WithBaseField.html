@@ -37,7 +37,7 @@ guard as soon as you no longer need it.</p>
 
 <span class="attr">#[godot_api]
 </span><span class="kw">impl </span>INode <span class="kw">for </span>MyClass {
-    <span class="kw">fn </span>process(<span class="kw-2">&amp;mut </span><span class="self">self</span>, _delta: f64) {
+    <span class="kw">fn </span>process(<span class="kw-2">&amp;mut </span><span class="self">self</span>, _delta: f32) {
         <span class="kw">let </span>name = <span class="self">self</span>.base().get_name();
         <span class="macro">godot_print!</span>(<span class="string">"name is {name}"</span>);
     }
@@ -57,7 +57,7 @@ guard as soon as you no longer need it.</p>
 
 <span class="attr">#[godot_api]
 </span><span class="kw">impl </span>INode <span class="kw">for </span>MyClass {
-    <span class="kw">fn </span>process(<span class="kw-2">&amp;mut </span><span class="self">self</span>, _delta: f64) {
+    <span class="kw">fn </span>process(<span class="kw-2">&amp;mut </span><span class="self">self</span>, _delta: f32) {
         <span class="kw">let </span>node = Node::new_alloc();
         <span class="comment">// fails because `add_child` requires a mutable reference.
         </span><span class="self">self</span>.base().add_child(<span class="kw-2">&amp;</span>node);
@@ -84,7 +84,7 @@ guard as soon as you no longer need it.</p>
 
 <span class="attr">#[godot_api]
 </span><span class="kw">impl </span>INode <span class="kw">for </span>MyClass {
-    <span class="kw">fn </span>process(<span class="kw-2">&amp;mut </span><span class="self">self</span>, _delta: f64) {
+    <span class="kw">fn </span>process(<span class="kw-2">&amp;mut </span><span class="self">self</span>, _delta: f32) {
         <span class="kw">let </span>node = Node::new_alloc();
         <span class="self">self</span>.base_mut().add_child(<span class="kw-2">&amp;</span>node);
     }
@@ -103,7 +103,7 @@ guard as soon as you no longer need it.</p>
 
 <span class="attr">#[godot_api]
 </span><span class="kw">impl </span>INode <span class="kw">for </span>MyClass {
-    <span class="kw">fn </span>process(<span class="kw-2">&amp;mut </span><span class="self">self</span>, _delta: f64) {
+    <span class="kw">fn </span>process(<span class="kw-2">&amp;mut </span><span class="self">self</span>, _delta: f32) {
         <span class="self">self</span>.base_mut().call(<span class="string">"other_method"</span>, <span class="kw-2">&amp;</span>[]);
     }
 }
