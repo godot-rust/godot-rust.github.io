@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["LoadStatus"]};
+window.SIDEBAR_ITEMS = {"struct":["LoadStatus","SigExtensionLoaded","SigExtensionUnloading","SigExtensionsReloaded","SignalsInGDExtensionManager"]};

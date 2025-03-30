@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["AlignmentMode","CloseButtonDisplayPolicy","ExAddTab"]};
+window.SIDEBAR_ITEMS = {"struct":["AlignmentMode","CloseButtonDisplayPolicy","ExAddTab","SigActiveTabRearranged","SigTabButtonPressed","SigTabChanged","SigTabClicked","SigTabClosePressed","SigTabHovered","SigTabRmbClicked","SigTabSelected","SignalsInTabBar"]};

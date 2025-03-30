@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["SigCurveChanged","SignalsInPath3D"]};
