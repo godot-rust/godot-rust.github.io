@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExConfig"]};
+window.SIDEBAR_ITEMS = {"struct":["ExConfig","SigScriptCreated","SignalsInScriptCreateDialog"]};

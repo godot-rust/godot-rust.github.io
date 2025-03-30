@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExMakeBakedMeshes","ExSetCellItem"]};
+window.SIDEBAR_ITEMS = {"struct":["ExMakeBakedMeshes","ExSetCellItem","SigCellSizeChanged","SigChanged","SignalsInGridMap"]};

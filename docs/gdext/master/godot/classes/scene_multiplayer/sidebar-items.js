@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExSendBytes"]};
+window.SIDEBAR_ITEMS = {"struct":["ExSendBytes","SigPeerAuthenticating","SigPeerAuthenticationFailed","SigPeerPacket","SignalsInSceneMultiplayer"]};

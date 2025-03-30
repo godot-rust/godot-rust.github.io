@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["TailDirection"]};
+window.SIDEBAR_ITEMS = {"struct":["SigProfileUpdated","SignalsInSkeletonProfile","TailDirection"]};

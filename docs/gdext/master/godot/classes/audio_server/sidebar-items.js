@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExAddBus","ExAddBusEffect","ExGetBusEffectInstance","PlaybackType","SpeakerMode"]};
+window.SIDEBAR_ITEMS = {"struct":["ExAddBus","ExAddBusEffect","ExGetBusEffectInstance","PlaybackType","SigBusLayoutChanged","SigBusRenamed","SignalsInAudioServer","SpeakerMode"]};
