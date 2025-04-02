@@ -315,6 +315,11 @@ because we have added a <code>hidden</code> key to the class. This will also pre
 </span><span class="kw">struct </span>DocumentedStruct {
     <span class="doccomment">/// This is a class member.
     /// You can use markdown formatting such as _italics_.
+    ///
+    /// @experimental `@experimental` and `@deprecated` attributes are supported.
+    /// Following lines are being part of the given attribute as long as they are not empty.
+    ///
+    /// This is the rest of a doc description.
     </span><span class="attr">#[var]
     </span>item: f32,
 }
