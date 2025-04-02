@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1114/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1114"
 pr_author = "Yarwin"
 sort_key = 2025-04-02
-date_time = 2025-04-02T14:54:51Z
-commit_sha = "732108964fd998715a55a24e2b4e1d7fceabcdb8"
+date_time = 2025-04-02T15:40:43Z
+commit_sha = "675565790b4c7230d379578366c907651b33340b"
 +++
 
 Add support for `@experimental` and `@deprecated` attributes for user-generated docs.
