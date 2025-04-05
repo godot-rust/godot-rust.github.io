@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ColorModeType","PickerShapeType"]};
+window.SIDEBAR_ITEMS = {"struct":["ColorModeType","PickerShapeType","SigColorChanged","SigPresetAdded","SigPresetRemoved","SignalsInColorPicker"]};

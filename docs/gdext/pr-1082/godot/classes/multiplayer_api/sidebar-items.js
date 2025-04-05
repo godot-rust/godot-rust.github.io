@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExRpc","RpcMode"]};
+window.SIDEBAR_ITEMS = {"struct":["ExRpc","RpcMode","SigConnectedToServer","SigConnectionFailed","SigPeerConnected","SigPeerDisconnected","SigServerDisconnected","SignalsInMultiplayerApi"]};

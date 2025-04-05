@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExInstantiatePropertyEditor"]};
+window.SIDEBAR_ITEMS = {"struct":["ExInstantiatePropertyEditor","SigEditedObjectChanged","SigObjectIdSelected","SigPropertyDeleted","SigPropertyEdited","SigPropertyKeyed","SigPropertySelected","SigPropertyToggled","SigResourceSelected","SigRestartRequested","SignalsInEditorInspector"]};
