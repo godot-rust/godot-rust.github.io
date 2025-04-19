@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1127/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1127"
 pr_author = "Bromeon"
 sort_key = 2025-04-19
-date_time = 2025-04-19T13:58:43Z
-commit_sha = "9985fa79d6e93b94507fb6ab81c8da240263e37c"
+date_time = 2025-04-19T14:13:24Z
+commit_sha = "c4156a974cfcc74e4fbe7c2c2e09be5d60486bf1"
 +++
 
-Update nanoserde (0.1.35 -> 0.2.1)
+Centralize dependencies in workspace `Cargo.toml`
