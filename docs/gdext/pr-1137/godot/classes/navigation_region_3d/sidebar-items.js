@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["ExBakeNavigationMesh","SigBakeFinished","SigNavigationMeshChanged","SignalsInNavigationRegion3D"]};
