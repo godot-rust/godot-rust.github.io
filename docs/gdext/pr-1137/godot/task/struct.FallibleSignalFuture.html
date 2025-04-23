@@ -4,7 +4,7 @@
 <h2 id="panics"><a class="doc-anchor" href="#panics">§</a>Panics</h2>
 <ul>
 <li>If one of the signal arguments is <code>!Send</code>, but the signal was emitted on a different thread.</li>
-<li>The futures <code>Drop</code> implementation can cause a non-unwinding panic in rare cases, should the signal object be freed at the same time
+<li>The future’s <code>Drop</code> implementation can cause a non-unwinding panic in rare cases, should the signal object be freed at the same time
 as the future is dropped. Make sure to keep signal objects alive until there are no pending futures anymore.</li>
 </ul>
 </div></details><h2 id="trait-implementations" class="section-header">Trait Implementations<a href="#trait-implementations" class="anchor">§</a></h2><div id="trait-implementations-list"><details class="toggle implementors-toggle" open><summary><section id="impl-Drop-for-FallibleSignalFuture%3CR%3E" class="impl"><a href="#impl-Drop-for-FallibleSignalFuture%3CR%3E" class="anchor">§</a><h3 class="code-header">impl&lt;R&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/drop/trait.Drop.html" title="trait core::ops::drop::Drop">Drop</a> for <a class="struct" href="struct.FallibleSignalFuture.html" title="struct godot::task::FallibleSignalFuture">FallibleSignalFuture</a>&lt;R&gt;<div class="where">where
