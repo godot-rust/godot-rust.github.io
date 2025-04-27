@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"enum":["DeclEngine","DeclUser"],"macro":["implement_godot_bounds"],"struct":["MemManual","MemRefCounted"],"trait":["Declarer","Memory"]};
