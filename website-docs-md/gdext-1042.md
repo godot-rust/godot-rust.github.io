@@ -1,15 +1,15 @@
 +++
 title = "#1042"
-date = 2025-04-17
+date = 2025-04-27
 
 [extra]
 repo = "gdext"
 docs_rel_url = "gdext/pr-1042/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1042"
 pr_author = "lilizoey"
-sort_key = 2025-04-17
-date_time = 2025-04-17T11:54:15Z
-commit_sha = "3aac09408592c3c1ccf747f956d60a2677ea97e4"
+sort_key = 2025-04-27
+date_time = 2025-04-27T11:22:08Z
+commit_sha = "8975297e770ba5a35ab1a20c6e379ea947d49d36"
 +++
 
 Experiment with splitting up signature differently
