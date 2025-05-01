@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"macro":["arg_into_owned"],"mod":["error"],"struct":["ClassName","MethodInfo","PropertyHintInfo","PropertyInfo","RefArg","Signature"],"trait":["ArrayElement","AsArg","AsObjectArg","FromGodot","GodotConvert","GodotType","InParamTuple","OutParamTuple","PackedArrayElement","ParamTuple","ParamType","ToGodot"]};
