@@ -11,6 +11,7 @@ ones of <code>TypedSignal</code>.</p>
 <li><a href="struct.TypedSignal.html#method.connect" title="method godot::register::TypedSignal::connect"><code>connect()</code></a> for global functions, associated functions or closures.</li>
 <li><a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a> for methods with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut self</code>) as the first parameter.</li>
 <li><a href="struct.TypedSignal.html#method.connect_other" title="method godot::register::TypedSignal::connect_other"><code>connect_other()</code></a> for methods with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</li>
+<li><code>connect_sync</code> for thread-safe functions (allows signal to be called from other threads).</li>
 </ul>
 <h2 id="connection-flags"><a class="doc-anchor" href="#connection-flags">§</a>Connection Flags</h2>
 <p>To specify flags when connecting, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> <strong>before</strong> connecting.</p>
@@ -50,7 +51,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to a method of the own object <code>self</code>, use <a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self" class="fn">connect_self</a>&lt;F, R, Decl&gt;(&amp;mut self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;) -&gt; R + 'static,
@@ -58,7 +59,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.TypedSignal.html#method.connect_other" title="method godot::register::TypedSignal::connect_other"><code>connect_other()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     &amp;mut self,
@@ -70,7 +71,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-TypedSignal%3C'_,+CSig,+()%3E" class="impl"><a href="#impl-TypedSignal%3C'_,+CSig,+()%3E" class="anchor">§</a><h3 class="code-header">impl&lt;CSig&gt; <a class="struct" href="struct.TypedSignal.html" title="struct godot::register::TypedSignal">TypedSignal</a>&lt;'_, CSig, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;<div class="where">where
     CSig: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,</div></h3></section></summary><div class="impl-items"><details class="toggle method-toggle" open><summary><section id="method.connect_sync" class="method"><h4 class="code-header">pub fn <a href="#method.connect_sync" class="fn">connect_sync</a>&lt;F, R&gt;(&amp;mut self, function: F)<div class="where">where
@@ -90,7 +91,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to a method of the own object <code>self</code>, use <a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-1" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-1" class="fn">connect_self</a>&lt;F, R, Decl&gt;(&amp;mut self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0) -&gt; R + 'static,
@@ -98,7 +99,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.TypedSignal.html#method.connect_other" title="method godot::register::TypedSignal::connect_other"><code>connect_other()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other-1" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other-1" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     &amp;mut self,
@@ -110,7 +111,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-TypedSignal%3C'_,+CSig,+(P0,)%3E" class="impl"><a href="#impl-TypedSignal%3C'_,+CSig,+(P0,)%3E" class="anchor">§</a><h3 class="code-header">impl&lt;CSig, P0&gt; <a class="struct" href="struct.TypedSignal.html" title="struct godot::register::TypedSignal">TypedSignal</a>&lt;'_, CSig, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(P0,)</a>&gt;<div class="where">where
     CSig: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,
@@ -132,7 +133,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to a method of the own object <code>self</code>, use <a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-2" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-2" class="fn">connect_self</a>&lt;F, R, Decl&gt;(&amp;mut self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1) -&gt; R + 'static,
@@ -140,7 +141,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.TypedSignal.html#method.connect_other" title="method godot::register::TypedSignal::connect_other"><code>connect_other()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other-2" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other-2" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     &amp;mut self,
@@ -152,7 +153,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-TypedSignal%3C'_,+CSig,+(P0,+P1)%3E" class="impl"><a href="#impl-TypedSignal%3C'_,+CSig,+(P0,+P1)%3E" class="anchor">§</a><h3 class="code-header">impl&lt;CSig, P0, P1&gt; <a class="struct" href="struct.TypedSignal.html" title="struct godot::register::TypedSignal">TypedSignal</a>&lt;'_, CSig, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(P0, P1)</a>&gt;<div class="where">where
     CSig: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,
@@ -176,7 +177,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to a method of the own object <code>self</code>, use <a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-3" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-3" class="fn">connect_self</a>&lt;F, R, Decl&gt;(&amp;mut self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2) -&gt; R + 'static,
@@ -184,7 +185,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.TypedSignal.html#method.connect_other" title="method godot::register::TypedSignal::connect_other"><code>connect_other()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other-3" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other-3" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     &amp;mut self,
@@ -196,7 +197,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-TypedSignal%3C'_,+CSig,+(P0,+P1,+P2)%3E" class="impl"><a href="#impl-TypedSignal%3C'_,+CSig,+(P0,+P1,+P2)%3E" class="anchor">§</a><h3 class="code-header">impl&lt;CSig, P0, P1, P2&gt; <a class="struct" href="struct.TypedSignal.html" title="struct godot::register::TypedSignal">TypedSignal</a>&lt;'_, CSig, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(P0, P1, P2)</a>&gt;<div class="where">where
     CSig: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,
@@ -222,7 +223,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to a method of the own object <code>self</code>, use <a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-4" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-4" class="fn">connect_self</a>&lt;F, R, Decl&gt;(&amp;mut self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2, P3) -&gt; R + 'static,
@@ -230,7 +231,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.TypedSignal.html#method.connect_other" title="method godot::register::TypedSignal::connect_other"><code>connect_other()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other-4" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other-4" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     &amp;mut self,
@@ -242,7 +243,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-TypedSignal%3C'_,+CSig,+(P0,+P1,+P2,+P3)%3E" class="impl"><a href="#impl-TypedSignal%3C'_,+CSig,+(P0,+P1,+P2,+P3)%3E" class="anchor">§</a><h3 class="code-header">impl&lt;CSig, P0, P1, P2, P3&gt; <a class="struct" href="struct.TypedSignal.html" title="struct godot::register::TypedSignal">TypedSignal</a>&lt;'_, CSig, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(P0, P1, P2, P3)</a>&gt;<div class="where">where
     CSig: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,
@@ -270,7 +271,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to a method of the own object <code>self</code>, use <a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-5" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-5" class="fn">connect_self</a>&lt;F, R, Decl&gt;(&amp;mut self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2, P3, P4) -&gt; R + 'static,
@@ -278,7 +279,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.TypedSignal.html#method.connect_other" title="method godot::register::TypedSignal::connect_other"><code>connect_other()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other-5" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other-5" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     &amp;mut self,
@@ -290,7 +291,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-TypedSignal%3C'_,+CSig,+(P0,+P1,+P2,+P3,+P4)%3E" class="impl"><a href="#impl-TypedSignal%3C'_,+CSig,+(P0,+P1,+P2,+P3,+P4)%3E" class="anchor">§</a><h3 class="code-header">impl&lt;CSig, P0, P1, P2, P3, P4&gt; <a class="struct" href="struct.TypedSignal.html" title="struct godot::register::TypedSignal">TypedSignal</a>&lt;'_, CSig, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(P0, P1, P2, P3, P4)</a>&gt;<div class="where">where
     CSig: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,
@@ -320,7 +321,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to a method of the own object <code>self</code>, use <a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-6" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-6" class="fn">connect_self</a>&lt;F, R, Decl&gt;(&amp;mut self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2, P3, P4, P5) -&gt; R + 'static,
@@ -328,7 +329,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.TypedSignal.html#method.connect_other" title="method godot::register::TypedSignal::connect_other"><code>connect_other()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other-6" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other-6" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     &amp;mut self,
@@ -340,7 +341,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-TypedSignal%3C'_,+CSig,+(P0,+P1,+P2,+P3,+P4,+P5)%3E" class="impl"><a href="#impl-TypedSignal%3C'_,+CSig,+(P0,+P1,+P2,+P3,+P4,+P5)%3E" class="anchor">§</a><h3 class="code-header">impl&lt;CSig, P0, P1, P2, P3, P4, P5&gt; <a class="struct" href="struct.TypedSignal.html" title="struct godot::register::TypedSignal">TypedSignal</a>&lt;'_, CSig, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(P0, P1, P2, P3, P4, P5)</a>&gt;<div class="where">where
     CSig: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,
@@ -372,7 +373,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to a method of the own object <code>self</code>, use <a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-7" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-7" class="fn">connect_self</a>&lt;F, R, Decl&gt;(&amp;mut self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2, P3, P4, P5, P6) -&gt; R + 'static,
@@ -380,7 +381,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.TypedSignal.html#method.connect_other" title="method godot::register::TypedSignal::connect_other"><code>connect_other()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other-7" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other-7" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     &amp;mut self,
@@ -392,7 +393,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-TypedSignal%3C'_,+CSig,+(P0,+P1,+P2,+P3,+P4,+P5,+P6)%3E" class="impl"><a href="#impl-TypedSignal%3C'_,+CSig,+(P0,+P1,+P2,+P3,+P4,+P5,+P6)%3E" class="anchor">§</a><h3 class="code-header">impl&lt;CSig, P0, P1, P2, P3, P4, P5, P6&gt; <a class="struct" href="struct.TypedSignal.html" title="struct godot::register::TypedSignal">TypedSignal</a>&lt;'_, CSig, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(P0, P1, P2, P3, P4, P5, P6)</a>&gt;<div class="where">where
     CSig: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,
@@ -426,7 +427,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to a method of the own object <code>self</code>, use <a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-8" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-8" class="fn">connect_self</a>&lt;F, R, Decl&gt;(&amp;mut self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2, P3, P4, P5, P6, P7) -&gt; R + 'static,
@@ -434,7 +435,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.TypedSignal.html#method.connect_other" title="method godot::register::TypedSignal::connect_other"><code>connect_other()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other-8" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other-8" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     &amp;mut self,
@@ -446,7 +447,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-TypedSignal%3C'_,+CSig,+(P0,+P1,+P2,+P3,+P4,+P5,+P6,+P7)%3E" class="impl"><a href="#impl-TypedSignal%3C'_,+CSig,+(P0,+P1,+P2,+P3,+P4,+P5,+P6,+P7)%3E" class="anchor">§</a><h3 class="code-header">impl&lt;CSig, P0, P1, P2, P3, P4, P5, P6, P7&gt; <a class="struct" href="struct.TypedSignal.html" title="struct godot::register::TypedSignal">TypedSignal</a>&lt;'_, CSig, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(P0, P1, P2, P3, P4, P5, P6, P7)</a>&gt;<div class="where">where
     CSig: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,
@@ -482,7 +483,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to a method of the own object <code>self</code>, use <a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-9" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-9" class="fn">connect_self</a>&lt;F, R, Decl&gt;(&amp;mut self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2, P3, P4, P5, P6, P7, P8) -&gt; R + 'static,
@@ -490,7 +491,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.TypedSignal.html#method.connect_other" title="method godot::register::TypedSignal::connect_other"><code>connect_other()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other-9" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other-9" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     &amp;mut self,
@@ -502,7 +503,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-TypedSignal%3C'_,+CSig,+(P0,+P1,+P2,+P3,+P4,+P5,+P6,+P7,+P8)%3E" class="impl"><a href="#impl-TypedSignal%3C'_,+CSig,+(P0,+P1,+P2,+P3,+P4,+P5,+P6,+P7,+P8)%3E" class="anchor">§</a><h3 class="code-header">impl&lt;CSig, P0, P1, P2, P3, P4, P5, P6, P7, P8&gt; <a class="struct" href="struct.TypedSignal.html" title="struct godot::register::TypedSignal">TypedSignal</a>&lt;'_, CSig, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(P0, P1, P2, P3, P4, P5, P6, P7, P8)</a>&gt;<div class="where">where
     CSig: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,
@@ -540,7 +541,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to a method of the own object <code>self</code>, use <a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-10" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-10" class="fn">connect_self</a>&lt;F, R, Decl&gt;(&amp;mut self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2, P3, P4, P5, P6, P7, P8, P9) -&gt; R + 'static,
@@ -548,7 +549,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.TypedSignal.html#method.connect_other" title="method godot::register::TypedSignal::connect_other"><code>connect_other()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other-10" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other-10" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     &amp;mut self,
@@ -560,7 +561,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-TypedSignal%3C'_,+CSig,+(P0,+P1,+P2,+P3,+P4,+P5,+P6,+P7,+P8,+P9)%3E" class="impl"><a href="#impl-TypedSignal%3C'_,+CSig,+(P0,+P1,+P2,+P3,+P4,+P5,+P6,+P7,+P8,+P9)%3E" class="anchor">§</a><h3 class="code-header">impl&lt;CSig, P0, P1, P2, P3, P4, P5, P6, P7, P8, P9&gt; <a class="struct" href="struct.TypedSignal.html" title="struct godot::register::TypedSignal">TypedSignal</a>&lt;'_, CSig, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(P0, P1, P2, P3, P4, P5, P6, P7, P8, P9)</a>&gt;<div class="where">where
     CSig: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,

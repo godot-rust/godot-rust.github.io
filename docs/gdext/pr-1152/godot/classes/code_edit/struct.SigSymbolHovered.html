@@ -27,7 +27,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to a method of the own object <code>self</code>, use <a href="../../register/struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="../../register/struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="../../register/struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self" class="fn">connect_self</a>&lt;F, R, Decl&gt;(&amp;mut self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2) -&gt; R + 'static,
@@ -35,7 +35,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on other objects, use <a href="../../register/struct.TypedSignal.html#method.connect_other" title="method godot::register::TypedSignal::connect_other"><code>connect_other()</code></a>.</li>
 <li>If you need connect flags, call <a href="../../register/struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="../../register/struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     &amp;mut self,
@@ -47,7 +47,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="../../register/struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need connect flags, call <a href="../../register/struct.TypedSignal.html#method.flags" title="method godot::register::TypedSignal::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <a href="../../register/struct.TypedSignal.html#method.connect_sync" title="method godot::register::TypedSignal::connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
+<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_sync" class="method"><h4 class="code-header">pub fn <a href="#method.connect_sync" class="fn">connect_sync</a>&lt;F, R&gt;(&amp;mut self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(P0, P1, P2) -&gt; R + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static,</div></h4></section></summary><div class="docblock"><p>Connect to this signal using a thread-safe function, allows the signal to be called across threads.</p>
