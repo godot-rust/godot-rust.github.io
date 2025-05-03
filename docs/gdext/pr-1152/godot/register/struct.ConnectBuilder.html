@@ -42,7 +42,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self" class="fn">connect_self</a>&lt;F, R, Decl&gt;(self, function: F)<div class="where">where
-    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;) -&gt; R + 'static,
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut C</a>) -&gt; R + 'static,
     C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut Self</code>) as the first parameter.</p>
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.ConnectBuilder.html#method.connect_other" title="method godot::register::ConnectBuilder::connect_other"><code>connect_other()</code></a>.</li>
@@ -54,7 +54,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
     object: &amp;impl ToSignalObj&lt;OtherC&gt;,
     method: F,
 )<div class="where">where
-    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;OtherC as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;) -&gt; R + 'static,
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut OtherC</a>) -&gt; R + 'static,
     OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</p>
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
@@ -81,7 +81,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-1" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-1" class="fn">connect_self</a>&lt;F, R, Decl&gt;(self, function: F)<div class="where">where
-    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0) -&gt; R + 'static,
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut C</a>, P0) -&gt; R + 'static,
     C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut Self</code>) as the first parameter.</p>
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.ConnectBuilder.html#method.connect_other" title="method godot::register::ConnectBuilder::connect_other"><code>connect_other()</code></a>.</li>
@@ -93,7 +93,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
     object: &amp;impl ToSignalObj&lt;OtherC&gt;,
     method: F,
 )<div class="where">where
-    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;OtherC as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0) -&gt; R + 'static,
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut OtherC</a>, P0) -&gt; R + 'static,
     OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</p>
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
@@ -121,7 +121,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-2" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-2" class="fn">connect_self</a>&lt;F, R, Decl&gt;(self, function: F)<div class="where">where
-    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1) -&gt; R + 'static,
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut C</a>, P0, P1) -&gt; R + 'static,
     C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut Self</code>) as the first parameter.</p>
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.ConnectBuilder.html#method.connect_other" title="method godot::register::ConnectBuilder::connect_other"><code>connect_other()</code></a>.</li>
@@ -133,7 +133,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
     object: &amp;impl ToSignalObj&lt;OtherC&gt;,
     method: F,
 )<div class="where">where
-    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;OtherC as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1) -&gt; R + 'static,
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut OtherC</a>, P0, P1) -&gt; R + 'static,
     OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</p>
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
@@ -162,7 +162,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-3" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-3" class="fn">connect_self</a>&lt;F, R, Decl&gt;(self, function: F)<div class="where">where
-    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2) -&gt; R + 'static,
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut C</a>, P0, P1, P2) -&gt; R + 'static,
     C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut Self</code>) as the first parameter.</p>
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.ConnectBuilder.html#method.connect_other" title="method godot::register::ConnectBuilder::connect_other"><code>connect_other()</code></a>.</li>
@@ -174,7 +174,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
     object: &amp;impl ToSignalObj&lt;OtherC&gt;,
     method: F,
 )<div class="where">where
-    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;OtherC as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2) -&gt; R + 'static,
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut OtherC</a>, P0, P1, P2) -&gt; R + 'static,
     OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</p>
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
@@ -204,7 +204,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-4" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-4" class="fn">connect_self</a>&lt;F, R, Decl&gt;(self, function: F)<div class="where">where
-    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2, P3) -&gt; R + 'static,
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut C</a>, P0, P1, P2, P3) -&gt; R + 'static,
     C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut Self</code>) as the first parameter.</p>
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.ConnectBuilder.html#method.connect_other" title="method godot::register::ConnectBuilder::connect_other"><code>connect_other()</code></a>.</li>
@@ -216,7 +216,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
     object: &amp;impl ToSignalObj&lt;OtherC&gt;,
     method: F,
 )<div class="where">where
-    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;OtherC as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2, P3) -&gt; R + 'static,
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut OtherC</a>, P0, P1, P2, P3) -&gt; R + 'static,
     OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</p>
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
@@ -247,7 +247,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-5" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-5" class="fn">connect_self</a>&lt;F, R, Decl&gt;(self, function: F)<div class="where">where
-    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2, P3, P4) -&gt; R + 'static,
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut C</a>, P0, P1, P2, P3, P4) -&gt; R + 'static,
     C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut Self</code>) as the first parameter.</p>
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.ConnectBuilder.html#method.connect_other" title="method godot::register::ConnectBuilder::connect_other"><code>connect_other()</code></a>.</li>
@@ -259,7 +259,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
     object: &amp;impl ToSignalObj&lt;OtherC&gt;,
     method: F,
 )<div class="where">where
-    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;OtherC as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2, P3, P4) -&gt; R + 'static,
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut OtherC</a>, P0, P1, P2, P3, P4) -&gt; R + 'static,
     OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</p>
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
@@ -291,7 +291,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-6" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-6" class="fn">connect_self</a>&lt;F, R, Decl&gt;(self, function: F)<div class="where">where
-    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2, P3, P4, P5) -&gt; R + 'static,
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut C</a>, P0, P1, P2, P3, P4, P5) -&gt; R + 'static,
     C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut Self</code>) as the first parameter.</p>
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.ConnectBuilder.html#method.connect_other" title="method godot::register::ConnectBuilder::connect_other"><code>connect_other()</code></a>.</li>
@@ -303,7 +303,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
     object: &amp;impl ToSignalObj&lt;OtherC&gt;,
     method: F,
 )<div class="where">where
-    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;OtherC as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2, P3, P4, P5) -&gt; R + 'static,
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut OtherC</a>, P0, P1, P2, P3, P4, P5) -&gt; R + 'static,
     OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</p>
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
@@ -336,7 +336,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-7" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-7" class="fn">connect_self</a>&lt;F, R, Decl&gt;(self, function: F)<div class="where">where
-    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2, P3, P4, P5, P6) -&gt; R + 'static,
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut C</a>, P0, P1, P2, P3, P4, P5, P6) -&gt; R + 'static,
     C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut Self</code>) as the first parameter.</p>
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.ConnectBuilder.html#method.connect_other" title="method godot::register::ConnectBuilder::connect_other"><code>connect_other()</code></a>.</li>
@@ -348,7 +348,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
     object: &amp;impl ToSignalObj&lt;OtherC&gt;,
     method: F,
 )<div class="where">where
-    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;OtherC as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2, P3, P4, P5, P6) -&gt; R + 'static,
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut OtherC</a>, P0, P1, P2, P3, P4, P5, P6) -&gt; R + 'static,
     OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</p>
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
@@ -382,7 +382,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-8" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-8" class="fn">connect_self</a>&lt;F, R, Decl&gt;(self, function: F)<div class="where">where
-    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2, P3, P4, P5, P6, P7) -&gt; R + 'static,
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut C</a>, P0, P1, P2, P3, P4, P5, P6, P7) -&gt; R + 'static,
     C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut Self</code>) as the first parameter.</p>
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.ConnectBuilder.html#method.connect_other" title="method godot::register::ConnectBuilder::connect_other"><code>connect_other()</code></a>.</li>
@@ -394,7 +394,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
     object: &amp;impl ToSignalObj&lt;OtherC&gt;,
     method: F,
 )<div class="where">where
-    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;OtherC as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2, P3, P4, P5, P6, P7) -&gt; R + 'static,
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut OtherC</a>, P0, P1, P2, P3, P4, P5, P6, P7) -&gt; R + 'static,
     OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</p>
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
@@ -429,7 +429,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-9" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-9" class="fn">connect_self</a>&lt;F, R, Decl&gt;(self, function: F)<div class="where">where
-    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2, P3, P4, P5, P6, P7, P8) -&gt; R + 'static,
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut C</a>, P0, P1, P2, P3, P4, P5, P6, P7, P8) -&gt; R + 'static,
     C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut Self</code>) as the first parameter.</p>
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.ConnectBuilder.html#method.connect_other" title="method godot::register::ConnectBuilder::connect_other"><code>connect_other()</code></a>.</li>
@@ -441,7 +441,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
     object: &amp;impl ToSignalObj&lt;OtherC&gt;,
     method: F,
 )<div class="where">where
-    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;OtherC as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2, P3, P4, P5, P6, P7, P8) -&gt; R + 'static,
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut OtherC</a>, P0, P1, P2, P3, P4, P5, P6, P7, P8) -&gt; R + 'static,
     OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</p>
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
@@ -477,7 +477,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-10" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-10" class="fn">connect_self</a>&lt;F, R, Decl&gt;(self, function: F)<div class="where">where
-    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;C as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2, P3, P4, P5, P6, P7, P8, P9) -&gt; R + 'static,
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut C</a>, P0, P1, P2, P3, P4, P5, P6, P7, P8, P9) -&gt; R + 'static,
     C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut Self</code>) as the first parameter.</p>
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.ConnectBuilder.html#method.connect_other" title="method godot::register::ConnectBuilder::connect_other"><code>connect_other()</code></a>.</li>
@@ -489,7 +489,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
     object: &amp;impl ToSignalObj&lt;OtherC&gt;,
     method: F,
 )<div class="where">where
-    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&lt;OtherC as GodotDeref&lt;Decl&gt;&gt;::TargetMut&lt;'_&gt;, P0, P1, P2, P3, P4, P5, P6, P7, P8, P9) -&gt; R + 'static,
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut OtherC</a>, P0, P1, P2, P3, P4, P5, P6, P7, P8, P9) -&gt; R + 'static,
     OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</p>
 <ul>
 <li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
