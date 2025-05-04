@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Builder for customizing signal connections."><title>ConnectBuilder in godot::register - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-20739d33.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="godot" data-themes="" data-resource-suffix="" data-rustdoc-version="1.88.0-nightly (4824c2bb7 2025-05-02)" data-channel="nightly" data-search-js="search-f7877310.js" data-settings-js="settings-5514c975.js" ><script src="../../static.files/storage-4e99c027.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-7ef8a74a.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-893ab5e7.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc struct"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button><a class="logo-container" href="../../godot/index.html"><img src="https://raw.githubusercontent.com/godot-rust/assets/master/gdext/ferris.svg" alt=""></a></nav><nav class="sidebar"><div class="sidebar-crate"><a class="logo-container" href="../../godot/index.html"><img src="https://raw.githubusercontent.com/godot-rust/assets/master/gdext/ferris.svg" alt="logo"></a><h2><a href="../../godot/index.html">godot</a><span class="version">0.2.4</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">Connect<wbr>Builder</a></h2><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#customization" title="Customization">Customization</a></li><li><a href="#finalizing" title="Finalizing">Finalizing</a></li></ul><h3><a href="#implementations">Methods</a></h3><ul class="block method"><li><a href="#method.connect" title="connect">connect</a></li><li><a href="#method.connect-1" title="connect">connect</a></li><li><a href="#method.connect-10" title="connect">connect</a></li><li><a href="#method.connect-2" title="connect">connect</a></li><li><a href="#method.connect-3" title="connect">connect</a></li><li><a href="#method.connect-4" title="connect">connect</a></li><li><a href="#method.connect-5" title="connect">connect</a></li><li><a href="#method.connect-6" title="connect">connect</a></li><li><a href="#method.connect-7" title="connect">connect</a></li><li><a href="#method.connect-8" title="connect">connect</a></li><li><a href="#method.connect-9" title="connect">connect</a></li><li><a href="#method.connect_other" title="connect_other">connect_other</a></li><li><a href="#method.connect_other-1" title="connect_other">connect_other</a></li><li><a href="#method.connect_other-10" title="connect_other">connect_other</a></li><li><a href="#method.connect_other-2" title="connect_other">connect_other</a></li><li><a href="#method.connect_other-3" title="connect_other">connect_other</a></li><li><a href="#method.connect_other-4" title="connect_other">connect_other</a></li><li><a href="#method.connect_other-5" title="connect_other">connect_other</a></li><li><a href="#method.connect_other-6" title="connect_other">connect_other</a></li><li><a href="#method.connect_other-7" title="connect_other">connect_other</a></li><li><a href="#method.connect_other-8" title="connect_other">connect_other</a></li><li><a href="#method.connect_other-9" title="connect_other">connect_other</a></li><li><a href="#method.connect_self" title="connect_self">connect_self</a></li><li><a href="#method.connect_self-1" title="connect_self">connect_self</a></li><li><a href="#method.connect_self-10" title="connect_self">connect_self</a></li><li><a href="#method.connect_self-2" title="connect_self">connect_self</a></li><li><a href="#method.connect_self-3" title="connect_self">connect_self</a></li><li><a href="#method.connect_self-4" title="connect_self">connect_self</a></li><li><a href="#method.connect_self-5" title="connect_self">connect_self</a></li><li><a href="#method.connect_self-6" title="connect_self">connect_self</a></li><li><a href="#method.connect_self-7" title="connect_self">connect_self</a></li><li><a href="#method.connect_self-8" title="connect_self">connect_self</a></li><li><a href="#method.connect_self-9" title="connect_self">connect_self</a></li><li><a href="#method.connect_sync" title="connect_sync">connect_sync</a></li><li><a href="#method.connect_sync-1" title="connect_sync">connect_sync</a></li><li><a href="#method.connect_sync-10" title="connect_sync">connect_sync</a></li><li><a href="#method.connect_sync-2" title="connect_sync">connect_sync</a></li><li><a href="#method.connect_sync-3" title="connect_sync">connect_sync</a></li><li><a href="#method.connect_sync-4" title="connect_sync">connect_sync</a></li><li><a href="#method.connect_sync-5" title="connect_sync">connect_sync</a></li><li><a href="#method.connect_sync-6" title="connect_sync">connect_sync</a></li><li><a href="#method.connect_sync-7" title="connect_sync">connect_sync</a></li><li><a href="#method.connect_sync-8" title="connect_sync">connect_sync</a></li><li><a href="#method.connect_sync-9" title="connect_sync">connect_sync</a></li><li><a href="#method.flags" title="flags">flags</a></li><li><a href="#method.name" title="name">name</a></li></ul><h3><a href="#synthetic-implementations">Auto Trait Implementations</a></h3><ul class="block synthetic-implementation"><li><a href="#impl-Send-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" title="!Send">!Send</a></li><li><a href="#impl-Sync-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" title="!Sync">!Sync</a></li><li><a href="#impl-Freeze-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" title="Freeze">Freeze</a></li><li><a href="#impl-RefUnwindSafe-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" title="RefUnwindSafe">RefUnwindSafe</a></li><li><a href="#impl-Unpin-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" title="Unpin">Unpin</a></li><li><a href="#impl-UnwindSafe-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" title="UnwindSafe">UnwindSafe</a></li></ul><h3><a href="#blanket-implementations">Blanket Implementations</a></h3><ul class="block blanket-implementation"><li><a href="#impl-Any-for-T" title="Any">Any</a></li><li><a href="#impl-Borrow%3CT%3E-for-T" title="Borrow&#60;T&#62;">Borrow&#60;T&#62;</a></li><li><a href="#impl-BorrowMut%3CT%3E-for-T" title="BorrowMut&#60;T&#62;">BorrowMut&#60;T&#62;</a></li><li><a href="#impl-From%3CT%3E-for-T" title="From&#60;T&#62;">From&#60;T&#62;</a></li><li><a href="#impl-Into%3CU%3E-for-T" title="Into&#60;U&#62;">Into&#60;U&#62;</a></li><li><a href="#impl-TryFrom%3CU%3E-for-T" title="TryFrom&#60;U&#62;">TryFrom&#60;U&#62;</a></li><li><a href="#impl-TryInto%3CU%3E-for-T" title="TryInto&#60;U&#62;">TryInto&#60;U&#62;</a></li></ul></section><div id="rustdoc-modnav"><h2><a href="index.html">In godot::<wbr>register</a></h2></div></div></nav><div class="sidebar-resizer"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../index.html">godot</a>::<wbr><a href="index.html">register</a></div><h1>Struct <span class="struct">ConnectBuilder</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"></span></div><pre class="rust item-decl"><code>pub struct ConnectBuilder&lt;'ts, 'c, C, Ps&gt;<div class="where">where
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Builder for customizing signal connections."><title>ConnectBuilder in godot::register - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-20739d33.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="godot" data-themes="" data-resource-suffix="" data-rustdoc-version="1.88.0-nightly (d6a325d93 2025-05-03)" data-channel="nightly" data-search-js="search-f7877310.js" data-settings-js="settings-5514c975.js" ><script src="../../static.files/storage-4e99c027.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-7ef8a74a.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-893ab5e7.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc struct"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button><a class="logo-container" href="../../godot/index.html"><img src="https://raw.githubusercontent.com/godot-rust/assets/master/gdext/ferris.svg" alt=""></a></nav><nav class="sidebar"><div class="sidebar-crate"><a class="logo-container" href="../../godot/index.html"><img src="https://raw.githubusercontent.com/godot-rust/assets/master/gdext/ferris.svg" alt="logo"></a><h2><a href="../../godot/index.html">godot</a><span class="version">0.2.4</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">Connect<wbr>Builder</a></h2><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#customization" title="Customization">Customization</a></li><li><a href="#finalizing" title="Finalizing">Finalizing</a></li></ul><h3><a href="#implementations">Methods</a></h3><ul class="block method"><li><a href="#method.connect" title="connect">connect</a></li><li><a href="#method.connect-1" title="connect">connect</a></li><li><a href="#method.connect-10" title="connect">connect</a></li><li><a href="#method.connect-2" title="connect">connect</a></li><li><a href="#method.connect-3" title="connect">connect</a></li><li><a href="#method.connect-4" title="connect">connect</a></li><li><a href="#method.connect-5" title="connect">connect</a></li><li><a href="#method.connect-6" title="connect">connect</a></li><li><a href="#method.connect-7" title="connect">connect</a></li><li><a href="#method.connect-8" title="connect">connect</a></li><li><a href="#method.connect-9" title="connect">connect</a></li><li><a href="#method.connect_other" title="connect_other">connect_other</a></li><li><a href="#method.connect_other-1" title="connect_other">connect_other</a></li><li><a href="#method.connect_other-10" title="connect_other">connect_other</a></li><li><a href="#method.connect_other-2" title="connect_other">connect_other</a></li><li><a href="#method.connect_other-3" title="connect_other">connect_other</a></li><li><a href="#method.connect_other-4" title="connect_other">connect_other</a></li><li><a href="#method.connect_other-5" title="connect_other">connect_other</a></li><li><a href="#method.connect_other-6" title="connect_other">connect_other</a></li><li><a href="#method.connect_other-7" title="connect_other">connect_other</a></li><li><a href="#method.connect_other-8" title="connect_other">connect_other</a></li><li><a href="#method.connect_other-9" title="connect_other">connect_other</a></li><li><a href="#method.connect_self" title="connect_self">connect_self</a></li><li><a href="#method.connect_self-1" title="connect_self">connect_self</a></li><li><a href="#method.connect_self-10" title="connect_self">connect_self</a></li><li><a href="#method.connect_self-2" title="connect_self">connect_self</a></li><li><a href="#method.connect_self-3" title="connect_self">connect_self</a></li><li><a href="#method.connect_self-4" title="connect_self">connect_self</a></li><li><a href="#method.connect_self-5" title="connect_self">connect_self</a></li><li><a href="#method.connect_self-6" title="connect_self">connect_self</a></li><li><a href="#method.connect_self-7" title="connect_self">connect_self</a></li><li><a href="#method.connect_self-8" title="connect_self">connect_self</a></li><li><a href="#method.connect_self-9" title="connect_self">connect_self</a></li><li><a href="#method.connect_sync" title="connect_sync">connect_sync</a></li><li><a href="#method.connect_sync-1" title="connect_sync">connect_sync</a></li><li><a href="#method.connect_sync-10" title="connect_sync">connect_sync</a></li><li><a href="#method.connect_sync-2" title="connect_sync">connect_sync</a></li><li><a href="#method.connect_sync-3" title="connect_sync">connect_sync</a></li><li><a href="#method.connect_sync-4" title="connect_sync">connect_sync</a></li><li><a href="#method.connect_sync-5" title="connect_sync">connect_sync</a></li><li><a href="#method.connect_sync-6" title="connect_sync">connect_sync</a></li><li><a href="#method.connect_sync-7" title="connect_sync">connect_sync</a></li><li><a href="#method.connect_sync-8" title="connect_sync">connect_sync</a></li><li><a href="#method.connect_sync-9" title="connect_sync">connect_sync</a></li><li><a href="#method.flags" title="flags">flags</a></li><li><a href="#method.name" title="name">name</a></li></ul><h3><a href="#synthetic-implementations">Auto Trait Implementations</a></h3><ul class="block synthetic-implementation"><li><a href="#impl-Send-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" title="!Send">!Send</a></li><li><a href="#impl-Sync-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" title="!Sync">!Sync</a></li><li><a href="#impl-Freeze-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" title="Freeze">Freeze</a></li><li><a href="#impl-RefUnwindSafe-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" title="RefUnwindSafe">RefUnwindSafe</a></li><li><a href="#impl-Unpin-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" title="Unpin">Unpin</a></li><li><a href="#impl-UnwindSafe-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" title="UnwindSafe">UnwindSafe</a></li></ul><h3><a href="#blanket-implementations">Blanket Implementations</a></h3><ul class="block blanket-implementation"><li><a href="#impl-Any-for-T" title="Any">Any</a></li><li><a href="#impl-Borrow%3CT%3E-for-T" title="Borrow&#60;T&#62;">Borrow&#60;T&#62;</a></li><li><a href="#impl-BorrowMut%3CT%3E-for-T" title="BorrowMut&#60;T&#62;">BorrowMut&#60;T&#62;</a></li><li><a href="#impl-From%3CT%3E-for-T" title="From&#60;T&#62;">From&#60;T&#62;</a></li><li><a href="#impl-Into%3CU%3E-for-T" title="Into&#60;U&#62;">Into&#60;U&#62;</a></li><li><a href="#impl-TryFrom%3CU%3E-for-T" title="TryFrom&#60;U&#62;">TryFrom&#60;U&#62;</a></li><li><a href="#impl-TryInto%3CU%3E-for-T" title="TryInto&#60;U&#62;">TryInto&#60;U&#62;</a></li></ul></section><div id="rustdoc-modnav"><h2><a href="index.html">In godot::<wbr>register</a></h2></div></div></nav><div class="sidebar-resizer"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../index.html">godot</a>::<wbr><a href="index.html">register</a></div><h1>Struct <span class="struct">ConnectBuilder</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"></span></div><pre class="rust item-decl"><code>pub struct ConnectBuilder&lt;'ts, 'c, C, Ps&gt;<div class="where">where
     C: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,</div>{ <span class="comment">/* private fields */</span> }</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Builder for customizing signal connections.</p>
 <p>Allows a high degree of customization for connecting signals, while maintaining complete type safety.</p>
 <div class="warning">
@@ -7,11 +7,13 @@ Exact type parameters are subject to change and not part of the public API. We c
 things harder to understand. Thus, try not to name the <code>ConnectBuilder</code> type in your code; most connection setup doesn't need it.
 </div>
 <h2 id="customization"><a class="doc-anchor" href="#customization">§</a>Customization</h2>
+<p>Customizing your signal connection must be done <strong>before</strong> providing the function being connected
+(can be done by using of the <code>connect_**</code> methods) (see section <code>Finalizing</code> bellow).</p>
 <p>All these methods are optional, and they can be combined.</p>
 <ul>
 <li><a href="struct.ConnectBuilder.html#method.name" title="method godot::register::ConnectBuilder::name"><code>name()</code></a>: Name of the <code>Callable</code> (for debug purposes).  <br />
 If not specified, the Rust function name is used. This is typically a good default, but not very readable for closures.</li>
-<li><a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags</code></a>: Provide one or multiple <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>ConnectFlags</code></a>, possibly combined with bitwise OR.</li>
+<li><a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a>: Provide one or multiple <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>ConnectFlags</code></a>, possibly combined with bitwise OR.</li>
 </ul>
 <h2 id="finalizing"><a class="doc-anchor" href="#finalizing">§</a>Finalizing</h2>
 <p>After customizing your builder, you can register the connection by using one of the following methods:</p>
@@ -33,21 +35,21 @@ Requires <code>Send</code> + <code>Sync</code> bounds on the provided function/m
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>() -&gt; R + 'static,</div></h4></section></summary><div class="docblock"><p>Connect a non-member function (global function, associated function or closure).</p>
 <p>Example usages:</p>
 
-<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>sig.connect(<span class="self">Self</span>::static_func);
-sig.connect(global_func);
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>sig.connect_builder().connect(<span class="self">Self</span>::static_func);
+sig.connect_builder().flags(ConnectFlags::DEFERRED).connect(global_func);
 sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre></div>
 <ul>
-<li>To connect to a method of the own object <code>self</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>To connect to a method on the object that owns this signal, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self" class="fn">connect_self</a>&lt;F, R, Decl&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut C</a>) -&gt; R + 'static,
-    C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut Self</code>) as the first parameter.</p>
+    C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>&amp;mut self</code> as the first parameter.</p>
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.ConnectBuilder.html#method.connect_other" title="method godot::register::ConnectBuilder::connect_other"><code>connect_other()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     self,
@@ -55,38 +57,46 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
     method: F,
 )<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut OtherC</a>) -&gt; R + 'static,
-    OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</p>
+    OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>&amp;mut OtherC</code> as the first parameter, where
+<code>OtherC</code>: <a href="../prelude/trait.GodotClass.html" title="trait godot::prelude::GodotClass"><code>GodotClass</code></a> (both user and engine classes are accepted).</p>
+<p>The parameter <code>object</code> can be of 2 different “categories”:</p>
 <ul>
-<li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>Any <code>&amp;Gd&lt;OtherC&gt;</code> (e.g.: <code>&amp;Gd&lt;Node&gt;</code>, <code>&amp;Gd&lt;CustomUserClass&gt;</code>).</li>
+<li><code>&amp;OtherC</code>, as long as <code>OtherC</code> is a user class that contains a <code>base</code> field (it implements the
+<a href="../obj/trait.WithBaseField.html" title="trait godot::obj::WithBaseField"><code>WithBaseField</code></a> trait).</li>
+</ul>
+<hr />
+<ul>
+<li>To connect to methods on the object that owns this signal, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_sync" class="method"><h4 class="code-header">pub fn <a href="#method.connect_sync" class="fn">connect_sync</a>&lt;F, R&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>() -&gt; R + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static,</div></h4></section></summary><div class="docblock"><p>Connect to this signal using a thread-safe function, allows the signal to be called across threads.</p>
 <p>Requires <code>Send</code> + <code>Sync</code> bounds on the provided function <code>F</code>, and is only available for the <code>experimental-threads</code>
 Cargo feature.</p>
-<p>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</p>
+<p>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</p>
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-ConnectBuilder%3C'_,+'_,+C,+(P0,)%3E" class="impl"><a href="#impl-ConnectBuilder%3C'_,+'_,+C,+(P0,)%3E" class="anchor">§</a><h3 class="code-header">impl&lt;C, P0&gt; <a class="struct" href="struct.ConnectBuilder.html" title="struct godot::register::ConnectBuilder">ConnectBuilder</a>&lt;'_, '_, C, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(P0,)</a>&gt;<div class="where">where
     C: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,
     P0: <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> + <a class="trait" href="../prelude/trait.FromGodot.html" title="trait godot::prelude::FromGodot">FromGodot</a> + 'static,</div></h3></section></summary><div class="impl-items"><details class="toggle method-toggle" open><summary><section id="method.connect-1" class="method"><h4 class="code-header">pub fn <a href="#method.connect-1" class="fn">connect</a>&lt;F, R&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(P0) -&gt; R + 'static,</div></h4></section></summary><div class="docblock"><p>Connect a non-member function (global function, associated function or closure).</p>
 <p>Example usages:</p>
 
-<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>sig.connect(<span class="self">Self</span>::static_func);
-sig.connect(global_func);
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>sig.connect_builder().connect(<span class="self">Self</span>::static_func);
+sig.connect_builder().flags(ConnectFlags::DEFERRED).connect(global_func);
 sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre></div>
 <ul>
-<li>To connect to a method of the own object <code>self</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>To connect to a method on the object that owns this signal, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-1" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-1" class="fn">connect_self</a>&lt;F, R, Decl&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut C</a>, P0) -&gt; R + 'static,
-    C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut Self</code>) as the first parameter.</p>
+    C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>&amp;mut self</code> as the first parameter.</p>
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.ConnectBuilder.html#method.connect_other" title="method godot::register::ConnectBuilder::connect_other"><code>connect_other()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other-1" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other-1" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     self,
@@ -94,17 +104,25 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
     method: F,
 )<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut OtherC</a>, P0) -&gt; R + 'static,
-    OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</p>
+    OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>&amp;mut OtherC</code> as the first parameter, where
+<code>OtherC</code>: <a href="../prelude/trait.GodotClass.html" title="trait godot::prelude::GodotClass"><code>GodotClass</code></a> (both user and engine classes are accepted).</p>
+<p>The parameter <code>object</code> can be of 2 different “categories”:</p>
 <ul>
-<li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>Any <code>&amp;Gd&lt;OtherC&gt;</code> (e.g.: <code>&amp;Gd&lt;Node&gt;</code>, <code>&amp;Gd&lt;CustomUserClass&gt;</code>).</li>
+<li><code>&amp;OtherC</code>, as long as <code>OtherC</code> is a user class that contains a <code>base</code> field (it implements the
+<a href="../obj/trait.WithBaseField.html" title="trait godot::obj::WithBaseField"><code>WithBaseField</code></a> trait).</li>
+</ul>
+<hr />
+<ul>
+<li>To connect to methods on the object that owns this signal, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_sync-1" class="method"><h4 class="code-header">pub fn <a href="#method.connect_sync-1" class="fn">connect_sync</a>&lt;F, R&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(P0) -&gt; R + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static,</div></h4></section></summary><div class="docblock"><p>Connect to this signal using a thread-safe function, allows the signal to be called across threads.</p>
 <p>Requires <code>Send</code> + <code>Sync</code> bounds on the provided function <code>F</code>, and is only available for the <code>experimental-threads</code>
 Cargo feature.</p>
-<p>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</p>
+<p>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</p>
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-ConnectBuilder%3C'_,+'_,+C,+(P0,+P1)%3E" class="impl"><a href="#impl-ConnectBuilder%3C'_,+'_,+C,+(P0,+P1)%3E" class="anchor">§</a><h3 class="code-header">impl&lt;C, P0, P1&gt; <a class="struct" href="struct.ConnectBuilder.html" title="struct godot::register::ConnectBuilder">ConnectBuilder</a>&lt;'_, '_, C, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(P0, P1)</a>&gt;<div class="where">where
     C: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,
     P0: <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> + <a class="trait" href="../prelude/trait.FromGodot.html" title="trait godot::prelude::FromGodot">FromGodot</a> + 'static,
@@ -112,21 +130,21 @@ Cargo feature.</p>
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(P0, P1) -&gt; R + 'static,</div></h4></section></summary><div class="docblock"><p>Connect a non-member function (global function, associated function or closure).</p>
 <p>Example usages:</p>
 
-<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>sig.connect(<span class="self">Self</span>::static_func);
-sig.connect(global_func);
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>sig.connect_builder().connect(<span class="self">Self</span>::static_func);
+sig.connect_builder().flags(ConnectFlags::DEFERRED).connect(global_func);
 sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre></div>
 <ul>
-<li>To connect to a method of the own object <code>self</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>To connect to a method on the object that owns this signal, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-2" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-2" class="fn">connect_self</a>&lt;F, R, Decl&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut C</a>, P0, P1) -&gt; R + 'static,
-    C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut Self</code>) as the first parameter.</p>
+    C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>&amp;mut self</code> as the first parameter.</p>
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.ConnectBuilder.html#method.connect_other" title="method godot::register::ConnectBuilder::connect_other"><code>connect_other()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other-2" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other-2" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     self,
@@ -134,17 +152,25 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
     method: F,
 )<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut OtherC</a>, P0, P1) -&gt; R + 'static,
-    OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</p>
+    OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>&amp;mut OtherC</code> as the first parameter, where
+<code>OtherC</code>: <a href="../prelude/trait.GodotClass.html" title="trait godot::prelude::GodotClass"><code>GodotClass</code></a> (both user and engine classes are accepted).</p>
+<p>The parameter <code>object</code> can be of 2 different “categories”:</p>
 <ul>
-<li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>Any <code>&amp;Gd&lt;OtherC&gt;</code> (e.g.: <code>&amp;Gd&lt;Node&gt;</code>, <code>&amp;Gd&lt;CustomUserClass&gt;</code>).</li>
+<li><code>&amp;OtherC</code>, as long as <code>OtherC</code> is a user class that contains a <code>base</code> field (it implements the
+<a href="../obj/trait.WithBaseField.html" title="trait godot::obj::WithBaseField"><code>WithBaseField</code></a> trait).</li>
+</ul>
+<hr />
+<ul>
+<li>To connect to methods on the object that owns this signal, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_sync-2" class="method"><h4 class="code-header">pub fn <a href="#method.connect_sync-2" class="fn">connect_sync</a>&lt;F, R&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(P0, P1) -&gt; R + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static,</div></h4></section></summary><div class="docblock"><p>Connect to this signal using a thread-safe function, allows the signal to be called across threads.</p>
 <p>Requires <code>Send</code> + <code>Sync</code> bounds on the provided function <code>F</code>, and is only available for the <code>experimental-threads</code>
 Cargo feature.</p>
-<p>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</p>
+<p>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</p>
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-ConnectBuilder%3C'_,+'_,+C,+(P0,+P1,+P2)%3E" class="impl"><a href="#impl-ConnectBuilder%3C'_,+'_,+C,+(P0,+P1,+P2)%3E" class="anchor">§</a><h3 class="code-header">impl&lt;C, P0, P1, P2&gt; <a class="struct" href="struct.ConnectBuilder.html" title="struct godot::register::ConnectBuilder">ConnectBuilder</a>&lt;'_, '_, C, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(P0, P1, P2)</a>&gt;<div class="where">where
     C: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,
     P0: <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> + <a class="trait" href="../prelude/trait.FromGodot.html" title="trait godot::prelude::FromGodot">FromGodot</a> + 'static,
@@ -153,21 +179,21 @@ Cargo feature.</p>
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(P0, P1, P2) -&gt; R + 'static,</div></h4></section></summary><div class="docblock"><p>Connect a non-member function (global function, associated function or closure).</p>
 <p>Example usages:</p>
 
-<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>sig.connect(<span class="self">Self</span>::static_func);
-sig.connect(global_func);
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>sig.connect_builder().connect(<span class="self">Self</span>::static_func);
+sig.connect_builder().flags(ConnectFlags::DEFERRED).connect(global_func);
 sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre></div>
 <ul>
-<li>To connect to a method of the own object <code>self</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>To connect to a method on the object that owns this signal, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-3" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-3" class="fn">connect_self</a>&lt;F, R, Decl&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut C</a>, P0, P1, P2) -&gt; R + 'static,
-    C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut Self</code>) as the first parameter.</p>
+    C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>&amp;mut self</code> as the first parameter.</p>
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.ConnectBuilder.html#method.connect_other" title="method godot::register::ConnectBuilder::connect_other"><code>connect_other()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other-3" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other-3" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     self,
@@ -175,17 +201,25 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
     method: F,
 )<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut OtherC</a>, P0, P1, P2) -&gt; R + 'static,
-    OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</p>
+    OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>&amp;mut OtherC</code> as the first parameter, where
+<code>OtherC</code>: <a href="../prelude/trait.GodotClass.html" title="trait godot::prelude::GodotClass"><code>GodotClass</code></a> (both user and engine classes are accepted).</p>
+<p>The parameter <code>object</code> can be of 2 different “categories”:</p>
 <ul>
-<li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>Any <code>&amp;Gd&lt;OtherC&gt;</code> (e.g.: <code>&amp;Gd&lt;Node&gt;</code>, <code>&amp;Gd&lt;CustomUserClass&gt;</code>).</li>
+<li><code>&amp;OtherC</code>, as long as <code>OtherC</code> is a user class that contains a <code>base</code> field (it implements the
+<a href="../obj/trait.WithBaseField.html" title="trait godot::obj::WithBaseField"><code>WithBaseField</code></a> trait).</li>
+</ul>
+<hr />
+<ul>
+<li>To connect to methods on the object that owns this signal, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_sync-3" class="method"><h4 class="code-header">pub fn <a href="#method.connect_sync-3" class="fn">connect_sync</a>&lt;F, R&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(P0, P1, P2) -&gt; R + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static,</div></h4></section></summary><div class="docblock"><p>Connect to this signal using a thread-safe function, allows the signal to be called across threads.</p>
 <p>Requires <code>Send</code> + <code>Sync</code> bounds on the provided function <code>F</code>, and is only available for the <code>experimental-threads</code>
 Cargo feature.</p>
-<p>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</p>
+<p>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</p>
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-ConnectBuilder%3C'_,+'_,+C,+(P0,+P1,+P2,+P3)%3E" class="impl"><a href="#impl-ConnectBuilder%3C'_,+'_,+C,+(P0,+P1,+P2,+P3)%3E" class="anchor">§</a><h3 class="code-header">impl&lt;C, P0, P1, P2, P3&gt; <a class="struct" href="struct.ConnectBuilder.html" title="struct godot::register::ConnectBuilder">ConnectBuilder</a>&lt;'_, '_, C, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(P0, P1, P2, P3)</a>&gt;<div class="where">where
     C: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,
     P0: <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> + <a class="trait" href="../prelude/trait.FromGodot.html" title="trait godot::prelude::FromGodot">FromGodot</a> + 'static,
@@ -195,21 +229,21 @@ Cargo feature.</p>
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(P0, P1, P2, P3) -&gt; R + 'static,</div></h4></section></summary><div class="docblock"><p>Connect a non-member function (global function, associated function or closure).</p>
 <p>Example usages:</p>
 
-<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>sig.connect(<span class="self">Self</span>::static_func);
-sig.connect(global_func);
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>sig.connect_builder().connect(<span class="self">Self</span>::static_func);
+sig.connect_builder().flags(ConnectFlags::DEFERRED).connect(global_func);
 sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre></div>
 <ul>
-<li>To connect to a method of the own object <code>self</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>To connect to a method on the object that owns this signal, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-4" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-4" class="fn">connect_self</a>&lt;F, R, Decl&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut C</a>, P0, P1, P2, P3) -&gt; R + 'static,
-    C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut Self</code>) as the first parameter.</p>
+    C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>&amp;mut self</code> as the first parameter.</p>
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.ConnectBuilder.html#method.connect_other" title="method godot::register::ConnectBuilder::connect_other"><code>connect_other()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other-4" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other-4" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     self,
@@ -217,17 +251,25 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
     method: F,
 )<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut OtherC</a>, P0, P1, P2, P3) -&gt; R + 'static,
-    OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</p>
+    OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>&amp;mut OtherC</code> as the first parameter, where
+<code>OtherC</code>: <a href="../prelude/trait.GodotClass.html" title="trait godot::prelude::GodotClass"><code>GodotClass</code></a> (both user and engine classes are accepted).</p>
+<p>The parameter <code>object</code> can be of 2 different “categories”:</p>
 <ul>
-<li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>Any <code>&amp;Gd&lt;OtherC&gt;</code> (e.g.: <code>&amp;Gd&lt;Node&gt;</code>, <code>&amp;Gd&lt;CustomUserClass&gt;</code>).</li>
+<li><code>&amp;OtherC</code>, as long as <code>OtherC</code> is a user class that contains a <code>base</code> field (it implements the
+<a href="../obj/trait.WithBaseField.html" title="trait godot::obj::WithBaseField"><code>WithBaseField</code></a> trait).</li>
+</ul>
+<hr />
+<ul>
+<li>To connect to methods on the object that owns this signal, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_sync-4" class="method"><h4 class="code-header">pub fn <a href="#method.connect_sync-4" class="fn">connect_sync</a>&lt;F, R&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(P0, P1, P2, P3) -&gt; R + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static,</div></h4></section></summary><div class="docblock"><p>Connect to this signal using a thread-safe function, allows the signal to be called across threads.</p>
 <p>Requires <code>Send</code> + <code>Sync</code> bounds on the provided function <code>F</code>, and is only available for the <code>experimental-threads</code>
 Cargo feature.</p>
-<p>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</p>
+<p>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</p>
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-ConnectBuilder%3C'_,+'_,+C,+(P0,+P1,+P2,+P3,+P4)%3E" class="impl"><a href="#impl-ConnectBuilder%3C'_,+'_,+C,+(P0,+P1,+P2,+P3,+P4)%3E" class="anchor">§</a><h3 class="code-header">impl&lt;C, P0, P1, P2, P3, P4&gt; <a class="struct" href="struct.ConnectBuilder.html" title="struct godot::register::ConnectBuilder">ConnectBuilder</a>&lt;'_, '_, C, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(P0, P1, P2, P3, P4)</a>&gt;<div class="where">where
     C: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,
     P0: <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> + <a class="trait" href="../prelude/trait.FromGodot.html" title="trait godot::prelude::FromGodot">FromGodot</a> + 'static,
@@ -238,21 +280,21 @@ Cargo feature.</p>
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(P0, P1, P2, P3, P4) -&gt; R + 'static,</div></h4></section></summary><div class="docblock"><p>Connect a non-member function (global function, associated function or closure).</p>
 <p>Example usages:</p>
 
-<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>sig.connect(<span class="self">Self</span>::static_func);
-sig.connect(global_func);
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>sig.connect_builder().connect(<span class="self">Self</span>::static_func);
+sig.connect_builder().flags(ConnectFlags::DEFERRED).connect(global_func);
 sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre></div>
 <ul>
-<li>To connect to a method of the own object <code>self</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>To connect to a method on the object that owns this signal, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-5" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-5" class="fn">connect_self</a>&lt;F, R, Decl&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut C</a>, P0, P1, P2, P3, P4) -&gt; R + 'static,
-    C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut Self</code>) as the first parameter.</p>
+    C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>&amp;mut self</code> as the first parameter.</p>
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.ConnectBuilder.html#method.connect_other" title="method godot::register::ConnectBuilder::connect_other"><code>connect_other()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other-5" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other-5" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     self,
@@ -260,17 +302,25 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
     method: F,
 )<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut OtherC</a>, P0, P1, P2, P3, P4) -&gt; R + 'static,
-    OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</p>
+    OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>&amp;mut OtherC</code> as the first parameter, where
+<code>OtherC</code>: <a href="../prelude/trait.GodotClass.html" title="trait godot::prelude::GodotClass"><code>GodotClass</code></a> (both user and engine classes are accepted).</p>
+<p>The parameter <code>object</code> can be of 2 different “categories”:</p>
 <ul>
-<li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>Any <code>&amp;Gd&lt;OtherC&gt;</code> (e.g.: <code>&amp;Gd&lt;Node&gt;</code>, <code>&amp;Gd&lt;CustomUserClass&gt;</code>).</li>
+<li><code>&amp;OtherC</code>, as long as <code>OtherC</code> is a user class that contains a <code>base</code> field (it implements the
+<a href="../obj/trait.WithBaseField.html" title="trait godot::obj::WithBaseField"><code>WithBaseField</code></a> trait).</li>
+</ul>
+<hr />
+<ul>
+<li>To connect to methods on the object that owns this signal, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_sync-5" class="method"><h4 class="code-header">pub fn <a href="#method.connect_sync-5" class="fn">connect_sync</a>&lt;F, R&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(P0, P1, P2, P3, P4) -&gt; R + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static,</div></h4></section></summary><div class="docblock"><p>Connect to this signal using a thread-safe function, allows the signal to be called across threads.</p>
 <p>Requires <code>Send</code> + <code>Sync</code> bounds on the provided function <code>F</code>, and is only available for the <code>experimental-threads</code>
 Cargo feature.</p>
-<p>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</p>
+<p>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</p>
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-ConnectBuilder%3C'_,+'_,+C,+(P0,+P1,+P2,+P3,+P4,+P5)%3E" class="impl"><a href="#impl-ConnectBuilder%3C'_,+'_,+C,+(P0,+P1,+P2,+P3,+P4,+P5)%3E" class="anchor">§</a><h3 class="code-header">impl&lt;C, P0, P1, P2, P3, P4, P5&gt; <a class="struct" href="struct.ConnectBuilder.html" title="struct godot::register::ConnectBuilder">ConnectBuilder</a>&lt;'_, '_, C, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(P0, P1, P2, P3, P4, P5)</a>&gt;<div class="where">where
     C: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,
     P0: <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> + <a class="trait" href="../prelude/trait.FromGodot.html" title="trait godot::prelude::FromGodot">FromGodot</a> + 'static,
@@ -282,21 +332,21 @@ Cargo feature.</p>
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(P0, P1, P2, P3, P4, P5) -&gt; R + 'static,</div></h4></section></summary><div class="docblock"><p>Connect a non-member function (global function, associated function or closure).</p>
 <p>Example usages:</p>
 
-<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>sig.connect(<span class="self">Self</span>::static_func);
-sig.connect(global_func);
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>sig.connect_builder().connect(<span class="self">Self</span>::static_func);
+sig.connect_builder().flags(ConnectFlags::DEFERRED).connect(global_func);
 sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre></div>
 <ul>
-<li>To connect to a method of the own object <code>self</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>To connect to a method on the object that owns this signal, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-6" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-6" class="fn">connect_self</a>&lt;F, R, Decl&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut C</a>, P0, P1, P2, P3, P4, P5) -&gt; R + 'static,
-    C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut Self</code>) as the first parameter.</p>
+    C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>&amp;mut self</code> as the first parameter.</p>
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.ConnectBuilder.html#method.connect_other" title="method godot::register::ConnectBuilder::connect_other"><code>connect_other()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other-6" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other-6" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     self,
@@ -304,17 +354,25 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
     method: F,
 )<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut OtherC</a>, P0, P1, P2, P3, P4, P5) -&gt; R + 'static,
-    OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</p>
+    OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>&amp;mut OtherC</code> as the first parameter, where
+<code>OtherC</code>: <a href="../prelude/trait.GodotClass.html" title="trait godot::prelude::GodotClass"><code>GodotClass</code></a> (both user and engine classes are accepted).</p>
+<p>The parameter <code>object</code> can be of 2 different “categories”:</p>
 <ul>
-<li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>Any <code>&amp;Gd&lt;OtherC&gt;</code> (e.g.: <code>&amp;Gd&lt;Node&gt;</code>, <code>&amp;Gd&lt;CustomUserClass&gt;</code>).</li>
+<li><code>&amp;OtherC</code>, as long as <code>OtherC</code> is a user class that contains a <code>base</code> field (it implements the
+<a href="../obj/trait.WithBaseField.html" title="trait godot::obj::WithBaseField"><code>WithBaseField</code></a> trait).</li>
+</ul>
+<hr />
+<ul>
+<li>To connect to methods on the object that owns this signal, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_sync-6" class="method"><h4 class="code-header">pub fn <a href="#method.connect_sync-6" class="fn">connect_sync</a>&lt;F, R&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(P0, P1, P2, P3, P4, P5) -&gt; R + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static,</div></h4></section></summary><div class="docblock"><p>Connect to this signal using a thread-safe function, allows the signal to be called across threads.</p>
 <p>Requires <code>Send</code> + <code>Sync</code> bounds on the provided function <code>F</code>, and is only available for the <code>experimental-threads</code>
 Cargo feature.</p>
-<p>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</p>
+<p>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</p>
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-ConnectBuilder%3C'_,+'_,+C,+(P0,+P1,+P2,+P3,+P4,+P5,+P6)%3E" class="impl"><a href="#impl-ConnectBuilder%3C'_,+'_,+C,+(P0,+P1,+P2,+P3,+P4,+P5,+P6)%3E" class="anchor">§</a><h3 class="code-header">impl&lt;C, P0, P1, P2, P3, P4, P5, P6&gt; <a class="struct" href="struct.ConnectBuilder.html" title="struct godot::register::ConnectBuilder">ConnectBuilder</a>&lt;'_, '_, C, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(P0, P1, P2, P3, P4, P5, P6)</a>&gt;<div class="where">where
     C: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,
     P0: <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> + <a class="trait" href="../prelude/trait.FromGodot.html" title="trait godot::prelude::FromGodot">FromGodot</a> + 'static,
@@ -327,21 +385,21 @@ Cargo feature.</p>
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(P0, P1, P2, P3, P4, P5, P6) -&gt; R + 'static,</div></h4></section></summary><div class="docblock"><p>Connect a non-member function (global function, associated function or closure).</p>
 <p>Example usages:</p>
 
-<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>sig.connect(<span class="self">Self</span>::static_func);
-sig.connect(global_func);
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>sig.connect_builder().connect(<span class="self">Self</span>::static_func);
+sig.connect_builder().flags(ConnectFlags::DEFERRED).connect(global_func);
 sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre></div>
 <ul>
-<li>To connect to a method of the own object <code>self</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>To connect to a method on the object that owns this signal, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-7" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-7" class="fn">connect_self</a>&lt;F, R, Decl&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut C</a>, P0, P1, P2, P3, P4, P5, P6) -&gt; R + 'static,
-    C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut Self</code>) as the first parameter.</p>
+    C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>&amp;mut self</code> as the first parameter.</p>
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.ConnectBuilder.html#method.connect_other" title="method godot::register::ConnectBuilder::connect_other"><code>connect_other()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other-7" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other-7" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     self,
@@ -349,17 +407,25 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
     method: F,
 )<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut OtherC</a>, P0, P1, P2, P3, P4, P5, P6) -&gt; R + 'static,
-    OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</p>
+    OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>&amp;mut OtherC</code> as the first parameter, where
+<code>OtherC</code>: <a href="../prelude/trait.GodotClass.html" title="trait godot::prelude::GodotClass"><code>GodotClass</code></a> (both user and engine classes are accepted).</p>
+<p>The parameter <code>object</code> can be of 2 different “categories”:</p>
 <ul>
-<li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>Any <code>&amp;Gd&lt;OtherC&gt;</code> (e.g.: <code>&amp;Gd&lt;Node&gt;</code>, <code>&amp;Gd&lt;CustomUserClass&gt;</code>).</li>
+<li><code>&amp;OtherC</code>, as long as <code>OtherC</code> is a user class that contains a <code>base</code> field (it implements the
+<a href="../obj/trait.WithBaseField.html" title="trait godot::obj::WithBaseField"><code>WithBaseField</code></a> trait).</li>
+</ul>
+<hr />
+<ul>
+<li>To connect to methods on the object that owns this signal, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_sync-7" class="method"><h4 class="code-header">pub fn <a href="#method.connect_sync-7" class="fn">connect_sync</a>&lt;F, R&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(P0, P1, P2, P3, P4, P5, P6) -&gt; R + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static,</div></h4></section></summary><div class="docblock"><p>Connect to this signal using a thread-safe function, allows the signal to be called across threads.</p>
 <p>Requires <code>Send</code> + <code>Sync</code> bounds on the provided function <code>F</code>, and is only available for the <code>experimental-threads</code>
 Cargo feature.</p>
-<p>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</p>
+<p>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</p>
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-ConnectBuilder%3C'_,+'_,+C,+(P0,+P1,+P2,+P3,+P4,+P5,+P6,+P7)%3E" class="impl"><a href="#impl-ConnectBuilder%3C'_,+'_,+C,+(P0,+P1,+P2,+P3,+P4,+P5,+P6,+P7)%3E" class="anchor">§</a><h3 class="code-header">impl&lt;C, P0, P1, P2, P3, P4, P5, P6, P7&gt; <a class="struct" href="struct.ConnectBuilder.html" title="struct godot::register::ConnectBuilder">ConnectBuilder</a>&lt;'_, '_, C, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(P0, P1, P2, P3, P4, P5, P6, P7)</a>&gt;<div class="where">where
     C: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,
     P0: <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> + <a class="trait" href="../prelude/trait.FromGodot.html" title="trait godot::prelude::FromGodot">FromGodot</a> + 'static,
@@ -373,21 +439,21 @@ Cargo feature.</p>
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(P0, P1, P2, P3, P4, P5, P6, P7) -&gt; R + 'static,</div></h4></section></summary><div class="docblock"><p>Connect a non-member function (global function, associated function or closure).</p>
 <p>Example usages:</p>
 
-<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>sig.connect(<span class="self">Self</span>::static_func);
-sig.connect(global_func);
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>sig.connect_builder().connect(<span class="self">Self</span>::static_func);
+sig.connect_builder().flags(ConnectFlags::DEFERRED).connect(global_func);
 sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre></div>
 <ul>
-<li>To connect to a method of the own object <code>self</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>To connect to a method on the object that owns this signal, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-8" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-8" class="fn">connect_self</a>&lt;F, R, Decl&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut C</a>, P0, P1, P2, P3, P4, P5, P6, P7) -&gt; R + 'static,
-    C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut Self</code>) as the first parameter.</p>
+    C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>&amp;mut self</code> as the first parameter.</p>
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.ConnectBuilder.html#method.connect_other" title="method godot::register::ConnectBuilder::connect_other"><code>connect_other()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other-8" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other-8" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     self,
@@ -395,17 +461,25 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
     method: F,
 )<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut OtherC</a>, P0, P1, P2, P3, P4, P5, P6, P7) -&gt; R + 'static,
-    OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</p>
+    OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>&amp;mut OtherC</code> as the first parameter, where
+<code>OtherC</code>: <a href="../prelude/trait.GodotClass.html" title="trait godot::prelude::GodotClass"><code>GodotClass</code></a> (both user and engine classes are accepted).</p>
+<p>The parameter <code>object</code> can be of 2 different “categories”:</p>
 <ul>
-<li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>Any <code>&amp;Gd&lt;OtherC&gt;</code> (e.g.: <code>&amp;Gd&lt;Node&gt;</code>, <code>&amp;Gd&lt;CustomUserClass&gt;</code>).</li>
+<li><code>&amp;OtherC</code>, as long as <code>OtherC</code> is a user class that contains a <code>base</code> field (it implements the
+<a href="../obj/trait.WithBaseField.html" title="trait godot::obj::WithBaseField"><code>WithBaseField</code></a> trait).</li>
+</ul>
+<hr />
+<ul>
+<li>To connect to methods on the object that owns this signal, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_sync-8" class="method"><h4 class="code-header">pub fn <a href="#method.connect_sync-8" class="fn">connect_sync</a>&lt;F, R&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(P0, P1, P2, P3, P4, P5, P6, P7) -&gt; R + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static,</div></h4></section></summary><div class="docblock"><p>Connect to this signal using a thread-safe function, allows the signal to be called across threads.</p>
 <p>Requires <code>Send</code> + <code>Sync</code> bounds on the provided function <code>F</code>, and is only available for the <code>experimental-threads</code>
 Cargo feature.</p>
-<p>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</p>
+<p>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</p>
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-ConnectBuilder%3C'_,+'_,+C,+(P0,+P1,+P2,+P3,+P4,+P5,+P6,+P7,+P8)%3E" class="impl"><a href="#impl-ConnectBuilder%3C'_,+'_,+C,+(P0,+P1,+P2,+P3,+P4,+P5,+P6,+P7,+P8)%3E" class="anchor">§</a><h3 class="code-header">impl&lt;C, P0, P1, P2, P3, P4, P5, P6, P7, P8&gt; <a class="struct" href="struct.ConnectBuilder.html" title="struct godot::register::ConnectBuilder">ConnectBuilder</a>&lt;'_, '_, C, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(P0, P1, P2, P3, P4, P5, P6, P7, P8)</a>&gt;<div class="where">where
     C: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,
     P0: <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> + <a class="trait" href="../prelude/trait.FromGodot.html" title="trait godot::prelude::FromGodot">FromGodot</a> + 'static,
@@ -420,21 +494,21 @@ Cargo feature.</p>
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(P0, P1, P2, P3, P4, P5, P6, P7, P8) -&gt; R + 'static,</div></h4></section></summary><div class="docblock"><p>Connect a non-member function (global function, associated function or closure).</p>
 <p>Example usages:</p>
 
-<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>sig.connect(<span class="self">Self</span>::static_func);
-sig.connect(global_func);
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>sig.connect_builder().connect(<span class="self">Self</span>::static_func);
+sig.connect_builder().flags(ConnectFlags::DEFERRED).connect(global_func);
 sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre></div>
 <ul>
-<li>To connect to a method of the own object <code>self</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>To connect to a method on the object that owns this signal, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-9" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-9" class="fn">connect_self</a>&lt;F, R, Decl&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut C</a>, P0, P1, P2, P3, P4, P5, P6, P7, P8) -&gt; R + 'static,
-    C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut Self</code>) as the first parameter.</p>
+    C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>&amp;mut self</code> as the first parameter.</p>
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.ConnectBuilder.html#method.connect_other" title="method godot::register::ConnectBuilder::connect_other"><code>connect_other()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other-9" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other-9" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     self,
@@ -442,17 +516,25 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
     method: F,
 )<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut OtherC</a>, P0, P1, P2, P3, P4, P5, P6, P7, P8) -&gt; R + 'static,
-    OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</p>
+    OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>&amp;mut OtherC</code> as the first parameter, where
+<code>OtherC</code>: <a href="../prelude/trait.GodotClass.html" title="trait godot::prelude::GodotClass"><code>GodotClass</code></a> (both user and engine classes are accepted).</p>
+<p>The parameter <code>object</code> can be of 2 different “categories”:</p>
 <ul>
-<li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>Any <code>&amp;Gd&lt;OtherC&gt;</code> (e.g.: <code>&amp;Gd&lt;Node&gt;</code>, <code>&amp;Gd&lt;CustomUserClass&gt;</code>).</li>
+<li><code>&amp;OtherC</code>, as long as <code>OtherC</code> is a user class that contains a <code>base</code> field (it implements the
+<a href="../obj/trait.WithBaseField.html" title="trait godot::obj::WithBaseField"><code>WithBaseField</code></a> trait).</li>
+</ul>
+<hr />
+<ul>
+<li>To connect to methods on the object that owns this signal, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_sync-9" class="method"><h4 class="code-header">pub fn <a href="#method.connect_sync-9" class="fn">connect_sync</a>&lt;F, R&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(P0, P1, P2, P3, P4, P5, P6, P7, P8) -&gt; R + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static,</div></h4></section></summary><div class="docblock"><p>Connect to this signal using a thread-safe function, allows the signal to be called across threads.</p>
 <p>Requires <code>Send</code> + <code>Sync</code> bounds on the provided function <code>F</code>, and is only available for the <code>experimental-threads</code>
 Cargo feature.</p>
-<p>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</p>
+<p>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</p>
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-ConnectBuilder%3C'_,+'_,+C,+(P0,+P1,+P2,+P3,+P4,+P5,+P6,+P7,+P8,+P9)%3E" class="impl"><a href="#impl-ConnectBuilder%3C'_,+'_,+C,+(P0,+P1,+P2,+P3,+P4,+P5,+P6,+P7,+P8,+P9)%3E" class="anchor">§</a><h3 class="code-header">impl&lt;C, P0, P1, P2, P3, P4, P5, P6, P7, P8, P9&gt; <a class="struct" href="struct.ConnectBuilder.html" title="struct godot::register::ConnectBuilder">ConnectBuilder</a>&lt;'_, '_, C, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(P0, P1, P2, P3, P4, P5, P6, P7, P8, P9)</a>&gt;<div class="where">where
     C: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,
     P0: <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> + <a class="trait" href="../prelude/trait.FromGodot.html" title="trait godot::prelude::FromGodot">FromGodot</a> + 'static,
@@ -468,21 +550,21 @@ Cargo feature.</p>
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(P0, P1, P2, P3, P4, P5, P6, P7, P8, P9) -&gt; R + 'static,</div></h4></section></summary><div class="docblock"><p>Connect a non-member function (global function, associated function or closure).</p>
 <p>Example usages:</p>
 
-<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>sig.connect(<span class="self">Self</span>::static_func);
-sig.connect(global_func);
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>sig.connect_builder().connect(<span class="self">Self</span>::static_func);
+sig.connect_builder().flags(ConnectFlags::DEFERRED).connect(global_func);
 sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre></div>
 <ul>
-<li>To connect to a method of the own object <code>self</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>To connect to a method on the object that owns this signal, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self-10" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self-10" class="fn">connect_self</a>&lt;F, R, Decl&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut C</a>, P0, P1, P2, P3, P4, P5, P6, P7, P8, P9) -&gt; R + 'static,
-    C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>GdMut&lt;Self&gt;</code> (equivalent to <code>&amp;mut Self</code>) as the first parameter.</p>
+    C: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with <code>&amp;mut self</code> as the first parameter.</p>
 <ul>
 <li>To connect to methods on other objects, use <a href="struct.ConnectBuilder.html#method.connect_other" title="method godot::register::ConnectBuilder::connect_other"><code>connect_other()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other-10" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other-10" class="fn">connect_other</a>&lt;F, R, OtherC, Decl&gt;(
     self,
@@ -490,17 +572,25 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
     method: F,
 )<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut OtherC</a>, P0, P1, P2, P3, P4, P5, P6, P7, P8, P9) -&gt; R + 'static,
-    OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>Gd&lt;T&gt;</code> (not <code>self</code>) as the first parameter.</p>
+    OtherC: GodotDeref&lt;Decl&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method (member function) with any <code>&amp;mut OtherC</code> as the first parameter, where
+<code>OtherC</code>: <a href="../prelude/trait.GodotClass.html" title="trait godot::prelude::GodotClass"><code>GodotClass</code></a> (both user and engine classes are accepted).</p>
+<p>The parameter <code>object</code> can be of 2 different “categories”:</p>
 <ul>
-<li>To connect to methods on the same object that declares the <code>#[signal]</code>, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
-<li>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</li>
-<li>If you need cross-thread signals, use <code>connect_sync()</code> instead (requires feature “experimental-threads”).</li>
+<li>Any <code>&amp;Gd&lt;OtherC&gt;</code> (e.g.: <code>&amp;Gd&lt;Node&gt;</code>, <code>&amp;Gd&lt;CustomUserClass&gt;</code>).</li>
+<li><code>&amp;OtherC</code>, as long as <code>OtherC</code> is a user class that contains a <code>base</code> field (it implements the
+<a href="../obj/trait.WithBaseField.html" title="trait godot::obj::WithBaseField"><code>WithBaseField</code></a> trait).</li>
+</ul>
+<hr />
+<ul>
+<li>To connect to methods on the object that owns this signal, use <a href="struct.ConnectBuilder.html#method.connect_self" title="method godot::register::ConnectBuilder::connect_self"><code>connect_self()</code></a>.</li>
+<li>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</li>
+<li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_sync-10" class="method"><h4 class="code-header">pub fn <a href="#method.connect_sync-10" class="fn">connect_sync</a>&lt;F, R&gt;(self, function: F)<div class="where">where
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(P0, P1, P2, P3, P4, P5, P6, P7, P8, P9) -&gt; R + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static,</div></h4></section></summary><div class="docblock"><p>Connect to this signal using a thread-safe function, allows the signal to be called across threads.</p>
 <p>Requires <code>Send</code> + <code>Sync</code> bounds on the provided function <code>F</code>, and is only available for the <code>experimental-threads</code>
 Cargo feature.</p>
-<p>If you need connect flags, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before calling this.</p>
+<p>If you need <a href="../classes/object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a>, call <a href="struct.ConnectBuilder.html#method.flags" title="method godot::register::ConnectBuilder::flags"><code>flags()</code></a> before this.</p>
 </div></details></div></details></div><h2 id="synthetic-implementations" class="section-header">Auto Trait Implementations<a href="#synthetic-implementations" class="anchor">§</a></h2><div id="synthetic-implementations-list"><section id="impl-Freeze-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" class="impl"><a href="#impl-Freeze-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" class="anchor">§</a><h3 class="code-header">impl&lt;'ts, 'c, C, Ps&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Freeze.html" title="trait core::marker::Freeze">Freeze</a> for <a class="struct" href="struct.ConnectBuilder.html" title="struct godot::register::ConnectBuilder">ConnectBuilder</a>&lt;'ts, 'c, C, Ps&gt;</h3></section><section id="impl-RefUnwindSafe-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" class="impl"><a href="#impl-RefUnwindSafe-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" class="anchor">§</a><h3 class="code-header">impl&lt;'ts, 'c, C, Ps&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/panic/unwind_safe/trait.RefUnwindSafe.html" title="trait core::panic::unwind_safe::RefUnwindSafe">RefUnwindSafe</a> for <a class="struct" href="struct.ConnectBuilder.html" title="struct godot::register::ConnectBuilder">ConnectBuilder</a>&lt;'ts, 'c, C, Ps&gt;<div class="where">where
     &lt;C as <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>&gt;::<a class="associatedtype" href="../obj/trait.WithSignals.html#associatedtype.__SignalObj" title="type godot::obj::WithSignals::__SignalObj">__SignalObj</a>&lt;'c&gt;: <a class="trait" href="https://doc.rust-lang.org/nightly/core/panic/unwind_safe/trait.RefUnwindSafe.html" title="trait core::panic::unwind_safe::RefUnwindSafe">RefUnwindSafe</a>,
     Ps: <a class="trait" href="https://doc.rust-lang.org/nightly/core/panic/unwind_safe/trait.RefUnwindSafe.html" title="trait core::panic::unwind_safe::RefUnwindSafe">RefUnwindSafe</a>,</div></h3></section><section id="impl-Send-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" class="impl"><a href="#impl-Send-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" class="anchor">§</a><h3 class="code-header">impl&lt;'ts, 'c, C, Ps&gt; !<a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> for <a class="struct" href="struct.ConnectBuilder.html" title="struct godot::register::ConnectBuilder">ConnectBuilder</a>&lt;'ts, 'c, C, Ps&gt;</h3></section><section id="impl-Sync-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" class="impl"><a href="#impl-Sync-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" class="anchor">§</a><h3 class="code-header">impl&lt;'ts, 'c, C, Ps&gt; !<a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> for <a class="struct" href="struct.ConnectBuilder.html" title="struct godot::register::ConnectBuilder">ConnectBuilder</a>&lt;'ts, 'c, C, Ps&gt;</h3></section><section id="impl-Unpin-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" class="impl"><a href="#impl-Unpin-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" class="anchor">§</a><h3 class="code-header">impl&lt;'ts, 'c, C, Ps&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Unpin.html" title="trait core::marker::Unpin">Unpin</a> for <a class="struct" href="struct.ConnectBuilder.html" title="struct godot::register::ConnectBuilder">ConnectBuilder</a>&lt;'ts, 'c, C, Ps&gt;</h3></section><section id="impl-UnwindSafe-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" class="impl"><a href="#impl-UnwindSafe-for-ConnectBuilder%3C'ts,+'c,+C,+Ps%3E" class="anchor">§</a><h3 class="code-header">impl&lt;'ts, 'c, C, Ps&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/panic/unwind_safe/trait.UnwindSafe.html" title="trait core::panic::unwind_safe::UnwindSafe">UnwindSafe</a> for <a class="struct" href="struct.ConnectBuilder.html" title="struct godot::register::ConnectBuilder">ConnectBuilder</a>&lt;'ts, 'c, C, Ps&gt;<div class="where">where
