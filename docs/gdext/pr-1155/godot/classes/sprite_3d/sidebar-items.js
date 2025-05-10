@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["SigFrameChanged","SigTextureChanged","SignalsInSprite3D"]};
