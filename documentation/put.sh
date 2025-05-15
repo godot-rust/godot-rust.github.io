@@ -92,7 +92,10 @@ up=".."
 
 # unused_doc_comments,unused_attribute: caused by false positives from doc(cfg(...)) attributes.
 export RUSTFLAGS="--cfg published_docs -A unused_imports -A dead_code -A unexpected_cfgs -A unused_doc_comments -A unused_attributes"
-# export RUSTDOCFLAGS=...
+# Both need to be supplied since `RUSTDOCFLAGS` is being propagated only to crate that is being documented (only "godot" crate in this case)
+# while we need cfg value `published_docs` for codegen and other crates as well.
+# All doc(cfg(...)) attributes are gated behind `published_docs` cfg – therefore it must be supplied as well.
+export RUSTDOCFLAGS=$RUSTFLAGS
 
 # shellcheck disable=SC2086
 cargo +nightly doc -p $mainCrate $features --no-deps --target-dir $up/target
