@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1167/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1167"
 pr_author = "Bromeon"
 sort_key = 2025-05-18
-date_time = 2025-05-18T19:34:51Z
-commit_sha = "543834925c251e8482f1584b2bf2f64f0520be27"
+date_time = 2025-05-18T19:39:59Z
+commit_sha = "ee0b230bf1316af95fe146fc6fe5095a15f63c57"
 +++
 
 Decrease `CallError` size from 176 to 8 bytes
