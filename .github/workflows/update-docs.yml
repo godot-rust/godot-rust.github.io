@@ -27,7 +27,7 @@ defaults:
 
 jobs:
   update-docs:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
 #      - name: "Info about workflow (${{ github.event.client_payload.op }} ${{ github.event.client_payload.repo }}/${{ github.event.client_payload.num }})"
       - name: "Info about workflow (${{ env.OP }} ${{ env.REPO }}/${{ env.NUM }})"
