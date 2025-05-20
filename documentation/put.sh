@@ -10,7 +10,7 @@ repo="$1"
 num="$2"
 #date=$3
 
-SD_VERSION="1.0.0"
+#SD_VERSION="1.0.0"
 
 # Find main crate name
 case $repo in
@@ -44,11 +44,11 @@ echo "$PRE start PUT operation (crate '$mainCrate')."
 if [[ "$num" == "master" ]]; then
 	gitRef="master"
 	dir="$repo/master"
-	prettyNum="Latest master"
+	versionDescr="Latest master"
 else
 	gitRef="pull/$num/head"
 	dir="$repo/pr-$num"
-	prettyNum="Pull Request #$num"
+	versionDescr="Pull Request #$num"
 fi
 
 # Checkout PR branch
@@ -134,7 +134,8 @@ fi
 # Recognize min crate version, replace with current PR/master version
 libVersion=$(grep -Po '^version = "\K[^"]*' "cloned/$mainCrate/Cargo.toml")
 echo "$PRE detected crate: $mainCrate v$libVersion."
-find "target/doc/$mainCrate" -name .html -o -type f -print0 | xargs -0 sed -i 's/'"Version $libVersion"'/'"$prettyNum"'/g'
+find target/doc/"$mainCrate" -type f -name "*.html" \
+  -exec sed -i "s|<span class=\\\"version\\\">$libVersion</span>|<span class=\\\"version\\\">$versionDescr</span>|g" {} +
 
 # Copy docs
 echo "$PRE deploy docs for #$num..."
