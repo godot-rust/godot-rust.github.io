@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigChanged","SigValueChanged","SignalsInRange"]};
+window.SIDEBAR_ITEMS = {"struct":["SigChanged","SigValueChanged","SignalsOfRange"]};

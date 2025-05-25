@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExAddIconItem","ExAddItem","ExAddSeparator","ExGetSelectableItem","SigItemFocused","SigItemSelected","SignalsInOptionButton"]};
+window.SIDEBAR_ITEMS = {"struct":["ExAddIconItem","ExAddItem","ExAddSeparator","ExGetSelectableItem","SigItemFocused","SigItemSelected","SignalsOfOptionButton"]};

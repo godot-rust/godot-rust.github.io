@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ActionMode","DrawMode","SigButtonDown","SigButtonUp","SigPressed","SigToggled","SignalsInBaseButton"]};
+window.SIDEBAR_ITEMS = {"struct":["ActionMode","DrawMode","SigButtonDown","SigButtonUp","SigPressed","SigToggled","SignalsOfBaseButton"]};

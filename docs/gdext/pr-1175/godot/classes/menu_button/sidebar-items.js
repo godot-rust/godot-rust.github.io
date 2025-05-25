@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigAboutToPopup","SignalsInMenuButton"]};
+window.SIDEBAR_ITEMS = {"struct":["SigAboutToPopup","SignalsOfMenuButton"]};

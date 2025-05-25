@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["FeedDataType","FeedPosition","SigFormatChanged","SigFrameChanged","SignalsInCameraFeed"]};
+window.SIDEBAR_ITEMS = {"struct":["FeedDataType","FeedPosition","SigFormatChanged","SigFrameChanged","SignalsOfCameraFeed"]};
