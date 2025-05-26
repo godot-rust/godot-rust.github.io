@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["DisableMode","SigInputEvent","SigMouseEntered","SigMouseExited","SignalsInCollisionObject3D"]};
+window.SIDEBAR_ITEMS = {"struct":["DisableMode","SigInputEvent","SigMouseEntered","SigMouseExited","SignalsOfCollisionObject3D"]};

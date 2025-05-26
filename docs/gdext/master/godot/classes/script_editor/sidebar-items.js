@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigEditorScriptChanged","SigScriptClose","SignalsInScriptEditor"]};
+window.SIDEBAR_ITEMS = {"struct":["SigEditorScriptChanged","SigScriptClose","SignalsOfScriptEditor"]};
