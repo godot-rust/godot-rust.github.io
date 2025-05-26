@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigAnimationAdded","SigAnimationChanged","SigAnimationRemoved","SigAnimationRenamed","SignalsInAnimationLibrary"]};
+window.SIDEBAR_ITEMS = {"struct":["SigAnimationAdded","SigAnimationChanged","SigAnimationRemoved","SigAnimationRenamed","SignalsOfAnimationLibrary"]};

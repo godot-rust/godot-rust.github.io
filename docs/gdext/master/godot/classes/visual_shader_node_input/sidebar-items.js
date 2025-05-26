@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigInputTypeChanged","SignalsInVisualShaderNodeInput"]};
+window.SIDEBAR_ITEMS = {"struct":["SigInputTypeChanged","SignalsOfVisualShaderNodeInput"]};
