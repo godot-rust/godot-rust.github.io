@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigColorChanged","SigPickerCreated","SigPopupClosed","SignalsInColorPickerButton"]};
+window.SIDEBAR_ITEMS = {"struct":["SigColorChanged","SigPickerCreated","SigPopupClosed","SignalsOfColorPickerButton"]};

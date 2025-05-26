@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExUpdateVisibility","SigDeltaSynchronized","SigSynchronized","SigVisibilityChanged","SignalsInMultiplayerSynchronizer","VisibilityUpdateMode"]};
+window.SIDEBAR_ITEMS = {"struct":["ExUpdateVisibility","SigDeltaSynchronized","SigSynchronized","SigVisibilityChanged","SignalsOfMultiplayerSynchronizer","VisibilityUpdateMode"]};

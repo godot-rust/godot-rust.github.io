@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigFrameChanged","SigTextureChanged","SignalsInSprite2D"]};
+window.SIDEBAR_ITEMS = {"struct":["SigFrameChanged","SigTextureChanged","SignalsOfSprite2D"]};

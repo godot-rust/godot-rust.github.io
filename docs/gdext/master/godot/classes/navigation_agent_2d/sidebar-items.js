@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigLinkReached","SigNavigationFinished","SigPathChanged","SigTargetReached","SigVelocityComputed","SigWaypointReached","SignalsInNavigationAgent2D"]};
+window.SIDEBAR_ITEMS = {"struct":["SigLinkReached","SigNavigationFinished","SigPathChanged","SigTargetReached","SigVelocityComputed","SigWaypointReached","SignalsOfNavigationAgent2D"]};

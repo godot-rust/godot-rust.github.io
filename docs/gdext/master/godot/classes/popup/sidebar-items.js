@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigPopupHide","SignalsInPopup"]};
+window.SIDEBAR_ITEMS = {"struct":["SigPopupHide","SignalsOfPopup"]};
