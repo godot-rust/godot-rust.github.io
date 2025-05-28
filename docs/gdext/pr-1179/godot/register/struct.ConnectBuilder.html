@@ -47,7 +47,7 @@ type parameters. Thus, try not to name the <code>ConnectBuilder</code> type in y
 </div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-ConnectBuilder%3C'_,+'_,+C,+Ps%3E" class="impl"><a href="#impl-ConnectBuilder%3C'_,+'_,+C,+Ps%3E" class="anchor">§</a><h3 class="code-header">impl&lt;C, Ps&gt; <a class="struct" href="struct.ConnectBuilder.html" title="struct godot::register::ConnectBuilder">ConnectBuilder</a>&lt;'_, '_, C, Ps&gt;<div class="where">where
     C: <a class="trait" href="../obj/trait.WithSignals.html" title="trait godot::obj::WithSignals">WithSignals</a>,
     Ps: <a class="trait" href="../meta/trait.InParamTuple.html" title="trait godot::meta::InParamTuple">InParamTuple</a> + 'static,</div></h3></section></summary><div class="impl-items"><details class="toggle method-toggle" open><summary><section id="method.connect" class="method"><h4 class="code-header">pub fn <a href="#method.connect" class="fn">connect</a>&lt;F&gt;(self, function: F)<div class="where">where
-    F: for&lt;'c_rcv&gt; SignalReceiver&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, Ps&gt; + 'static,
+    F: for&lt;'c_rcv&gt; SignalReceiver&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, Ps&gt;,
     IndirectSignalReceiver&lt;'c_rcv, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, Ps, F&gt;: for&lt;'c_rcv&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'c_rcv mut F</a>&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a non-member function (global function, associated function or closure).</p>
 <p>Example usages:</p>
 
@@ -65,7 +65,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self_mut" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self_mut" class="fn">connect_self_mut</a>&lt;F&gt;(self, function: F)<div class="where">where
     C: <a class="trait" href="../obj/trait.Bounds.html" title="trait godot::obj::Bounds">Bounds</a>&lt;Declarer = <a class="enum" href="../obj/bounds/enum.DeclUser.html" title="enum godot::obj::bounds::DeclUser">DeclUser</a>&gt;,
-    F: for&lt;'c_rcv&gt; SignalReceiver&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'c_rcv mut C</a>, Ps&gt; + 'static,
+    F: for&lt;'c_rcv&gt; SignalReceiver&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'c_rcv mut C</a>, Ps&gt;,
     IndirectSignalReceiver&lt;'c_rcv, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'c_rcv mut C</a>, Ps, F&gt;: for&lt;'c_rcv&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'c_rcv mut F</a>&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method with <code>&amp;mut self</code> as the first parameter (user classes only).</p>
 <h5 id="related-apis-1"><a class="doc-anchor" href="#related-apis-1">§</a>Related APIs</h5>
 <ul>
@@ -76,7 +76,7 @@ For engine classes, <code>&amp;mut self</code> is not supported at all.</li>
 <li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature <code>experimental-threads</code>).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_self_gd" class="method"><h4 class="code-header">pub fn <a href="#method.connect_self_gd" class="fn">connect_self_gd</a>&lt;F&gt;(self, function: F)<div class="where">where
-    F: SignalReceiver&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;C&gt;, Ps&gt; + 'static,
+    F: SignalReceiver&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;C&gt;, Ps&gt;,
     IndirectSignalReceiver&lt;'c_rcv, <a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;C&gt;, Ps, F&gt;: for&lt;'c_rcv&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'c_rcv mut F</a>&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method with <code>&amp;mut Gd&lt;Self&gt;</code> as the first parameter (user + engine classes).</p>
 <h5 id="related-apis-2"><a class="doc-anchor" href="#related-apis-2">§</a>Related APIs</h5>
 <ul>
@@ -92,7 +92,7 @@ use <a href="struct.ConnectBuilder.html#method.connect_self_mut" title="method g
     method: F,
 )<div class="where">where
     OtherC: <a class="trait" href="../prelude/trait.GodotClass.html" title="trait godot::prelude::GodotClass">GodotClass</a>&lt;Declarer = <a class="enum" href="../obj/bounds/enum.DeclUser.html" title="enum godot::obj::bounds::DeclUser">DeclUser</a>&gt; + <a class="trait" href="../obj/trait.Bounds.html" title="trait godot::obj::Bounds">Bounds</a>,
-    F: for&lt;'c_rcv&gt; SignalReceiver&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'c_rcv mut OtherC</a>, Ps&gt; + 'static,
+    F: for&lt;'c_rcv&gt; SignalReceiver&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'c_rcv mut OtherC</a>, Ps&gt;,
     IndirectSignalReceiver&lt;'c_rcv, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'c_rcv mut OtherC</a>, Ps, F&gt;: for&lt;'c_rcv&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'c_rcv mut F</a>&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method with any <code>&amp;mut OtherC</code> as the first parameter (user classes only).</p>
 <p>The parameter <code>object</code> can be of 2 different “categories”:</p>
 <ul>
@@ -114,7 +114,7 @@ For engine classes, <code>&amp;mut self</code> is not supported at all.</li>
     method: F,
 )<div class="where">where
     OtherC: <a class="trait" href="../prelude/trait.GodotClass.html" title="trait godot::prelude::GodotClass">GodotClass</a>,
-    F: SignalReceiver&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;OtherC&gt;, Ps&gt; + 'static,
+    F: SignalReceiver&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;OtherC&gt;, Ps&gt;,
     IndirectSignalReceiver&lt;'c_rcv, <a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;OtherC&gt;, Ps, F&gt;: for&lt;'c_rcv&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'c_rcv mut F</a>&gt;,</div></h4></section></summary><div class="docblock"><p>Connect a method with any <code>&amp;mut Gd&lt;OtherC&gt;</code> as the first parameter (user + engine classes).</p>
 <p>The parameter <code>object</code> can be of 2 different “categories”:</p>
 <ul>
@@ -129,7 +129,7 @@ For engine classes, <code>&amp;mut self</code> is not supported at all.</li>
 <li>If you need cross-thread signals, use <a href="#method.connect_sync"><code>connect_sync()</code></a> instead (requires feature “experimental-threads”).</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_sync" class="method"><h4 class="code-header">pub fn <a href="#method.connect_sync" class="fn">connect_sync</a>&lt;F&gt;(self, function: F)<div class="where">where
-    F: for&lt;'c_rcv&gt; SignalReceiver&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, Ps&gt; + for&lt;'c_rcv&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + for&lt;'c_rcv&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static,
+    F: for&lt;'c_rcv&gt; SignalReceiver&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, Ps&gt; + for&lt;'c_rcv&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + for&lt;'c_rcv&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a>,
     IndirectSignalReceiver&lt;'c_rcv, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, Ps, F&gt;: for&lt;'c_rcv&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'c_rcv mut F</a>&gt;,</div></h4></section><span class="item-info"><div class="stab portability">Available on <strong>crate feature <code>experimental-threads</code></strong> only.</div></span></summary><div class="docblock"><p>Connect to this signal using a thread-safe function, allows the signal to be called across threads.</p>
 <p>Requires <code>Send</code> + <code>Sync</code> bounds on the provided function <code>F</code>, and is only available for the <code>experimental-threads</code>
 Cargo feature.</p>
