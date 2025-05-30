@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigFinished","SignalsInTweener"]};
+window.SIDEBAR_ITEMS = {"struct":["SigFinished","SignalsOfTweener"]};

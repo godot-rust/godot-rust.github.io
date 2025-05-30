@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExDuplicate","SigChanged","SigSetupLocalToSceneRequested","SignalsInResource"]};
+window.SIDEBAR_ITEMS = {"struct":["ExDuplicate","SigChanged","SigSetupLocalToSceneRequested","SignalsOfResource"]};

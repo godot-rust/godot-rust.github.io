@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["AttenuationModel","DopplerTracking","ExPlay","SigFinished","SignalsInAudioStreamPlayer3D"]};
+window.SIDEBAR_ITEMS = {"struct":["AttenuationModel","DopplerTracking","ExPlay","SigFinished","SignalsOfAudioStreamPlayer3D"]};

@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExAddNode","SigNodeChanged","SignalsInAnimationNodeBlendTree"]};
+window.SIDEBAR_ITEMS = {"struct":["ExAddNode","SigNodeChanged","SignalsOfAnimationNodeBlendTree"]};

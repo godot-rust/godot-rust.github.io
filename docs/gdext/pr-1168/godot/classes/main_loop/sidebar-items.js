@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigOnRequestPermissionsResult","SignalsInMainLoop"]};
+window.SIDEBAR_ITEMS = {"struct":["SigOnRequestPermissionsResult","SignalsOfMainLoop"]};
