@@ -2,13 +2,14 @@
     Ps: <a class="trait" href="../meta/trait.InParamTuple.html" title="trait godot::meta::InParamTuple">InParamTuple</a>,
     F: <a class="trait" href="trait.SignalReceiver.html" title="trait godot::register::SignalReceiver">SignalReceiver</a>&lt;I, Ps&gt; + 'static,</div>{ <span class="comment">/* private fields */</span> }</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>A special “identity struct” which allows to use type inference while specifying various closures for connections.</p>
 <p>Rustc can’t infer types in closures when dealing with FnTraits (in our case – <a href="trait.SignalReceiver.html" title="trait godot::register::SignalReceiver"><code>SignalReceiver</code></a>).
-To make type inference work in such cases we need to specify concrete type – such as FnMut(…) -&gt; R…
-or &lt;&amp;mut F as<code>Into&lt;IndirectSignalReceiver&lt;'_, Instance, Params, Func&gt;&gt;&gt;&gt;</code>.</p>
+To make type inference work in such cases we need to specify concrete type – such as <code>FnMut(...) -&gt; R</code>…
+or <code>&lt;&amp;mut F as Into&lt;IndirectSignalReceiver&lt;'_, Instance, Params, Func&gt;&gt;&gt;</code>.</p>
 <p>In other words – <code>IndirectSignalReceiver</code> allows us to “smuggle” in FnTrait,
-forcing rustc to deal with type inference while resolving the <code>inner</code> type.</p>
+forcing rustc to deal with type inference while resolving its inner type.</p>
 <p>Sample usage:</p>
 
-<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>   IndirectSignalReceiver::from(<span class="kw-2">&amp;mut </span>function)
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code>
+   IndirectSignalReceiver::from(<span class="kw-2">&amp;mut </span>function)
         .function()
         .call((), args);</code></pre></div>
 <p>See also: <a href="https://github.com/rust-lang/rust/blob/5ad7454f7503b6af2800bf4a7c875962cb03f913/compiler/rustc_hir_typeck/src/fn_ctxt/checks.rs#L306-L317">https://github.com/rust-lang/rust/blob/5ad7454f7503b6af2800bf4a7c875962cb03f913/compiler/rustc_hir_typeck/src/fn_ctxt/checks.rs#L306-L317</a></p>
