@@ -3,13 +3,12 @@
 <p>Related symbols:</p>
 <ul>
 <li><a href="class_db/index.html" title="mod godot::classes::class_db"><code>class_db</code></a>: sidecar module with related enum/flag types</li>
-<li><a href="trait.IClassDb.html" title="trait godot::classes::IClassDb"><code>IClassDb</code></a>: virtual methods</li>
 </ul>
 <p>See also <a href="https://docs.godotengine.org/en/stable/classes/class_classdb.html">Godot docs for <code>ClassDB</code></a>.</p>
 <h2 id="singleton"><a class="doc-anchor" href="#singleton">§</a>Singleton</h2>
 <p>This class is a singleton. You can get the one instance using <a href="struct.ClassDb.html#method.singleton" title="associated function godot::classes::ClassDb::singleton"><code>ClassDb::singleton()</code></a>.</p>
 <h2 id="final-class"><a class="doc-anchor" href="#final-class">§</a>Final class</h2>
-<p>This class is <em>final</em>, meaning you cannot inherit from it.</p>
+<p>This class is <em>final</em>, meaning you cannot inherit from it, and it comes without <code>I*</code> interface trait. It is still possible that other Godot classes inherit from it, but that is limited to the engine itself.</p>
 </div></details><h2 id="implementations" class="section-header">Implementations<a href="#implementations" class="anchor">§</a></h2><div id="implementations-list"><details class="toggle implementors-toggle" open><summary><section id="impl-ClassDb" class="impl"><a href="#impl-ClassDb" class="anchor">§</a><h3 class="code-header">impl <a class="struct" href="struct.ClassDb.html" title="struct godot::classes::ClassDb">ClassDb</a></h3></section></summary><div class="impl-items"><section id="method.singleton" class="method"><h4 class="code-header">pub fn <a href="#method.singleton" class="fn">singleton</a>() -&gt; <a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.ClassDb.html" title="struct godot::classes::ClassDb">ClassDb</a>&gt;</h4></section><section id="method.get_class_list" class="method"><h4 class="code-header">pub fn <a href="#method.get_class_list" class="fn">get_class_list</a>(&amp;self) -&gt; <a class="struct" href="../prelude/struct.PackedStringArray.html" title="struct godot::prelude::PackedStringArray">PackedStringArray</a></h4></section><section id="method.get_inheriters_from_class" class="method"><h4 class="code-header">pub fn <a href="#method.get_inheriters_from_class" class="fn">get_inheriters_from_class</a>(
     &amp;self,
     class: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName">StringName</a>&gt;,
