@@ -28,7 +28,7 @@ can be used directly by Godot, without allocation or conversion. The encoding is
 <p>Some notes on the encodings:</p>
 <ul>
 <li><strong>Latin-1:</strong> Since every byte is a valid Latin-1 character, no validation besides the <code>NUL</code> byte is performed.
-It is your responsibility to ensure that the input is valid Latin-1.</li>
+It is your responsibility to ensure that the input is meaningful under Latin-1.</li>
 <li><strong>ASCII</strong>: Subset of Latin-1, which is additionally validated to be valid, non-<code>NUL</code> ASCII characters.</li>
 <li><strong>UTF-8</strong>: The input is validated to be UTF-8.</li>
 </ul>
