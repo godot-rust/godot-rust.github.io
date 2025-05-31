@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigBoneSetupChanged","SignalsInSkeleton2D"]};
+window.SIDEBAR_ITEMS = {"struct":["SigBoneSetupChanged","SignalsOfSkeleton2D"]};

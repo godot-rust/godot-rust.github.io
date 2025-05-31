@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigFilesystemChanged","SigResourcesReimported","SigResourcesReimporting","SigResourcesReload","SigScriptClassesUpdated","SigSourcesChanged","SignalsInEditorFileSystem"]};
+window.SIDEBAR_ITEMS = {"struct":["SigFilesystemChanged","SigResourcesReimported","SigResourcesReimporting","SigResourcesReload","SigScriptClassesUpdated","SigSourcesChanged","SignalsOfEditorFileSystem"]};

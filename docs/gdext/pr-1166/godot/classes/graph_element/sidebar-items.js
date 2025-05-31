@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigDeleteRequest","SigDragged","SigNodeDeselected","SigNodeSelected","SigPositionOffsetChanged","SigRaiseRequest","SigResizeEnd","SigResizeRequest","SignalsInGraphElement"]};
+window.SIDEBAR_ITEMS = {"struct":["SigDeleteRequest","SigDragged","SigNodeDeselected","SigNodeSelected","SigPositionOffsetChanged","SigRaiseRequest","SigResizeEnd","SigResizeRequest","SignalsOfGraphElement"]};
