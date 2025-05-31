@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigParameterListChanged","SignalsInAudioStream"]};
+window.SIDEBAR_ITEMS = {"struct":["SigParameterListChanged","SignalsOfAudioStream"]};

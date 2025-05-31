@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExBakeNavigationMesh","SigBakeFinished","SigNavigationMeshChanged","SignalsInNavigationRegion3D"]};
+window.SIDEBAR_ITEMS = {"struct":["ExBakeNavigationMesh","SigBakeFinished","SigNavigationMeshChanged","SignalsOfNavigationRegion3D"]};

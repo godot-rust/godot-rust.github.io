@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigFinished","SignalsInVideoStreamPlayer"]};
+window.SIDEBAR_ITEMS = {"struct":["SigFinished","SignalsOfVideoStreamPlayer"]};

@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["AdvanceMode","SigAdvanceConditionChanged","SignalsInAnimationNodeStateMachineTransition","SwitchMode"]};
+window.SIDEBAR_ITEMS = {"struct":["AdvanceMode","SigAdvanceConditionChanged","SignalsOfAnimationNodeStateMachineTransition","SwitchMode"]};

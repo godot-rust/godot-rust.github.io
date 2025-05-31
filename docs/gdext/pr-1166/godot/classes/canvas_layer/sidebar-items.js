@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigVisibilityChanged","SignalsInCanvasLayer"]};
+window.SIDEBAR_ITEMS = {"struct":["SigVisibilityChanged","SignalsOfCanvasLayer"]};
