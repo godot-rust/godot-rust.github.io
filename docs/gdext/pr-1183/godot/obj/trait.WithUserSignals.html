@@ -16,9 +16,17 @@ For example, if you have…</p>
 <div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[signal]
 </span><span class="kw">fn </span>damage_taken(<span class="kw-2">&amp;mut </span><span class="self">self</span>, amount: i32);</code></pre></div>
 <p>…then you can access the signal as <code>self.signals().damage_taken()</code>, which returns an object with the following API:</p>
-<div><table><thead><tr><th>Method signature</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>connect(f: impl FnMut(i32))</code></td><td>Connects global or associated function, or a closure.</td></tr>
-<tr><td><code>connect_self(f: impl FnMut(&amp;mut Self, i32))</code></td><td>Connects a <code>&amp;mut self</code> method or closure.</td></tr>
-<tr><td><code>emit(amount: i32)</code></td><td>Emits the signal with the given arguments.</td></tr>
-</tbody></table>
-</div></div></details></div><h2 id="dyn-compatibility" class="section-header">Dyn Compatibility<a href="#dyn-compatibility" class="anchor">§</a></h2><div class="dyn-compatibility-info"><p>This trait is <b>not</b> <a href="https://doc.rust-lang.org/nightly/reference/items/traits.html#dyn-compatibility">dyn compatible</a>.</p><p><i>In older versions of Rust, dyn compatibility was called "object safety", so this trait is not object safe.</i></p></div><h2 id="implementors" class="section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"></div><script src="../../trait.impl/godot_core/obj/traits/trait.WithUserSignals.js" async></script></section></div></main></body></html>
+
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="comment">// Connects global or associated function, or a closure.
+</span><span class="kw">fn </span>connect(f: <span class="kw">impl </span>FnMut(i32));
+
+<span class="comment">// Connects a &amp;mut self method or closure on the emitter object.
+</span><span class="kw">fn </span>connect_self(f: <span class="kw">impl </span>FnMut(<span class="kw-2">&amp;mut </span><span class="self">Self</span>, i32));
+
+<span class="comment">// Connects a &amp;mut self method or closure on another object.
+</span><span class="kw">fn </span>connect_other&lt;C&gt;(f: <span class="kw">impl </span>FnMut(<span class="kw-2">&amp;mut </span>C, i32));
+
+<span class="comment">// Emits the signal with the given arguments.
+</span><span class="kw">fn </span>emit(amount: i32);</code></pre></div>
+<p>See <a href="../register/struct.TypedSignal.html" title="struct godot::register::TypedSignal"><code>TypedSignal</code></a> for more information.</p>
+</div></details></div><h2 id="dyn-compatibility" class="section-header">Dyn Compatibility<a href="#dyn-compatibility" class="anchor">§</a></h2><div class="dyn-compatibility-info"><p>This trait is <b>not</b> <a href="https://doc.rust-lang.org/nightly/reference/items/traits.html#dyn-compatibility">dyn compatible</a>.</p><p><i>In older versions of Rust, dyn compatibility was called "object safety", so this trait is not object safe.</i></p></div><h2 id="implementors" class="section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"></div><script src="../../trait.impl/godot_core/obj/traits/trait.WithUserSignals.js" async></script></section></div></main></body></html>
