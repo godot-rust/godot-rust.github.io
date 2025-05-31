@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["ApiType","ExClassGetEnumConstants","ExClassGetEnumList","ExClassGetIntegerConstantEnum","ExClassGetIntegerConstantList","ExClassGetMethodArgumentCount","ExClassGetMethodList","ExClassGetPropertyList","ExClassGetSignalList","ExClassHasEnum","ExClassHasMethod","ExIsClassEnumBitfield"]};
