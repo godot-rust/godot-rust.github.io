@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExGetProjectMetadata","SigSettingsChanged","SignalsInEditorSettings"]};
+window.SIDEBAR_ITEMS = {"struct":["ExGetProjectMetadata","SigSettingsChanged","SignalsOfEditorSettings"]};

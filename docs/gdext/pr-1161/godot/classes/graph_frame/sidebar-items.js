@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigAutoshrinkChanged","SignalsInGraphFrame"]};
+window.SIDEBAR_ITEMS = {"struct":["SigAutoshrinkChanged","SignalsOfGraphFrame"]};

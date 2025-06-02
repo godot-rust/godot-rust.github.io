@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigTextureChanged","SignalsInMultiMeshInstance2D"]};
+window.SIDEBAR_ITEMS = {"struct":["SigTextureChanged","SignalsOfMultiMeshInstance2D"]};
