@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExGetSetting","ExLoadResourcePack","SigSettingsChanged","SignalsInProjectSettings"]};
+window.SIDEBAR_ITEMS = {"struct":["ExGetSetting","ExLoadResourcePack","SigSettingsChanged","SignalsOfProjectSettings"]};

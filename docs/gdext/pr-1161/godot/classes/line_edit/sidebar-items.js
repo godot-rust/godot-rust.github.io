@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExSelect","MenuItems","SigEditingToggled","SigTextChangeRejected","SigTextChanged","SigTextSubmitted","SignalsInLineEdit","VirtualKeyboardType"]};
+window.SIDEBAR_ITEMS = {"struct":["ExSelect","MenuItems","SigEditingToggled","SigTextChangeRejected","SigTextChanged","SigTextSubmitted","SignalsOfLineEdit","VirtualKeyboardType"]};
