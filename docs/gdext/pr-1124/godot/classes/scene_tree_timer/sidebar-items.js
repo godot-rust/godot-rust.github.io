@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigTimeout","SignalsInSceneTreeTimer"]};
+window.SIDEBAR_ITEMS = {"struct":["SigTimeout","SignalsOfSceneTreeTimer"]};

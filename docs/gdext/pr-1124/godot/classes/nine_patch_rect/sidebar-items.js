@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["AxisStretchMode","SigTextureChanged","SignalsInNinePatchRect"]};
+window.SIDEBAR_ITEMS = {"struct":["AxisStretchMode","SigTextureChanged","SignalsOfNinePatchRect"]};

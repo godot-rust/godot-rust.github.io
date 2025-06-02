@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigPressed","SignalsInStatusIndicator"]};
+window.SIDEBAR_ITEMS = {"struct":["SigPressed","SignalsOfStatusIndicator"]};

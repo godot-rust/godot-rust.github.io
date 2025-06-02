@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigGrabbed","SigUngrabbed","SigUpdownPressed","SigValueFocusEntered","SigValueFocusExited","SignalsInEditorSpinSlider"]};
+window.SIDEBAR_ITEMS = {"struct":["SigGrabbed","SigUngrabbed","SigUpdownPressed","SigValueFocusEntered","SigValueFocusExited","SignalsOfEditorSpinSlider"]};

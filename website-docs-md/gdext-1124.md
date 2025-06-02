@@ -1,15 +1,15 @@
 +++
 title = "#1124"
-date = 2025-04-19
+date = 2025-06-02
 
 [extra]
 repo = "gdext"
 docs_rel_url = "gdext/pr-1124/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1124"
 pr_author = "Yarwin"
-sort_key = 2025-04-19
-date_time = 2025-04-19T19:39:48Z
-commit_sha = "ad11cfe20f418d6a176ff7fed7a6e2d80cec1562"
+sort_key = 2025-06-02
+date_time = 2025-06-02T07:35:18Z
+commit_sha = "fbabdc87845c3849abc950b4a7a652da8158489d"
 +++
 
 Allow to generate API from user-provided JSON and headers via `api-custom-json` feature.

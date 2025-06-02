@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigActiveTabRearranged","SigPrePopupPressed","SigTabButtonPressed","SigTabChanged","SigTabClicked","SigTabHovered","SigTabSelected","SignalsInTabContainer","TabPosition"]};
+window.SIDEBAR_ITEMS = {"struct":["SigActiveTabRearranged","SigPrePopupPressed","SigTabButtonPressed","SigTabChanged","SigTabClicked","SigTabHovered","SigTabSelected","SignalsOfTabContainer","TabPosition"]};

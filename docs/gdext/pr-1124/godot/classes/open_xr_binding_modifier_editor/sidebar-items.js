@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigBindingModifierRemoved","SignalsInOpenXrBindingModifierEditor"]};
+window.SIDEBAR_ITEMS = {"struct":["SigBindingModifierRemoved","SignalsOfOpenXrBindingModifierEditor"]};
