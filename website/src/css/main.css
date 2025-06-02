@@ -154,6 +154,10 @@ html {
     /*color: var(--brown-caption-dark);*/
 }
 
+pre {
+    overflow-x: scroll;
+}
+
 .markdown-content pre {
     @apply rounded-xl;
     @apply px-3;

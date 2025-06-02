@@ -284,6 +284,10 @@ strong {
 4. Correct the odd `em` font sizing in all browsers.
 */
 
+pre {
+  overflow-x: scroll;
+}
+
 code,
 kbd,
 samp,
