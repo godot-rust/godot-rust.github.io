@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExStart","SigTimeout","SignalsInTimer","TimerProcessCallback"]};
+window.SIDEBAR_ITEMS = {"struct":["ExStart","SigTimeout","SignalsOfTimer","TimerProcessCallback"]};

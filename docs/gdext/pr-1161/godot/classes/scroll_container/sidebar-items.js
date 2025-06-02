@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ScrollMode","SigScrollEnded","SigScrollStarted","SignalsInScrollContainer"]};
+window.SIDEBAR_ITEMS = {"struct":["ScrollMode","SigScrollEnded","SigScrollStarted","SignalsOfScrollContainer"]};

@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigSelectionChanged","SignalsInEditorSelection"]};
+window.SIDEBAR_ITEMS = {"struct":["SigSelectionChanged","SignalsOfEditorSelection"]};

@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["DebugVisibilityMode","ExGetUsedCellsById","ExSetCell","ExSetCellsTerrainConnect","ExSetCellsTerrainPath","SigChanged","SignalsInTileMapLayer"]};
+window.SIDEBAR_ITEMS = {"struct":["DebugVisibilityMode","ExGetUsedCellsById","ExSetCell","ExSetCellsTerrainConnect","ExSetCellsTerrainPath","SigChanged","SignalsOfTileMapLayer"]};

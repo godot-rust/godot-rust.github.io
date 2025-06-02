@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigPreviewInvalidated","SignalsInEditorResourcePreview"]};
+window.SIDEBAR_ITEMS = {"struct":["SigPreviewInvalidated","SignalsOfEditorResourcePreview"]};
