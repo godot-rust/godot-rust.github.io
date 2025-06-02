@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ConnectionState","ExCreateDataChannel","ExInitialize","GatheringState","SigDataChannelReceived","SigIceCandidateCreated","SigSessionDescriptionCreated","SignalingState","SignalsInWebRtcPeerConnection"]};
+window.SIDEBAR_ITEMS = {"struct":["ConnectionState","ExCreateDataChannel","ExInitialize","GatheringState","SigDataChannelReceived","SigIceCandidateCreated","SigSessionDescriptionCreated","SignalingState","SignalsOfWebRtcPeerConnection"]};

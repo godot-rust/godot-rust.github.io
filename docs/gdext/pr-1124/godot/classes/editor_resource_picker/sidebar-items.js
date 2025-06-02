@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigResourceChanged","SigResourceSelected","SignalsInEditorResourcePicker"]};
+window.SIDEBAR_ITEMS = {"struct":["SigResourceChanged","SigResourceSelected","SignalsOfEditorResourcePicker"]};

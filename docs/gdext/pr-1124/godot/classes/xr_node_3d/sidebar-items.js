@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigTrackingChanged","SignalsInXrNode3D"]};
+window.SIDEBAR_ITEMS = {"struct":["SigTrackingChanged","SignalsOfXrNode3D"]};

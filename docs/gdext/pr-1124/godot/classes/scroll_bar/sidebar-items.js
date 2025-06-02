@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigScrolling","SignalsInScrollBar"]};
+window.SIDEBAR_ITEMS = {"struct":["SigScrolling","SignalsOfScrollBar"]};

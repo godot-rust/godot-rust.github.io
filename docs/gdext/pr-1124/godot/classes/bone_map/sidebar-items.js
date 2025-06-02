@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigBoneMapUpdated","SigProfileUpdated","SignalsInBoneMap"]};
+window.SIDEBAR_ITEMS = {"struct":["SigBoneMapUpdated","SigProfileUpdated","SignalsOfBoneMap"]};
