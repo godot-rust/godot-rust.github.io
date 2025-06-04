@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExLookAt","ExLookAtFromPosition","RotationEditMode","SigVisibilityChanged","SignalsInNode3D"]};
+window.SIDEBAR_ITEMS = {"struct":["ExLookAt","ExLookAtFromPosition","RotationEditMode","SigVisibilityChanged","SignalsOfNode3D"]};

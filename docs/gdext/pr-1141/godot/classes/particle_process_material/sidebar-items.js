@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["CollisionMode","EmissionShape","Parameter","ParticleFlags","SigEmissionShapeChanged","SignalsInParticleProcessMaterial","SubEmitterMode"]};
+window.SIDEBAR_ITEMS = {"struct":["CollisionMode","EmissionShape","Parameter","ParticleFlags","SigEmissionShapeChanged","SignalsOfParticleProcessMaterial","SubEmitterMode"]};

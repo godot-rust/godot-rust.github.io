@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigFallbackChanged","SignalsInThemeDb"]};
+window.SIDEBAR_ITEMS = {"struct":["SigFallbackChanged","SignalsOfThemeDb"]};

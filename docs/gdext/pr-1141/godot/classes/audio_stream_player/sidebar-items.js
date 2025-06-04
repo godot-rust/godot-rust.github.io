@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExPlay","MixTarget","SigFinished","SignalsInAudioStreamPlayer"]};
+window.SIDEBAR_ITEMS = {"struct":["ExPlay","MixTarget","SigFinished","SignalsOfAudioStreamPlayer"]};

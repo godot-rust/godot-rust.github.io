@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["BoneAxis","SigModificationProcessed","SignalsInSkeletonModifier3D"]};
+window.SIDEBAR_ITEMS = {"struct":["BoneAxis","SigModificationProcessed","SignalsOfSkeletonModifier3D"]};

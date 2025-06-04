@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigPreSortChildren","SigSortChildren","SignalsInContainer"]};
+window.SIDEBAR_ITEMS = {"struct":["SigPreSortChildren","SigSortChildren","SignalsOfContainer"]};
