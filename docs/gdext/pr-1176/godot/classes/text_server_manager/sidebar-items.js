@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigInterfaceAdded","SigInterfaceRemoved","SignalsInTextServerManager"]};
+window.SIDEBAR_ITEMS = {"struct":["SigInterfaceAdded","SigInterfaceRemoved","SignalsOfTextServerManager"]};
