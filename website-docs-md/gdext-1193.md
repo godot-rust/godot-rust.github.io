@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1193/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1193"
 pr_author = "TitanNano"
 sort_key = 2025-06-08
-date_time = 2025-06-08T19:03:36Z
-commit_sha = "9bd1730c2f0735fa0828eaa9ce02fd6aa93d31e6"
+date_time = 2025-06-08T20:43:17Z
+commit_sha = "254d7b27a51a4af31b0018c992ea5a4f36d04574"
 +++
 
 Eliminate `ParamType`
