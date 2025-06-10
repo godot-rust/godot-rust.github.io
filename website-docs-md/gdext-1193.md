@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1193/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1193"
 pr_author = "TitanNano"
 sort_key = 2025-06-10
-date_time = 2025-06-10T19:01:41Z
-commit_sha = "69a0408d9700f77dc048f203ac7421d61120470d"
+date_time = 2025-06-10T21:28:20Z
+commit_sha = "9c052f674951b30b3f43a74892da6da7b3e6db28"
 +++
 
-Eliminate `ParamType`
+Allow custom types to be passed as `impl AsArg<T>`
