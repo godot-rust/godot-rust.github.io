@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"attr":["godot_api","godot_dyn"],"derive":["Export","GodotClass","GodotConvert","Var"],"mod":["property"],"struct":["ConnectBuilder","IndirectSignalReceiver","RpcConfig","TypedSignal"],"trait":["SignalReceiver"]};
+window.SIDEBAR_ITEMS = {"attr":["godot_api","godot_dyn"],"derive":["Export","GodotClass","GodotConvert","Var"],"mod":["property"],"struct":["ConnectBuilder","ConnectHandle","IndirectSignalReceiver","RpcConfig","TypedSignal"],"trait":["SignalReceiver"]};
