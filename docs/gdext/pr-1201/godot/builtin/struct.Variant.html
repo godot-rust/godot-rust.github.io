@@ -30,9 +30,8 @@ Enables conversions between related types that Godot considers compatible under 
 <li><code>GString</code> &lt;-&gt; <code>NodePath</code></li>
 <li><code>Array</code> &lt;-&gt; <code>Packed*Array</code></li>
 <li>Object -&gt; <code>Rid</code></li>
+<li>anything -&gt; <code>Variant</code></li>
 <li><code>Transform3D</code> &lt;-&gt; <code>Transform2D</code></li>
-<li>anything -&gt; <code>NIL</code></li>
-<li><code>NIL</code> -&gt; empty <code>Array</code>, <code>Packed*Array</code>, <code>Dictionary</code>, <code>GString</code>, etc.</li>
 </ul>
 <p>Among Godot conversions, it uses the “strict” rules<sup id="fnref1"><a href="#fn1">1</a></sup>, meaning it does <strong>not</strong> convert between strings and <code>i64</code>, <code>f64</code>, <code>bool</code>.</p>
 <div class="footnotes"><hr><ol><li id="fn1"><p>See <a href="https://github.com/godotengine/godot/blob/4.4-stable/core/extension/gdextension_interface.h#L1353-L1364">GDExtension interface</a>
