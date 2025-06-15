@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1205/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1205"
 pr_author = "0x53A"
 sort_key = 2025-06-15
-date_time = 2025-06-15T20:33:51Z
-commit_sha = "d1e47ebaf18b952d9d8d43b2a7e1112407239b7d"
+date_time = 2025-06-15T21:16:20Z
+commit_sha = "e5ac8cc570a283952278744ee62bf2e0460963a3"
 +++
 
-[macros] generate '__godot_rust_registrant_' name based on crate name and index
+Wasm registration fn names now based on crate name + index
