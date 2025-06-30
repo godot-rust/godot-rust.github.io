@@ -204,7 +204,7 @@ other Rust expressions that are valid in that context.</p>
     </span>flags: u32,
 }</code></pre></div>
 <p>To declare groups and subgroups append <code>group</code> key to a <code>#[export]</code> attribute. Fields without group will be exported first,
-followed by properties with subgroup only, tailed by ones with group declaration.</p>
+followed by properties with group only, tailed by ones with group &amp; subgroup declarations. Relative order of fields is being preserved</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code> <span class="kw">const </span>MAX_HEALTH: f64 = <span class="number">100.0</span>;
 
@@ -216,15 +216,22 @@ followed by properties with subgroup only, tailed by ones with group declaration
      <span class="attr">#[export]
      </span>will_be_displayed_as_1st: i64,
 
-     <span class="attr">#[export(subgroup = <span class="string">"my_other_subgroup_with_no_group"</span>)]
-     </span>will_be_displayed_as_the_2nd: i64,
+     <span class="attr">#[export(group = <span class="string">"my_other_group"</span>)]
+     </span>will_be_displayed_as_the_3rd: i64,
 
      <span class="attr">#[export(range = (<span class="number">0.0</span>, MAX_HEALTH), group = <span class="string">"my_group"</span>)]
-     </span>will_be_displayed_as_3rd: f64,
+     </span>will_be_displayed_as_2nd: f64,
 
      <span class="attr">#[export(group = <span class="string">"last_group"</span>)]
      </span>will_be_displayed_last: i64
  }</code></pre></div>
+<p>Using subgroup with no group specified is not allowed and will result in compile error.</p>
+
+<div class="example-wrap compile_fail"><a href="#" class="tooltip" title="This example deliberately fails to compile">ⓘ</a><pre class="rust rust-example-rendered"><code>
+<span class="attr">#[derive(GodotClass)]
+</span><span class="kw">struct </span>MyStruct {
+    <span class="attr">#[export(subgroup = <span class="string">"my_subgroup"</span>)]
+    </span>illegal: u32,</code></pre></div>
 <h3 id="low-level-property-hints-and-usage"><a class="doc-anchor" href="#low-level-property-hints-and-usage">§</a>Low-level property hints and usage</h3>
 <p>You can specify custom property hints, hint strings, and usage flags in a <code>#[var]</code> attribute using the <code>hint</code>, <code>hint_string</code>
 and <code>usage_flags</code> keys in the attribute. Hint and usage flags are constants in the <a href="../global/struct.PropertyHint.html"><code>PropertyHint</code></a> and <a href="../global/struct.PropertyUsageFlags.html"><code>PropertyUsageFlags</code></a> enums,
