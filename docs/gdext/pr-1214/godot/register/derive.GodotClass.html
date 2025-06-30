@@ -231,7 +231,8 @@ followed by properties with group only, tailed by ones with group &amp; subgroup
 <span class="attr">#[derive(GodotClass)]
 </span><span class="kw">struct </span>MyStruct {
     <span class="attr">#[export(subgroup = <span class="string">"my_subgroup"</span>)]
-    </span>illegal: u32,</code></pre></div>
+    </span>illegal: u32
+}</code></pre></div>
 <h3 id="low-level-property-hints-and-usage"><a class="doc-anchor" href="#low-level-property-hints-and-usage">§</a>Low-level property hints and usage</h3>
 <p>You can specify custom property hints, hint strings, and usage flags in a <code>#[var]</code> attribute using the <code>hint</code>, <code>hint_string</code>
 and <code>usage_flags</code> keys in the attribute. Hint and usage flags are constants in the <a href="../global/struct.PropertyHint.html"><code>PropertyHint</code></a> and <a href="../global/struct.PropertyUsageFlags.html"><code>PropertyUsageFlags</code></a> enums,
