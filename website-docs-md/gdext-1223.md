@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1223/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1223"
 pr_author = "Yarwin"
 sort_key = 2025-07-01
-date_time = 2025-07-01T09:16:30Z
-commit_sha = "c399729937dadcf2513e5b205a93901b34bdad46"
+date_time = 2025-07-01T09:24:05Z
+commit_sha = "680ee9aa56e70355357e030118976dc150a0dfb4"
 +++
 
 Add  `Gd::bound_callable_from_fn`
