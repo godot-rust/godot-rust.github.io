@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1225/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1225"
 pr_author = "Bromeon"
 sort_key = 2025-07-03
-date_time = 2025-07-03T20:14:41Z
-commit_sha = "4afc54e842ef78b720f00c0f7fc56a42760d831c"
+date_time = 2025-07-03T22:19:04Z
+commit_sha = "f95cac9debbc05952b054255b994b8178abba119"
 +++
 
 `match_class!` macro to dispatch subclasses
