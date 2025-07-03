@@ -1,15 +1,15 @@
 +++
 title = "#1223"
-date = 2025-07-02
+date = 2025-07-03
 
 [extra]
 repo = "gdext"
 docs_rel_url = "gdext/pr-1223/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1223"
 pr_author = "Yarwin"
-sort_key = 2025-07-02
-date_time = 2025-07-02T20:32:26Z
-commit_sha = "adeb1c5febdb74467e1060e7b445e60c55b42a2b"
+sort_key = 2025-07-03
+date_time = 2025-07-03T16:48:47Z
+commit_sha = "64304bfaa71830dc5a6f9e022c728c73f38d3a32"
 +++
 
-Implement creating Callables linked to objects, automatically manage signal disconnections via Godot runtime, derive `Clone` for `ConnectHandle`
+Implement creating Callables linked to objects, make Godot runtime auto-disconnect signals
