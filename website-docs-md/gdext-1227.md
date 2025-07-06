@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1227/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1227"
 pr_author = "Bromeon"
 sort_key = 2025-07-06
-date_time = 2025-07-06T16:53:50Z
-commit_sha = "e8c2d3c033bb5f47edaf28d5a25035572d05a906"
+date_time = 2025-07-06T21:01:09Z
+commit_sha = "f95e6aca8c2b5c3926c7f2e582b44c1daf075f15"
 +++
 
 Improve `Debug` impl for objects
