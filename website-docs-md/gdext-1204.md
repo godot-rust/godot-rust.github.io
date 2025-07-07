@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1204/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1204"
 pr_author = "goatfryed"
 sort_key = 2025-07-07
-date_time = 2025-07-07T08:40:15Z
-commit_sha = "5a278c166271d88dc5e0adc65e10ba6ac5412bc2"
+date_time = 2025-07-07T11:40:00Z
+commit_sha = "002a2ce32674a84af20917774c62745a52805731"
 +++
 
 Type-safe `call_deferred` alternative
