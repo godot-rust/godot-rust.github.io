@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["is_runtime_registered","register_runtime","spawn","spawn_local","spawn_with_completion_signal_local","spawn_with_result","spawn_with_result_signal","spawn_with_result_signal_local"],"struct":["FallibleSignalFuture","FallibleSignalFutureError","SignalFuture","TaskHandle"],"trait":["AsyncRuntimeIntegration","DynamicSend","IntoDynamicSend"]};
