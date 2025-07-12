@@ -13,6 +13,10 @@
 </div></details><h2 id="required-methods" class="section-header">Required Methods<a href="#required-methods" class="anchor">§</a></h2><div class="methods"><section id="tymethod.try_from_ord" class="method"><h4 class="code-header">fn <a href="#tymethod.try_from_ord" class="fn">try_from_ord</a>(ord: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;Self&gt;</h4></section><details class="toggle method-toggle" open><summary><section id="tymethod.ord" class="method"><h4 class="code-header">fn <a href="#tymethod.ord" class="fn">ord</a>(self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></h4></section></summary><div class="docblock"><p>Ordinal value of the enumerator, as specified in Godot.
 This is not necessarily unique.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="tymethod.as_str" class="method"><h4 class="code-header">fn <a href="#tymethod.as_str" class="fn">as_str</a>(&amp;self) -&gt; &amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></h4></section></summary><div class="docblock"><p>The name of the enumerator, as it appears in Rust.</p>
+<p>Note that <strong>this may not match the Rust constant name!</strong> In case of multiple constants with the same ordinal value, this method returns
+the first one in the order of definition. For example, <code>LayoutDirection::LOCALE.as_str()</code> (ord 1) returns <code>"APPLICATION_LOCALE"</code>, because
+that happens to be the first constant with ordinal <code>1</code>. See <a href="trait.EngineEnum.html#tymethod.all_constants" title="associated function godot_core::obj::traits::EngineEnum::all_constants::all_constants"><code>all_constants()</code></a> for a more robust and general
+approach to introspection of enum constants.</p>
 <p>If the value does not match one of the known enumerators, the empty string is returned.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="tymethod.godot_name" class="method"><h4 class="code-header">fn <a href="#tymethod.godot_name" class="fn">godot_name</a>(&amp;self) -&gt; &amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></h4></section><span class="item-info"><div class="stab deprecated"><span class="emoji">👎</span><span>Deprecated: Moved to introspection API, see <code>EngineEnum::all_constants()</code> and <code>EnumConstant::godot_name()</code></span></div></span></summary><div class="docblock"><p>The equivalent name of the enumerator, as specified in Godot.</p>
 <p>If the value does not match one of the known enumerators, the empty string is returned.</p>
@@ -33,7 +37,7 @@ time (which is often OK, given that there are very few constants per enum).</p>
 </span>}</code></pre></div>
 </div></details><details class="toggle method-toggle" open><summary><section id="tymethod.values" class="method"><h4 class="code-header">fn <a href="#tymethod.values" class="fn">values</a>() -&gt; &amp;'static [Self]</h4></section></summary><div class="docblock"><p>Returns a slice of distinct enum values.</p>
 <p>This excludes <code>MAX</code> constants at the end (existing only to express the number of enumerators) and deduplicates aliases,
-providing only meaningful enum values. See <a href="trait.EngineEnum.html#tymethod.all_constants" title="associated function godot_core::obj::traits::EngineEnum::all_constants::all_constants"><code>all_constants()</code></a> for a complete list of all constants,</p>
+providing only meaningful enum values. See <a href="trait.EngineEnum.html#tymethod.all_constants" title="associated function godot_core::obj::traits::EngineEnum::all_constants::all_constants"><code>all_constants()</code></a> for a complete list of all constants.</p>
 <p>Enables iteration over distinct enum variants:</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::classes::window;
@@ -45,7 +49,7 @@ providing only meaningful enum values. See <a href="trait.EngineEnum.html#tymeth
 </div></details><details class="toggle method-toggle" open><summary><section id="tymethod.all_constants" class="method"><h4 class="code-header">fn <a href="#tymethod.all_constants" class="fn">all_constants</a>() -&gt; &amp;'static [<a class="struct" href="../meta/inspect/struct.EnumConstant.html" title="struct godot::meta::inspect::EnumConstant">EnumConstant</a>&lt;Self&gt;]</h4></section></summary><div class="docblock"><p>Returns metadata for all enum constants.</p>
 <p>This includes all constants as they appear in the enum definition, including duplicates and <code>MAX</code> constants.
 For a list of useful, distinct values, use <a href="trait.EngineEnum.html#tymethod.values" title="associated function godot_core::obj::traits::EngineEnum::values::values"><code>values()</code></a>.</p>
-<p>This enables introspection of available constants:</p>
+<p>Enables introspection of available constants:</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::classes::window;
 <span class="kw">use </span>godot::obj::EngineEnum;
