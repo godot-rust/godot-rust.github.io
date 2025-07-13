@@ -237,13 +237,13 @@ through Godot’s <code>Create New Plugin</code> menu for it to work, simply cre
 automatically enables it when the library is loaded.</p>
 <p>This should usually be combined with <code>#[class(tool)]</code> so that the code you write will actually run in the
 editor.</p>
-<h4 id="editor-plugins---hot-reload-interaction"><a class="doc-anchor" href="#editor-plugins---hot-reload-interaction">§</a>Editor plugins - Hot reload interaction</h4>
-<p>During hot reload Godot firstly unloads <code>EditorPlugin</code>s, then changes all alive GDExtension classes instances into their base objects
-(classes inheriting Resource become Resource, classes inheriting Node become Node and so on), then reloads all the classes,
+<h4 id="editor-plugins--hot-reload-interaction"><a class="doc-anchor" href="#editor-plugins--hot-reload-interaction">§</a>Editor plugins – hot reload interaction</h4>
+<p>During hot reload, Godot firstly unloads <code>EditorPlugin</code>s, then changes all alive GDExtension classes instances into their base objects
+(classes inheriting <code>Resource</code> become <code>Resource</code>, classes inheriting <code>Node</code> become <code>Node</code> and so on), then reloads all the classes,
 and finally changes said instances back into their proper classes.</p>
-<p><code>EditorPlugin</code> will be re-added to editor before the last step (changing instances from base classes to extension classes) is finished,
-which might causing issue with loading already cached resources and instantiated nodes.</p>
-<p>In such case await one frame until extension is properly hot-reloaded (See: <a href="../task/fn.spawn.html"><code>godot::task::spawn()</code></a>).</p>
+<p><code>EditorPlugin</code> will be re-added to the editor before the last step (changing instances from base classes to extension classes) is finished,
+which might cause issues with loading already cached resources and instantiated nodes.</p>
+<p>In such a case, await one frame until extension is properly hot-reloaded (See: <a href="../task/fn.spawn.html"><code>godot::task::spawn()</code></a>).</p>
 <h3 id="class-renaming"><a class="doc-anchor" href="#class-renaming">§</a>Class renaming</h3>
 <p>You may want to have structs with the same name. With Rust, this is allowed using <code>mod</code>. However, in GDScript
 there are no modules, namespaces, or any such disambiguation.  Therefore, you need to change the names before they
