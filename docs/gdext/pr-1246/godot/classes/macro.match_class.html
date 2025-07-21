@@ -4,8 +4,8 @@
 <p>Similar to a <code>match</code> statement, but with downcasts. Earlier matches dominate, so keep more-derived classes first.
 The current implementation checks <a href="../prelude/struct.Gd.html#method.try_cast" title="method godot::prelude::Gd::try_cast"><code>Gd::try_cast()</code></a> linearly with the number of branches.
 This may change in the future.</p>
-<p>Requires a fallback branch, even if all direct known classes are handled. The reason for this is that there may be other subclasses which
-are not statically known by godot-rust (e.g. from a script or GDExtension). The fallback branch can either be <code>_</code> (discard object), or
+<p>Only requires a fallback branch if the type of the expression is different than <code>()</code>, and in such case it’s required even if all direct known classes are handled. The reason for this is that there may be other subclasses which
+are not statically known by godot-rust (e.g. from a script or GDExtension), and the arm needs to return a value of that type. The fallback branch can either be <code>_</code> (discard object), or
 <code>variable</code> to access the original object inside the fallback arm.</p>
 <h2 id="example"><a class="doc-anchor" href="#example">§</a>Example</h2>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="comment">// Basic syntax.
@@ -36,6 +36,8 @@ are not statically known by godot-rust (e.g. from a script or GDExtension). The 
     </span>original =&gt; <span class="number">0</span>,
     <span class="comment">// Can also be used with mut:
     // mut original =&gt; 0,
+    // It can't be left out because the expression has a type.
+    // Otherwise, we could've skipped this branch.
 </span>};
 
 <span class="comment">// event_type is now 0, 1, 2, or 3</span></code></pre></div>
