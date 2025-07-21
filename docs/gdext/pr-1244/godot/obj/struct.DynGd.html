@@ -105,7 +105,8 @@ Behind the scenes, everything is wired up correctly so that you can restore the 
 <p><a href="struct.Gd.html#exporting">Like <code>Gd&lt;T&gt;</code></a>, using <code>#[export]</code> with <code>DynGd&lt;T, D&gt;</code> is possible only via <a href="../prelude/struct.OnEditor.html" title="struct godot::prelude::OnEditor"><code>OnEditor</code></a> or <a href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option"><code>Option</code></a>.
 <code>DynGd&lt;T, D&gt;</code> can also be exported directly as an element of an array such as <code>Array&lt;DynGd&lt;T, D&gt;&gt;</code>.</p>
 <p>When talking about “exporting”, the following paragraphs assume that you wrap <code>DynGd</code> in one of those types.</p>
-<p>In cases where <code>T</code> is a concrete class, exporting <code>DynGd&lt;T, D&gt;</code> is equivalent to exporting <code>Gd&lt;T&gt;</code>.</p>
+<p>In cases where <code>T: AsDyn&lt;D&gt;</code> (the trait is directly implemented on the user class, i.e. no upcasting), exporting <code>DynGd&lt;T, D&gt;</code> is
+equivalent to exporting <code>Gd&lt;T&gt;</code> regarding Inspector UI.</p>
 <h3 id="node-based-classes"><a class="doc-anchor" href="#node-based-classes">§</a>Node-based classes</h3>
 <p>If <code>T</code> inherits <code>Node</code>, exporting <code>DynGd&lt;T, D&gt;</code> works identically to <code>Gd&lt;T&gt;</code>.</p>
 <p>If you try to assign a class from the editor that does not implement trait <code>D</code>, Godot will report a conversion-failed error,

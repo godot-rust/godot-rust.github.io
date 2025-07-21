@@ -57,9 +57,10 @@ example if you are inside a <code>&amp;mut self</code> method, make a call to GD
 <h2 id="conversions"><a class="doc-anchor" href="#conversions">§</a>Conversions</h2>
 <p>For type conversions, please read the <a href="../meta/index.html" title="mod godot::meta"><code>godot::meta</code> module docs</a>.</p>
 <h2 id="exporting"><a class="doc-anchor" href="#exporting">§</a>Exporting</h2>
-<p>The <a href="../prelude/trait.Export.html" title="trait godot::prelude::Export"><code>Export</code></a> trait is not directly implemented for objects <code>Gd&lt;T&gt;</code>, because Godot objects can be
-nullable, while <code>Gd&lt;T&gt;</code> cannot. Instead, <code>Export</code> is implemented for <a href="../prelude/struct.OnEditor.html" title="struct godot::prelude::OnEditor"><code>OnEditor&lt;Gd&lt;T&gt;&gt;</code></a>, which validates that objects
-have been set by the editor. For the most flexible but least ergonomic option, you can also export <code>Option&lt;Gd&lt;T&gt;&gt;</code> fields.</p>
+<p>The <a href="../prelude/trait.Export.html" title="trait godot::prelude::Export"><code>Export</code></a> trait is not directly implemented for <code>Gd&lt;T&gt;</code>, because the editor expects object-based
+properties to be nullable, while <code>Gd&lt;T&gt;</code> can’t be null. Instead, <code>Export</code> is implemented for <a href="../prelude/struct.OnEditor.html" title="struct godot::prelude::OnEditor"><code>OnEditor&lt;Gd&lt;T&gt;&gt;</code></a>,
+which validates that objects have been set by the editor. For the most flexible but least ergonomic option, you can also export
+<code>Option&lt;Gd&lt;T&gt;&gt;</code> fields.</p>
 <p>Objects can only be exported if <code>T: Inherits&lt;Node&gt;</code> or <code>T: Inherits&lt;Resource&gt;</code>, just like GDScript.
 This means you cannot use <code>#[export]</code> with <code>OnEditor&lt;Gd&lt;RefCounted&gt;&gt;</code>, for example.</p>
 </div></details><h2 id="implementations" class="section-header">Implementations<a href="#implementations" class="anchor">§</a></h2><div id="implementations-list"><details class="toggle implementors-toggle" open><summary><section id="impl-Gd%3CT%3E" class="impl"><a href="#impl-Gd%3CT%3E" class="anchor">§</a><h3 class="code-header">impl&lt;T&gt; <a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;T&gt;<div class="where">where
