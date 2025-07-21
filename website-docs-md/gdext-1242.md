@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1242/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1242"
 pr_author = "sylbeth"
 sort_key = 2025-07-21
-date_time = 2025-07-21T11:03:14Z
-commit_sha = "88662f02c85a74b742743eab7c9f1ebf8441add5"
+date_time = 2025-07-21T12:05:13Z
+commit_sha = "c94eb482a76cfd630691977d5c0238c3b366ccfc"
 +++
 
 Support `mut` bindings in `match_class!`
