@@ -2,11 +2,13 @@
 {
     <span class="comment">// Attributes available to this derive:</span>
     #[class]
-    #[init]
     #[base]
     #[hint]
     #[var]
     #[export]
+    #[export_group]
+    #[export_subgroup]
+    #[init]
 }
 </code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Derive macro for <a href="../obj/trait.GodotClass.html"><code>GodotClass</code></a> on structs.</p>
 <p>You should use this macro; manual implementations of the <code>GodotClass</code> trait are not encouraged.</p>
@@ -203,6 +205,53 @@ other Rust expressions that are valid in that context.</p>
     <span class="attr">#[export(flags = (A = <span class="number">0b0001</span>, B = <span class="number">0b0010</span>, C = <span class="number">0b0100</span>, D = <span class="number">0b1000</span>))]
     </span>flags: u32,
 }</code></pre></div>
+<p>It is possible to group your exported properties inside the Inspector with the <code>#[export_group(name = "...", prefix =  "...")]</code> attribute.
+Every exported property after this attribute will be added to the group. Start a new group or use <code>#[export_group(name = "")]</code> (with an empty name) to break out.</p>
+<p>Groups cannot be nested but subgroups can be declared with an <code>#[export_subgroup]</code> attribute.</p>
+<p>GDExtension groups and subgroups follow the same rules as the gdscript ones.</p>
+ <div class="warning">
+ Nesting subgroups with the slash separator `/` <strong>outside</strong> the group is not supported and might crash the editor.
+ </div>
+<p>See also in Godot docs:
+<a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_exports.html#grouping-exports">Grouping Exports</a></p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code> <span class="kw">const </span>MAX_HEALTH: f64 = <span class="number">100.0</span>;
+
+ <span class="attr">#[derive(GodotClass)]
+ </span><span class="kw">struct </span>MyStruct {
+     <span class="comment">// @export_group("Group 1")
+     // @export var group_1_field: int
+     </span><span class="attr">#[export]
+     #[export_group(name = <span class="string">"Group 1"</span>)]
+     </span>group_1_field: i32,
+
+     <span class="comment">// @export var group_1_field2: int
+     </span><span class="attr">#[export]
+     </span>group_1_field2: i32,
+
+     <span class="comment">// @export_group("my group", "grouped_")
+     // @export var grouped_field: int
+     </span><span class="attr">#[export_group(name = <span class="string">"my group"</span>, prefix = <span class="string">"grouped_"</span>)]
+     #[export]
+     </span>grouped_field: u32,
+
+     <span class="comment">// @export_subgroup("my subgroup")
+     // @export var sub_field: int
+     </span><span class="attr">#[export_subgroup(name = <span class="string">"my subgroup"</span>)]
+     #[export]
+     </span>sub_field: u32,
+
+     <span class="comment">// Breaks out of subgroup `"my subgroup"`.
+     // @export_subgroup("")
+     // @export var grouped_field2: int
+     </span><span class="attr">#[export_subgroup(name = <span class="string">""</span>)]
+     #[export]
+     </span>grouped_field2: u32,
+
+     <span class="comment">// @export var ungrouped_field: int
+     </span><span class="attr">#[export]
+     </span>ungrouped_field: i64,
+ }</code></pre></div>
 <h3 id="low-level-property-hints-and-usage"><a class="doc-anchor" href="#low-level-property-hints-and-usage">§</a>Low-level property hints and usage</h3>
 <p>You can specify custom property hints, hint strings, and usage flags in a <code>#[var]</code> attribute using the <code>hint</code>, <code>hint_string</code>
 and <code>usage_flags</code> keys in the attribute. Hint and usage flags are constants in the <a href="../global/struct.PropertyHint.html"><code>PropertyHint</code></a> and <a href="../global/struct.PropertyUsageFlags.html"><code>PropertyUsageFlags</code></a> enums,
@@ -294,8 +343,8 @@ because we have added a <code>hidden</code> key to the class. This will also pre
    <span class="attr">#[hint(no_base)]
    </span>unbase: Base&lt;Node&gt;,
 }</code></pre></div>
-<h2 id="documentation"><a class="doc-anchor" href="#documentation">§</a>Documentation</h2><div class="stab portability">Available on <strong>crate feature <code>register-docs</code></strong> only.</div>
-<div class="stab portability">Available on <strong>Godot version <code>4.3+</code></strong> only.</div>
+<h2 id="documentation"><a class="doc-anchor" href="#documentation">§</a>Documentation</h2> <div class="stab portability">Available on <strong>crate feature <code>register-docs</code></strong> only.</div>
+ <div class="stab portability">Available on <strong>Godot version <code>4.3+</code></strong> only.</div>
 <p>You can document your functions, classes, members, and signals with the <code>///</code> doc comment syntax.</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
