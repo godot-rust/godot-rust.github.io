@@ -4,9 +4,11 @@
 <p>Similar to a <code>match</code> statement, but with downcasts. Earlier matches dominate, so keep more-derived classes first.
 The current implementation checks <a href="struct.Gd.html#method.try_cast" title="method godot::prelude::Gd::try_cast"><code>Gd::try_cast()</code></a> linearly with the number of branches.
 This may change in the future.</p>
-<p>Requires a fallback branch, even if all direct known classes are handled. The reason for this is that there may be other subclasses which
-are not statically known by godot-rust (e.g. from a script or GDExtension). The fallback branch can either be <code>_</code> (discard object), or
-<code>variable</code> to access the original object inside the fallback arm.</p>
+<p>When none of the listed classes match, a <em>fallback branch</em> acts as a catch-all and allows to retrieve the original <code>Gd</code> pointer.
+If the type of the <code>match_class!</code> expression is <code>()</code>, you can omit the fallback branch. For all other types, it is required, even if all
+direct subclasses are handled. The reason for this is that there may be other subclasses which are not statically known by godot-rust
+(e.g. from a script or GDExtension).</p>
+<p>The fallback branch can either be <code>_</code> (discard object), or <code>variable</code> to access the original object inside the fallback arm.</p>
 <h2 id="example"><a class="doc-anchor" href="#example">§</a>Example</h2>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="comment">// Basic syntax.
 </span><span class="kw">let </span>event: Gd&lt;InputEvent&gt; = some_input();
@@ -36,6 +38,7 @@ are not statically known by godot-rust (e.g. from a script or GDExtension). The 
     </span>original =&gt; <span class="number">0</span>,
     <span class="comment">// Can also be used with mut:
     // mut original =&gt; 0,
+    // If the match arms have type (), we can also omit the fallback branch.
 </span>};
 
 <span class="comment">// event_type is now 0, 1, 2, or 3</span></code></pre></div>
