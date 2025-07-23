@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1246/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1246"
 pr_author = "sylbeth"
 sort_key = 2025-07-23
-date_time = 2025-07-23T06:14:51Z
-commit_sha = "54e548cb7d6e60e72867457e1b2bfe31d18fa4fe"
+date_time = 2025-07-23T06:16:50Z
+commit_sha = "bb5c9242474dd280a8cc9cfe10e6694dc2b80cfe"
 +++
 
-remove need to have last bracket in `match_class! {}` macro
+`match_class!` fallback branch is now optional for `()`
