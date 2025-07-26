@@ -17,6 +17,7 @@ direct subclasses are handled. The reason for this is that there may be other su
    button @ InputEventMouseButton =&gt; <span class="number">1</span>,
    motion @ InputEventMouseMotion =&gt; <span class="number">2</span>,
    action @ InputEventAction =&gt; <span class="number">3</span>,
+   key @ InputEventKey =&gt; <span class="number">4</span>,
    <span class="kw">_ </span>=&gt; <span class="number">0</span>, <span class="comment">// Fallback.
 </span>};
 
@@ -34,6 +35,10 @@ direct subclasses are handled. The reason for this is that there may be other su
     <span class="comment">// Qualified types supported:
     </span>action @ godot::classes::InputEventAction =&gt; <span class="number">3</span>,
 
+    <span class="comment">// If you're only interested in the class and not the object,
+    // discard it with either `_` or `_variable`:
+    </span><span class="kw">_ </span>@ InputEventKey =&gt; <span class="number">4</span>,
+
     <span class="comment">// Fallback with variable -- retrieves original Gd&lt;InputEvent&gt;.
     </span>original =&gt; <span class="number">0</span>,
     <span class="comment">// Can also be used with mut:
@@ -41,7 +46,7 @@ direct subclasses are handled. The reason for this is that there may be other su
     // If the match arms have type (), we can also omit the fallback branch.
 </span>};
 
-<span class="comment">// event_type is now 0, 1, 2, or 3</span></code></pre></div>
+<span class="comment">// event_type is now 0, 1, 2, 3 or 4</span></code></pre></div>
 <h2 id="expression-and-control-flow"><a class="doc-anchor" href="#expression-and-control-flow">§</a>Expression and control flow</h2>
 <p>The <code>match_class!</code> macro is an expression, as such it has a type. If that type is not <code>()</code>, you typically need to use the expression or
 end it with a semicolon.</p>
