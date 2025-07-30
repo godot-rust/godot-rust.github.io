@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["Hand","HandJointFlags","HandJoints","HandMotionRange","HandTrackedSource","SigInstanceExiting","SigPoseRecentered","SigRefreshRateChanged","SigSessionBegun","SigSessionFocussed","SigSessionLossPending","SigSessionStopping","SigSessionVisible","SignalsOfOpenXrInterface"]};
