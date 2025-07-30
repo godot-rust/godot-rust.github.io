@@ -1,6 +1,6 @@
 +++
 title = "master"
-date = 2025-07-26
+date = 2025-07-30
 
 [extra]
 repo = "gdext"
@@ -8,8 +8,8 @@ docs_rel_url = "gdext/master/godot"
 pr_url = "https://github.com/godot-rust/gdext"
 pr_author = ""
 sort_key = 9999-01-01
-date_time = 2025-07-26T21:52:19Z
-commit_sha = "72d6d1737869423e301ab55e5b7da32de37e517c"
+date_time = 2025-07-30T09:31:29Z
+commit_sha = "9e81485504163efca9acaa6bc02de7c71193ca80"
 +++
 
 
