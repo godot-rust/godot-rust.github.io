@@ -97,6 +97,23 @@ want to ensure that trait object <code>D</code> dispatches to the correct subcla
 // We can still represent it as DynGd&lt;RefCounted, dyn Health&gt;.
 </span><span class="kw">let </span>dyn_gd: DynGd&lt;RefCounted, <span class="kw">dyn </span>Health&gt; = variant.to();
 <span class="comment">// Now work with the abstract object as usual.</span></code></pre></div>
+<p>Any <code>Gd&lt;T&gt;</code> where <code>T</code> is an engine class can attempt conversion to <code>DynGd&lt;T, D&gt;</code> with <a href="../prelude/struct.Gd.html#method.try_dynify" title="method godot::prelude::Gd::try_dynify"><code>Gd::try_dynify()</code></a> as well.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code>
+
+<span class="kw">trait </span>Pushable { <span class="comment">/* ... */ </span>}
+
+<span class="comment">// We can try to convert `Gd&lt;T&gt;` into `DynGd&lt;T, D&gt;`.
+</span><span class="kw">let </span>node: <span class="prelude-ty">Option</span>&lt;DynGd&lt;Node2D, <span class="kw">dyn </span>Pushable&gt;&gt; =
+    my_shapecast.get_collider(idx).and_then(
+        |obj| obj.try_dynify().ok()
+    );
+
+<span class="comment">// An object is returned after failed conversion, similarly to `Gd::try_cast()`.
+</span><span class="kw">match </span>some_node.try_dynify::&lt;<span class="kw">dyn </span>Pushable&gt;() {
+    <span class="prelude-val">Ok</span>(dyn_gd) =&gt; (),
+    <span class="prelude-val">Err</span>(some_node) =&gt; <span class="macro">godot_warn!</span>(<span class="string">"Failed to convert {some_node} into dyn Pushable!"</span>),
+}</code></pre></div>
 <p>When converting from Godot back into <code>DynGd</code>, we say that the <code>dyn Health</code> trait object is <em>re-enriched</em>.</p>
 <p>godot-rust achieves this thanks to the registration done by <code>#[godot_dyn]</code>: the library knows for which classes <code>Health</code> is implemented,
 and it can query the dynamic type of the object. Based on that type, it can find the <code>impl Health</code> implementation matching the correct class.
