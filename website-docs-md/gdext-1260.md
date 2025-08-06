@@ -1,15 +1,15 @@
 +++
 title = "#1260"
-date = 2025-08-04
+date = 2025-08-06
 
 [extra]
 repo = "gdext"
 docs_rel_url = "gdext/pr-1260/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1260"
 pr_author = "radiantgurl"
-sort_key = 2025-08-04
-date_time = 2025-08-04T22:07:03Z
-commit_sha = "75d96b91d85307dabfcb4695b8f540512abd8d8b"
+sort_key = 2025-08-06
+date_time = 2025-08-06T02:05:02Z
+commit_sha = "71f025e0ce568f746de434eb5ce24263cfae1ff4"
 +++
 
-Make GString thread-safe
+Mark GString as Send
