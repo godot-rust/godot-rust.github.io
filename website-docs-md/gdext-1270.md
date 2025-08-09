@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1270/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1270"
 pr_author = "Bromeon"
 sort_key = 2025-08-09
-date_time = 2025-08-09T09:54:25Z
-commit_sha = "6f1fbed45b5de464a4672ccaac0b8de4f9ce3723"
+date_time = 2025-08-09T09:57:28Z
+commit_sha = "24041f9a14d5d482afef1525155c1f8680833e44"
 +++
 
 Properly register GDExtension `reference`/`unreference` callbacks
