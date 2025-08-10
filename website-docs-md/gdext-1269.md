@@ -1,15 +1,15 @@
 +++
 title = "#1269"
-date = 2025-08-09
+date = 2025-08-10
 
 [extra]
 repo = "gdext"
 docs_rel_url = "gdext/pr-1269/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1269"
 pr_author = "Bromeon"
-sort_key = 2025-08-09
-date_time = 2025-08-09T09:23:06Z
-commit_sha = "a0f9b6bed9569b53577490d8cd6d00b32e52400d"
+sort_key = 2025-08-10
+date_time = 2025-08-10T10:29:38Z
+commit_sha = "cfff829cdbf62e930a93b8ad3bb580090601ce86"
 +++
 
 Code style: stricter imports
