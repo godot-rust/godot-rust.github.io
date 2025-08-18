@@ -313,7 +313,8 @@ can get to Godot. You can use the <code>rename</code> key while defining your <c
 }</code></pre></div>
 <p>These classes will appear in the Godot editor and GDScript as “AnimalToad” or “NpcToad”.</p>
 <h3 id="class-hiding"><a class="doc-anchor" href="#class-hiding">§</a>Class hiding</h3>
-<p>If you want to register a class with Godot, but not have it show up in the editor then you can use <code>#[class(internal)]</code>.</p>
+<p>If you want to register a class with Godot, but not display in the editor (e.g. when creating a new node), you can use <code>#[class(internal)]</code>.</p>
+<p>Classes starting with “Editor” are auto-hidden by Godot. They <em>must</em> be marked as internal in godot-rust.</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
 #[class(base=Node, init, internal)]
