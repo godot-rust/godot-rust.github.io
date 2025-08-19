@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Derive macro for `GodotClass` on structs."><title>GodotClass in godot::register - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-84e720fa.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="godot" data-themes="" data-resource-suffix="" data-rustdoc-version="1.89.0-nightly (5526a2f47 2025-06-20)" data-channel="nightly" data-search-js="search-343419c9.js" data-settings-js="settings-5514c975.js" ><script src="../../static.files/storage-4e99c027.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-fd3af306.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-32bb7600.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc derive"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button><a class="logo-container" href="../../godot/index.html"><img src="https://raw.githubusercontent.com/godot-rust/assets/master/gdext/ferris.svg" alt=""></a></nav><nav class="sidebar"><div class="sidebar-crate"><a class="logo-container" href="../../godot/index.html"><img src="https://raw.githubusercontent.com/godot-rust/assets/master/gdext/ferris.svg" alt="logo"></a><h2><a href="../../godot/index.html">godot</a><span class="version">Pull Request #1211</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">Godot<wbr>Class</a></h2><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#construction" title="Construction">Construction</a></li><li><a href="#inheritance" title="Inheritance">Inheritance</a></li><li><a href="#properties-and-exports" title="Properties and exports">Properties and exports</a><ul><li><a href="#register-properties--var" title="Register properties – `#[var]`">Register properties – <code>#[var]</code></a></li><li><a href="#export-properties--export" title="Export properties – `#[export]`">Export properties – <code>#[export]</code></a></li><li><a href="#low-level-property-hints-and-usage" title="Low-level property hints and usage">Low-level property hints and usage</a></li></ul></li><li><a href="#further-class-customization" title="Further class customization">Further class customization</a><ul><li><a href="#running-code-in-the-editor-tool" title="Running code in the editor (tool)">Running code in the editor (tool)</a></li><li><a href="#editor-plugins" title="Editor plugins">Editor plugins</a></li><li><a href="#class-renaming" title="Class renaming">Class renaming</a></li><li><a href="#class-hiding" title="Class hiding">Class hiding</a></li></ul></li><li><a href="#further-field-customization" title="Further field customization">Further field customization</a><ul><li><a href="#fine-grained-inference-hints" title="Fine-grained inference hints">Fine-grained inference hints</a></li></ul></li><li><a href="#documentation" title="Documentation">Documentation</a></li></ul></section><div id="rustdoc-modnav"><h2><a href="index.html">In godot::<wbr>register</a></h2></div></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../index.html">godot</a>::<wbr><a href="index.html">register</a></div><h1>Derive Macro <span class="derive">GodotClass</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"></span></div><pre class="rust item-decl"><code>#[derive(GodotClass)]
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Derive macro for `GodotClass` on structs."><title>GodotClass in godot::register - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-069232aa.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="godot" data-themes="" data-resource-suffix="" data-rustdoc-version="1.91.0-nightly (9eb4a2652 2025-08-18)" data-channel="nightly" data-search-js="search-b069538f.js" data-settings-js="settings-5514c975.js" ><script src="../../static.files/storage-68b7e25d.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-eebb9057.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-32bb7600.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc derive"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button><a class="logo-container" href="../../godot/index.html"><img src="https://raw.githubusercontent.com/godot-rust/assets/master/gdext/ferris.svg" alt=""></a></nav><nav class="sidebar"><div class="sidebar-crate"><a class="logo-container" href="../../godot/index.html"><img src="https://raw.githubusercontent.com/godot-rust/assets/master/gdext/ferris.svg" alt="logo"></a><h2><a href="../../godot/index.html">godot</a><span class="version">Pull Request #1211</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">Godot<wbr>Class</a></h2><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#construction" title="Construction">Construction</a></li><li><a href="#inheritance" title="Inheritance">Inheritance</a></li><li><a href="#properties-and-exports" title="Properties and exports">Properties and exports</a><ul><li><a href="#register-properties--var" title="Register properties – `#[var]`">Register properties – <code>#[var]</code></a></li><li><a href="#export-properties--export" title="Export properties – `#[export]`">Export properties – <code>#[export]</code></a></li><li><a href="#low-level-property-hints-and-usage" title="Low-level property hints and usage">Low-level property hints and usage</a></li></ul></li><li><a href="#further-class-customization" title="Further class customization">Further class customization</a><ul><li><a href="#running-code-in-the-editor-tool" title="Running code in the editor (tool)">Running code in the editor (tool)</a></li><li><a href="#editor-plugins" title="Editor plugins">Editor plugins</a></li><li><a href="#class-renaming" title="Class renaming">Class renaming</a></li><li><a href="#class-hiding" title="Class hiding">Class hiding</a></li></ul></li><li><a href="#further-field-customization" title="Further field customization">Further field customization</a><ul><li><a href="#fine-grained-inference-hints" title="Fine-grained inference hints">Fine-grained inference hints</a></li></ul></li><li><a href="#documentation" title="Documentation">Documentation</a></li></ul></section><div id="rustdoc-modnav"><h2><a href="index.html">In godot::<wbr>register</a></h2></div></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../index.html">godot</a>::<wbr><a href="index.html">register</a></div><h1>Derive Macro <span class="derive">GodotClass</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"></span></div><pre class="rust item-decl"><code>#[derive(GodotClass)]
 {
     <span class="comment">// Attributes available to this derive:</span>
     #[class]
@@ -6,6 +6,8 @@
     #[hint]
     #[var]
     #[export]
+    #[export_group]
+    #[export_subgroup]
     #[init]
 }
 </code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Derive macro for <a href="../obj/trait.GodotClass.html"><code>GodotClass</code></a> on structs.</p>
@@ -130,6 +132,8 @@ generated getter or setter in these cases anyway, use <code>get</code> or <code>
         <span class="self">self</span>.my_field = value;
     }
 }</code></pre></div>
+<p>To create a property without a backing field to store data, you can use <a href="../obj/struct.PhantomVar.html"><code>PhantomVar</code></a>.
+This disables autogenerated getters and setters for that field.</p>
 <h3 id="export-properties--export"><a class="doc-anchor" href="#export-properties--export">§</a>Export properties – <code>#[export]</code></h3>
 <p>To export properties to the editor, you can use the <code>#[export]</code> attribute, which supports types implementing
 <a href="../register/property/trait.Export.html"><code>Export</code></a>:</p>
@@ -203,6 +207,53 @@ other Rust expressions that are valid in that context.</p>
     <span class="attr">#[export(flags = (A = <span class="number">0b0001</span>, B = <span class="number">0b0010</span>, C = <span class="number">0b0100</span>, D = <span class="number">0b1000</span>))]
     </span>flags: u32,
 }</code></pre></div>
+<p>It is possible to group your exported properties inside the Inspector with the <code>#[export_group(name = "...", prefix =  "...")]</code> attribute.
+Every exported property after this attribute will be added to the group. Start a new group or use <code>#[export_group(name = "")]</code> (with an empty name) to break out.</p>
+<p>Groups cannot be nested but subgroups can be declared with an <code>#[export_subgroup]</code> attribute.</p>
+<p>GDExtension groups and subgroups follow the same rules as the gdscript ones.</p>
+ <div class="warning">
+ Nesting subgroups with the slash separator `/` <strong>outside</strong> the group is not supported and might crash the editor.
+ </div>
+<p>See also in Godot docs:
+<a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_exports.html#grouping-exports">Grouping Exports</a></p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code> <span class="kw">const </span>MAX_HEALTH: f64 = <span class="number">100.0</span>;
+
+ <span class="attr">#[derive(GodotClass)]
+ </span><span class="kw">struct </span>MyStruct {
+     <span class="comment">// @export_group("Group 1")
+     // @export var group_1_field: int
+     </span><span class="attr">#[export]
+     #[export_group(name = <span class="string">"Group 1"</span>)]
+     </span>group_1_field: i32,
+
+     <span class="comment">// @export var group_1_field2: int
+     </span><span class="attr">#[export]
+     </span>group_1_field2: i32,
+
+     <span class="comment">// @export_group("my group", "grouped_")
+     // @export var grouped_field: int
+     </span><span class="attr">#[export_group(name = <span class="string">"my group"</span>, prefix = <span class="string">"grouped_"</span>)]
+     #[export]
+     </span>grouped_field: u32,
+
+     <span class="comment">// @export_subgroup("my subgroup")
+     // @export var sub_field: int
+     </span><span class="attr">#[export_subgroup(name = <span class="string">"my subgroup"</span>)]
+     #[export]
+     </span>sub_field: u32,
+
+     <span class="comment">// Breaks out of subgroup `"my subgroup"`.
+     // @export_subgroup("")
+     // @export var grouped_field2: int
+     </span><span class="attr">#[export_subgroup(name = <span class="string">""</span>)]
+     #[export]
+     </span>grouped_field2: u32,
+
+     <span class="comment">// @export var ungrouped_field: int
+     </span><span class="attr">#[export]
+     </span>ungrouped_field: i64,
+ }</code></pre></div>
 <h3 id="low-level-property-hints-and-usage"><a class="doc-anchor" href="#low-level-property-hints-and-usage">§</a>Low-level property hints and usage</h3>
 <p>You can specify custom property hints, hint strings, and usage flags in a <code>#[var]</code> attribute using the <code>hint</code>, <code>hint_string</code>
 and <code>usage_flags</code> keys in the attribute. Hint and usage flags are constants in the <a href="../global/struct.PropertyHint.html"><code>PropertyHint</code></a> and <a href="../global/struct.PropertyUsageFlags.html"><code>PropertyUsageFlags</code></a> enums,
@@ -229,15 +280,21 @@ for more information and further customization.</p>
 <p>This behaves similarly to <a href="https://docs.godotengine.org/en/stable/tutorials/plugins/running_code_in_the_editor.html">GDScript’s <code>@tool</code> feature</a>.</p>
 <p><strong>Note</strong>: As in GDScript, the class must be marked as a <code>tool</code> to be accessible in the editor (e.g., for use by editor plugins and inspectors).</p>
 <h3 id="editor-plugins"><a class="doc-anchor" href="#editor-plugins">§</a>Editor plugins</h3>
-<p>If you annotate a class with <code>#[class(editor_plugin)]</code>, it will be turned into an editor plugin. The
-class must then inherit from <code>EditorPlugin</code>, and an instance of that class will be automatically added
+<p>Classes inheriting <code>EditorPlugin</code> will be automatically instantiated and added
 to the editor when launched.</p>
 <p>See <a href="https://docs.godotengine.org/en/stable/tutorials/plugins/editor/index.html">Godot’s documentation of editor plugins</a>
 for more information about editor plugins. But note that you do not need to create and enable the plugin
-through Godot’s <code>Create New Plugin</code> menu for it to work, simply annotating the class with <code>editor_plugin</code>
+through Godot’s <code>Create New Plugin</code> menu for it to work, simply creating the class which inherits <code>EditorPlugin</code>
 automatically enables it when the library is loaded.</p>
 <p>This should usually be combined with <code>#[class(tool)]</code> so that the code you write will actually run in the
 editor.</p>
+<h4 id="editor-plugins--hot-reload-interaction"><a class="doc-anchor" href="#editor-plugins--hot-reload-interaction">§</a>Editor plugins – hot reload interaction</h4>
+<p>During hot reload, Godot firstly unloads <code>EditorPlugin</code>s, then changes all alive GDExtension classes instances into their base objects
+(classes inheriting <code>Resource</code> become <code>Resource</code>, classes inheriting <code>Node</code> become <code>Node</code> and so on), then reloads all the classes,
+and finally changes said instances back into their proper classes.</p>
+<p><code>EditorPlugin</code> will be re-added to the editor before the last step (changing instances from base classes to extension classes) is finished,
+which might cause issues with loading already cached resources and instantiated nodes.</p>
+<p>In such a case, await one frame until extension is properly hot-reloaded (See: <a href="../task/fn.spawn.html"><code>godot::task::spawn()</code></a>).</p>
 <h3 id="class-renaming"><a class="doc-anchor" href="#class-renaming">§</a>Class renaming</h3>
 <p>You may want to have structs with the same name. With Rust, this is allowed using <code>mod</code>. However, in GDScript
 there are no modules, namespaces, or any such disambiguation.  Therefore, you need to change the names before they
@@ -256,7 +313,8 @@ can get to Godot. You can use the <code>rename</code> key while defining your <c
 }</code></pre></div>
 <p>These classes will appear in the Godot editor and GDScript as “AnimalToad” or “NpcToad”.</p>
 <h3 id="class-hiding"><a class="doc-anchor" href="#class-hiding">§</a>Class hiding</h3>
-<p>If you want to register a class with Godot, but not have it show up in the editor then you can use <code>#[class(internal)]</code>.</p>
+<p>If you want to register a class with Godot, but not display in the editor (e.g. when creating a new node), you can use <code>#[class(internal)]</code>.</p>
+<p>Classes starting with “Editor” are auto-hidden by Godot. They <em>must</em> be marked as internal in godot-rust.</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
 #[class(base=Node, init, internal)]
@@ -288,8 +346,8 @@ because we have added a <code>hidden</code> key to the class. This will also pre
    <span class="attr">#[hint(no_base)]
    </span>unbase: Base&lt;Node&gt;,
 }</code></pre></div>
-<h2 id="documentation"><a class="doc-anchor" href="#documentation">§</a>Documentation</h2><div class="stab portability">Available on <strong>crate feature <code>register-docs</code></strong> only.</div>
-<div class="stab portability">Available on <strong>Godot version <code>4.3+</code></strong> only.</div>
+<h2 id="documentation"><a class="doc-anchor" href="#documentation">§</a>Documentation</h2> <div class="stab portability">Available on <strong>crate feature <code>register-docs</code></strong> only.</div>
+ <div class="stab portability">Available on <strong>Godot version <code>4.3+</code></strong> only.</div>
 <p>You can document your functions, classes, members, and signals with the <code>///</code> doc comment syntax.</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
