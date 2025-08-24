@@ -85,16 +85,16 @@ base class.</p>
 If they return <code>Gd&lt;Self&gt;</code>, they are effectively constructors that allow taking arguments.</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
-#[class(init)]
+#[class(init, base = Node)]
 </span><span class="kw">struct </span>MyStruct {
     field: i64,
-    base: Base&lt;RefCounted&gt;,
+    base: Base&lt;Node&gt;,
 }
 
 <span class="attr">#[godot_api]
-</span><span class="kw">impl </span>IRefCounted <span class="kw">for </span>MyStruct {
+</span><span class="kw">impl </span>INode <span class="kw">for </span>MyStruct {
     <span class="attr">#[func(gd_self)]
-    </span><span class="kw">fn </span>_ready(this: Gd&lt;<span class="self">Self</span>&gt;) {
+    </span><span class="kw">fn </span>ready(this: Gd&lt;<span class="self">Self</span>&gt;) {
         <span class="macro">godot_print!</span>(<span class="string">"I'm ready!"</span>);
     }
 }
