@@ -1,15 +1,15 @@
 +++
 title = "#1285"
-date = 2025-08-25
+date = 2025-08-26
 
 [extra]
 repo = "gdext"
 docs_rel_url = "gdext/pr-1285/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1285"
 pr_author = "Bromeon"
-sort_key = 2025-08-25
-date_time = 2025-08-25T18:57:44Z
-commit_sha = "1cf6ce7439f4cf5a36ad14b6d7973462ce5d4f31"
+sort_key = 2025-08-26
+date_time = 2025-08-26T09:34:51Z
+commit_sha = "dcb0f4315550a724983bcf4a614b26f518e4758d"
 +++
 
 Argument passing: new `ToGodot::Pass` is either `ByValue`/`ByRef`
