@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1289/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1289"
 pr_author = "ogapo"
 sort_key = 2025-08-28
-date_time = 2025-08-28T21:58:46Z
-commit_sha = "d3d22ffb10afd80d14cf2b1adf1d857d1f54fc4c"
+date_time = 2025-08-28T22:09:11Z
+commit_sha = "8cf364a1c0a2b1ffe6157952949c2debf1c4bb53"
 +++
 
 Adding ClassCodegenLevel::Core 
