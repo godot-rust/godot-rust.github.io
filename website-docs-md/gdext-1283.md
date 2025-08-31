@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1283/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1283"
 pr_author = "Bromeon"
 sort_key = 2025-08-31
-date_time = 2025-08-31T09:10:27Z
-commit_sha = "3c1302a3ecc8a68bae6fa3564df2d20d8afc1409"
+date_time = 2025-08-31T09:29:25Z
+commit_sha = "ec11a2c79b310b93fa12ffab14215e223cc487d0"
 +++
 
 Fix `ThreadConfined<T>` using thread-unsafe `Drop`

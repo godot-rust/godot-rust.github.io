@@ -33,7 +33,8 @@ operations on the struct will defer to the type of that single field.</p>
 <span class="kw">let </span>obj = MyNewtype {
     string: <span class="string">"hello!"</span>.into(),
 };
-<span class="macro">assert_eq!</span>(obj.to_godot(), GString::from(<span class="string">"hello!"</span>));</code></pre></div>
+
+<span class="macro">assert_eq!</span>(obj.to_godot(), <span class="kw-2">&amp;</span>GString::from(<span class="string">"hello!"</span>));</code></pre></div>
 <p>However, it will not work for structs with more than one field, even if that field is zero sized:</p>
 
 <div class="example-wrap compile_fail"><a href="#" class="tooltip" title="This example deliberately fails to compile">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
