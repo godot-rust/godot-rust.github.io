@@ -26,11 +26,11 @@
         &amp;mut self,
         path: <a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>,
         type_: <a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>,
-        features: <a class="struct" href="../prelude/struct.PackedStringArray.html" title="struct godot::prelude::PackedStringArray">PackedStringArray</a>,
+        features: <a class="struct" href="../prelude/struct.PackedArray.html" title="struct godot::prelude::PackedArray">PackedArray</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>&gt;,
     ) { ... }
 <span class="item-spacer"></span>    fn <a href="#method.export_begin" class="fn">export_begin</a>(
         &amp;mut self,
-        features: <a class="struct" href="../prelude/struct.PackedStringArray.html" title="struct godot::prelude::PackedStringArray">PackedStringArray</a>,
+        features: <a class="struct" href="../prelude/struct.PackedArray.html" title="struct godot::prelude::PackedArray">PackedArray</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>&gt;,
         is_debug: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
         path: <a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>,
         flags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
@@ -39,12 +39,12 @@
 <span class="item-spacer"></span>    fn <a href="#method.begin_customize_resources" class="fn">begin_customize_resources</a>(
         &amp;self,
         platform: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.EditorExportPlatform.html" title="struct godot::classes::EditorExportPlatform">EditorExportPlatform</a>&gt;&gt;,
-        features: <a class="struct" href="../prelude/struct.PackedStringArray.html" title="struct godot::prelude::PackedStringArray">PackedStringArray</a>,
+        features: <a class="struct" href="../prelude/struct.PackedArray.html" title="struct godot::prelude::PackedArray">PackedArray</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>&gt;,
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> { ... }
 <span class="item-spacer"></span>    fn <a href="#method.begin_customize_scenes" class="fn">begin_customize_scenes</a>(
         &amp;self,
         platform: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.EditorExportPlatform.html" title="struct godot::classes::EditorExportPlatform">EditorExportPlatform</a>&gt;&gt;,
-        features: <a class="struct" href="../prelude/struct.PackedStringArray.html" title="struct godot::prelude::PackedStringArray">PackedStringArray</a>,
+        features: <a class="struct" href="../prelude/struct.PackedArray.html" title="struct godot::prelude::PackedArray">PackedArray</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>&gt;,
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> { ... }
 <span class="item-spacer"></span>    fn <a href="#method.end_customize_scenes" class="fn">end_customize_scenes</a>(&amp;mut self) { ... }
 <span class="item-spacer"></span>    fn <a href="#method.end_customize_resources" class="fn">end_customize_resources</a>(&amp;mut self) { ... }
@@ -74,7 +74,7 @@
         &amp;self,
         platform: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.EditorExportPlatform.html" title="struct godot::classes::EditorExportPlatform">EditorExportPlatform</a>&gt;&gt;,
         debug: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-    ) -&gt; <a class="struct" href="../prelude/struct.PackedStringArray.html" title="struct godot::prelude::PackedStringArray">PackedStringArray</a> { ... }
+    ) -&gt; <a class="struct" href="../prelude/struct.PackedArray.html" title="struct godot::prelude::PackedArray">PackedArray</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>&gt; { ... }
 <span class="item-spacer"></span>    fn <a href="#method.supports_platform" class="fn">supports_platform</a>(
         &amp;self,
         platform: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.EditorExportPlatform.html" title="struct godot::classes::EditorExportPlatform">EditorExportPlatform</a>&gt;&gt;,
@@ -83,17 +83,17 @@
         &amp;self,
         platform: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.EditorExportPlatform.html" title="struct godot::classes::EditorExportPlatform">EditorExportPlatform</a>&gt;&gt;,
         debug: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-    ) -&gt; <a class="struct" href="../prelude/struct.PackedStringArray.html" title="struct godot::prelude::PackedStringArray">PackedStringArray</a> { ... }
+    ) -&gt; <a class="struct" href="../prelude/struct.PackedArray.html" title="struct godot::prelude::PackedArray">PackedArray</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>&gt; { ... }
 <span class="item-spacer"></span>    fn <a href="#method.get_android_dependencies_maven_repos" class="fn">get_android_dependencies_maven_repos</a>(
         &amp;self,
         platform: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.EditorExportPlatform.html" title="struct godot::classes::EditorExportPlatform">EditorExportPlatform</a>&gt;&gt;,
         debug: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-    ) -&gt; <a class="struct" href="../prelude/struct.PackedStringArray.html" title="struct godot::prelude::PackedStringArray">PackedStringArray</a> { ... }
+    ) -&gt; <a class="struct" href="../prelude/struct.PackedArray.html" title="struct godot::prelude::PackedArray">PackedArray</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>&gt; { ... }
 <span class="item-spacer"></span>    fn <a href="#method.get_android_libraries" class="fn">get_android_libraries</a>(
         &amp;self,
         platform: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.EditorExportPlatform.html" title="struct godot::classes::EditorExportPlatform">EditorExportPlatform</a>&gt;&gt;,
         debug: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-    ) -&gt; <a class="struct" href="../prelude/struct.PackedStringArray.html" title="struct godot::prelude::PackedStringArray">PackedStringArray</a> { ... }
+    ) -&gt; <a class="struct" href="../prelude/struct.PackedArray.html" title="struct godot::prelude::PackedArray">PackedArray</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>&gt; { ... }
 <span class="item-spacer"></span>    fn <a href="#method.get_android_manifest_activity_element_contents" class="fn">get_android_manifest_activity_element_contents</a>(
         &amp;self,
         platform: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.EditorExportPlatform.html" title="struct godot::classes::EditorExportPlatform">EditorExportPlatform</a>&gt;&gt;,
@@ -177,21 +177,21 @@ remains unchanged. Otherwise, this may lead to unexpected (safe) behavior.</p>
     &amp;mut self,
     path: <a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>,
     type_: <a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>,
-    features: <a class="struct" href="../prelude/struct.PackedStringArray.html" title="struct godot::prelude::PackedStringArray">PackedStringArray</a>,
+    features: <a class="struct" href="../prelude/struct.PackedArray.html" title="struct godot::prelude::PackedArray">PackedArray</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>&gt;,
 )</h4></section><section id="method.export_begin" class="method"><h4 class="code-header">fn <a href="#method.export_begin" class="fn">export_begin</a>(
     &amp;mut self,
-    features: <a class="struct" href="../prelude/struct.PackedStringArray.html" title="struct godot::prelude::PackedStringArray">PackedStringArray</a>,
+    features: <a class="struct" href="../prelude/struct.PackedArray.html" title="struct godot::prelude::PackedArray">PackedArray</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>&gt;,
     is_debug: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
     path: <a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>,
     flags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
 )</h4></section><section id="method.export_end" class="method"><h4 class="code-header">fn <a href="#method.export_end" class="fn">export_end</a>(&amp;mut self)</h4></section><section id="method.begin_customize_resources" class="method"><h4 class="code-header">fn <a href="#method.begin_customize_resources" class="fn">begin_customize_resources</a>(
     &amp;self,
     platform: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.EditorExportPlatform.html" title="struct godot::classes::EditorExportPlatform">EditorExportPlatform</a>&gt;&gt;,
-    features: <a class="struct" href="../prelude/struct.PackedStringArray.html" title="struct godot::prelude::PackedStringArray">PackedStringArray</a>,
+    features: <a class="struct" href="../prelude/struct.PackedArray.html" title="struct godot::prelude::PackedArray">PackedArray</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>&gt;,
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section><section id="method.begin_customize_scenes" class="method"><h4 class="code-header">fn <a href="#method.begin_customize_scenes" class="fn">begin_customize_scenes</a>(
     &amp;self,
     platform: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.EditorExportPlatform.html" title="struct godot::classes::EditorExportPlatform">EditorExportPlatform</a>&gt;&gt;,
-    features: <a class="struct" href="../prelude/struct.PackedStringArray.html" title="struct godot::prelude::PackedStringArray">PackedStringArray</a>,
+    features: <a class="struct" href="../prelude/struct.PackedArray.html" title="struct godot::prelude::PackedArray">PackedArray</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>&gt;,
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section><section id="method.end_customize_scenes" class="method"><h4 class="code-header">fn <a href="#method.end_customize_scenes" class="fn">end_customize_scenes</a>(&amp;mut self)</h4></section><section id="method.end_customize_resources" class="method"><h4 class="code-header">fn <a href="#method.end_customize_resources" class="fn">end_customize_resources</a>(&amp;mut self)</h4></section><section id="method.get_export_options" class="method"><h4 class="code-header">fn <a href="#method.get_export_options" class="fn">get_export_options</a>(
     &amp;self,
     platform: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.EditorExportPlatform.html" title="struct godot::classes::EditorExportPlatform">EditorExportPlatform</a>&gt;&gt;,
@@ -213,19 +213,19 @@ remains unchanged. Otherwise, this may lead to unexpected (safe) behavior.</p>
     &amp;self,
     platform: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.EditorExportPlatform.html" title="struct godot::classes::EditorExportPlatform">EditorExportPlatform</a>&gt;&gt;,
     debug: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-) -&gt; <a class="struct" href="../prelude/struct.PackedStringArray.html" title="struct godot::prelude::PackedStringArray">PackedStringArray</a></h4></section><section id="method.supports_platform" class="method"><h4 class="code-header">fn <a href="#method.supports_platform" class="fn">supports_platform</a>(&amp;self, platform: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.EditorExportPlatform.html" title="struct godot::classes::EditorExportPlatform">EditorExportPlatform</a>&gt;&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section><section id="method.get_android_dependencies" class="method"><h4 class="code-header">fn <a href="#method.get_android_dependencies" class="fn">get_android_dependencies</a>(
+) -&gt; <a class="struct" href="../prelude/struct.PackedArray.html" title="struct godot::prelude::PackedArray">PackedArray</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>&gt;</h4></section><section id="method.supports_platform" class="method"><h4 class="code-header">fn <a href="#method.supports_platform" class="fn">supports_platform</a>(&amp;self, platform: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.EditorExportPlatform.html" title="struct godot::classes::EditorExportPlatform">EditorExportPlatform</a>&gt;&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section><section id="method.get_android_dependencies" class="method"><h4 class="code-header">fn <a href="#method.get_android_dependencies" class="fn">get_android_dependencies</a>(
     &amp;self,
     platform: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.EditorExportPlatform.html" title="struct godot::classes::EditorExportPlatform">EditorExportPlatform</a>&gt;&gt;,
     debug: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-) -&gt; <a class="struct" href="../prelude/struct.PackedStringArray.html" title="struct godot::prelude::PackedStringArray">PackedStringArray</a></h4></section><section id="method.get_android_dependencies_maven_repos" class="method"><h4 class="code-header">fn <a href="#method.get_android_dependencies_maven_repos" class="fn">get_android_dependencies_maven_repos</a>(
+) -&gt; <a class="struct" href="../prelude/struct.PackedArray.html" title="struct godot::prelude::PackedArray">PackedArray</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>&gt;</h4></section><section id="method.get_android_dependencies_maven_repos" class="method"><h4 class="code-header">fn <a href="#method.get_android_dependencies_maven_repos" class="fn">get_android_dependencies_maven_repos</a>(
     &amp;self,
     platform: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.EditorExportPlatform.html" title="struct godot::classes::EditorExportPlatform">EditorExportPlatform</a>&gt;&gt;,
     debug: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-) -&gt; <a class="struct" href="../prelude/struct.PackedStringArray.html" title="struct godot::prelude::PackedStringArray">PackedStringArray</a></h4></section><section id="method.get_android_libraries" class="method"><h4 class="code-header">fn <a href="#method.get_android_libraries" class="fn">get_android_libraries</a>(
+) -&gt; <a class="struct" href="../prelude/struct.PackedArray.html" title="struct godot::prelude::PackedArray">PackedArray</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>&gt;</h4></section><section id="method.get_android_libraries" class="method"><h4 class="code-header">fn <a href="#method.get_android_libraries" class="fn">get_android_libraries</a>(
     &amp;self,
     platform: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.EditorExportPlatform.html" title="struct godot::classes::EditorExportPlatform">EditorExportPlatform</a>&gt;&gt;,
     debug: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-) -&gt; <a class="struct" href="../prelude/struct.PackedStringArray.html" title="struct godot::prelude::PackedStringArray">PackedStringArray</a></h4></section><section id="method.get_android_manifest_activity_element_contents" class="method"><h4 class="code-header">fn <a href="#method.get_android_manifest_activity_element_contents" class="fn">get_android_manifest_activity_element_contents</a>(
+) -&gt; <a class="struct" href="../prelude/struct.PackedArray.html" title="struct godot::prelude::PackedArray">PackedArray</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>&gt;</h4></section><section id="method.get_android_manifest_activity_element_contents" class="method"><h4 class="code-header">fn <a href="#method.get_android_manifest_activity_element_contents" class="fn">get_android_manifest_activity_element_contents</a>(
     &amp;self,
     platform: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.EditorExportPlatform.html" title="struct godot::classes::EditorExportPlatform">EditorExportPlatform</a>&gt;&gt;,
     debug: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,

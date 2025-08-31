@@ -7,7 +7,7 @@
 <p>4-element structure that can be used to represent 4D grid coordinates or sets of integers.</p>
 <p><code>Vector4i</code> uses integer coordinates and is therefore preferable to <a href="struct.Vector4.html" title="struct godot::prelude::Vector4"><code>Vector4</code></a> when exact precision is
 required. Note that the values are limited to 32 bits, and unlike <code>Vector4</code> this cannot be
-configured with an engine build option. Use <code>i64</code> or <a href="struct.PackedInt64Array.html" title="struct godot::prelude::PackedInt64Array"><code>PackedInt64Array</code></a>
+configured with an engine build option. Use <code>i64</code> or <a href="type.PackedInt64Array.html" title="type godot::prelude::PackedInt64Array"><code>PackedInt64Array</code></a>
 if 64-bit values are needed.</p>
 <p>Conversions are provided via various <code>from_*</code> and <code>to_*</code> functions, not via the <code>From</code> trait. This encourages <code>new()</code> as the main way to construct vectors, is explicit about the conversion taking place, needs no type inference, and works in <code>const</code> contexts.</p>
 <h4 id="navigation-to-impl-blocks-within-this-page"><a class="doc-anchor" href="#navigation-to-impl-blocks-within-this-page">§</a>Navigation to <code>impl</code> blocks within this page</h4>

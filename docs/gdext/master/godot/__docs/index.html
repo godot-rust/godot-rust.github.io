@@ -19,7 +19,7 @@ Godot itself, and typically have public fields. <br><br></p>
 </li>
 <li>
 <p><strong>Copy-on-write types</strong>: <a href="../prelude/struct.GString.html" title="struct godot::prelude::GString"><code>GString</code></a>,
-<a href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName"><code>StringName</code></a>, and <code>Packed*Array</code> types.</p>
+<a href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName"><code>StringName</code></a>, and <a href="../prelude/struct.PackedArray.html" title="struct godot::prelude::PackedArray"><code>PackedArray</code></a> types.</p>
 <p>These mostly act like value types, similar to Rust’s own <code>Vec</code>. You can <code>Clone</code> them to get
 a full copy of the entire object, as you would expect.</p>
 <p>Under the hood in Godot, these types are implemented with copy-on-write, so that data can be
