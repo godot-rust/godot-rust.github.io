@@ -3,7 +3,7 @@
 
     // Required method
     fn <a href="#tymethod.extract_if_safe" class="fn">extract_if_safe</a>(self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;Self::<a class="associatedtype" href="trait.DynamicSend.html#associatedtype.Inner" title="type godot::task::DynamicSend::Inner">Inner</a>&gt;;
-}</code></pre><span class="item-info"><div class="stab portability">Available on <strong><code>since_api="4.2"</code></strong> only.</div></span><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Runtime-checked <code>Send</code> capability.</p>
+}</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Runtime-checked <code>Send</code> capability.</p>
 <p>Implemented for types that need a static <code>Send</code> bound, but where it is determined at runtime whether sending a value was
 actually safe. Only allows to extract the value if sending across threads is safe, thus fulfilling the <code>Send</code> supertrait.</p>
 <h2 id="safety"><a class="doc-anchor" href="#safety">§</a>Safety</h2>
