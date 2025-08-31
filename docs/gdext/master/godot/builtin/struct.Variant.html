@@ -37,7 +37,7 @@ Enables conversions between related types that Godot considers compatible under 
       ▼       ▼           ▼                            Vector4 ◄───► Vector4i
    bool ◄───► int       GString ◄───► NodePath           Rect2 ◄───► Rect2i
                 ╲       ╱
-                 ╲     ╱                                 Array ◄───► Packed*Array
+                 ╲     ╱                              Array&lt;T&gt; ◄───► PackedArray&lt;T&gt;
                   ▼   ▼
                   Color                                   Gd&lt;T&gt; ───► Rid
                                                             nil ───► Option&lt;Gd&lt;T&gt;&gt;

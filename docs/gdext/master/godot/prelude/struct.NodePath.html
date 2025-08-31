@@ -44,7 +44,7 @@ automatically changes this to the fixed version for Godot 4.4+, even when used i
     T: for&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;&amp;'a <a class="struct" href="struct.NodePath.html" title="struct godot::prelude::NodePath">NodePath</a>&gt; + for&lt;'a&gt; <a class="trait" href="trait.ToGodot.html" title="trait godot::prelude::ToGodot">ToGodot</a> + 'a,</div></h4></section></summary><div class="docblock"><p>Use as argument for an <a href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg"><code>impl AsArg&lt;GString|StringName&gt;</code></a> parameter.</p>
 <p>This is a convenient way to convert arguments of similar string types.</p>
 <h5 id="example-2"><a class="doc-anchor" href="#example-2">§</a>Example</h5>
-<p><a href="struct.PackedStringArray.html" title="struct godot::prelude::PackedStringArray"><code>PackedStringArray</code></a> can insert elements using <code>AsArg&lt;GString&gt;</code>, so let’s pass a <code>NodePath</code>:</p>
+<p><a href="type.PackedStringArray.html" title="type godot::prelude::PackedStringArray"><code>PackedStringArray</code></a> can insert elements using <code>AsArg&lt;GString&gt;</code>, so let’s pass a <code>NodePath</code>:</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">let </span>node_path = NodePath::from(<span class="string">"Node2D/Label"</span>);
 
