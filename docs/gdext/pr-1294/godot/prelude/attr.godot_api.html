@@ -268,27 +268,13 @@ For implementation reasons, all but one <code>impl</code> blocks must have the k
 }</code></pre></div>
 <p><code>#[signal]</code> and <code>#[rpc]</code> attributes are not currently supported in secondary <code>impl</code> blocks.</p>
 
-<div class="example-wrap compile_fail"><a href="#" class="tooltip" title="This example deliberately fails to compile">ⓘ</a><pre class="rust rust-example-rendered"><code> <span class="attr">#[derive(GodotClass)]
- #[class(init, base=Node)]
- </span><span class="kw">pub struct </span>MyNode {
-     base: Base&lt;Node&gt;
- }
-
-
- <span class="attr">#[godot_api(secondary)]
+<div class="example-wrap compile_fail"><a href="#" class="tooltip" title="This example deliberately fails to compile">ⓘ</a><pre class="rust rust-example-rendered"><code> <span class="attr">#[godot_api(secondary)]
  </span><span class="kw">impl </span>MyNode {
      <span class="attr">#[signal]
      </span><span class="kw">fn </span>my_signal();
  }</code></pre></div>
 
-<div class="example-wrap compile_fail"><a href="#" class="tooltip" title="This example deliberately fails to compile">ⓘ</a><pre class="rust rust-example-rendered"><code> <span class="attr">#[derive(GodotClass)]
- #[class(init, base=Node)]
- </span><span class="kw">pub struct </span>MyNode {
-     base: Base&lt;Node&gt;
- }
-
-
- <span class="attr">#[godot_api(secondary)]
+<div class="example-wrap compile_fail"><a href="#" class="tooltip" title="This example deliberately fails to compile">ⓘ</a><pre class="rust rust-example-rendered"><code> <span class="attr">#[godot_api(secondary)]
  </span><span class="kw">impl </span>MyNode {
      <span class="attr">#[rpc]
      </span><span class="kw">fn </span>foo(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {}
