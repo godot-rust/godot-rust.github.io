@@ -259,9 +259,11 @@ use Rust data structures.</p>
 <p>See <a href="struct.Array.html#method.into_read_only" title="method godot::prelude::Array::into_read_only"><code>into_read_only()</code></a>.
 In GDScript, arrays are automatically read-only if declared with the <code>const</code> keyword.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.element_type" class="method"><h4 class="code-header">pub fn <a href="#method.element_type" class="fn">element_type</a>(&amp;self) -&gt; <a class="enum" href="../meta/enum.ElementType.html" title="enum godot::meta::ElementType">ElementType</a></h4></section></summary><div class="docblock"><p>Returns the runtime element type information for this array.</p>
-<p>The result is cached when the array is typed. If the array is untyped, this method
-will always re-query Godot’s FFI since GDScript may call <code>set_type()</code> at any time.
-Repeated calls on typed arrays will not result in multiple Godot FFI roundtrips.</p>
+<p>The result is generally cached, so feel free to call this method repeatedly.</p>
+<h5 id="panics-debug"><a class="doc-anchor" href="#panics-debug">§</a>Panics (Debug)</h5>
+<p>In the astronomically rare case where another extension in Godot modifies an array’s type (which godot-rust already cached as <code>Untyped</code>)
+via C function <code>array_set_typed</code>, thus leading to incorrect cache values. Such bad practice of not typing arrays immediately on
+construction is not supported, and will not be checked in Release mode.</p>
 </div></details></div></details></div><h2 id="trait-implementations" class="section-header">Trait Implementations<a href="#trait-implementations" class="anchor">§</a></h2><div id="trait-implementations-list"><details class="toggle implementors-toggle" open><summary><section id="impl-Clone-for-Array%3CT%3E" class="impl"><a href="#impl-Clone-for-Array%3CT%3E" class="anchor">§</a><h3 class="code-header">impl&lt;T&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="struct.Array.html" title="struct godot::prelude::Array">Array</a>&lt;T&gt;<div class="where">where
     T: <a class="trait" href="../meta/trait.ArrayElement.html" title="trait godot::meta::ArrayElement">ArrayElement</a>,</div></h3><div class="docblock"><p>Creates a new reference to the data in this array. Changes to the original array will be
 reflected in the copy and vice versa.</p>
