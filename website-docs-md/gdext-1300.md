@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1300/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1300"
 pr_author = "Yarwin"
 sort_key = 2025-09-09
-date_time = 2025-09-09T09:44:58Z
-commit_sha = "629ea9f736e70e61fb60ce6d4690ac7efd4f15ef"
+date_time = 2025-09-09T10:10:54Z
+commit_sha = "0699fed0a0390961b69f3a3546272ab980731eeb"
 +++
 
 Support negative indices when slicing Array, change arguments to i32
