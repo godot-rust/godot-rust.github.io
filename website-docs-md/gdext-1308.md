@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1308/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1308"
 pr_author = "Bromeon"
 sort_key = 2025-09-11
-date_time = 2025-09-11T22:35:14Z
-commit_sha = "ffb3f06b3c5dfae14cd9be480b825b292909f604"
+date_time = 2025-09-11T22:38:13Z
+commit_sha = "d31e1f604cece75cf9baf2e2826b6fb491684a7e"
 +++
 
 Merge `AsObjectArg<T>` into `AsArg<Gd<T>>`
