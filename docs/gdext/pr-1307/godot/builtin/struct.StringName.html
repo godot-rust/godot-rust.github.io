@@ -10,7 +10,7 @@ relying on lexicographical ordering.</p>
 <p>Note that Godot ignores any bytes after a null-byte. This means that for instance <code>"hello, world!"</code> and  <br />
 <code>"hello, world!\0 ignored by Godot"</code> will be treated as the same string if converted to a <code>StringName</code>.</p>
 <h2 id="performance"><a class="doc-anchor" href="#performance">§</a>Performance</h2>
-<p>The fastest way to create string names is using [static_name], which creates a static cached <code>StringName</code> from null-terminated C-string literals such as <code>c"MyClass"</code>. These can be used directly by Godot without conversion. The encoding is limited to Latin-1, however. See the corresponding
+<p>The fastest way to create string names is using <a href="../prelude/macro.static_name.html" title="macro godot::prelude::static_name"><code>static_name!</code></a>, which creates a static cached <code>StringName</code> from null-terminated C-string literals such as <code>c"MyClass"</code>. These can be used directly by Godot without conversion. The encoding is limited to Latin-1, however. See the corresponding
 <a href="#impl-From%3C%26CStr%3E-for-StringName"><code>From&lt;&amp;CStr&gt;</code> impl</a>.</p>
 <h2 id="all-string-types"><a class="doc-anchor" href="#all-string-types">§</a>All string types</h2><div><table><thead><tr><th>Intended use case</th><th>String type</th></tr></thead><tbody>
 <tr><td>General purpose</td><td><a href="../prelude/struct.GString.html" title="struct godot::prelude::GString"><code>GString</code></a></td></tr>
