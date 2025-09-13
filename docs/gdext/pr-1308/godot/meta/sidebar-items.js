@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"enum":["ByRef","ByValue"],"fn":["owned_into_arg","ref_to_arg"],"mod":["error","inspect"],"struct":["ClassName","MethodInfo","PropertyHintInfo","PropertyInfo","RefArg"],"trait":["ArgPassing","ArrayElement","AsArg","FromGodot","GodotConvert","GodotType","InParamTuple","OutParamTuple","PackedArrayElement","ParamTuple","ToGodot","UniformObjectDeref"]};
