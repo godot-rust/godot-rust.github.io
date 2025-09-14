@@ -42,7 +42,7 @@ run.</p>
 <p>The exact time a class is available depends on the Godot initialization logic, which is quite complex and may change between versions.
 To get an up-to-date view, inspect the Godot source code of <a href="https://github.com/godotengine/godot/blob/master/main/main.cpp">main.cpp</a>, particularly <code>Main::setup()</code>, <code>Main::setup2()</code> and
 <code>Main::cleanup()</code> methods. Make sure to look at the correct version of the file.</p>
-<p>In case of doubt, do not rely on classes being available during init.</p>
+<p>In case of doubt, do not rely on classes being available during init/deinit.</p>
 <h2 id="safety"><a class="doc-anchor" href="#safety">§</a>Safety</h2>
 <p>The library cannot enforce any safety guarantees outside Rust code, which means that <strong>you as a user</strong> are
 responsible to uphold them: namely in GDScript code or other GDExtension bindings loaded by the engine.
