@@ -109,7 +109,7 @@ guard as soon as you no longer need it.</p>
 
 <div class="example-wrap compile_fail"><a href="#" class="tooltip" title="This example deliberately fails to compile">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="comment">// error[E0499]: cannot borrow `*self` as mutable more than once at a time
 
-</span><span class="kw">fn </span>f(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
+</span><span class="kw">fn </span>method(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
     <span class="kw">let </span><span class="kw-2">mut </span>a = <span class="self">self</span>.base_mut();
     <span class="comment">//          ---- first mutable borrow occurs here
     </span><span class="kw">let </span><span class="kw-2">mut </span>b = <span class="self">self</span>.base_mut();
