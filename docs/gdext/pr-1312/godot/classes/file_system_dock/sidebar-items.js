@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["SigDisplayModeChanged","SigFileRemoved","SigFilesMoved","SigFolderColorChanged","SigFolderMoved","SigFolderRemoved","SigInherit","SigInstantiate","SigResourceRemoved","SignalsOfFileSystemDock"]};
