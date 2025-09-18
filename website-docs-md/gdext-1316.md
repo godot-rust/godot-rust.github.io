@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1316/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1316"
 pr_author = "Bromeon"
 sort_key = 2025-09-18
-date_time = 2025-09-18T21:58:56Z
-commit_sha = "54a0e94339781affc0d1ed9d0c27f0670d98cdf8"
+date_time = 2025-09-18T23:05:49Z
+commit_sha = "497c4749101c9b2614fc9ad6c702a7778c5b7901"
 +++
 
 `StringName`: remove `From` impl for `&'static CStr`
