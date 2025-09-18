@@ -29,14 +29,26 @@ will be treated as the same string if converted to a <code>NodePath</code>.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.get_total_count" class="method"><h4 class="code-header">pub fn <a href="#method.get_total_count" class="fn">get_total_count</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></h4></section></summary><div class="docblock"><p>Returns the total number of names + subnames.</p>
 <p>This method does not exist in Godot and is provided in Rust for convenience.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.hash" class="method"><h4 class="code-header">pub fn <a href="#method.hash" class="fn">hash</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></h4></section></summary><div class="docblock"><p>Returns a 32-bit integer hash value representing the string.</p>
-</div></details><details class="toggle method-toggle" open><summary><section id="method.subpath" class="method"><h4 class="code-header">pub fn <a href="#method.subpath" class="fn">subpath</a>(&amp;self, begin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, exclusive_end: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>) -&gt; <a class="struct" href="../prelude/struct.NodePath.html" title="struct godot::prelude::NodePath">NodePath</a></h4></section><span class="item-info"><div class="stab portability">Available on <strong><code>since_api="4.3"</code></strong> only.</div></span></summary><div class="docblock"><p>Returns the range <code>begin..exclusive_end</code> as a new <code>NodePath</code>.</p>
-<p>The absolute value of <code>begin</code> and <code>exclusive_end</code> will be clamped to <a href="../prelude/struct.NodePath.html#method.get_total_count" title="method godot::prelude::NodePath::get_total_count"><code>get_total_count()</code></a>.
-So, to express “until the end”, you can simply pass a large value for <code>exclusive_end</code>, such as <code>i32::MAX</code>.</p>
-<p>If either <code>begin</code> or <code>exclusive_end</code> are negative, they will be relative to the end of the <code>NodePath</code>.  <br />
-For example, <code>path.subpath(0, -2)</code> is a shorthand for <code>path.subpath(0, path.get_total_count() - 2)</code>.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.subpath" class="method"><h4 class="code-header">pub fn <a href="#method.subpath" class="fn">subpath</a>(&amp;self, range: impl <a class="trait" href="../meta/trait.SignedRange.html" title="trait godot::meta::SignedRange">SignedRange</a>) -&gt; <a class="struct" href="../prelude/struct.NodePath.html" title="struct godot::prelude::NodePath">NodePath</a></h4></section><span class="item-info"><div class="stab portability">Available on <strong><code>since_api="4.3"</code></strong> only.</div></span></summary><div class="docblock"><p>Returns the range <code>begin..exclusive_end</code> as a new <code>NodePath</code>.</p>
+<p>The absolute value of <code>begin</code> and <code>exclusive_end</code> will be clamped to <a href="../prelude/struct.NodePath.html#method.get_total_count" title="method godot::prelude::NodePath::get_total_count"><code>get_total_count()</code></a>.</p>
+<h5 id="usage"><a class="doc-anchor" href="#usage">§</a>Usage</h5>
+<p>For negative indices, use <a href="../meta/fn.wrapped.html" title="fn godot::meta::wrapped"><code>wrapped()</code></a>.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">let </span>path = NodePath::from(<span class="string">"path/to/Node:with:props"</span>);
+
+<span class="comment">// If upper bound is not defined, `exclusive_end` will span to the end of the `NodePath`.
+</span><span class="kw">let </span>sub = path.subpath(<span class="number">2</span>..);
+<span class="macro">assert_eq!</span>(sub, <span class="string">":props"</span>.into());
+
+<span class="comment">// If either `begin` or `exclusive_end` are negative, they will be relative to the end of the `NodePath`.
+</span><span class="kw">let </span>total_count = path.get_total_count();
+<span class="kw">let </span>wrapped_sub = path.subpath(wrapped(<span class="number">0</span>..-<span class="number">2</span>));
+<span class="kw">let </span>normal_sub = path.subpath(<span class="number">0</span>..total_count - <span class="number">2</span>);
+<span class="comment">// Both are equal to "path/to/Node".
+</span><span class="macro">assert_eq!</span>(wrapped_sub, normal_sub);</code></pre></div>
 <p><em>Godot equivalent: <code>slice</code></em></p>
 <h5 id="compatibility"><a class="doc-anchor" href="#compatibility">§</a>Compatibility</h5>
-<p>The <code>slice()</code> behavior for Godot &lt;= 4.3 is unintuitive, see <a href="https://github.com/godotengine/godot/pull/100954">#100954</a>. godot-rust
+<p>The <code>slice()</code> behavior for Godot &lt;= 4.3 is unintuitive, see <a href="https://github.com/godotengine/godot/pull/100954">#100954</a>. Godot-rust
 automatically changes this to the fixed version for Godot 4.4+, even when used in older versions. So, the behavior is always the same.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.arg" class="method"><h4 class="code-header">pub fn <a href="#method.arg" class="fn">arg</a>&lt;T&gt;(&amp;self) -&gt; impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;T&gt;<div class="where">where
     T: for&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;&amp;'a <a class="struct" href="../prelude/struct.NodePath.html" title="struct godot::prelude::NodePath">NodePath</a>&gt; + for&lt;'a&gt; <a class="trait" href="../prelude/trait.ToGodot.html" title="trait godot::prelude::ToGodot">ToGodot</a> + 'a,</div></h4></section></summary><div class="docblock"><p>Use as argument for an <a href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg"><code>impl AsArg&lt;GString|StringName&gt;</code></a> parameter.</p>
