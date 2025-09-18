@@ -63,7 +63,7 @@ are set to <a href="https://doc.rust-lang.org/nightly/core/default/trait.Default
 <p>The values of <code>begin</code> (inclusive) and <code>end</code> (exclusive) will be clamped to the array size.
 To obtain Rust slices, see <a href="../prelude/struct.PackedArray.html#method.as_slice" title="method godot::prelude::PackedArray::as_slice"><code>as_slice</code></a> and <a href="../prelude/struct.PackedArray.html#method.as_mut_slice" title="method godot::prelude::PackedArray::as_mut_slice"><code>as_mut_slice</code></a>.</p>
 <h5 id="usage"><a class="doc-anchor" href="#usage">§</a>Usage</h5>
-<p>For negative indices use <a href="../meta/fn.wrapped.html" title="fn godot::meta::wrapped"><code>wrapped</code></a>.</p>
+<p>For negative indices, use <a href="../meta/fn.wrapped.html" title="fn godot::meta::wrapped"><code>wrapped()</code></a>.</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">let </span>array = PackedArray::from([<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>]);
 
