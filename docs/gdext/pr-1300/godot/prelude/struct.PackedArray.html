@@ -59,18 +59,21 @@ are set to <a href="https://doc.rust-lang.org/nightly/core/default/trait.Default
 </div></details><details class="toggle method-toggle" open><summary><section id="method.extend_array" class="method"><h4 class="code-header">pub fn <a href="#method.extend_array" class="fn">extend_array</a>(&amp;mut self, other: &amp;<a class="struct" href="struct.PackedArray.html" title="struct godot::prelude::PackedArray">PackedArray</a>&lt;T&gt;)</h4></section></summary><div class="docblock"><p>Appends another array at the end of this array.</p>
 <p><em>Godot equivalent: <code>append_array</code></em></p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.to_vec" class="method"><h4 class="code-header">pub fn <a href="#method.to_vec" class="fn">to_vec</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;T&gt;</h4></section></summary><div class="docblock"><p>Converts this array to a Rust vector, making a copy of its contents.</p>
-</div></details><details class="toggle method-toggle" open><summary><section id="method.subarray" class="method"><h4 class="code-header">pub fn <a href="#method.subarray" class="fn">subarray</a>(&amp;self, range: impl SignedRange) -&gt; <a class="struct" href="struct.PackedArray.html" title="struct godot::prelude::PackedArray">PackedArray</a>&lt;T&gt;</h4></section></summary><div class="docblock"><p>Returns a sub-range <code>begin..end</code>, as a new packed array.</p>
-<p>The values of <code>begin</code> (inclusive) and <code>end</code> (exclusive) will be clamped to the array size.</p>
-<p>For negative indices use <a href="../meta/fn.wrapped.html" title="fn godot::meta::wrapped"><code>wrapped</code></a>.
-If either <code>begin</code> or <code>end</code> are negative, their value is relative to the end of the array.</p>
-<h5 id="example"><a class="doc-anchor" href="#example">§</a>Example</h5>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.subarray" class="method"><h4 class="code-header">pub fn <a href="#method.subarray" class="fn">subarray</a>(&amp;self, range: impl <a class="trait" href="../meta/trait.SignedRange.html" title="trait godot::meta::SignedRange">SignedRange</a>) -&gt; <a class="struct" href="struct.PackedArray.html" title="struct godot::prelude::PackedArray">PackedArray</a>&lt;T&gt;</h4></section></summary><div class="docblock"><p>Returns a sub-range <code>begin..end</code>, as a new packed array.</p>
+<p>The values of <code>begin</code> (inclusive) and <code>end</code> (exclusive) will be clamped to the array size.
+To obtain Rust slices, see <a href="struct.PackedArray.html#method.as_slice" title="method godot::prelude::PackedArray::as_slice"><code>as_slice</code></a> and <a href="struct.PackedArray.html#method.as_mut_slice" title="method godot::prelude::PackedArray::as_mut_slice"><code>as_mut_slice</code></a>.</p>
+<h5 id="usage"><a class="doc-anchor" href="#usage">§</a>Usage</h5>
+<p>For negative indices use <a href="../meta/fn.wrapped.html" title="fn godot::meta::wrapped"><code>wrapped</code></a>.</p>
+
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">let </span>array = PackedArray::from([<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>]);
-<span class="macro">assert_eq!</span>(array.subarray(wrapped(-<span class="number">4</span>..-<span class="number">2</span>)), PackedArray::from([<span class="number">20</span>, <span class="number">30</span>]));</code></pre></div>
-<p>If <code>end</code> is not specified, the resulting subarray will span to the end of the array.</p>
-<h5 id="example-1"><a class="doc-anchor" href="#example-1">§</a>Example</h5>
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">let </span>array = PackedArray::from([<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>]);
-<span class="macro">assert_eq!</span>(array.subarray(<span class="number">2</span>..), PackedArray::from([<span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>]));</code></pre></div>
-<p>To obtain Rust slices, see <a href="struct.PackedArray.html#method.as_slice" title="method godot::prelude::PackedArray::as_slice"><code>as_slice</code></a> and <a href="struct.PackedArray.html#method.as_mut_slice" title="method godot::prelude::PackedArray::as_mut_slice"><code>as_mut_slice</code></a>.</p>
+
+<span class="comment">// If either `begin` or `end` is negative, its value is relative to the end of the array.
+</span><span class="kw">let </span>sub = array.subarray(wrapped(-<span class="number">4</span>..-<span class="number">2</span>));
+<span class="macro">assert_eq!</span>(sub, PackedArray::from([<span class="number">20</span>, <span class="number">30</span>]));
+
+<span class="comment">// If `end` is not specified, the resulting subarray will span to the end of the array.
+</span><span class="kw">let </span>sub = array.subarray(<span class="number">2</span>..);
+<span class="macro">assert_eq!</span>(sub, PackedArray::from([<span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>]));</code></pre></div>
 <p><em>Godot equivalent: <code>slice</code></em></p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.as_slice" class="method"><h4 class="code-header">pub fn <a href="#method.as_slice" class="fn">as_slice</a>(&amp;self) -&gt; &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">[T]</a></h4></section></summary><div class="docblock"><p>Returns a shared Rust slice of the array.</p>
 <p>The resulting slice can be further subdivided or converted into raw pointers.</p>
