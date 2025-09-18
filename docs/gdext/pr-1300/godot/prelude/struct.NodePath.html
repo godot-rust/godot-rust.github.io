@@ -32,7 +32,7 @@ will be treated as the same string if converted to a <code>NodePath</code>.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.subpath" class="method"><h4 class="code-header">pub fn <a href="#method.subpath" class="fn">subpath</a>(&amp;self, range: impl <a class="trait" href="../meta/trait.SignedRange.html" title="trait godot::meta::SignedRange">SignedRange</a>) -&gt; <a class="struct" href="struct.NodePath.html" title="struct godot::prelude::NodePath">NodePath</a></h4></section><span class="item-info"><div class="stab portability">Available on <strong><code>since_api="4.3"</code></strong> only.</div></span></summary><div class="docblock"><p>Returns the range <code>begin..exclusive_end</code> as a new <code>NodePath</code>.</p>
 <p>The absolute value of <code>begin</code> and <code>exclusive_end</code> will be clamped to <a href="struct.NodePath.html#method.get_total_count" title="method godot::prelude::NodePath::get_total_count"><code>get_total_count()</code></a>.</p>
 <h5 id="usage"><a class="doc-anchor" href="#usage">§</a>Usage</h5>
-<p>For negative indices use <a href="../meta/fn.wrapped.html" title="fn godot::meta::wrapped"><code>wrapped</code></a>.</p>
+<p>For negative indices, use <a href="../meta/fn.wrapped.html" title="fn godot::meta::wrapped"><code>wrapped()</code></a>.</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">let </span>path = NodePath::from(<span class="string">"path/to/Node:with:props"</span>);
 
