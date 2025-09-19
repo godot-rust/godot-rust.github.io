@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1314/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1314"
 pr_author = "Bromeon"
 sort_key = 2025-09-19
-date_time = 2025-09-19T05:45:44Z
-commit_sha = "959a8137702bcbd653ef1d9800fbbd1c85658262"
+date_time = 2025-09-19T06:27:09Z
+commit_sha = "3eb95e429d0cf17e466f9285624b5260c519eaa4"
 +++
 
 `AsArg` for objects now consistently passes by reference
