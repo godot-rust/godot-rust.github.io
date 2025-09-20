@@ -1,15 +1,15 @@
 +++
 title = "#1322"
-date = 2025-09-19
+date = 2025-09-20
 
 [extra]
 repo = "gdext"
 docs_rel_url = "gdext/pr-1322/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1322"
 pr_author = "Bromeon"
-sort_key = 2025-09-19
-date_time = 2025-09-19T21:47:26Z
-commit_sha = "94dc5348600bd0319aae98c0760899de2265b95d"
+sort_key = 2025-09-20
+date_time = 2025-09-20T07:21:19Z
+commit_sha = "01f2cb3dde37fbec55ee84836e9df69878b884cc"
 +++
 
 Rename `ClassName` -> `ClassId`
