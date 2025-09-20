@@ -6,15 +6,15 @@
 <h2 id="example"><a class="doc-anchor" href="#example">§</a>Example</h2>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
 <span class="kw">use </span>godot::obj::bounds::implement_godot_bounds;
-<span class="kw">use </span>godot::meta::ClassName;
+<span class="kw">use </span>godot::meta::ClassId;
 
 <span class="kw">struct </span>MyClass {}
 
 <span class="kw">impl </span>GodotClass <span class="kw">for </span>MyClass {
     <span class="kw">type </span>Base = Node;
 
-    <span class="kw">fn </span>class_name() -&gt; ClassName {
-        ClassName::new_cached::&lt;MyClass&gt;(|| <span class="string">"MyClass"</span>.to_string())
+    <span class="kw">fn </span>class_id() -&gt; ClassId {
+        ClassId::new_cached::&lt;MyClass&gt;(|| <span class="string">"MyClass"</span>.to_string())
     }
 }
 

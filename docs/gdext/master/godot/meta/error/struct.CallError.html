@@ -3,7 +3,7 @@
 e.g. <a href="../../prelude/struct.Object.html#method.try_call" title="method godot::prelude::Object::try_call"><code>Object::try_call()</code></a> or <a href="../../prelude/struct.Node.html#method.try_rpc" title="method godot::prelude::Node::try_rpc"><code>Node::try_rpc()</code></a>.
 <em>Varcall</em> refers to the “variant call” calling convention, meaning that arguments and return values are passed as <code>Variant</code> (as opposed
 to <em>ptrcall</em>, which passes direct pointers to Rust objects).</p>
-<p>Allows to inspect the involved class and method via <code>class_name()</code> and <code>method_name()</code>. Implements the <code>std::error::Error</code> trait, so
+<p>Allows to inspect the involved class and method via <code>class_id()</code> and <code>method_name()</code>. Implements the <code>std::error::Error</code> trait, so
 it comes with <code>Display</code> and <code>Error::source()</code> APIs.</p>
 <h2 id="possible-error-causes"><a class="doc-anchor" href="#possible-error-causes">§</a>Possible error causes</h2>
 <p>Several reasons can cause a function call to fail. The reason is described in the <code>Display</code> impl.</p>
