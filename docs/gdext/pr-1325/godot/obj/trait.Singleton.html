@@ -2,7 +2,7 @@
     // Required method
     fn <a href="#tymethod.singleton" class="fn">singleton</a>() -&gt; <a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;Self&gt;;
 }</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Trait for singleton classes in Godot.</p>
-<p>There is only one instance of each singleton class in the engine, accessible through [<code>one()</code>][Self::one].</p>
+<p>There is only one instance of each singleton class in the engine, accessible through <a href="trait.Singleton.html#tymethod.singleton" title="associated function godot_core::obj::traits::Singleton::singleton::singleton"><code>singleton()</code></a>.</p>
 </div></details><h2 id="required-methods" class="section-header">Required Methods<a href="#required-methods" class="anchor">§</a></h2><div class="methods"><details class="toggle method-toggle" open><summary><section id="tymethod.singleton" class="method"><h4 class="code-header">fn <a href="#tymethod.singleton" class="fn">singleton</a>() -&gt; <a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;Self&gt;</h4></section></summary><div class="docblock"><p>Returns the singleton instance.</p>
 <h5 id="panics"><a class="doc-anchor" href="#panics">§</a>Panics</h5>
 <p>If called during global init/deinit of godot-rust. Most singletons are only available after the first frame has run.
