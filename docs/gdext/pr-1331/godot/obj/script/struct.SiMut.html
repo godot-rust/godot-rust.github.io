@@ -7,7 +7,8 @@ For details see <a href="struct.SiMut.html#method.base_mut" title="method godot:
 <p>Holding a shared guard prevents other code paths from obtaining a <em>mutable</em> reference to <code>self</code>, as such it is recommended to drop the
 guard as soon as you no longer need it.</p>
 
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">struct </span>ExampleScriptInstance;
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code>
+<span class="kw">struct </span>ExampleScriptInstance;
 
 <span class="kw">impl </span>ScriptInstance <span class="kw">for </span>ExampleScriptInstance {
     <span class="kw">type </span>Base = Node;
@@ -16,7 +17,7 @@ guard as soon as you no longer need it.</p>
         this: SiMut&lt;<span class="self">Self</span>&gt;,
         method: StringName,
         args: <span class="kw-2">&amp;</span>[<span class="kw-2">&amp;</span>Variant],
-    ) -&gt; <span class="prelude-ty">Result</span>&lt;Variant, sys::GDExtensionCallErrorType&gt;{
+    ) -&gt; <span class="prelude-ty">Result</span>&lt;Variant, CallErrorType&gt;{
         <span class="kw">let </span>name = this.base().get_name();
         <span class="macro">godot_print!</span>(<span class="string">"name is {name}"</span>);
         <span class="comment">// However, we cannot call methods that require `&amp;mut Base`, such as:
@@ -31,7 +32,8 @@ acquired.</p>
 <p>Holding a mutable guard prevents other code paths from obtaining <em>any</em> reference to <code>self</code>, as such it is recommended to drop the
 guard as soon as you no longer need it.</p>
 
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">struct </span>ExampleScriptInstance;
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code>
+<span class="kw">struct </span>ExampleScriptInstance;
 
 <span class="kw">impl </span>ScriptInstance <span class="kw">for </span>ExampleScriptInstance {
     <span class="kw">type </span>Base = Object;
@@ -40,7 +42,7 @@ guard as soon as you no longer need it.</p>
         <span class="kw-2">mut </span>this: SiMut&lt;<span class="self">Self</span>&gt;,
         method: StringName,
         args: <span class="kw-2">&amp;</span>[<span class="kw-2">&amp;</span>Variant],
-    ) -&gt; <span class="prelude-ty">Result</span>&lt;Variant, sys::GDExtensionCallErrorType&gt; {
+    ) -&gt; <span class="prelude-ty">Result</span>&lt;Variant, CallErrorType&gt; {
         <span class="comment">// Check whether method is available on this script
         </span><span class="kw">if </span>method == StringName::from(<span class="string">"script_method"</span>) {
             <span class="macro">godot_print!</span>(<span class="string">"script_method called!"</span>);
