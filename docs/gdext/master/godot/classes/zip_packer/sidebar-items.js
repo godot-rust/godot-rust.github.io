@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExOpen","ZipAppend"]};
+window.SIDEBAR_ITEMS = {"struct":["CompressionLevel","ExOpen","ZipAppend"]};
