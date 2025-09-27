@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1340/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1340"
 pr_author = "Bromeon"
 sort_key = 2025-09-27
-date_time = 2025-09-27T21:12:32Z
-commit_sha = "f49b5da911cd97d6b1435b45cfc98a795ee7afac"
+date_time = 2025-09-27T21:50:40Z
+commit_sha = "c67a3454218e11ac11124767e288ea70c8073e87"
 +++
 
 Remove deprecated symbols, other small cleanups
