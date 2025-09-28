@@ -101,7 +101,7 @@ will fail:</p>
 This is shorter syntax for <a href="../../prelude/struct.Callable.html#method.from_linked_fn" title="associated function godot::prelude::Callable::from_linked_fn"><code>Callable::from_linked_fn()</code></a>.</p>
 <p><code>name</code> is used for the string representation of the closure, which helps with debugging.</p>
 <p>Such a callable will be automatically invalidated by Godot when a linked Object is freed.
-If you need a Callable which can live indefinitely use <a href="../../prelude/struct.Callable.html#method.from_local_fn" title="associated function godot::prelude::Callable::from_local_fn"><code>Callable::from_local_fn()</code></a>.</p>
+If you need a Callable which can live indefinitely, use <a href="../../prelude/struct.Callable.html#method.from_fn" title="associated function godot::prelude::Callable::from_fn"><code>Callable::from_fn()</code></a>.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.run_deferred" class="method"><h4 class="code-header">pub fn <a href="#method.run_deferred" class="fn">run_deferred</a>&lt;F&gt;(&amp;mut self, mut_self_method: F)<div class="where">where
     T: <a class="trait" href="../trait.WithBaseField.html" title="trait godot::obj::WithBaseField">WithBaseField</a>,
     F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnOnce.html" title="trait core::ops::function::FnOnce">FnOnce</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut T</a>) + 'static,</div></h4></section></summary><div class="docblock"><p>Defers the given closure to run during <a href="https://docs.godotengine.org/en/stable/classes/class_object.html#class-object-method-call-deferred">idle time</a>.</p>
