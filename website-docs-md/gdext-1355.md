@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1355/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1355"
 pr_author = "Yarwin"
 sort_key = 2025-10-06
-date_time = 2025-10-06T19:19:46Z
-commit_sha = "e1ed40d36d9e19fa5a125bbaff10db0414ad9314"
+date_time = 2025-10-06T19:21:33Z
+commit_sha = "e1b84ba6843d83406f7db2546ea37939f8d46719"
 +++
 
 Class Docs – register docs in `#[godot_api(secondary)]`, simplify docs registration logic
