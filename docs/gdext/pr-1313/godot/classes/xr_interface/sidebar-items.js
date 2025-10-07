@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["Capabilities","EnvironmentBlendMode","PlayAreaMode","SigPlayAreaChanged","SignalsOfXrInterface","TrackingStatus","VrsTextureFormat"]};

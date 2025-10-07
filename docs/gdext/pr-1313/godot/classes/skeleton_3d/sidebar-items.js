@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["ExPhysicalBonesStartSimulation","ExSetBoneEnabled","ExSetBoneGlobalPoseOverride","ModifierCallbackModeProcess","SigBoneEnabledChanged","SigBoneListChanged","SigPoseUpdated","SigRestUpdated","SigShowRestOnlyChanged","SigSkeletonUpdated","SignalsOfSkeleton3D"]};
