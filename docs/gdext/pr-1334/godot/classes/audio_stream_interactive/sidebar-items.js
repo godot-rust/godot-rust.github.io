@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["AutoAdvanceMode","ExAddTransition","FadeMode","TransitionFromTime","TransitionToTime"]};

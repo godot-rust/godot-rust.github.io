@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"attr":["gdextension"],"enum":["EditorRunBehavior"],"fn":["is_main_thread","main_thread_id"],"struct":["GdextBuild"],"trait":["ExtensionLibrary"],"type":["InitLevel"]};

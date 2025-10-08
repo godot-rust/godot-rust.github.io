@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["SigScreenEntered","SigScreenExited","SignalsOfVisibleOnScreenNotifier3D"]};

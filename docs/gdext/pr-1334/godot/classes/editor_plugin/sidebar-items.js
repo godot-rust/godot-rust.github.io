@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["AfterGuiInput","CustomControlContainer","DockSlot","ExAddControlToBottomPanel","ExAddControlToDock","ExAddImportPlugin","ExAddSceneFormatImporterPlugin","ExAddScenePostImportPlugin","SigMainScreenChanged","SigProjectSettingsChanged","SigResourceSaved","SigSceneChanged","SigSceneClosed","SigSceneSaved","SignalsOfEditorPlugin"]};

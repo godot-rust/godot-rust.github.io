@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["RenderModelTracker","SigRenderModelAdded","SigRenderModelRemoved","SignalsOfOpenXrRenderModelManager"]};

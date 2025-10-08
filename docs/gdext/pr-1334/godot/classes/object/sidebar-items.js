@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["ConnectFlags","ExAddUserSignal","ExGetMeta","ExTr","ExTrN","SigPropertyListChanged","SigScriptChanged","SignalsOfObject"]};
