@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExStart","ExTravel"]};
+window.SIDEBAR_ITEMS = {"struct":["ExStart","ExTravel","SigStateFinished","SigStateStarted","SignalsOfAnimationNodeStateMachinePlayback"]};
