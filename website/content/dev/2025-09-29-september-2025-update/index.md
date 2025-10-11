@@ -211,12 +211,12 @@ No more tedious `try_cast()` cascades for explicit dynamic dispatch. The [`match
 Thanks to sylbeth's work, the macro supports mutable bindings ([#1242]), optional fallback branches ([#1246]), and discard patterns ([#1252]):
 
 ```rust
-let simple_dispatch: i32 = match_class!(event, {
+let simple_dispatch: i32 = match_class! { event,
     button @ InputEventMouseButton => 1,
     motion @ InputEventMouseMotion => 2,
     action @ InputEventAction => 3,
     _ => 0,  // Fallback.
-});
+};
 ```
 
 ### Generic packed arrays
