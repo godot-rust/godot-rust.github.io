@@ -87,7 +87,7 @@ use <a href="struct.ConnectBuilder.html#method.connect_self_mut" title="method g
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other_mut" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other_mut" class="fn">connect_other_mut</a>&lt;F, OtherC&gt;(
     self,
-    object: &amp;impl ToSignalObj&lt;OtherC&gt;,
+    object: &amp;impl <a class="trait" href="../meta/trait.ObjectToOwned.html" title="trait godot::meta::ObjectToOwned">ObjectToOwned</a>&lt;OtherC&gt;,
     method: F,
 ) -&gt; <a class="struct" href="struct.ConnectHandle.html" title="struct godot::register::ConnectHandle">ConnectHandle</a><div class="where">where
     OtherC: <a class="trait" href="../prelude/trait.GodotClass.html" title="trait godot::prelude::GodotClass">GodotClass</a>&lt;Declarer = <a class="enum" href="../obj/bounds/enum.DeclUser.html" title="enum godot::obj::bounds::DeclUser">DeclUser</a>&gt; + <a class="trait" href="../obj/trait.Bounds.html" title="trait godot::obj::Bounds">Bounds</a>,
@@ -109,7 +109,7 @@ For engine classes, <code>&amp;mut self</code> is not supported at all.</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other_gd" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other_gd" class="fn">connect_other_gd</a>&lt;F, OtherC&gt;(
     self,
-    object: &amp;impl ToSignalObj&lt;OtherC&gt;,
+    object: &amp;impl <a class="trait" href="../meta/trait.ObjectToOwned.html" title="trait godot::meta::ObjectToOwned">ObjectToOwned</a>&lt;OtherC&gt;,
     method: F,
 ) -&gt; <a class="struct" href="struct.ConnectHandle.html" title="struct godot::register::ConnectHandle">ConnectHandle</a><div class="where">where
     OtherC: <a class="trait" href="../prelude/trait.GodotClass.html" title="trait godot::prelude::GodotClass">GodotClass</a>,

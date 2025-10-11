@@ -58,7 +58,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other" class="fn">connect_other</a>&lt;F, OtherC, Declarer&gt;(
     &amp;self,
-    object: &amp;impl ToSignalObj&lt;OtherC&gt;,
+    object: &amp;impl <a class="trait" href="../meta/trait.ObjectToOwned.html" title="trait godot::meta::ObjectToOwned">ObjectToOwned</a>&lt;OtherC&gt;,
     method: F,
 ) -&gt; <a class="struct" href="struct.ConnectHandle.html" title="struct godot::register::ConnectHandle">ConnectHandle</a><div class="where">where
     OtherC: <a class="trait" href="../meta/trait.UniformObjectDeref.html" title="trait godot::meta::UniformObjectDeref">UniformObjectDeref</a>&lt;Declarer&gt;,

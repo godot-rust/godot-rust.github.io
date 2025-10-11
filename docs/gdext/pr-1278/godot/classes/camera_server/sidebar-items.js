@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["FeedImage","SigCameraFeedAdded","SigCameraFeedRemoved","SignalsOfCameraServer"]};
+window.SIDEBAR_ITEMS = {"struct":["FeedImage","SigCameraFeedAdded","SigCameraFeedRemoved","SigCameraFeedsUpdated","SignalsOfCameraServer"]};
