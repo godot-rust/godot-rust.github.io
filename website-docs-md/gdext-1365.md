@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1365/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1365"
 pr_author = "Yarwin"
 sort_key = 2025-10-12
-date_time = 2025-10-12T09:41:11Z
-commit_sha = "e31b56fb8e425f3f28d6dbe62d0f71e8fccfeacb"
+date_time = 2025-10-12T10:03:57Z
+commit_sha = "68f8f862926ca8b1b15a703839ba7cc80a00d7f4"
 +++
 
 Codegen: Support sys types in outgoing Ptrcalls.
