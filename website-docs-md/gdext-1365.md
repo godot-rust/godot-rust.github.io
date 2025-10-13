@@ -1,15 +1,15 @@
 +++
 title = "#1365"
-date = 2025-10-12
+date = 2025-10-13
 
 [extra]
 repo = "gdext"
 docs_rel_url = "gdext/pr-1365/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1365"
 pr_author = "Yarwin"
-sort_key = 2025-10-12
-date_time = 2025-10-12T10:03:57Z
-commit_sha = "68f8f862926ca8b1b15a703839ba7cc80a00d7f4"
+sort_key = 2025-10-13
+date_time = 2025-10-13T08:05:30Z
+commit_sha = "3ad74ae5f454fb26ac17299683cda32be74477e8"
 +++
 
 Codegen: Support sys types in outgoing Ptrcalls.
