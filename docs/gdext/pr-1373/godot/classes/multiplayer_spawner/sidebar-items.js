@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["ExSpawn","SigDespawned","SigSpawned","SignalsOfMultiplayerSpawner"]};
