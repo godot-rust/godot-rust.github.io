@@ -2,7 +2,7 @@
     T: <a class="trait" href="../prelude/trait.Inherits.html" title="trait godot::prelude::Inherits">Inherits</a>&lt;<a class="struct" href="../prelude/struct.Node.html" title="struct godot::prelude::Node">Node</a>&gt;,</div></code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Retrieves an autoload by name (fallible).</p>
 <p>Autoloads are accessed via the <code>/root/{name}</code> path in the scene tree. The name is the one you used to register the autoload in
 <code>project.godot</code>. By convention, it often corresponds to the class name, but does not have to.</p>
-<p>See also <a href="fn.get_autoload.html" title="fn godot::tools::get_autoload"><code>get_autoload()</code></a> for simpler function expecting the class name and non-fallible invocation.</p>
+<p>See also <a href="../prelude/fn.get_autoload.html" title="fn godot::prelude::get_autoload"><code>get_autoload()</code></a> for simpler function expecting the class name and non-fallible invocation.</p>
 <p>This function returns <code>Err</code> if:</p>
 <ul>
 <li>No autoload is registered under <code>name</code>.</li>
@@ -11,15 +11,15 @@
 </ul>
 <h2 id="example"><a class="doc-anchor" href="#example">§</a>Example</h2>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
+<span class="kw">use </span>godot::tools::try_get_named_autoload;
 
 <span class="attr">#[derive(GodotClass)]
-#[class(base=Node)]
+#[class(init, base=Node)]
 </span><span class="kw">struct </span>GlobalStats {
     base: Base&lt;Node&gt;,
 }
 
-<span class="comment">// Get autoload with custom name
-</span><span class="kw">let </span>result = try_get_named_autoload::&lt;GlobalStats&gt;(<span class="string">"Statistics"</span>);
+<span class="kw">let </span>result = try_get_named_autoload::&lt;GlobalStats&gt;(<span class="string">"Statistics"</span>);
 <span class="kw">match </span>result {
     <span class="prelude-val">Ok</span>(autoload) =&gt; { <span class="comment">/* Use the Gd&lt;GlobalStats&gt;. */ </span>}
     <span class="prelude-val">Err</span>(err) =&gt; <span class="macro">eprintln!</span>(<span class="string">"Failed to get autoload: {err}"</span>),
