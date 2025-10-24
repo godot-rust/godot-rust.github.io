@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["Access","Customization","DisplayMode","ExAddFilter","FileMode","SigDirSelected","SigFileSelected","SigFilenameFilterChanged","SigFilesSelected","SignalsOfFileDialog"]};
