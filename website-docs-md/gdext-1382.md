@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1382/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1382"
 pr_author = "Yarwin"
 sort_key = 2025-10-25
-date_time = 2025-10-25T06:17:50Z
-commit_sha = "0102c2614bb7008a0f9b48c2468a240088534d56"
+date_time = 2025-10-25T06:37:42Z
+commit_sha = "a88358e2cb82d333b34c70c4f6796ff19fd1a9f8"
 +++
 
 Validate call params for `gd_self` virtual methods.
