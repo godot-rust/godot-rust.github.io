@@ -4,6 +4,7 @@
     T: <a class="trait" href="../prelude/trait.Inherits.html" title="trait godot::prelude::Inherits">Inherits</a>&lt;<a class="struct" href="../prelude/struct.Node.html" title="struct godot::prelude::Node">Node</a>&gt;,</div></code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Retrieves an autoload by name (fallible).</p>
 <p>Autoloads are accessed via the <code>/root/{name}</code> path in the scene tree. The name is the one you used to register the autoload in
 <code>project.godot</code>. By convention, it often corresponds to the class name, but does not have to.</p>
+<p>If the autoload can be resolved, it will be cached and returned very quickly the second time.</p>
 <p>See also <a href="fn.get_autoload_by_name.html" title="fn godot::tools::get_autoload_by_name"><code>get_autoload_by_name()</code></a> for simpler function expecting the class name and non-fallible invocation.</p>
 <p>This function returns <code>Err</code> if:</p>
 <ul>

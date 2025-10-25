@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1381/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1381"
 pr_author = "Bromeon"
 sort_key = 2025-10-25
-date_time = 2025-10-25T08:49:58Z
-commit_sha = "cb968c23314dd6f28ee11bff388ac047483e785f"
+date_time = 2025-10-25T09:06:14Z
+commit_sha = "5e3c60edd409376fe23d75a22976bde480500cfa"
 +++
 
 Simple API to fetch autoloads
