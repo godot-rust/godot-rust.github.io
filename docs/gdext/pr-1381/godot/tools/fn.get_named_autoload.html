@@ -6,6 +6,7 @@ we strictly refer to the former to separate from <a href="../obj/trait.Singleton
 <p>This is a convenience function that calls <a href="fn.try_get_named_autoload.html" title="fn godot::tools::try_get_named_autoload"><code>try_get_named_autoload()</code></a>. Panics if that fails, e.g. not found or wrong type.</p>
 <h2 id="example"><a class="doc-anchor" href="#example">§</a>Example</h2>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
+<span class="kw">use </span>godot::tools::get_named_autoload;
 
 <span class="attr">#[derive(GodotClass)]
 #[class(init, base=Node)]
