@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["SigTextureChanged","SignalsOfMeshInstance2D"]};
