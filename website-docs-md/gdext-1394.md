@@ -9,7 +9,7 @@ pr_url = "https://github.com/godot-rust/gdext/pull/1394"
 pr_author = "Yarwin"
 sort_key = 2025-11-02
 date_time = 2025-11-02T09:03:05Z
-commit_sha = "f9dad7d3984de9e0ccfade34d70483355de9d0e1"
+commit_sha = "2747c7689c4199b38f88b9eaec2f416c11d191f4"
 +++
 
 Update `runtime_version` to use non-deprecated get_godot_version pointer.
