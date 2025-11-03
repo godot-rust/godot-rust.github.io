@@ -1,15 +1,15 @@
 +++
 title = "#1396"
-date = 2025-11-02
+date = 2025-11-03
 
 [extra]
 repo = "gdext"
 docs_rel_url = "gdext/pr-1396/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1396"
 pr_author = "Bromeon"
-sort_key = 2025-11-02
-date_time = 2025-11-02T23:29:59Z
-commit_sha = "28b17b33a6b3a1316d54d970db3655819f37e712"
+sort_key = 2025-11-03
+date_time = 2025-11-03T23:37:33Z
+commit_sha = "7405d518b5f0bc14bde2e81d5f67060892305fa4"
 +++
 
 Default parameters via `#[opt(default = ...)]`  syntax
