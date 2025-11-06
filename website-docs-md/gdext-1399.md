@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1399/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1399"
 pr_author = "Yarwin"
 sort_key = 2025-11-06
-date_time = 2025-11-06T07:39:20Z
-commit_sha = "eafbcd6ee8ce7048c9e858a1c343f45262c4eece"
+date_time = 2025-11-06T08:09:27Z
+commit_sha = "20baefbecf8df3f82b7af0d8f79bffa372d24502"
 +++
 
 Allow to register user defined engine singletons.
