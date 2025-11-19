@@ -18,7 +18,7 @@
 <a href=#18 id=18 data-nosnippet>18</a><span class="kw">pub use </span><span class="kw">super</span>::meta::{FromGodot, GodotConvert, ToGodot};
 <a href=#19 id=19 data-nosnippet>19</a><span class="kw">pub use </span><span class="kw">super</span>::obj::{
 <a href=#20 id=20 data-nosnippet>20</a>    AsDyn, Base, DynGd, DynGdMut, DynGdRef, Gd, GdMut, GdRef, GodotClass, Inherits, InstanceId,
-<a href=#21 id=21 data-nosnippet>21</a>    OnEditor, OnReady,
+<a href=#21 id=21 data-nosnippet>21</a>    OnEditor, OnReady, UserSingleton,
 <a href=#22 id=22 data-nosnippet>22</a>};
 <a href=#23 id=23 data-nosnippet>23</a><span class="kw">pub use </span><span class="kw">super</span>::register::property::{Export, PhantomVar, Var};
 <a href=#24 id=24 data-nosnippet>24</a><span class="comment">// Re-export macros.
@@ -34,11 +34,10 @@
 <a href=#34 id=34 data-nosnippet>34</a>    <span class="kw">pub use </span><span class="kw">crate</span>::obj::NewAlloc <span class="kw">as _</span>;
 <a href=#35 id=35 data-nosnippet>35</a>    <span class="kw">pub use </span><span class="kw">crate</span>::obj::NewGd <span class="kw">as _</span>;
 <a href=#36 id=36 data-nosnippet>36</a>    <span class="kw">pub use </span><span class="kw">crate</span>::obj::Singleton <span class="kw">as _</span>; <span class="comment">// singleton()
-<a href=#37 id=37 data-nosnippet>37</a>    </span><span class="kw">pub use </span><span class="kw">crate</span>::obj::UserSingleton <span class="kw">as _</span>;
-<a href=#38 id=38 data-nosnippet>38</a>    <span class="kw">pub use </span><span class="kw">crate</span>::obj::WithBaseField <span class="kw">as _</span>; <span class="comment">// base(), base_mut(), to_gd(), run_deferred(), run_deferred_gd()
-<a href=#39 id=39 data-nosnippet>39</a>    </span><span class="kw">pub use </span><span class="kw">crate</span>::obj::WithSignals <span class="kw">as _</span>; <span class="comment">// Gd::signals()
-<a href=#40 id=40 data-nosnippet>40</a>    </span><span class="kw">pub use </span><span class="kw">crate</span>::obj::WithUserSignals <span class="kw">as _</span>; <span class="comment">// self.signals()
-<a href=#41 id=41 data-nosnippet>41</a></span>}
-<a href=#42 id=42 data-nosnippet>42</a>
-<a href=#43 id=43 data-nosnippet>43</a><span class="kw">pub use </span>trait_reexports::<span class="kw-2">*</span>;
+<a href=#37 id=37 data-nosnippet>37</a>    </span><span class="kw">pub use </span><span class="kw">crate</span>::obj::WithBaseField <span class="kw">as _</span>; <span class="comment">// base(), base_mut(), to_gd(), run_deferred(), run_deferred_gd()
+<a href=#38 id=38 data-nosnippet>38</a>    </span><span class="kw">pub use </span><span class="kw">crate</span>::obj::WithSignals <span class="kw">as _</span>; <span class="comment">// Gd::signals()
+<a href=#39 id=39 data-nosnippet>39</a>    </span><span class="kw">pub use </span><span class="kw">crate</span>::obj::WithUserSignals <span class="kw">as _</span>; <span class="comment">// self.signals()
+<a href=#40 id=40 data-nosnippet>40</a></span>}
+<a href=#41 id=41 data-nosnippet>41</a>
+<a href=#42 id=42 data-nosnippet>42</a><span class="kw">pub use </span>trait_reexports::<span class="kw-2">*</span>;
 </code></pre></div></section></main></body></html>

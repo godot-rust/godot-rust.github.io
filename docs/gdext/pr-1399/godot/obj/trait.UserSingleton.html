@@ -16,6 +16,8 @@ Therefore, user singletons are limited to classes with manual memory management 
 // Ensures that `MyEngineSingleton` is a valid singleton (i.e., a non-refcounted GodotClass).
 </span><span class="kw">impl </span>UserSingleton <span class="kw">for </span>MyEngineSingleton {}
 
+<span class="kw">struct </span>MyExtension;
+
 <span class="attr">#[gdextension]
 </span><span class="kw">unsafe impl </span>ExtensionLibrary <span class="kw">for </span>MyExtension {
     <span class="kw">fn </span>on_stage_init(stage: InitStage) {
@@ -24,14 +26,14 @@ Therefore, user singletons are limited to classes with manual memory management 
             Engine::singleton()
                 .register_singleton(<span class="kw-2">&amp;</span>MyEngineSingleton::class_id().to_string_name(), <span class="kw-2">&amp;</span>obj);
         }
+    }
 
-        <span class="kw">fn </span>on_stage_deinit(stage: InitStage) {
-            <span class="kw">if </span><span class="macro">matches!</span>(stage, InitStage::MainLoop) {
-                <span class="kw">let </span>obj = MyEngineSingleton::singleton();
-                Engine::singleton()
-                    .unregister_singleton(<span class="kw-2">&amp;</span>MyEngineSingleton::class_id().to_string_name());
-                obj.free();
-            }
+    <span class="kw">fn </span>on_stage_deinit(stage: InitStage) {
+        <span class="kw">if </span><span class="macro">matches!</span>(stage, InitStage::MainLoop) {
+            <span class="kw">let </span>obj = MyEngineSingleton::singleton();
+            Engine::singleton()
+                .unregister_singleton(<span class="kw-2">&amp;</span>MyEngineSingleton::class_id().to_string_name());
+            obj.free();
         }
     }
 }</code></pre></div></div></details><h2 id="dyn-compatibility" class="section-header">Dyn Compatibility<a href="#dyn-compatibility" class="anchor">§</a></h2><div class="dyn-compatibility-info"><p>This trait is <b>not</b> <a href="https://doc.rust-lang.org/nightly/reference/items/traits.html#dyn-compatibility">dyn compatible</a>.</p><p><i>In older versions of Rust, dyn compatibility was called "object safety", so this trait is not object safe.</i></p></div><h2 id="implementors" class="section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"></div><script src="../../trait.impl/godot_core/obj/traits/trait.UserSingleton.js" async></script></section></div></main></body></html>
