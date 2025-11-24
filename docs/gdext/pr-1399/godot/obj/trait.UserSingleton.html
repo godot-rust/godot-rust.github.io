@@ -5,7 +5,7 @@ and the editor might crash when using <code>T::singleton()</code>.</p>
 <p>There should be only one instance of a given singleton class in the engine, valid as long as the library is loaded.
 Therefore, user singletons are limited to classes with manual memory management (ones not inheriting from <code>RefCounted</code>).</p>
 <h2 id="registration"><a class="doc-anchor" href="#registration">§</a>Registration</h2>
-<p>Godot-rust provides a way to register given class as an Engine Singleton with <a href="../prelude/derive.GodotClass.html#user-engine-singletons"><code>#[class(singleton)]</code></a>.</p>
+<p>godot-rust provides a way to register given class as an Engine Singleton with <a href="../prelude/derive.GodotClass.html#user-engine-singletons"><code>#[class(singleton)]</code></a>.</p>
 <p>Alternatively, a user singleton can be registered manually:</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
