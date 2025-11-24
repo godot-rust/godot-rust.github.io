@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["BakeError","BakeQuality","EnvironmentMode","GenerateProbes"]};
