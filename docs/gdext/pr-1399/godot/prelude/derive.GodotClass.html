@@ -337,17 +337,17 @@ because we have added a <code>hidden</code> key to the class. This will also pre
 #[class(init, singleton)]
 </span><span class="kw">struct </span>MySingleton {
     my_field: i32,
-    <span class="comment">// Object is default base for `#[class(singleton)]` instead of RefCounted.
+    <span class="comment">// For `#[class(singleton)]`, the default base is Object, not RefCounted.
     </span>base: Base&lt;Object&gt;,
 }
 
 <span class="comment">// Can be accessed like any other engine singleton from the main thread.
 </span><span class="kw">let </span>val = MySingleton::singleton().bind().my_field;</code></pre></div>
-<p>By default, engine singletons inherit from <code>Object</code>, always run in the editor (<code>#[class(tool)]</code>)
-and will never be represented by a placeholder instances.</p>
-<p>During hot reload, user-defined engine singletons will be freed while unloading the library, and then freshly instantiated after class registration.</p>
+<p>By default, engine singletons inherit from <code>Object</code>, always run in the editor (implied <code>#[class(tool)]</code>)
+During hot reload, user-defined singletons never use placeholder instances like other classes. Instead, they are freed while unloading the
+library, and then freshly instantiated during reload, after other classes have been registered.</p>
 <p>GDScript will be prohibited from creating new instances of said class.</p>
-<p>User engine singletons must have an init:</p>
+<p>User-defined singletons must have an <code>init</code> constructor:</p>
 
 <div class="example-wrap compile_fail"><a href="#" class="tooltip" title="This example deliberately fails to compile">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
 #[class(no_init, singleton)]
