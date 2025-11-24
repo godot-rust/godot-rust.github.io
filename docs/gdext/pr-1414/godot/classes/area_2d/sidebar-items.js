@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["SigAreaEntered","SigAreaExited","SigAreaShapeEntered","SigAreaShapeExited","SigBodyEntered","SigBodyExited","SigBodyShapeEntered","SigBodyShapeExited","SignalsOfArea2D","SpaceOverride"]};
