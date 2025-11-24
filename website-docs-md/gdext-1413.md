@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1413/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1413"
 pr_author = "Bromeon"
 sort_key = 2025-11-24
-date_time = 2025-11-24T18:50:56Z
-commit_sha = "88ebf379f31c01464d06c4ff16db5a3c4a968252"
+date_time = 2025-11-24T22:21:04Z
+commit_sha = "2008b2df76df429b875fbbf4adcf4f7afc688b18"
 +++
 
 Separate public and internal `ToGodot` + `FromGodot` traits
