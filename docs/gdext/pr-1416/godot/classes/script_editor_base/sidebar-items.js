@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["SigEditedScriptChanged","SigGoToHelp","SigGoToMethod","SigNameChanged","SigReplaceInFilesRequested","SigRequestHelp","SigRequestOpenScriptAtLine","SigRequestSaveHistory","SigRequestSavePreviousState","SigSearchInFilesRequested","SignalsOfScriptEditorBase"]};
