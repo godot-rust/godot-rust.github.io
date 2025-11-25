@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["ExPlay","ExPlayBackwards","SigAnimationChanged","SigAnimationFinished","SigAnimationLooped","SigFrameChanged","SigSpriteFramesChanged","SignalsOfAnimatedSprite3D"]};
