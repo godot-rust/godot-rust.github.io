@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["ExEditScript","ExGetEditorViewport3d","ExInspectObject","ExOpenSceneFromPath","ExPopupCreateDialog","ExPopupDialog","ExPopupDialogCentered","ExPopupDialogCenteredClamped","ExPopupDialogCenteredRatio","ExPopupMethodSelector","ExPopupNodeSelector","ExPopupPropertySelector","ExPopupQuickOpen","ExRestartEditor","ExSaveSceneAs"]};
