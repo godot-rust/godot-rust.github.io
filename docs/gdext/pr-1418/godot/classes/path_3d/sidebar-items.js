@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["SigCurveChanged","SigDebugColorChanged","SignalsOfPath3D"]};

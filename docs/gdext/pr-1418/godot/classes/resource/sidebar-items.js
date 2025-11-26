@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["DeepDuplicateMode","ExDuplicate","ExDuplicateDeep","SigChanged","SigSetupLocalToSceneRequested","SignalsOfResource"]};
