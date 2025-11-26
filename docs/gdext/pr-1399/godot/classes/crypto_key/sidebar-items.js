@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["ExLoad","ExLoadFromString","ExSave","ExSaveToString"]};
