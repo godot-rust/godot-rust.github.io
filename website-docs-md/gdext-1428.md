@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1428/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1428"
 pr_author = "Bromeon"
 sort_key = 2025-12-03
-date_time = 2025-12-03T12:03:38Z
-commit_sha = "03cd926d60bcbfab237249b797a864ed04c234ec"
+date_time = 2025-12-03T18:31:17Z
+commit_sha = "4cdf57cd39e93be1e4bf1d402f341d7cdc448eb4"
 +++
 
-Rename untyped collections to `VArray` + `VDictionary`
+Rename untyped collections to `VarArray` + `VarDictionary`
