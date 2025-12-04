@@ -74,7 +74,7 @@ is specified). You can however use it with <code>#[var]</code> – just make sur
 </span><span class="kw">impl </span>INode <span class="kw">for </span>MyClass {
     <span class="kw">fn </span>ready(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
        <span class="comment">// self.node is now ready with the node found at path `ChildPath`.
-       </span><span class="macro">assert_eq!</span>(<span class="self">self</span>.auto.get_name(), <span class="string">"ChildPath"</span>.into());
+       </span><span class="macro">assert_eq!</span>(<span class="self">self</span>.auto.get_name(), <span class="string">"ChildPath"</span>);
 
        <span class="comment">// self.manual needs to be initialized manually.
        </span><span class="self">self</span>.manual.init(<span class="number">22</span>);
