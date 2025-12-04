@@ -8,7 +8,7 @@
 <span class="item-spacer"></span>    fn <a href="#method.get_property_list" class="fn">get_property_list</a>(&amp;mut self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../meta/struct.PropertyInfo.html" title="struct godot::meta::PropertyInfo">PropertyInfo</a>&gt; { ... }
 <span class="item-spacer"></span>    fn <a href="#method.validate_property" class="fn">validate_property</a>(&amp;self, property: &amp;mut <a class="struct" href="../meta/struct.PropertyInfo.html" title="struct godot::meta::PropertyInfo">PropertyInfo</a>) { ... }
 <span class="item-spacer"></span>    fn <a href="#method.property_get_revert" class="fn">property_get_revert</a>(&amp;self, property: <a class="struct" href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName">StringName</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a>&gt; { ... }
-<span class="item-spacer"></span>    fn <a href="#method.get_requested_extensions" class="fn">get_requested_extensions</a>(&amp;mut self) -&gt; <a class="struct" href="../prelude/struct.Dictionary.html" title="struct godot::prelude::Dictionary">Dictionary</a> { ... }
+<span class="item-spacer"></span>    fn <a href="#method.get_requested_extensions" class="fn">get_requested_extensions</a>(&amp;mut self) -&gt; <a class="struct" href="../prelude/struct.VarDictionary.html" title="struct godot::prelude::VarDictionary">VarDictionary</a> { ... }
 <span class="item-spacer"></span>    unsafe fn <a href="#method.set_system_properties_and_get_next_pointer_rawptr" class="fn">set_system_properties_and_get_next_pointer_rawptr</a>(
         &amp;mut self,
         next_pointer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
@@ -80,22 +80,22 @@
 <span class="item-spacer"></span>    unsafe fn <a href="#method.set_viewport_composition_layer_and_get_next_pointer_rawptr" class="fn">set_viewport_composition_layer_and_get_next_pointer_rawptr</a>(
         &amp;mut self,
         layer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
-        property_values: <a class="struct" href="../prelude/struct.Dictionary.html" title="struct godot::prelude::Dictionary">Dictionary</a>,
+        property_values: <a class="struct" href="../prelude/struct.VarDictionary.html" title="struct godot::prelude::VarDictionary">VarDictionary</a>,
         next_pointer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a> { ... }
 <span class="item-spacer"></span>    fn <a href="#method.get_viewport_composition_layer_extension_properties" class="fn">get_viewport_composition_layer_extension_properties</a>(
         &amp;mut self,
-    ) -&gt; <a class="struct" href="../prelude/struct.Array.html" title="struct godot::prelude::Array">Array</a>&lt;<a class="struct" href="../prelude/struct.Dictionary.html" title="struct godot::prelude::Dictionary">Dictionary</a>&gt; { ... }
+    ) -&gt; <a class="struct" href="../prelude/struct.Array.html" title="struct godot::prelude::Array">Array</a>&lt;<a class="struct" href="../prelude/struct.VarDictionary.html" title="struct godot::prelude::VarDictionary">VarDictionary</a>&gt; { ... }
 <span class="item-spacer"></span>    fn <a href="#method.get_viewport_composition_layer_extension_property_defaults" class="fn">get_viewport_composition_layer_extension_property_defaults</a>(
         &amp;mut self,
-    ) -&gt; <a class="struct" href="../prelude/struct.Dictionary.html" title="struct godot::prelude::Dictionary">Dictionary</a> { ... }
+    ) -&gt; <a class="struct" href="../prelude/struct.VarDictionary.html" title="struct godot::prelude::VarDictionary">VarDictionary</a> { ... }
 <span class="item-spacer"></span>    unsafe fn <a href="#method.on_viewport_composition_layer_destroyed_rawptr" class="fn">on_viewport_composition_layer_destroyed_rawptr</a>(
         &amp;mut self,
         layer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
     ) { ... }
 <span class="item-spacer"></span>    unsafe fn <a href="#method.set_android_surface_swapchain_create_info_and_get_next_pointer_rawptr" class="fn">set_android_surface_swapchain_create_info_and_get_next_pointer_rawptr</a>(
         &amp;mut self,
-        property_values: <a class="struct" href="../prelude/struct.Dictionary.html" title="struct godot::prelude::Dictionary">Dictionary</a>,
+        property_values: <a class="struct" href="../prelude/struct.VarDictionary.html" title="struct godot::prelude::VarDictionary">VarDictionary</a>,
         next_pointer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a> { ... }
 </details>}</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><h2 id="interface-trait-for-class-openxrextensionwrapperextension"><a class="doc-anchor" href="#interface-trait-for-class-openxrextensionwrapperextension">§</a>Interface trait for class <a href="struct.OpenXrExtensionWrapperExtension.html" title="struct godot::classes::OpenXrExtensionWrapperExtension"><code>OpenXrExtensionWrapperExtension</code></a>.</h2>
@@ -154,7 +154,7 @@ Every property info goes through this method, except properties <strong>added</s
 function will usually be called twice by Godot to find the revert.</p>
 <p>Note that this should be a <em>pure</em> function. That is, it should always return the same value for a property as long as <code>self</code>
 remains unchanged. Otherwise, this may lead to unexpected (safe) behavior.</p>
-</div></details><section id="method.get_requested_extensions" class="method"><h4 class="code-header">fn <a href="#method.get_requested_extensions" class="fn">get_requested_extensions</a>(&amp;mut self) -&gt; <a class="struct" href="../prelude/struct.Dictionary.html" title="struct godot::prelude::Dictionary">Dictionary</a></h4></section><details class="toggle method-toggle" open><summary><section id="method.set_system_properties_and_get_next_pointer_rawptr" class="method"><h4 class="code-header">unsafe fn <a href="#method.set_system_properties_and_get_next_pointer_rawptr" class="fn">set_system_properties_and_get_next_pointer_rawptr</a>(
+</div></details><section id="method.get_requested_extensions" class="method"><h4 class="code-header">fn <a href="#method.get_requested_extensions" class="fn">get_requested_extensions</a>(&amp;mut self) -&gt; <a class="struct" href="../prelude/struct.VarDictionary.html" title="struct godot::prelude::VarDictionary">VarDictionary</a></h4></section><details class="toggle method-toggle" open><summary><section id="method.set_system_properties_and_get_next_pointer_rawptr" class="method"><h4 class="code-header">unsafe fn <a href="#method.set_system_properties_and_get_next_pointer_rawptr" class="fn">set_system_properties_and_get_next_pointer_rawptr</a>(
     &amp;mut self,
     next_pointer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></h4></section></summary><div class="docblock"><h5 id="safety"><a class="doc-anchor" href="#safety">§</a>Safety</h5>
@@ -223,16 +223,16 @@ If Godot does not document any safety requirements, make sure you understand the
 </div></details><details class="toggle method-toggle" open><summary><section id="method.set_viewport_composition_layer_and_get_next_pointer_rawptr" class="method"><h4 class="code-header">unsafe fn <a href="#method.set_viewport_composition_layer_and_get_next_pointer_rawptr" class="fn">set_viewport_composition_layer_and_get_next_pointer_rawptr</a>(
     &amp;mut self,
     layer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
-    property_values: <a class="struct" href="../prelude/struct.Dictionary.html" title="struct godot::prelude::Dictionary">Dictionary</a>,
+    property_values: <a class="struct" href="../prelude/struct.VarDictionary.html" title="struct godot::prelude::VarDictionary">VarDictionary</a>,
     next_pointer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></h4></section></summary><div class="docblock"><h5 id="safety-11"><a class="doc-anchor" href="#safety-11">§</a>Safety</h5>
 <p>This method has automatically been marked <code>unsafe</code> because it accepts raw pointers as parameters.
 If Godot does not document any safety requirements, make sure you understand the underlying semantics.</p>
 </div></details><section id="method.get_viewport_composition_layer_extension_properties" class="method"><h4 class="code-header">fn <a href="#method.get_viewport_composition_layer_extension_properties" class="fn">get_viewport_composition_layer_extension_properties</a>(
     &amp;mut self,
-) -&gt; <a class="struct" href="../prelude/struct.Array.html" title="struct godot::prelude::Array">Array</a>&lt;<a class="struct" href="../prelude/struct.Dictionary.html" title="struct godot::prelude::Dictionary">Dictionary</a>&gt;</h4></section><section id="method.get_viewport_composition_layer_extension_property_defaults" class="method"><h4 class="code-header">fn <a href="#method.get_viewport_composition_layer_extension_property_defaults" class="fn">get_viewport_composition_layer_extension_property_defaults</a>(
+) -&gt; <a class="struct" href="../prelude/struct.Array.html" title="struct godot::prelude::Array">Array</a>&lt;<a class="struct" href="../prelude/struct.VarDictionary.html" title="struct godot::prelude::VarDictionary">VarDictionary</a>&gt;</h4></section><section id="method.get_viewport_composition_layer_extension_property_defaults" class="method"><h4 class="code-header">fn <a href="#method.get_viewport_composition_layer_extension_property_defaults" class="fn">get_viewport_composition_layer_extension_property_defaults</a>(
     &amp;mut self,
-) -&gt; <a class="struct" href="../prelude/struct.Dictionary.html" title="struct godot::prelude::Dictionary">Dictionary</a></h4></section><details class="toggle method-toggle" open><summary><section id="method.on_viewport_composition_layer_destroyed_rawptr" class="method"><h4 class="code-header">unsafe fn <a href="#method.on_viewport_composition_layer_destroyed_rawptr" class="fn">on_viewport_composition_layer_destroyed_rawptr</a>(
+) -&gt; <a class="struct" href="../prelude/struct.VarDictionary.html" title="struct godot::prelude::VarDictionary">VarDictionary</a></h4></section><details class="toggle method-toggle" open><summary><section id="method.on_viewport_composition_layer_destroyed_rawptr" class="method"><h4 class="code-header">unsafe fn <a href="#method.on_viewport_composition_layer_destroyed_rawptr" class="fn">on_viewport_composition_layer_destroyed_rawptr</a>(
     &amp;mut self,
     layer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
 )</h4></section></summary><div class="docblock"><h5 id="safety-12"><a class="doc-anchor" href="#safety-12">§</a>Safety</h5>
@@ -240,7 +240,7 @@ If Godot does not document any safety requirements, make sure you understand the
 If Godot does not document any safety requirements, make sure you understand the underlying semantics.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.set_android_surface_swapchain_create_info_and_get_next_pointer_rawptr" class="method"><h4 class="code-header">unsafe fn <a href="#method.set_android_surface_swapchain_create_info_and_get_next_pointer_rawptr" class="fn">set_android_surface_swapchain_create_info_and_get_next_pointer_rawptr</a>(
     &amp;mut self,
-    property_values: <a class="struct" href="../prelude/struct.Dictionary.html" title="struct godot::prelude::Dictionary">Dictionary</a>,
+    property_values: <a class="struct" href="../prelude/struct.VarDictionary.html" title="struct godot::prelude::VarDictionary">VarDictionary</a>,
     next_pointer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></h4></section></summary><div class="docblock"><h5 id="safety-13"><a class="doc-anchor" href="#safety-13">§</a>Safety</h5>
 <p>This method has automatically been marked <code>unsafe</code> because it accepts raw pointers as parameters.

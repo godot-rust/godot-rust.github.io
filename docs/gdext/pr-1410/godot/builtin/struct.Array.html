@@ -6,7 +6,7 @@ For space-efficient storage, consider using <a href="../prelude/struct.PackedArr
 <h2 id="typed-arrays"><a class="doc-anchor" href="#typed-arrays">§</a>Typed arrays</h2>
 <p>Godot’s <code>Array</code> can be either typed or untyped.</p>
 <p>An untyped array can contain any kind of <a href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant"><code>Variant</code></a>, even different types in the same array.
-We represent this in Rust as <code>VariantArray</code>, which is just a type alias for <code>Array&lt;Variant&gt;</code>.</p>
+We represent this in Rust as <code>VarArray</code>, which is just a type alias for <code>Array&lt;Variant&gt;</code>.</p>
 <p>Godot also supports typed arrays, which are also just <code>Variant</code> arrays under the hood, but with
 runtime checks, so that no values of the wrong type are inserted into the array. We represent this as
 <code>Array&lt;T&gt;</code>, where the type <code>T</code> must implement <code>ArrayElement</code>. Some types like <code>Array&lt;T&gt;</code> cannot
@@ -47,8 +47,8 @@ cloned.set(<span class="number">0</span>, <span class="number">50</span>); <span
 // Changes will be reflected in the original array.
 </span><span class="macro">assert_eq!</span>(array.len(), <span class="number">1</span>);
 <span class="macro">assert_eq!</span>(array.front(), <span class="prelude-val">Some</span>(<span class="number">50</span>));</code></pre></div><h2 id="untyped-array-example"><a class="doc-anchor" href="#untyped-array-example">§</a>Untyped array example</h2>
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="comment">// VariantArray allows dynamic element types.
-</span><span class="kw">let </span><span class="kw-2">mut </span>array = VariantArray::new();
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="comment">// VarArray allows dynamic element types.
+</span><span class="kw">let </span><span class="kw-2">mut </span>array = VarArray::new();
 array.push(<span class="kw-2">&amp;</span><span class="number">10</span>.to_variant());
 array.push(<span class="kw-2">&amp;</span><span class="string">"Hello"</span>.to_variant());
 
