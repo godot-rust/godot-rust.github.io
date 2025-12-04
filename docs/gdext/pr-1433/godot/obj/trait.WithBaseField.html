@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Trait that is automatically implemented for user classes containing a `Base&#60;T&#62;` field."><title>WithBaseField in godot::obj - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-ca0dd0c4.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="godot" data-themes="" data-resource-suffix="" data-rustdoc-version="1.93.0-nightly (83e49b75e 2025-12-03)" data-channel="nightly" data-search-js="search-9e2438ea.js" data-stringdex-js="stringdex-a3946164.js" data-settings-js="settings-c38705f0.js" ><script src="../../static.files/storage-e2aeef58.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-a410ff4d.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-263c88ec.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-eab170b8.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc trait"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><rustdoc-topbar><h2><a href="#">WithBaseField</a></h2></rustdoc-topbar><nav class="sidebar"><div class="sidebar-crate"><a class="logo-container" href="../../godot/index.html"><img src="https://raw.githubusercontent.com/godot-rust/assets/master/gdext/ferris.svg" alt="logo"></a><h2><a href="../../godot/index.html">godot</a><span class="version">Pull Request #1433</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">With<wbr>Base<wbr>Field</a></h2><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#usage-as-a-bound" title="Usage as a bound">Usage as a bound</a></li></ul><h3><a href="#required-methods">Required Methods</a></h3><ul class="block"><li><a href="#tymethod.to_gd" title="to_gd">to_gd</a></li></ul><h3><a href="#provided-methods">Provided Methods</a></h3><ul class="block"><li><a href="#method.apply_deferred" title="apply_deferred">apply_deferred</a></li><li><a href="#method.base" title="base">base</a></li><li><a href="#method.base_mut" title="base_mut">base_mut</a></li><li><a href="#method.run_deferred" title="run_deferred">run_deferred</a></li><li><a href="#method.run_deferred_gd" title="run_deferred_gd">run_deferred_gd</a></li></ul><h3><a href="#dyn-compatibility">Dyn Compatibility</a></h3><h3><a href="#implementors">Implementors</a></h3></section><div id="rustdoc-modnav"><h2><a href="index.html">In godot::<wbr>obj</a></h2></div></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><div class="width-limiter"><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../index.html">godot</a>::<wbr><a href="index.html">obj</a></div><h1>Trait <span class="trait">With<wbr>Base<wbr>Field</span>&nbsp;<button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"></span></div><pre class="rust item-decl"><code>pub trait WithBaseField: <a class="trait" href="../prelude/trait.GodotClass.html" title="trait godot::prelude::GodotClass">GodotClass</a>&lt;Declarer = <a class="enum" href="bounds/enum.DeclUser.html" title="enum godot::obj::bounds::DeclUser">DeclUser</a>&gt; + <a class="trait" href="trait.Bounds.html" title="trait godot::obj::Bounds">Bounds</a> {
+    // Required method
+    fn <a href="#tymethod.to_gd" class="fn">to_gd</a>(&amp;self) -&gt; <a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;Self&gt;;
+
+    // Provided methods
+    fn <a href="#method.base" class="fn">base</a>(&amp;self) -&gt; <a class="struct" href="struct.BaseRef.html" title="struct godot::obj::BaseRef">BaseRef</a>&lt;'_, Self&gt; { ... }
+<span class="item-spacer"></span>    fn <a href="#method.base_mut" class="fn">base_mut</a>(&amp;mut self) -&gt; <a class="struct" href="struct.BaseMut.html" title="struct godot::obj::BaseMut">BaseMut</a>&lt;'_, Self&gt; { ... }
+<span class="item-spacer"></span>    fn <a href="#method.run_deferred" class="fn">run_deferred</a>&lt;F&gt;(&amp;mut self, mut_self_method: F)
+       <span class="where">where F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnOnce.html" title="trait core::ops::function::FnOnce">FnOnce</a>(&amp;mut Self) + 'static</span> { ... }
+<span class="item-spacer"></span>    fn <a href="#method.run_deferred_gd" class="fn">run_deferred_gd</a>&lt;F&gt;(&amp;mut self, gd_function: F)
+       <span class="where">where F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnOnce.html" title="trait core::ops::function::FnOnce">FnOnce</a>(<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;Self&gt;) + 'static</span> { ... }
+<span class="item-spacer"></span>    fn <a href="#method.apply_deferred" class="fn">apply_deferred</a>&lt;F&gt;(&amp;mut self, rust_function: F)
+       <span class="where">where F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnOnce.html" title="trait core::ops::function::FnOnce">FnOnce</a>(&amp;mut Self) + 'static</span> { ... }
+}</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Trait that is automatically implemented for user classes containing a <code>Base&lt;T&gt;</code> field.</p>
+<p>Gives direct access to the containing <code>Gd&lt;Self&gt;</code> from <code>self</code>.</p>
+<h2 id="usage-as-a-bound"><a class="doc-anchor" href="#usage-as-a-bound">§</a>Usage as a bound</h2>
+<p>In order to call <code>base()</code> or <code>base_mut()</code> within a function or on a type you define, you need a <code>WithBaseField&lt;Base = T&gt;</code> bound,
+where <code>T</code> is the base class of your type.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">fn </span>some_fn&lt;T&gt;(value: <span class="kw-2">&amp;</span>T)
+<span class="kw">where
+    </span>T: WithBaseField&lt;Base = Node3D&gt;,
+{
+    <span class="kw">let </span>base = value.base();
+    <span class="kw">let </span>pos = base.get_position();
+}</code></pre></div></div></details><h2 id="required-methods" class="section-header">Required Methods<a href="#required-methods" class="anchor">§</a></h2><div class="methods"><details class="toggle method-toggle" open><summary><section id="tymethod.to_gd" class="method"><h4 class="code-header">fn <a href="#tymethod.to_gd" class="fn">to_gd</a>(&amp;self) -&gt; <a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;Self&gt;</h4></section></summary><div class="docblock"><p>Returns the <code>Gd</code> pointer containing this object.</p>
+<p>This is intended to be stored or passed to engine methods. You cannot call <code>bind()</code> or <code>bind_mut()</code> on it, while the method
+calling <code>to_gd()</code> is still running; that would lead to a double borrow panic.</p>
+<h5 id="panics"><a class="doc-anchor" href="#panics">§</a>Panics</h5>
+<p>If called during initialization (the <code>init()</code> function or <code>Gd::from_init_fn()</code>). Use <a href="../prelude/struct.Base.html#method.to_init_gd" title="method godot::prelude::Base::to_init_gd"><code>Base::to_init_gd()</code></a> instead.</p>
+</div></details></div><h2 id="provided-methods" class="section-header">Provided Methods<a href="#provided-methods" class="anchor">§</a></h2><div class="methods"><details class="toggle method-toggle" open><summary><section id="method.base" class="method"><h4 class="code-header">fn <a href="#method.base" class="fn">base</a>(&amp;self) -&gt; <a class="struct" href="struct.BaseRef.html" title="struct godot::obj::BaseRef">BaseRef</a>&lt;'_, Self&gt;</h4></section></summary><div class="docblock"><p>Returns a shared reference guard, suitable for calling <code>&amp;self</code> engine methods on this object.</p>
+<p>Holding a shared guard prevents other code paths from obtaining a <em>mutable</em> reference to <code>self</code>, as such it is recommended to drop the
+guard as soon as you no longer need it.</p>
+<h5 id="examples"><a class="doc-anchor" href="#examples">§</a>Examples</h5>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
+
+<span class="attr">#[derive(GodotClass)]
+#[class(init, base=Node)]
+</span><span class="kw">struct </span>MyClass {
+    base: Base&lt;Node&gt;,
+}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>INode <span class="kw">for </span>MyClass {
+    <span class="kw">fn </span>process(<span class="kw-2">&amp;mut </span><span class="self">self</span>, _delta: f32) {
+        <span class="kw">let </span>name = <span class="self">self</span>.base().get_name();
+        <span class="macro">godot_print!</span>(<span class="string">"name is {name}"</span>);
+    }
+}</code></pre></div>
+<p>However, we cannot call methods that require <code>&amp;mut Base</code>, such as
+<a href="../prelude/struct.Node.html#method.add_child" title="method godot::prelude::Node::add_child"><code>Node::add_child()</code></a>.</p>
+
+<div class="example-wrap compile_fail"><a href="#" class="tooltip" title="This example deliberately fails to compile">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
+
+<span class="attr">#[derive(GodotClass)]
+#[class(init, base = Node)]
+</span><span class="kw">struct </span>MyClass {
+    <span class="doccomment">///     base: Base&lt;Node&gt;,
+</span>}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>INode <span class="kw">for </span>MyClass {
+    <span class="kw">fn </span>process(<span class="kw-2">&amp;mut </span><span class="self">self</span>, _delta: f32) {
+        <span class="kw">let </span>node = Node::new_alloc();
+        <span class="comment">// fails because `add_child` requires a mutable reference.
+        </span><span class="self">self</span>.base().add_child(<span class="kw-2">&amp;</span>node);
+    }
+}
+
+</code></pre></div>
+<p>For this, use <a href="trait.WithBaseField.html#method.base_mut" title="method godot::obj::WithBaseField::base_mut"><code>base_mut()</code></a> instead.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.base_mut" class="method"><h4 class="code-header">fn <a href="#method.base_mut" class="fn">base_mut</a>(&amp;mut self) -&gt; <a class="struct" href="struct.BaseMut.html" title="struct godot::obj::BaseMut">BaseMut</a>&lt;'_, Self&gt;</h4></section></summary><div class="docblock"><p>Returns an exclusive reference guard, suitable for calling <code>&amp;self</code>/<code>&amp;mut self</code> engine methods on this object.</p>
+<p>This method will allow you to call back into the same object from Godot – something that <a href="trait.WithBaseField.html#tymethod.to_gd" title="method godot_core::obj::traits::WithBaseField::to_gd::to_gd"><code>to_gd()</code></a> does not allow.
+You have to keep the <code>BaseMut</code> guard bound for the entire duration the engine might re-enter a function of your class. The guard
+temporarily absorbs the <code>&amp;mut self</code> reference, which allows for an additional exclusive (mutable) reference to be acquired.</p>
+<p>Holding an exclusive guard prevents other code paths from obtaining <em>any</em> reference to <code>self</code>, as such it is recommended to drop the
+guard as soon as you no longer need it.</p>
+<h5 id="examples-1"><a class="doc-anchor" href="#examples-1">§</a>Examples</h5>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
+#[class(init, base = Node)]
+</span><span class="kw">struct </span>MyClass {
+    base: Base&lt;Node&gt;,
+}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>INode <span class="kw">for </span>MyClass {
+    <span class="kw">fn </span>process(<span class="kw-2">&amp;mut </span><span class="self">self</span>, _delta: f32) {
+        <span class="kw">let </span>node = Node::new_alloc();
+        <span class="self">self</span>.base_mut().add_child(<span class="kw-2">&amp;</span>node);
+    }
+}
+
+</code></pre></div>
+<p>We can call back into <code>self</code> through Godot:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
+#[class(init, base=Node)]
+</span><span class="kw">struct </span>MyClass {
+    base: Base&lt;Node&gt;,
+}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>INode <span class="kw">for </span>MyClass {
+    <span class="kw">fn </span>process(<span class="kw-2">&amp;mut </span><span class="self">self</span>, _delta: f32) {
+        <span class="self">self</span>.base_mut().call(<span class="string">"other_method"</span>, <span class="kw-2">&amp;</span>[]);
+    }
+}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>MyClass {
+    <span class="attr">#[func]
+    </span><span class="kw">fn </span>other_method(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {}
+}</code></pre></div>
+<p>Rust’s borrow checking rules are enforced if you try to overlap <code>base_mut()</code> calls:</p>
+
+<div class="example-wrap compile_fail"><a href="#" class="tooltip" title="This example deliberately fails to compile">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="comment">// error[E0499]: cannot borrow `*self` as mutable more than once at a time
+
+</span><span class="kw">fn </span>method(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
+    <span class="kw">let </span><span class="kw-2">mut </span>a = <span class="self">self</span>.base_mut();
+    <span class="comment">//          ---- first mutable borrow occurs here
+    </span><span class="kw">let </span><span class="kw-2">mut </span>b = <span class="self">self</span>.base_mut();
+    <span class="comment">//          ^^^^ second mutable borrow occurs here
+</span>}</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.run_deferred" class="method"><h4 class="code-header">fn <a href="#method.run_deferred" class="fn">run_deferred</a>&lt;F&gt;(&amp;mut self, mut_self_method: F)<div class="where">where
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnOnce.html" title="trait core::ops::function::FnOnce">FnOnce</a>(&amp;mut Self) + 'static,</div></h4></section></summary><div class="docblock"><p>Defers the given closure to run during <a href="https://docs.godotengine.org/en/stable/classes/class_object.html#class-object-method-call-deferred">idle time</a>.</p>
+<p>This is a type-safe alternative to <a href="../prelude/struct.Object.html#method.call_deferred" title="method godot::prelude::Object::call_deferred"><code>Object::call_deferred()</code></a>. The closure receives
+<code>&amp;mut Self</code> allowing direct access to Rust fields and methods.</p>
+<p>See also <a href="../prelude/struct.Gd.html#method.run_deferred" title="method godot::prelude::Gd::run_deferred"><code>Gd::run_deferred()</code></a> to defer logic outside of <code>self</code>.</p>
+<h5 id="panics-1"><a class="doc-anchor" href="#panics-1">§</a>Panics</h5>
+<p>If called outside the main thread.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.run_deferred_gd" class="method"><h4 class="code-header">fn <a href="#method.run_deferred_gd" class="fn">run_deferred_gd</a>&lt;F&gt;(&amp;mut self, gd_function: F)<div class="where">where
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnOnce.html" title="trait core::ops::function::FnOnce">FnOnce</a>(<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;Self&gt;) + 'static,</div></h4></section></summary><div class="docblock"><p>Defers the given closure to run during <a href="https://docs.godotengine.org/en/stable/classes/class_object.html#class-object-method-call-deferred">idle time</a>.</p>
+<p>This is a type-safe alternative to <a href="../prelude/struct.Object.html#method.call_deferred" title="method godot::prelude::Object::call_deferred"><code>Object::call_deferred()</code></a>. The closure receives
+<code>Gd&lt;Self&gt;</code>, which can be used to call engine methods or <a href="../prelude/struct.Gd.html#method.bind" title="method godot::prelude::Gd::bind"><code>bind()</code></a>/<a href="../prelude/struct.Gd.html#method.bind_mut" title="method godot::prelude::Gd::bind_mut"><code>bind_mut()</code></a> to access the Rust object.</p>
+<p>See also <a href="../prelude/struct.Gd.html#method.run_deferred_gd" title="method godot::prelude::Gd::run_deferred_gd"><code>Gd::run_deferred_gd()</code></a> to defer logic outside of <code>self</code>.</p>
+<h5 id="panics-2"><a class="doc-anchor" href="#panics-2">§</a>Panics</h5>
+<p>If called outside the main thread.</p>
+</div></details><section id="method.apply_deferred" class="method"><h4 class="code-header">fn <a href="#method.apply_deferred" class="fn">apply_deferred</a>&lt;F&gt;(&amp;mut self, rust_function: F)<div class="where">where
+    F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnOnce.html" title="trait core::ops::function::FnOnce">FnOnce</a>(&amp;mut Self) + 'static,</div></h4></section><span class="item-info"><div class="stab deprecated"><span class="emoji">👎</span><span>Deprecated: Split into <code>run_deferred()</code> + <code>run_deferred_gd()</code>.</span></div></span></div><h2 id="dyn-compatibility" class="section-header">Dyn Compatibility<a href="#dyn-compatibility" class="anchor">§</a></h2><div class="dyn-compatibility-info"><p>This trait is <b>not</b> <a href="https://doc.rust-lang.org/nightly/reference/items/traits.html#dyn-compatibility">dyn compatible</a>.</p><p><i>In older versions of Rust, dyn compatibility was called "object safety", so this trait is not object safe.</i></p></div><h2 id="implementors" class="section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"></div><script src="../../trait.impl/godot_core/obj/traits/trait.WithBaseField.js" async></script></section></div></main></body></html>
