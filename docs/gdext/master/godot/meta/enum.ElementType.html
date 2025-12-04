@@ -4,9 +4,13 @@
     Class(<a class="struct" href="struct.ClassId.html" title="struct godot::meta::ClassId">ClassId</a>),
     ScriptClass(<a class="struct" href="struct.ElementScript.html" title="struct godot::meta::ElementScript">ElementScript</a>),
 }</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Dynamic type information of Godot arrays and dictionaries.</p>
-<p>Used by <a href="../prelude/struct.Array.html#method.element_type" title="method godot::prelude::Array::element_type"><code>Array::element_type()</code></a>, dictionary key/value type methods,
-and other type introspection functionality.</p>
-<p>While Rust’s type parameters provide compile-time type information, this method can give additional RTTI (runtime type information).
+<p>Used in the following APIs:</p>
+<ul>
+<li><a href="../prelude/struct.AnyArray.html#method.element_type" title="method godot::prelude::AnyArray::element_type"><code>AnyArray::element_type()</code></a></li>
+<li><a href="../prelude/struct.VarDictionary.html#method.key_element_type" title="method godot::prelude::VarDictionary::key_element_type"><code>Dictionary::key_element_type()</code></a></li>
+<li><a href="../prelude/struct.VarDictionary.html#method.value_element_type" title="method godot::prelude::VarDictionary::value_element_type"><code>Dictionary::value_element_type()</code></a></li>
+</ul>
+<p>While Rust’s type parameters provide compile-time type information, this method supplies additional RTTI (runtime type information).
 For example, <code>Array&lt;Gd&lt;RefCounted&gt;&gt;</code> may store classes or scripts derived from <code>RefCounted</code>.</p>
 </div></details><h2 id="variants" class="variants section-header">Variants<a href="#variants" class="anchor">§</a></h2><div class="variants"><section id="variant.Untyped" class="variant"><a href="#variant.Untyped" class="anchor">§</a><h3 class="code-header">Untyped</h3></section><div class="docblock"><p>Untyped array/dictionary that can contain any <code>Variant</code>.</p>
 </div><section id="variant.Builtin" class="variant"><a href="#variant.Builtin" class="anchor">§</a><h3 class="code-header">Builtin(<a class="struct" href="../prelude/struct.VariantType.html" title="struct godot::prelude::VariantType">VariantType</a>)</h3></section><div class="docblock"><p>Typed array with built-in type (e.g., <code>Array&lt;i64&gt;</code>, <code>Array&lt;GString&gt;</code>).</p>
