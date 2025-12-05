@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1433/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1433"
 pr_author = "Bromeon"
 sort_key = 2025-12-05
-date_time = 2025-12-05T10:20:42Z
-commit_sha = "35fa6cd68d28ab5ea8aa69560a42af02a899fd32"
+date_time = 2025-12-05T10:56:31Z
+commit_sha = "25dd045b1a04dcbca199095d100687c41950ed7d"
 +++
 
 Improve `Array` <-> `PackedArray` conversions
