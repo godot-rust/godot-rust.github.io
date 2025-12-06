@@ -2,13 +2,13 @@
 <details class="toggle type-contents-toggle"><summary class="hideme"><span>Show 20 methods</span></summary>    // Required methods
     unsafe fn <a href="#tymethod.mix_resampled_rawptr" class="fn">mix_resampled_rawptr</a>(
         &amp;mut self,
-        dst_buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.AudioFrame.html" title="struct godot::classes::native::AudioFrame">AudioFrame</a>,
+        dst_buffer: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.AudioFrame.html" title="struct godot::classes::native::AudioFrame">AudioFrame</a>&gt;,
         frame_count: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>;
 <span class="item-spacer"></span>    fn <a href="#tymethod.get_stream_sampling_rate" class="fn">get_stream_sampling_rate</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>;
 <span class="item-spacer"></span>    unsafe fn <a href="#tymethod.mix_rawptr" class="fn">mix_rawptr</a>(
         &amp;mut self,
-        buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.AudioFrame.html" title="struct godot::classes::native::AudioFrame">AudioFrame</a>,
+        buffer: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.AudioFrame.html" title="struct godot::classes::native::AudioFrame">AudioFrame</a>&gt;,
         rate_scale: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>,
         frames: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>;
@@ -38,14 +38,14 @@
 <p>See also <a href="https://docs.godotengine.org/en/stable/classes/class_audiostreamplaybackoggvorbis.html#methods">Godot docs for <code>AudioStreamPlaybackOggVorbis</code> methods</a>.</p>
 </div></details><h2 id="required-methods" class="section-header">Required Methods<a href="#required-methods" class="anchor">§</a></h2><div class="methods"><details class="toggle method-toggle" open><summary><section id="tymethod.mix_resampled_rawptr" class="method"><h4 class="code-header">unsafe fn <a href="#tymethod.mix_resampled_rawptr" class="fn">mix_resampled_rawptr</a>(
     &amp;mut self,
-    dst_buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.AudioFrame.html" title="struct godot::classes::native::AudioFrame">AudioFrame</a>,
+    dst_buffer: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.AudioFrame.html" title="struct godot::classes::native::AudioFrame">AudioFrame</a>&gt;,
     frame_count: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></h4></section></summary><div class="docblock"><h5 id="safety"><a class="doc-anchor" href="#safety">§</a>Safety</h5>
 <p>This method has automatically been marked <code>unsafe</code> because it accepts raw pointers as parameters.
 If Godot does not document any safety requirements, make sure you understand the underlying semantics.</p>
 </div></details><section id="tymethod.get_stream_sampling_rate" class="method"><h4 class="code-header">fn <a href="#tymethod.get_stream_sampling_rate" class="fn">get_stream_sampling_rate</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a></h4></section><details class="toggle method-toggle" open><summary><section id="tymethod.mix_rawptr" class="method"><h4 class="code-header">unsafe fn <a href="#tymethod.mix_rawptr" class="fn">mix_rawptr</a>(
     &amp;mut self,
-    buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.AudioFrame.html" title="struct godot::classes::native::AudioFrame">AudioFrame</a>,
+    buffer: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.AudioFrame.html" title="struct godot::classes::native::AudioFrame">AudioFrame</a>&gt;,
     rate_scale: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>,
     frames: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></h4></section></summary><div class="docblock"><h5 id="safety-1"><a class="doc-anchor" href="#safety-1">§</a>Safety</h5>
