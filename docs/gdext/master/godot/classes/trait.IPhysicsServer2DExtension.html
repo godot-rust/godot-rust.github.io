@@ -21,9 +21,9 @@
         shape_B: <a class="enum" href="../prelude/enum.Rid.html" title="enum godot::prelude::Rid">Rid</a>,
         xform_B: <a class="struct" href="../prelude/struct.Transform2D.html" title="struct godot::prelude::Transform2D">Transform2D</a>,
         motion_B: <a class="struct" href="../prelude/struct.Vector2.html" title="struct godot::prelude::Vector2">Vector2</a>,
-        results: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        results: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>&gt;,
         result_max: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
-        result_count: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+        result_count: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>&gt;,
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
 <span class="item-spacer"></span>    fn <a href="#tymethod.space_create" class="fn">space_create</a>(&amp;mut self) -&gt; <a class="enum" href="../prelude/enum.Rid.html" title="enum godot::prelude::Rid">Rid</a>;
 <span class="item-spacer"></span>    fn <a href="#tymethod.space_set_active" class="fn">space_set_active</a>(&amp;mut self, space: <a class="enum" href="../prelude/enum.Rid.html" title="enum godot::prelude::Rid">Rid</a>, active: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
@@ -200,9 +200,9 @@
         shape: <a class="enum" href="../prelude/enum.Rid.html" title="enum godot::prelude::Rid">Rid</a>,
         shape_xform: <a class="struct" href="../prelude/struct.Transform2D.html" title="struct godot::prelude::Transform2D">Transform2D</a>,
         motion: <a class="struct" href="../prelude/struct.Vector2.html" title="struct godot::prelude::Vector2">Vector2</a>,
-        results: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        results: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>&gt;,
         result_max: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
-        result_count: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+        result_count: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>&gt;,
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
 <span class="item-spacer"></span>    fn <a href="#tymethod.body_set_pickable" class="fn">body_set_pickable</a>(&amp;mut self, body: <a class="enum" href="../prelude/enum.Rid.html" title="enum godot::prelude::Rid">Rid</a>, pickable: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
 <span class="item-spacer"></span>    fn <a href="#tymethod.body_get_direct_state" class="fn">body_get_direct_state</a>(
@@ -217,7 +217,7 @@
         margin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>,
         collide_separation_ray: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
         recovery_as_collision: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-        result: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionMotionResult.html" title="struct godot::classes::native::PhysicsServer2DExtensionMotionResult">PhysicsServer2DExtensionMotionResult</a>,
+        result: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionMotionResult.html" title="struct godot::classes::native::PhysicsServer2DExtensionMotionResult">PhysicsServer2DExtensionMotionResult</a>&gt;,
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
 <span class="item-spacer"></span>    fn <a href="#tymethod.joint_create" class="fn">joint_create</a>(&amp;mut self) -&gt; <a class="enum" href="../prelude/enum.Rid.html" title="enum godot::prelude::Rid">Rid</a>;
 <span class="item-spacer"></span>    fn <a href="#tymethod.joint_clear" class="fn">joint_clear</a>(&amp;mut self, joint: <a class="enum" href="../prelude/enum.Rid.html" title="enum godot::prelude::Rid">Rid</a>);
@@ -313,9 +313,9 @@
     shape_B: <a class="enum" href="../prelude/enum.Rid.html" title="enum godot::prelude::Rid">Rid</a>,
     xform_B: <a class="struct" href="../prelude/struct.Transform2D.html" title="struct godot::prelude::Transform2D">Transform2D</a>,
     motion_B: <a class="struct" href="../prelude/struct.Vector2.html" title="struct godot::prelude::Vector2">Vector2</a>,
-    results: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    results: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>&gt;,
     result_max: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
-    result_count: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    result_count: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>&gt;,
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><h5 id="safety"><a class="doc-anchor" href="#safety">§</a>Safety</h5>
 <p>This method has automatically been marked <code>unsafe</code> because it accepts raw pointers as parameters.
 If Godot does not document any safety requirements, make sure you understand the underlying semantics.</p>
@@ -375,9 +375,9 @@ If Godot does not document any safety requirements, make sure you understand the
     shape: <a class="enum" href="../prelude/enum.Rid.html" title="enum godot::prelude::Rid">Rid</a>,
     shape_xform: <a class="struct" href="../prelude/struct.Transform2D.html" title="struct godot::prelude::Transform2D">Transform2D</a>,
     motion: <a class="struct" href="../prelude/struct.Vector2.html" title="struct godot::prelude::Vector2">Vector2</a>,
-    results: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    results: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>&gt;,
     result_max: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
-    result_count: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    result_count: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>&gt;,
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><h5 id="safety-1"><a class="doc-anchor" href="#safety-1">§</a>Safety</h5>
 <p>This method has automatically been marked <code>unsafe</code> because it accepts raw pointers as parameters.
 If Godot does not document any safety requirements, make sure you understand the underlying semantics.</p>
@@ -392,7 +392,7 @@ If Godot does not document any safety requirements, make sure you understand the
     margin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>,
     collide_separation_ray: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
     recovery_as_collision: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-    result: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionMotionResult.html" title="struct godot::classes::native::PhysicsServer2DExtensionMotionResult">PhysicsServer2DExtensionMotionResult</a>,
+    result: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionMotionResult.html" title="struct godot::classes::native::PhysicsServer2DExtensionMotionResult">PhysicsServer2DExtensionMotionResult</a>&gt;,
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><h5 id="safety-2"><a class="doc-anchor" href="#safety-2">§</a>Safety</h5>
 <p>This method has automatically been marked <code>unsafe</code> because it accepts raw pointers as parameters.
 If Godot does not document any safety requirements, make sure you understand the underlying semantics.</p>

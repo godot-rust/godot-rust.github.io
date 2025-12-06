@@ -2,8 +2,8 @@
     // Required method
     unsafe fn <a href="#tymethod.process_rawptr" class="fn">process_rawptr</a>(
         &amp;mut self,
-        src_buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
-        dst_buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.AudioFrame.html" title="struct godot::classes::native::AudioFrame">AudioFrame</a>,
+        src_buffer: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>&gt;,
+        dst_buffer: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.AudioFrame.html" title="struct godot::classes::native::AudioFrame">AudioFrame</a>&gt;,
         frame_count: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
     );
 
@@ -24,8 +24,8 @@
 <p>See also <a href="https://docs.godotengine.org/en/stable/classes/class_audioeffectinstance.html#methods">Godot docs for <code>AudioEffectInstance</code> methods</a>.</p>
 </div></details><h2 id="required-methods" class="section-header">Required Methods<a href="#required-methods" class="anchor">§</a></h2><div class="methods"><details class="toggle method-toggle" open><summary><section id="tymethod.process_rawptr" class="method"><h4 class="code-header">unsafe fn <a href="#tymethod.process_rawptr" class="fn">process_rawptr</a>(
     &amp;mut self,
-    src_buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
-    dst_buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.AudioFrame.html" title="struct godot::classes::native::AudioFrame">AudioFrame</a>,
+    src_buffer: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>&gt;,
+    dst_buffer: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.AudioFrame.html" title="struct godot::classes::native::AudioFrame">AudioFrame</a>&gt;,
     frame_count: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
 )</h4></section></summary><div class="docblock"><h5 id="safety"><a class="doc-anchor" href="#safety">§</a>Safety</h5>
 <p>This method has automatically been marked <code>unsafe</code> because it accepts raw pointers as parameters.

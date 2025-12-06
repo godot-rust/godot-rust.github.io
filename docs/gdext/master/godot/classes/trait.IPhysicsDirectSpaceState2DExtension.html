@@ -8,7 +8,7 @@
         collide_with_bodies: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
         collide_with_areas: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
         hit_from_inside: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-        result: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionRayResult.html" title="struct godot::classes::native::PhysicsServer2DExtensionRayResult">PhysicsServer2DExtensionRayResult</a>,
+        result: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionRayResult.html" title="struct godot::classes::native::PhysicsServer2DExtensionRayResult">PhysicsServer2DExtensionRayResult</a>&gt;,
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
 <span class="item-spacer"></span>    unsafe fn <a href="#tymethod.intersect_point_rawptr" class="fn">intersect_point_rawptr</a>(
         &amp;mut self,
@@ -17,7 +17,7 @@
         collision_mask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
         collide_with_bodies: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
         collide_with_areas: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-        results: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionShapeResult.html" title="struct godot::classes::native::PhysicsServer2DExtensionShapeResult">PhysicsServer2DExtensionShapeResult</a>,
+        results: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionShapeResult.html" title="struct godot::classes::native::PhysicsServer2DExtensionShapeResult">PhysicsServer2DExtensionShapeResult</a>&gt;,
         max_results: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>;
 <span class="item-spacer"></span>    unsafe fn <a href="#tymethod.intersect_shape_rawptr" class="fn">intersect_shape_rawptr</a>(
@@ -29,7 +29,7 @@
         collision_mask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
         collide_with_bodies: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
         collide_with_areas: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-        result: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionShapeResult.html" title="struct godot::classes::native::PhysicsServer2DExtensionShapeResult">PhysicsServer2DExtensionShapeResult</a>,
+        result: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionShapeResult.html" title="struct godot::classes::native::PhysicsServer2DExtensionShapeResult">PhysicsServer2DExtensionShapeResult</a>&gt;,
         max_results: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>;
 <span class="item-spacer"></span>    unsafe fn <a href="#tymethod.cast_motion_rawptr" class="fn">cast_motion_rawptr</a>(
@@ -41,8 +41,8 @@
         collision_mask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
         collide_with_bodies: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
         collide_with_areas: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-        closest_safe: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
-        closest_unsafe: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+        closest_safe: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt;,
+        closest_unsafe: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt;,
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
 <span class="item-spacer"></span>    unsafe fn <a href="#tymethod.collide_shape_rawptr" class="fn">collide_shape_rawptr</a>(
         &amp;mut self,
@@ -53,9 +53,9 @@
         collision_mask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
         collide_with_bodies: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
         collide_with_areas: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-        results: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+        results: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>&gt;,
         max_results: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
-        result_count: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+        result_count: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>&gt;,
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
 <span class="item-spacer"></span>    unsafe fn <a href="#tymethod.rest_info_rawptr" class="fn">rest_info_rawptr</a>(
         &amp;mut self,
@@ -66,7 +66,7 @@
         collision_mask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
         collide_with_bodies: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
         collide_with_areas: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-        rest_info: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionShapeRestInfo.html" title="struct godot::classes::native::PhysicsServer2DExtensionShapeRestInfo">PhysicsServer2DExtensionShapeRestInfo</a>,
+        rest_info: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionShapeRestInfo.html" title="struct godot::classes::native::PhysicsServer2DExtensionShapeRestInfo">PhysicsServer2DExtensionShapeRestInfo</a>&gt;,
     ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
 
     // Provided methods
@@ -92,7 +92,7 @@
     collide_with_bodies: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
     collide_with_areas: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
     hit_from_inside: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-    result: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionRayResult.html" title="struct godot::classes::native::PhysicsServer2DExtensionRayResult">PhysicsServer2DExtensionRayResult</a>,
+    result: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionRayResult.html" title="struct godot::classes::native::PhysicsServer2DExtensionRayResult">PhysicsServer2DExtensionRayResult</a>&gt;,
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><h5 id="safety"><a class="doc-anchor" href="#safety">§</a>Safety</h5>
 <p>This method has automatically been marked <code>unsafe</code> because it accepts raw pointers as parameters.
 If Godot does not document any safety requirements, make sure you understand the underlying semantics.</p>
@@ -103,7 +103,7 @@ If Godot does not document any safety requirements, make sure you understand the
     collision_mask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
     collide_with_bodies: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
     collide_with_areas: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-    results: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionShapeResult.html" title="struct godot::classes::native::PhysicsServer2DExtensionShapeResult">PhysicsServer2DExtensionShapeResult</a>,
+    results: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionShapeResult.html" title="struct godot::classes::native::PhysicsServer2DExtensionShapeResult">PhysicsServer2DExtensionShapeResult</a>&gt;,
     max_results: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></h4></section></summary><div class="docblock"><h5 id="safety-1"><a class="doc-anchor" href="#safety-1">§</a>Safety</h5>
 <p>This method has automatically been marked <code>unsafe</code> because it accepts raw pointers as parameters.
@@ -117,7 +117,7 @@ If Godot does not document any safety requirements, make sure you understand the
     collision_mask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
     collide_with_bodies: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
     collide_with_areas: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-    result: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionShapeResult.html" title="struct godot::classes::native::PhysicsServer2DExtensionShapeResult">PhysicsServer2DExtensionShapeResult</a>,
+    result: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionShapeResult.html" title="struct godot::classes::native::PhysicsServer2DExtensionShapeResult">PhysicsServer2DExtensionShapeResult</a>&gt;,
     max_results: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></h4></section></summary><div class="docblock"><h5 id="safety-2"><a class="doc-anchor" href="#safety-2">§</a>Safety</h5>
 <p>This method has automatically been marked <code>unsafe</code> because it accepts raw pointers as parameters.
@@ -131,8 +131,8 @@ If Godot does not document any safety requirements, make sure you understand the
     collision_mask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
     collide_with_bodies: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
     collide_with_areas: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-    closest_safe: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
-    closest_unsafe: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    closest_safe: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt;,
+    closest_unsafe: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt;,
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><h5 id="safety-3"><a class="doc-anchor" href="#safety-3">§</a>Safety</h5>
 <p>This method has automatically been marked <code>unsafe</code> because it accepts raw pointers as parameters.
 If Godot does not document any safety requirements, make sure you understand the underlying semantics.</p>
@@ -145,9 +145,9 @@ If Godot does not document any safety requirements, make sure you understand the
     collision_mask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
     collide_with_bodies: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
     collide_with_areas: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-    results: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>,
+    results: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/core/ffi/enum.c_void.html" title="enum core::ffi::c_void">c_void</a>&gt;,
     max_results: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
-    result_count: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    result_count: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>&gt;,
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><h5 id="safety-4"><a class="doc-anchor" href="#safety-4">§</a>Safety</h5>
 <p>This method has automatically been marked <code>unsafe</code> because it accepts raw pointers as parameters.
 If Godot does not document any safety requirements, make sure you understand the underlying semantics.</p>
@@ -160,7 +160,7 @@ If Godot does not document any safety requirements, make sure you understand the
     collision_mask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
     collide_with_bodies: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
     collide_with_areas: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
-    rest_info: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionShapeRestInfo.html" title="struct godot::classes::native::PhysicsServer2DExtensionShapeRestInfo">PhysicsServer2DExtensionShapeRestInfo</a>,
+    rest_info: <a class="struct" href="../meta/struct.RawPtr.html" title="struct godot::meta::RawPtr">RawPtr</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="native/struct.PhysicsServer2DExtensionShapeRestInfo.html" title="struct godot::classes::native::PhysicsServer2DExtensionShapeRestInfo">PhysicsServer2DExtensionShapeRestInfo</a>&gt;,
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><h5 id="safety-5"><a class="doc-anchor" href="#safety-5">§</a>Safety</h5>
 <p>This method has automatically been marked <code>unsafe</code> because it accepts raw pointers as parameters.
 If Godot does not document any safety requirements, make sure you understand the underlying semantics.</p>
