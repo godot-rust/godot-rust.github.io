@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["ExGetString","ExGetUtf8String","ExGetVar","ExPutVar"]};

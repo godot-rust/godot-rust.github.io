@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["ExGetCollider","ExGetColliderId","ExGetColliderRid","ExGetColliderShape","ExGetColliderVelocity","ExGetCollisionDepth","ExGetCollisionLocalShape","ExGetCollisionNormal","ExGetCollisionPoint"]};
