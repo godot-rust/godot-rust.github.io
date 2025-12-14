@@ -35,31 +35,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <li>To connect to methods on other objects, use <a href="../../register/struct.TypedSignal.html#method.connect_other" title="method godot::register::TypedSignal::connect_other"><code>connect_other()</code></a>.</li>
 <li>If you need <a href="../object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a> or cross-thread signals, use <a href="../../register/struct.TypedSignal.html#method.builder" title="method godot::register::TypedSignal::builder"><code>builder()</code></a>.</li>
 </ul>
-<h5 id="example"><a class="doc-anchor" href="#example">§</a>Example</h5>
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[godot_api]
-</span><span class="kw">impl </span>Player {
-    <span class="attr">#[signal]
-    </span><span class="kw">fn </span>health_changed(health: i32);
-
-    <span class="kw">fn </span>change_health_anim(<span class="kw-2">&amp;mut </span><span class="self">self</span>, health: i32) { <span class="comment">/* ... */ </span>}
-}
-<span class="kw">impl </span>HealthUi {
-    <span class="kw">fn </span>on_health_changed(<span class="kw-2">&amp;mut </span><span class="self">self</span>, health: i32) { <span class="comment">/* ... */ </span>}
-}
-<span class="attr">#[godot_api]
-</span><span class="kw">impl </span>INode <span class="kw">for </span>Player {
-    <span class="kw">fn </span>ready(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
-        <span class="comment">// Connect to this object.
-        </span><span class="self">self</span>.signals()
-            .health_changed()
-            .connect_self(<span class="self">Self</span>::change_health_anim);
-
-        <span class="comment">// Connect to other object, where ui: OnEditor&lt;Gd&lt;HealthUi&gt;&gt;.
-        </span><span class="self">self</span>.signals()
-            .health_changed()
-            .connect_self(|this, amount| this.ui.bind_mut().on_health_changed(amount));
-    }
-}</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other" class="fn">connect_other</a>&lt;F, OtherC, Declarer&gt;(
+</div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other" class="fn">connect_other</a>&lt;F, OtherC, Declarer&gt;(
     &amp;self,
     object: &amp;impl <a class="trait" href="../../meta/trait.ObjectToOwned.html" title="trait godot::meta::ObjectToOwned">ObjectToOwned</a>&lt;OtherC&gt;,
     method: F,
@@ -79,29 +55,7 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <li>To connect to methods on the object that owns this signal, use <a href="../../register/struct.TypedSignal.html#method.connect_self" title="method godot::register::TypedSignal::connect_self"><code>connect_self()</code></a>.</li>
 <li>If you need <a href="../object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a> or cross-thread signals, use <a href="../../register/struct.TypedSignal.html#method.builder" title="method godot::register::TypedSignal::builder"><code>builder()</code></a>.</li>
 </ul>
-<h5 id="example-1"><a class="doc-anchor" href="#example-1">§</a>Example</h5>
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">impl </span>OtherTool {
-    <span class="kw">fn </span>set_tool_enabled(<span class="kw-2">&amp;mut </span><span class="self">self</span>, value: bool) { }
-}
-<span class="kw">impl </span>Tool {
-    <span class="kw">fn </span>execute_tool(<span class="kw-2">&amp;mut </span><span class="self">self</span>) { }
-}
-<span class="attr">#[godot_api]
-</span><span class="kw">impl </span>IControl <span class="kw">for </span>Tool {
-    <span class="kw">fn </span>ready(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
-        <span class="comment">// Connect from other to self.
-        </span><span class="self">self</span>.button
-            .signals()
-            .pressed()
-            .connect_other(<span class="self">self</span>, <span class="self">Self</span>::execute_tool);
-
-        <span class="comment">// Connect from other to other, where other_tool: OnEditor&lt;Gd&lt;OtherTool&gt;&gt;.
-        </span><span class="self">self</span>.button
-            .signals()
-            .pressed()
-            .connect_other(<span class="kw-2">&amp;*</span><span class="self">self</span>.other_tool, |tool| tool.set_tool_enabled(<span class="bool-val">false</span>));
-    }
-}</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.to_fallible_future" class="method"><h4 class="code-header">pub fn <a href="#method.to_fallible_future" class="fn">to_fallible_future</a>(&amp;self) -&gt; <a class="struct" href="../../task/struct.FallibleSignalFuture.html" title="struct godot::task::FallibleSignalFuture">FallibleSignalFuture</a>&lt;R&gt; <a href="#" class="tooltip" data-notable-ty="FallibleSignalFuture&lt;R&gt;">ⓘ</a></h4></section></summary><div class="docblock"><p>Creates a fallible future for this signal.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.to_fallible_future" class="method"><h4 class="code-header">pub fn <a href="#method.to_fallible_future" class="fn">to_fallible_future</a>(&amp;self) -&gt; <a class="struct" href="../../task/struct.FallibleSignalFuture.html" title="struct godot::task::FallibleSignalFuture">FallibleSignalFuture</a>&lt;R&gt; <a href="#" class="tooltip" data-notable-ty="FallibleSignalFuture&lt;R&gt;">ⓘ</a></h4></section></summary><div class="docblock"><p>Creates a fallible future for this signal.</p>
 <p>The future will resolve the next time the signal is emitted.
 See <a href="../../task/struct.FallibleSignalFuture.html" title="struct godot::task::FallibleSignalFuture"><code>FallibleSignalFuture</code></a> for details.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.to_future" class="method"><h4 class="code-header">pub fn <a href="#method.to_future" class="fn">to_future</a>(&amp;self) -&gt; <a class="struct" href="../../task/struct.SignalFuture.html" title="struct godot::task::SignalFuture">SignalFuture</a>&lt;R&gt; <a href="#" class="tooltip" data-notable-ty="SignalFuture&lt;R&gt;">ⓘ</a></h4></section></summary><div class="docblock"><p>Creates a future for this signal.</p>
