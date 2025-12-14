@@ -30,25 +30,28 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <li>If you need <a href="../object/struct.ConnectFlags.html" title="struct godot::classes::object::ConnectFlags"><code>connect flags</code></a> or cross-thread signals, use <a href="../../register/struct.TypedSignal.html#method.builder" title="method godot::register::TypedSignal::builder"><code>builder()</code></a>.</li>
 </ul>
 <h5 id="example"><a class="doc-anchor" href="#example">§</a>Example</h5>
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code> <span class="kw">impl </span>Player {
-     <span class="kw">fn </span>change_health_anim(<span class="kw-2">&amp;mut </span><span class="self">self</span>, health: i32) {
-        <span class="comment">// Change animation based on health
-     </span>}
- }
- <span class="kw">impl </span>HealthUI {
-     <span class="kw">fn </span>on_health_changed(<span class="kw-2">&amp;mut </span><span class="self">self</span>, health: i32) {
-        <span class="comment">// Change healthbar UI based on health
-     </span>}
- }
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[godot_api]
+</span><span class="kw">impl </span>Player {
+    <span class="attr">#[signal]
+    </span><span class="kw">fn </span>health_changed(health: i32);
+
+    <span class="kw">fn </span>change_health_anim(<span class="kw-2">&amp;mut </span><span class="self">self</span>, health: i32) { <span class="comment">/* ... */ </span>}
+}
+<span class="kw">impl </span>HealthUi {
+    <span class="kw">fn </span>on_health_changed(<span class="kw-2">&amp;mut </span><span class="self">self</span>, health: i32) { <span class="comment">/* ... */ </span>}
+}
 <span class="attr">#[godot_api]
 </span><span class="kw">impl </span>INode <span class="kw">for </span>Player {
     <span class="kw">fn </span>ready(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
-        <span class="self">self</span>.signals() <span class="comment">// Connect to self
-            </span>.health_changed()
+        <span class="comment">// Connect to this object.
+        </span><span class="self">self</span>.signals()
+            .health_changed()
             .connect_self(<span class="self">Self</span>::change_health_anim);
-        <span class="self">self</span>.signals() <span class="comment">// Connect to other object (health_ui is OnEditor&lt;Gd&lt;HealthUI&gt;&gt;)
-            </span>.health_changed()
-            .connect_self(|s, amount| s.health_ui.bind_mut().on_health_changed(amount));
+
+        <span class="comment">// Connect to other object, where ui: OnEditor&lt;Gd&lt;HealthUi&gt;&gt;.
+        </span><span class="self">self</span>.signals()
+            .health_changed()
+            .connect_self(|this, amount| this.ui.bind_mut().on_health_changed(amount));
     }
 }</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.connect_other" class="method"><h4 class="code-header">pub fn <a href="#method.connect_other" class="fn">connect_other</a>&lt;F, OtherC, Declarer&gt;(
     &amp;self,
@@ -80,12 +83,15 @@ sig.connect(|arg| { <span class="comment">/* closure */ </span>});</code></pre><
 <span class="attr">#[godot_api]
 </span><span class="kw">impl </span>IControl <span class="kw">for </span>Tool {
     <span class="kw">fn </span>ready(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
-        <span class="self">self</span>.button <span class="comment">// Connect from other to self
-            </span>.signals()
+        <span class="comment">// Connect from other to self.
+        </span><span class="self">self</span>.button
+            .signals()
             .pressed()
             .connect_other(<span class="self">self</span>, <span class="self">Self</span>::execute_tool);
-        <span class="self">self</span>.button <span class="comment">// Connect from other to other (other_tool is OnEditor&lt;Gd&lt;OtherTool&gt;&gt;)
-            </span>.signals()
+
+        <span class="comment">// Connect from other to other, where other_tool: OnEditor&lt;Gd&lt;OtherTool&gt;&gt;.
+        </span><span class="self">self</span>.button
+            .signals()
             .pressed()
             .connect_other(<span class="kw-2">&amp;*</span><span class="self">self</span>.other_tool, |tool| tool.set_tool_enabled(<span class="bool-val">false</span>));
     }
