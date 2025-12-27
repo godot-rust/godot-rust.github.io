@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Create a new async background task."><title>spawn in godot::task - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-80aa586b.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="godot" data-themes="" data-resource-suffix="" data-rustdoc-version="1.94.0-nightly (1107bbac4 2025-12-26)" data-channel="nightly" data-search-js="search-9e2438ea.js" data-stringdex-js="stringdex-b897f86f.js" data-settings-js="settings-c38705f0.js" ><script src="../../static.files/storage-e2aeef58.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-dcaacbb5.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-ffcac47a.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-eab170b8.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc fn"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><rustdoc-topbar><h2><a href="#">spawn</a></h2></rustdoc-topbar><nav class="sidebar"><div class="sidebar-crate"><a class="logo-container" href="../../godot/index.html"><img src="https://raw.githubusercontent.com/godot-rust/assets/master/gdext/ferris.svg" alt="logo"></a><h2><a href="../../godot/index.html">godot</a><span class="version">Pull Request #1453</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">spawn</a></h2><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#panics" title="Panics">Panics</a></li><li><a href="#examples" title="Examples">Examples</a></li></ul></section><div id="rustdoc-modnav"><h2><a href="index.html">In godot::<wbr>task</a></h2></div></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><div class="width-limiter"><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../index.html">godot</a>::<wbr><a href="index.html">task</a></div><h1>Function <span class="fn">spawn</span>&nbsp;<button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"></span></div><pre class="rust item-decl"><code>pub fn spawn(future: impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/future/future/trait.Future.html" title="trait core::future::future::Future">Future</a>&lt;Output = <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt; + 'static) -&gt; <a class="struct" href="struct.TaskHandle.html" title="struct godot::task::TaskHandle">TaskHandle</a></code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Create a new async background task.</p>
+<p>This function allows creating a new async task in which Godot signals can be awaited, like it is possible in GDScript. The
+<a href="struct.TaskHandle.html" title="struct godot::task::TaskHandle"><code>TaskHandle</code></a> that is returned provides synchronous introspection into the current state of the task.</p>
+<p>Signals can be converted to futures in the following ways:</p>
+<div><table><thead><tr><th>Signal type</th><th>Simple future</th><th>Fallible future (handles freed object)</th></tr></thead><tbody>
+<tr><td>Untyped</td><td><a href="../prelude/struct.Signal.html#method.to_future" title="method godot::prelude::Signal::to_future"><code>Signal::to_future()</code></a></td><td><a href="../prelude/struct.Signal.html#method.to_fallible_future" title="method godot::prelude::Signal::to_fallible_future"><code>Signal::to_fallible_future()</code></a></td></tr>
+<tr><td>Typed</td><td><a href="../register/struct.TypedSignal.html#method.to_future" title="method godot::register::TypedSignal::to_future"><code>TypedSignal::to_future()</code></a></td><td><a href="../register/struct.TypedSignal.html#method.to_fallible_future" title="method godot::register::TypedSignal::to_fallible_future"><code>TypedSignal::to_fallible_future()</code></a></td></tr>
+</tbody></table>
+</div><h2 id="panics"><a class="doc-anchor" href="#panics">§</a>Panics</h2>
+<p>If called from any other thread than the main thread.</p>
+<h2 id="examples"><a class="doc-anchor" href="#examples">§</a>Examples</h2>
+<p>With typed signals:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
+#[class(init)]
+</span><span class="kw">struct </span>Building {
+   base: Base&lt;RefCounted&gt;,
+}
+
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>Building {
+   <span class="attr">#[signal]
+   </span><span class="kw">fn </span>constructed(seconds: u32);
+}
+
+<span class="kw">let </span>house = Building::new_gd();
+godot::task::spawn(<span class="kw">async move </span>{
+    <span class="macro">println!</span>(<span class="string">"Wait for construction..."</span>);
+
+    <span class="comment">// Emitted arguments can be fetched in tuple form.
+    // If the signal has no parameters, you can skip `let` and just await the future.
+    </span><span class="kw">let </span>(seconds,) = house.signals().constructed().to_future().<span class="kw">await</span>;
+
+    <span class="macro">println!</span>(<span class="string">"Construction complete after {seconds}s."</span>);
+});</code></pre></div>
+<p>With untyped signals:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">let </span>node = Node::new_alloc();
+<span class="kw">let </span>signal = Signal::from_object_signal(<span class="kw-2">&amp;</span>node, <span class="string">"signal"</span>);
+
+godot::task::spawn(<span class="kw">async move </span>{
+    <span class="macro">println!</span>(<span class="string">"Starting task..."</span>);
+
+    <span class="comment">// Explicit generic arguments needed, here `()`:
+    </span>signal.to_future::&lt;()&gt;().<span class="kw">await</span>;
+
+    <span class="macro">println!</span>(<span class="string">"Node has changed: {}"</span>, node.get_name());
+});</code></pre></div></div></details></section></div></main></body></html>
