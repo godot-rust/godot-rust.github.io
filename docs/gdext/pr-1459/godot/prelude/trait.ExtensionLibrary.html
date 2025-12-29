@@ -112,15 +112,15 @@ which can be informed to gdext as follows:</p>
 <span class="attr">#[gdextension]
 </span><span class="kw">unsafe impl </span>ExtensionLibrary <span class="kw">for </span>MyExtension {
     <span class="kw">fn </span>override_wasm_binary() -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="lifetime">'static </span>str&gt; {
-        <span class="comment">// Binary name unchanged ("mycrate.wasm") without thread support.
-        </span><span class="attr">#[cfg(feature = <span class="string">"nothreads"</span>)]
-        </span><span class="kw">return </span><span class="prelude-val">None</span>;
-
-        <span class="comment">// Tell godot-rust we add a custom suffix to the binary with thread support.
-        // Please note that this is not needed if "mycrate.threads.wasm" is used.
-        // (You could return `None` as well in that particular case.)
-        </span><span class="attr">#[cfg(not(feature = <span class="string">"nothreads"</span>))]
-        </span><span class="prelude-val">Some</span>(<span class="string">"mycrate-with-threads.wasm"</span>)
+        <span class="kw">if </span><span class="macro">cfg!</span>(feature = <span class="string">"nothreads"</span>) {
+            <span class="comment">// Binary name unchanged ("mycrate.wasm") without thread support.
+            </span><span class="prelude-val">None
+        </span>} <span class="kw">else </span>{
+            <span class="comment">// Tell godot-rust we add a custom suffix to the binary with thread support.
+            // Please note that this is not needed if "mycrate.threads.wasm" is used.
+            // (You could return `None` as well in that particular case.)
+            </span><span class="prelude-val">Some</span>(<span class="string">"mycrate-with-threads.wasm"</span>)
+        }
     }
 }</code></pre></div>
 <p>Note that simply overriding this method won’t change the name of the Wasm binary produced by Rust automatically: you’ll still
