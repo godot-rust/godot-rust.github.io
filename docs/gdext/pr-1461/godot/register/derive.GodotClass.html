@@ -86,10 +86,22 @@ which in turn are backed by the <a href="../register/property/trait.Var.html"><c
     <span class="attr">#[var]
     </span>my_field: i64,
 }</code></pre></div>
-<p>This makes the field accessible in GDScript using <code>my_struct.my_field</code> syntax. Additionally, it
-generates a trivial getter and setter named <code>get_my_field</code> and <code>set_my_field</code>, respectively.
-These are <code>pub</code> in Rust, since they’re exposed from GDScript anyway.</p>
-<p>The <code>get</code> and <code>set</code> options are <strong>orthogonal</strong> as of godot-rust v0.5: specifying one does not affect the other.
+<p>This makes the field accessible in GDScript using <code>obj.my_field</code> syntax. In addition to direct property access, GDScript can use
+explicit getter and setter notation: <code>obj.get_my_field()</code> and <code>obj.set_my_field()</code>.</p>
+<p>If you want to access those getters/setters from Rust, you can use <code>#[var(pub)]</code>:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
+#[class(init)]
+</span><span class="kw">struct </span>MyStruct {
+    <span class="attr">#[var(<span class="kw">pub</span>)]
+    </span>my_field: i64,
+}
+
+<span class="kw">fn </span>use_accessors(obj: <span class="kw-2">&amp;</span>MyStruct) {
+    <span class="kw">let </span>f: i64 = obj.get_my_field();
+}</code></pre></div>
+<p>You can also customize getters and setters.
+The <code>get</code> and <code>set</code> options are <strong>orthogonal</strong> as of godot-rust v0.5: specifying one does not affect the other.
 By default, both a getter and setter are generated, but you can customize either independently:</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
