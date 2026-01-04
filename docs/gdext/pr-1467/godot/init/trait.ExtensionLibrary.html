@@ -51,12 +51,12 @@ Violating this may cause undefined behavior, even when invoking <em>safe</em> fu
 <p>If you use the <code>disengaged</code> <a href="../index.html#safeguard-levels">safeguard level</a>, you accept that UB becomes possible even <strong>in safe Rust APIs</strong>, if you use them wrong
 (e.g. accessing a destroyed object).</p>
 <h2 id="using-given-gdextension-library-as-a-dependency"><a class="doc-anchor" href="#using-given-gdextension-library-as-a-dependency">§</a>Using given GDExtension library as a dependency</h2>
-<p>When using any other GDExtension library as a dependency, the user-forwarding library must be specified via the <code>MAIN_EXTENSION</code> environment variable.</p>
-<p>For example, an <code>ExtensionLibrary</code> <code>A</code> with libraries <code>B</code> and <code>C</code> used as dependencies can be built with <code>MAIN_EXTENSION="A" cargo build</code>.</p>
+<p>When using any other GDExtension library as a dependency, the user-forwarding library must be specified via the <code>GODOT_RUST_MAIN_EXTENSION</code> environment variable.</p>
+<p>For example, an <code>ExtensionLibrary</code> <code>A</code> with libraries <code>B</code> and <code>C</code> used as dependencies can be built with <code>GODOT_RUST_MAIN_EXTENSION="A" cargo build</code>.</p>
 
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="comment">// Usage of other dependencies must be explicitly declared; otherwise, they won't be registered.
-</span><span class="kw">use </span>B::<span class="kw-2">*</span>;
-<span class="kw">use </span>C::<span class="kw-2">*</span>;
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="comment">// Usage of other dependencies must be explicitly declared; otherwise, they won't be registered.
+</span><span class="kw">extern crate </span>B;
+<span class="kw">extern crate </span>C;
 
 <span class="comment">// Crate A
 </span><span class="kw">struct </span>A {}
