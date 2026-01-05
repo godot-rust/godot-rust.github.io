@@ -8,8 +8,8 @@ docs_rel_url = "gdext/master/godot"
 pr_url = "https://github.com/godot-rust/gdext"
 pr_author = ""
 sort_key = 9999-01-01
-date_time = 2026-01-05T19:15:07Z
-commit_sha = "95791a4cc35640c18dbba1ec3fa5c17058b819b9"
+date_time = 2026-01-05T21:59:29Z
+commit_sha = "db4fc76254cb11e2f1d1adb8401220a8eba8ad13"
 +++
 
 
