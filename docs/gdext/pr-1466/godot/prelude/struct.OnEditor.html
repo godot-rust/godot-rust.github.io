@@ -145,12 +145,15 @@ In their implementation, delegate to the <code>Var</code> trait methods, rather 
 
     <span class="attr">#[func]
     </span><span class="kw">pub fn </span>set_my_node(<span class="kw-2">&amp;mut </span><span class="self">self</span>, value: Gd&lt;Node&gt;) {
-        Var::var_pub_set(<span class="kw-2">&amp;mut </span><span class="self">self</span>.my_node, value);
+        <span class="comment">// Validate, pre-process, etc...
+        </span>Var::var_pub_set(<span class="kw-2">&amp;mut </span><span class="self">self</span>.my_node, value);
     }
 
     <span class="attr">#[func]
     </span><span class="kw">pub fn </span>get_my_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
-        Var::var_pub_get(<span class="kw-2">&amp;</span><span class="self">self</span>.my_value)
+        <span class="kw">let </span>ret = Var::var_pub_get(<span class="kw-2">&amp;</span><span class="self">self</span>.my_value);
+        <span class="comment">// Do something with the value...
+        </span>ret
     }
 
     <span class="attr">#[func]
