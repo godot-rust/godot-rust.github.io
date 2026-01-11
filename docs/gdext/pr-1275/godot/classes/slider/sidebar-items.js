@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["SigDragEnded","SigDragStarted","SignalsOfSlider"]};
+window.SIDEBAR_ITEMS = {"struct":["SigDragEnded","SigDragStarted","SignalsOfSlider","TickPosition"]};

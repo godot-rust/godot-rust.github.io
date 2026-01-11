@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExSetSlot","SigSlotUpdated","SignalsOfGraphNode"]};
+window.SIDEBAR_ITEMS = {"struct":["ExSetSlot","SigSlotSizesChanged","SigSlotUpdated","SignalsOfGraphNode"]};

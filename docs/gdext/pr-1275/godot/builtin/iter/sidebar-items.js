@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ArrayIter","DictIter","DictKeys","DictTypedIter","DictTypedKeys"]};
+window.SIDEBAR_ITEMS = {"struct":["ArrayFunctionalOps","ArrayIter","DictIter","DictKeys","DictTypedIter","DictTypedKeys"]};
