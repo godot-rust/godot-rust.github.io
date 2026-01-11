@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["CallError","ConvertError","IoError","StringError"]};
+window.SIDEBAR_ITEMS = {"enum":["CallErrorType"],"struct":["CallError","ConvertError","IoError","StringError"]};
