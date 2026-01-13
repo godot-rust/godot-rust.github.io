@@ -33,6 +33,12 @@ fi
 git config user.name "Godot-Rust Automation"
 git config user.email "GodotRust@users.noreply.github.com"
 
+# git commit that only shows the short stat summary (e.g. "3 files changed, 374 deletions(-)"),
+# not the thousands of "delete mode ..." lines.
+commitQuiet() {
+    git commit -q "$@" && git diff --shortstat HEAD~1
+}
+
 if [[ "$num" == "master" ]]; then
 	dir="$repo/master"
 	mdFile="$repo-master"
@@ -80,8 +86,8 @@ if [[ "$op" == "delete" ]]; then
         Triggered at: $date
         "
 
-    git commit -m "Remove ${what}${body}" || {
-        git commit --allow-empty -m "Remove $what (unchanged)${body}"
+    commitQuiet -m "Remove ${what}${body}" || {
+        commitQuiet --allow-empty -m "Remove $what (unchanged)${body}"
 
 #            echo "::warning::Nothing to commit, branch is already deleted; abort."
 #            echo "SKIP_WEBSITE_DEPLOY=true" >> "$GITHUB_ENV"
@@ -97,8 +103,8 @@ else
             Triggered at: $date
             "
 
-        git commit -m "$PUT_STATUS $what (\`$shortSha\`)${body}" || {
-            git commit --allow-empty -m "$PUT_STATUS $what (\`$shortSha\`, unchanged){$body}"
+        commitQuiet -m "$PUT_STATUS $what (\`$shortSha\`)${body}" || {
+            commitQuiet --allow-empty -m "$PUT_STATUS $what (\`$shortSha\`, unchanged){$body}"
         }
     else
         what="$repo PR #$num"
@@ -109,8 +115,8 @@ else
             Triggered at: $date
             "
 
-        git commit -m "$PUT_STATUS $what (\`$shortSha\`)${body}" || {
-            git commit --allow-empty -m "$PUT_STATUS $what (\`$shortSha\`, unchanged){$body}"
+        commitQuiet -m "$PUT_STATUS $what (\`$shortSha\`)${body}" || {
+            commitQuiet --allow-empty -m "$PUT_STATUS $what (\`$shortSha\`, unchanged){$body}"
         }
     fi
 fi
@@ -217,7 +223,7 @@ if git ls-remote --exit-code --heads origin doc-output >/dev/null 2>&1; then
 #    }
 
     echo "$PRE commit merge..."
-    git commit -m "Integrate $what" || true # don't fail if our branch is ahead (nothing to merge)
+    commitQuiet -m "Integrate $what" || true # don't fail if our branch is ahead (nothing to merge)
     echo "----------------------------------------"
     echo "$PRE log after merge:"
     git log -n4
@@ -227,7 +233,7 @@ else
 
     bash documentation/update-last-changed.sh "$repo" "$num" "$date"
     git add last-changed.txt
-    git commit -m "Initial setup"
+    commitQuiet -m "Initial setup"
 fi
 
 echo "$PRE push to 'doc-output' branch..."
