@@ -21,7 +21,8 @@ Therefore, user singletons are limited to classes with manual memory management 
 <span class="attr">#[gdextension]
 </span><span class="kw">unsafe impl </span>ExtensionLibrary <span class="kw">for </span>MyExtension {
     <span class="kw">fn </span>on_stage_init(stage: InitStage) {
-        <span class="kw">if </span>stage == InitStage::MainLoop {
+        <span class="comment">// Singleton should be registered before the MainLoop startup – otherwise it won't be recognized by the GDScriptParser.
+        </span><span class="kw">if </span>stage == InitStage::Scene {
             <span class="kw">let </span>obj = MyEngineSingleton::new_alloc();
             Engine::singleton()
                 .register_singleton(<span class="kw-2">&amp;</span>MyEngineSingleton::class_id().to_string_name(), <span class="kw-2">&amp;</span>obj);
@@ -29,7 +30,7 @@ Therefore, user singletons are limited to classes with manual memory management 
     }
 
     <span class="kw">fn </span>on_stage_deinit(stage: InitStage) {
-        <span class="kw">if </span>stage == InitStage::MainLoop {
+        <span class="kw">if </span>stage == InitStage::Scene {
             <span class="kw">let </span>obj = MyEngineSingleton::singleton();
             Engine::singleton()
                 .unregister_singleton(<span class="kw-2">&amp;</span>MyEngineSingleton::class_id().to_string_name());
