@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["ExAddCustomMonitor","Monitor"]};
+window.SIDEBAR_ITEMS = {"struct":["ExAddCustomMonitor","Monitor","MonitorType"]};

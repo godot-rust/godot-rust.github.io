@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["Access","DisplayMode","ExAddFilter","ExAddSideMenu","FileMode","SigDirSelected","SigFileSelected","SigFilenameFilterChanged","SigFilesSelected","SignalsOfEditorFileDialog"]};
+window.SIDEBAR_ITEMS = {"struct":["ExAddSideMenu"]};
