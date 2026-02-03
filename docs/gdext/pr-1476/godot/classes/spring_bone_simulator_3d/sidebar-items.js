@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["BoneDirection","CenterFrom","RotationAxis"]};
+window.SIDEBAR_ITEMS = {"struct":["CenterFrom"]};
