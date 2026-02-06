@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1496/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1496"
 pr_author = "Bromeon"
 sort_key = 2026-02-06
-date_time = 2026-02-06T20:12:15Z
-commit_sha = "af21d3f37cd9c2d6ef10b8a75c2db96e584cc958"
+date_time = 2026-02-06T22:12:12Z
+commit_sha = "aab28c0da30b837d149456a182cab79b307f343d"
 +++
 
 Format bitfields in `Debug` impl
