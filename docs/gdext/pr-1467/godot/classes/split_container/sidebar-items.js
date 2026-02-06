@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["DraggerVisibility","SigDragEnded","SigDragStarted","SigDragged","SignalsOfSplitContainer"]};
+window.SIDEBAR_ITEMS = {"struct":["DraggerVisibility","ExClampSplitOffset","SigDragEnded","SigDragStarted","SigDragged","SignalsOfSplitContainer"]};
