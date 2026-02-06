@@ -51,22 +51,27 @@ Violating this may cause undefined behavior, even when invoking <em>safe</em> fu
 (e.g. accessing a destroyed object).</p>
 <h2 id="using-other-gdextension-libraries-as-dependencies"><a class="doc-anchor" href="#using-other-gdextension-libraries-as-dependencies">§</a>Using other GDExtension libraries as dependencies</h2>
 <p>When using any other GDExtension library as a dependency, the implementor of the user-forwarding <code>ExtensionLibrary</code> must be specified
-via the <code>GODOT_RUST_MAIN_EXTENSION</code> environment variable. Crate with <code>ExtensionLibrary</code> implementor specified by this environment variable
-will be responsible for loading all the classes, as well as managing the <code>ExtensionLibrary</code> callbacks.</p>
-<p>For example, a crate called <code>mylibrary</code> with libraries <code>lib_b</code> and <code>lib_c</code> used as dependencies and an <code>ExtensionLibrary</code> implementor <code>MyUserExtension</code>
-can be built with <code>GODOT_RUST_MAIN_EXTENSION="MyUserExtension" cargo build</code>.</p>
+via the <code>GODOT_RUST_MAIN_EXTENSION</code> environment variable. That <em>main</em> crate will be responsible
+for loading all classes, as well as managing the <code>ExtensionLibrary</code> callbacks.</p>
+<p>For example, a crate called <code>mylibrary</code> with libraries <code>lib_b</code> and <code>lib_c</code> used as dependencies and an <code>ExtensionLibrary</code> implementor <code>MyExtension</code>
+can be built with <code>GODOT_RUST_MAIN_EXTENSION="MyExtension" cargo build</code>.</p>
 
-<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="comment">// Crate mylibrary
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="comment">// lib.rs of my-extension crate.
 // Usage of other dependencies must be explicitly declared; otherwise, they won't be registered.
 </span><span class="kw">extern crate </span>lib_b;
 <span class="kw">extern crate </span>lib_c;
 
-
-<span class="kw">struct </span>MyUserExtension {}
+<span class="kw">struct </span>MyExtension;
 
 <span class="attr">#[gdextension]
-</span><span class="kw">unsafe impl </span>ExtensionLibrary <span class="kw">for </span>MyUserExtension {}</code></pre></div>
+</span><span class="kw">unsafe impl </span>ExtensionLibrary <span class="kw">for </span>MyExtension {}</code></pre></div>
 <p>The name of the <code>ExtensionLibrary</code> implementor must be unique and different from those used by its dependencies.</p>
+<p>Given dependencies must be compilable as <code>rlib</code>. That is, they either specify <code>rlib</code> as a possible crate-type in their <code>Cargo.toml</code>:</p>
+
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code>
+[lib]
+<span class="kw">crate</span>-<span class="kw">type </span>= [<span class="string">"cdylib"</span>, <span class="string">"rlib"</span>]</code></pre></div>
+<p>Or do not specify <code>[lib]</code> at all (and are compiled with <code>cargo rustc --features ... --crate-type cdylib</code> instead).</p>
 <p>Note that it is the user’s responsibility to ensure that the same classes are not loaded twice –
 which might be a result of loading another extension in the project which already defines said classes.
 Do not use this feature to bundle dependencies to end-users unless it is necessary to do so.</p>
