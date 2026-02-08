@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1467/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1467"
 pr_author = "Yarwin"
 sort_key = 2026-02-08
-date_time = 2026-02-08T13:32:50Z
-commit_sha = "14464f7054b47af366115360c28a65a828191d25"
+date_time = 2026-02-08T13:33:05Z
+commit_sha = "5ced2ee954595b221aaeca04a5922252a2be2bf1"
 +++
 
 Allow to use other GDExtensions as dependencies.
