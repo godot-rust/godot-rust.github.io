@@ -300,94 +300,55 @@ for more information and further customization.</p>
 <p>This behaves similarly to <a href="https://docs.godotengine.org/en/stable/tutorials/plugins/running_code_in_the_editor.html">GDScript’s <code>@tool</code> feature</a>.</p>
 <p><strong>Note</strong>: As in GDScript, the class must be marked as a <code>tool</code> to be accessible in the editor (e.g., for use by editor plugins and inspectors).</p>
 <h3 id="export-tool-button"><a class="doc-anchor" href="#export-tool-button">§</a>Export tool button</h3>
-<p>If you need to create a clickable inspector button on your tool class, you can use <code>#[export_tool_button]</code>.
+<p>If you need to create a clickable inspector button on your tool class, you can use <a href="../prelude/struct.ExportToolButton.html"><code>ExportToolButton</code></a> with <code>#[export_tool_button]</code>.
 This exports a Callable property as a clickable button. When the button is pressed, the callable is called.</p>
 <p>You can specify a custom icon name with <code>#[export_tool_button(..., icon="...")]</code>,
 which must match one of the icon file names from the <a href="https://github.com/godotengine/godot/tree/master/editor/icons">editor/icons</a> folder of the Godot source repository (case-sensitive).
 You can also browse the editor icons using the <a href="https://godotengine.github.io/editor-icons/">Godot editor icons website</a>.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::register::property::ExportToolButton;
+<span class="kw">use </span>godot::obj::WithBaseField;
+
+<span class="attr">#[derive(GodotClass)]
+#[class(init, tool, base = Node)]
+</span><span class="kw">struct </span>MyStruct {
+    <span class="attr">#[export_tool_button(<span class="kw">fn </span>= <span class="self">Self</span>::my_fn, icon = <span class="string">"2DNodes"</span>)]
+    </span>tool_button: ExportToolButton,
+    <span class="attr">#[export_tool_button(<span class="kw">fn </span>= generic_fn, name = <span class="string">"My custom Name for Tool Button"</span>)]
+    </span>my_other_tool_button: ExportToolButton,
+
+    base: Base&lt;Node&gt;
+}
+
+<span class="kw">impl </span>MyStruct {
+    <span class="kw">fn </span>my_fn(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
+        <span class="comment">// ..
+    </span>}
+}
+
+<span class="kw">fn </span>generic_fn&lt;T: GodotClass&lt;Base=Node&gt; + WithBaseField&gt;(this: <span class="kw-2">&amp;mut </span>T) {
+    <span class="kw">let </span><span class="kw-2">mut </span>node = Node::new_alloc();
+    this.base_mut().add_child(<span class="kw-2">&amp;</span>node);
+    <span class="comment">// ..
+</span>}</code></pre></div>
 <p>A class with <code>#[export_tool_button]</code> fields must have a base field and must be a tool.</p>
 
 <div class="example-wrap compile_fail"><a href="#" class="tooltip" title="This example deliberately fails to compile">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
 </span><span class="comment">// Not a tool.
 </span><span class="attr">#[class(init, base = Node)]
 </span><span class="kw">struct </span>MyStruct {
-    <span class="attr">#[export_tool_button(name = <span class="string">"my tool button)]
-    tool_button: Callable,
+    <span class="attr">#[export_tool_button(<span class="kw">fn </span>= |<span class="kw">_</span>|)]
+    </span>tool_button: ExportToolButton,
     base: Base&lt;Node&gt;
-}</span></span></code></pre></div>
+}</code></pre></div>
 <div class="example-wrap compile_fail"><a href="#" class="tooltip" title="This example deliberately fails to compile">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
 #[class(init, base = Node)]
 </span><span class="kw">struct </span>MyStruct {
-    <span class="attr">#[export_tool_button(name = <span class="string">"my tool button)]
-    tool_button: Callable,
-    // Base field is absent.
-}</span></span></code></pre></div>
-<p>The <code>name</code> attribute is required:</p>
-
-<div class="example-wrap compile_fail"><a href="#" class="tooltip" title="This example deliberately fails to compile">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
-#[class(init, tool, base = Node)]
-</span><span class="kw">struct </span>MyStruct {
-    <span class="comment">// A button with no name.
-    </span><span class="attr">#[export_tool_button]
-    </span>tool_button: Callable,
-    base: Base&lt;Node&gt;
-}</code></pre></div>
-<p><code>#[export_tool_button]</code> can be created from the static function (<code>#[export_tool_button(fn = ... )]</code>,
-a function with a <code>Self</code> receiver (<code>#[export_tool_button(fn_self= ... )]</code>) or a Godot class method (<code>#[export_tool_button(method = "...", ...)]</code>).
-If no source is specified, the Callable will be left invalid.</p>
-
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
-#[class(init, tool, base = Node)]
-</span><span class="kw">struct </span>MyStruct {
-    <span class="attr">#[export_tool_button(<span class="kw">fn</span>=my_static_fn, name = <span class="string">"Static fn"</span>)]
-    </span>static_fn: Callable,
-
-    <span class="attr">#[export_tool_button(fn_self=<span class="self">Self</span>::my_method, name = <span class="string">"Self method"</span>)]
-    </span>self_fn: Callable,
-
-    <span class="attr">#[export_tool_button(fn_self=dyn_trait_fn, name = <span class="string">"Trait method"</span>)]
-    </span>dyn_fn: Callable,
-
-    <span class="attr">#[export_tool_button(method=<span class="string">"gd_self_method"</span>, name = <span class="string">"GdSelf Method"</span>)]
-    </span>gdself_method_fn: Callable,
-
-    <span class="attr">#[export_tool_button(method=<span class="string">"queue_free"</span>, name = <span class="string">"Base method"</span>)]
-    </span>base_method_fn: Callable,
-
-    <span class="attr">#[export_tool_button(name = <span class="string">"Manual tool button"</span>)]
-    </span>manual_tool_button: Callable,
-
-    base: Base&lt;Node&gt;
-}
-
-<span class="kw">fn </span>my_static_fn() {  }
-
-<span class="attr">#[godot_api]
-</span><span class="kw">impl </span>MyStruct {
-    <span class="attr">#[func(gd_self)]
-    </span><span class="kw">fn </span>gd_self_method(this: Gd&lt;<span class="self">Self</span>&gt;) { }
-
-    <span class="kw">fn </span>my_method(<span class="kw-2">&amp;mut </span><span class="self">self</span>) { }
-}
-
-<span class="kw">impl </span>ExampleTrait <span class="kw">for </span>MyStruct {}
-
-<span class="comment">// Shared function which takes dereference of Self.
-</span><span class="kw">fn </span>dyn_trait_fn(this: <span class="kw-2">&amp;mut </span><span class="kw">dyn </span>ExampleTrait) { }
-
-<span class="attr">#[godot_api]
-</span><span class="kw">impl </span>INode <span class="kw">for </span>MyStruct {
-    <span class="kw">fn </span>on_notification(<span class="kw-2">&amp;mut </span><span class="self">self</span>, what: NodeNotification) {
-        <span class="kw">match </span>what {
-            NodeNotification::ENTER_TREE | NodeNotification::EXTENSION_RELOADED =&gt; {
-                <span class="self">self</span>.manual_tool_button = Callable::from_fn(<span class="string">"manual fn"</span>, |<span class="kw">_</span>| {
-                    <span class="macro">godot_print!</span>(<span class="string">"hello from manual tool button!"</span>)
-                });
-            }
-            <span class="kw">_ </span>=&gt; {}
-        }
-    }
-}</code></pre></div>
+    <span class="attr">#[export_tool_button(<span class="kw">fn </span>= |<span class="kw">_</span>|)]
+    </span>tool_button: ExportToolButton,
+    <span class="comment">// Base field is absent.
+</span>}</code></pre></div>
+<p>This feature requires at least Godot 4.3.</p>
 <p>See also in Godot docs:
 <a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_exports.html#export-tool-button"><code>@export_tool_button</code></a></p>
 <h3 id="editor-plugins"><a class="doc-anchor" href="#editor-plugins">§</a>Editor plugins</h3>
