@@ -10,7 +10,9 @@ untyped[&quot;hello&quot;] = &quot;world&quot;        # Not detected by GDScript
 <p>godot-rust on the other hand introduces a new type <code>AnyDictionary</code>, which can store <em>any</em> dictionary, typed or untyped.
 <code>AnyDictionary</code> provides operations that are valid regardless of the type, e.g. <code>len()</code>, <code>is_empty()</code> or <code>clear()</code>.
 Methods which would return specific types on <code>Dictionary&lt;K, V&gt;</code> exist on <code>AnyDictionary</code> but return <code>Variant</code>.</p>
-<p><code>AnyDictionary</code> does not provide any operations where data flows <em>in</em> to the dictionary, such as <code>set()</code> or <code>insert()</code>.</p>
+<p><code>AnyDictionary</code> does not provide any operations where data flows <em>into</em> to the dictionary, such as <code>set()</code> or <code>insert()</code>.
+Note that this does <strong>not</strong> mean that <code>AnyDictionary</code> is an immutable view; mutating methods that are agnostic to element types (or where
+data only flows <em>out</em>), are still available. Examples are <code>clear()</code> and <code>remove()</code>.</p>
 <h3 id="conversions"><a class="doc-anchor" href="#conversions">§</a>Conversions</h3>
 <ul>
 <li>Use <a href="../prelude/struct.AnyDictionary.html#method.try_cast_dictionary" title="method godot::prelude::AnyDictionary::try_cast_dictionary"><code>try_cast_dictionary::&lt;K, V&gt;()</code></a> to convert to a typed <code>Dictionary&lt;K, V&gt;</code>.</li>
