@@ -4,12 +4,12 @@
 <p>If you no longer need the value at the call site, consider using <a href="fn.owned_into_arg.html" title="fn godot::meta::owned_into_arg"><code>owned_into_arg(value)</code></a> instead.</p>
 <h2 id="example"><a class="doc-anchor" href="#example">§</a>Example</h2>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span>godot::meta::{ArrayElement, ref_to_arg};
+<span class="kw">use </span>godot::meta::{Element, ref_to_arg};
 
 <span class="comment">// Could use `impl AsArg&lt;T&gt;` and forward it, but let's demonstrate `&amp;T` here.
 </span><span class="kw">fn </span>log_and_push&lt;T&gt;(arr: <span class="kw-2">&amp;mut </span>Array&lt;T&gt;, value: <span class="kw-2">&amp;</span>T)
 <span class="kw">where
-    </span>T: ArrayElement + ToGodot + std::fmt::Debug,
+    </span>T: Element + ToGodot + std::fmt::Debug,
 {
     <span class="macro">println!</span>(<span class="string">"Add value: {value:?}"</span>);
     arr.push(ref_to_arg(value));
