@@ -5,7 +5,7 @@ You don’t care if the value can truly be moved efficiently, since you don’t 
 <p>Note that the pattern <code>owned_into_arg(value.clone())</code> is inefficient – instead, use <a href="fn.ref_to_arg.html" title="fn godot::meta::ref_to_arg"><code>ref_to_arg(&amp;value)</code></a>.</p>
 <h2 id="example"><a class="doc-anchor" href="#example">§</a>Example</h2>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span>godot::meta::{ArrayElement, owned_into_arg};
+<span class="kw">use </span>godot::meta::{Element, owned_into_arg};
 
 <span class="comment">// Creates random values, e.g. for fuzzing, property-based testing, etc.
 // Assume global state for simplicity.
@@ -15,7 +15,7 @@ You don’t care if the value can truly be moved efficiently, since you don’t 
 
 <span class="kw">fn </span>fill_randomly&lt;T&gt;(arr: <span class="kw-2">&amp;mut </span>Array&lt;T&gt;, count: usize)
 <span class="kw">where
-    </span>T: ArrayElement + ToGodot + Generator,
+    </span>T: Element + ToGodot + Generator,
 {
     <span class="kw">for _ in </span><span class="number">0</span>..count {
         <span class="kw">let </span>value = T::next();
