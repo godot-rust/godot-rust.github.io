@@ -45,11 +45,11 @@ Callable that executes the specified function.</p>
         get = get_my_callable,
         usage_flags = [EDITOR]</span>,
         hint = TOOL_BUTTON,
-        hint_string = <span class="string">"My first tool button!,2DNodes"
+        hint_string = <span class="string">"My tool button!,2DNodes"
     </span>)]
     my_first_tool_button: PhantomVar&lt;Callable&gt;,
     <span class="comment">// Is equivalent to:
-    </span><span class="attr">#[export_tool_button(<span class="kw">fn </span>= <span class="self">Self</span>::my_fn, name = <span class="string">"My second tool button!"</span>, icon = <span class="string">"2DNodes"</span>)]
+    </span><span class="attr">#[export_tool_button(<span class="kw">fn </span>= <span class="self">Self</span>::my_fn, name = <span class="string">"My tool button!"</span>, icon = <span class="string">"2DNodes"</span>)]
     </span>my_second_tool_button: PhantomVar&lt;Callable&gt;,
 
     <span class="comment">// Base is required.

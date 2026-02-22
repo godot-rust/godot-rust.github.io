@@ -300,29 +300,39 @@ for more information and further customization.</p>
 <p>This behaves similarly to <a href="https://docs.godotengine.org/en/stable/tutorials/plugins/running_code_in_the_editor.html">GDScript’s <code>@tool</code> feature</a>.</p>
 <p><strong>Note</strong>: As in GDScript, the class must be marked as a <code>tool</code> to be accessible in the editor (e.g., for use by editor plugins and inspectors).</p>
 <h3 id="export-tool-button"><a class="doc-anchor" href="#export-tool-button">§</a>Export tool button</h3>
-<p>If you need to create a clickable inspector button on your tool class, you can use <a href="../prelude/struct.PhantomVar.html"><code>PhantomVar&lt;Callable&gt;</code></a> with <code>#[export_tool_button]</code>.
-This exports a Callable property as a clickable button. When the button is pressed, the callable is called.</p>
-<p>You can specify a custom icon name with <code>#[export_tool_button(..., icon="...")]</code>,
-which must match one of the icon file names from the <a href="https://github.com/godotengine/godot/tree/master/editor/icons">editor/icons</a> folder of the Godot source repository (case-sensitive).
-You can also browse the editor icons using the <a href="https://godotengine.github.io/editor-icons/">Godot editor icons website</a>.</p>
+<p>If you need a clickable inspector button on a tool class, use <a href="../register/property/struct.PhantomVar.html"><code>PhantomVar&lt;Callable&gt;</code></a> with
+the <code>#[export_tool_button]</code> attribute. This exports a <code>Callable</code> property as a clickable button. When the button is pressed, the callable is invoked.</p>
+<p>In GDScript, the equivalent feature is <a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_exports.html#export-tool-button"><code>@export_tool_button</code></a>.</p>
+<p>The <code>#[export_tool_button]</code> attribute accepts the following arguments:</p>
+<ul>
+<li><strong><code>fn</code></strong> (required): a Rust expression that evaluates to a function. This can be a path to a method (<code>Self::my_method</code>) or global function
+(<code>my_function</code>). The expression receives a <code>&amp;mut Self</code> reference when the button is clicked.</li>
+<li><strong><code>name</code></strong> (optional): a string literal used as the button label in the inspector. If not provided, it is derived from the field name, with
+underscores replaced by spaces.</li>
+<li><strong><code>icon</code></strong> (optional): a string literal naming an editor icon to display on the button. Must match one of the icon file names from the
+<a href="https://github.com/godotengine/godot/tree/master/editor/icons">editor/icons</a> folder of the Godot source repository, without the <code>.svg</code> extension (case-sensitive, e.g. <code>"Node2D"</code> for <code>Node2D.svg</code>).
+You can browse available icons on the <a href="https://godotengine.github.io/editor-icons/">Godot editor icons website</a>. Only built-in editor icons can be used; custom icons from the project
+folder are not supported.</li>
+</ul>
 
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::obj::WithBaseField;
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::prelude::<span class="kw-2">*</span>;
+<span class="kw">use </span>godot::obj::WithBaseField;
 
 <span class="attr">#[derive(GodotClass)]
 #[class(init, tool, base = Node)]
 </span><span class="kw">struct </span>MyStruct {
-    <span class="attr">#[export_tool_button(<span class="kw">fn </span>= <span class="self">Self</span>::my_fn, icon = <span class="string">"2DNodes"</span>)]
+    <span class="attr">#[export_tool_button(<span class="kw">fn </span>= <span class="self">Self</span>::my_method, icon = <span class="string">"2DNodes"</span>)]
     </span>tool_button: PhantomVar&lt;Callable&gt;,
+
     <span class="attr">#[export_tool_button(<span class="kw">fn </span>= generic_fn, name = <span class="string">"My custom Name for Tool Button"</span>)]
     </span>my_other_tool_button: PhantomVar&lt;Callable&gt;,
 
-    base: Base&lt;Node&gt;
+    base: Base&lt;Node&gt;,
 }
 
-<span class="kw">impl </span>MyStruct {
-    <span class="kw">fn </span>my_fn(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
-        <span class="comment">// ..
-    </span>}
+<span class="attr">#[godot_api]
+</span><span class="kw">impl </span>MyStruct {
+    <span class="kw">fn </span>my_method(<span class="kw-2">&amp;mut </span><span class="self">self</span>) { <span class="comment">/* ... */ </span>}
 }
 
 <span class="kw">fn </span>generic_fn&lt;T: GodotClass&lt;Base=Node&gt; + WithBaseField&gt;(this: <span class="kw-2">&amp;mut </span>T) {
@@ -330,20 +340,22 @@ You can also browse the editor icons using the <a href="https://godotengine.gith
     this.base_mut().add_child(<span class="kw-2">&amp;</span>node);
     <span class="comment">// ..
 </span>}</code></pre></div>
-<p>A class with <code>#[export_tool_button]</code> fields must have a base field and must be a tool.</p>
+<p>A class with <code>#[export_tool_button]</code> fields must have <code>#[class(tool)]</code> and a <code>Base&lt;T&gt;</code> field.  <br />
+<code>#[export_tool_button]</code> cannot be combined with <code>#[var]</code> and <code>#[export]</code> on the same field.  <br />
+The following examples will fail to compile:</p>
 
 <div class="example-wrap compile_fail"><a href="#" class="tooltip" title="This example deliberately fails to compile">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
 </span><span class="comment">// Not a tool.
 </span><span class="attr">#[class(init, base = Node)]
 </span><span class="kw">struct </span>MyStruct {
-    <span class="attr">#[export_tool_button(<span class="kw">fn </span>= <span class="self">Self</span>::my_fn)]
+    <span class="attr">#[export_tool_button(<span class="kw">fn </span>= <span class="self">Self</span>::my_method)]
     </span>tool_button: PhantomVar&lt;Callable&gt;,
     base: Base&lt;Node&gt;
 }</code></pre></div>
 <div class="example-wrap compile_fail"><a href="#" class="tooltip" title="This example deliberately fails to compile">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(GodotClass)]
 #[class(init, base = Node)]
 </span><span class="kw">struct </span>MyStruct {
-    <span class="attr">#[export_tool_button(<span class="kw">fn </span>= <span class="self">Self</span>::my_fn)]
+    <span class="attr">#[export_tool_button(<span class="kw">fn </span>= <span class="self">Self</span>::my_method)]
     </span>tool_button: PhantomVar&lt;Callable&gt;,
     <span class="comment">// Base field is absent.
 </span>}</code></pre></div>
@@ -351,8 +363,6 @@ You can also browse the editor icons using the <a href="https://godotengine.gith
 <p>Note: Callables generated by <code>#[export_tool_button]</code> become invalid after hot reload.
 Keeping references to them after hot reloading (for example by using tool script or other GDExtension)
 is unsound and will crash the editor.</p>
-<p>See also in Godot docs:
-<a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_exports.html#export-tool-button"><code>@export_tool_button</code></a></p>
 <h3 id="editor-plugins"><a class="doc-anchor" href="#editor-plugins">§</a>Editor plugins</h3>
 <p>Classes inheriting <code>EditorPlugin</code> will be automatically instantiated and added
 to the editor when launched.</p>
