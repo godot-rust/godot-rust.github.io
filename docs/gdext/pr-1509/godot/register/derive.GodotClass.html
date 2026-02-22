@@ -303,7 +303,6 @@ for more information and further customization.</p>
 <p>If you need a clickable inspector button on a tool class, use <a href="../register/property/struct.PhantomVar.html"><code>PhantomVar&lt;Callable&gt;</code></a> with
 the <code>#[export_tool_button]</code> attribute. This exports a <code>Callable</code> property as a clickable button. When the button is pressed, the callable
 is invoked.</p>
-<p>In GDScript, the equivalent feature is <a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_exports.html#export-tool-button"><code>@export_tool_button</code></a>. Requires at least Godot 4.4.</p>
 <p>The <code>#[export_tool_button]</code> attribute accepts the following arguments:</p>
 <ul>
 <li><strong><code>fn</code></strong> (required): a Rust expression that evaluates to a function. This can be a path to a method (<code>Self::my_method</code>) or global function
@@ -403,6 +402,7 @@ Callable that executes the specified function. The following section provides su
         <span class="macro">godot_print!</span>(<span class="string">"Hello from my fn!"</span>);
     }
 }</code></pre></div> </details>
+<p>The GDScript equivalent of <code>#[export_tool_button]</code> is <a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_exports.html#export-tool-button"><code>@export_tool_button</code></a>. This feature requires at least Godot 4.4.</p>
 <h3 id="editor-plugins"><a class="doc-anchor" href="#editor-plugins">§</a>Editor plugins</h3>
 <p>Classes inheriting <code>EditorPlugin</code> will be automatically instantiated and added
 to the editor when launched.</p>
