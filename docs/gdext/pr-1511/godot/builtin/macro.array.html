@@ -3,25 +3,25 @@
     (= $($elements:expr_2021),* $(,)?) =&gt; { ... };
 }</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Constructs <a href="../prelude/struct.Array.html" title="struct godot::prelude::Array"><code>Array</code></a> literals, similar to Rust’s standard <code>vec!</code> macro.</p>
 <h2 id="type-inference"><a class="doc-anchor" href="#type-inference">§</a>Type inference</h2>
-<p>By default, <code>array!</code> uses <a href="../meta/trait.DirectElement.html" title="trait godot::meta::DirectElement"><code>DirectElement</code></a> for unambiguous type inference.
-This covers by-value types (<code>i32</code>, <code>bool</code>, <code>Vector2</code>, …) and by-ref types (<code>&amp;GString</code>, <code>&amp;Array&lt;T&gt;</code>, …).
-Additionally, <code>&amp;str</code> and <code>&amp;String</code> are accepted as <code>GString</code> elements.</p>
-<p>For types not covered by <code>DirectElement</code> (e.g. <code>Gd&lt;T&gt;</code>, <code>Variant</code>), use the <code>~ </code> prefix to fall back
-to the more permissive <a href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg"><code>AsArg</code></a> semantics.</p>
+<p>By default, <code>array!</code> uses <a href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg"><code>AsArg</code></a> to push elements. This works when the array’s element type <code>T</code> is already
+determined from context – a type annotation, function parameter, etc. This supports all element types including <code>Gd&lt;T&gt;</code> and <code>Variant</code>.</p>
+<p>The <code>= </code> prefix (<code>array![= ...]</code>) switches to <a href="../meta/trait.DirectElement.html" title="trait godot::meta::DirectElement"><code>DirectElement</code></a>, enabling unambiguous type inference
+from the elements themselves – no external type context needed. Covers only common types and provides only conversions that are opinionated
+but unambiguous. For example, <code>array![= "hello"]</code> will infer as <code>Array&lt;GString&gt;</code>, never <code>Array&lt;StringName&gt;</code> or <code>Array&lt;Variant&gt;</code>.</p>
 <h2 id="examples"><a class="doc-anchor" href="#examples">§</a>Examples</h2>
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="comment">// Inferred type - i32: DirectElement&lt;i32&gt;.
-</span><span class="kw">let </span>ints = <span class="macro">array!</span>[= <span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>];
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="comment">// Type annotation provides context; no prefix needed.
+// Multiple assignments possible.
+</span><span class="kw">let </span>ints: Array&lt;i8&gt;      = <span class="macro">array!</span>[<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>];
+<span class="kw">let </span>ints: Array&lt;i64&gt;     = <span class="macro">array!</span>[<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>];
+<span class="kw">let </span>ints: Array&lt;Variant&gt; = <span class="macro">array!</span>[<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>];
 
-<span class="comment">// Inferred type - &amp;GString: DirectElement&lt;GString&gt;.
-</span><span class="kw">let </span>strs = <span class="macro">array!</span>[= <span class="kw-2">&amp;</span>GString::from(<span class="string">"godot-rust"</span>)];
+<span class="kw">let </span>strs: Array&lt;GString&gt;    = <span class="macro">array!</span>[<span class="string">"a"</span>, <span class="string">"b"</span>];
+<span class="kw">let </span>strs: Array&lt;StringName&gt; = <span class="macro">array!</span>[<span class="string">"a"</span>, <span class="string">"b"</span>];
+<span class="kw">let </span>strs: Array&lt;Variant&gt;    = <span class="macro">array!</span>[<span class="string">"a"</span>, <span class="string">"b"</span>];
 
-<span class="comment">// &amp;str inferred as GString via DirectElement&lt;GString&gt;.
-</span><span class="kw">let </span>strs: Array&lt;GString&gt; = <span class="macro">array!</span>[= <span class="string">"Godot"</span>, <span class="string">"Rust"</span>];
-
-<span class="comment">// No prefix for Gd objects (uses AsArg, not DirectElement).
-</span><span class="kw">let </span>node = Node::new_alloc();
-<span class="kw">let </span>nodes: Array&lt;Gd&lt;Node&gt;&gt; = <span class="macro">array!</span>[<span class="kw-2">&amp;</span>node];
-node.free();</code></pre></div><h2 id="see-also"><a class="doc-anchor" href="#see-also">§</a>See also</h2>
+<span class="comment">// No type context, so use `=` for unambiguous inference.
+</span><span class="kw">let </span>ints = <span class="macro">array!</span>[= <span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>];  <span class="comment">// Array&lt;i32&gt;.
+</span><span class="kw">let </span>strs = <span class="macro">array!</span>[= <span class="string">"a"</span>, <span class="string">"b"</span>]; <span class="comment">// Array&lt;GString&gt;.</span></code></pre></div><h2 id="see-also"><a class="doc-anchor" href="#see-also">§</a>See also</h2>
 <p>To create an <code>Array</code> of variants, see the <a href="../prelude/macro.varray.html" title="macro godot::prelude::varray"><code>varray!</code></a> macro.</p>
-<p>For dictionaries, a similar macro <a href="../prelude/macro.vdict.html" title="macro godot::prelude::vdict"><code>vdict!</code></a> exists.</p>
+<p>For dictionaries, a similar macro <a href="../prelude/macro.dict.html" title="macro godot::prelude::dict"><code>dict!</code></a> exists.</p>
 </div></details></section></div></main></body></html>

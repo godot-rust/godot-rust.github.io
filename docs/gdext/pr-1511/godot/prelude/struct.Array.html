@@ -95,18 +95,18 @@ array.push(<span class="kw-2">&amp;</span><span class="string">"Hello"</span>.to
 
 <span class="comment">// If either `begin` or `end` is negative, its value is relative to the end of the array.
 </span><span class="kw">let </span>sub = arr.subarray_shallow(wrapped(-<span class="number">1</span>..-<span class="number">5</span>), <span class="prelude-val">None</span>);
-<span class="macro">assert_eq!</span>(sub, <span class="macro">array!</span>[= <span class="number">5</span>, <span class="number">3</span>]);
+<span class="macro">assert_eq!</span>(sub, <span class="macro">array!</span>[<span class="number">5</span>, <span class="number">3</span>]);
 
 <span class="comment">// If `end` is not specified, the range spans through whole array.
 </span><span class="kw">let </span>sub = arr.subarray_deep(<span class="number">1</span>.., <span class="prelude-val">None</span>);
-<span class="macro">assert_eq!</span>(sub, <span class="macro">array!</span>[= <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]);
+<span class="macro">assert_eq!</span>(sub, <span class="macro">array!</span>[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]);
 <span class="kw">let </span>other_clamped_array = arr.subarray_shallow(<span class="number">5</span>.., <span class="prelude-val">Some</span>(<span class="number">2</span>));
-<span class="macro">assert_eq!</span>(other_clamped_array, <span class="macro">array!</span>[= <span class="number">5</span>]);
+<span class="macro">assert_eq!</span>(other_clamped_array, <span class="macro">array!</span>[<span class="number">5</span>]);
 
 <span class="comment">// If specified, `step` is the relative index between source elements. It can be negative,
 // in which case `begin` must be higher than `end`.
 </span><span class="kw">let </span>sub = arr.subarray_shallow(wrapped(-<span class="number">1</span>..-<span class="number">5</span>), <span class="prelude-val">Some</span>(-<span class="number">2</span>));
-<span class="macro">assert_eq!</span>(sub, <span class="macro">array!</span>[= <span class="number">5</span>, <span class="number">3</span>]);</code></pre></div><h2 id="thread-safety"><a class="doc-anchor" href="#thread-safety">§</a>Thread safety</h2>
+<span class="macro">assert_eq!</span>(sub, <span class="macro">array!</span>[<span class="number">5</span>, <span class="number">3</span>]);</code></pre></div><h2 id="thread-safety"><a class="doc-anchor" href="#thread-safety">§</a>Thread safety</h2>
 <p>Usage is safe if the <code>Array</code> is used on a single thread only. Concurrent reads on
 different threads are also safe, but any writes must be externally synchronized. The Rust
 compiler will enforce this as long as you use only Rust threads, but it cannot protect against
