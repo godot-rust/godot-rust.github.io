@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1513/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1513"
 pr_author = "Bromeon"
 sort_key = 2026-03-01
-date_time = 2026-03-01T15:03:07Z
-commit_sha = "7cfee93bec754f461bc9ca7dcac0bd027669fbe2"
+date_time = 2026-03-01T15:07:14Z
+commit_sha = "affd5e13a0b0a57918d60d8b4fd6a82c53590bab"
 +++
 
 `GodotShape` refactor; open `Element` for enums
