@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["ClassHeritage","GodotNestedShape","GodotShape"],"mod":["export_info_functions"],"struct":["Enumerator","PhantomVar"],"trait":["BuiltinExport","Export","SimpleVar","Var"]};
