@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1512/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1512"
 pr_author = "Yarwin"
 sort_key = 2026-03-01
-date_time = 2026-03-01T15:26:20Z
-commit_sha = "aeac2856823715f1725d2aaf38b2c20bb48cbff5"
+date_time = 2026-03-01T17:08:31Z
+commit_sha = "f5e86ff2642f68af090d7331e70362ea21983edc"
 +++
 
 Address unsoundness of typed signals after hot reload.
