@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":["export_info_functions"],"struct":["PhantomVar"],"trait":["BuiltinExport","Export","SimpleVar","Var"]};
+window.SIDEBAR_ITEMS = {"enum":["ClassHeritage","GodotShape"],"mod":["export_info_functions"],"struct":["Enumerator","PhantomVar"],"trait":["BuiltinExport","Export","SimpleVar","Var"]};
