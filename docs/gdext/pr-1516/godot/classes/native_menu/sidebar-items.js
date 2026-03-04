@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["ExAddCheckItem","ExAddIconCheckItem","ExAddIconItem","ExAddIconRadioCheckItem","ExAddItem","ExAddMultistateItem","ExAddRadioCheckItem","ExAddSeparator","ExAddSubmenuItem","Feature","SystemMenus"]};
