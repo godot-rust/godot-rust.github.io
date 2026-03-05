@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1520/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1520"
 pr_author = "Bromeon"
 sort_key = 2026-03-05
-date_time = 2026-03-05T19:41:38Z
-commit_sha = "d83fd24537e10bc952b648c4841e7f6fd38a7353"
+date_time = 2026-03-05T20:19:03Z
+commit_sha = "307e27c1c118e2f04d42cd76dd04edf3afe0c9e5"
 +++
 
 Do not print twice on user panic
