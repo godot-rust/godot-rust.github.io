@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1521/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1521"
 pr_author = "Bromeon"
 sort_key = 2026-03-06
-date_time = 2026-03-06T09:14:28Z
-commit_sha = "17a1c0f04f6d7fadb8dc2f6c0b86da5b5551180d"
+date_time = 2026-03-06T09:16:11Z
+commit_sha = "db89e2896ca6378e4d08fcc50a2cc8266440260a"
 +++
 
  All env vars now have `GDRUST_` prefix 
