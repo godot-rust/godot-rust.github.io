@@ -55,8 +55,8 @@ tiles.set(Vector2i::new(<span class="number">1</span>, <span class="number">3</s
 
 <span class="comment">// Create the same dictionary in a single expression.
 </span><span class="kw">let </span>tiles: Dictionary&lt;Vector2i, Tile&gt; = <span class="macro">dict!</span> {
-   (Vector2i::new(<span class="number">1</span>, <span class="number">2</span>)): Tile::GRASS,
-   (Vector2i::new(<span class="number">1</span>, <span class="number">3</span>)): Tile::WATER,
+   Vector2i::new(<span class="number">1</span>, <span class="number">2</span>) =&gt; Tile::GRASS,
+   Vector2i::new(<span class="number">1</span>, <span class="number">3</span>) =&gt; Tile::WATER,
 };
 
 <span class="comment">// Element access is now strongly typed.
