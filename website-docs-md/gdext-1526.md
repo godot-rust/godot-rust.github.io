@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1526/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1526"
 pr_author = "Bromeon"
 sort_key = 2026-03-12
-date_time = 2026-03-12T21:56:29Z
-commit_sha = "60dd8f59456cab39215fc189ad5086b0c14fcf23"
+date_time = 2026-03-12T23:01:04Z
+commit_sha = "d21a219e5e2766f1852caf06897f32f38140fdcc"
 +++
 
 Remove string `arg()` method, update TODOs
