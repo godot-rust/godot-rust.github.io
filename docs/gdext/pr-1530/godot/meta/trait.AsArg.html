@@ -36,8 +36,8 @@ passed to engine APIs, it can become a problematic when passing long strings in 
 While these conversions are not free, those are either explicit because a string literal is used, or they are unsurprising, because Godot
 cannot deal with raw Rust types. On the other hand, <code>GString</code> and <code>StringName</code> are sometimes used almost interchangeably (example:
 <a href="../prelude/struct.Node.html#method.set_name" title="method godot::prelude::Node::set_name"><code>Node::set_name</code></a> takes <code>GString</code> but <a href="../prelude/struct.Node.html#method.get_name" title="method godot::prelude::Node::get_name"><code>Node::get_name</code></a> returns <code>StringName</code>).</p>
-<p>If you want to convert between Godot’s string types for the sake of argument passing, each type provides an <code>arg()</code> method, such as
-<a href="../prelude/struct.GString.html#method.arg" title="method godot::prelude::GString::arg"><code>GString::arg()</code></a>. You cannot use this method in other contexts.</p>
+<p>If you want to convert between Godot’s string types for the sake of argument passing, use the <code>From</code> conversions, e.g.
+<code>GString::from(&amp;string_name)</code>.</p>
 <h2 id="object-arguments"><a class="doc-anchor" href="#object-arguments">§</a>Object arguments</h2>
 <p>This section treats <code>AsArg&lt;Gd&lt;*&gt;&gt;</code>. The trait is implemented for <strong>shared references</strong> in multiple ways:</p>
 <ul>
