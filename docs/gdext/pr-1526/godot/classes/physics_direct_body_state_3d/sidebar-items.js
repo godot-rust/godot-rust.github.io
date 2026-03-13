@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["ExAddConstantCentralForce","ExAddConstantForce","ExApplyCentralForce","ExApplyCentralImpulse","ExApplyForce","ExApplyImpulse"]};
