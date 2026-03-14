@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["ClassHeritage","ElementType","GodotElementShape","GodotShape"],"struct":["ClassId","ElementScript","EnumConstant","Enumerator"]};
