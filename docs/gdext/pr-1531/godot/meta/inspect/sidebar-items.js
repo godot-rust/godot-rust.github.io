@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"enum":["ElementType"],"struct":["ElementScript","EnumConstant"]};
+window.SIDEBAR_ITEMS = {"enum":["ElementType"],"mod":["element_type"],"struct":["ElementScript","EnumConstant"]};
