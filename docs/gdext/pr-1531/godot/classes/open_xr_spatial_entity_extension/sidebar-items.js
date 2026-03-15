@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["Capability","ComponentType","ExCreateSpatialContext","ExDiscoverSpatialEntities","ExQuerySnapshot","ExUpdateSpatialEntities","SigSpatialDiscoveryRecommended","SignalsOfOpenXrSpatialEntityExtension"]};

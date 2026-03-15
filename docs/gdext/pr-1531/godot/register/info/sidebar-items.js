@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["MethodFlags","MethodInfo","PropertyHint","PropertyHintInfo","PropertyInfo","PropertyUsageFlags"]};
