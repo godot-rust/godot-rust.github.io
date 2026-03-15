@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"enum":["ClassHeritage","ElementType","GodotElementShape","GodotShape"],"struct":["ClassId","ElementScript","EnumConstant","Enumerator"]};
+window.SIDEBAR_ITEMS = {"enum":["ClassHeritage","GodotElementShape","GodotShape"],"struct":["Enumerator"]};
