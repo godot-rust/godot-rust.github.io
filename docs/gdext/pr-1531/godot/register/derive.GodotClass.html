@@ -277,7 +277,7 @@ Every exported property after this attribute will be added to the group. Start a
      </span>ungrouped_field: i64,
  }</code></pre></div><h3 id="low-level-property-hints-and-usage"><a class="doc-anchor" href="#low-level-property-hints-and-usage">§</a>Low-level property hints and usage</h3>
 <p>You can specify custom property hints, hint strings, and usage flags in a <code>#[var]</code> attribute using the <code>hint</code>, <code>hint_string</code>
-and <code>usage_flags</code> keys in the attribute. Hint and usage flags are constants in the <a href="../global/struct.PropertyHint.html"><code>PropertyHint</code></a> and <a href="../global/struct.PropertyUsageFlags.html"><code>PropertyUsageFlags</code></a> enums,
+and <code>usage_flags</code> keys in the attribute. Hint and usage flags are constants in the <a href="../register/info/struct.PropertyHint.html"><code>PropertyHint</code></a> and <a href="../register/info/struct.PropertyUsageFlags.html"><code>PropertyUsageFlags</code></a> enums,
 while hint strings are dependent on the hint, property type and context. Using these low-level keys is rarely necessary, as most common
 combinations are covered by <code>#[var]</code> and <code>#[export]</code> already.</p>
 

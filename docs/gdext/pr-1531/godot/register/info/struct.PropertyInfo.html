@@ -3,7 +3,7 @@
     pub class_name: <a class="struct" href="../../prelude/struct.StringName.html" title="struct godot::prelude::StringName">StringName</a>,
     pub property_name: <a class="struct" href="../../prelude/struct.StringName.html" title="struct godot::prelude::StringName">StringName</a>,
     pub hint_info: <a class="struct" href="struct.PropertyHintInfo.html" title="struct godot::register::info::PropertyHintInfo">PropertyHintInfo</a>,
-    pub usage: <a class="struct" href="../../global/struct.PropertyUsageFlags.html" title="struct godot::global::PropertyUsageFlags">PropertyUsageFlags</a>,
+    pub usage: <a class="struct" href="struct.PropertyUsageFlags.html" title="struct godot::register::info::PropertyUsageFlags">PropertyUsageFlags</a>,
 }</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Describes a property’s type, name and metadata for Godot.</p>
 <p><code>PropertyInfo</code> is used throughout the Godot binding to describe properties, method parameters and return types.</p>
 <p>This the Rust representation of the FFI type <code>sys::GDExtensionPropertyInfo</code>, still relatively low level. Unlike the FFI version which
@@ -18,9 +18,8 @@ For a high-level representation of properties, see <a href="../../meta/shape/enu
 <li><a href="struct.PropertyInfo.html#method.new_group" title="associated function godot::register::info::PropertyInfo::new_group"><code>new_group()</code></a> / <a href="struct.PropertyInfo.html#method.new_subgroup" title="associated function godot::register::info::PropertyInfo::new_subgroup"><code>new_subgroup()</code></a> – for editor groups.</li>
 </ul>
 <h2 id="example"><a class="doc-anchor" href="#example">§</a>Example</h2>
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::register::info::{PropertyInfo, PropertyHintInfo};
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::register::info::{PropertyInfo, PropertyHintInfo, PropertyUsageFlags};
 <span class="kw">use </span>godot::builtin::{StringName, VariantType};
-<span class="kw">use </span>godot::global::PropertyUsageFlags;
 
 <span class="comment">// Integer property without a specific class
 </span><span class="kw">let </span>count_property = PropertyInfo {
@@ -62,37 +61,37 @@ Rust-side enums that aren’t registered with Godot can also use the empty strin
 <span class="comment">// Or directly, without caching the class name globally (recommended anyway for enums):
 </span><span class="kw">let </span>class_name = StringName::from(<span class="string">"MyScript"</span>);</code></pre></div></div><span id="structfield.property_name" class="structfield section-header"><a href="#structfield.property_name" class="anchor field">§</a><code>property_name: <a class="struct" href="../../prelude/struct.StringName.html" title="struct godot::prelude::StringName">StringName</a></code></span><div class="docblock"><p>The name of this property as it appears in Godot’s object system.</p>
 </div><span id="structfield.hint_info" class="structfield section-header"><a href="#structfield.hint_info" class="anchor field">§</a><code>hint_info: <a class="struct" href="struct.PropertyHintInfo.html" title="struct godot::register::info::PropertyHintInfo">PropertyHintInfo</a></code></span><div class="docblock"><p>Additional type information and validation constraints for this property.</p>
-<p>Use functions from <a href="../property/export_info_functions/index.html" title="mod godot::register::property::export_info_functions"><code>export_info_functions</code></a> to create common hints,
+<p>Use functions from <a href="../property/export_fns/index.html" title="mod godot::register::property::export_fns"><code>export_fns</code></a> to create common hints,
 or <a href="struct.PropertyHintInfo.html#method.none" title="associated function godot::register::info::PropertyHintInfo::none"><code>PropertyHintInfo::none()</code></a> for no hints.</p>
 <p>See <a href="struct.PropertyHintInfo.html" title="struct godot::register::info::PropertyHintInfo"><code>PropertyHintInfo</code></a> struct in Rust, as well as <a href="https://docs.godotengine.org/en/latest/classes/class_%40globalscope.html#enum-globalscope-propertyhint"><code>PropertyHint</code></a> in the official Godot documentation.</p>
-</div><span id="structfield.usage" class="structfield section-header"><a href="#structfield.usage" class="anchor field">§</a><code>usage: <a class="struct" href="../../global/struct.PropertyUsageFlags.html" title="struct godot::global::PropertyUsageFlags">PropertyUsageFlags</a></code></span><div class="docblock"><p>Flags controlling how this property should be used and displayed by the Godot engine.</p>
+</div><span id="structfield.usage" class="structfield section-header"><a href="#structfield.usage" class="anchor field">§</a><code>usage: <a class="struct" href="struct.PropertyUsageFlags.html" title="struct godot::register::info::PropertyUsageFlags">PropertyUsageFlags</a></code></span><div class="docblock"><p>Flags controlling how this property should be used and displayed by the Godot engine.</p>
 <p>Common values:</p>
 <ul>
-<li><a href="../../global/struct.PropertyUsageFlags.html#associatedconstant.DEFAULT" title="associated constant godot::global::PropertyUsageFlags::DEFAULT"><code>PropertyUsageFlags::DEFAULT</code></a> – standard property (readable, writable, saved, appears in editor).</li>
-<li><a href="../../global/struct.PropertyUsageFlags.html#associatedconstant.STORAGE" title="associated constant godot::global::PropertyUsageFlags::STORAGE"><code>PropertyUsageFlags::STORAGE</code></a> – persisted, but not shown in editor.</li>
-<li><a href="../../global/struct.PropertyUsageFlags.html#associatedconstant.EDITOR" title="associated constant godot::global::PropertyUsageFlags::EDITOR"><code>PropertyUsageFlags::EDITOR</code></a> – shown in editor, but not persisted.</li>
+<li><a href="struct.PropertyUsageFlags.html#associatedconstant.DEFAULT" title="associated constant godot::register::info::PropertyUsageFlags::DEFAULT"><code>PropertyUsageFlags::DEFAULT</code></a> – standard property (readable, writable, saved, appears in editor).</li>
+<li><a href="struct.PropertyUsageFlags.html#associatedconstant.STORAGE" title="associated constant godot::register::info::PropertyUsageFlags::STORAGE"><code>PropertyUsageFlags::STORAGE</code></a> – persisted, but not shown in editor.</li>
+<li><a href="struct.PropertyUsageFlags.html#associatedconstant.EDITOR" title="associated constant godot::register::info::PropertyUsageFlags::EDITOR"><code>PropertyUsageFlags::EDITOR</code></a> – shown in editor, but not persisted.</li>
 </ul>
 <p>See also <a href="https://docs.godotengine.org/en/latest/classes/class_%40globalscope.html#enum-globalscope-propertyusageflags"><code>PropertyUsageFlags</code></a> in the official Godot documentation for a complete list of flags.</p>
 </div><h2 id="implementations" class="section-header">Implementations<a href="#implementations" class="anchor">§</a></h2><div id="implementations-list"><details class="toggle implementors-toggle" open><summary><section id="impl-PropertyInfo" class="impl"><a href="#impl-PropertyInfo" class="anchor">§</a><h3 class="code-header">impl <a class="struct" href="struct.PropertyInfo.html" title="struct godot::register::info::PropertyInfo">PropertyInfo</a></h3></section></summary><div class="impl-items"><details class="toggle method-toggle" open><summary><section id="method.new_var" class="method"><h4 class="code-header">pub fn <a href="#method.new_var" class="fn">new_var</a>&lt;T&gt;(property_name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="struct" href="struct.PropertyInfo.html" title="struct godot::register::info::PropertyInfo">PropertyInfo</a><div class="where">where
     T: <a class="trait" href="../../prelude/trait.Var.html" title="trait godot::prelude::Var">Var</a>,</div></h4></section></summary><div class="docblock"><p>Create a new <code>PropertyInfo</code> representing a property named <code>property_name</code> with type <code>T</code> automatically.</p>
 <p>This will generate property info equivalent to what a <code>#[var]</code> attribute would produce: the property is accessible
-from GDScript but <strong>not</strong> shown in the editor and <strong>not</strong> saved. Uses <a href="../../global/struct.PropertyUsageFlags.html#associatedconstant.NONE" title="associated constant godot::global::PropertyUsageFlags::NONE"><code>PropertyUsageFlags::NONE</code></a> as base usage.</p>
+from GDScript but <strong>not</strong> shown in the editor and <strong>not</strong> saved. Uses <a href="struct.PropertyUsageFlags.html#associatedconstant.NONE" title="associated constant godot::register::info::PropertyUsageFlags::NONE"><code>PropertyUsageFlags::NONE</code></a> as base usage.</p>
 <p>For editor-visible + saved properties, use <a href="struct.PropertyInfo.html#method.new_export" title="associated function godot::register::info::PropertyInfo::new_export"><code>new_export()</code></a>.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.new_export" class="method"><h4 class="code-header">pub fn <a href="#method.new_export" class="fn">new_export</a>&lt;T&gt;(property_name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="struct" href="struct.PropertyInfo.html" title="struct godot::register::info::PropertyInfo">PropertyInfo</a><div class="where">where
     T: <a class="trait" href="../../prelude/trait.Export.html" title="trait godot::prelude::Export">Export</a>,</div></h4></section></summary><div class="docblock"><p>Create a new <code>PropertyInfo</code> for an exported property named <code>property_name</code> with type <code>T</code> automatically.</p>
 <p>This will generate property info equivalent to what an <code>#[export]</code> attribute would produce: the property is shown
-in the editor and saved. Uses <a href="../../global/struct.PropertyUsageFlags.html#associatedconstant.DEFAULT" title="associated constant godot::global::PropertyUsageFlags::DEFAULT"><code>PropertyUsageFlags::DEFAULT</code></a> as base usage.</p>
+in the editor and saved. Uses <a href="struct.PropertyUsageFlags.html#associatedconstant.DEFAULT" title="associated constant godot::register::info::PropertyUsageFlags::DEFAULT"><code>PropertyUsageFlags::DEFAULT</code></a> as base usage.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.with_hint_info" class="method"><h4 class="code-header">pub fn <a href="#method.with_hint_info" class="fn">with_hint_info</a>(self, hint_info: <a class="struct" href="struct.PropertyHintInfo.html" title="struct godot::register::info::PropertyHintInfo">PropertyHintInfo</a>) -&gt; <a class="struct" href="struct.PropertyInfo.html" title="struct godot::register::info::PropertyInfo">PropertyInfo</a></h4></section></summary><div class="docblock"><p>Change the <code>hint</code> and <code>hint_string</code> to be the given <code>hint_info</code>.</p>
-<p>See <a href="../property/export_info_functions/index.html" title="mod godot::register::property::export_info_functions"><code>export_info_functions</code></a> for functions that return appropriate <code>PropertyHintInfo</code>s for
+<p>See <a href="../property/export_fns/index.html" title="mod godot::register::property::export_fns"><code>export_fns</code></a> for functions that return appropriate <code>PropertyHintInfo</code>s for
 various Godot annotations.</p>
 <h5 id="example-2"><a class="doc-anchor" href="#example-2">§</a>Example</h5>
 <p>Creating an <code>@export_range</code> property.</p>
 
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::register::property::export_info_functions;
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>godot::register::property::export_fns;
 <span class="kw">use </span>godot::register::info::PropertyInfo;
 
 <span class="kw">let </span>property = PropertyInfo::new_export::&lt;f64&gt;(<span class="string">"my_range_property"</span>)
-    .with_hint_info(export_info_functions::export_range(
+    .with_hint_info(export_fns::export_range(
         <span class="number">0.0</span>,
         <span class="number">10.0</span>,
         <span class="prelude-val">Some</span>(<span class="number">0.1</span>),
