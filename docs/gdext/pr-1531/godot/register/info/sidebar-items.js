@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["MethodInfo","PropertyHint","PropertyHintInfo","PropertyInfo","PropertyUsageFlags"]};
