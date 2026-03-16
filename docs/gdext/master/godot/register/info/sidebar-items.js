@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["MethodFlags","MethodInfo","PropertyHint","PropertyHintInfo","PropertyInfo","PropertyUsageFlags"]};
+window.SIDEBAR_ITEMS = {"enum":["ParamMetadata"],"struct":["MethodFlags","MethodInfo","PropertyHint","PropertyHintInfo","PropertyInfo","PropertyUsageFlags"]};
