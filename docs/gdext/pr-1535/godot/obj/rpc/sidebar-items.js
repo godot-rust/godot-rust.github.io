@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["UserRpcObject"],"struct":["RpcBuilder"],"trait":["RpcCollection"]};
