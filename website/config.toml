@@ -27,39 +27,24 @@ feed_filenames = ["atom.xml"]
 #    {name = "categories", paginate_by = 5, feed = true},
 #]
 
-[markdown]
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
-highlight_code = true
+# Zola 0.22 replaced syntect with Giallo; old theme names no longer work.
+# Preview themes: https://textmate-grammars-themes.netlify.app/
+[markdown.highlighting]
 
-# A list of directories used to search for additional `.sublime-syntax` and `.tmTheme` files.
-# More on https://www.getzola.org/documentation/getting-started/configuration/#syntax-highlighting.
-extra_syntaxes_and_themes = []
+# Similar ones in style (old Syntect name -> Giallo name).
+#theme = "dark-plus"           # charcoal (no direct equivalent)
+#theme = "one-light"           # one-dark (no direct equivalent)
+theme = "one-dark-pro"         # two-dark
+#theme = "dracula"             # agola-dark (no direct equivalent)
+#theme = "plastic"             # nyx-bold (no direct equivalent)
 
-# The theme to use for code highlighting.
-# See below for list of allowed values.
-
-# Similar ones in style.
-#highlight_theme = "charcoal"
-#highlight_theme = "one-dark"
-highlight_theme = "two-dark"
-#highlight_theme = "agola-dark"
-#highlight_theme = "nyx-bold"
-
-# Other options that might potentially fit.
-# highlight_theme = "1337"
-# highlight_theme = "ayu-mirage"
-# highlight_theme = "base16-atelierdune-light"
-# highlight_theme = "base16-ocean-dark"
-# highlight_theme = "cheerfully-light"
-# highlight_theme = "demain"
-# highlight_theme = "dimmed-fluid"
-# highlight_theme = "gruvbox-dark"
-# highlight_theme = "inspired-github"
-# highlight_theme = "ir-white"
-# highlight_theme = "kronuz"
-# highlight_theme = "nord"
-# highlight_theme = "Tomorrow"
+# Other options that might potentially fit (old syntect name -> Giallo name).
+#theme = "ayu-mirage"          # ayu-mirage
+#theme = "github-light"        # inspired-github
+#theme = "gruvbox-dark-medium" # gruvbox-dark
+#theme = "nord"                # nord
+# No Giallo equivalent: 1337, base16-atelierdune-light, base16-ocean-dark,
+#   cheerfully-light, demain, dimmed-fluid, ir-white, kronuz, Tomorrow
 
 
 [extra]
