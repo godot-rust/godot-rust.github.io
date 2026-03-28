@@ -29,7 +29,7 @@ jobs:
     if: github.event_name == 'pull_request'
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: "Build website"
         uses: shalzz/zola-deploy-action@v0.22.1
@@ -54,12 +54,12 @@ jobs:
         run: echo "$JSON"
 
       - name: "Wait for concurrent workflows to finish..."
-        uses: ben-z/gh-action-mutex@v1.0-alpha-7
+        uses: ben-z/gh-action-mutex@v1.0.0-alpha.10
         with:
           branch: ci-mutex-website
 
       - name: "Checkout"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       # Note: if this is run the first time, this job fails because there is no doc-output branch.
       # Easy enough to fix by deploying docs for both masters.
@@ -106,12 +106,12 @@ jobs:
           bash documentation/fetch-website-docs.sh "$REPO" "$NUM"
 
       - name: "Upload Pages artifact"
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: website/public
 
       - name: "Deploy to GitHub Pages"
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
       # Do not comment again if there's already a bot comment.
       # This is usually handled by checking the current state of docs in the repo's "database" file. However, in the first few minutes of
@@ -167,10 +167,10 @@ jobs:
     if: github.event_name != 'repository_dispatch'
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: "Check license headers"
-        uses: apache/skywalking-eyes/header@v0.6.0
+        uses: apache/skywalking-eyes/header@v0.8.0
         with:
           # log: debug # optional: set the log level. The default value is `info`.
           config: .github/external-config/licenserc.yml
@@ -180,7 +180,7 @@ jobs:
           mode: check
 
       - name: "Commit changes"
-        uses: EndBug/add-and-commit@v9
+        uses: EndBug/add-and-commit@v10
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:

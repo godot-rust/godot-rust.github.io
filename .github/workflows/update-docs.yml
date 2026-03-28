@@ -49,7 +49,7 @@ jobs:
           echo "Timestamp: \`$timestamp\`  " >> $GITHUB_STEP_SUMMARY          
 
       - name: "Checkout"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
 #      - name: "Detect Rust version"
 #        env:
@@ -64,7 +64,7 @@ jobs:
         env:
           OP: '${{ github.event.client_payload.op }}'
         if: ${{ env.OP == 'put' }}
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.cargo/bin/
@@ -100,7 +100,7 @@ jobs:
           bash $script "$REPO" "$NUM" "$DATE"
 
       - name: "Wait for concurrent workflows to finish..."
-        uses: ben-z/gh-action-mutex@v1.0-alpha-7
+        uses: ben-z/gh-action-mutex@v1.0.0-alpha.10
         with:
           branch: ci-mutex-docs
 
@@ -159,7 +159,7 @@ jobs:
 
       - name: "Trigger website build"
         if: env.SKIP_WEBSITE_DEPLOY != 'true'
-        uses: peter-evans/repository-dispatch@v2
+        uses: peter-evans/repository-dispatch@v4
         with:
           event-type: 'Deploy docs'
           client-payload: ${{ env.PAYLOAD_JSON }}
