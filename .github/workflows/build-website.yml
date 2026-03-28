@@ -63,9 +63,13 @@ jobs:
 
       # Note: if this is run the first time, this job fails because there is no doc-output branch.
       # Easy enough to fix by deploying docs for both masters.
+      #
+      # Shallow-fetch only the doc-output branch tip. A full `git fetch` downloads the entire
+      # history of doc-output (which contains large rustdoc artifacts), taking 13+ minutes.
+      # We only need the latest website-docs-md directory, so depth=1 is sufficient.
       - name: "Fetch references to doc pages"
         run: |
-          git fetch
+          git fetch --depth=1 origin doc-output
           git restore --source origin/doc-output website-docs-md
           mv website-docs-md/* website/content/docs/
           rm -r website-docs-md

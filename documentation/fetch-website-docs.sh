@@ -12,7 +12,9 @@ echo "$PRE start FETCH_WEBSITE_DOCS operation"
 echo "$PRE before:"
 tree -L 3
 
-git fetch
+# Shallow-fetch only the doc-output branch tip. A full `git fetch` would download the entire
+# history of doc-output (which contains large rustdoc artifacts), taking 13+ minutes.
+git fetch --depth=1 origin doc-output
 #git switch gh-pages-prepared
 
 echo "$PRE after switch:"
