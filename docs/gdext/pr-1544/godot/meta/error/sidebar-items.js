@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["CallErrorType"],"struct":["CallError","ConvertError","ErrorAsVariant","IoError","StringError"],"trait":["ErrorToGodot"]};
