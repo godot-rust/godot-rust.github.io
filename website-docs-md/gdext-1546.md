@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1546/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1546"
 pr_author = "Bromeon"
 sort_key = 2026-03-30
-date_time = 2026-03-30T22:10:52Z
-commit_sha = "590423ed3e7ebd0a93a103383e6a5c98c5d7a11b"
+date_time = 2026-03-30T22:14:15Z
+commit_sha = "2280fffcc2ba4c1a15dc67490ebe1aad92bd6c30"
 +++
 
 Reorganize `meta` module, move parts to `godot::private`
