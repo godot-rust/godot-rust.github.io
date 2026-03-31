@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"enum":["CallErrorType"],"struct":["CallError","ConvertError","ErrorAsVariant","IoError","StringError"],"trait":["ErrorToGodot"]};
+window.SIDEBAR_ITEMS = {"enum":["CallErrorType"],"macro":["func_bail"],"struct":["CallError","ConvertError","ErrorAsVariant","FuncError","IoError","StringError"],"trait":["ErrorToGodot"],"type":["FuncResult"]};
