@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1547/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1547"
 pr_author = "Bromeon"
 sort_key = 2026-03-31
-date_time = 2026-03-31T18:38:50Z
-commit_sha = "525a95c3d150a700dd4e95b4b0c89fd5f492553d"
+date_time = 2026-03-31T19:20:05Z
+commit_sha = "12801d64609a21dc2b1ad7e8a4b146ed29581cfe"
 +++
 
 Focused GDScript itests
