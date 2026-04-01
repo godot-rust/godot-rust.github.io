@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1549/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1549"
 pr_author = "Bromeon"
 sort_key = 2026-04-01
-date_time = 2026-04-01T22:20:13Z
-commit_sha = "fe7ef505b44cf7d6a1f5e6622d8e8fb31e56fc50"
+date_time = 2026-04-01T22:20:37Z
+commit_sha = "ab1026e6c2008ddae02b4b6afd75e9f94fe979fb"
 +++
 
 Replace `GodotNullableFfi` with `GodotNullableType`
