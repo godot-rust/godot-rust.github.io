@@ -5,6 +5,7 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 title = "September 2025 dev update"
+aliases = ["/dev/september-2025-dev-update"] # Was a temporary redirect
 authors = ["Yarwin", "Bromeon"]
 
 [extra]
