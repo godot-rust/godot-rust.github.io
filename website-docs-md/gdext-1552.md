@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1552/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1552"
 pr_author = "shadr"
 sort_key = 2026-04-09
-date_time = 2026-04-09T12:17:26Z
-commit_sha = "af0e4166b1f0cf58cb80f88d909a82466cc2b8ac"
+date_time = 2026-04-09T13:35:27Z
+commit_sha = "b47d2a2a58aacc99e7323bac8d3424d86a71bef8"
 +++
 
 Import Godot docs for classes 
