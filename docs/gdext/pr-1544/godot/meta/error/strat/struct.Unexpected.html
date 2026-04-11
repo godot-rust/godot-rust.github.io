@@ -3,9 +3,9 @@
 Do <strong>not</strong> use this for runtime errors that are expected (e.g. loading a savegame that can be corrupted).</p>
 <p>When this error is returned, Godot logs it with <a href="../../../prelude/macro.godot_error.html" title="macro godot::prelude::godot_error"><code>godot_error!</code></a>. The calling code <a href="https://github.com/godotengine/godot-proposals/discussions/7751">cannot reliably handle it</a>.
 This strategy is comparable to panics in Rust: the calling code is more ergonomic in the happy path, assuming that there are no errors.
-In case that <code>Err(strat::Unexpected)</code> is returned, the calling code generally continues execution with a default value of the declared
+In case that <code>Err(strat::Unexpected)</code> is returned, the calling code either aborts the function (debug varcall only) or continues with a default value of the declared
 return type, which may introduce silent logic errors. GDScript has best-effort detection of such errors in Debug mode; see
-<a href="#behavior-on-the-call-site">below</a>.</p>
+<a href="#behavior-on-the-call-site">below</a>. The Rust object and its state remain valid after an error and can be used in subsequent calls.</p>
 <p>This is currently the only <a href="../trait.ErrorToGodot.html" title="trait godot::meta::error::ErrorToGodot"><code>ErrorToGodot</code></a> impl that preserves type safety: F or a Rust <code>#[func]</code> returning <code>Result&lt;T, strat::Unexpected&gt;</code>,
 GDScript’s static analysis sees the return type <code>T</code>. If you want to handle errors at runtime, choose another <code>ErrorToGodot</code> impl.</p>
 <p><code>strat::Unexpected</code> enables automatic conversions from other errors via <code>?</code> operator. This means you can mix different error types within the
@@ -39,15 +39,19 @@ an error message.</p>
 <a href="../../../prelude/struct.Node.html#method.get_node_as" title="method godot::prelude::Node::get_node_as"><code>Node::get_node_as()</code></a>. The latter panics on failure. From GDScript, the observable behavior is
 the same, however the <code>try_*</code> + <code>?</code> approach allows more control over error propagation and works entirely without a Rust panic.</p>
 <h2 id="behavior-on-the-call-site"><a class="doc-anchor" href="#behavior-on-the-call-site">§</a>Behavior on the call site</h2>
-<p><strong>Rust:</strong> When calling a <code>#[func]</code> via <code>Object::try_call()</code> reflection, the caller will always see <code>Unexpected</code> errors manifest as <code>Err</code> in
-the return type. This is the only way to reliably catch <code>Unexpected</code> errors, and works only because godot-rust maintains internal state.</p>
-<p><strong>GDScript:</strong> If an <code>Unexpected</code> error is returned from Rust, then the calling GDScript function will abort/fail if both conditions are true:</p>
+<p>How a caller sees the <code>Err</code> variant of a returned <code>Result&lt;T, strat::Unexpected&gt;</code> depends:</p>
 <ul>
-<li>the call uses <em>varcall</em> (invoked on an untyped <code>Variant</code> or using reflection via <code>Object.call()</code>.</li>
+<li><strong>Rust:</strong> When calling a <code>#[func]</code> via <code>Object::try_call()</code> reflection, the caller will always see <code>Unexpected</code> errors manifest as <code>Err</code> in
+the return type. This is the only way to reliably catch <code>Unexpected</code> errors, and works only because godot-rust maintains internal state.</li>
+<li><strong>GDScript:</strong> If an <code>Unexpected</code> error is returned from Rust, then the calling GDScript function will abort/fail if both conditions are true:
+<ul>
+<li>the call uses <em>varcall</em> (not <em>ptrcall</em>): invoked on an untyped <code>Variant</code> or using reflection via <code>Object.call()</code>.</li>
 <li>it runs in a Godot debug/editor build.</li>
 </ul>
-<p>Everything else returns Godot’s default value for the type <code>T</code> (e.g. <code>null</code> for objects/variants, 0 for ints, etc.). This also applies to
-other languages calling such a method (C#, godot-cpp, etc.).</p>
+</li>
+<li>Everything else returns Godot’s default value for the type <code>T</code> (e.g. <code>null</code> for objects/variants, 0 for ints, etc.). This also applies to
+other languages calling such a method (C#, godot-cpp, etc.).</li>
+</ul>
 <h2 id="stderrorerror-and-trait-coherence"><a class="doc-anchor" href="#stderrorerror-and-trait-coherence">§</a><code>std::error::Error</code> and trait coherence</h2>
 <p>This type intentionally does <strong>not</strong> implement <a href="https://doc.rust-lang.org/nightly/core/error/trait.Error.html" title="trait core::error::Error"><code>std::error::Error</code></a> – the reason is a Rust coherence constraint.</p>
 <p>If <code>Unexpected</code> implemented <code>Error</code>, the blanket <code>impl&lt;E: Into&lt;Box&lt;dyn Error + ...&gt;&gt;&gt; From&lt;E&gt; for Bail</code> would conflict with the standard
