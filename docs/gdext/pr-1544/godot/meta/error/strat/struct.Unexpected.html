@@ -6,7 +6,7 @@ This strategy is comparable to panics in Rust: the calling code is more ergonomi
 In case that <code>Err(strat::Unexpected)</code> is returned, the calling code generally continues execution with a default value of the declared
 return type, which may introduce silent logic errors. GDScript has best-effort detection of such errors in Debug mode; see
 <a href="#behavior-on-the-call-site">below</a>.</p>
-<p>This is currently the only <a href="../trait.ErrorToGodot.html" title="trait godot::meta::error::ErrorToGodot"><code>ErrorToGodot</code></a> impl that preserves type safety: For a Rust <code>#[func]</code> returning <code>Result&lt;T, strat::Unexpected&gt;</code>,
+<p>This is currently the only <a href="../trait.ErrorToGodot.html" title="trait godot::meta::error::ErrorToGodot"><code>ErrorToGodot</code></a> impl that preserves type safety: F or a Rust <code>#[func]</code> returning <code>Result&lt;T, strat::Unexpected&gt;</code>,
 GDScript’s static analysis sees the return type <code>T</code>. If you want to handle errors at runtime, choose another <code>ErrorToGodot</code> impl.</p>
 <p><code>strat::Unexpected</code> enables automatic conversions from other errors via <code>?</code> operator. This means you can mix different error types within the
 same function body – each one propagates via <code>?</code> and its message is forwarded to Godot. Use the <a href="../../../prelude/macro.func_bail.html" title="macro godot::prelude::func_bail"><code>func_bail!</code></a> macro for early returns with
