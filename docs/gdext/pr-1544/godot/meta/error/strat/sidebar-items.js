@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":["Array01","Dictionary","Unexpected","Variant"]};
+window.SIDEBAR_ITEMS = {"struct":["Unexpected"]};
