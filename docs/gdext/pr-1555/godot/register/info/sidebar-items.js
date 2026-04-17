@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["ParamMetadata"],"struct":["MethodFlags","MethodInfo","PropertyHint","PropertyHintInfo","PropertyInfo","PropertyUsageFlags"]};
