@@ -6,7 +6,7 @@
     pub editor_notify: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
 }</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Log record passed to <a href="fn.print_custom.html" title="fn godot::global::print_custom"><code>print_custom()</code></a>.</p>
 <p>Allows callers to provide an <em>explicit</em> source location, rather than the call site of the print macro.
-See also the <a href="../classes/struct.Logger.html" title="struct godot::classes::Logger"><code>Logger</code></a> class for intercepting printed messages.</p>
+See also the <a href="../classes/trait.ILogger.html" title="trait godot::classes::ILogger"><code>Logger</code></a> interface for intercepting printed messages.</p>
 <p>If any of the string-based fields contain interior null bytes (<code>\0</code>), the string may be cut off at that point.</p>
 </div></details><h2 id="fields" class="fields section-header">Fields<a href="#fields" class="anchor">§</a></h2><span id="structfield.level" class="structfield section-header"><a href="#structfield.level" class="anchor field">§</a><code>level: <a class="enum" href="enum.PrintLevel.html" title="enum godot::global::PrintLevel">PrintLevel</a></code></span><div class="docblock"><p>Severity level.</p>
 </div><span id="structfield.message" class="structfield section-header"><a href="#structfield.message" class="anchor field">§</a><code>message: &amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></code></span><div class="docblock"><p>Primary message. Shown in the editor’s debugger panel (warn/error) or output panel (info), and on the OS terminal.</p>
