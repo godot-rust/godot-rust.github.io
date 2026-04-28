@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["get_autoload_by_name","load","save","try_get_autoload_by_name","try_load","try_save"],"macro":["tr","tr_n"],"struct":["GFile"]};
