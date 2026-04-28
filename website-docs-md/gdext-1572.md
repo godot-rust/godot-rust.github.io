@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1572/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1572"
 pr_author = "Yarwin"
 sort_key = 2026-04-28
-date_time = 2026-04-28T23:28:28Z
-commit_sha = "d9b203c9ce33730f7922a679f5ea9ab03a7129b3"
+date_time = 2026-04-28T23:38:53Z
+commit_sha = "41b223f83e7ef9553df73148a003bf732c62fc61"
 +++
 
 Generate `gdextension_interface.json` out of Godot binary for Godot versions newer than latest/stable.
