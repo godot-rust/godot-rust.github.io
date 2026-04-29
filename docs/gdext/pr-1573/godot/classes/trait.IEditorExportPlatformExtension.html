@@ -227,7 +227,7 @@ Used by <code>impl Display for Gd&lt;T&gt;</code>, as well as <code>str()</code>
 <p><code>required: bool</code>, if set to <code>true</code>, this property warnings are critical, and should be resolved to make export possible. This value is a hint for the <a href="trait.IEditorExportPlatformExtension.html#tymethod.has_valid_export_configuration" title="method godot::classes::IEditorExportPlatformExtension::has_valid_export_configuration">has_valid_export_configuration</a> implementation, and not used by the engine directly.</p>
 </li>
 </ul>
-<p>See also <a href="../prelude/struct.Object.html#method.get_property_list" title="method godot::prelude::Object::get_property_list">get_property_list</a>.</p>
+<p>See also <a href="../prelude/trait.IObject.html#method.on_get_property_list" title="method godot::prelude::IObject::on_get_property_list">on_get_property_list</a>.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.should_update_export_options" class="method"><h4 class="code-header">fn <a href="#method.should_update_export_options" class="fn">should_update_export_options</a>(&amp;mut self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><h5 id="godot-docs-11"><a class="doc-anchor" href="#godot-docs-11">§</a>Godot docs</h5>
 <p>Returns <code>true</code> if export options list is changed and presets should be updated.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.get_export_option_visibility" class="method"><h4 class="code-header">fn <a href="#method.get_export_option_visibility" class="fn">get_export_option_visibility</a>(
