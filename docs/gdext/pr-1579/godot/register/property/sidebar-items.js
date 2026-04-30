@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"derive":["Export","Var"],"mod":["export_fns"],"struct":["PhantomVar"],"trait":["BuiltinExport","Export","SimpleVar","Var"]};
