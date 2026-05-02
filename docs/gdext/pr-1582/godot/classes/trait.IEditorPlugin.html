@@ -170,25 +170,13 @@ Used by <code>impl Display for Gd&lt;T&gt;</code>, as well as <code>str()</code>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.forward_canvas_gui_input" class="method"><h4 class="code-header">fn <a href="#method.forward_canvas_gui_input" class="fn">forward_canvas_gui_input</a>(&amp;mut self, event: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.InputEvent.html" title="struct godot::classes::InputEvent">InputEvent</a>&gt;&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><p>Called when there is a root node in the current edited scene, <a href="trait.IEditorPlugin.html#method.handles" title="method godot::classes::IEditorPlugin::handles"><code>handles</code></a> is implemented, and an <a href="struct.InputEvent.html" title="struct godot::classes::InputEvent"><code>InputEvent</code></a> happens in the 2D viewport. If this method returns <code>true</code>, <code>event</code> is intercepted by this <code>EditorPlugin</code>, otherwise <code>event</code> is forwarded to other Editor classes.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code># Prevents the InputEvent from reaching other Editor classes.
 func _forward_canvas_gui_input(event):
-	return true</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>// Prevents the InputEvent from reaching other Editor classes.
-public override bool ForwardCanvasGuiInput(InputEvent @event)
-{
-	return true;
-}</code></pre></div>
+	return true</code></pre></div>
 <p>This method must return <code>false</code> in order to forward the <a href="struct.InputEvent.html" title="struct godot::classes::InputEvent"><code>InputEvent</code></a> to other Editor classes.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code># Consumes InputEventMouseMotion and forwards other InputEvent types.
 func _forward_canvas_gui_input(event):
 	if (event is InputEventMouseMotion):
 		return true
-	return false</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>// Consumes InputEventMouseMotion and forwards other InputEvent types.
-public override bool _ForwardCanvasGuiInput(InputEvent @event)
-{
-	if (@event is InputEventMouseMotion)
-	{
-		return true;
-	}
-	return false;
-}</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.forward_canvas_draw_over_viewport" class="method"><h4 class="code-header">fn <a href="#method.forward_canvas_draw_over_viewport" class="fn">forward_canvas_draw_over_viewport</a>(
+	return false</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.forward_canvas_draw_over_viewport" class="method"><h4 class="code-header">fn <a href="#method.forward_canvas_draw_over_viewport" class="fn">forward_canvas_draw_over_viewport</a>(
     &amp;mut self,
     viewport_control: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.Control.html" title="struct godot::classes::Control">Control</a>&gt;&gt;,
 )</h4></section></summary><div class="docblock"><p>Called by the engine when the 2D editor’s viewport is updated. <code>viewport_control</code> is an overlay on top of the viewport and it can be used for drawing. You can update the viewport manually by calling <a href="struct.EditorPlugin.html#method.update_overlays" title="method godot::classes::EditorPlugin::update_overlays"><code>update_overlays</code></a>.</p>
@@ -201,22 +189,7 @@ func _forward_canvas_gui_input(event):
 		# Redraw the viewport when the cursor is moved.
 		update_overlays()
 		return true
-	return false</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>public override void _ForwardCanvasDrawOverViewport(Control viewportControl)
-{
-	// Draw a circle at the cursor&#39;s position.
-	viewportControl.DrawCircle(viewportControl.GetLocalMousePosition(), 64, Colors.White);
-}
-
-public override bool _ForwardCanvasGuiInput(InputEvent @event)
-{
-	if (@event is InputEventMouseMotion)
-	{
-		// Redraw the viewport when the cursor is moved.
-		UpdateOverlays();
-		return true;
-	}
-	return false;
-}</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.forward_canvas_force_draw_over_viewport" class="method"><h4 class="code-header">fn <a href="#method.forward_canvas_force_draw_over_viewport" class="fn">forward_canvas_force_draw_over_viewport</a>(
+	return false</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.forward_canvas_force_draw_over_viewport" class="method"><h4 class="code-header">fn <a href="#method.forward_canvas_force_draw_over_viewport" class="fn">forward_canvas_force_draw_over_viewport</a>(
     &amp;mut self,
     viewport_control: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.Control.html" title="struct godot::classes::Control">Control</a>&gt;&gt;,
 )</h4></section></summary><div class="docblock"><p>This method is the same as <a href="trait.IEditorPlugin.html#method.forward_canvas_draw_over_viewport" title="method godot::classes::IEditorPlugin::forward_canvas_draw_over_viewport"><code>forward_canvas_draw_over_viewport</code></a>, except it draws on top of everything. Useful when you need an extra layer that shows over anything else.</p>
@@ -228,19 +201,11 @@ public override bool _ForwardCanvasGuiInput(InputEvent @event)
 ) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></h4></section></summary><div class="docblock"><p>Called when there is a root node in the current edited scene, <a href="trait.IEditorPlugin.html#method.handles" title="method godot::classes::IEditorPlugin::handles"><code>handles</code></a> is implemented, and an <a href="struct.InputEvent.html" title="struct godot::classes::InputEvent"><code>InputEvent</code></a> happens in the 3D viewport. The return value decides whether the <a href="struct.InputEvent.html" title="struct godot::classes::InputEvent"><code>InputEvent</code></a> is consumed or forwarded to other <code>EditorPlugin</code>s. See [enum AfterGUIInput] for options.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code># Prevents the InputEvent from reaching other Editor classes.
 func _forward_3d_gui_input(camera, event):
-	return EditorPlugin.AFTER_GUI_INPUT_STOP</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>// Prevents the InputEvent from reaching other Editor classes.
-public override EditorPlugin.AfterGuiInput _Forward3DGuiInput(Camera3D camera, InputEvent @event)
-{
-	return EditorPlugin.AfterGuiInput.Stop;
-}</code></pre></div>
+	return EditorPlugin.AFTER_GUI_INPUT_STOP</code></pre></div>
 <p>This method must return <a href="editor_plugin/struct.AfterGuiInput.html#associatedconstant.PASS" title="associated constant godot::classes::editor_plugin::AfterGuiInput::PASS"><code>AfterGuiInput::PASS</code></a> in order to forward the <a href="struct.InputEvent.html" title="struct godot::classes::InputEvent"><code>InputEvent</code></a> to other Editor classes.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code># Consumes InputEventMouseMotion and forwards other InputEvent types.
 func _forward_3d_gui_input(camera, event):
-	return EditorPlugin.AFTER_GUI_INPUT_STOP if event is InputEventMouseMotion else EditorPlugin.AFTER_GUI_INPUT_PASS</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>// Consumes InputEventMouseMotion and forwards other InputEvent types.
-public override EditorPlugin.AfterGuiInput _Forward3DGuiInput(Camera3D camera, InputEvent @event)
-{
-	return @event is InputEventMouseMotion ? EditorPlugin.AfterGuiInput.Stop : EditorPlugin.AfterGuiInput.Pass;
-}</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.forward_3d_draw_over_viewport" class="method"><h4 class="code-header">fn <a href="#method.forward_3d_draw_over_viewport" class="fn">forward_3d_draw_over_viewport</a>(
+	return EditorPlugin.AFTER_GUI_INPUT_STOP if event is InputEventMouseMotion else EditorPlugin.AFTER_GUI_INPUT_PASS</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.forward_3d_draw_over_viewport" class="method"><h4 class="code-header">fn <a href="#method.forward_3d_draw_over_viewport" class="fn">forward_3d_draw_over_viewport</a>(
     &amp;mut self,
     viewport_control: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.Control.html" title="struct godot::classes::Control">Control</a>&gt;&gt;,
 )</h4></section></summary><div class="docblock"><p>Called by the engine when the 3D editor’s viewport is updated. <code>viewport_control</code> is an overlay on top of the viewport and it can be used for drawing. You can update the viewport manually by calling <a href="struct.EditorPlugin.html#method.update_overlays" title="method godot::classes::EditorPlugin::update_overlays"><code>update_overlays</code></a>.</p>
@@ -253,22 +218,7 @@ func _forward_3d_gui_input(camera, event):
 		# Redraw the viewport when the cursor is moved.
 		update_overlays()
 		return EditorPlugin.AFTER_GUI_INPUT_STOP
-	return EditorPlugin.AFTER_GUI_INPUT_PASS</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>public override void _Forward3DDrawOverViewport(Control viewportControl)
-{
-	// Draw a circle at the cursor&#39;s position.
-	viewportControl.DrawCircle(viewportControl.GetLocalMousePosition(), 64, Colors.White);
-}
-
-public override EditorPlugin.AfterGuiInput _Forward3DGuiInput(Camera3D viewportCamera, InputEvent @event)
-{
-	if (@event is InputEventMouseMotion)
-	{
-		// Redraw the viewport when the cursor is moved.
-		UpdateOverlays();
-		return EditorPlugin.AfterGuiInput.Stop;
-	}
-	return EditorPlugin.AfterGuiInput.Pass;
-}</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.forward_3d_force_draw_over_viewport" class="method"><h4 class="code-header">fn <a href="#method.forward_3d_force_draw_over_viewport" class="fn">forward_3d_force_draw_over_viewport</a>(
+	return EditorPlugin.AFTER_GUI_INPUT_PASS</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.forward_3d_force_draw_over_viewport" class="method"><h4 class="code-header">fn <a href="#method.forward_3d_force_draw_over_viewport" class="fn">forward_3d_force_draw_over_viewport</a>(
     &amp;mut self,
     viewport_control: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.Control.html" title="struct godot::classes::Control">Control</a>&gt;&gt;,
 )</h4></section></summary><div class="docblock"><p>This method is the same as <a href="trait.IEditorPlugin.html#method.forward_3d_draw_over_viewport" title="method godot::classes::IEditorPlugin::forward_3d_draw_over_viewport"><code>forward_3d_draw_over_viewport</code></a>, except it draws on top of everything. Useful when you need an extra layer that shows over anything else.</p>
@@ -282,13 +232,7 @@ public override EditorPlugin.AfterGuiInput _Forward3DGuiInput(Camera3D viewportC
 	# You can use a custom icon:
 	return preload(&quot;res://addons/my_plugin/my_plugin_icon.svg&quot;)
 	# Or use a built-in icon:
-	return EditorInterface.get_editor_theme().get_icon(&quot;Node&quot;, &quot;EditorIcons&quot;)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>public override Texture2D _GetPluginIcon()
-{
-	// You can use a custom icon:
-	return ResourceLoader.Load&lt;Texture2D&gt;(&quot;res://addons/my_plugin/my_plugin_icon.svg&quot;);
-	// Or use a built-in icon:
-	return EditorInterface.Singleton.GetEditorTheme().GetIcon(&quot;Node&quot;, &quot;EditorIcons&quot;);
-}</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.has_main_screen" class="method"><h4 class="code-header">fn <a href="#method.has_main_screen" class="fn">has_main_screen</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><p>Returns <code>true</code> if this is a main screen editor plugin (it goes in the workspace selector together with <strong>2D</strong>, <strong>3D</strong>, <strong>Script</strong>, <strong>Game</strong>, and <strong>AssetLib</strong>).</p>
+	return EditorInterface.get_editor_theme().get_icon(&quot;Node&quot;, &quot;EditorIcons&quot;)</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.has_main_screen" class="method"><h4 class="code-header">fn <a href="#method.has_main_screen" class="fn">has_main_screen</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><p>Returns <code>true</code> if this is a main screen editor plugin (it goes in the workspace selector together with <strong>2D</strong>, <strong>3D</strong>, <strong>Script</strong>, <strong>Game</strong>, and <strong>AssetLib</strong>).</p>
 <p>When the plugin’s workspace is selected, other main screen plugins will be hidden, but your plugin will not appear automatically. It needs to be added as a child of <a href="struct.EditorInterface.html#method.get_editor_main_screen" title="method godot::classes::EditorInterface::get_editor_main_screen"><code>get_editor_main_screen</code></a> and made visible inside <a href="trait.IEditorPlugin.html#method.make_visible" title="method godot::classes::IEditorPlugin::make_visible"><code>make_visible</code></a>.</p>
 <p>Use <a href="trait.IEditorPlugin.html#method.get_plugin_name" title="method godot::classes::IEditorPlugin::get_plugin_name"><code>get_plugin_name</code></a> and <a href="trait.IEditorPlugin.html#method.get_plugin_icon" title="method godot::classes::IEditorPlugin::get_plugin_icon"><code>get_plugin_icon</code></a> to customize the plugin button’s appearance.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>var plugin_control

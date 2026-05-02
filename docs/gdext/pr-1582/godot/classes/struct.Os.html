@@ -154,12 +154,10 @@ Executes the given process in a <em>blocking</em> way. The file specified in <co
 <p><strong>Note:</strong> The main thread will be blocked until the executed command terminates. Use <code>Thread</code> to create a separate thread that will not block the main thread, or use <a href="struct.Os.html#method.create_process" title="method godot::classes::Os::create_process"><code>create_process</code></a> to create a completely independent process.</p>
 <p>For example, to retrieve a list of the working directory’s contents:</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>var output = []
-var exit_code = OS.execute(&quot;ls&quot;, [&quot;-l&quot;, &quot;/tmp&quot;], output)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>Godot.Collections.Array output = [];
-int exitCode = OS.Execute(&quot;ls&quot;, [&quot;-l&quot;, &quot;/tmp&quot;], output);</code></pre></div>
+var exit_code = OS.execute(&quot;ls&quot;, [&quot;-l&quot;, &quot;/tmp&quot;], output)</code></pre></div>
 <p>If you wish to access a shell built-in or execute a composite command, a platform-specific shell can be invoked. For example:</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>var output = []
-OS.execute(&quot;CMD.exe&quot;, [&quot;/C&quot;, &quot;cd %TEMP% &amp;&amp; dir&quot;], output)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>Godot.Collections.Array output = [];
-OS.Execute(&quot;CMD.exe&quot;, [&quot;/C&quot;, &quot;cd %TEMP% &amp;&amp; dir&quot;], output);</code></pre></div>
+OS.execute(&quot;CMD.exe&quot;, [&quot;/C&quot;, &quot;cd %TEMP% &amp;&amp; dir&quot;], output)</code></pre></div>
 <p><strong>Note:</strong> This method is implemented on Android, Linux, macOS, and Windows.</p>
 <p><strong>Note:</strong> To execute a Windows command interpreter built-in command, specify <code>cmd.exe</code> in <code>path</code>, <code>/c</code> as the first argument, and the desired command as the second argument.</p>
 <p><strong>Note:</strong> To execute a PowerShell built-in command, specify <code>powershell.exe</code> in <code>path</code>, <code>-Command</code> as the first argument, and the desired command as the second argument.</p>
@@ -177,12 +175,10 @@ OS.Execute(&quot;CMD.exe&quot;, [&quot;/C&quot;, &quot;cd %TEMP% &amp;&amp; dir&
 <p><strong>Note:</strong> The main thread will be blocked until the executed command terminates. Use <code>Thread</code> to create a separate thread that will not block the main thread, or use <a href="struct.Os.html#method.create_process" title="method godot::classes::Os::create_process"><code>create_process</code></a> to create a completely independent process.</p>
 <p>For example, to retrieve a list of the working directory’s contents:</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>var output = []
-var exit_code = OS.execute(&quot;ls&quot;, [&quot;-l&quot;, &quot;/tmp&quot;], output)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>Godot.Collections.Array output = [];
-int exitCode = OS.Execute(&quot;ls&quot;, [&quot;-l&quot;, &quot;/tmp&quot;], output);</code></pre></div>
+var exit_code = OS.execute(&quot;ls&quot;, [&quot;-l&quot;, &quot;/tmp&quot;], output)</code></pre></div>
 <p>If you wish to access a shell built-in or execute a composite command, a platform-specific shell can be invoked. For example:</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>var output = []
-OS.execute(&quot;CMD.exe&quot;, [&quot;/C&quot;, &quot;cd %TEMP% &amp;&amp; dir&quot;], output)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>Godot.Collections.Array output = [];
-OS.Execute(&quot;CMD.exe&quot;, [&quot;/C&quot;, &quot;cd %TEMP% &amp;&amp; dir&quot;], output);</code></pre></div>
+OS.execute(&quot;CMD.exe&quot;, [&quot;/C&quot;, &quot;cd %TEMP% &amp;&amp; dir&quot;], output)</code></pre></div>
 <p><strong>Note:</strong> This method is implemented on Android, Linux, macOS, and Windows.</p>
 <p><strong>Note:</strong> To execute a Windows command interpreter built-in command, specify <code>cmd.exe</code> in <code>path</code>, <code>/c</code> as the first argument, and the desired command as the second argument.</p>
 <p><strong>Note:</strong> To execute a PowerShell built-in command, specify <code>powershell.exe</code> in <code>path</code>, <code>-Command</code> as the first argument, and the desired command as the second argument.</p>
@@ -245,7 +241,7 @@ Creates a new process that runs independently of Godot. It will not terminate wh
 <p>On Windows, if <code>open_console</code> is <code>true</code> and the process is a console app, a new terminal window will be opened.</p>
 <p>If the process is successfully created, this method returns its process ID, which you can use to monitor the process (and potentially terminate it with <a href="struct.Os.html#method.kill" title="method godot::classes::Os::kill"><code>kill</code></a>). Otherwise, this method returns <code>-1</code>.</p>
 <p><strong>Example:</strong> Run another instance of the project:</p>
-<div class="example-wrap"><pre class="language-gdscript"><code>var pid = OS.create_process(OS.get_executable_path(), [])</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var pid = OS.CreateProcess(OS.GetExecutablePath(), []);</code></pre></div>
+<div class="example-wrap"><pre class="language-gdscript"><code>var pid = OS.create_process(OS.get_executable_path(), [])</code></pre></div>
 <p>See <a href="struct.Os.html#method.execute" title="method godot::classes::Os::execute"><code>execute</code></a> if you wish to run an external command and retrieve the results.</p>
 <p><strong>Note:</strong> This method is implemented on Android, Linux, macOS, and Windows.</p>
 <p><strong>Note:</strong> On macOS, sandboxed applications are limited to run only embedded helper executables, specified during export or system .app bundle, system .app bundles will ignore arguments.</p>
@@ -257,7 +253,7 @@ Creates a new process that runs independently of Godot. It will not terminate wh
 <p>On Windows, if <code>open_console</code> is <code>true</code> and the process is a console app, a new terminal window will be opened.</p>
 <p>If the process is successfully created, this method returns its process ID, which you can use to monitor the process (and potentially terminate it with <a href="struct.Os.html#method.kill" title="method godot::classes::Os::kill"><code>kill</code></a>). Otherwise, this method returns <code>-1</code>.</p>
 <p><strong>Example:</strong> Run another instance of the project:</p>
-<div class="example-wrap"><pre class="language-gdscript"><code>var pid = OS.create_process(OS.get_executable_path(), [])</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var pid = OS.CreateProcess(OS.GetExecutablePath(), []);</code></pre></div>
+<div class="example-wrap"><pre class="language-gdscript"><code>var pid = OS.create_process(OS.get_executable_path(), [])</code></pre></div>
 <p>See <a href="struct.Os.html#method.execute" title="method godot::classes::Os::execute"><code>execute</code></a> if you wish to run an external command and retrieve the results.</p>
 <p><strong>Note:</strong> This method is implemented on Android, Linux, macOS, and Windows.</p>
 <p><strong>Note:</strong> On macOS, sandboxed applications are limited to run only embedded helper executables, specified during export or system .app bundle, system .app bundles will ignore arguments.</p>
@@ -366,31 +362,7 @@ Requests the OS to open the file manager, navigate to the given <code>file_or_di
 	&quot;iOS&quot;:
 		print(&quot;Welcome to iOS!&quot;)
 	&quot;Web&quot;:
-		print(&quot;Welcome to the Web!&quot;)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>switch (OS.GetName())
-{
-	case &quot;Windows&quot;:
-		GD.Print(&quot;Welcome to Windows&quot;);
-		break;
-	case &quot;macOS&quot;:
-		GD.Print(&quot;Welcome to macOS!&quot;);
-		break;
-	case &quot;Linux&quot;:
-	case &quot;FreeBSD&quot;:
-	case &quot;NetBSD&quot;:
-	case &quot;OpenBSD&quot;:
-	case &quot;BSD&quot;:
-		GD.Print(&quot;Welcome to Linux/BSD!&quot;);
-		break;
-	case &quot;Android&quot;:
-		GD.Print(&quot;Welcome to Android!&quot;);
-		break;
-	case &quot;iOS&quot;:
-		GD.Print(&quot;Welcome to iOS!&quot;);
-		break;
-	case &quot;Web&quot;:
-		GD.Print(&quot;Welcome to the Web!&quot;);
-		break;
-}</code></pre></div>
+		print(&quot;Welcome to the Web!&quot;)</code></pre></div>
 <p><strong>Note:</strong> On Web platforms, it is still possible to determine the host platform’s OS with feature tags. See <a href="struct.Os.html#method.has_feature" title="method godot::classes::Os::has_feature"><code>has_feature</code></a>.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.get_distribution_name" class="method"><h4 class="code-header">pub fn <a href="#method.get_distribution_name" class="fn">get_distribution_name</a>(&amp;self) -&gt; <a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a></h4></section></summary><div class="docblock"><p>Returns the name of the distribution for Linux and BSD platforms (e.g. “Ubuntu”, “Manjaro”, “OpenBSD”, etc.).</p>
 <p>Returns the same value as <a href="struct.Os.html#method.get_name" title="method godot::classes::Os::get_name"><code>get_name</code></a> for stock Android ROMs, but attempts to return the custom ROM name for popular Android derivatives such as “LineageOS”.</p>
@@ -431,21 +403,7 @@ for argument in OS.get_cmdline_args():
 	else:
 		# Options without an argument will be present in the dictionary,
 		# with the value set to an empty string.
-		arguments[argument.trim_prefix(&quot;--&quot;)] = &quot;&quot;</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var arguments = new Dictionary&lt;string, string&gt;();
-foreach (var argument in OS.GetCmdlineArgs())
-{
-	if (argument.Contains(&#39;=&#39;))
-	{
-		string[] keyValue = argument.Split(&quot;=&quot;);
-		arguments[keyValue[0].TrimPrefix(&quot;--&quot;)] = keyValue[1];
-	}
-	else
-	{
-		// Options without an argument will be present in the dictionary,
-		// with the value set to an empty string.
-		arguments[argument.TrimPrefix(&quot;--&quot;)] = &quot;&quot;;
-	}
-}</code></pre></div>
+		arguments[argument.trim_prefix(&quot;--&quot;)] = &quot;&quot;</code></pre></div>
 <p><strong>Note:</strong> Passing custom user arguments directly is not recommended, as the engine may discard or modify them. Instead, pass the standard UNIX double dash (<code>--</code>) and then the custom arguments, which the engine will ignore by design. These can be read via <a href="struct.Os.html#method.get_cmdline_user_args" title="method godot::classes::Os::get_cmdline_user_args"><code>get_cmdline_user_args</code></a>.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.get_cmdline_user_args" class="method"><h4 class="code-header">pub fn <a href="#method.get_cmdline_user_args" class="fn">get_cmdline_user_args</a>(&amp;self) -&gt; <a class="struct" href="../prelude/struct.PackedArray.html" title="struct godot::prelude::PackedArray">PackedArray</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>&gt;</h4></section></summary><div class="docblock"><p>Returns the command-line user arguments passed to the engine. User arguments are ignored by the engine and reserved for the user. They are passed after the double dash <code>--</code> argument. <code>++</code> may be used when <code>--</code> is intercepted by another program (such as <code>startx</code>).</p>
 <div class="example-wrap"><pre class="language-gdscript"><code># Godot has been executed with the following command:
@@ -542,8 +500,7 @@ If <code>restart</code> is <code>true</code>, restarts the project automatically
 <p>The method takes only global paths, so you may need to use <a href="struct.ProjectSettings.html#method.globalize_path" title="method godot::classes::ProjectSettings::globalize_path"><code>globalize_path</code></a>. Do not use it for files in <code>res://</code> as it will not work in exported projects.</p>
 <p>Returns <a href="../global/struct.Error.html#associatedconstant.FAILED" title="associated constant godot::global::Error::FAILED"><code>Error::FAILED</code></a> if the file or directory cannot be found, or the system does not support this method.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>var file_to_remove = &quot;user://slot1.save&quot;
-OS.move_to_trash(ProjectSettings.globalize_path(file_to_remove))</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var fileToRemove = &quot;user://slot1.save&quot;;
-OS.MoveToTrash(ProjectSettings.GlobalizePath(fileToRemove));</code></pre></div>
+OS.move_to_trash(ProjectSettings.globalize_path(file_to_remove))</code></pre></div>
 <p><strong>Note:</strong> This method is implemented on Android, Linux, macOS and Windows.</p>
 <p><strong>Note:</strong> If the user has disabled the recycle bin on their system, the file will be permanently deleted instead.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.get_user_data_dir" class="method"><h4 class="code-header">pub fn <a href="#method.get_user_data_dir" class="fn">get_user_data_dir</a>(&amp;self) -&gt; <a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a></h4></section></summary><div class="docblock"><p>Returns the absolute directory path where user data is written (the <code>user://</code> directory in Godot). The path depends on the project name and [member ProjectSettings.application/config/use_custom_user_dir].</p>
@@ -589,25 +546,17 @@ Returns the path to commonly used folders across different platforms, as defined
 </div></details><details class="toggle method-toggle" open><summary><section id="method.get_keycode_string" class="method"><h4 class="code-header">pub fn <a href="#method.get_keycode_string" class="fn">get_keycode_string</a>(&amp;self, code: <a class="struct" href="../global/struct.Key.html" title="struct godot::global::Key">Key</a>) -&gt; <a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a></h4></section></summary><div class="docblock"><p>Returns the given keycode as a <a href="../prelude/struct.GString.html" title="struct godot::prelude::GString"><code>String</code></a>.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>print(OS.get_keycode_string(KEY_C))                    # Prints &quot;C&quot;
 print(OS.get_keycode_string(KEY_ESCAPE))               # Prints &quot;Escape&quot;
-print(OS.get_keycode_string(KEY_MASK_SHIFT | KEY_TAB)) # Prints &quot;Shift+Tab&quot;</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>GD.Print(OS.GetKeycodeString(Key.C));                                    // Prints &quot;C&quot;
-GD.Print(OS.GetKeycodeString(Key.Escape));                               // Prints &quot;Escape&quot;
-GD.Print(OS.GetKeycodeString((Key)KeyModifierMask.MaskShift | Key.Tab)); // Prints &quot;Shift+Tab&quot;</code></pre></div>
+print(OS.get_keycode_string(KEY_MASK_SHIFT | KEY_TAB)) # Prints &quot;Shift+Tab&quot;</code></pre></div>
 <p>See also <a href="struct.Os.html#method.find_keycode_from_string" title="method godot::classes::Os::find_keycode_from_string"><code>find_keycode_from_string</code></a>, [member InputEventKey.keycode], and <a href="struct.InputEventKey.html#method.get_keycode_with_modifiers" title="method godot::classes::InputEventKey::get_keycode_with_modifiers"><code>get_keycode_with_modifiers</code></a>.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.is_keycode_unicode" class="method"><h4 class="code-header">pub fn <a href="#method.is_keycode_unicode" class="fn">is_keycode_unicode</a>(&amp;self, code: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><p>Returns <code>true</code> if the input keycode corresponds to a Unicode character. For a list of codes, see the [enum Key] constants.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>print(OS.is_keycode_unicode(KEY_G))      # Prints true
 print(OS.is_keycode_unicode(KEY_KP_4))   # Prints true
 print(OS.is_keycode_unicode(KEY_TAB))    # Prints false
-print(OS.is_keycode_unicode(KEY_ESCAPE)) # Prints false</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>GD.Print(OS.IsKeycodeUnicode((long)Key.G));      // Prints True
-GD.Print(OS.IsKeycodeUnicode((long)Key.Kp4));    // Prints True
-GD.Print(OS.IsKeycodeUnicode((long)Key.Tab));    // Prints False
-GD.Print(OS.IsKeycodeUnicode((long)Key.Escape)); // Prints False</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.find_keycode_from_string" class="method"><h4 class="code-header">pub fn <a href="#method.find_keycode_from_string" class="fn">find_keycode_from_string</a>(&amp;self, string: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>&gt;) -&gt; <a class="struct" href="../global/struct.Key.html" title="struct godot::global::Key">Key</a></h4></section></summary><div class="docblock"><p>Finds the keycode for the given string. The returned values are equivalent to the [enum Key] constants.</p>
+print(OS.is_keycode_unicode(KEY_ESCAPE)) # Prints false</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.find_keycode_from_string" class="method"><h4 class="code-header">pub fn <a href="#method.find_keycode_from_string" class="fn">find_keycode_from_string</a>(&amp;self, string: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>&gt;) -&gt; <a class="struct" href="../global/struct.Key.html" title="struct godot::global::Key">Key</a></h4></section></summary><div class="docblock"><p>Finds the keycode for the given string. The returned values are equivalent to the [enum Key] constants.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>print(OS.find_keycode_from_string(&quot;C&quot;))         # Prints 67 (KEY_C)
 print(OS.find_keycode_from_string(&quot;Escape&quot;))    # Prints 4194305 (KEY_ESCAPE)
 print(OS.find_keycode_from_string(&quot;Shift+Tab&quot;)) # Prints 37748738 (KEY_MASK_SHIFT | KEY_TAB)
-print(OS.find_keycode_from_string(&quot;Unknown&quot;))   # Prints 0 (KEY_NONE)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>GD.Print(OS.FindKeycodeFromString(&quot;C&quot;));         // Prints C (Key.C)
-GD.Print(OS.FindKeycodeFromString(&quot;Escape&quot;));    // Prints Escape (Key.Escape)
-GD.Print(OS.FindKeycodeFromString(&quot;Shift+Tab&quot;)); // Prints 37748738 (KeyModifierMask.MaskShift | Key.Tab)
-GD.Print(OS.FindKeycodeFromString(&quot;Unknown&quot;));   // Prints None (Key.None)</code></pre></div>
+print(OS.find_keycode_from_string(&quot;Unknown&quot;))   # Prints 0 (KEY_NONE)</code></pre></div>
 <p>See also <a href="struct.Os.html#method.get_keycode_string" title="method godot::classes::Os::get_keycode_string"><code>get_keycode_string</code></a>.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.set_use_file_access_save_and_swap" class="method"><h4 class="code-header">pub fn <a href="#method.set_use_file_access_save_and_swap" class="fn">set_use_file_access_save_and_swap</a>(&amp;mut self, enabled: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</h4></section></summary><div class="docblock"><p>If <code>enabled</code> is <code>true</code>, when opening a file for writing, a temporary file is used in its place. When closed, it is automatically applied to the target file.</p>
 <p>This can useful when files may be opened by other applications, such as antiviruses, text editors, or even the Godot editor itself.</p>
@@ -663,24 +612,17 @@ GD.Print(OS.FindKeycodeFromString(&quot;Unknown&quot;));   // Prints None (Key.N
 <div class="example-wrap"><pre class="language-gdscript"><code>var sprite2d = Sprite2D.new()
 sprite2d.is_class(&quot;Sprite2D&quot;) # Returns true
 sprite2d.is_class(&quot;Node&quot;)     # Returns true
-sprite2d.is_class(&quot;Node3D&quot;)   # Returns false</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var sprite2D = new Sprite2D();
-sprite2D.IsClass(&quot;Sprite2D&quot;); // Returns true
-sprite2D.IsClass(&quot;Node&quot;);     // Returns true
-sprite2D.IsClass(&quot;Node3D&quot;);   // Returns false</code></pre></div>
+sprite2d.is_class(&quot;Node3D&quot;)   # Returns false</code></pre></div>
 <p><strong>Note:</strong> This method ignores <code>class_name</code> declarations in the object’s script.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.set" class="method"><h4 class="code-header">pub fn <a href="#method.set" class="fn">set</a>(&amp;mut self, property: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName">StringName</a>&gt;, value: &amp;<a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a>)</h4></section></summary><div class="docblock"><p>Assigns <code>value</code> to the given <code>property</code>. If the property does not exist or the given <code>value</code>’s type doesn’t match, nothing happens.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>var node = Node2D.new()
 node.set(&quot;global_scale&quot;, Vector2(8, 2.5))
-print(node.global_scale) # Prints (8.0, 2.5)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var node = new Node2D();
-node.Set(Node2D.PropertyName.GlobalScale, new Vector2(8, 2.5f));
-GD.Print(node.GlobalScale); // Prints (8, 2.5)</code></pre></div>
+print(node.global_scale) # Prints (8.0, 2.5)</code></pre></div>
 <p><strong>Note:</strong> In C#, <code>property</code> must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the <code>PropertyName</code> class to avoid allocating a new <a href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName"><code>StringName</code></a> on each call.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.get" class="method"><h4 class="code-header">pub fn <a href="#method.get" class="fn">get</a>(&amp;self, property: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName">StringName</a>&gt;) -&gt; <a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a></h4></section></summary><div class="docblock"><p>Returns the <a href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant"><code>Variant</code></a> value of the given <code>property</code>. If the <code>property</code> does not exist, this method returns <code>null</code>.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>var node = Node2D.new()
 node.rotation = 1.5
-var a = node.get(&quot;rotation&quot;) # a is 1.5</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var node = new Node2D();
-node.Rotation = 1.5f;
-var a = node.Get(Node2D.PropertyName.Rotation); // a is 1.5</code></pre></div>
+var a = node.get(&quot;rotation&quot;) # a is 1.5</code></pre></div>
 <p><strong>Note:</strong> In C#, <code>property</code> must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the <code>PropertyName</code> class to avoid allocating a new <a href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName"><code>StringName</code></a> on each call.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.set_indexed" class="method"><h4 class="code-header">pub fn <a href="#method.set_indexed" class="fn">set_indexed</a>(
     &amp;mut self,
@@ -690,20 +632,14 @@ var a = node.Get(Node2D.PropertyName.Rotation); // a is 1.5</code></pre></div>
 <div class="example-wrap"><pre class="language-gdscript"><code>var node = Node2D.new()
 node.set_indexed(&quot;position&quot;, Vector2(42, 0))
 node.set_indexed(&quot;position:y&quot;, -10)
-print(node.position) # Prints (42.0, -10.0)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var node = new Node2D();
-node.SetIndexed(&quot;position&quot;, new Vector2(42, 0));
-node.SetIndexed(&quot;position:y&quot;, -10);
-GD.Print(node.Position); // Prints (42, -10)</code></pre></div>
+print(node.position) # Prints (42.0, -10.0)</code></pre></div>
 <p><strong>Note:</strong> In C#, <code>property_path</code> must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the <code>PropertyName</code> class to avoid allocating a new <a href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName"><code>StringName</code></a> on each call.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.get_indexed" class="method"><h4 class="code-header">pub fn <a href="#method.get_indexed" class="fn">get_indexed</a>(&amp;self, property_path: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.NodePath.html" title="struct godot::prelude::NodePath">NodePath</a>&gt;) -&gt; <a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a></h4></section></summary><div class="docblock"><p>Gets the object’s property indexed by the given <code>property_path</code>. The path should be a <a href="../prelude/struct.NodePath.html" title="struct godot::prelude::NodePath"><code>NodePath</code></a> relative to the current object and can use the colon character (<code>:</code>) to access nested properties.</p>
 <p><strong>Examples:</strong> <code>"position:x"</code> or <code>"material:next_pass:blend_mode"</code>.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>var node = Node2D.new()
 node.position = Vector2(5, -10)
 var a = node.get_indexed(&quot;position&quot;)   # a is Vector2(5, -10)
-var b = node.get_indexed(&quot;position:y&quot;) # b is -10</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var node = new Node2D();
-node.Position = new Vector2(5, -10);
-var a = node.GetIndexed(&quot;position&quot;);   // a is Vector2(5, -10)
-var b = node.GetIndexed(&quot;position:y&quot;); // b is -10</code></pre></div>
+var b = node.get_indexed(&quot;position:y&quot;) # b is -10</code></pre></div>
 <p><strong>Note:</strong> In C#, <code>property_path</code> must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the <code>PropertyName</code> class to avoid allocating a new <a href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName"><code>StringName</code></a> on each call.</p>
 <p><strong>Note:</strong> This method does not support actual paths to nodes in the <a href="../prelude/struct.SceneTree.html" title="struct godot::prelude::SceneTree"><code>SceneTree</code></a>, only sub-property paths. In the context of nodes, use <a href="../prelude/struct.Node.html#method.get_node_and_resource" title="method godot::prelude::Node::get_node_and_resource"><code>get_node_and_resource</code></a> instead.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.get_property_list" class="method"><h4 class="code-header">pub fn <a href="#method.get_property_list" class="fn">get_property_list</a>(&amp;self) -&gt; <a class="struct" href="../prelude/struct.Array.html" title="struct godot::prelude::Array">Array</a>&lt;<a class="struct" href="../prelude/struct.Dictionary.html" title="struct godot::prelude::Dictionary">Dictionary</a>&lt;<a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a>, <a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a>&gt;&gt;</h4></section></summary><div class="docblock"><p>Returns the object’s property list as an <a href="../prelude/struct.Array.html" title="struct godot::prelude::Array"><code>Array</code></a> of dictionaries. Each <a href="../prelude/struct.Dictionary.html" title="struct godot::prelude::Dictionary"><code>Dictionary</code></a> contains the following entries:</p>
@@ -780,38 +716,14 @@ Adds a user-defined signal named <code>signal</code>. Optional arguments for the
 <div class="example-wrap"><pre class="language-gdscript"><code>add_user_signal(&quot;hurt&quot;, [
 	{ &quot;name&quot;: &quot;damage&quot;, &quot;type&quot;: TYPE_INT },
 	{ &quot;name&quot;: &quot;source&quot;, &quot;type&quot;: TYPE_OBJECT }
-])</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>AddUserSignal(&quot;Hurt&quot;,
-[
-	new Godot.Collections.Dictionary()
-	{
-		{ &quot;name&quot;, &quot;damage&quot; },
-		{ &quot;type&quot;, (int)Variant.Type.Int },
-	},
-	new Godot.Collections.Dictionary()
-	{
-		{ &quot;name&quot;, &quot;source&quot; },
-		{ &quot;type&quot;, (int)Variant.Type.Object },
-	},
-]);</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.add_user_signal_ex" class="method"><h4 class="code-header">pub fn <a href="#method.add_user_signal_ex" class="fn">add_user_signal_ex</a>&lt;'ex&gt;(
+])</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.add_user_signal_ex" class="method"><h4 class="code-header">pub fn <a href="#method.add_user_signal_ex" class="fn">add_user_signal_ex</a>&lt;'ex&gt;(
     &amp;'ex mut self,
     signal: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>&gt; + 'ex,
 ) -&gt; <a class="struct" href="object/struct.ExAddUserSignal.html" title="struct godot::classes::object::ExAddUserSignal">ExAddUserSignal</a>&lt;'ex&gt;</h4></section></summary><div class="docblock"><p>Adds a user-defined signal named <code>signal</code>. Optional arguments for the signal can be added as an <a href="../prelude/struct.Array.html" title="struct godot::prelude::Array"><code>Array</code></a> of dictionaries, each defining a <code>name</code> <a href="../prelude/struct.GString.html" title="struct godot::prelude::GString"><code>String</code></a> and a <code>type</code> <code>int</code> (see [enum Variant.Type]). See also <a href="../prelude/struct.Object.html#method.has_user_signal" title="method godot::prelude::Object::has_user_signal"><code>has_user_signal</code></a> and <a href="../prelude/struct.Object.html#method.remove_user_signal" title="method godot::prelude::Object::remove_user_signal"><code>remove_user_signal</code></a>.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>add_user_signal(&quot;hurt&quot;, [
 	{ &quot;name&quot;: &quot;damage&quot;, &quot;type&quot;: TYPE_INT },
 	{ &quot;name&quot;: &quot;source&quot;, &quot;type&quot;: TYPE_OBJECT }
-])</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>AddUserSignal(&quot;Hurt&quot;,
-[
-	new Godot.Collections.Dictionary()
-	{
-		{ &quot;name&quot;, &quot;damage&quot; },
-		{ &quot;type&quot;, (int)Variant.Type.Int },
-	},
-	new Godot.Collections.Dictionary()
-	{
-		{ &quot;name&quot;, &quot;source&quot; },
-		{ &quot;type&quot;, (int)Variant.Type.Object },
-	},
-]);</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.has_user_signal" class="method"><h4 class="code-header">pub fn <a href="#method.has_user_signal" class="fn">has_user_signal</a>(&amp;self, signal: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName">StringName</a>&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><p>Returns <code>true</code> if the given user-defined <code>signal</code> name exists. Only signals added with <a href="../prelude/struct.Object.html#method.add_user_signal" title="method godot::prelude::Object::add_user_signal"><code>add_user_signal</code></a> are included. See also <a href="../prelude/struct.Object.html#method.remove_user_signal" title="method godot::prelude::Object::remove_user_signal"><code>remove_user_signal</code></a>.</p>
+])</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.has_user_signal" class="method"><h4 class="code-header">pub fn <a href="#method.has_user_signal" class="fn">has_user_signal</a>(&amp;self, signal: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName">StringName</a>&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><p>Returns <code>true</code> if the given user-defined <code>signal</code> name exists. Only signals added with <a href="../prelude/struct.Object.html#method.add_user_signal" title="method godot::prelude::Object::add_user_signal"><code>add_user_signal</code></a> are included. See also <a href="../prelude/struct.Object.html#method.remove_user_signal" title="method godot::prelude::Object::remove_user_signal"><code>remove_user_signal</code></a>.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.remove_user_signal" class="method"><h4 class="code-header">pub fn <a href="#method.remove_user_signal" class="fn">remove_user_signal</a>(&amp;mut self, signal: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName">StringName</a>&gt;)</h4></section></summary><div class="docblock"><p>Removes the given user signal <code>signal</code> from the object. See also <a href="../prelude/struct.Object.html#method.add_user_signal" title="method godot::prelude::Object::add_user_signal"><code>add_user_signal</code></a> and <a href="../prelude/struct.Object.html#method.has_user_signal" title="method godot::prelude::Object::has_user_signal"><code>has_user_signal</code></a>.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.emit_signal" class="method"><h4 class="code-header">pub fn <a href="#method.emit_signal" class="fn">emit_signal</a>(
     &amp;mut self,
@@ -820,8 +732,7 @@ Adds a user-defined signal named <code>signal</code>. Optional arguments for the
 ) -&gt; <a class="struct" href="../global/struct.Error.html" title="struct godot::global::Error">Error</a></h4></section></summary><div class="docblock"><p>Emits the given <code>signal</code> by name. The signal must exist, so it should be a built-in signal of this class or one of its inherited classes, or a user-defined signal (see <a href="../prelude/struct.Object.html#method.add_user_signal" title="method godot::prelude::Object::add_user_signal"><code>add_user_signal</code></a>). This method supports a variable number of arguments, so parameters can be passed as a comma separated list.</p>
 <p>Returns <a href="../global/struct.Error.html#associatedconstant.ERR_UNAVAILABLE" title="associated constant godot::global::Error::ERR_UNAVAILABLE"><code>Error::ERR_UNAVAILABLE</code></a> if <code>signal</code> does not exist or the parameters are invalid.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>emit_signal(&quot;hit&quot;, &quot;sword&quot;, 100)
-emit_signal(&quot;game_over&quot;)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>EmitSignal(SignalName.Hit, &quot;sword&quot;, 100);
-EmitSignal(SignalName.GameOver);</code></pre></div>
+emit_signal(&quot;game_over&quot;)</code></pre></div>
 <p><strong>Note:</strong> In C#, <code>signal</code> must be in snake_case when referring to built-in Godot signals. Prefer using the names exposed in the <code>SignalName</code> class to avoid allocating a new <a href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName"><code>StringName</code></a> on each call.</p>
 <h5 id="panics"><a class="doc-anchor" href="#panics">§</a>Panics</h5>
 <p>This is a <em>varcall</em> method, meaning parameters and return values are passed as <code>Variant</code>.
@@ -839,8 +750,7 @@ It can detect call failures and will return <code>Err</code> in such a case.</p>
     varargs: &amp;[<a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a>],
 ) -&gt; <a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a></h4></section></summary><div class="docblock"><p>Calls the <code>method</code> on the object and returns the result. This method supports a variable number of arguments, so parameters can be passed as a comma separated list.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>var node = Node3D.new()
-node.call(&quot;rotate&quot;, Vector3(1.0, 0.0, 0.0), 1.571)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var node = new Node3D();
-node.Call(Node3D.MethodName.Rotate, new Vector3(1f, 0f, 0f), 1.571f);</code></pre></div>
+node.call(&quot;rotate&quot;, Vector3(1.0, 0.0, 0.0), 1.571)</code></pre></div>
 <p><strong>Note:</strong> In C#, <code>method</code> must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the <code>MethodName</code> class to avoid allocating a new <a href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName"><code>StringName</code></a> on each call.</p>
 <h5 id="panics-1"><a class="doc-anchor" href="#panics-1">§</a>Panics</h5>
 <p>This is a <em>varcall</em> method, meaning parameters and return values are passed as <code>Variant</code>.
@@ -860,8 +770,7 @@ It can detect call failures and will return <code>Err</code> in such a case.</p>
 <p>Idle time happens mainly at the end of process and physics frames. In it, deferred calls will be run until there are none left, which means you can defer calls from other deferred calls and they’ll still be run in the current idle time cycle. This means you should not call a method deferred from itself (or from a method called by it), as this causes infinite recursion the same way as if you had called the method directly.</p>
 <p>This method supports a variable number of arguments, so parameters can be passed as a comma separated list.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>var node = Node3D.new()
-node.call_deferred(&quot;rotate&quot;, Vector3(1.0, 0.0, 0.0), 1.571)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var node = new Node3D();
-node.CallDeferred(Node3D.MethodName.Rotate, new Vector3(1f, 0f, 0f), 1.571f);</code></pre></div>
+node.call_deferred(&quot;rotate&quot;, Vector3(1.0, 0.0, 0.0), 1.571)</code></pre></div>
 <p>For methods that are deferred from the same thread, the order of execution at idle time is identical to the order in which <code>call_deferred</code> was called.</p>
 <p>See also <a href="../prelude/struct.Callable.html#method.call_deferred" title="method godot::prelude::Callable::call_deferred"><code>call_deferred</code></a>.</p>
 <p><strong>Note:</strong> In C#, <code>method</code> must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the <code>MethodName</code> class to avoid allocating a new <a href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName"><code>StringName</code></a> on each call.</p>
@@ -894,13 +803,7 @@ node.set_deferred(&quot;rotation&quot;, 3.0)
 print(node.rotation) # Prints 1.5
 
 await get_tree().process_frame
-print(node.rotation) # Prints 3.0</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var node = new Node2D();
-node.Rotation = 1.5f;
-node.SetDeferred(Node2D.PropertyName.Rotation, 3f);
-GD.Print(node.Rotation); // Prints 1.5
-
-await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
-GD.Print(node.Rotation); // Prints 3.0</code></pre></div>
+print(node.rotation) # Prints 3.0</code></pre></div>
 <p><strong>Note:</strong> In C#, <code>property</code> must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the <code>PropertyName</code> class to avoid allocating a new <a href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName"><code>StringName</code></a> on each call.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.callv" class="method"><h4 class="code-header">pub fn <a href="#method.callv" class="fn">callv</a>(
     &amp;mut self,
@@ -908,8 +811,7 @@ GD.Print(node.Rotation); // Prints 3.0</code></pre></div>
     arg_array: &amp;<a class="struct" href="../prelude/struct.AnyArray.html" title="struct godot::prelude::AnyArray">AnyArray</a>,
 ) -&gt; <a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a></h4></section></summary><div class="docblock"><p>Calls the <code>method</code> on the object and returns the result. Unlike <a href="../prelude/struct.Object.html#method.call" title="method godot::prelude::Object::call"><code>call</code></a>, this method expects all parameters to be contained inside <code>arg_array</code>.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>var node = Node3D.new()
-node.callv(&quot;rotate&quot;, [Vector3(1.0, 0.0, 0.0), 1.571])</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var node = new Node3D();
-node.Callv(Node3D.MethodName.Rotate, [new Vector3(1f, 0f, 0f), 1.571f]);</code></pre></div>
+node.callv(&quot;rotate&quot;, [Vector3(1.0, 0.0, 0.0), 1.571])</code></pre></div>
 <p><strong>Note:</strong> In C#, <code>method</code> must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the <code>MethodName</code> class to avoid allocating a new <a href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName"><code>StringName</code></a> on each call.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.has_method" class="method"><h4 class="code-header">pub fn <a href="#method.has_method" class="fn">has_method</a>(&amp;self, method: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName">StringName</a>&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><p>Returns <code>true</code> if the given <code>method</code> name exists in the object.</p>
 <p><strong>Note:</strong> In C#, <code>method</code> must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the <code>MethodName</code> class to avoid allocating a new <a href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName"><code>StringName</code></a> on each call.</p>

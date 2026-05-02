@@ -156,15 +156,7 @@ new_stylebox_normal.border_width_top = 3
 new_stylebox_normal.border_color = Color(0, 1, 0.5)
 $MyButton.add_theme_stylebox_override(&quot;normal&quot;, new_stylebox_normal)
 # Remove the stylebox override.
-$MyButton.remove_theme_stylebox_override(&quot;normal&quot;)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>// The snippet below assumes the child node &quot;MyButton&quot; has a StyleBoxFlat assigned.
-// Resources are shared across instances, so we need to duplicate it
-// to avoid modifying the appearance of all other buttons.
-StyleBoxFlat newStyleboxNormal = GetNode&lt;Button&gt;(&quot;MyButton&quot;).GetThemeStylebox(&quot;normal&quot;).Duplicate() as StyleBoxFlat;
-newStyleboxNormal.BorderWidthTop = 3;
-newStyleboxNormal.BorderColor = new Color(0, 1, 0.5f);
-GetNode&lt;Button&gt;(&quot;MyButton&quot;).AddThemeStyleboxOverride(&quot;normal&quot;, newStyleboxNormal);
-// Remove the stylebox override.
-GetNode&lt;Button&gt;(&quot;MyButton&quot;).RemoveThemeStyleboxOverride(&quot;normal&quot;);</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.add_theme_font_override" class="method"><h4 class="code-header">pub fn <a href="#method.add_theme_font_override" class="fn">add_theme_font_override</a>(
+$MyButton.remove_theme_stylebox_override(&quot;normal&quot;)</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.add_theme_font_override" class="method"><h4 class="code-header">pub fn <a href="#method.add_theme_font_override" class="fn">add_theme_font_override</a>(
     &amp;mut self,
     name: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName">StringName</a>&gt;,
     font: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.Font.html" title="struct godot::classes::Font">Font</a>&gt;&gt;,
@@ -188,12 +180,7 @@ $MyLabel.add_theme_color_override(&quot;font_color&quot;, Color(1, 0.5, 0))
 # Reset the font color of the child label.
 $MyLabel.remove_theme_color_override(&quot;font_color&quot;)
 # Alternatively it can be overridden with the default value from the Label type.
-$MyLabel.add_theme_color_override(&quot;font_color&quot;, get_theme_color(&quot;font_color&quot;, &quot;Label&quot;))</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>// Given the child Label node &quot;MyLabel&quot;, override its font color with a custom value.
-GetNode&lt;Label&gt;(&quot;MyLabel&quot;).AddThemeColorOverride(&quot;font_color&quot;, new Color(1, 0.5f, 0));
-// Reset the font color of the child label.
-GetNode&lt;Label&gt;(&quot;MyLabel&quot;).RemoveThemeColorOverride(&quot;font_color&quot;);
-// Alternatively it can be overridden with the default value from the Label type.
-GetNode&lt;Label&gt;(&quot;MyLabel&quot;).AddThemeColorOverride(&quot;font_color&quot;, GetThemeColor(&quot;font_color&quot;, &quot;Label&quot;));</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.add_theme_constant_override" class="method"><h4 class="code-header">pub fn <a href="#method.add_theme_constant_override" class="fn">add_theme_constant_override</a>(
+$MyLabel.add_theme_color_override(&quot;font_color&quot;, get_theme_color(&quot;font_color&quot;, &quot;Label&quot;))</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.add_theme_constant_override" class="method"><h4 class="code-header">pub fn <a href="#method.add_theme_constant_override" class="fn">add_theme_constant_override</a>(
     &amp;mut self,
     name: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName">StringName</a>&gt;,
     constant: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
@@ -250,13 +237,7 @@ Returns a <a href="../prelude/struct.Color.html" title="struct godot::prelude::C
 	# Get the font color defined for the current Control&#39;s class, if it exists.
 	modulate = get_theme_color(&quot;font_color&quot;)
 	# Get the font color defined for the Button class.
-	modulate = get_theme_color(&quot;font_color&quot;, &quot;Button&quot;)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>public override void _Ready()
-{
-	// Get the font color defined for the current Control&#39;s class, if it exists.
-	Modulate = GetThemeColor(&quot;font_color&quot;);
-	// Get the font color defined for the Button class.
-	Modulate = GetThemeColor(&quot;font_color&quot;, &quot;Button&quot;);
-}</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.get_theme_color_ex" class="method"><h4 class="code-header">pub fn <a href="#method.get_theme_color_ex" class="fn">get_theme_color_ex</a>&lt;'ex&gt;(
+	modulate = get_theme_color(&quot;font_color&quot;, &quot;Button&quot;)</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.get_theme_color_ex" class="method"><h4 class="code-header">pub fn <a href="#method.get_theme_color_ex" class="fn">get_theme_color_ex</a>&lt;'ex&gt;(
     &amp;'ex self,
     name: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName">StringName</a>&gt; + 'ex,
 ) -&gt; <a class="struct" href="control/struct.ExGetThemeColor.html" title="struct godot::classes::control::ExGetThemeColor">ExGetThemeColor</a>&lt;'ex&gt;</h4></section></summary><div class="docblock"><p>Returns a <a href="../prelude/struct.Color.html" title="struct godot::prelude::Color"><code>Color</code></a> from the first matching <a href="struct.Theme.html" title="struct godot::classes::Theme"><code>Theme</code></a> in the tree if that <a href="struct.Theme.html" title="struct godot::classes::Theme"><code>Theme</code></a> has a color item with the specified <code>name</code> and <code>theme_type</code>. If <code>theme_type</code> is omitted the class name of the current control is used as the type, or [member theme_type_variation] if it is defined. If the type is a class name its parent classes are also checked, in order of inheritance. If the type is a variation its base types are checked, in order of dependency, then the control’s class name and its parent classes are checked.</p>
@@ -265,13 +246,7 @@ Returns a <a href="../prelude/struct.Color.html" title="struct godot::prelude::C
 	# Get the font color defined for the current Control&#39;s class, if it exists.
 	modulate = get_theme_color(&quot;font_color&quot;)
 	# Get the font color defined for the Button class.
-	modulate = get_theme_color(&quot;font_color&quot;, &quot;Button&quot;)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>public override void _Ready()
-{
-	// Get the font color defined for the current Control&#39;s class, if it exists.
-	Modulate = GetThemeColor(&quot;font_color&quot;);
-	// Get the font color defined for the Button class.
-	Modulate = GetThemeColor(&quot;font_color&quot;, &quot;Button&quot;);
-}</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.get_theme_constant" class="method"><h4 class="code-header">pub fn <a href="#method.get_theme_constant" class="fn">get_theme_constant</a>(&amp;self, name: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName">StringName</a>&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></h4></section></summary><div class="docblock"><p>To set the default parameters, use <a href="struct.Control.html#method.get_theme_constant_ex" title="method godot::classes::Control::get_theme_constant_ex"><code>get_theme_constant_ex</code></a> and its builder methods.  See <a href="https://godot-rust.github.io/book/godot-api/functions.html#default-parameters">the book</a> for detailed usage instructions.
+	modulate = get_theme_color(&quot;font_color&quot;, &quot;Button&quot;)</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.get_theme_constant" class="method"><h4 class="code-header">pub fn <a href="#method.get_theme_constant" class="fn">get_theme_constant</a>(&amp;self, name: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName">StringName</a>&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></h4></section></summary><div class="docblock"><p>To set the default parameters, use <a href="struct.Control.html#method.get_theme_constant_ex" title="method godot::classes::Control::get_theme_constant_ex"><code>get_theme_constant_ex</code></a> and its builder methods.  See <a href="https://godot-rust.github.io/book/godot-api/functions.html#default-parameters">the book</a> for detailed usage instructions.
 Returns a constant from the first matching <a href="struct.Theme.html" title="struct godot::classes::Theme"><code>Theme</code></a> in the tree if that <a href="struct.Theme.html" title="struct godot::classes::Theme"><code>Theme</code></a> has a constant item with the specified <code>name</code> and <code>theme_type</code>.</p>
 <p>See <a href="struct.Control.html#method.get_theme_color" title="method godot::classes::Control::get_theme_color"><code>get_theme_color</code></a> for details.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.get_theme_constant_ex" class="method"><h4 class="code-header">pub fn <a href="#method.get_theme_constant_ex" class="fn">get_theme_constant_ex</a>&lt;'ex&gt;(
@@ -382,10 +357,7 @@ Returns the mouse cursor shape for this control when hovered over <code>position
     mouse_behavior_recursive: <a class="struct" href="control/struct.MouseBehaviorRecursive.html" title="struct godot::classes::control::MouseBehaviorRecursive">MouseBehaviorRecursive</a>,
 )</h4></section><section id="method.get_mouse_behavior_recursive" class="method"><h4 class="code-header">pub fn <a href="#method.get_mouse_behavior_recursive" class="fn">get_mouse_behavior_recursive</a>(&amp;self) -&gt; <a class="struct" href="control/struct.MouseBehaviorRecursive.html" title="struct godot::classes::control::MouseBehaviorRecursive">MouseBehaviorRecursive</a></h4></section><section id="method.set_force_pass_scroll_events" class="method"><h4 class="code-header">pub fn <a href="#method.set_force_pass_scroll_events" class="fn">set_force_pass_scroll_events</a>(&amp;mut self, force_pass_scroll_events: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</h4></section><section id="method.is_force_pass_scroll_events" class="method"><h4 class="code-header">pub fn <a href="#method.is_force_pass_scroll_events" class="fn">is_force_pass_scroll_events</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section><section id="method.set_clip_contents" class="method"><h4 class="code-header">pub fn <a href="#method.set_clip_contents" class="fn">set_clip_contents</a>(&amp;mut self, enable: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</h4></section><section id="method.is_clipping_contents" class="method"><h4 class="code-header">pub fn <a href="#method.is_clipping_contents" class="fn">is_clipping_contents</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section><details class="toggle method-toggle" open><summary><section id="method.grab_click_focus" class="method"><h4 class="code-header">pub fn <a href="#method.grab_click_focus" class="fn">grab_click_focus</a>(&amp;mut self)</h4></section></summary><div class="docblock"><p>Creates an <a href="struct.InputEventMouseButton.html" title="struct godot::classes::InputEventMouseButton"><code>InputEventMouseButton</code></a> that attempts to click the control. If the event is received, the control gains focus.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>func _process(delta):
-	grab_click_focus() # When clicking another Control node, this node will be clicked instead.</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>public override void _Process(double delta)
-{
-	GrabClickFocus(); // When clicking another Control node, this node will be clicked instead.
-}</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.set_drag_forwarding" class="method"><h4 class="code-header">pub fn <a href="#method.set_drag_forwarding" class="fn">set_drag_forwarding</a>(
+	grab_click_focus() # When clicking another Control node, this node will be clicked instead.</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.set_drag_forwarding" class="method"><h4 class="code-header">pub fn <a href="#method.set_drag_forwarding" class="fn">set_drag_forwarding</a>(
     &amp;mut self,
     drag_func: &amp;<a class="struct" href="../prelude/struct.Callable.html" title="struct godot::prelude::Callable">Callable</a>,
     can_drop_func: &amp;<a class="struct" href="../prelude/struct.Callable.html" title="struct godot::prelude::Callable">Callable</a>,
@@ -412,18 +384,7 @@ func _get_drag_data(position):
 	cpb.color = color
 	cpb.size = Vector2(50, 50)
 	set_drag_preview(cpb)
-	return color</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>[Export]
-private Color _color = new Color(1, 0, 0, 1);
-
-public override Variant _GetDragData(Vector2 atPosition)
-{
-	// Use a control that is not in the tree
-	var cpb = new ColorPickerButton();
-	cpb.Color = _color;
-	cpb.Size = new Vector2(50, 50);
-	SetDragPreview(cpb);
-	return _color;
-}</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.is_drag_successful" class="method"><h4 class="code-header">pub fn <a href="#method.is_drag_successful" class="fn">is_drag_successful</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><p>Returns <code>true</code> if a drag operation is successful. Alternative to <a href="struct.Viewport.html#method.gui_is_drag_successful" title="method godot::classes::Viewport::gui_is_drag_successful"><code>gui_is_drag_successful</code></a>.</p>
+	return color</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.is_drag_successful" class="method"><h4 class="code-header">pub fn <a href="#method.is_drag_successful" class="fn">is_drag_successful</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><p>Returns <code>true</code> if a drag operation is successful. Alternative to <a href="struct.Viewport.html#method.gui_is_drag_successful" title="method godot::classes::Viewport::gui_is_drag_successful"><code>gui_is_drag_successful</code></a>.</p>
 <p>Best used with <a href="notify/enum.NodeNotification.html#variant.DRAG_END" title="variant godot::classes::notify::NodeNotification::DRAG_END"><code>NodeNotification::DRAG_END</code></a>.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.warp_mouse" class="method"><h4 class="code-header">pub fn <a href="#method.warp_mouse" class="fn">warp_mouse</a>(&amp;mut self, position: <a class="struct" href="../prelude/struct.Vector2.html" title="struct godot::prelude::Vector2">Vector2</a>)</h4></section></summary><div class="docblock"><p>Moves the mouse cursor to <code>position</code>, relative to [member position] of this <code>Control</code>.</p>
 <p><strong>Note:</strong> <a href="struct.Control.html#method.warp_mouse" title="method godot::classes::Control::warp_mouse"><code>warp_mouse</code></a> is only supported on Windows, macOS and Linux. It has no effect on Android, iOS and Web.</p>
@@ -770,7 +731,7 @@ Draws a colored polygon of any number of points, convex or concave. The points i
 )</h4></section></summary><div class="docblock"><p>To set the default parameters, use <a href="struct.CanvasItem.html#method.draw_string_ex" title="method godot::classes::CanvasItem::draw_string_ex"><code>draw_string_ex</code></a> and its builder methods.  See <a href="https://godot-rust.github.io/book/godot-api/functions.html#default-parameters">the book</a> for detailed usage instructions.
 Draws <code>text</code> using the specified <code>font</code> at the <code>pos</code> in local space (bottom-left corner using the baseline of the font). The text will have its color multiplied by <code>modulate</code>. If <code>width</code> is greater than or equal to 0, the text will be clipped if it exceeds the specified width. If <code>oversampling</code> is greater than zero, it is used as font oversampling factor, otherwise viewport oversampling settings are used.</p>
 <p><strong>Example:</strong> Draw “Hello world”, using the project’s default font:</p>
-<div class="example-wrap"><pre class="language-gdscript"><code>draw_string(ThemeDB.fallback_font, Vector2(64, 64), &quot;Hello world&quot;, HORIZONTAL_ALIGNMENT_LEFT, -1, ThemeDB.fallback_font_size)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>DrawString(ThemeDB.FallbackFont, new Vector2(64, 64), &quot;Hello world&quot;, HorizontalAlignment.Left, -1, ThemeDB.FallbackFontSize);</code></pre></div>
+<div class="example-wrap"><pre class="language-gdscript"><code>draw_string(ThemeDB.fallback_font, Vector2(64, 64), &quot;Hello world&quot;, HORIZONTAL_ALIGNMENT_LEFT, -1, ThemeDB.fallback_font_size)</code></pre></div>
 <p>See also <a href="struct.Font.html#method.draw_string" title="method godot::classes::Font::draw_string"><code>draw_string</code></a>.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.draw_string_ex" class="method"><h4 class="code-header">pub fn <a href="#method.draw_string_ex" class="fn">draw_string_ex</a>&lt;'ex&gt;(
     &amp;'ex self,
@@ -779,7 +740,7 @@ Draws <code>text</code> using the specified <code>font</code> at the <code>pos</
     text: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>&gt; + 'ex,
 ) -&gt; <a class="struct" href="canvas_item/struct.ExDrawString.html" title="struct godot::classes::canvas_item::ExDrawString">ExDrawString</a>&lt;'ex&gt;</h4></section></summary><div class="docblock"><p>Draws <code>text</code> using the specified <code>font</code> at the <code>pos</code> in local space (bottom-left corner using the baseline of the font). The text will have its color multiplied by <code>modulate</code>. If <code>width</code> is greater than or equal to 0, the text will be clipped if it exceeds the specified width. If <code>oversampling</code> is greater than zero, it is used as font oversampling factor, otherwise viewport oversampling settings are used.</p>
 <p><strong>Example:</strong> Draw “Hello world”, using the project’s default font:</p>
-<div class="example-wrap"><pre class="language-gdscript"><code>draw_string(ThemeDB.fallback_font, Vector2(64, 64), &quot;Hello world&quot;, HORIZONTAL_ALIGNMENT_LEFT, -1, ThemeDB.fallback_font_size)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>DrawString(ThemeDB.FallbackFont, new Vector2(64, 64), &quot;Hello world&quot;, HorizontalAlignment.Left, -1, ThemeDB.FallbackFontSize);</code></pre></div>
+<div class="example-wrap"><pre class="language-gdscript"><code>draw_string(ThemeDB.fallback_font, Vector2(64, 64), &quot;Hello world&quot;, HORIZONTAL_ALIGNMENT_LEFT, -1, ThemeDB.fallback_font_size)</code></pre></div>
 <p>See also <a href="struct.Font.html#method.draw_string" title="method godot::classes::Font::draw_string"><code>draw_string</code></a>.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.draw_multiline_string" class="method"><h4 class="code-header">pub fn <a href="#method.draw_multiline_string" class="fn">draw_multiline_string</a>(
     &amp;self,
@@ -972,12 +933,7 @@ Adds a child <code>node</code>. Nodes can have any number of children, but every
 <div class="example-wrap"><pre class="language-gdscript"><code>var child_node = get_child(0)
 if child_node.get_parent():
 	child_node.get_parent().remove_child(child_node)
-add_child(child_node)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>Node childNode = GetChild(0);
-if (childNode.GetParent() != null)
-{
-	childNode.GetParent().RemoveChild(childNode);
-}
-AddChild(childNode);</code></pre></div>
+add_child(child_node)</code></pre></div>
 <p>If you need the child node to be added below a specific node in the list of children, use <a href="../prelude/struct.Node.html#method.add_sibling" title="method godot::prelude::Node::add_sibling"><code>add_sibling</code></a> instead of this method.</p>
 <p><strong>Note:</strong> If you want a child to be persisted to a <a href="../prelude/struct.PackedScene.html" title="struct godot::prelude::PackedScene"><code>PackedScene</code></a>, you must set [member owner] in addition to calling <a href="../prelude/struct.Node.html#method.add_child" title="method godot::prelude::Node::add_child"><code>add_child</code></a>. This is typically relevant for <a href="$DOCS_URL/tutorials/plugins/running_code_in_the_editor.html">tool scripts</a> and <a href="$DOCS_URL/tutorials/plugins/editor/index.html">editor plugins</a>. If <a href="../prelude/struct.Node.html#method.add_child" title="method godot::prelude::Node::add_child"><code>add_child</code></a> is called without setting [member owner], the newly added <code>Node</code> will not be visible in the scene tree, though it will be visible in the 2D/3D view.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.add_child_ex" class="method"><h4 class="code-header">pub fn <a href="#method.add_child_ex" class="fn">add_child_ex</a>&lt;'ex&gt;(
@@ -990,12 +946,7 @@ AddChild(childNode);</code></pre></div>
 <div class="example-wrap"><pre class="language-gdscript"><code>var child_node = get_child(0)
 if child_node.get_parent():
 	child_node.get_parent().remove_child(child_node)
-add_child(child_node)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>Node childNode = GetChild(0);
-if (childNode.GetParent() != null)
-{
-	childNode.GetParent().RemoveChild(childNode);
-}
-AddChild(childNode);</code></pre></div>
+add_child(child_node)</code></pre></div>
 <p>If you need the child node to be added below a specific node in the list of children, use <a href="../prelude/struct.Node.html#method.add_sibling" title="method godot::prelude::Node::add_sibling"><code>add_sibling</code></a> instead of this method.</p>
 <p><strong>Note:</strong> If you want a child to be persisted to a <a href="../prelude/struct.PackedScene.html" title="struct godot::prelude::PackedScene"><code>PackedScene</code></a>, you must set [member owner] in addition to calling <a href="../prelude/struct.Node.html#method.add_child" title="method godot::prelude::Node::add_child"><code>add_child</code></a>. This is typically relevant for <a href="$DOCS_URL/tutorials/plugins/running_code_in_the_editor.html">tool scripts</a> and <a href="$DOCS_URL/tutorials/plugins/editor/index.html">editor plugins</a>. If <a href="../prelude/struct.Node.html#method.add_child" title="method godot::prelude::Node::add_child"><code>add_child</code></a> is called without setting [member owner], the newly added <code>Node</code> will not be visible in the scene tree, though it will be visible in the 2D/3D view.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.remove_child" class="method"><h4 class="code-header">pub fn <a href="#method.remove_child" class="fn">remove_child</a>(&amp;mut self, node: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="../prelude/struct.Node.html" title="struct godot::prelude::Node">Node</a>&gt;&gt;)</h4></section></summary><div class="docblock"><p>Removes a child <code>node</code>. The <code>node</code>, along with its children, are <strong>not</strong> deleted. To delete a node, see <a href="../prelude/struct.Node.html#method.queue_free" title="method godot::prelude::Node::queue_free"><code>queue_free</code></a>.</p>
@@ -1104,20 +1055,7 @@ print(b[2])             # Prints ^&quot;&quot;
 var c = get_node_and_resource(&quot;Area2D/Sprite2D:texture:atlas:region&quot;)
 print(c[0].name)        # Prints Sprite2D
 print(c[1].get_class()) # Prints AtlasTexture
-print(c[2])             # Prints ^&quot;:region&quot;</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var a = GetNodeAndResource(NodePath(&quot;Area2D/Sprite2D&quot;));
-GD.Print(a[0].Name); // Prints Sprite2D
-GD.Print(a[1]);      // Prints &lt;null&gt;
-GD.Print(a[2]);      // Prints ^&quot;
-
-var b = GetNodeAndResource(NodePath(&quot;Area2D/Sprite2D:texture:atlas&quot;));
-GD.Print(b[0].name);        // Prints Sprite2D
-GD.Print(b[1].get_class()); // Prints AtlasTexture
-GD.Print(b[2]);             // Prints ^&quot;&quot;
-
-var c = GetNodeAndResource(NodePath(&quot;Area2D/Sprite2D:texture:atlas:region&quot;));
-GD.Print(c[0].name);        // Prints Sprite2D
-GD.Print(c[1].get_class()); // Prints AtlasTexture
-GD.Print(c[2]);             // Prints ^&quot;:region&quot;</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.is_inside_tree" class="method"><h4 class="code-header">pub fn <a href="#method.is_inside_tree" class="fn">is_inside_tree</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><p>Returns <code>true</code> if this node is currently inside a <a href="../prelude/struct.SceneTree.html" title="struct godot::prelude::SceneTree"><code>SceneTree</code></a>. See also <a href="../prelude/struct.Node.html#method.get_tree" title="method godot::prelude::Node::get_tree"><code>get_tree</code></a>.</p>
+print(c[2])             # Prints ^&quot;:region&quot;</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.is_inside_tree" class="method"><h4 class="code-header">pub fn <a href="#method.is_inside_tree" class="fn">is_inside_tree</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><p>Returns <code>true</code> if this node is currently inside a <a href="../prelude/struct.SceneTree.html" title="struct godot::prelude::SceneTree"><code>SceneTree</code></a>. See also <a href="../prelude/struct.Node.html#method.get_tree" title="method godot::prelude::Node::get_tree"><code>get_tree</code></a>.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.is_part_of_edited_scene" class="method"><h4 class="code-header">pub fn <a href="#method.is_part_of_edited_scene" class="fn">is_part_of_edited_scene</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><p>Returns <code>true</code> if the node is part of the scene currently opened in the editor.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.is_ancestor_of" class="method"><h4 class="code-header">pub fn <a href="#method.is_ancestor_of" class="fn">is_ancestor_of</a>(&amp;self, node: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="../prelude/struct.Node.html" title="struct godot::prelude::Node">Node</a>&gt;&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><p>Returns <code>true</code> if the given <code>node</code> is a direct or indirect child of this node.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.is_greater_than" class="method"><h4 class="code-header">pub fn <a href="#method.is_greater_than" class="fn">is_greater_than</a>(&amp;self, node: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="../prelude/struct.Node.html" title="struct godot::prelude::Node">Node</a>&gt;&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><p>Returns <code>true</code> if the given <code>node</code> occurs later in the scene hierarchy than this node. A node occurring later is usually processed last.</p>
@@ -1155,13 +1093,7 @@ Adds the node to the <code>group</code>. Groups can be helpful to organize a sub
 var non_internal_groups = []
 for group in get_groups():
 	if not str(group).begins_with(&quot;_&quot;):
-		non_internal_groups.push_back(group)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>// Stores the node&#39;s non-internal groups only (as a List of StringNames).
-List&lt;string&gt; nonInternalGroups = new List&lt;string&gt;();
-foreach (string group in GetGroups())
-{
-	if (!group.BeginsWith(&quot;_&quot;))
-		nonInternalGroups.Add(group);
-}</code></pre></div></div></details><section id="method.set_owner" class="method"><h4 class="code-header">pub fn <a href="#method.set_owner" class="fn">set_owner</a>(&amp;mut self, owner: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="../prelude/struct.Node.html" title="struct godot::prelude::Node">Node</a>&gt;&gt;&gt;)</h4></section><section id="method.get_owner" class="method"><h4 class="code-header">pub fn <a href="#method.get_owner" class="fn">get_owner</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="../prelude/struct.Node.html" title="struct godot::prelude::Node">Node</a>&gt;&gt;</h4></section><details class="toggle method-toggle" open><summary><section id="method.get_index" class="method"><h4 class="code-header">pub fn <a href="#method.get_index" class="fn">get_index</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></h4></section></summary><div class="docblock"><p>To set the default parameters, use <a href="../prelude/struct.Node.html#method.get_index_ex" title="method godot::prelude::Node::get_index_ex"><code>get_index_ex</code></a> and its builder methods.  See <a href="https://godot-rust.github.io/book/godot-api/functions.html#default-parameters">the book</a> for detailed usage instructions.
+		non_internal_groups.push_back(group)</code></pre></div></div></details><section id="method.set_owner" class="method"><h4 class="code-header">pub fn <a href="#method.set_owner" class="fn">set_owner</a>(&amp;mut self, owner: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="../prelude/struct.Node.html" title="struct godot::prelude::Node">Node</a>&gt;&gt;&gt;)</h4></section><section id="method.get_owner" class="method"><h4 class="code-header">pub fn <a href="#method.get_owner" class="fn">get_owner</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="../prelude/struct.Node.html" title="struct godot::prelude::Node">Node</a>&gt;&gt;</h4></section><details class="toggle method-toggle" open><summary><section id="method.get_index" class="method"><h4 class="code-header">pub fn <a href="#method.get_index" class="fn">get_index</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></h4></section></summary><div class="docblock"><p>To set the default parameters, use <a href="../prelude/struct.Node.html#method.get_index_ex" title="method godot::prelude::Node::get_index_ex"><code>get_index_ex</code></a> and its builder methods.  See <a href="https://godot-rust.github.io/book/godot-api/functions.html#default-parameters">the book</a> for detailed usage instructions.
 Returns this node’s order among its siblings. The first node’s index is <code>0</code>. See also <a href="../prelude/struct.Node.html#method.get_child" title="method godot::prelude::Node::get_child"><code>get_child</code></a>.</p>
 <p>If <code>include_internal</code> is <code>false</code>, returns the index ignoring internal children. The first, non-internal child will have an index of <code>0</code> (see <a href="../prelude/struct.Node.html#method.add_child" title="method godot::prelude::Node::add_child"><code>add_child</code></a>’s <code>internal</code> parameter).</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.get_index_ex" class="method"><h4 class="code-header">pub fn <a href="#method.get_index_ex" class="fn">get_index_ex</a>&lt;'ex&gt;(&amp;'ex self) -&gt; <a class="struct" href="node/struct.ExGetIndex.html" title="struct godot::classes::node::ExGetIndex">ExGetIndex</a>&lt;'ex&gt;</h4></section></summary><div class="docblock"><p>Returns this node’s order among its siblings. The first node’s index is <code>0</code>. See also <a href="../prelude/struct.Node.html#method.get_child" title="method godot::prelude::Node::get_child"><code>get_child</code></a>.</p>
@@ -1272,7 +1204,7 @@ Calls the given <code>method</code> name, passing <code>args</code> as arguments
 </div></details><details class="toggle method-toggle" open><summary><section id="method.get_last_exclusive_window" class="method"><h4 class="code-header">pub fn <a href="#method.get_last_exclusive_window" class="fn">get_last_exclusive_window</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.Window.html" title="struct godot::classes::Window">Window</a>&gt;&gt;</h4></section></summary><div class="docblock"><p>Returns the <a href="struct.Window.html" title="struct godot::classes::Window"><code>Window</code></a> that contains this node, or the last exclusive child in a chain of windows starting with the one that contains this node.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.create_tween" class="method"><h4 class="code-header">pub fn <a href="#method.create_tween" class="fn">create_tween</a>(&amp;mut self) -&gt; <a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.Tween.html" title="struct godot::classes::Tween">Tween</a>&gt;</h4></section></summary><div class="docblock"><p>Creates a new <a href="struct.Tween.html" title="struct godot::classes::Tween"><code>Tween</code></a> and binds it to this node.</p>
 <p>This is the equivalent of doing:</p>
-<div class="example-wrap"><pre class="language-gdscript"><code>get_tree().create_tween().bind_node(self)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>GetTree().CreateTween().BindNode(this);</code></pre></div>
+<div class="example-wrap"><pre class="language-gdscript"><code>get_tree().create_tween().bind_node(self)</code></pre></div>
 <p>The Tween will start automatically on the next process frame or physics frame (depending on [enum Tween.TweenProcessMode]). See <a href="struct.Tween.html#method.bind_node" title="method godot::classes::Tween::bind_node"><code>bind_node</code></a> for more info on Tweens bound to nodes.</p>
 <p><strong>Note:</strong> The method can still be used when the node is not inside <a href="../prelude/struct.SceneTree.html" title="struct godot::prelude::SceneTree"><code>SceneTree</code></a>. It can fail in an unlikely case of using a custom <a href="struct.MainLoop.html" title="struct godot::classes::MainLoop"><code>MainLoop</code></a>.</p>
 </div></details><details class="toggle method-toggle deprecated" open><summary><section id="method.duplicate" class="method"><h4 class="code-header">pub fn <a href="#method.duplicate" class="fn">duplicate</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="../prelude/struct.Node.html" title="struct godot::prelude::Node">Node</a>&gt;&gt;</h4></section><span class="item-info"><div class="stab deprecated"><span class="emoji">👎</span><span>Deprecated: <p>Use <code>Gd::duplicate_node()</code> or <code>Gd::duplicate_node_ex()</code>.</p>
@@ -1478,24 +1410,17 @@ be exclusive.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>var sprite2d = Sprite2D.new()
 sprite2d.is_class(&quot;Sprite2D&quot;) # Returns true
 sprite2d.is_class(&quot;Node&quot;)     # Returns true
-sprite2d.is_class(&quot;Node3D&quot;)   # Returns false</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var sprite2D = new Sprite2D();
-sprite2D.IsClass(&quot;Sprite2D&quot;); // Returns true
-sprite2D.IsClass(&quot;Node&quot;);     // Returns true
-sprite2D.IsClass(&quot;Node3D&quot;);   // Returns false</code></pre></div>
+sprite2d.is_class(&quot;Node3D&quot;)   # Returns false</code></pre></div>
 <p><strong>Note:</strong> This method ignores <code>class_name</code> declarations in the object’s script.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.set" class="method"><h4 class="code-header">pub fn <a href="#method.set" class="fn">set</a>(&amp;mut self, property: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName">StringName</a>&gt;, value: &amp;<a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a>)</h4></section></summary><div class="docblock"><p>Assigns <code>value</code> to the given <code>property</code>. If the property does not exist or the given <code>value</code>’s type doesn’t match, nothing happens.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>var node = Node2D.new()
 node.set(&quot;global_scale&quot;, Vector2(8, 2.5))
-print(node.global_scale) # Prints (8.0, 2.5)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var node = new Node2D();
-node.Set(Node2D.PropertyName.GlobalScale, new Vector2(8, 2.5f));
-GD.Print(node.GlobalScale); // Prints (8, 2.5)</code></pre></div>
+print(node.global_scale) # Prints (8.0, 2.5)</code></pre></div>
 <p><strong>Note:</strong> In C#, <code>property</code> must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the <code>PropertyName</code> class to avoid allocating a new <a href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName"><code>StringName</code></a> on each call.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.get" class="method"><h4 class="code-header">pub fn <a href="#method.get" class="fn">get</a>(&amp;self, property: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName">StringName</a>&gt;) -&gt; <a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a></h4></section></summary><div class="docblock"><p>Returns the <a href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant"><code>Variant</code></a> value of the given <code>property</code>. If the <code>property</code> does not exist, this method returns <code>null</code>.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>var node = Node2D.new()
 node.rotation = 1.5
-var a = node.get(&quot;rotation&quot;) # a is 1.5</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var node = new Node2D();
-node.Rotation = 1.5f;
-var a = node.Get(Node2D.PropertyName.Rotation); // a is 1.5</code></pre></div>
+var a = node.get(&quot;rotation&quot;) # a is 1.5</code></pre></div>
 <p><strong>Note:</strong> In C#, <code>property</code> must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the <code>PropertyName</code> class to avoid allocating a new <a href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName"><code>StringName</code></a> on each call.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.set_indexed" class="method"><h4 class="code-header">pub fn <a href="#method.set_indexed" class="fn">set_indexed</a>(
     &amp;mut self,
@@ -1505,20 +1430,14 @@ var a = node.Get(Node2D.PropertyName.Rotation); // a is 1.5</code></pre></div>
 <div class="example-wrap"><pre class="language-gdscript"><code>var node = Node2D.new()
 node.set_indexed(&quot;position&quot;, Vector2(42, 0))
 node.set_indexed(&quot;position:y&quot;, -10)
-print(node.position) # Prints (42.0, -10.0)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var node = new Node2D();
-node.SetIndexed(&quot;position&quot;, new Vector2(42, 0));
-node.SetIndexed(&quot;position:y&quot;, -10);
-GD.Print(node.Position); // Prints (42, -10)</code></pre></div>
+print(node.position) # Prints (42.0, -10.0)</code></pre></div>
 <p><strong>Note:</strong> In C#, <code>property_path</code> must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the <code>PropertyName</code> class to avoid allocating a new <a href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName"><code>StringName</code></a> on each call.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.get_indexed" class="method"><h4 class="code-header">pub fn <a href="#method.get_indexed" class="fn">get_indexed</a>(&amp;self, property_path: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.NodePath.html" title="struct godot::prelude::NodePath">NodePath</a>&gt;) -&gt; <a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a></h4></section></summary><div class="docblock"><p>Gets the object’s property indexed by the given <code>property_path</code>. The path should be a <a href="../prelude/struct.NodePath.html" title="struct godot::prelude::NodePath"><code>NodePath</code></a> relative to the current object and can use the colon character (<code>:</code>) to access nested properties.</p>
 <p><strong>Examples:</strong> <code>"position:x"</code> or <code>"material:next_pass:blend_mode"</code>.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>var node = Node2D.new()
 node.position = Vector2(5, -10)
 var a = node.get_indexed(&quot;position&quot;)   # a is Vector2(5, -10)
-var b = node.get_indexed(&quot;position:y&quot;) # b is -10</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var node = new Node2D();
-node.Position = new Vector2(5, -10);
-var a = node.GetIndexed(&quot;position&quot;);   // a is Vector2(5, -10)
-var b = node.GetIndexed(&quot;position:y&quot;); // b is -10</code></pre></div>
+var b = node.get_indexed(&quot;position:y&quot;) # b is -10</code></pre></div>
 <p><strong>Note:</strong> In C#, <code>property_path</code> must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the <code>PropertyName</code> class to avoid allocating a new <a href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName"><code>StringName</code></a> on each call.</p>
 <p><strong>Note:</strong> This method does not support actual paths to nodes in the <a href="../prelude/struct.SceneTree.html" title="struct godot::prelude::SceneTree"><code>SceneTree</code></a>, only sub-property paths. In the context of nodes, use <a href="../prelude/struct.Node.html#method.get_node_and_resource" title="method godot::prelude::Node::get_node_and_resource"><code>get_node_and_resource</code></a> instead.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.get_property_list" class="method"><h4 class="code-header">pub fn <a href="#method.get_property_list" class="fn">get_property_list</a>(&amp;self) -&gt; <a class="struct" href="../prelude/struct.Array.html" title="struct godot::prelude::Array">Array</a>&lt;<a class="struct" href="../prelude/struct.Dictionary.html" title="struct godot::prelude::Dictionary">Dictionary</a>&lt;<a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a>, <a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a>&gt;&gt;</h4></section></summary><div class="docblock"><p>Returns the object’s property list as an <a href="../prelude/struct.Array.html" title="struct godot::prelude::Array"><code>Array</code></a> of dictionaries. Each <a href="../prelude/struct.Dictionary.html" title="struct godot::prelude::Dictionary"><code>Dictionary</code></a> contains the following entries:</p>
@@ -1595,38 +1514,14 @@ Adds a user-defined signal named <code>signal</code>. Optional arguments for the
 <div class="example-wrap"><pre class="language-gdscript"><code>add_user_signal(&quot;hurt&quot;, [
 	{ &quot;name&quot;: &quot;damage&quot;, &quot;type&quot;: TYPE_INT },
 	{ &quot;name&quot;: &quot;source&quot;, &quot;type&quot;: TYPE_OBJECT }
-])</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>AddUserSignal(&quot;Hurt&quot;,
-[
-	new Godot.Collections.Dictionary()
-	{
-		{ &quot;name&quot;, &quot;damage&quot; },
-		{ &quot;type&quot;, (int)Variant.Type.Int },
-	},
-	new Godot.Collections.Dictionary()
-	{
-		{ &quot;name&quot;, &quot;source&quot; },
-		{ &quot;type&quot;, (int)Variant.Type.Object },
-	},
-]);</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.add_user_signal_ex" class="method"><h4 class="code-header">pub fn <a href="#method.add_user_signal_ex" class="fn">add_user_signal_ex</a>&lt;'ex&gt;(
+])</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.add_user_signal_ex" class="method"><h4 class="code-header">pub fn <a href="#method.add_user_signal_ex" class="fn">add_user_signal_ex</a>&lt;'ex&gt;(
     &amp;'ex mut self,
     signal: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>&gt; + 'ex,
 ) -&gt; <a class="struct" href="object/struct.ExAddUserSignal.html" title="struct godot::classes::object::ExAddUserSignal">ExAddUserSignal</a>&lt;'ex&gt;</h4></section></summary><div class="docblock"><p>Adds a user-defined signal named <code>signal</code>. Optional arguments for the signal can be added as an <a href="../prelude/struct.Array.html" title="struct godot::prelude::Array"><code>Array</code></a> of dictionaries, each defining a <code>name</code> <a href="../prelude/struct.GString.html" title="struct godot::prelude::GString"><code>String</code></a> and a <code>type</code> <code>int</code> (see [enum Variant.Type]). See also <a href="../prelude/struct.Object.html#method.has_user_signal" title="method godot::prelude::Object::has_user_signal"><code>has_user_signal</code></a> and <a href="../prelude/struct.Object.html#method.remove_user_signal" title="method godot::prelude::Object::remove_user_signal"><code>remove_user_signal</code></a>.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>add_user_signal(&quot;hurt&quot;, [
 	{ &quot;name&quot;: &quot;damage&quot;, &quot;type&quot;: TYPE_INT },
 	{ &quot;name&quot;: &quot;source&quot;, &quot;type&quot;: TYPE_OBJECT }
-])</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>AddUserSignal(&quot;Hurt&quot;,
-[
-	new Godot.Collections.Dictionary()
-	{
-		{ &quot;name&quot;, &quot;damage&quot; },
-		{ &quot;type&quot;, (int)Variant.Type.Int },
-	},
-	new Godot.Collections.Dictionary()
-	{
-		{ &quot;name&quot;, &quot;source&quot; },
-		{ &quot;type&quot;, (int)Variant.Type.Object },
-	},
-]);</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.has_user_signal" class="method"><h4 class="code-header">pub fn <a href="#method.has_user_signal" class="fn">has_user_signal</a>(&amp;self, signal: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName">StringName</a>&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><p>Returns <code>true</code> if the given user-defined <code>signal</code> name exists. Only signals added with <a href="../prelude/struct.Object.html#method.add_user_signal" title="method godot::prelude::Object::add_user_signal"><code>add_user_signal</code></a> are included. See also <a href="../prelude/struct.Object.html#method.remove_user_signal" title="method godot::prelude::Object::remove_user_signal"><code>remove_user_signal</code></a>.</p>
+])</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.has_user_signal" class="method"><h4 class="code-header">pub fn <a href="#method.has_user_signal" class="fn">has_user_signal</a>(&amp;self, signal: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName">StringName</a>&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><p>Returns <code>true</code> if the given user-defined <code>signal</code> name exists. Only signals added with <a href="../prelude/struct.Object.html#method.add_user_signal" title="method godot::prelude::Object::add_user_signal"><code>add_user_signal</code></a> are included. See also <a href="../prelude/struct.Object.html#method.remove_user_signal" title="method godot::prelude::Object::remove_user_signal"><code>remove_user_signal</code></a>.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.remove_user_signal" class="method"><h4 class="code-header">pub fn <a href="#method.remove_user_signal" class="fn">remove_user_signal</a>(&amp;mut self, signal: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName">StringName</a>&gt;)</h4></section></summary><div class="docblock"><p>Removes the given user signal <code>signal</code> from the object. See also <a href="../prelude/struct.Object.html#method.add_user_signal" title="method godot::prelude::Object::add_user_signal"><code>add_user_signal</code></a> and <a href="../prelude/struct.Object.html#method.has_user_signal" title="method godot::prelude::Object::has_user_signal"><code>has_user_signal</code></a>.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.emit_signal" class="method"><h4 class="code-header">pub fn <a href="#method.emit_signal" class="fn">emit_signal</a>(
     &amp;mut self,
@@ -1635,8 +1530,7 @@ Adds a user-defined signal named <code>signal</code>. Optional arguments for the
 ) -&gt; <a class="struct" href="../global/struct.Error.html" title="struct godot::global::Error">Error</a></h4></section></summary><div class="docblock"><p>Emits the given <code>signal</code> by name. The signal must exist, so it should be a built-in signal of this class or one of its inherited classes, or a user-defined signal (see <a href="../prelude/struct.Object.html#method.add_user_signal" title="method godot::prelude::Object::add_user_signal"><code>add_user_signal</code></a>). This method supports a variable number of arguments, so parameters can be passed as a comma separated list.</p>
 <p>Returns <a href="../global/struct.Error.html#associatedconstant.ERR_UNAVAILABLE" title="associated constant godot::global::Error::ERR_UNAVAILABLE"><code>Error::ERR_UNAVAILABLE</code></a> if <code>signal</code> does not exist or the parameters are invalid.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>emit_signal(&quot;hit&quot;, &quot;sword&quot;, 100)
-emit_signal(&quot;game_over&quot;)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>EmitSignal(SignalName.Hit, &quot;sword&quot;, 100);
-EmitSignal(SignalName.GameOver);</code></pre></div>
+emit_signal(&quot;game_over&quot;)</code></pre></div>
 <p><strong>Note:</strong> In C#, <code>signal</code> must be in snake_case when referring to built-in Godot signals. Prefer using the names exposed in the <code>SignalName</code> class to avoid allocating a new <a href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName"><code>StringName</code></a> on each call.</p>
 <h5 id="panics-9"><a class="doc-anchor" href="#panics-9">§</a>Panics</h5>
 <p>This is a <em>varcall</em> method, meaning parameters and return values are passed as <code>Variant</code>.
@@ -1654,8 +1548,7 @@ It can detect call failures and will return <code>Err</code> in such a case.</p>
     varargs: &amp;[<a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a>],
 ) -&gt; <a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a></h4></section></summary><div class="docblock"><p>Calls the <code>method</code> on the object and returns the result. This method supports a variable number of arguments, so parameters can be passed as a comma separated list.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>var node = Node3D.new()
-node.call(&quot;rotate&quot;, Vector3(1.0, 0.0, 0.0), 1.571)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var node = new Node3D();
-node.Call(Node3D.MethodName.Rotate, new Vector3(1f, 0f, 0f), 1.571f);</code></pre></div>
+node.call(&quot;rotate&quot;, Vector3(1.0, 0.0, 0.0), 1.571)</code></pre></div>
 <p><strong>Note:</strong> In C#, <code>method</code> must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the <code>MethodName</code> class to avoid allocating a new <a href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName"><code>StringName</code></a> on each call.</p>
 <h5 id="panics-10"><a class="doc-anchor" href="#panics-10">§</a>Panics</h5>
 <p>This is a <em>varcall</em> method, meaning parameters and return values are passed as <code>Variant</code>.
@@ -1675,8 +1568,7 @@ It can detect call failures and will return <code>Err</code> in such a case.</p>
 <p>Idle time happens mainly at the end of process and physics frames. In it, deferred calls will be run until there are none left, which means you can defer calls from other deferred calls and they’ll still be run in the current idle time cycle. This means you should not call a method deferred from itself (or from a method called by it), as this causes infinite recursion the same way as if you had called the method directly.</p>
 <p>This method supports a variable number of arguments, so parameters can be passed as a comma separated list.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>var node = Node3D.new()
-node.call_deferred(&quot;rotate&quot;, Vector3(1.0, 0.0, 0.0), 1.571)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var node = new Node3D();
-node.CallDeferred(Node3D.MethodName.Rotate, new Vector3(1f, 0f, 0f), 1.571f);</code></pre></div>
+node.call_deferred(&quot;rotate&quot;, Vector3(1.0, 0.0, 0.0), 1.571)</code></pre></div>
 <p>For methods that are deferred from the same thread, the order of execution at idle time is identical to the order in which <code>call_deferred</code> was called.</p>
 <p>See also <a href="../prelude/struct.Callable.html#method.call_deferred" title="method godot::prelude::Callable::call_deferred"><code>call_deferred</code></a>.</p>
 <p><strong>Note:</strong> In C#, <code>method</code> must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the <code>MethodName</code> class to avoid allocating a new <a href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName"><code>StringName</code></a> on each call.</p>
@@ -1709,13 +1601,7 @@ node.set_deferred(&quot;rotation&quot;, 3.0)
 print(node.rotation) # Prints 1.5
 
 await get_tree().process_frame
-print(node.rotation) # Prints 3.0</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var node = new Node2D();
-node.Rotation = 1.5f;
-node.SetDeferred(Node2D.PropertyName.Rotation, 3f);
-GD.Print(node.Rotation); // Prints 1.5
-
-await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
-GD.Print(node.Rotation); // Prints 3.0</code></pre></div>
+print(node.rotation) # Prints 3.0</code></pre></div>
 <p><strong>Note:</strong> In C#, <code>property</code> must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the <code>PropertyName</code> class to avoid allocating a new <a href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName"><code>StringName</code></a> on each call.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.callv" class="method"><h4 class="code-header">pub fn <a href="#method.callv" class="fn">callv</a>(
     &amp;mut self,
@@ -1723,8 +1609,7 @@ GD.Print(node.Rotation); // Prints 3.0</code></pre></div>
     arg_array: &amp;<a class="struct" href="../prelude/struct.AnyArray.html" title="struct godot::prelude::AnyArray">AnyArray</a>,
 ) -&gt; <a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a></h4></section></summary><div class="docblock"><p>Calls the <code>method</code> on the object and returns the result. Unlike <a href="../prelude/struct.Object.html#method.call" title="method godot::prelude::Object::call"><code>call</code></a>, this method expects all parameters to be contained inside <code>arg_array</code>.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>var node = Node3D.new()
-node.callv(&quot;rotate&quot;, [Vector3(1.0, 0.0, 0.0), 1.571])</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>var node = new Node3D();
-node.Callv(Node3D.MethodName.Rotate, [new Vector3(1f, 0f, 0f), 1.571f]);</code></pre></div>
+node.callv(&quot;rotate&quot;, [Vector3(1.0, 0.0, 0.0), 1.571])</code></pre></div>
 <p><strong>Note:</strong> In C#, <code>method</code> must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the <code>MethodName</code> class to avoid allocating a new <a href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName"><code>StringName</code></a> on each call.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.has_method" class="method"><h4 class="code-header">pub fn <a href="#method.has_method" class="fn">has_method</a>(&amp;self, method: impl <a class="trait" href="../meta/trait.AsArg.html" title="trait godot::meta::AsArg">AsArg</a>&lt;<a class="struct" href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName">StringName</a>&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><p>Returns <code>true</code> if the given <code>method</code> name exists in the object.</p>
 <p><strong>Note:</strong> In C#, <code>method</code> must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the <code>MethodName</code> class to avoid allocating a new <a href="../prelude/struct.StringName.html" title="struct godot::prelude::StringName"><code>StringName</code></a> on each call.</p>

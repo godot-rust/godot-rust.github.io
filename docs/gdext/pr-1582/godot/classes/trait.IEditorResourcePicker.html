@@ -170,37 +170,19 @@ Used by <code>impl Display for Gd&lt;T&gt;</code>, as well as <code>str()</code>
 <div class="example-wrap"><pre class="language-gdscript"><code>func _get_drag_data(position):
 	var mydata = make_data() # This is your custom method generating the drag data.
 	set_drag_preview(make_preview(mydata)) # This is your custom method generating the preview of the drag data.
-	return mydata</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>public override Variant _GetDragData(Vector2 atPosition)
-{
-	var myData = MakeData(); // This is your custom method generating the drag data.
-	SetDragPreview(MakePreview(myData)); // This is your custom method generating the preview of the drag data.
-	return myData;
-}</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.can_drop_data" class="method"><h4 class="code-header">fn <a href="#method.can_drop_data" class="fn">can_drop_data</a>(&amp;self, at_position: <a class="struct" href="../prelude/struct.Vector2.html" title="struct godot::prelude::Vector2">Vector2</a>, data: <a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><p>Godot calls this method to test if <code>data</code> from a control’s <a href="trait.IControl.html#method.get_drag_data" title="method godot::classes::IControl::get_drag_data"><code>get_drag_data</code></a> can be dropped at <code>at_position</code>. <code>at_position</code> is local to this control.</p>
+	return mydata</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.can_drop_data" class="method"><h4 class="code-header">fn <a href="#method.can_drop_data" class="fn">can_drop_data</a>(&amp;self, at_position: <a class="struct" href="../prelude/struct.Vector2.html" title="struct godot::prelude::Vector2">Vector2</a>, data: <a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></h4></section></summary><div class="docblock"><p>Godot calls this method to test if <code>data</code> from a control’s <a href="trait.IControl.html#method.get_drag_data" title="method godot::classes::IControl::get_drag_data"><code>get_drag_data</code></a> can be dropped at <code>at_position</code>. <code>at_position</code> is local to this control.</p>
 <p>This method should only be used to test the data. Process the data in <a href="trait.IControl.html#method.drop_data" title="method godot::classes::IControl::drop_data"><code>drop_data</code></a>.</p>
 <p><strong>Note:</strong> If the drag was initiated by a keyboard shortcut or <a href="struct.Control.html#method.accessibility_drag" title="method godot::classes::Control::accessibility_drag"><code>accessibility_drag</code></a>, <code>at_position</code> is set to <code>Vector2.INF</code>, and the currently selected item/text position should be used as the drop position.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>func _can_drop_data(position, data):
 	# Check position if it is relevant to you
 	# Otherwise, just check data
-	return typeof(data) == TYPE_DICTIONARY and data.has(&quot;expected&quot;)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>public override bool _CanDropData(Vector2 atPosition, Variant data)
-{
-	// Check position if it is relevant to you
-	// Otherwise, just check data
-	return data.VariantType == Variant.Type.Dictionary &amp;&amp; data.AsGodotDictionary().ContainsKey(&quot;expected&quot;);
-}</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.drop_data" class="method"><h4 class="code-header">fn <a href="#method.drop_data" class="fn">drop_data</a>(&amp;mut self, at_position: <a class="struct" href="../prelude/struct.Vector2.html" title="struct godot::prelude::Vector2">Vector2</a>, data: <a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a>)</h4></section></summary><div class="docblock"><p>Godot calls this method to pass you the <code>data</code> from a control’s <a href="trait.IControl.html#method.get_drag_data" title="method godot::classes::IControl::get_drag_data"><code>get_drag_data</code></a> result. Godot first calls <a href="trait.IControl.html#method.can_drop_data" title="method godot::classes::IControl::can_drop_data"><code>can_drop_data</code></a> to test if <code>data</code> is allowed to drop at <code>at_position</code> where <code>at_position</code> is local to this control.</p>
+	return typeof(data) == TYPE_DICTIONARY and data.has(&quot;expected&quot;)</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.drop_data" class="method"><h4 class="code-header">fn <a href="#method.drop_data" class="fn">drop_data</a>(&amp;mut self, at_position: <a class="struct" href="../prelude/struct.Vector2.html" title="struct godot::prelude::Vector2">Vector2</a>, data: <a class="struct" href="../prelude/struct.Variant.html" title="struct godot::prelude::Variant">Variant</a>)</h4></section></summary><div class="docblock"><p>Godot calls this method to pass you the <code>data</code> from a control’s <a href="trait.IControl.html#method.get_drag_data" title="method godot::classes::IControl::get_drag_data"><code>get_drag_data</code></a> result. Godot first calls <a href="trait.IControl.html#method.can_drop_data" title="method godot::classes::IControl::can_drop_data"><code>can_drop_data</code></a> to test if <code>data</code> is allowed to drop at <code>at_position</code> where <code>at_position</code> is local to this control.</p>
 <p><strong>Note:</strong> If the drag was initiated by a keyboard shortcut or <a href="struct.Control.html#method.accessibility_drag" title="method godot::classes::Control::accessibility_drag"><code>accessibility_drag</code></a>, <code>at_position</code> is set to <code>Vector2.INF</code>, and the currently selected item/text position should be used as the drop position.</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>func _can_drop_data(position, data):
 	return typeof(data) == TYPE_DICTIONARY and data.has(&quot;color&quot;)
 
 func _drop_data(position, data):
-	var color = data[&quot;color&quot;]</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>public override bool _CanDropData(Vector2 atPosition, Variant data)
-{
-	return data.VariantType == Variant.Type.Dictionary &amp;&amp; data.AsGodotDictionary().ContainsKey(&quot;color&quot;);
-}
-
-public override void _DropData(Vector2 atPosition, Variant data)
-{
-	Color color = data.AsGodotDictionary()[&quot;color&quot;].AsColor();
-}</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.make_custom_tooltip" class="method"><h4 class="code-header">fn <a href="#method.make_custom_tooltip" class="fn">make_custom_tooltip</a>(&amp;self, for_text: <a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="../prelude/struct.Object.html" title="struct godot::prelude::Object">Object</a>&gt;&gt;</h4></section></summary><div class="docblock"><p>Virtual method to be implemented by the user. Returns a <code>Control</code> node that should be used as a tooltip instead of the default one. <code>for_text</code> is the return value of <a href="struct.Control.html#method.get_tooltip" title="method godot::classes::Control::get_tooltip"><code>get_tooltip</code></a>.</p>
+	var color = data[&quot;color&quot;]</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.make_custom_tooltip" class="method"><h4 class="code-header">fn <a href="#method.make_custom_tooltip" class="fn">make_custom_tooltip</a>(&amp;self, for_text: <a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="../prelude/struct.Object.html" title="struct godot::prelude::Object">Object</a>&gt;&gt;</h4></section></summary><div class="docblock"><p>Virtual method to be implemented by the user. Returns a <code>Control</code> node that should be used as a tooltip instead of the default one. <code>for_text</code> is the return value of <a href="struct.Control.html#method.get_tooltip" title="method godot::classes::Control::get_tooltip"><code>get_tooltip</code></a>.</p>
 <p>The returned node must be of type <code>Control</code> or Control-derived. It can have child nodes of any type. It is freed when the tooltip disappears, so make sure you always provide a new instance (if you want to use a pre-existing node from your scene tree, you can duplicate it and pass the duplicated instance). When <code>null</code> or a non-Control node is returned, the default tooltip will be used instead.</p>
 <p>The returned node will be added as child to a <a href="struct.PopupPanel.html" title="struct godot::classes::PopupPanel"><code>PopupPanel</code></a>, so you should only provide the contents of that panel. That <a href="struct.PopupPanel.html" title="struct godot::classes::PopupPanel"><code>PopupPanel</code></a> can be themed using <a href="struct.Theme.html#method.set_stylebox" title="method godot::classes::Theme::set_stylebox"><code>set_stylebox</code></a> for the type <code>"TooltipPanel"</code> (see [member tooltip_text] for an example).</p>
 <p><strong>Note:</strong> The tooltip is shrunk to minimal size. If you want to ensure it’s fully visible, you might want to set its [member custom_minimum_size] to some non-zero value.</p>
@@ -210,38 +192,19 @@ public override void _DropData(Vector2 atPosition, Variant data)
 <div class="example-wrap"><pre class="language-gdscript"><code>func _make_custom_tooltip(for_text):
 	var label = Label.new()
 	label.text = for_text
-	return label</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>public override Control _MakeCustomTooltip(string forText)
-{
-	var label = new Label();
-	label.Text = forText;
-	return label;
-}</code></pre></div>
+	return label</code></pre></div>
 <p><strong>Example:</strong> Use a scene instance as a tooltip:</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>func _make_custom_tooltip(for_text):
 	var tooltip = preload(&quot;res://some_tooltip_scene.tscn&quot;).instantiate()
 	tooltip.get_node(&quot;Label&quot;).text = for_text
-	return tooltip</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>public override Control _MakeCustomTooltip(string forText)
-{
-	Node tooltip = ResourceLoader.Load&lt;PackedScene&gt;(&quot;res://some_tooltip_scene.tscn&quot;).Instantiate();
-	tooltip.GetNode&lt;Label&gt;(&quot;Label&quot;).Text = forText;
-	return tooltip;
-}</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.accessibility_get_contextual_info" class="method"><h4 class="code-header">fn <a href="#method.accessibility_get_contextual_info" class="fn">accessibility_get_contextual_info</a>(&amp;self) -&gt; <a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a></h4></section></summary><div class="docblock"><p>Return the description of the keyboard shortcuts and other contextual help for this control.</p>
+	return tooltip</code></pre></div></div></details><details class="toggle method-toggle" open><summary><section id="method.accessibility_get_contextual_info" class="method"><h4 class="code-header">fn <a href="#method.accessibility_get_contextual_info" class="fn">accessibility_get_contextual_info</a>(&amp;self) -&gt; <a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a></h4></section></summary><div class="docblock"><p>Return the description of the keyboard shortcuts and other contextual help for this control.</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.get_accessibility_container_name" class="method"><h4 class="code-header">fn <a href="#method.get_accessibility_container_name" class="fn">get_accessibility_container_name</a>(&amp;self, node: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="../prelude/struct.Node.html" title="struct godot::prelude::Node">Node</a>&gt;&gt;) -&gt; <a class="struct" href="../prelude/struct.GString.html" title="struct godot::prelude::GString">GString</a></h4></section></summary><div class="docblock"><p>Override this method to return a human-readable description of the position of the child <code>node</code> in the custom container, added to the [member accessibility_name].</p>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.gui_input" class="method"><h4 class="code-header">fn <a href="#method.gui_input" class="fn">gui_input</a>(&amp;mut self, event: <a class="struct" href="../prelude/struct.Gd.html" title="struct godot::prelude::Gd">Gd</a>&lt;<a class="struct" href="struct.InputEvent.html" title="struct godot::classes::InputEvent">InputEvent</a>&gt;)</h4></section></summary><div class="docblock"><p>Virtual method to be implemented by the user. Override this method to handle and accept inputs on UI elements. See also <a href="struct.Control.html#method.accept_event" title="method godot::classes::Control::accept_event"><code>accept_event</code></a>.</p>
 <p><strong>Example:</strong> Click on the control to print a message:</p>
 <div class="example-wrap"><pre class="language-gdscript"><code>func _gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			print(&quot;I&#39;ve been clicked D:&quot;)</code></pre></div><div class="example-wrap"><pre class="language-csharp"><code>public override void _GuiInput(InputEvent @event)
-{
-	if (@event is InputEventMouseButton mb)
-	{
-		if (mb.ButtonIndex == MouseButton.Left &amp;&amp; mb.Pressed)
-		{
-			GD.Print(&quot;I&#39;ve been clicked D:&quot;);
-		}
-	}
-}</code></pre></div>
+			print(&quot;I&#39;ve been clicked D:&quot;)</code></pre></div>
 <p>If the <code>event</code> inherits <a href="struct.InputEventMouse.html" title="struct godot::classes::InputEventMouse"><code>InputEventMouse</code></a>, this method will <strong>not</strong> be called when:</p>
 <ul>
 <li>
