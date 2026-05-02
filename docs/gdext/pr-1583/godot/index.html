@@ -100,7 +100,7 @@ or a custom-built local binary.
 You can use at most one <code>api-*</code> feature. If absent, the current Godot minor version is used, with patch level 0.</p>
 <p><code>api-custom</code> feature requires specifying <code>GDRUST_GODOT_BIN</code> environment variable with a path to your Godot4 binary.</p>
 <p>The <code>api-custom-json</code> feature requires specifying <code>GDRUST_GODOT_API_JSON</code> environment variable with a path
-to your custom-defined <code>extension_api.json</code>. The custom header should be set with the <code>GDRUST_C_INTERFACE_JSON</code> environment variable
+to your custom-defined <code>extension_api.json</code>. The custom header should be set with the <code>GDRUST_GODOT_INTERFACE_JSON</code> environment variable
 when generated extension API targets a Godot version greater than the latest stable – otherwise you might encounter compile errors
 if the library tries to use an interface method that is not yet included in the latest stable header. <br><br></p>
 </li>
