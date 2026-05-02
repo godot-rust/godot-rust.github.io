@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1582/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1582"
 pr_author = "Bromeon"
 sort_key = 2026-05-02
-date_time = 2026-05-02T18:33:38Z
-commit_sha = "ed04202f1a0cf4ee37de5267bf114f1733143d85"
+date_time = 2026-05-02T19:16:32Z
+commit_sha = "9eafe6e209ffa4822ba5ecf5f9685af8791e9f8a"
 +++
 
 Doc parser: improve mappings + refactor
