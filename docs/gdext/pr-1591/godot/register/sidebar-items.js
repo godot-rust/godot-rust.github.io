@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"attr":["godot_api","godot_dyn"],"derive":["GodotClass"],"mod":["info","property"],"struct":["RpcConfig"]};
