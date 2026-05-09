@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["SigDisplayRefreshRateChanged","SigReferenceSpaceReset","SigSelect","SigSelectend","SigSelectstart","SigSessionEnded","SigSessionFailed","SigSessionStarted","SigSessionSupported","SigSqueeze","SigSqueezeend","SigSqueezestart","SigVisibilityStateChanged","SignalsOfWebXrInterface","TargetRayMode"]};

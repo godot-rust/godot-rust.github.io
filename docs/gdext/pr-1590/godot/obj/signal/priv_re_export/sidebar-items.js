@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["signal_collection_to_base","signal_collection_to_base_mut"]};
