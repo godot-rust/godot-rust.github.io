@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1591/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1591"
 pr_author = "Bromeon"
 sort_key = 2026-05-09
-date_time = 2026-05-09T21:55:43Z
-commit_sha = "6f558667e8e4a1a98d75a929b0c3907b0b461f82"
+date_time = 2026-05-09T21:57:48Z
+commit_sha = "9a318e78e89a5c4c4408f3cc1387d46a1c45ef9f"
 +++
 
 `#[itest(editor)]` for itests running only with `-e --headless`
