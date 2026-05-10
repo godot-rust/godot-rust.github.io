@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1592/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1592"
 pr_author = "TitanNano"
 sort_key = 2026-05-10
-date_time = 2026-05-10T20:48:37Z
-commit_sha = "2a2d572fdbdae5f1547a44bc97aeacf864a42a39"
+date_time = 2026-05-10T21:10:40Z
+commit_sha = "4ce27e6603b5e5bff8558e0a41b760aec09d56ad"
 +++
 
 Complete missing `ScriptInstance` functions
