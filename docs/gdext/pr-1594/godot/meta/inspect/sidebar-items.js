@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["ElementType"],"mod":["element_type"],"struct":["ElementScript","EnumConstant"]};

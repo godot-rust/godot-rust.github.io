@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["ExFind","ExIsValidHexNumber","ExSplit","ExSplitFloats","ExStripEdges","ExXmlEscape","TransientStringNameOrd"]};

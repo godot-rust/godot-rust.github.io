@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["ConnectBuilder","ConnectHandle","IndirectSignalReceiver","TypedSignal"],"trait":["SignalReceiver"]};
