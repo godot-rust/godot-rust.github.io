@@ -238,6 +238,10 @@ checks to ensure that Rust safety rules (e.g. no <code>&amp;</code> and <code>&a
 <li>If another <code>Gd</code> smart pointer pointing to the same Rust instance has a live <code>GdMut</code> guard bound.</li>
 <li>If there is an ongoing function call from GDScript to Rust, which currently holds a <code>&amp;mut T</code>
 reference to the user instance. This can happen through re-entrancy (Rust -&gt; GDScript -&gt; Rust call).</li>
+<li>If the object is a <strong>placeholder instance</strong> – i.e. it has no Rust instance attached. This can happen when a non-<code>#[class(tool)]</code>
+object is loaded or instantiated in the editor. Since Godot 4.3, non-tool classes are registered as “runtime classes”, meaning
+the editor only creates a Godot-side placeholder without invoking the Rust constructor. If you need to <code>bind()</code> such an object
+in the editor (e.g. a loaded resource), mark its class as <code>#[class(tool)]</code>.</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.bind_mut" class="method"><h4 class="code-header">pub fn <a href="#method.bind_mut" class="fn">bind_mut</a>(&amp;mut self) -&gt; <a class="struct" href="../prelude/struct.GdMut.html" title="struct godot::prelude::GdMut">GdMut</a>&lt;'_, T&gt;</h4></section></summary><div class="docblock"><p>Hands out a guard for an exclusive borrow, through which the user instance can be read and written.</p>
 <p>The pattern is very similar to interior mutability with standard <a href="https://doc.rust-lang.org/nightly/core/cell/struct.RefCell.html" title="struct core::cell::RefCell"><code>RefCell</code></a>.
@@ -250,6 +254,7 @@ checks to ensure that Rust safety rules (e.g. no <code>&amp;mut</code> aliasing)
 <li>If another <code>Gd</code> smart pointer pointing to the same Rust instance has a live <code>GdRef</code> or <code>GdMut</code> guard bound.</li>
 <li>If there is an ongoing function call from GDScript to Rust, which currently holds a <code>&amp;T</code> or <code>&amp;mut T</code>
 reference to the user instance. This can happen through re-entrancy (Rust -&gt; GDScript -&gt; Rust call).</li>
+<li>If the object is a placeholder instance with no Rust part. See <a href="../prelude/struct.Gd.html#method.bind" title="method godot::prelude::Gd::bind"><code>bind()</code></a> for details.</li>
 </ul>
 </div></details><details class="toggle method-toggle" open><summary><section id="method.instance_id" class="method"><h4 class="code-header">pub fn <a href="#method.instance_id" class="fn">instance_id</a>(&amp;self) -&gt; <a class="struct" href="../prelude/struct.InstanceId.html" title="struct godot::prelude::InstanceId">InstanceId</a></h4></section></summary><div class="docblock"><p>⚠️ Returns the instance ID of this object (panics when dead).</p>
 <h5 id="panics-3"><a class="doc-anchor" href="#panics-3">§</a>Panics</h5>
