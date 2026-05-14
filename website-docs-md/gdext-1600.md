@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1600/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1600"
 pr_author = "Bromeon"
 sort_key = 2026-05-14
-date_time = 2026-05-14T15:22:37Z
-commit_sha = "b781a5530426767ff5c371daa1f6e3b56801d16e"
+date_time = 2026-05-14T16:25:16Z
+commit_sha = "c64ce2befe33a1049dd6e4084cb52644f581ebf6"
 +++
 
 Rust-side `Variant` marshalling
