@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["ExAlert","ExCreateProcess","ExExecute","ExExecuteWithPipe","ExGetSystemDir","ExGetSystemFontPath","ExGetSystemFontPathForText","ExReadBufferFromStdin","ExReadStringFromStdin","ExSetRestartOnExit","ExShellShowInFileManager","RenderingDriver","StdHandleType","SystemDir"]};
