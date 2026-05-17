@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1607/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1607"
 pr_author = "Bromeon"
 sort_key = 2026-05-17
-date_time = 2026-05-17T09:04:40Z
-commit_sha = "789576bb4718deb20cfb8bd0763a8a6431bc6faf"
+date_time = 2026-05-17T20:06:11Z
+commit_sha = "394bd6f089dda466051f1cd725ff6d6165fdbd41"
 +++
 
 Gate new behavior behind `upcoming-editor-placeholders` feature
