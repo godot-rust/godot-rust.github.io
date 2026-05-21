@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"macro":[["assert_eq_approx",1],["assert_ne_approx",1]],"trait":["ApproxEq","FloatExt","XformInv"]};
