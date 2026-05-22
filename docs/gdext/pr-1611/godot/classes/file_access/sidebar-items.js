@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["CompressionMode","ExCreateTemp","ExGetCsvLine","ExGetVar","ExOpenCompressed","ExOpenEncrypted","ExSeekEnd","ExStoreCsvLine","ExStoreVar","ModeFlags","UnixPermissionFlags"]};
