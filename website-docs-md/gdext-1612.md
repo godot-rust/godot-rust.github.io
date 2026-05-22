@@ -8,8 +8,8 @@ docs_rel_url = "gdext/pr-1612/godot"
 pr_url = "https://github.com/godot-rust/gdext/pull/1612"
 pr_author = "Bromeon"
 sort_key = 2026-05-22
-date_time = 2026-05-22T21:25:00Z
-commit_sha = "c17596f6fabcfb55f5dc73ab1d514f5467373f2a"
+date_time = 2026-05-22T21:30:47Z
+commit_sha = "6a7903c1b99238877bccb2051a5a285814dcf92a"
 +++
 
 Auto-remove custom callables also when connected in untyped APIs
