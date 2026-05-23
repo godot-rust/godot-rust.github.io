@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"fn":["get_autoload_by_name","load","load_threaded","save","try_get_autoload_by_name","try_load","try_load_threaded","try_save"],"macro":[["tr",1],["tr_n",1]],"struct":["GFile"]};

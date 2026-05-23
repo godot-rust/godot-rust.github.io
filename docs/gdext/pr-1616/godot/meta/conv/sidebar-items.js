@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"enum":["ByObject","ByOption","ByRef","ByValue","ByVariant"],"struct":["RawPtr"],"trait":["ArgPassing","AsDirectElement","FfiRawPointer","InParamTuple","ObjectToOwned","OutParamTuple","ParamTuple","UniformObjectDeref"]};
