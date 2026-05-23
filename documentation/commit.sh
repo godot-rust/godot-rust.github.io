@@ -128,7 +128,8 @@ git log -n4
 echo "========================================"
 
 echo "$PRE fetch upstream, in case other workflows have changes in the meantime..."
-git fetch
+# Shallow: only the doc-output tip (origin/doc-output) is used below, not full history of large artifacts.
+git fetch --depth=1 origin doc-output
 
 # Read upstream timestamp, if file available
 echo "$PRE check if upstream has information about timestamp..."
