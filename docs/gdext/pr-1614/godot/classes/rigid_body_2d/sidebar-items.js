@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["CcdMode","CenterOfMassMode","DampMode","ExAddConstantForce","ExApplyCentralImpulse","ExApplyForce","ExApplyImpulse","FreezeMode","SigBodyEntered","SigBodyExited","SigBodyShapeEntered","SigBodyShapeExited","SigSleepingStateChanged","SignalsOfRigidBody2D"]};
