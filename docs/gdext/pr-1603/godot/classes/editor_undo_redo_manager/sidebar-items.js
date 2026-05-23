@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["ExClearHistory","ExCommitAction","ExCreateAction","SigHistoryChanged","SigVersionChanged","SignalsOfEditorUndoRedoManager","SpecialHistory"]};
