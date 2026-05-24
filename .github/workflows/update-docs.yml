@@ -92,7 +92,10 @@ jobs:
             exit 1
           fi          
           
-          git fetch
+          # Shallow-fetch only the doc-output branch tip. A bare `git fetch` pulls every branch with the full history of
+          # doc-output (large rustdoc artifacts), taking 13+ minutes. We only operate on the tip, so depth=1 suffices.
+          # `|| true` for the first-ever run (no branch yet).
+          git fetch --depth=1 origin doc-output || true
           git switch doc-output || git switch --orphan doc-output
           
           git restore --source master $script documentation/update-last-changed.sh documentation/apply-doc-cfg.sh

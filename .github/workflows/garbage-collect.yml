@@ -30,6 +30,15 @@ jobs:
           git fetch origin master:master
           git restore --source master documentation/delete.sh
 
+      # Serialize against concurrent doc-sync jobs, which acquire the same lock in commit.sh. Required because the squash
+      # step below force-pushes doc-output: without the lock, a doc job's fetch->push critical section could interleave
+      # with our force-push and be rejected (non-fast-forward). Held until job end. (The existing delete push had this
+      # race too.)
+      - name: "Wait for concurrent workflows to finish..."
+        uses: ben-z/gh-action-mutex@v1.0.0-alpha.10
+        with:
+          branch: ci-mutex-docs
+
       - name: "Identify which PRs are closed"
         run: |
           # Look in docs/gdext and docs/gdnative repo for all directories starting with "pr-", e.g. "pr-1234".
@@ -73,6 +82,23 @@ jobs:
           git config user.email "GodotRust@users.noreply.github.com"
           git commit -am "GC closed PRs: $DELETED_PR_LIST"
           git push origin HEAD:doc-output
+
+      # Compact doc-output history. It accumulates one commit of large rustdoc HTML per doc build (10k+ commits, several
+      # GB), which bloats the repo and makes fetches take 13+ min. Collapse to a single root commit holding the current
+      # tree, then force-push.
+      #
+      # Safe under the mutex acquired above: a doc-sync job straddling this squash will, in commit.sh, find its local
+      # doc-output and the new (squashed) origin/doc-output share no history. Its `git merge` aborts ("unrelated
+      # histories"); the fallback then re-applies exactly that job's own PR files onto the new tip and pushes
+      # fast-forward. After it, shared history resumes for subsequent jobs. Runs every time, keeping history permanently
+      # small. Force-pushing doc-output triggers no workflow (builds are repository_dispatch).
+      - name: "Squash doc-output history"
+        run: |
+          git config user.name "Godot-Rust Automation"
+          git config user.email "GodotRust@users.noreply.github.com"
+          git checkout --orphan squashed-doc-output
+          git commit -q -m "Compact doc-output history ($(date -u +%F))"
+          git push -f origin squashed-doc-output:doc-output
 
       # If there have been newer commits for the same branch/PR, skip remaining tasks.
       # Env var SKIP_WEBSITE_DEPLOY is set by the commit.sh script.
