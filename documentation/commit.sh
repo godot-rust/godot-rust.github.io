@@ -205,16 +205,16 @@ if git ls-remote --exit-code --heads origin doc-output >/dev/null 2>&1; then
     if git cat-file -e doc-output:website-docs-md/"$mdFile".md; then
         # File exists locally. Effectively repeat `merge -X theirs` for files besides last-changed.txt.
         echo "$PRE Docs present in local changes; merge using them."
-        git restore --source doc-output website-docs-md/"$mdFile*".md docs/"$dir"
+        git restore --source doc-output website-docs-md/"$mdFile"*.md docs/"$dir"
         echo "$PRE restored 2. <<<"
-        git add website-docs-md/"$mdFile*".md docs/"$dir"
+        git add website-docs-md/"$mdFile"*.md docs/"$dir"
 
     elif [[ -f "website-docs-md/$mdFile.md" ]]; then
         # Files deleted in local changes, but present in upstream. Delete them.
         echo "$PRE Docs absent in local changes; delete them."
-        rm -rf website-docs-md/"$mdFile*".md docs/"$dir"
+        rm -rf website-docs-md/"$mdFile"*.md docs/"$dir"
         echo "$PRE removed. <<<"
-        git add -u website-docs-md/"$mdFile*".md docs/"$dir"
+        git add -u website-docs-md/"$mdFile"*.md docs/"$dir"
     fi
 
 #    git merge -X ours doc-output  || {
