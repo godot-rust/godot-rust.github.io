@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["CallErrorType","CallOutcome","RpcError"],"macro":[["func_bail",1]],"mod":["strat"],"struct":["CallError","ConvertError","IoError","StringError"],"trait":["ErrorToGodot"]};
