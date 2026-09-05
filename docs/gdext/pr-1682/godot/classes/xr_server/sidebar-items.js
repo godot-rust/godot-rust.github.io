@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["RotationMode","SigInterfaceAdded","SigInterfaceRemoved","SigReferenceFrameChanged","SigTrackerAdded","SigTrackerRemoved","SigTrackerUpdated","SignalsOfXrServer","TrackerType"]};
