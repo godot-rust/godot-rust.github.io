@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"macro":["godot_dbg","godot_error","godot_print","godot_site"],"mod":["api","core_types","derive","export","globalscope","init","log","object","prelude","profiler","tasks"]};

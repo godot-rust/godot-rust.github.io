@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"derive":["GodotConvert"],"fn":["owned_into_arg","ref_to_arg","wrapped"],"mod":["conv","error","inspect","shape"],"struct":["ClassId","NonThreadSafeArg","ThreadSafeArg"],"trait":["AsArg","Element","FromGodot","GodotConvert","GodotImmutable","GodotType","PackedElement","SignedRange","ThreadSafeArgContext","ThreadSafety","ToGodot"],"type":["ToArg"]};
