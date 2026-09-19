@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["ExGetColorLayer","ExGetColorTexture","ExGetDepthLayer","ExGetDepthTexture","ExGetVelocityLayer","ExGetVelocityTexture"]};

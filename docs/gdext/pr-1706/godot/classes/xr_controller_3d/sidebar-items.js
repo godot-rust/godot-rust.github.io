@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["SigButtonPressed","SigButtonReleased","SigInputFloatChanged","SigInputVector2Changed","SigProfileChanged","SignalsOfXrController3D"]};
