@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["ExDrawChar","ExDrawCharOutline","ExDrawMultilineString","ExDrawMultilineStringOutline","ExDrawString","ExDrawStringOutline","ExFindVariation","ExGetAscent","ExGetDescent","ExGetHeight","ExGetMultilineStringSize","ExGetStringSize","ExGetUnderlinePosition","ExGetUnderlineThickness"]};

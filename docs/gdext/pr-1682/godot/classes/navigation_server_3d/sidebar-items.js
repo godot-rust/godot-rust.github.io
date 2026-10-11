@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["ExBakeFromSourceGeometryData","ExBakeFromSourceGeometryDataAsync","ExMapGetClosestPointToSegment","ExMapGetPath","ExParseSourceGeometryData","ExQueryPath","ExRegionGetClosestPointToSegment","ProcessInfo","SigAvoidanceDebugChanged","SigMapChanged","SigNavigationDebugChanged","SignalsOfNavigationServer3D"]};
