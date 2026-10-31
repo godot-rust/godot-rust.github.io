@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["ExForceUpdate","ExGetCellAlternativeTile","ExGetCellAtlasCoords","ExGetCellSourceId","ExGetCellTileData","ExGetUsedCellsById","ExIsCellFlippedH","ExIsCellFlippedV","ExIsCellTransposed","ExNotifyRuntimeTileDataUpdate","ExSetCell","ExSetCellsTerrainConnect","ExSetCellsTerrainPath","SigChanged","SignalsOfTileMap","VisibilityMode"]};
