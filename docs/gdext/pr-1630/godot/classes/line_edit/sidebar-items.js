@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["ExEdit","ExSelect","ExpandMode","MenuItems","SigEditingToggled","SigTextChangeRejected","SigTextChanged","SigTextSubmitted","SignalsOfLineEdit","VirtualKeyboardType"]};
